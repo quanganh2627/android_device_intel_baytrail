@@ -13,7 +13,7 @@
 # limitations under the License.
 
 
-## Vold 2.0 fstab for the Morrestown Platform
+## Vold 2.0 fstab
 
 #######################
 ## Regular device mount
@@ -26,4 +26,6 @@
 ######################
 
 # Mounts the first usable partition of the specified device
-dev_mount usbcard /storage/usbcard auto */block/sd
+#dev_mount sdcard2 /storage/sdcard2 auto */block/mmcblk0 */block/mmcblk1
+dev_mount sdcard2 /storage/sdcard2 auto  */block/mmcblk1 */block/mmcblk2
+dev_mount usb /storage/usbcard auto */block/sdb */block/sda

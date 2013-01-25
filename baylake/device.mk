@@ -1,3 +1,13 @@
+# The Superclass may include PRODUCT_COPY_FILES directives that this subclass
+# may want to override.  For PRODUCT_COPY_FILES directives the Android Build
+# System ignores subsequent copies that lead to the same destination.  So for
+# subclass PRODUCT_COPY_FILES to override properly, the right thing to do is to
+# prepend them instead of appending them as usual.  This is done using the
+# pattern:
+#
+# OVERRIDE_COPIES := <the list>
+# PRODUCT_COPY_FILES := $(OVERRIDE_COPIES) $(PRODUCT_COPY_FILES)
+
 # Superclass
 $(call inherit-product, build/target/product/full_base_telephony.mk)
 # product locales configuration
@@ -14,6 +24,12 @@ PRODUCT_CHARACTERISTICS := nosdcard
 # device specific overlay folder
 PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
 
+OVERRIDE_COPIES := \
+    $(LOCAL_PATH)/asound.conf:system/etc/asound.conf \
+    $(LOCAL_PATH)/init.baylake.sh:root/init.baylake.sh \
+    $(LOCAL_PATH)/init.net.eth0.sh:root/init.net.eth0.sh
+
+PRODUCT_COPY_FILES := $(OVERRIDE_COPIES) $(PRODUCT_COPY_FILES)
 # keypad key mapping
 PRODUCT_PACKAGES += \
     mrst_keypad.kcm \
@@ -44,15 +60,32 @@ PRODUCT_PACKAGES += \
     audio_policy.$(PRODUCT_DEVICE) \
     vibrator.$(PRODUCT_DEVICE)
 
-# Hwc
-#PRODUCT_PACKAGES += \
-    hwcomposer.$(PRODUCT_DEVICE)
+# Graphics
+PRODUCT_PACKAGES += \
+    hwcomposer.$(PRODUCT_DEVICE) \
+    libGLES_mesa    \
+    gralloc.$(PRODUCT_DEVICE)
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.opengles.version=131072 \
+    ro.sf.lcd_density=240
 
 # hw_ssl
 #PRODUCT_PACKAGES += \
     libdx-crys \
     start-sep
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    bt_ti
+
+# Wifi
+PRODUCT_PACKAGES += \
+    wifi_ti
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    net.eth0.ip=169.254.9.64 \
+    net.eth0.netmask=255.255.0.0
 
 # IPV6
 PRODUCT_PACKAGES += \
@@ -114,8 +147,6 @@ ifeq ($(TARGET_BUILD_VARIANT),eng)
 endif
 
 # Board initrc file
-CTP_PATH := vendor/intel/clovertrail
-# board specific files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.$(PRODUCT_DEVICE).rc:root/init.$(PRODUCT_DEVICE).rc \
 #    $(LOCAL_PATH)/init.debug.rc:root/init.debug.rc \

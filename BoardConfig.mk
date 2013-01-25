@@ -1,7 +1,11 @@
 include vendor/intel/common/BoardConfig.mk
 
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1073741824
-TARGET_MAKE_NO_DEFAULT_RECOVERY := true
+
+# Disable recovery for now
+TARGET_MAKE_NO_DEFAULT_RECOVERY := false
+TARGET_NO_RECOVERY := true
+
 BOARD_SKIP_NVM := false
 
 ifneq ($(TARGET_NO_RECOVERY),true)
@@ -11,7 +15,7 @@ TARGET_RECOVERY_UPDATER_LIBS += libintel_updater
 TARGET_RECOVERY_UPDATER_EXTRA_LIBS := libcmfwdl
 endif
 
-TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
+TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 ifeq ($(TARGET_USE_DROIDBOOT),true)
 TARGET_DROIDBOOT_LIBS := libintel_droidboot
 TARGET_DROIDBOOT_EXTRA_LIBS := libcmfwdl libminzip
@@ -31,6 +35,3 @@ endif
 ifneq ($(DROIDBOOT_SCRATCH_SIZE),)
 BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE += droidboot.scratch=$(DROIDBOOT_SCRATCH_SIZE)
 endif
-
-# PARTITION
-OVERRIDE_PARTITION_FILE = "$(TOP)/vendor/intel/clovertrail/storage/clovertrail_override.json"

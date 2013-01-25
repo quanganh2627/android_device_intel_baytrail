@@ -1,3 +1,4 @@
+
 import init.common.rc
 import init.debug.rc
 import init.diag.rc
@@ -8,6 +9,24 @@ import init.wifi.rc
 import init.platform.usb.rc
 import init.gps.rc
 import init.bt.rc
+
+on early-init
+    # Mesa environment variables
+    export MESA_EXTENSION_OVERRIDE "+GL_OES_EGL_image_external -GL_ARB_framebuffer_object"
+    # Force on S3TC hardware decompression support in Mesa
+    export force_s3tc_enable true
+
+    # Mesa debugging options - see http://www.mesa3d.org/envvars.html for more details
+    #export MESA_DEBUG 1
+    #export LIBGL_DEBUG 1
+    #export EGL_LOG_LEVEL debug
+
+    # Since mesa spits its messages out to stderr, need to tell android
+    # to route stdio to logcat. This is disabled because turning it on
+    # causes stdio from 'am instrument' to be redirected to logcat
+    # instead of going to adb.
+    #setprop log.redirect-stdio true
+
 
 on init
     # Create removable storage path
@@ -20,6 +39,8 @@ on init
     export EXTERNAL_STORAGE /storage/emulated/legacy
     export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
     export EMULATED_STORAGE_TARGET /storage/emulated
+    # Overriding LD_LIBRARY_PATH and add egl
+    export LD_LIBRARY_PATH /vendor/lib:/system/lib:/system/lib/arm:/system/lib/egl
 
     # Support legacy paths
     symlink /storage/emulated/legacy /sdcard
@@ -124,6 +145,16 @@ on post-fs
 
     # Permissions for BCU Driver
     chown system system /sys/devices/platform/msic_ocd/msic_current/batt_level
+
+# additional baytrail initialization
+service baytrail-setup /system/bin/sh /system/etc/init.baytrail.sh
+    class core
+    oneshot
+
+# for eth0
+service net_eth0-start /system/bin/sh /system/etc/init.net.eth0.sh
+    class core
+    oneshot
 
 # create virtual SD card at /mnt/sdcard, based on the /data/media directory
 # daemon will drop to user/group system/media_rw after initializing
