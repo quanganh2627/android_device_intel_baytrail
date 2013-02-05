@@ -54,6 +54,7 @@ on boot
     #  Codec Offload property specific to CTP
     setprop lpa.tunnelling.enable 1
     setprop offload.min.file.duration.secs 20
+    setprop offload.compress.device 2
 
     #  Set autosuspend delay as 30 ms to save power in graphic display
     write /sys/devices/pci0000:00/0000:00:03.4/power/autosuspend_delay_ms 30
