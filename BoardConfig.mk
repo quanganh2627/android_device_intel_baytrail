@@ -2,6 +2,7 @@ include vendor/intel/common/BoardConfig.mk
 
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1073741824
 TARGET_MAKE_NO_DEFAULT_RECOVERY := true
+BOARD_SKIP_NVM := false
 
 ifneq ($(TARGET_NO_RECOVERY),true)
 TARGET_RECOVERY_UI_LIB := libintel_recovery_ui
