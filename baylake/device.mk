@@ -9,9 +9,7 @@
 # PRODUCT_COPY_FILES := $(OVERRIDE_COPIES) $(PRODUCT_COPY_FILES)
 
 # Superclass
-$(call inherit-product, build/target/product/full_base_telephony.mk)
-# product locales configuration
-$(call inherit-product, build/target/product/locales_full.mk)
+$(call inherit-product, build/target/product/full_base_no_telephony.mk)
 # Include Dalvik Heap Size Configuration
 $(call inherit-product, vendor/intel/common/dalvik/phone-xhdpi-1024-dalvik-heap.mk)
 
@@ -19,7 +17,7 @@ $(call inherit-product, vendor/intel/common/dalvik/phone-xhdpi-1024-dalvik-heap.
 PRODUCT_DEVICE := baylake
 PRODUCT_MODEL := baylake
 
-PRODUCT_CHARACTERISTICS := nosdcard
+PRODUCT_CHARACTERISTICS := nosdcard,tablet
 
 # device specific overlay folder
 PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
@@ -63,12 +61,13 @@ PRODUCT_PACKAGES += \
 # Graphics
 PRODUCT_PACKAGES += \
     hwcomposer.$(PRODUCT_DEVICE) \
-    libGLES_mesa    \
-    gralloc.$(PRODUCT_DEVICE)
+    libdrm_intel \
+    ufo \
+    ufo_test
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072 \
-    ro.sf.lcd_density=240
+    ro.sf.lcd_density=220
 
 # hw_ssl
 #PRODUCT_PACKAGES += \
@@ -83,14 +82,29 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     wifi_ti
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    net.eth0.ip=169.254.9.64 \
-    net.eth0.netmask=255.255.0.0
-
 # IPV6
 PRODUCT_PACKAGES += \
     rdnssd \
     dhcp6c
+
+# copy permission files
+FRAMEWORK_ETC_PATH := frameworks/native/data/etc
+PERMISSIONS_PATH := system/etc/permissions
+PRODUCT_COPY_FILES += \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.touchscreen.multitouch.jazzhand.xml:$(PERMISSIONS_PATH)/android.hardware.touchscreen.multitouch.jazzhand.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.location.gps.xml:$(PERMISSIONS_PATH)/android.hardware.location.gps.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.camera.flash-autofocus.xml:$(PERMISSIONS_PATH)/android.hardware.camera.flash-autofocus.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.camera.front.xml:$(PERMISSIONS_PATH)/android.hardware.camera.front.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.sensor.accelerometer.xml:$(PERMISSIONS_PATH)/android.hardware.sensor.accelerometer.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.sensor.barometer.xml:$(PERMISSIONS_PATH)/android.hardware.sensor.barometer.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.sensor.compass.xml:$(PERMISSIONS_PATH)/android.hardware.sensor.compass.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.sensor.gyroscope.xml:$(PERMISSIONS_PATH)/android.hardware.sensor.gyroscope.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.sensor.light.xml:$(PERMISSIONS_PATH)/android.hardware.sensor.light.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.usb.host.xml:$(PERMISSIONS_PATH)/android.hardware.usb.host.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.usb.accessory.xml:$(PERMISSIONS_PATH)/android.hardware.usb.accessory.xml \
+    $(FRAMEWORK_ETC_PATH)/tablet_core_hardware.xml:$(PERMISSIONS_PATH)/tablet_core_hardware.xml
+#   $(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
 
 COMMON_PATH := vendor/intel/common
 PRODUCT_COPY_FILES += \

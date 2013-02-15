@@ -52,8 +52,6 @@ BOARD_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger 
 endif
 
 # Graphics
-BOARD_USE_MESA := true
-BOARD_EGL_CFG := $(DEVICE_PATH)/egl_mesa.cfg
 BOARD_GPU_DRIVERS := i965
 USE_OPENGL_RENDERER := true
 BOARD_KERNEL_CMDLINE += vga=current i915.modeset=1 drm.vblankoffdelay=1 \
