@@ -87,6 +87,11 @@ PRODUCT_PACKAGES += \
     rdnssd \
     dhcp6c
 
+# Filesystem management tools
+PRODUCT_PACKAGES += \
+    e2fsck \
+    setup_fs
+
 # copy permission files
 FRAMEWORK_ETC_PATH := frameworks/native/data/etc
 PERMISSIONS_PATH := system/etc/permissions
