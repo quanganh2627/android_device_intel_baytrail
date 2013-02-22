@@ -6,7 +6,7 @@ import init.common.rc
 # import init.wireless.rc
 # import init.modem.rc
 # import init.wifi.rc
-# import init.platform.usb.rc
+import init.platform.usb.rc
 # import init.gps.rc
 # import init.bt.rc
 
