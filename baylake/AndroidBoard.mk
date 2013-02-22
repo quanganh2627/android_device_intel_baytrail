@@ -1,6 +1,12 @@
-LOCAL_PATH := $(call my-dir)
+DEVICE_PATH := $(call my-dir)
 
 include vendor/intel/common/AndroidBoard.mk
+LOCAL_PATH := $(DEVICE_PATH)
+
+# Using default mkbootimg utility from AOSP
+# because we are using its features for the
+# USB installer image.
+MKBOOTIMG := out/host/linux-x86/bin/mkbootimg
 
 # wifi
 ifeq ($(strip $(BOARD_HAVE_WIFI)),true)
@@ -35,8 +41,25 @@ ADDITIONAL_DEFAULT_PROPERTIES += persist.ril-daemon.disable=0 \
 
 firmware: ifwi_firmware dnx_firmware
 
-$(TARGET_DEVICE): systemimg_gz firmware recoveryimage #otapackage
+$(TARGET_PRODUCT): systemimg_gz firmware recoveryimage #otapackage
 
 ifeq ($(TARGET_USE_DROIDBOOT),true)
-$(TARGET_DEVICE): droidbootimage
+$(TARGET_PRODUCT): droidbootimage
 endif
+
+.PHONY: $(TARGET_PRODUCT)
+$(TARGET_PRODUCT): installer_img
+
+# There is a dependency issue between fstab.baytrail which depends on bootimage and the installer.
+# Fix it here but fstab should probably have a dependency to the ramdisk, not the bootimage.
+installer_img: bootimage
+
+#
+# EFI for android
+#
+$(PRODUCT_OUT)/kernel.efi: $(PRODUCT_OUT)/kernel
+	cp "$(PRODUCT_OUT)/kernel" "$(PRODUCT_OUT)/kernel.efi"
+
+$(PRODUCT_OUT)/startup.nsh: $(PRODUCT_OUT)/kernel $(TARGET_DEVICE_DIR)/BoardConfig.mk
+	echo "fs1:\kernel.efi $(BOARD_KERNEL_CMDLINE) initrd=ramdisk-installer.img.gz" > "$(PRODUCT_OUT)/startup.nsh"
+	echo "fs0:\kernel.efi $(BOARD_KERNEL_CMDLINE) initrd=ramdisk.img" >> "$(PRODUCT_OUT)/startup.nsh"

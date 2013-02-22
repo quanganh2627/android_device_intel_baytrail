@@ -1,5 +1,6 @@
 # Include base makefile
 include $(LOCAL_PATH)/device.mk
 
-# Overrides
+LOCAL_PATH := $(TOP)/vendor/intel/baytrail/baylake
+
 PRODUCT_NAME := baylake
