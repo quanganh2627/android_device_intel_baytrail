@@ -3,8 +3,8 @@ include vendor/intel/common/BoardConfig.mk
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1073741824
 
 # Disable recovery for now
-TARGET_MAKE_NO_DEFAULT_RECOVERY := false
-TARGET_NO_RECOVERY := true
+TARGET_MAKE_NO_DEFAULT_RECOVERY := true
+TARGET_NO_RECOVERY := false
 
 BOARD_SKIP_NVM := false
 
