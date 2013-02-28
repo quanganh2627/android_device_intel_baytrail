@@ -11,7 +11,7 @@
 # Superclass
 $(call inherit-product, build/target/product/full_base_no_telephony.mk)
 # Include Dalvik Heap Size Configuration
-$(call inherit-product, vendor/intel/common/dalvik/phone-xhdpi-1024-dalvik-heap.mk)
+$(call inherit-product, device/intel/common/dalvik/phone-xhdpi-1024-dalvik-heap.mk)
 
 # Overrides
 PRODUCT_DEVICE := baylake
@@ -210,7 +210,7 @@ PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/tablet_core_hardware.xml:$(PERMISSIONS_PATH)/tablet_core_hardware.xml
 #   $(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
 
-COMMON_PATH := vendor/intel/common
+COMMON_PATH := device/intel/common
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/ueventd.common.rc:root/ueventd.$(PRODUCT_DEVICE).rc
 
@@ -281,4 +281,4 @@ PRODUCT_COPY_FILES += \
 
 #################################################"
 # Include platform - do not inherit so that variables can be set before inclusion
-include vendor/intel/baytrail/baytrail.mk
+include device/intel/baytrail/baytrail.mk

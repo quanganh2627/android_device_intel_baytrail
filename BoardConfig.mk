@@ -1,4 +1,4 @@
-include vendor/intel/common/BoardConfig.mk
+include device/intel/common/BoardConfig.mk
 
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1073741824
 
