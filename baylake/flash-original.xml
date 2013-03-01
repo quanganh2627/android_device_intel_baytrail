@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flashfile version="1">
+    <id>fastboot</id>
+    <platform>baylake</platform>
+        <code_group name="KERNEL">
+            <file TYPE="KERNEL">
+                <name>boot.bin</name>
+                <version>original</version>
+            </file></code_group>
+        <code_group name="RECOVERY">
+            <file TYPE="RECOVERY">
+                <name>recovery.img</name>
+                <version>original</version>
+            </file></code_group>
+        <code_group name="FASTBOOT">
+            <file TYPE="FASTBOOT">
+                <name>droidboot.img</name>
+                <version>original</version>
+            </file></code_group>
+        <code_group name="SYSTEM">
+            <file TYPE="SYSTEM">
+                <name>system.img.gz</name>
+                <version>original</version>
+            </file></code_group>
+        <command>
+            <string>fastboot flash boot $kernel_file</string>
+            <timeout>60000</timeout>
+            <retry>2</retry>
+            <description>Flashing boot</description>
+        </command>
+        <command>
+            <string>fastboot flash recovery $recovery_file</string>
+            <timeout>60000</timeout>
+            <retry>2</retry>
+            <description>Flashing recovery</description>
+        </command>
+        <command>
+            <string>fastboot flash fastboot $fastboot_file</string>
+            <timeout>60000</timeout>
+            <retry>2</retry>
+            <description>Flashing fastboot</description>
+        </command>
+        <command>
+            <string>fastboot erase cache</string>
+            <timeout>60000</timeout>
+            <retry>2</retry>
+            <description>Erasing cache</description>
+        </command>
+        <command>
+            <string>fastboot erase system</string>
+            <timeout>60000</timeout>
+            <retry>2</retry>
+            <description>Erasing system</description>
+        </command>
+        <command>
+            <string>fastboot flash system $system_file</string>
+            <timeout>300000</timeout>
+            <retry>2</retry>
+            <description>Flashing system</description>
+        </command>
+        <command>
+            <string>fastboot continue</string>
+            <timeout>60000</timeout>
+            <retry>2</retry>
+            <description>Reboot system</description>
+        </command>
+</flashfile>
