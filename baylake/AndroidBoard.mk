@@ -3,10 +3,8 @@ DEVICE_PATH := $(call my-dir)
 include vendor/intel/common/AndroidBoard.mk
 LOCAL_PATH := $(DEVICE_PATH)
 
-# Using default mkbootimg utility from AOSP
-# because we are using its features for the
-# USB installer image.
-MKBOOTIMG := out/host/linux-x86/bin/mkbootimg
+# Trick the installer boot image into using Google mkbootimg with private var.
+$(PRODUCT_OUT)/installer/installer_boot.img: MKBOOTIMG := out/host/linux-x86/bin/mkbootimg
 
 # wifi
 ifeq ($(strip $(BOARD_HAVE_WIFI)),true)
@@ -33,6 +31,7 @@ get_kernel_from_tarball:
 	tar -xv -C $(PRODUCT_OUT) -f $(TARGET_KERNEL_TARBALL)
 
 bootimage: build_kernel
+
 
 systemimg_gz: bootimage droid
 

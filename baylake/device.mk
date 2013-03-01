@@ -87,6 +87,11 @@ PRODUCT_PACKAGES += \
     rdnssd \
     dhcp6c
 
+# Filesystem management tools
+PRODUCT_PACKAGES += \
+    e2fsck \
+    setup_fs
+
 # copy permission files
 FRAMEWORK_ETC_PATH := frameworks/native/data/etc
 PERMISSIONS_PATH := system/etc/permissions
@@ -163,6 +168,7 @@ endif
 # Board initrc file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.$(PRODUCT_DEVICE).rc:root/init.$(PRODUCT_DEVICE).rc \
+
 #    $(LOCAL_PATH)/init.debug.rc:root/init.debug.rc \
 #    $(LOCAL_PATH)/init.diag.rc:root/init.diag.rc \
 #    $(LOCAL_PATH)/init.wireless.rc:root/init.wireless.rc \
