@@ -28,6 +28,11 @@ OVERRIDE_COPIES := \
     $(LOCAL_PATH)/egl.cfg:system/lib/egl/egl.cfg \
     $(LOCAL_PATH)/init.net.eth0.sh:root/init.net.eth0.sh
 
+# Make generic definetion of media components.
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/wrs_omxil_components.list:system/etc/wrs_omxil_components.list
+
 PRODUCT_COPY_FILES := $(OVERRIDE_COPIES) $(PRODUCT_COPY_FILES)
 # keypad key mapping
 PRODUCT_PACKAGES += \
