@@ -3,10 +3,8 @@ DEVICE_PATH := $(call my-dir)
 include vendor/intel/common/AndroidBoard.mk
 LOCAL_PATH := $(DEVICE_PATH)
 
-# Using default mkbootimg utility from AOSP
-# because we are using its features for the
-# USB installer image.
-MKBOOTIMG := out/host/linux-x86/bin/mkbootimg
+# Trick the installer boot image into using Google mkbootimg with private var.
+$(PRODUCT_OUT)/installer/installer_boot.img: MKBOOTIMG := out/host/linux-x86/bin/mkbootimg
 
 # wifi
 ifeq ($(strip $(BOARD_HAVE_WIFI)),true)
@@ -33,6 +31,7 @@ get_kernel_from_tarball:
 	tar -xv -C $(PRODUCT_OUT) -f $(TARGET_KERNEL_TARBALL)
 
 bootimage: build_kernel
+
 
 systemimg_gz: bootimage droid
 
@@ -63,3 +62,22 @@ $(PRODUCT_OUT)/kernel.efi: $(PRODUCT_OUT)/kernel
 $(PRODUCT_OUT)/startup.nsh: $(PRODUCT_OUT)/kernel $(TARGET_DEVICE_DIR)/BoardConfig.mk
 	echo "fs1:\kernel.efi $(BOARD_KERNEL_CMDLINE) initrd=ramdisk-installer.img.gz" > "$(PRODUCT_OUT)/startup.nsh"
 	echo "fs0:\kernel.efi $(BOARD_KERNEL_CMDLINE) initrd=ramdisk.img" >> "$(PRODUCT_OUT)/startup.nsh"
+
+### TEMPORARY: override flashfiles defined in common until baytrail supports them.
+flashfiles:
+	@$(eval FLASHFILE_PATH := $(PUBLISH_PATH)/$(TARGET_PUBLISH_PATH)/flash_files/build-$(PUBLISH_TARGET_BUILD_VARIANT))
+	@$(eval FLASHFILE_NAME := $(GENERIC_TARGET_NAME)-$(PUBLISH_TARGET_BUILD_VARIANT)-fastboot-$(FILE_NAME_TAG).zip)
+	@echo "Generating $(FLASHFILE_PATH)/$(FLASHFILE_NAME)"
+	@mkdir -p $(FLASHFILE_PATH)
+	@rm -rf $(FLASHFILE_PATH)/*
+	@cp $(PRODUCT_OUT)/kernel $(FLASHFILE_PATH)/mos_kernel.efi
+	@cp $(PRODUCT_OUT)/ramdisk.img $(FLASHFILE_PATH)/mos_ramdisk.img
+	@cp $(PRODUCT_OUT)/boot.bin $(FLASHFILE_PATH)/
+	@cp $(PRODUCT_OUT)/droidboot.img $(FLASHFILE_PATH)/
+	@cp $(PRODUCT_OUT)/recovery.img $(FLASHFILE_PATH)/
+	@cp $(INSTALLED_SYSTEMIMG_GZ_TARGET) $(FLASHFILE_PATH)/
+	@cp $(TARGET_DEVICE_DIR)/flash.xml $(FLASHFILE_PATH)/
+	@cp $(TARGET_DEVICE_DIR)/flash-original.xml $(FLASHFILE_PATH)/
+	@zip -j $(FLASHFILE_PATH)/$(FLASHFILE_NAME) $(FLASHFILE_PATH)/*
+	@find $(FLASHFILE_PATH) -name '*.zip' -prune -o -type f -exec rm {} \;
+### TEMPORARY: override flashfiles -- END
