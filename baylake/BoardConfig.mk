@@ -8,13 +8,13 @@ DEVICE_PATH := vendor/intel/baytrail/baylake
 # For targets that use EFI
 TARGET_USE_EFI := true
 
-TARGET_USE_DROIDBOOT := true
+TARGET_USE_DROIDBOOT := false
 
 #Intel recovery images and boot images are different from android images.
 # **** Disable these as we need to have the standard android images that use
 # **** mkbootimg standard AOSP version.
-TARGET_MAKE_NO_DEFAULT_BOOTIMAGE := true
-TARGET_MAKE_INTEL_BOOTIMAGE := true
+TARGET_MAKE_NO_DEFAULT_BOOTIMAGE := false
+TARGET_MAKE_INTEL_BOOTIMAGE := false
 ##### BRINGUP HACK - use prebuilt kernel 3.6 ######
 TARGET_KERNEL_SOURCE_IS_PRESENT := true
 TARGET_USE_INSTALLER_SPECIAL_PREBUILT_KERNEL := true
