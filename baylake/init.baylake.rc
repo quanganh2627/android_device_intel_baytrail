@@ -72,6 +72,9 @@ on boot
     chown system system /sys/class/thermal/cooling_device0/cur_state
     chown system system /sys/class/thermal/cooling_device1/cur_state
 
+    # Run surfaceflinger in a standalone process to avoid deadlock against gfx apps.
+    setprop system_init.startsurfaceflinger 0
+
     #  Codec Offload property specific to CTP
     setprop lpa.tunnelling.enable 1
     setprop offload.min.file.duration.secs 20
@@ -155,6 +158,12 @@ on post-fs
 service baytrail-setup /system/bin/sh /system/etc/init.baytrail.sh
     class core
     oneshot
+
+service surfaceflinger /system/bin/surfaceflinger
+    class main
+    user system
+    group graphics drmrpc
+    onrestart restart zygote
 
 # for eth0
 service net_eth0-start /system/bin/sh /system/etc/init.net.eth0.sh
