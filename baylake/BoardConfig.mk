@@ -10,6 +10,9 @@ TARGET_USE_EFI := true
 
 TARGET_USE_DROIDBOOT := true
 
+# Temporary IFWI does not support signing
+TARGET_OS_SIGNING_METHOD := none
+
 #Intel recovery images and boot images are different from android images.
 # **** Disable these as we need to have the standard android images that use
 # **** mkbootimg standard AOSP version.
