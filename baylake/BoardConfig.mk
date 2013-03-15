@@ -10,9 +10,6 @@ TARGET_USE_EFI := true
 
 TARGET_USE_DROIDBOOT := true
 
-# Temporary IFWI does not support signing
-TARGET_OS_SIGNING_METHOD := none
-
 #Intel recovery images and boot images are different from android images.
 # **** Disable these as we need to have the standard android images that use
 # **** mkbootimg standard AOSP version.
@@ -24,6 +21,9 @@ TARGET_USE_INSTALLER_SPECIAL_PREBUILT_KERNEL := true
 TARGET_KERNEL_TARBALL := $(DEVICE_PATH)/kernel.tgz
 
 include vendor/intel/baytrail/BoardConfig.mk
+
+# Temporary IFWI does not support signing
+TARGET_OS_SIGNING_METHOD := none
 
 TARGET_PRELINK_MODULE := false
 TARGET_PROVIDES_INIT_RC := true

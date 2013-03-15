@@ -78,6 +78,8 @@ flashfiles:
 	@cp $(INSTALLED_SYSTEMIMG_GZ_TARGET) $(FLASHFILE_PATH)/
 	@cp $(TARGET_DEVICE_DIR)/flash.xml $(FLASHFILE_PATH)/
 	@cp $(TARGET_DEVICE_DIR)/flash-original.xml $(FLASHFILE_PATH)/
+	@cp $(TARGET_DEVICE_DIR)/flash-blank.xml $(FLASHFILE_PATH)/
+	@cp $(TARGET_DEVICE_DIR)/partition.tbl $(FLASHFILE_PATH)/
 	@zip -j $(FLASHFILE_PATH)/$(FLASHFILE_NAME) $(FLASHFILE_PATH)/*
 	@find $(FLASHFILE_PATH) -name '*.zip' -prune -o -type f -exec rm {} \;
 ### TEMPORARY: override flashfiles -- END
