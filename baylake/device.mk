@@ -69,6 +69,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072 \
     ro.sf.lcd_density=220
 
+# Intel fake multiple display
+PRODUCT_PACKAGES += \
+    com.intel.multidisplay \
+    com.intel.multidisplay.xml
+
 # hw_ssl
 #PRODUCT_PACKAGES += \
     libdx-crys \
