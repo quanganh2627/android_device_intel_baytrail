@@ -1,4 +1,16 @@
 on init
+    setprop alsa.mixer.earpiece Headphone
+    setprop alsa.mixer.speaker Speaker
+    setprop alsa.mixer.headset Headphone
+    setprop alsa.mixer.headphone Headphone
+    setprop alsa.mixer.builtinMic Mic1
+    setprop alsa.mixer.headsetMic Mic1
+    setprop alsa.mixer.defaultCard baytrailaudio
+    setprop Audiocomms.Audience.IsPresent "false"
+    setprop alsa.mixer.defaultGain 1.0
+    setprop Audiocomms.BT.HFP.Supported "false"
+    setprop Audiocomms.Vibrator.IsPresent "false"
+
     # atomisp driver depends on these modules. So load these on init. atomisp
     # driver is loaded from "on charger" trigger as well from init.common.rc
     insmod /lib/modules/videobuf-core.ko

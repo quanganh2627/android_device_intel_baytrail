@@ -9,3 +9,18 @@ BYT_PATH := vendor/intel/baytrail
 PRODUCT_COPY_FILES += \
     $(BYT_PATH)/init.byt.usb.rc:root/init.platform.usb.rc \
     $(BYT_PATH)/init.debug.rc:root/init.debug.rc
+
+# parameter-framework
+PRODUCT_PACKAGES += \
+    libparameter \
+    parameter-connector-test \
+    libxmlserializer \
+    liblpe-subsystem \
+    libamixer-subsystem \
+    libalsactl-subsystem \
+    libbluetooth-subsystem \
+    libfs-subsystem \
+    libproperty-subsystem \
+    libremote-processor \
+    remote-process \
+    parameter

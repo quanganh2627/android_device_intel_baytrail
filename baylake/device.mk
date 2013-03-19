@@ -92,14 +92,12 @@ PRODUCT_PACKAGES += \
     libI420colorconvert
 
 # hardware HAL
-#PRODUCT_PACKAGES += \
-    audio_hal_ia_controlled_ssp \
+PRODUCT_PACKAGES += \
+    audio_hal_configurable \
     libaudioresample \
     libbluetooth-audio \
     mediabtservice \
-    audio.primary.$(PRODUCT_DEVICE) \
     audio.a2dp.default \
-    audio_policy.$(PRODUCT_DEVICE) \
     vibrator.$(PRODUCT_DEVICE)
 
 # sensors
