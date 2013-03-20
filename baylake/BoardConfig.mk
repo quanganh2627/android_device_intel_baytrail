@@ -38,6 +38,8 @@ BOARD_HAVE_WIFI := false
 INTEL_WIDI := false
 BOARD_HAVE_BLUETOOTH := false
 BOARD_HAVE_GPS := false
+TARGET_HAS_VPP := true
+TARGET_VPP_USE_GEN := true
 
 USE_INTEL_IPP := true
 

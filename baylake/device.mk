@@ -263,6 +263,10 @@ ifeq ($(TARGET_BUILD_VARIANT),eng)
      WidevineSamplePlayer
 endif
 
+# Intel VPP/FRC
+PRODUCT_PACKAGES += \
+    VppSettings
+
 # Board initrc file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.$(PRODUCT_DEVICE).rc:root/init.$(PRODUCT_DEVICE).rc \

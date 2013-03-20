@@ -130,10 +130,12 @@
         <intent android:action="com.android.settings.MANUFACTURER_APPLICATION_SETTING" />
     </header>
 
+    <!-- VPP/FRC -->
     <!-- Manufacturer Extra hook 3 -->
     <header
-        android:id="@+id/manufacturer_extra_settings_3">
-        <intent android:action="com.android.settings.MANUFACTURER_APPLICATION_SETTING" />
+        android:id="@+id/manufacturer_extra_settings_3"
+        android:icon="@drawable/ic_settings_vpp">
+        <intent android:action="com.intel.settings.VPP_SETTINGS" />
     </header>
 
     <!-- Manufacturer Extra hook 4 -->
