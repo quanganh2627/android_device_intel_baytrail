@@ -25,6 +25,7 @@ PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
 OVERRIDE_COPIES := \
     $(LOCAL_PATH)/asound.conf:system/etc/asound.conf \
     $(LOCAL_PATH)/init.baylake.sh:root/init.baylake.sh \
+    $(LOCAL_PATH)/egl.cfg:system/lib/egl/egl.cfg \
     $(LOCAL_PATH)/init.net.eth0.sh:root/init.net.eth0.sh
 
 PRODUCT_COPY_FILES := $(OVERRIDE_COPIES) $(PRODUCT_COPY_FILES)
