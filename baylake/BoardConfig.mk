@@ -51,6 +51,11 @@ TARGET_NO_BOOTLOADER := false
 USE_CAMERA_STUB := false
 USE_CAMERA_HAL2 := true
 
+USE_INTEL_METABUFFER := false
+
+# Enabled HW accelerated JPEG encoder using VA API
+USE_INTEL_JPEG := false
+
 ifeq ($(BOARD_KERNEL_CMDLINE),)
 BOARD_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger loglevel=4 kmemleak=off androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE)
 endif

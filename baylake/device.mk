@@ -164,9 +164,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
         libsharedbuffer
 
-# Video
+# board specific files
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
+        $(LOCAL_PATH)/camera_profiles.xml:system/etc/camera_profiles.xml
 
 # Camera app
 PRODUCT_PACKAGES += \
