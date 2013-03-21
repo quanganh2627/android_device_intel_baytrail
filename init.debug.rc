@@ -95,6 +95,12 @@ on property:persist.service.power.enable=1
 on property:persist.service.power.enable=0
     stop profile_power
 
+on property:persist.service.memmonitor.on=1
+    start memmonitor
+
+on property:persist.service.memmonitor.on=0
+    stop memmonitor
+
 # crash and log services
 service crashlogd /system/bin/crashlogd
     class late_start
@@ -134,6 +140,10 @@ service profile2_rest /system/bin/pytimechart-record restart_profile2
     oneshot
 
 service profile_power /system/bin/power-record
+    disabled
+    oneshot
+
+service memmonitor /system/bin/memmonitor.sh
     disabled
     oneshot
 
