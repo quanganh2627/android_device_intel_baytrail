@@ -31,7 +31,8 @@ OVERRIDE_COPIES := \
 # Make generic definetion of media components.
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/wrs_omxil_components.list:system/etc/wrs_omxil_components.list
+    $(LOCAL_PATH)/wrs_omxil_components.list:system/etc/wrs_omxil_components.list \
+    $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml
 
 PRODUCT_COPY_FILES := $(OVERRIDE_COPIES) $(PRODUCT_COPY_FILES)
 # keypad key mapping
@@ -52,6 +53,37 @@ PRODUCT_PACKAGES += \
     libgmodule-2.0 \
     libgobject-2.0 \
     libgthread-2.0
+
+# libstagefrighthw
+PRODUCT_PACKAGES += \
+    libstagefrighthw
+
+# omx components
+PRODUCT_PACKAGES += \
+    libwrs_omxil_core_pvwrapped \
+    libOMXVideoDecoderAVC \
+    libOMXVideoDecoderH263 \
+    libOMXVideoDecoderMPEG4 \
+    libOMXVideoDecoderWMV \
+    libOMXVideoEncoderAVC
+
+# libmix
+PRODUCT_PACKAGES += \
+    libmixvbp_mpeg4 \
+    libmixvbp_h264 \
+    libmixvbp_vc1
+
+# libva
+PRODUCT_PACKAGES += \
+    vainfo
+
+# video encoder and camera
+PRODUCT_PACKAGES += \
+    libsharedbuffer
+
+# video editor
+PRODUCT_PACKAGES += \
+    libI420colorconvert
 
 # hardware HAL
 #PRODUCT_PACKAGES += \
