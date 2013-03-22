@@ -1,6 +1,10 @@
 DEVICE_PATH := $(call my-dir)
 
 include vendor/intel/common/AndroidBoard.mk
+
+# Add socwatchdk driver
+-include $(TOP)/device/intel/debug_tools/socwatchdk/src/AndroidSOCWatchDK.mk
+
 LOCAL_PATH := $(DEVICE_PATH)
 
 # Trick the installer boot image into using Google mkbootimg with private var.
@@ -76,8 +80,10 @@ flashfiles:
 	@cp $(PRODUCT_OUT)/droidboot.img $(FLASHFILE_PATH)/
 	@cp $(PRODUCT_OUT)/recovery.img $(FLASHFILE_PATH)/
 	@cp $(INSTALLED_SYSTEMIMG_GZ_TARGET) $(FLASHFILE_PATH)/
-	@cp $(TARGET_DEVICE_DIR)/flash.xml $(FLASHFILE_PATH)/
-	@cp $(TARGET_DEVICE_DIR)/flash-original.xml $(FLASHFILE_PATH)/
+	@cp $(TARGET_DEVICE_DIR)/winbios.xml $(FLASHFILE_PATH)/
+	@cp $(TARGET_DEVICE_DIR)/psi-fw.xml $(FLASHFILE_PATH)/
+	@cp $(TARGET_DEVICE_DIR)/psi-fw-eraseall.xml $(FLASHFILE_PATH)/
+	@cp $(TARGET_DEVICE_DIR)/partition.tbl $(FLASHFILE_PATH)/
 	@zip -j $(FLASHFILE_PATH)/$(FLASHFILE_NAME) $(FLASHFILE_PATH)/*
 	@find $(FLASHFILE_PATH) -name '*.zip' -prune -o -type f -exec rm {} \;
 ### TEMPORARY: override flashfiles -- END
