@@ -122,33 +122,13 @@ on post-fs
     # Insert touchscreen module
     insmod /lib/modules/rmi4.ko
 
-    #  Permissions for Sensors
-    # accelerometer lsm303dlhc
-    chown system system /sys/bus/i2c/devices/5-0019/lis3dh/enable
-    chown system system /sys/bus/i2c/devices/5-0019/lis3dh/poll
-
-    #barometer lps331ap
-    chown system system /sys/bus/i2c/devices/5-005c/enable
-    chown system system /sys/bus/i2c/devices/5-005c/poll
-
-    #compass lsm303dlhc
-    chown system system /sys/bus/i2c/devices/5-001e/lsm303cmp/enable
-    chown system system /sys/bus/i2c/devices/5-001e/lsm303cmp/poll
-
-    #als/ps apds990x
-    chmod 0755 /dev/apds990x_lsensor
-    chmod 0755 /dev/apds990x_psensor
-    chown system system /sys/bus/i2c/devices/5-0039/prox0_raw
-    chown system system /sys/bus/i2c/devices/5-0039/prox0_thresh_above_value
+    #  Permissions for Sensor Hub
+    chown system system /sys/bus/i2c/devices/5-0019/control
+    chown system system /sys/bus/i2c/devices/5-0019/data
+    chown system system /sys/bus/i2c/devices/5-0019/data_size
 
     chown 3700 3700 /dev/sep_sec_driver
     chmod 0660 /dev/sep_sec_driver
-
-    #Gyroscope l3g4200d
-    chown system system /sys/bus/i2c/devices/5-0068/poll
-    chown system system /sys/bus/i2c/devices/5-0068/enable
-    chown system system /sys/bus/i2c/devices/5-006a/poll
-    chown system system /sys/bus/i2c/devices/5-006a/enable
 
     # Permissions for LED
     chown system system /sys/class/leds/intel_keypad_led/brightness
@@ -161,11 +141,22 @@ service baytrail-setup /system/bin/sh /system/etc/init.baytrail.sh
     class core
     oneshot
 
+service psh_fwupdate /system/bin/sh /system/bin/fwupdate_script.sh /system/etc/firmware/psh_bk.bin
+    class main
+    group system
+    oneshot
+
 service surfaceflinger /system/bin/surfaceflinger
     class main
     user system
     group graphics drmrpc
     onrestart restart zygote
+
+service sensorhubd /system/bin/sensorhubd --log-level=2
+    class main
+    group system
+    oneshot
+    disabled
 
 # for eth0
 service net_eth0-start /system/bin/sh /system/etc/init.net.eth0.sh
@@ -182,6 +173,9 @@ service fg_conf /system/bin/fg_conf -w
     group system
     oneshot
     disabled
+
+on property:init.svc.psh_fwupdate=stopped
+    start sensorhubd
 
 on property:ro.debuggable=1
    # Permissions for OSMonitor app
