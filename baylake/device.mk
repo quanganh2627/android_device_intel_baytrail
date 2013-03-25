@@ -65,13 +65,15 @@ PRODUCT_PACKAGES += \
     libOMXVideoDecoderH263 \
     libOMXVideoDecoderMPEG4 \
     libOMXVideoDecoderWMV \
+    libOMXVideoDecoderVP8 \
     libOMXVideoEncoderAVC
 
 # libmix
 PRODUCT_PACKAGES += \
     libmixvbp_mpeg4 \
     libmixvbp_h264 \
-    libmixvbp_vc1
+    libmixvbp_vc1 \
+    libmixvbp_vp8
 
 # libva
 PRODUCT_PACKAGES += \
