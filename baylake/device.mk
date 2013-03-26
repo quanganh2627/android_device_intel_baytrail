@@ -130,6 +130,49 @@ PRODUCT_PACKAGES += \
     rdnssd \
     dhcp6c
 
+# libmfldadvci
+PRODUCT_PACKAGES += \
+    libmfldadvci \
+    dummy.cpf \
+    CGamma_DIS5MP.bin \
+    noise.fpn \
+    Preview_UserParameter_imx135.prm \
+    Primary_UserParameter_imx135.prm \
+    Video_UserParameter_imx135.prm \
+    YGamma_DIS5MP.bin \
+    Mor_8MP_8BQ.txt
+
+# libcamera
+PRODUCT_PACKAGES += \
+    camera.$(PRODUCT_DEVICE)
+
+# IntelCamera Parameters extensions
+PRODUCT_PACKAGES += \
+    libintelcamera_jni \
+    com.intel.camera.extensions \
+    com.intel.camera.extensions.xml
+
+# camera sensor tuning parameter
+PRODUCT_PACKAGES += \
+        libSh3aParamsimx135
+
+# camera firmware
+PRODUCT_PACKAGES += \
+        shisp_2400.bin
+
+# video encoder and camera
+PRODUCT_PACKAGES += \
+        libsharedbuffer
+
+# Video
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
+
+# Camera app
+PRODUCT_PACKAGES += \
+    IntelCamera \
+    TestCamera
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     e2fsck \
