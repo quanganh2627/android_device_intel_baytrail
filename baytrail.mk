@@ -8,7 +8,9 @@ include vendor/intel/common/common.mk
 BYT_PATH := vendor/intel/baytrail
 PRODUCT_COPY_FILES += \
     $(BYT_PATH)/init.byt.usb.rc:root/init.platform.usb.rc \
-    $(BYT_PATH)/init.debug.rc:root/init.debug.rc
+    $(BYT_PATH)/init.debug.rc:root/init.debug.rc \
+    $(BYT_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg \
+    $(BYT_PATH)/mxt1664S-touchscreen.idc:system/usr/idc/mxt1664S-touchscreen.idc
 
 # parameter-framework
 PRODUCT_PACKAGES += \
