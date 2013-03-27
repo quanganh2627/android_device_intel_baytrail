@@ -112,6 +112,12 @@ PRODUCT_PACKAGES += \
     com.intel.multidisplay \
     com.intel.multidisplay.xml
 
+# busybox
+ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
+PRODUCT_PACKAGES += \
+    busybox
+endif
+
 # hw_ssl
 #PRODUCT_PACKAGES += \
     libdx-crys \
