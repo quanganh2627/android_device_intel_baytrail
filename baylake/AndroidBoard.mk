@@ -3,7 +3,7 @@ DEVICE_PATH := $(call my-dir)
 include device/intel/common/AndroidBoard.mk
 
 # Add socwatchdk driver
--include $(TOP)/device/intel/debug_tools/socwatchdk/src/AndroidSOCWatchDK.mk
+-include $(TOP)/linux/modules/debug_tools/socwatchdk/src/AndroidSOCWatchDK.mk
 
 LOCAL_PATH := $(DEVICE_PATH)
 
