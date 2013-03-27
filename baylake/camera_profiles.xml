@@ -62,7 +62,8 @@
         <manufacturerName value="ExampleMaker"/>
         <maxZoomFactor value="1024"/>
         <videoPreviewSizePref value="1024x576"/>
-        <boardName value="merr_vv"/>
+        <previewFormat value="V4L2_PIX_FMT_YVU420"/>  <!-- V4L2_PIX_FMT_YVU420 or V4L2_PIX_FMT_NV12 -->
+        <boardName value="baylake"/>
     </Common>
 </CameraSettings>
 
