@@ -49,6 +49,10 @@ on init
     symlink /storage/emulated/legacy /storage/sdcard0
     symlink /mnt/shell/emulated/0 /storage/emulated/legacy
 
+    # Support external SD card
+    mkdir /storage/sdcard_ext 0000 system system
+    symlink /storage/sdcard_ext /mnt/sdcard_ext
+
     write /sys/class/graphics/fbcon/cursor_blink 0
     mkdir /data/system/ 0770 system system
     mkdir /data/misc 01771 system misc
