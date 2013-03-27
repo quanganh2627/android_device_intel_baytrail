@@ -55,7 +55,7 @@ BOARD_GRAPHIC_IS_GEN := true
 USE_CAMERA_STUB := false
 USE_CAMERA_HAL2 := true
 
-USE_INTEL_METABUFFER := false
+USE_INTEL_METABUFFER := true
 
 # Enabled HW accelerated JPEG encoder using VA API
 USE_INTEL_JPEG := false
