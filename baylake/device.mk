@@ -271,6 +271,11 @@ endif
 PRODUCT_PACKAGES += \
     VppSettings
 
+#audio firmware
+AUDIO_FW_PATH := device/intel/fw/sst/
+PRODUCT_COPY_FILES += \
+    $(AUDIO_FW_PATH)/fw_sst_0f28.bin:system/etc/firmware/fw_sst_0f28.bin \
+
 # Board initrc file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.$(PRODUCT_DEVICE).rc:root/init.$(PRODUCT_DEVICE).rc \
