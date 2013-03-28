@@ -16,3 +16,15 @@ PRODUCT_PACKAGES += \
     crashparsing \
     crashparsing.xml
 endif
+
+# copy permission files
+FRAMEWORK_ETC_PATH := frameworks/native/data/etc
+PERMISSIONS_PATH := system/etc/permissions
+
+# Wi-Fi
+PRODUCT_COPY_FILES += \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.direct.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml
+
+PRODUCT_PACKAGES += \
+        wifi_bcm_43241

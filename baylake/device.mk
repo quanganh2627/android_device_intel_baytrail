@@ -132,10 +132,6 @@ endif
 PRODUCT_PACKAGES += \
     bt_ti
 
-# Wifi
-PRODUCT_PACKAGES += \
-    wifi_ti
-
 # IPV6
 PRODUCT_PACKAGES += \
     rdnssd \
