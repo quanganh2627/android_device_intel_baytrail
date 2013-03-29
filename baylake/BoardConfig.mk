@@ -45,13 +45,23 @@ USE_INTEL_IPP := true
 
 TARGET_NO_BOOTLOADER := false
 
+#GEN is one graphic and video engine
+# Baytrail uses the GEN for the graphic and video
+BOARD_GRAPHIC_IS_GEN := true
+
 # Camera
 # Set USE_CAMERA_STUB to 'true' for Fake Camera builds,
 # 'false' for libcamera builds to use Camera Imaging(CI) supported by intel.
-USE_CAMERA_STUB := true
+USE_CAMERA_STUB := false
+USE_CAMERA_HAL2 := true
+
+USE_INTEL_METABUFFER := false
+
+# Enabled HW accelerated JPEG encoder using VA API
+USE_INTEL_JPEG := false
 
 ifeq ($(BOARD_KERNEL_CMDLINE),)
-BOARD_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger loglevel=4 kmemleak=off androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE) emmc_ipanic.ipanic_part_number=1
+BOARD_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger loglevel=4 kmemleak=off androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE)
 endif
 
 # Graphics
@@ -85,6 +95,12 @@ TARGET_USE_DISKINSTALLER := true
 TARGET_DISK_LAYOUT_CONFIG := $(DEVICE_PATH)/disk_layout.conf
 
 BOARD_USES_LIBPSS := false
+
+INTEL_VA:=true
+USE_INTEL_VA:=true
+BOARD_USES_WRS_OMXIL_CORE:=true
+BOARD_USES_MRST_OMX:=true
+USE_INTEL_ASF_EXTRACTOR:=true
 
 BOARD_USE_LIBVA_INTEL_DRIVER := true
 BOARD_USE_LIBVA := true

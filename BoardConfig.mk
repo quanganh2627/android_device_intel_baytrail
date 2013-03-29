@@ -37,3 +37,6 @@ endif
 ifneq ($(DROIDBOOT_SCRATCH_SIZE),)
 BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE += droidboot.scratch=$(DROIDBOOT_SCRATCH_SIZE)
 endif
+
+# enable libsensorhub
+ENABLE_SENSOR_HUB := true

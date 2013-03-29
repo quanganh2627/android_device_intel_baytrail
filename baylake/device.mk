@@ -25,7 +25,14 @@ PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
 OVERRIDE_COPIES := \
     $(LOCAL_PATH)/asound.conf:system/etc/asound.conf \
     $(LOCAL_PATH)/init.baylake.sh:root/init.baylake.sh \
+    $(LOCAL_PATH)/egl.cfg:system/lib/egl/egl.cfg \
     $(LOCAL_PATH)/init.net.eth0.sh:root/init.net.eth0.sh
+
+# Make generic definetion of media components.
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/wrs_omxil_components.list:system/etc/wrs_omxil_components.list \
+    $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml
 
 PRODUCT_COPY_FILES := $(OVERRIDE_COPIES) $(PRODUCT_COPY_FILES)
 # keypad key mapping
@@ -46,6 +53,37 @@ PRODUCT_PACKAGES += \
     libgmodule-2.0 \
     libgobject-2.0 \
     libgthread-2.0
+
+# libstagefrighthw
+PRODUCT_PACKAGES += \
+    libstagefrighthw
+
+# omx components
+PRODUCT_PACKAGES += \
+    libwrs_omxil_core_pvwrapped \
+    libOMXVideoDecoderAVC \
+    libOMXVideoDecoderH263 \
+    libOMXVideoDecoderMPEG4 \
+    libOMXVideoDecoderWMV \
+    libOMXVideoEncoderAVC
+
+# libmix
+PRODUCT_PACKAGES += \
+    libmixvbp_mpeg4 \
+    libmixvbp_h264 \
+    libmixvbp_vc1
+
+# libva
+PRODUCT_PACKAGES += \
+    vainfo
+
+# video encoder and camera
+PRODUCT_PACKAGES += \
+    libsharedbuffer
+
+# video editor
+PRODUCT_PACKAGES += \
+    libI420colorconvert
 
 # hardware HAL
 #PRODUCT_PACKAGES += \
@@ -91,6 +129,50 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     rdnssd \
     dhcp6c
+
+# libmfldadvci
+PRODUCT_PACKAGES += \
+    libmfldadvci \
+    dummy.cpf \
+    CGamma_DIS5MP.bin \
+    noise.fpn \
+    Preview_UserParameter_imx135.prm \
+    Primary_UserParameter_imx135.prm \
+    Video_UserParameter_imx135.prm \
+    YGamma_DIS5MP.bin \
+    Mor_8MP_8BQ.txt
+
+# libcamera
+PRODUCT_PACKAGES += \
+    camera.$(PRODUCT_DEVICE)
+
+# IntelCamera Parameters extensions
+PRODUCT_PACKAGES += \
+    libintelcamera_jni \
+    com.intel.camera.extensions \
+    com.intel.camera.extensions.xml
+
+# camera sensor tuning parameter
+PRODUCT_PACKAGES += \
+        libSh3aParamsimx135
+
+# camera firmware
+PRODUCT_PACKAGES += \
+        shisp_2400.bin
+
+# video encoder and camera
+PRODUCT_PACKAGES += \
+        libsharedbuffer
+
+# board specific files
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
+        $(LOCAL_PATH)/camera_profiles.xml:system/etc/camera_profiles.xml
+
+# Camera app
+PRODUCT_PACKAGES += \
+    IntelCamera \
+    TestCamera
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \

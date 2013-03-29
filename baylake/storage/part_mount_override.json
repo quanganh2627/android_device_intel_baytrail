@@ -1,0 +1,64 @@
+{
+		"partitions":
+		{
+			"reserved": {
+				"size": 224
+			},
+
+			"FWUP": {
+				"id": 2,
+				"label": null,
+				"lba_start": null,
+				"size": 32,
+				"type": "efi",
+				"fs_type": "hidden",
+				"uuid": "0000000000FF",
+				"priority": 0,
+				"try": 0,
+				"length": 0,
+				"mount_point": null,
+				"mount_options": null,
+				"fs_mgr": null
+			},
+
+			"panic":
+			{
+				"id": 3
+			},
+
+			"factory":
+			{
+				"id": 4
+			},
+
+			"spare":
+			{
+				"id": 5
+			},
+
+			"config":
+			{
+				"id": 6
+			},
+
+			"cache":
+			{
+				"id": 7
+			},
+
+			"logs":
+			{
+				"id": 8
+			},
+
+			"system":
+			{
+				"id": 9
+			},
+
+			"data":
+			{
+				"id": 10
+			}
+		}
+}

@@ -68,7 +68,7 @@ $(PRODUCT_OUT)/startup.nsh: $(PRODUCT_OUT)/kernel $(TARGET_DEVICE_DIR)/BoardConf
 	echo "fs0:\kernel.efi $(BOARD_KERNEL_CMDLINE) initrd=ramdisk.img" >> "$(PRODUCT_OUT)/startup.nsh"
 
 ### TEMPORARY: override flashfiles defined in common until baytrail supports them.
-flashfiles:
+flashfiles: $(PRODUCT_OUT)/partition.tbl
 	@$(eval FLASHFILE_PATH := $(PUBLISH_PATH)/$(TARGET_PUBLISH_PATH)/flash_files/build-$(PUBLISH_TARGET_BUILD_VARIANT))
 	@$(eval FLASHFILE_NAME := $(GENERIC_TARGET_NAME)-$(PUBLISH_TARGET_BUILD_VARIANT)-fastboot-$(FILE_NAME_TAG).zip)
 	@echo "Generating $(FLASHFILE_PATH)/$(FLASHFILE_NAME)"
@@ -81,9 +81,12 @@ flashfiles:
 	@cp $(PRODUCT_OUT)/recovery.img $(FLASHFILE_PATH)/
 	@cp $(INSTALLED_SYSTEMIMG_GZ_TARGET) $(FLASHFILE_PATH)/
 	@cp $(TARGET_DEVICE_DIR)/winbios.xml $(FLASHFILE_PATH)/
+	@cp $(TARGET_DEVICE_DIR)/flash.xml $(FLASHFILE_PATH)/
 	@cp $(TARGET_DEVICE_DIR)/psi-fw.xml $(FLASHFILE_PATH)/
 	@cp $(TARGET_DEVICE_DIR)/psi-fw-eraseall.xml $(FLASHFILE_PATH)/
-	@cp $(TARGET_DEVICE_DIR)/partition.tbl $(FLASHFILE_PATH)/
+	@cp $(OUT)/partition.tbl $(FLASHFILE_PATH)/
+	@$(shell cat $(TARGET_DEVICE_DIR)/dummy-capsule-header.bin $(IFWI_PREBUILT_PATHS)/iafw.bin| dd of=$(PRODUCT_OUT)/byt_psi_encapsulated_ifwi.bin bs=4096)
+	@cp $(PRODUCT_OUT)/byt_psi_encapsulated_ifwi.bin $(FLASHFILE_PATH)/
 	@zip -j $(FLASHFILE_PATH)/$(FLASHFILE_NAME) $(FLASHFILE_PATH)/*
 	@find $(FLASHFILE_PATH) -name '*.zip' -prune -o -type f -exec rm {} \;
 ### TEMPORARY: override flashfiles -- END
