@@ -159,3 +159,17 @@ service logsystemstate /system/bin/dumpstate_dropbox.sh -v
     class main
     disabled
     oneshot
+
+
+# start Berta agent only on property
+service berta /system/berta/run-berta.sh
+    class main
+    # default disabled
+    disabled
+    group root system net_admin log
+
+on property:persist.berta.enabled=0
+    stop berta
+
+on property:persist.berta.enabled=1
+    start berta
