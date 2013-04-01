@@ -79,6 +79,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vainfo
 
+PRODUCT_PACKAGES += \
+    msvdx_fw_mfld_DE2.0.bin
+
 # video encoder and camera
 PRODUCT_PACKAGES += \
     libsharedbuffer
