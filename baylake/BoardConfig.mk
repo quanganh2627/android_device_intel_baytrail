@@ -116,3 +116,9 @@ USE_INTEL_ASF_EXTRACTOR:=true
 BOARD_USE_LIBVA_INTEL_DRIVER := true
 BOARD_USE_LIBVA := true
 BOARD_USE_LIBMIX := true
+
+# Settings for the Media SDK library and plug-ins:
+# - USE_MEDIASDK: use Media SDK support or not
+# - MFX_IPP: sets IPP library optimization to use
+USE_MEDIASDK := true
+MFX_IPP := p8

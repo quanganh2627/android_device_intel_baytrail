@@ -32,6 +32,7 @@ OVERRIDE_COPIES := \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/wrs_omxil_components.list:system/etc/wrs_omxil_components.list \
+    $(LOCAL_PATH)/mfx_omxil_core.conf:system/etc/mfx_omxil_core.conf \
     $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/sensors/sensor_hal_config_default.xml:system/etc/sensor_hal_config_default.xml
 
@@ -58,6 +59,14 @@ PRODUCT_PACKAGES += \
 # libstagefrighthw
 PRODUCT_PACKAGES += \
     libstagefrighthw
+
+# Media SDK and OMX IL components
+PRODUCT_PACKAGES += \
+    libmfxhw32 \
+    libmfx_omx_core \
+    libmfx_omx_components_hw \
+    libgabi++-mfx \
+    libstlport-mfx
 
 # omx components
 PRODUCT_PACKAGES += \
