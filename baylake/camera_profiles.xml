@@ -103,7 +103,7 @@
     </Profiles>
 
     <Profiles cameraId="1">
-        <sensorType value="SENSOR_TYPE_SOC"/> <!-- SENSOR_TYPE_SOC or SENSOR_TYPE_RAW -->
+        <sensorType value="SENSOR_TYPE_RAW"/> <!-- SENSOR_TYPE_SOC or SENSOR_TYPE_RAW -->
         <facing value="CAMERA_FACING_FRONT"/> <!-- CAMERA_FACING_FRONT or CAMERA_FACING_BACK -->
         <orientation value="0"/> <!-- one of 0,90,180,270 -->
         <dvs value="false"/>
@@ -115,15 +115,10 @@
         <supportedSceneModes value="auto"/>
         <defaultFlashMode value=""/>
         <supportedFlashModes value=""/>
-        <supportedEffectModes value="none"/>
-        <supportedIntelEffectModes value="none"/>
-        <supportedAwbModes value="auto"/>
-        <defaultIso value=""/>
-        <supportedIso value=""/>
-        <defaultAeMetering value=""/>
-        <supportedAeMetering value=""/>
         <defaultFocusMode value="fixed"/>
         <supportedFocusModes value="fixed"/>
+        <maxEV value="6"/>
+        <minEV value="-6"/>
     </Profiles>
 
     <Common>
@@ -138,6 +133,7 @@
         <videoPreviewSizePref value="1024x576"/>
         <previewFormat value="V4L2_PIX_FMT_YVU420"/>  <!-- V4L2_PIX_FMT_YVU420 or V4L2_PIX_FMT_NV12 -->
         <boardName value="baylake"/>
+        <supportAIQ value="true"/>
     </Common>
 </CameraSettings>
 
