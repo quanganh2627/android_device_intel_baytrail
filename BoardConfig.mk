@@ -10,6 +10,9 @@ BOARD_SKIP_NVM := false
 
 ENABLE_GEN_GRAPHICS := true
 
+# Upload crashreport disabling
+ADDITIONAL_DEFAULT_PROPERTIES += persist.crashreport.disabled=1
+
 ifneq ($(TARGET_NO_RECOVERY),true)
 TARGET_RECOVERY_UI_LIB := libintel_recovery_ui
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
