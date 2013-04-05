@@ -26,6 +26,4 @@
 ######################
 
 # Mounts the first usable partition of the specified device
-#dev_mount sdcard2 /storage/sdcard2 auto */block/mmcblk0 */block/mmcblk1
-dev_mount sdcard2 /storage/sdcard2 auto  */block/mmcblk1 */block/mmcblk2
-dev_mount usb /storage/usbcard auto */block/sdb */block/sda
+dev_mount sdcard_ext /storage/sdcard_ext auto /devices/pci0000:00/0000:00:12.0/mmc_host

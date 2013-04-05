@@ -40,17 +40,11 @@ on post-fs-data
     #you must enable next line when you don`t use crashlogd
     #write /proc/emmc_ipanic_console 1
 
-    # Collect fabric error data, free resources and re-arm trigger
-    copy /proc/ipanic_fabric_err /data/dontpanic/ipanic_fabric_err
-    chown root log /data/dontpanic/ipanic_fabric_err
-    chmod 0640 /data/dontpanic/ipanic_fabric_err
-
 on charger
     # basic networking for "adb root"
     ifup lo
     hostname localhost
     domainname localdomain
-    mount ext4 /dev/block/mmcblk0p7 /logs nosuid nodev barrier=1,data=ordered
     mkdir /logs/modemcrash 0775 system system
     mkdir /logs/stats 0775 system system
     mkdir /logs/gps 0775 system system
@@ -86,18 +80,6 @@ on property:persist.service.aplogsd.enable=1
 on property:persist.service.aplogsd.enable=0
     stop ap_logsd
 
-on property:persist.service.aplogpti.enable=1
-    write /sys/module/logger_pti/parameters/out "main,system,radio"
-
-on property:persist.service.aplogpti.enable=0
-    write /sys/module/logger_pti/parameters/out ""
-
-on property:persist.service.aklogpti.enable=1
-   write /sys/module/logger_pti/parameters/out "main,system,radio,kernel"
-
-on property:persist.service.aklogpti.enable=0
-   write /sys/module/logger_pti/parameters/out ""
-
 on property:persist.service.profile.enable=0
     start profile_stop
 
@@ -112,6 +94,12 @@ on property:persist.service.power.enable=1
 
 on property:persist.service.power.enable=0
     stop profile_power
+
+on property:persist.service.memmonitor.on=1
+    start memmonitor
+
+on property:persist.service.memmonitor.on=0
+    stop memmonitor
 
 # crash and log services
 service crashlogd /system/bin/crashlogd
@@ -152,6 +140,10 @@ service profile2_rest /system/bin/pytimechart-record restart_profile2
     oneshot
 
 service profile_power /system/bin/power-record
+    disabled
+    oneshot
+
+service memmonitor /system/bin/memmonitor.sh
     disabled
     oneshot
 

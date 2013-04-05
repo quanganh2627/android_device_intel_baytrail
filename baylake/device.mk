@@ -65,17 +65,22 @@ PRODUCT_PACKAGES += \
     libOMXVideoDecoderH263 \
     libOMXVideoDecoderMPEG4 \
     libOMXVideoDecoderWMV \
+    libOMXVideoDecoderVP8 \
     libOMXVideoEncoderAVC
 
 # libmix
 PRODUCT_PACKAGES += \
     libmixvbp_mpeg4 \
     libmixvbp_h264 \
-    libmixvbp_vc1
+    libmixvbp_vc1 \
+    libmixvbp_vp8
 
 # libva
 PRODUCT_PACKAGES += \
     vainfo
+
+PRODUCT_PACKAGES += \
+    msvdx_fw_mfld_DE2.0.bin
 
 # video encoder and camera
 PRODUCT_PACKAGES += \
@@ -111,6 +116,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     com.intel.multidisplay \
     com.intel.multidisplay.xml
+
+# busybox
+ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
+PRODUCT_PACKAGES += \
+    busybox
+endif
 
 # hw_ssl
 #PRODUCT_PACKAGES += \
@@ -252,14 +263,17 @@ ifeq ($(TARGET_BUILD_VARIANT),eng)
      WidevineSamplePlayer
 endif
 
+# Intel VPP/FRC
+PRODUCT_PACKAGES += \
+    VppSettings
+
 # Board initrc file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.$(PRODUCT_DEVICE).rc:root/init.$(PRODUCT_DEVICE).rc \
-
+    $(LOCAL_PATH)/init.avc.rc:root/init.avc.rc
 #    $(LOCAL_PATH)/init.diag.rc:root/init.diag.rc \
 #    $(LOCAL_PATH)/init.wireless.rc:root/init.wireless.rc \
 #    $(LOCAL_PATH)/init.modem.rc:root/init.modem.rc \
-#    $(LOCAL_PATH)/init.avc.rc:root/init.avc.rc
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab

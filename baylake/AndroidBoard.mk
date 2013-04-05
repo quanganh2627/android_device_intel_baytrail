@@ -85,7 +85,7 @@ flashfiles: $(PRODUCT_OUT)/partition.tbl
 	@cp $(TARGET_DEVICE_DIR)/psi-fw.xml $(FLASHFILE_PATH)/
 	@cp $(TARGET_DEVICE_DIR)/psi-fw-eraseall.xml $(FLASHFILE_PATH)/
 	@cp $(OUT)/partition.tbl $(FLASHFILE_PATH)/
-	@$(shell cat $(TARGET_DEVICE_DIR)/dummy-capsule-header.bin $(IFWI_PREBUILT_PATHS)/iafw.bin| dd of=$(PRODUCT_OUT)/byt_psi_encapsulated_ifwi.bin bs=4096)
+	@cp $(IFWI_PREBUILT_PATHS)/capsule.bin $(PRODUCT_OUT)/byt_psi_encapsulated_ifwi.bin
 	@cp $(PRODUCT_OUT)/byt_psi_encapsulated_ifwi.bin $(FLASHFILE_PATH)/
 	@zip -j $(FLASHFILE_PATH)/$(FLASHFILE_NAME) $(FLASHFILE_PATH)/*
 	@find $(FLASHFILE_PATH) -name '*.zip' -prune -o -type f -exec rm {} \;

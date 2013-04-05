@@ -299,11 +299,12 @@
     </CamcorderProfiles>
 
     <CamcorderProfiles cameraId="1">
+
         <EncoderProfile quality="high" fileFormat="3gp" duration="60">
             <Video codec="h264"
-                   bitRate="3000000"
-                   width="1280"
-                   height="720"
+                   bitRate="15000000"
+                   width="1920"
+                   height="1080"
                    frameRate="30" />
 
             <Audio codec="aac"
@@ -384,6 +385,19 @@
                    bitRate="3000000"
                    width="1280"
                    height="720"
+                   frameRate="30" />
+
+            <Audio codec="aac"
+                   bitRate="320000"
+                   sampleRate="48000"
+                   channels="2" />
+        </EncoderProfile>
+
+        <EncoderProfile quality="1080p" fileFormat="3gp" duration="60">
+            <Video codec="h264"
+                   bitRate="15000000"
+                   width="1920"
+                   height="1080"
                    frameRate="30" />
 
             <Audio codec="aac"
