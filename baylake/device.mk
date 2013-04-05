@@ -181,6 +181,11 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
         $(LOCAL_PATH)/camera_profiles.xml:system/etc/camera_profiles.xml
 
+# audio policy file
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/audio_policy.conf:system/etc/audio_policy.conf
+
+
 # Camera app
 PRODUCT_PACKAGES += \
     IntelCamera \
