@@ -73,6 +73,16 @@ on boot
     chown system system /sys/class/thermal/cooling_device0/cur_state
     chown system system /sys/class/thermal/cooling_device1/cur_state
 
+    # GEN Graphics specific setup.
+    chown system system /dev/card0
+    chown system system /sys/class/backlight/intel_backlight/brightness
+    chown system system /sys/class/backlight/intel_backlight/max_brightness
+    chown system system /sys/class/backlight/intel_backlight/actual_brightness
+    chmod 0666 /dev/card0
+    chmod 0664 /sys/class/backlight/intel_backlight/brightness
+    chmod 0664 /sys/class/backlight/intel_backlight/max_brightness
+    chmod 0664 /sys/class/backlight/intel_backlight/actual_brightness
+
     # Run surfaceflinger in a standalone process to avoid deadlock against gfx apps.
     setprop system_init.startsurfaceflinger 0
 
