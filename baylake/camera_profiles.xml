@@ -133,7 +133,7 @@
         <subDevName value="/dev/v4l-subdev8"/>
         <fileInject value="true"/>
         <backFlash value="true"/>
-        <continuousCapture value="false"/>
+        <continuousCapture value="true"/>
         <maxContinuousRawRingBuffer value="11"/>
         <productName value="ExampleModel"/>
         <manufacturerName value="ExampleMaker"/>
