@@ -86,20 +86,10 @@
 			<Component Name="RELEASE" Type="PHASE_CTRL" Mapping="ParamOffset:1"/>
 		</ComponentType>
 		<ComponentType Name="CAPTURE_PATH">
-			<Component Name="MONO_EQ" Type="MONO_EQ"/>
-			<Component Name="DC_REMOVAL" Type="DC_REMOVAL"/>
-			<Component Name="GAIN_CTRL" Type="GAIN_CTRL"/>
 		</ComponentType>
 		<ComponentType Name="HSEP_PLAYBACK_PATH">
-			<Component Name="MONO_EQ" Type="MONO_EQ"/>
-			<Component Name="STEREO_EQ" Type="STEREO_EQ"/>
-			<Component Name="MUTE_CTRL" Type="MUTE_CTRL"/>
 		</ComponentType>
 		<ComponentType Name="IHF_PLAYBACK_PATH">
-			<Component Name="STEREO_EQ" Type="STEREO_EQ"/>
-			<Component Name="GAIN_CTRL" Type="GAIN_CTRL"/>
-			<Component Name="MUTE_CTRL" Type="MUTE_CTRL"/>
-			<Component Name="SDRC_CTRL" Type="SDRC_CTRL"/>
 		</ComponentType>
 	</ComponentLibrary>
 	<InstanceDefinition>
