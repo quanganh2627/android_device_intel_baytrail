@@ -48,7 +48,7 @@
         <maxBurstFPS value="15"/>
         <supportedBurstFPS value="1,3,5,7,15"/>
         <previewViaOverlay value="false"/>
-        <maxPreviewPixelCountForVFPP value="0xFFFFFFFF"/>
+        <VFPPLimitedResolutionList value="1024x768"/>
         <overlayRelativeRotation value="90"/>
         <maxSaturation value=""/>
         <minSaturation value=""/>
