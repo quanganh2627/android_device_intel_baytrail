@@ -214,9 +214,6 @@ on charger
     start watchdogd
     insmod /lib/modules/rmi4.ko boot_mode=1
 
-    # /system is not already mounted under COS
-    mount ext4 /dev/block/mmcblk0p8 /system ro noatime
-
     # Invoke fuel gauging helper binary to restore config data
     symlink /dev/max170xx /dev/fg
     chmod 0775 /dev/fg
