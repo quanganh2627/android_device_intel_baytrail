@@ -46,3 +46,8 @@ else
  PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/parameter-framework/XML/ParameterFrameworkConfigurationNoTuning.xml:system/etc/parameter-framework/ParameterFrameworkConfiguration.xml
 endif
+
+#alsa conf
+ALSA_CONF_PATH := external/alsa-lib/
+PRODUCT_COPY_FILES += \
+    $(ALSA_CONF_PATH)/src/conf/alsa.conf:system/usr/share/alsa/alsa.conf
