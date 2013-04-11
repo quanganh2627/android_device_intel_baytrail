@@ -97,7 +97,7 @@
         <minEV value="-6"/>
         <orientation value="0"/> <!-- one of 0,90,180,270 -->
         <supportedBurstLength value="1,3,5,9,10"/>
-        <supportedPreviewSizes value="1024x768,1024x576,800x600,720x480,640x480,640x360,352x288,320x240,176x144"/>
+        <supportedPreviewSizes value="1024x768,1024x576,720x480,640x480,640x360,352x288,320x240,176x144"/>
         <supportedVideoSizes value="176x144,320x240,352x288,640x480,720x480,1280x720,1920x1080"/>
 
         <supportedSceneModes value="auto,portrait,sports,landscape,night,fireworks,barcode,night-portrait"/>
