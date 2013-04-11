@@ -140,6 +140,10 @@ endif
     libdx-crys \
     start-sep
 
+# BCM4752 GPS
+PRODUCT_PACKAGES += \
+    gps_bcm_4752_extlna
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     bt_ti
