@@ -124,3 +124,6 @@ BOARD_USE_LIBMIX := true
 # - MFX_IPP: sets IPP library optimization to use
 USE_MEDIASDK := true
 MFX_IPP := p8
+
+# Defines Intel library for GPU accelerated Renderscript:
+OVERRIDE_RS_DRIVER := libRSDriver_intel7.so
