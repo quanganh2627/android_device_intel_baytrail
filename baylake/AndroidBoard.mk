@@ -80,10 +80,7 @@ flashfiles: $(PRODUCT_OUT)/partition.tbl
 	@cp $(PRODUCT_OUT)/droidboot.img $(FLASHFILE_PATH)/
 	@cp $(PRODUCT_OUT)/recovery.img $(FLASHFILE_PATH)/
 	@cp $(INSTALLED_SYSTEMIMG_GZ_TARGET) $(FLASHFILE_PATH)/
-	@cp $(TARGET_DEVICE_DIR)/winbios.xml $(FLASHFILE_PATH)/
 	@cp $(TARGET_DEVICE_DIR)/flash.xml $(FLASHFILE_PATH)/
-	@cp $(TARGET_DEVICE_DIR)/psi-fw.xml $(FLASHFILE_PATH)/
-	@cp $(TARGET_DEVICE_DIR)/psi-fw-eraseall.xml $(FLASHFILE_PATH)/
 	@cp $(OUT)/partition.tbl $(FLASHFILE_PATH)/
 	@cp $(IFWI_PREBUILT_PATHS)/capsule.bin $(PRODUCT_OUT)/byt_psi_encapsulated_ifwi.bin
 	@cp $(PRODUCT_OUT)/byt_psi_encapsulated_ifwi.bin $(FLASHFILE_PATH)/

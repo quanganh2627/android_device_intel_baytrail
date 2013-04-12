@@ -34,14 +34,23 @@ TARGET_RIL_DISABLE_STATUS_POLLING := true
 BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 
 # Connectivity
-BOARD_HAVE_WIFI := false
+BOARD_HAVE_WIFI := true
 INTEL_WIDI := false
 BOARD_HAVE_BLUETOOTH := false
 BOARD_HAVE_GPS := false
 TARGET_HAS_VPP := true
 TARGET_VPP_USE_GEN := true
+COMMON_GLOBAL_CFLAGS += -DGFX_BUF_EXT
 
 USE_INTEL_IPP := true
+
+# Audio
+BOARD_USES_ALSA_AUDIO := true
+BOARD_USES_AUDIO_HAL_CONFIGURABLE := true
+BOARD_USE_VIBRATOR_ALSA := false
+BUILD_WITH_ALSA_UTILS := true
+BOARD_USES_GENERIC_AUDIO := false
+BOARD_HAVE_AUDIENCE := false
 
 # Board configuration for Intel PC STD platform
 
@@ -63,7 +72,7 @@ USE_INTEL_METABUFFER := true
 USE_INTEL_JPEG := false
 
 ifeq ($(BOARD_KERNEL_CMDLINE),)
-BOARD_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger loglevel=4 kmemleak=off emmc_ipanic.ipanic_part_number=3 androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE)
+BOARD_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger loglevel=4 kmemleak=off emmc_ipanic.ipanic_part_number=3 androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra)
 endif
 
 # Graphics
