@@ -10,6 +10,7 @@ PRODUCT_COPY_FILES += \
     $(BYT_PATH)/init.debug.rc:root/init.debug.rc \
     $(BYT_PATH)/props.baytrail.rc:root/props.platform.rc \
     $(BYT_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg \
+    $(BYT_PATH)/maxtouch.fw:system/etc/firmware/maxtouch.fw \
     $(BYT_PATH)/mxt1664S-touchscreen.idc:system/usr/idc/mxt1664S-touchscreen.idc
 
 # Kernel Watchdog
