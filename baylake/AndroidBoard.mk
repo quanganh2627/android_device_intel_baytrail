@@ -1,5 +1,8 @@
 DEVICE_PATH := $(call my-dir)
 
+-include $(TOP)/$(KERNEL_SRC_DIR)/AndroidKernel.mk
+-include $(TOP)/hardware/intel/linux-2.6/AndroidKernel.mk
+
 include vendor/intel/common/AndroidBoard.mk
 
 # Add socwatchdk driver
@@ -19,9 +22,6 @@ ifeq ($(IA_NCG),true)
 ADDITIONAL_BUILD_PROPERTIES += dalvik.vm.startup-ncg=spec
 ADDITIONAL_BUILD_PROPERTIES += dalvik.vm.ncg-mode=O1
 endif
-
--include $(TOP)/$(KERNEL_SRC_DIR)/AndroidKernel.mk
--include $(TOP)/hardware/intel/linux-2.6/AndroidKernel.mk
 
 .PHONY: build_kernel
 ifeq ($(TARGET_KERNEL_SOURCE_IS_PRESENT),true)
