@@ -68,6 +68,8 @@ USE_CAMERA_HAL2 := true
 
 USE_INTEL_METABUFFER := true
 
+USE_CSS_2_0 := true
+
 # Enabled HW accelerated JPEG encoder using VA API
 USE_INTEL_JPEG := false
 
