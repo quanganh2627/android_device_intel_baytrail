@@ -146,7 +146,7 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    bt_ti
+    bt_bcm
 
 # IPV6
 PRODUCT_PACKAGES += \
