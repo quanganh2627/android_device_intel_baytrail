@@ -107,7 +107,8 @@ PRODUCT_PACKAGES += \
     libbluetooth-audio \
     mediabtservice \
     audio.a2dp.default \
-    vibrator.$(PRODUCT_DEVICE)
+    vibrator.$(PRODUCT_DEVICE) \
+    audio.usb.default
 
 # sensors
 PRODUCT_PACKAGES += \
