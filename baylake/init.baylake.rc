@@ -153,11 +153,6 @@ service baytrail-setup /system/bin/sh /system/etc/init.baytrail.sh
     class core
     oneshot
 
-service psh_fwupdate /system/bin/sh /system/bin/fwupdate_script.sh /system/etc/firmware/psh_bk.bin
-    class main
-    group system
-    oneshot
-
 service surfaceflinger /system/bin/surfaceflinger
     class main
     user system
@@ -168,7 +163,6 @@ service sensorhubd /system/bin/sensorhubd --log-level=2
     class main
     group system
     oneshot
-    disabled
 
 # for eth0
 service net_eth0-start /system/bin/sh /system/etc/init.net.eth0.sh
@@ -185,9 +179,6 @@ service fg_conf /system/bin/fg_conf -w
     group system
     oneshot
     disabled
-
-on property:init.svc.psh_fwupdate=stopped
-    start sensorhubd
 
 on property:ro.debuggable=1
    # Permissions for OSMonitor app
