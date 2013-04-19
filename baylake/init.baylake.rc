@@ -135,9 +135,9 @@ on post-fs
     insmod /lib/modules/rmi4.ko
 
     #  Permissions for Sensor Hub
-    chown system system /sys/bus/i2c/devices/5-0019/control
-    chown system system /sys/bus/i2c/devices/5-0019/data
-    chown system system /sys/bus/i2c/devices/5-0019/data_size
+    chown system system /sys/bus/i2c/devices/5-0040/control
+    chown system system /sys/bus/i2c/devices/5-0040/data
+    chown system system /sys/bus/i2c/devices/5-0040/data_size
 
     chown 3700 3700 /dev/sep_sec_driver
     chmod 0660 /dev/sep_sec_driver
