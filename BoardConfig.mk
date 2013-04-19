@@ -1,3 +1,6 @@
+# Force SPID value
+SPID = 0000:0000:0000:0007:0000:0000
+
 include vendor/intel/common/BoardConfig.mk
 
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1073741824
@@ -9,9 +12,6 @@ TARGET_NO_RECOVERY := false
 BOARD_SKIP_NVM := false
 
 ENABLE_GEN_GRAPHICS := true
-
-# Upload crashreport disabling
-ADDITIONAL_DEFAULT_PROPERTIES += persist.crashreport.disabled=1
 
 ifneq ($(TARGET_NO_RECOVERY),true)
 TARGET_RECOVERY_UI_LIB := libintel_recovery_ui
