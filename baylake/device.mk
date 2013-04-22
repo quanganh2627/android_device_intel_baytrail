@@ -87,7 +87,8 @@ PRODUCT_PACKAGES += \
 
 # libva
 PRODUCT_PACKAGES += \
-    vainfo
+    vainfo \
+    pvr_drv_video
 
 PRODUCT_PACKAGES += \
     msvdx_fw_mfld_DE2.0.bin
