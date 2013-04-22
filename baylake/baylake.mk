@@ -54,3 +54,7 @@ endif
 ALSA_CONF_PATH := external/alsa-lib/
 PRODUCT_COPY_FILES += \
     $(ALSA_CONF_PATH)/src/conf/alsa.conf:system/usr/share/alsa/alsa.conf
+
+# specific management of audio_effects.conf
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf
