@@ -123,6 +123,8 @@ BOARD_USE_LIBMIX := true
 # - USE_MEDIASDK: use Media SDK support or not
 # - MFX_IPP: sets IPP library optimization to use
 USE_MEDIASDK := true
+# Enable CIP Codecs
+USE_INTEL_MDP := true
 MFX_IPP := p8
 
 # Defines Intel library for GPU accelerated Renderscript:
