@@ -18,8 +18,8 @@ PRODUCT_PACKAGES += \
     parameter-connector-test \
     libxmlserializer \
     liblpe-subsystem \
-    libamixer-subsystem \
-    libalsactl-subsystem \
+    libtinyamixer-subsystem \
+    libtinyalsactl-subsystem \
     libbluetooth-subsystem \
     libfs-subsystem \
     libproperty-subsystem \
