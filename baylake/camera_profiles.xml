@@ -115,8 +115,8 @@
         <supportedVideoSizes value="176x144,320x240,352x288,640x480,720x480,1280x720,1920x1080"/>
 
         <supportedSceneModes value="auto"/>
-        <defaultFlashMode value=""/>
-        <supportedFlashModes value=""/>
+        <defaultFlashMode value="off"/>
+        <supportedFlashModes value="off"/>
         <defaultFocusMode value="fixed"/>
         <supportedFocusModes value="fixed"/>
         <maxEV value="6"/>
