@@ -134,6 +134,11 @@ on post-fs
     # Insert touchscreen module
     insmod /lib/modules/rmi4.ko
 
+    #  Permissions for pshfw update tool
+    chown system system /dev/i2c-5
+    chown system system /sys/class/gpio/gpio59/value
+    chown system system /sys/class/gpio/gpio95/value
+
     #  Permissions for Sensor Hub
     chown system system /sys/bus/i2c/devices/5-0040/control
     chown system system /sys/bus/i2c/devices/5-0040/data
