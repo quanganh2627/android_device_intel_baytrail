@@ -32,6 +32,7 @@ OVERRIDE_COPIES := \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/wrs_omxil_components.list:system/etc/wrs_omxil_components.list \
+    $(LOCAL_PATH)/mfx_omxil_core.conf:system/etc/mfx_omxil_core.conf \
     $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/sensors/sensor_hal_config_default.xml:system/etc/sensor_hal_config_default.xml
 
@@ -58,6 +59,14 @@ PRODUCT_PACKAGES += \
 # libstagefrighthw
 PRODUCT_PACKAGES += \
     libstagefrighthw
+
+# Media SDK and OMX IL components
+PRODUCT_PACKAGES += \
+    libmfxhw32 \
+    libmfx_omx_core \
+    libmfx_omx_components_hw \
+    libgabi++-mfx \
+    libstlport-mfx
 
 # omx components
 PRODUCT_PACKAGES += \
@@ -92,14 +101,12 @@ PRODUCT_PACKAGES += \
     libI420colorconvert
 
 # hardware HAL
-#PRODUCT_PACKAGES += \
-    audio_hal_ia_controlled_ssp \
+PRODUCT_PACKAGES += \
+    audio_hal_configurable \
     libaudioresample \
     libbluetooth-audio \
     mediabtservice \
-    audio.primary.$(PRODUCT_DEVICE) \
     audio.a2dp.default \
-    audio_policy.$(PRODUCT_DEVICE) \
     vibrator.$(PRODUCT_DEVICE)
 
 # sensors
@@ -133,9 +140,13 @@ endif
     libdx-crys \
     start-sep
 
+# BCM4752 GPS
+PRODUCT_PACKAGES += \
+    gps_bcm_4752_extlna
+
 # Bluetooth
 PRODUCT_PACKAGES += \
-    bt_ti
+    bt_bcm
 
 # IPV6
 PRODUCT_PACKAGES += \
@@ -170,7 +181,9 @@ PRODUCT_PACKAGES += \
 
 # camera firmware
 PRODUCT_PACKAGES += \
-        shisp_2400.bin
+        shisp_2400.bin \
+        shisp_2400b0.bin \
+        shisp_2400b0_cssv2.bin
 
 # video encoder and camera
 PRODUCT_PACKAGES += \
@@ -180,6 +193,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
         $(LOCAL_PATH)/camera_profiles.xml:system/etc/camera_profiles.xml
+
+# audio policy file
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/audio_policy.conf:system/etc/audio_policy.conf
+
 
 # Camera app
 PRODUCT_PACKAGES += \
@@ -267,6 +285,11 @@ endif
 # Intel VPP/FRC
 PRODUCT_PACKAGES += \
     VppSettings
+
+#audio firmware
+AUDIO_FW_PATH := vendor/intel/fw/sst/
+PRODUCT_COPY_FILES += \
+    $(AUDIO_FW_PATH)/fw_sst_0f28.bin:system/etc/firmware/fw_sst_0f28.bin \
 
 # Board initrc file
 PRODUCT_COPY_FILES += \

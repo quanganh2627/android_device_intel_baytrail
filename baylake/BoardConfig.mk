@@ -44,6 +44,14 @@ COMMON_GLOBAL_CFLAGS += -DGFX_BUF_EXT
 
 USE_INTEL_IPP := true
 
+# Audio
+BOARD_USES_ALSA_AUDIO := true
+BOARD_USES_AUDIO_HAL_CONFIGURABLE := true
+BOARD_USE_VIBRATOR_ALSA := false
+BUILD_WITH_ALSA_UTILS := true
+BOARD_USES_GENERIC_AUDIO := false
+BOARD_HAVE_AUDIENCE := false
+
 # Board configuration for Intel PC STD platform
 
 TARGET_NO_BOOTLOADER := false
@@ -60,11 +68,13 @@ USE_CAMERA_HAL2 := true
 
 USE_INTEL_METABUFFER := true
 
+USE_CSS_2_0 := true
+
 # Enabled HW accelerated JPEG encoder using VA API
 USE_INTEL_JPEG := false
 
 ifeq ($(BOARD_KERNEL_CMDLINE),)
-BOARD_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger loglevel=4 kmemleak=off emmc_ipanic.ipanic_part_number=3 androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE)
+BOARD_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger loglevel=4 kmemleak=off emmc_ipanic.ipanic_part_number=3 androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra)
 endif
 
 # Graphics
@@ -108,3 +118,9 @@ USE_INTEL_ASF_EXTRACTOR:=true
 BOARD_USE_LIBVA_INTEL_DRIVER := true
 BOARD_USE_LIBVA := true
 BOARD_USE_LIBMIX := true
+
+# Settings for the Media SDK library and plug-ins:
+# - USE_MEDIASDK: use Media SDK support or not
+# - MFX_IPP: sets IPP library optimization to use
+USE_MEDIASDK := true
+MFX_IPP := p8
