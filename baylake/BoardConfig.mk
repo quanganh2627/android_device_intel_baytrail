@@ -24,7 +24,6 @@ include vendor/intel/baytrail/BoardConfig.mk
 
 # Temporary IFWI does not support signing
 TARGET_OS_SIGNING_METHOD := none
-TARGET_OUT_IFWIS := $(TARGET_OUT_INTERMEDIATES)/IFWIS/baylake_ifwi/
 
 TARGET_PRELINK_MODULE := false
 TARGET_PROVIDES_INIT_RC := true
