@@ -131,6 +131,18 @@ PRODUCT_PACKAGES += \
     com.intel.multidisplay \
     com.intel.multidisplay.xml
 
+#widi audio HAL
+PRODUCT_PACKAGES += \
+audio.widi.$(PRODUCT_DEVICE)
+
+#widi
+PRODUCT_PACKAGES += \
+   widi.conf \
+   libwidiservice \
+   libwidiclient \
+   libwidimedia \
+   libwidirtsp
+
 # busybox
 ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
 PRODUCT_PACKAGES += \
