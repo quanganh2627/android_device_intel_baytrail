@@ -5,9 +5,6 @@ LOCAL_PATH := $(TOP)/vendor/intel/baytrail/baylake
 
 PRODUCT_NAME := baylake
 
-# device specific overlay folder
-DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
-
 # Crash Report / crashinfo
 ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
 PRODUCT_PACKAGES += \

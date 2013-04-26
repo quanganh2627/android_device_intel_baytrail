@@ -19,8 +19,8 @@ PRODUCT_MODEL := baylake
 
 PRODUCT_CHARACTERISTICS := nosdcard,tablet
 
-# intel common overlay folder
-PRODUCT_PACKAGE_OVERLAYS := vendor/intel/common/overlays
+# device specific overlay folder
+PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
 
 OVERRIDE_COPIES := \
     $(LOCAL_PATH)/asound.conf:system/etc/asound.conf \
