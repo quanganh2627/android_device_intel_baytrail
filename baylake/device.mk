@@ -19,8 +19,8 @@ PRODUCT_MODEL := baylake
 
 PRODUCT_CHARACTERISTICS := nosdcard,tablet
 
-# device specific overlay folder
-PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
+# intel common overlay folder
+PRODUCT_PACKAGE_OVERLAYS := vendor/intel/common/overlays
 
 OVERRIDE_COPIES := \
     $(LOCAL_PATH)/asound.conf:system/etc/asound.conf \
@@ -107,7 +107,8 @@ PRODUCT_PACKAGES += \
     libbluetooth-audio \
     mediabtservice \
     audio.a2dp.default \
-    vibrator.$(PRODUCT_DEVICE)
+    vibrator.$(PRODUCT_DEVICE) \
+    audio.usb.default
 
 # sensors
 PRODUCT_PACKAGES += \
@@ -146,7 +147,7 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    bt_ti
+    bt_bcm
 
 # IPV6
 PRODUCT_PACKAGES += \
@@ -182,7 +183,8 @@ PRODUCT_PACKAGES += \
 # camera firmware
 PRODUCT_PACKAGES += \
         shisp_2400.bin \
-        shisp_2400b0.bin
+        shisp_2400b0.bin \
+        shisp_2400b0_cssv2.bin
 
 # video encoder and camera
 PRODUCT_PACKAGES += \

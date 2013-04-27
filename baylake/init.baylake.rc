@@ -8,15 +8,13 @@ import init.avc.rc
 import init.wifi.rc
 import init.platform.usb.rc
 import init.gps.rc
-# import init.bt.rc
+import init.bt.rc
 
 on early-init
     # Mesa environment variables
     export MESA_EXTENSION_OVERRIDE "+GL_OES_EGL_image_external -GL_ARB_framebuffer_object"
     # Force on S3TC hardware decompression support in Mesa
     export force_s3tc_enable true
-    # Media Driver variables
-    export LIBVA_DRIVER_NAME i965
     # Mesa debugging options - see http://www.mesa3d.org/envvars.html for more details
     #export MESA_DEBUG 1
     #export LIBGL_DEBUG 1
@@ -136,10 +134,15 @@ on post-fs
     # Insert touchscreen module
     insmod /lib/modules/rmi4.ko
 
+    #  Permissions for pshfw update tool
+    chown system system /dev/i2c-5
+    chown system system /sys/class/gpio/gpio59/value
+    chown system system /sys/class/gpio/gpio95/value
+
     #  Permissions for Sensor Hub
-    chown system system /sys/bus/i2c/devices/5-0019/control
-    chown system system /sys/bus/i2c/devices/5-0019/data
-    chown system system /sys/bus/i2c/devices/5-0019/data_size
+    chown system system /sys/bus/i2c/devices/5-0040/control
+    chown system system /sys/bus/i2c/devices/5-0040/data
+    chown system system /sys/bus/i2c/devices/5-0040/data_size
 
     chown 3700 3700 /dev/sep_sec_driver
     chmod 0660 /dev/sep_sec_driver
@@ -155,11 +158,6 @@ service baytrail-setup /system/bin/sh /system/etc/init.baytrail.sh
     class core
     oneshot
 
-service psh_fwupdate /system/bin/sh /system/bin/fwupdate_script.sh /system/etc/firmware/psh_bk.bin
-    class main
-    group system
-    oneshot
-
 service surfaceflinger /system/bin/surfaceflinger
     class main
     user system
@@ -170,7 +168,6 @@ service sensorhubd /system/bin/sensorhubd --log-level=2
     class main
     group system
     oneshot
-    disabled
 
 # for eth0
 service net_eth0-start /system/bin/sh /system/etc/init.net.eth0.sh
@@ -187,9 +184,6 @@ service fg_conf /system/bin/fg_conf -w
     group system
     oneshot
     disabled
-
-on property:init.svc.psh_fwupdate=stopped
-    start sensorhubd
 
 on property:ro.debuggable=1
    # Permissions for OSMonitor app

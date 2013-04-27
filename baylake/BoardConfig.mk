@@ -36,7 +36,8 @@ BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 # Connectivity
 BOARD_HAVE_WIFI := true
 INTEL_WIDI := false
-BOARD_HAVE_BLUETOOTH := false
+BOARD_HAVE_BLUETOOTH := true
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)
 BOARD_HAVE_GPS := false
 TARGET_HAS_VPP := true
 TARGET_VPP_USE_GEN := true
@@ -67,6 +68,8 @@ USE_CAMERA_STUB := false
 USE_CAMERA_HAL2 := true
 
 USE_INTEL_METABUFFER := true
+
+USE_CSS_2_0 := true
 
 # Enabled HW accelerated JPEG encoder using VA API
 USE_INTEL_JPEG := false
@@ -122,3 +125,6 @@ BOARD_USE_LIBMIX := true
 # - MFX_IPP: sets IPP library optimization to use
 USE_MEDIASDK := true
 MFX_IPP := p8
+
+# Defines Intel library for GPU accelerated Renderscript:
+OVERRIDE_RS_DRIVER := libRSDriver_intel7.so

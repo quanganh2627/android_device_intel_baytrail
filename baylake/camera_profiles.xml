@@ -21,6 +21,7 @@
         <orientation value="270"/>
         <dvs value="false"/>
         <flipping value="SENSOR_FLIP_H" value_v="SENSOR_FLIP_V"/>
+        <continuousCapture value="true"/>
         <supportedSnapshotSizes value="320x240,640x480,1280x720"/>
         <supportedPreviewSizes value="1024x576,720x480,640x480,640x360,352x288,320x240,176x144"/>
         <supportedVideoSizes value="176x144,320x240,352x288,640x480,720x480,1280x720"/>
@@ -76,7 +77,6 @@
         <subDevName value="/dev/v4l-subdev8"/>
         <fileInject value="true"/>
         <backFlash value="true"/>
-        <continuousCapture value="true"/>
         <maxContinuousRawRingBuffer value="10"/>
         <productName value="ExampleModel"/>
         <manufacturerName value="ExampleMaker"/>
@@ -96,6 +96,7 @@
         <maxEV value="6"/>
         <minEV value="-6"/>
         <orientation value="0"/> <!-- one of 0,90,180,270 -->
+        <continuousCapture value="true"/>
         <supportedPreviewSizes value="1024x768,1024x576,720x480,640x480,640x360,352x288,320x240,176x144"/>
         <supportedVideoSizes value="176x144,320x240,352x288,640x480,720x480,1280x720,1920x1080"/>
 
@@ -103,11 +104,12 @@
     </Profiles>
 
     <Profiles cameraId="1">
-        <sensorType value="SENSOR_TYPE_SOC"/> <!-- SENSOR_TYPE_SOC or SENSOR_TYPE_RAW -->
+        <sensorType value="SENSOR_TYPE_RAW"/> <!-- SENSOR_TYPE_SOC or SENSOR_TYPE_RAW -->
         <facing value="CAMERA_FACING_FRONT"/> <!-- CAMERA_FACING_FRONT or CAMERA_FACING_BACK -->
         <orientation value="0"/> <!-- one of 0,90,180,270 -->
         <dvs value="false"/>
         <flipping value="" value_v="SENSOR_FLIP_V"/>
+        <continuousCapture value="true"/>
         <supportedSnapshotSizes value="320x240,640x480,1280x720,1280x960,1920x1080"/>
         <supportedPreviewSizes value="1024x768,1024x576,720x480,640x480,640x360,352x288,320x240,176x144"/>
         <supportedVideoSizes value="176x144,320x240,352x288,640x480,720x480,1280x720,1920x1080"/>
@@ -115,22 +117,16 @@
         <supportedSceneModes value="auto"/>
         <defaultFlashMode value=""/>
         <supportedFlashModes value=""/>
-        <supportedEffectModes value="none"/>
-        <supportedIntelEffectModes value="none"/>
-        <supportedAwbModes value="auto"/>
-        <defaultIso value=""/>
-        <supportedIso value=""/>
-        <defaultAeMetering value=""/>
-        <supportedAeMetering value=""/>
         <defaultFocusMode value="fixed"/>
         <supportedFocusModes value="fixed"/>
+        <maxEV value="6"/>
+        <minEV value="-6"/>
     </Profiles>
 
     <Common>
         <subDevName value="/dev/v4l-subdev8"/>
         <fileInject value="true"/>
         <backFlash value="true"/>
-        <continuousCapture value="true"/>
         <maxContinuousRawRingBuffer value="11"/>
         <productName value="ExampleModel"/>
         <manufacturerName value="ExampleMaker"/>
@@ -138,6 +134,7 @@
         <videoPreviewSizePref value="1024x576"/>
         <previewFormat value="V4L2_PIX_FMT_YVU420"/>  <!-- V4L2_PIX_FMT_YVU420 or V4L2_PIX_FMT_NV12 -->
         <boardName value="baylake"/>
+        <supportAIQ value="true"/>
     </Common>
 </CameraSettings>
 

@@ -5,9 +5,9 @@
 
 # RoutageState  : Mute Disable Configure Enable Unmute
 
-# OpenedCaptureRoutes  : HwCodecCSV HwCodecComm ModemMix BtCSV BtComm HwCodecMedia Fm
+# OpenedCaptureRoutes  : HwCodecCSV ModemMix BtCSV BtComm HwCodecMedia Fm
 
-# OpenedPlaybackRoutes : HwCodecCSV HwCodecComm ModemMix BtCSV BtComm HwCodecMedia
+# OpenedPlaybackRoutes : HwCodecCSV ModemMix BtCSV BtComm HwCodecMedia
 
 # Mode  : InCsvCall InVoipCall Normal RingTone
 
@@ -80,9 +80,7 @@ supDomain: Routing.Mute
 			conf: Unmute
 				ALL
 					SelectedInputDevice Includes Headset
-					ANY
-						OpenedCaptureRoutes  Includes HwCodecComm
-						OpenedCaptureRoutes  Includes HwCodecMedia
+					OpenedCaptureRoutes  Includes HwCodecMedia
 				/Audio/REALTEK/SOUND_CARD/INPUT/HEADSET/SWITCH = 1
 				#Register 0x27[14] & 0x27[6]
 				/Audio/REALTEK/SOUND_CARD/MIXER/DIGITAL/ADC_MIXER/RIGHT/STEREO/1/SWITCH = 1
@@ -122,9 +120,7 @@ supDomain: Routing.Enable
 	#Register 0x1C[15] and 0x1C[7], control IF1 path only
 	domain: Capture
 		conf: Enable
-			ANY
-				OpenedCaptureRoutes Includes HwCodecComm
-				OpenedCaptureRoutes Includes HwCodecMedia
+			OpenedCaptureRoutes Includes HwCodecMedia
 
 			/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/STEREO/ADC_CAPTURE_SWITCH = 1 1
 
