@@ -164,7 +164,7 @@ service surfaceflinger /system/bin/surfaceflinger
     group graphics drmrpc
     onrestart restart zygote
 
-service sensorhubd /system/bin/sensorhubd --log-level=2
+service sensorhubd /system/bin/sensorhubd
     class main
     group system
     oneshot
