@@ -274,22 +274,6 @@ endif
 # Enable HOT SWAP
 PRODUCT_PROPERTY_OVERRIDES += persist.tel.hot_swap.support=true
 
-#enable Widevine drm
-PRODUCT_PROPERTY_OVERRIDES += drm.service.enabled=true
-
-PRODUCT_PACKAGES += com.google.widevine.software.drm.xml \
-    com.google.widevine.software.drm \
-    libdrmwvmplugin \
-    libwvm \
-    libdrmdecrypt \
-    libWVStreamControlAPI_L1 \
-    libwvdrm_L1
-
-ifeq ($(TARGET_BUILD_VARIANT),eng)
- PRODUCT_PACKAGES += \
-     WidevineSamplePlayer
-endif
-
 # Intel VPP/FRC
 PRODUCT_PACKAGES += \
     VppSettings
