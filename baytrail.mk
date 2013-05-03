@@ -26,3 +26,7 @@ PRODUCT_PACKAGES += \
     libremote-processor \
     remote-process \
     parameter
+
+# light
+PRODUCT_PACKAGES += \
+    lights.$(PRODUCT_DEVICE)
