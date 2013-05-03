@@ -2,5 +2,4 @@
 
 # Intel:Intel:*:Baytrail:*:*
 on property:ro.boot.spid=0000:0000:*:0007:*:*
-	setprop ro.spid.gps.pmm disabled
-	setprop ro.spid.gps.tty ttyMFD1
+	setprop ro.spid.gps.tty ttyS2
