@@ -96,11 +96,12 @@
         <maxEV value="6"/>
         <minEV value="-6"/>
         <orientation value="0"/> <!-- one of 0,90,180,270 -->
+        <dvs value="false"/>
         <continuousCapture value="true"/>
         <supportedPreviewSizes value="1024x768,1024x576,720x480,640x480,640x360,352x288,320x240,176x144"/>
         <supportedVideoSizes value="176x144,320x240,352x288,640x480,720x480,1280x720,1920x1080"/>
 
-        <supportedSceneModes value="auto,portrait,sports,landscape,night,fireworks,barcode,night-portrait"/>
+        <supportedSceneModes value="auto,portrait,sports,landscape,night,barcode,night-portrait"/>
     </Profiles>
 
     <Profiles cameraId="1">
@@ -110,13 +111,13 @@
         <dvs value="false"/>
         <flipping value="" value_v="SENSOR_FLIP_V"/>
         <continuousCapture value="true"/>
-        <supportedSnapshotSizes value="320x240,640x480,1280x720,1280x960,1920x1080"/>
+        <supportedSnapshotSizes value="1280x720,1280x960,1920x1080"/>
         <supportedPreviewSizes value="1024x768,1024x576,720x480,640x480,640x360,352x288,320x240,176x144"/>
         <supportedVideoSizes value="176x144,320x240,352x288,640x480,720x480,1280x720,1920x1080"/>
 
-        <supportedSceneModes value="auto"/>
-        <defaultFlashMode value=""/>
-        <supportedFlashModes value=""/>
+        <supportedSceneModes value="auto,portrait,sports,landscape,night,barcode,night-portrait"/>
+        <defaultFlashMode value="off"/>
+        <supportedFlashModes value="off"/>
         <defaultFocusMode value="fixed"/>
         <supportedFocusModes value="fixed"/>
         <maxEV value="6"/>

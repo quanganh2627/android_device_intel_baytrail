@@ -8,7 +8,7 @@ import init.avc.rc
 import init.wifi.rc
 import init.platform.usb.rc
 import init.gps.rc
-# import init.bt.rc
+import init.bt.rc
 
 on early-init
     # Mesa environment variables
@@ -134,6 +134,11 @@ on post-fs
     # Insert touchscreen module
     insmod /lib/modules/rmi4.ko
 
+    #  Permissions for pshfw update tool
+    chown system system /dev/i2c-5
+    chown system system /sys/class/gpio/gpio59/value
+    chown system system /sys/class/gpio/gpio95/value
+
     #  Permissions for Sensor Hub
     chown system system /sys/bus/i2c/devices/5-0040/control
     chown system system /sys/bus/i2c/devices/5-0040/data
@@ -159,7 +164,7 @@ service surfaceflinger /system/bin/surfaceflinger
     group graphics drmrpc
     onrestart restart zygote
 
-service sensorhubd /system/bin/sensorhubd --log-level=2
+service sensorhubd /system/bin/sensorhubd
     class main
     group system
     oneshot

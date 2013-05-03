@@ -77,13 +77,20 @@ Only the three quirks included above are recognized at this point:
 
 <MediaCodecs>
     <Decoders>
+        <MediaCodec name="CIPMP3Decoder" type="audio/mpeg" />
         <MediaCodec name="OMX.google.mp3.decoder" type="audio/mpeg" />
+        <MediaCodec name="CIPAMRNBDecoder" type="audio/3gpp" />
         <MediaCodec name="OMX.google.amrnb.decoder" type="audio/3gpp" />
+        <MediaCodec name="CIPAMRWBDecoder" type="audio/amr-wb" />
         <MediaCodec name="OMX.google.amrwb.decoder" type="audio/amr-wb" />
+        <MediaCodec name="CIPAACDecoder" type="audio/mp4a-latm" />
         <MediaCodec name="OMX.google.aac.decoder" type="audio/mp4a-latm" />
         <MediaCodec name="OMX.google.g711.alaw.decoder" type="audio/g711-alaw" />
         <MediaCodec name="OMX.google.g711.mlaw.decoder" type="audio/g711-mlaw" />
+        <MediaCodec name="CIPVorbisDecoder" type="audio/vorbis" />
         <MediaCodec name="OMX.google.vorbis.decoder" type="audio/vorbis" />
+        <MediaCodec name="OMX.Intel.alac.decoder" type="audio/alac" />
+        <MediaCodec name="CIPWMADecoder" type="audio/x-ms-wma" />
 
         <MediaCodec name="OMX.Intel.hw_vd.h264" type="video/avc" />
         <MediaCodec name="OMX.Intel.hw_vd.vc1" type="video/x-ms-wmv" />
@@ -113,8 +120,11 @@ Only the three quirks included above are recognized at this point:
     </Decoders>
 
     <Encoders>
+        <MediaCodec name="CIPAACEncoder" type="audio/mp4a-latm" />
         <MediaCodec name="OMX.google.aac.encoder" type="audio/mp4a-latm" />
+        <MediaCodec name="CIPAMRNBEncoder" type="audio/3gpp" />
         <MediaCodec name="OMX.google.amrnb.encoder" type="audio/3gpp" />
+        <MediaCodec name="CIPAMRWBEncoder" type="audio/amr-wb" />
         <MediaCodec name="OMX.google.amrwb.encoder" type="audio/amr-wb" />
         <MediaCodec name="OMX.google.h263.encoder" type="video/3gpp" />
         <MediaCodec name="OMX.Intel.hw_ve.h264" type="video/avc" />

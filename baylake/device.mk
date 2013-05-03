@@ -19,8 +19,8 @@ PRODUCT_MODEL := baylake
 
 PRODUCT_CHARACTERISTICS := nosdcard,tablet
 
-# intel common overlay folder
-PRODUCT_PACKAGE_OVERLAYS := vendor/intel/common/overlays
+# device specific overlay folder
+PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
 
 OVERRIDE_COPIES := \
     $(LOCAL_PATH)/asound.conf:system/etc/asound.conf \
@@ -87,7 +87,8 @@ PRODUCT_PACKAGES += \
 
 # libva
 PRODUCT_PACKAGES += \
-    vainfo
+    vainfo \
+    pvr_drv_video
 
 PRODUCT_PACKAGES += \
     msvdx_fw_mfld_DE2.0.bin
@@ -202,8 +203,14 @@ PRODUCT_COPY_FILES += \
 
 # Camera app
 PRODUCT_PACKAGES += \
-    IntelCamera \
+    IntelCamera
+
+# Test Camera is for Test only
+ifeq ($(TARGET_BUILD_VARIANT),eng)
+PRODUCT_PACKAGES += \
     TestCamera
+endif
+
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
