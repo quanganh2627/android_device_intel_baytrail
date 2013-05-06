@@ -16,7 +16,7 @@ include $(PLATFORM_PATH)/BoardConfig.mk
 TARGET_OS_SIGNING_METHOD := none
 
 #Platform
-BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
+#BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 
 # Connectivity
 ifeq (, $(filter %_next, $(TARGET_PRODUCT)))
