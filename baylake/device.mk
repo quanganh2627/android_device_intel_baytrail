@@ -274,6 +274,13 @@ ifeq ($(TARGET_BUILD_VARIANT),eng)
 COMMON_GLOBAL_CFLAGS += -DLIBXML_THREAD_ENABLED -DLIBXML_TREE_ENABLED
 endif
 
+#NXP audio effects
+PRODUCT_PACKAGES += \
+    libbundlewrapper.so \
+    libreverbwrapper.so \
+    libxmlparser.so \
+    LvmDefaultControlParams.xml \
+    LvmSessionConfigurationMinus1.xml
 
 # Optional GMS applications
 -include vendor/google/PRIVATE/gms/products/gms_optional.mk
