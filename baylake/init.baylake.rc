@@ -165,6 +165,11 @@ service hdcpd /system/bin/hdcpd
     user root
     group graphics drmrpc
 
+service coreu /system/bin/coreu
+    class main
+    user root
+    group graphics drmrpc
+
 service baytrail-setup /system/bin/sh /system/etc/init.baytrail.sh
     class core
     oneshot
