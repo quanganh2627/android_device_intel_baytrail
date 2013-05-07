@@ -12,6 +12,10 @@ PRODUCT_COPY_FILES += \
     $(BYT_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg \
     $(BYT_PATH)/mxt1664S-touchscreen.idc:system/usr/idc/mxt1664S-touchscreen.idc
 
+# Kernel Watchdog
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/watchdog/init.watchdogd.rc:root/init.watchdog.rc
+
 # parameter-framework
 PRODUCT_PACKAGES += \
     libparameter \

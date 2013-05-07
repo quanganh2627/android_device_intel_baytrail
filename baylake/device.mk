@@ -258,10 +258,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-PRODUCT_PACKAGES += \
-    watchdogd \
-    libwatchdogd_devel
-
 # usb accessory
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
