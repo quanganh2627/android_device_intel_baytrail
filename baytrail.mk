@@ -25,6 +25,7 @@ PRODUCT_PACKAGES += \
     libproperty-subsystem \
     libremote-processor \
     remote-process \
+    charger \
     parameter
 
 # light
