@@ -140,6 +140,8 @@ USE_INTEL_MDP := true
 MFX_IPP := p8
 # enabled to use Intel audio SRC (sample rate conversion)
 USE_INTEL_SRC := true
+# enabled to use ALAC
+USE_FEATURE_ALAC := true
 
 # Defines Intel library for GPU accelerated Renderscript:
 OVERRIDE_RS_DRIVER := libRSDriver_intel7.so

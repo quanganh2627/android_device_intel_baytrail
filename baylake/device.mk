@@ -289,6 +289,10 @@ PRODUCT_PACKAGES += \
 # Intel Corp Email certificate
 -include vendor/intel/PRIVATE/cert/IntelCorpEmailCert.mk
 
+# Enable ALAC
+PRODUCT_PACKAGES += \
+    libstagefright_soft_alacdec
+
 # Enable HOT SWAP
 PRODUCT_PROPERTY_OVERRIDES += persist.tel.hot_swap.support=true
 
