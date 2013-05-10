@@ -19,8 +19,8 @@ PRODUCT_MODEL := baylake
 
 PRODUCT_CHARACTERISTICS := nosdcard,tablet
 
-# device specific overlay folder
-PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
+# intel common overlay folder
+DEVICE_PACKAGE_OVERLAYS := vendor/intel/common/overlays
 
 OVERRIDE_COPIES := \
     $(LOCAL_PATH)/asound.conf:system/etc/asound.conf \
@@ -236,7 +236,6 @@ PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/tablet_core_hardware.xml:$(PERMISSIONS_PATH)/tablet_core_hardware.xml
 #   $(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
 
-COMMON_PATH := vendor/intel/common
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/ueventd.common.rc:root/ueventd.$(PRODUCT_DEVICE).rc
 
@@ -273,22 +272,6 @@ endif
 
 # Enable HOT SWAP
 PRODUCT_PROPERTY_OVERRIDES += persist.tel.hot_swap.support=true
-
-#enable Widevine drm
-PRODUCT_PROPERTY_OVERRIDES += drm.service.enabled=true
-
-PRODUCT_PACKAGES += com.google.widevine.software.drm.xml \
-    com.google.widevine.software.drm \
-    libdrmwvmplugin \
-    libwvm \
-    libdrmdecrypt \
-    libWVStreamControlAPI_L1 \
-    libwvdrm_L1
-
-ifeq ($(TARGET_BUILD_VARIANT),eng)
- PRODUCT_PACKAGES += \
-     WidevineSamplePlayer
-endif
 
 # Intel VPP/FRC
 PRODUCT_PACKAGES += \
