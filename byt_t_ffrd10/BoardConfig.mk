@@ -5,26 +5,12 @@ REF_PRODUCT_NAME ?= baylake
 
 DEVICE_PATH := vendor/intel/baytrail/byt_t_ffrd10
 
-# For targets that use EFI
-TARGET_USE_EFI := true
-
 TARGET_USE_DROIDBOOT := true
-
-#Intel recovery images and boot images are different from android images.
-# **** Disable these as we need to have the standard android images that use
-# **** mkbootimg standard AOSP version.
-TARGET_MAKE_NO_DEFAULT_BOOTIMAGE := true
-TARGET_MAKE_INTEL_BOOTIMAGE := true
 
 include vendor/intel/baytrail/BoardConfig.mk
 
 # Temporary IFWI does not support signing
 TARGET_OS_SIGNING_METHOD := none
-
-TARGET_PRELINK_MODULE := false
-TARGET_PROVIDES_INIT_RC := true
-TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_RIL_DISABLE_STATUS_POLLING := true
 
 #Platform
 BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
@@ -51,10 +37,6 @@ BOARD_USE_VIBRATOR_ALSA := false
 BUILD_WITH_ALSA_UTILS := true
 BOARD_USES_GENERIC_AUDIO := false
 BOARD_HAVE_AUDIENCE := false
-
-# Board configuration for Intel PC STD platform
-
-TARGET_NO_BOOTLOADER := false
 
 #GEN is one graphic and video engine
 # Baytrail uses the GEN for the graphic and video
