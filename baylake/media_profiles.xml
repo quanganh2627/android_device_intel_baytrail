@@ -483,6 +483,20 @@
                    sampleRate="48000"
                    channels="1" />
         </EncoderProfile>
+
+        <EncoderProfile quality="timelapse1080p" fileFormat="3gp" duration="30">
+            <Video codec="h264"
+                   bitRate="15000000"
+                   width="1920"
+                   height="1080"
+                   frameRate="30" />
+
+            <Audio codec="aac"
+                   bitRate="320000"
+                   sampleRate="48000"
+                   channels="2" />
+        </EncoderProfile>
+
         <ImageEncoding quality="90" />
         <ImageEncoding quality="80" />
         <ImageEncoding quality="70" />
