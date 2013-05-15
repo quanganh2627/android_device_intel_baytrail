@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ConfigurableDomains xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/etc/parameter-framework/Schemas/ConfigurableDomains.xsd" SystemClassName="Audio">
-  <!-- Exported on 1970-01-02, 00:36:22 from parameter-framework version 2.1.0 -->
-  <ConfigurableDomain Name="Multimedia.OutputDevice.Private.Selected" SequenceAware="false">
+  <ConfigurableDomain Name="OutputDevice.Private.Selected" SequenceAware="false">
     <Configurations>
       <Configuration Name="WiredSpeakers">
         <CompoundRule Type="All">
@@ -24,6 +23,15 @@
           </CompoundRule>
         </CompoundRule>
       </Configuration>
+      <Configuration Name="Voip.WiredSpeakers">
+      <CompoundRule Type="All">
+        <CompoundRule Type="Any">
+          <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Headphones"/>
+          <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Headset"/>
+        </CompoundRule>
+        <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="InVoipCall"/>
+      </CompoundRule>
+    </Configuration>
     </Configurations>
     <ConfigurableElements>
       <ConfigurableElement Path="/Audio/LPE/HSEP_PATH/STEREO_EQ/ENABLE"/>
@@ -46,9 +54,17 @@
           <BooleanParameter Name="ENABLE">0</BooleanParameter>
         </ConfigurableElement>
       </Configuration>
+      <Configuration Name="Voip.WiredSpeakers">
+        <ConfigurableElement Path="/Audio/LPE/HSEP_PATH/STEREO_EQ/ENABLE">
+          <BooleanParameter Name="ENABLE">0</BooleanParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/LPE/HSEP_PATH/MONO_EQ/ENABLE">
+          <BooleanParameter Name="ENABLE">0</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
     </Settings>
   </ConfigurableDomain>
-  <ConfigurableDomain Name="Multimedia.IHF" SequenceAware="false">
+  <ConfigurableDomain Name="IHF" SequenceAware="false">
     <Configurations>
       <Configuration Name="Normal">
         <CompoundRule Type="All">
@@ -60,6 +76,12 @@
         <CompoundRule Type="All">
           <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="IHF"/>
           <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="RingTone"/>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="Voip.IHF">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="IHF"/>
+          <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="InVoipCall"/>
         </CompoundRule>
       </Configuration>
     </Configurations>
@@ -136,9 +158,43 @@
           <BooleanParameter Name="ENABLE">1</BooleanParameter>
         </ConfigurableElement>
       </Configuration>
+      <Configuration Name="Voip.IHF">
+        <ConfigurableElement Path="/Audio/LPE/IHF_PATH/SDRC_CTRL">
+          <Component Name="SDRC_CTRL">
+            <BooleanParameter Name="ENABLE">1</BooleanParameter>
+            <IntegerParameter Name="NB_BANDS">1</IntegerParameter>
+            <Component Name="VERTICES">
+              <Component Name="LOWER_MOST">
+                <IntegerParameter Name="THRESHOLD">24576</IntegerParameter>
+                <IntegerParameter Name="SLOPE">533</IntegerParameter>
+              </Component>
+              <Component Name="INTERMEDIATE">
+                <IntegerParameter Name="GAIN_AT_THRESHOLD">11264</IntegerParameter>
+                <IntegerParameter Name="THRESHOLD">20480</IntegerParameter>
+                <IntegerParameter Name="SLOPE">544</IntegerParameter>
+              </Component>
+              <Component Name="UPPER_MOST">
+                <IntegerParameter Name="THRESHOLD">1536</IntegerParameter>
+                <IntegerParameter Name="SLOPE">256</IntegerParameter>
+              </Component>
+            </Component>
+            <Component Name="ATTACK">
+              <IntegerParameter Name="LOUDNESS_RISE_TIME">3</IntegerParameter>
+              <IntegerParameter Name="GAIN_RISE_TIME">50</IntegerParameter>
+            </Component>
+            <Component Name="RELEASE">
+              <IntegerParameter Name="LOUDNESS_RISE_TIME">50</IntegerParameter>
+              <IntegerParameter Name="GAIN_RISE_TIME">3</IntegerParameter>
+            </Component>
+          </Component>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/LPE/IHF_PATH/STEREO_EQ/ENABLE">
+          <BooleanParameter Name="ENABLE">1</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
     </Settings>
   </ConfigurableDomain>
-  <ConfigurableDomain Name="Multimedia.Headset.Selected" SequenceAware="false">
+  <ConfigurableDomain Name="Headset.Selected" SequenceAware="false">
     <Configurations>
       <Configuration Name="Analog">
         <CompoundRule Type="All">
@@ -146,6 +202,7 @@
           <CompoundRule Type="Any">
             <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="Normal"/>
             <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="RingTone"/>
+            <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="InVoipCall"/>
           </CompoundRule>
         </CompoundRule>
       </Configuration>
@@ -155,6 +212,7 @@
           <CompoundRule Type="Any">
             <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="Normal"/>
             <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="RingTone"/>
+            <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="InVoipCall"/>
           </CompoundRule>
         </CompoundRule>
       </Configuration>
@@ -384,7 +442,7 @@
           <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/DAC1">
-          <IntegerParameter Name="DAC1">120 120</IntegerParameter>
+          <IntegerParameter Name="DAC1">170 170</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME">
           <IntegerParameter Name="VOLUME">31 31</IntegerParameter>

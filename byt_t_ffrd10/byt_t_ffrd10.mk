@@ -28,7 +28,8 @@ PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.direct.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml
 
 PRODUCT_PACKAGES += \
-        wifi_bcm_43241
+        wifi_bcm_43241 \
+        fw_bcmdhd_4324_B4.bin
 
 # parameter-framework files
 PRODUCT_COPY_FILES += \
