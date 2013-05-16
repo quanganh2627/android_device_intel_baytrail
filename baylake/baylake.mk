@@ -34,6 +34,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
         wifi_bcm_43241
 
+#hdmi audio HAL
+PRODUCT_PACKAGES += \
+       audio.hdmi.$(PRODUCT_NAME)
+
+#widi audio HAL
+PRODUCT_PACKAGES += \
+       audio.widi.$(PRODUCT_NAME)
+
 # parameter-framework files
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/parameter-framework/XML/Structure/Audio/AudioClass.xml:system/etc/parameter-framework/Structure/Audio/AudioClass.xml \
