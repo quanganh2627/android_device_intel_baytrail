@@ -35,22 +35,8 @@ PRODUCT_PACKAGES += \
         wifi_bcm_43241
 
 # parameter-framework files
-PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/parameter-framework/XML/Structure/Audio/AudioClass.xml:system/etc/parameter-framework/Structure/Audio/AudioClass.xml \
-        $(LOCAL_PATH)/parameter-framework/XML/Structure/Audio/Realtek_RT5640Subsystem.xml:system/etc/parameter-framework/Structure/Audio/Realtek_RT5640Subsystem.xml \
-        $(COMMON_PATH)/parameter-framework/XML/Structure/Audio/ConfigurationSubsystem.xml:system/etc/parameter-framework/Structure/Audio/ConfigurationSubsystem.xml \
-        $(LOCAL_PATH)/parameter-framework/XML/Structure/Audio/LPESubsystem.xml:system/etc/parameter-framework/Structure/Audio/LPESubsystem.xml \
-        $(LOCAL_PATH)/parameter-framework/XML/Structure/Audio/LPEMixerSubsystem.xml:system/etc/parameter-framework/Structure/Audio/LPEMixerSubsystem.xml \
-        $(LOCAL_PATH)/parameter-framework/XML/Settings/Audio/AudioRoutingConfigurableDomains.xml:system/etc/parameter-framework/Settings/Audio/AudioRoutingConfigurableDomains.xml \
-        $(COMMON_PATH)/parameter-framework/SCRIPTS/parameter:system/bin/parameter
-
-ifeq ($(TARGET_BUILD_VARIANT),eng)
- PRODUCT_COPY_FILES += \
-     $(LOCAL_PATH)/parameter-framework/XML/ParameterFrameworkConfiguration.xml:system/etc/parameter-framework/ParameterFrameworkConfiguration.xml
-else
- PRODUCT_COPY_FILES += \
-     $(LOCAL_PATH)/parameter-framework/XML/ParameterFrameworkConfigurationNoTuning.xml:system/etc/parameter-framework/ParameterFrameworkConfiguration.xml
-endif
+PRODUCT_PACKAGES += \
+        parameter-framework.audio.byt_m_crb
 
 #alsa conf
 ALSA_CONF_PATH := external/alsa-lib/
