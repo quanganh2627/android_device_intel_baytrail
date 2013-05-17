@@ -131,6 +131,18 @@ PRODUCT_PACKAGES += \
     com.intel.multidisplay \
     com.intel.multidisplay.xml
 
+#widi audio HAL
+PRODUCT_PACKAGES += \
+audio.widi.$(PRODUCT_DEVICE)
+
+#widi
+PRODUCT_PACKAGES += \
+   widi.conf \
+   libwidiservice \
+   libwidiclient \
+   libwidimedia \
+   libwidirtsp
+
 # busybox
 ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
 PRODUCT_PACKAGES += \
@@ -203,7 +215,8 @@ PRODUCT_COPY_FILES += \
 
 # Camera app
 PRODUCT_PACKAGES += \
-    IntelCamera
+    IntelCamera \
+    SocialGallery
 
 # Test Camera is for Test only
 ifeq ($(TARGET_BUILD_VARIANT),eng)
@@ -246,10 +259,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-PRODUCT_PACKAGES += \
-    watchdogd \
-    libwatchdogd_devel
-
 # usb accessory
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
@@ -262,6 +271,13 @@ ifeq ($(TARGET_BUILD_VARIANT),eng)
 COMMON_GLOBAL_CFLAGS += -DLIBXML_THREAD_ENABLED -DLIBXML_TREE_ENABLED
 endif
 
+#NXP audio effects
+PRODUCT_PACKAGES += \
+    libbundlewrapper.so \
+    libreverbwrapper.so \
+    libxmlparser.so \
+    LvmDefaultControlParams.xml \
+    LvmSessionConfigurationMinus1.xml
 
 # Optional GMS applications
 -include vendor/google/PRIVATE/gms/products/gms_optional.mk
@@ -269,6 +285,10 @@ endif
 
 # Intel Corp Email certificate
 -include vendor/intel/PRIVATE/cert/IntelCorpEmailCert.mk
+
+# Enable ALAC
+PRODUCT_PACKAGES += \
+    libstagefright_soft_alacdec
 
 # Enable HOT SWAP
 PRODUCT_PROPERTY_OVERRIDES += persist.tel.hot_swap.support=true

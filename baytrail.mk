@@ -12,19 +12,24 @@ PRODUCT_COPY_FILES += \
     $(BYT_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg \
     $(BYT_PATH)/mxt1664S-touchscreen.idc:system/usr/idc/mxt1664S-touchscreen.idc
 
+# Kernel Watchdog
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/watchdog/init.watchdogd.rc:root/init.watchdog.rc
+
 # parameter-framework
 PRODUCT_PACKAGES += \
     libparameter \
     parameter-connector-test \
     libxmlserializer \
     liblpe-subsystem \
-    libamixer-subsystem \
-    libalsactl-subsystem \
+    libtinyamixer-subsystem \
+    libtinyalsactl-subsystem \
     libbluetooth-subsystem \
     libfs-subsystem \
     libproperty-subsystem \
     libremote-processor \
     remote-process \
+    charger \
     parameter
 
 # light

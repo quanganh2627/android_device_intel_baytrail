@@ -93,7 +93,7 @@
     <CamcorderProfiles cameraId="0">
 
         <EncoderProfile quality="low" fileFormat="3gp" duration="30">
-            <Video codec="h263"
+            <Video codec="h264"
                    bitRate="128000"
                    width="176"
                    height="144"
@@ -119,7 +119,7 @@
         </EncoderProfile>
 
         <EncoderProfile quality="qcif" fileFormat="3gp" duration="30">
-            <Video codec="h263"
+            <Video codec="h264"
                    bitRate="128000"
                    width="176"
                    height="144"
@@ -199,7 +199,7 @@
         </EncoderProfile>
 
         <EncoderProfile quality="timelapselow" fileFormat="3gp" duration="30">
-            <Video codec="h263"
+            <Video codec="h264"
                    bitRate="128000"
                    width="176"
                    height="144"
@@ -225,7 +225,7 @@
         </EncoderProfile>
 
         <EncoderProfile quality="timelapseqcif" fileFormat="3gp" duration="30">
-            <Video codec="h263"
+            <Video codec="h264"
                    bitRate="128000"
                    width="176"
                    height="144"
@@ -314,7 +314,7 @@
         </EncoderProfile>
 
         <EncoderProfile quality="low" fileFormat="3gp" duration="30">
-            <Video codec="h263"
+            <Video codec="h264"
                    bitRate="128000"
                    width="176"
                    height="144"
@@ -327,7 +327,7 @@
         </EncoderProfile>
 
         <EncoderProfile quality="qcif" fileFormat="3gp" duration="30">
-            <Video codec="h263"
+            <Video codec="h264"
                    bitRate="128000"
                    width="176"
                    height="144"
@@ -407,7 +407,7 @@
         </EncoderProfile>
 
         <EncoderProfile quality="timelapselow" fileFormat="3gp" duration="30">
-            <Video codec="h263"
+            <Video codec="h264"
                    bitRate="128000"
                    width="176"
                    height="144"
@@ -433,7 +433,7 @@
         </EncoderProfile>
 
         <EncoderProfile quality="timelapseqcif" fileFormat="3gp" duration="30">
-            <Video codec="h263"
+            <Video codec="h264"
                    bitRate="128000"
                    width="176"
                    height="144"

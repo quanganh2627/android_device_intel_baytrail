@@ -11,7 +11,7 @@ on early-boot
     setrlimit 4 -1 -1
     mkdir /logs/core
     chown root log /logs/core
-    chmod 0777 /logs/core
+    chmod 0750 /logs/core
     write /proc/sys/kernel/core_pattern /logs/core/%t_%e_%p.core
 
 on post-fs
