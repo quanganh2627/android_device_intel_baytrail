@@ -247,6 +247,8 @@ on property:ro.debuggable=1
    chmod 0666 /sys/module/intel_soc_pmu/parameters/s0ix
 
 on charger
+    mount_all /fstab.charger.${ro.hardware}
+
     start watchdogd
     # REVERTME - Temp workaround for Baylake bringup.  See BZ 91648.
     # To workaround inability to resume after sleep, disable the access that
