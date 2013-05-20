@@ -19,8 +19,8 @@ PRODUCT_MODEL := baylake
 
 PRODUCT_CHARACTERISTICS := nosdcard,tablet
 
-# device specific overlay folder
-PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
+# intel common overlay folder
+DEVICE_PACKAGE_OVERLAYS := device/intel/common/overlays
 
 OVERRIDE_COPIES := \
     $(LOCAL_PATH)/asound.conf:system/etc/asound.conf \
@@ -87,7 +87,8 @@ PRODUCT_PACKAGES += \
 
 # libva
 PRODUCT_PACKAGES += \
-    vainfo
+    vainfo \
+    pvr_drv_video
 
 PRODUCT_PACKAGES += \
     msvdx_fw_mfld_DE2.0.bin
@@ -107,7 +108,8 @@ PRODUCT_PACKAGES += \
     libbluetooth-audio \
     mediabtservice \
     audio.a2dp.default \
-    vibrator.$(PRODUCT_DEVICE)
+    vibrator.$(PRODUCT_DEVICE) \
+    audio.usb.default
 
 # sensors
 PRODUCT_PACKAGES += \
@@ -128,6 +130,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     com.intel.multidisplay \
     com.intel.multidisplay.xml
+
+#widi audio HAL
+PRODUCT_PACKAGES += \
+audio.widi.$(PRODUCT_DEVICE)
+
+#widi
+PRODUCT_PACKAGES += \
+   widi.conf \
+   libwidiservice \
+   libwidiclient \
+   libwidimedia \
+   libwidirtsp
 
 # busybox
 ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
@@ -202,7 +216,14 @@ PRODUCT_COPY_FILES += \
 # Camera app
 PRODUCT_PACKAGES += \
     IntelCamera \
+    SocialGallery
+
+# Test Camera is for Test only
+ifeq ($(TARGET_BUILD_VARIANT),eng)
+PRODUCT_PACKAGES += \
     TestCamera
+endif
+
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -228,7 +249,6 @@ PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/tablet_core_hardware.xml:$(PERMISSIONS_PATH)/tablet_core_hardware.xml
 #   $(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
 
-COMMON_PATH := device/intel/common
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/ueventd.common.rc:root/ueventd.$(PRODUCT_DEVICE).rc
 
@@ -238,10 +258,6 @@ PRODUCT_COPY_FILES += \
 # if the xhdpi doesn't exist.
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
-
-PRODUCT_PACKAGES += \
-    watchdogd \
-    libwatchdogd_devel
 
 # usb accessory
 PRODUCT_PACKAGES += \
@@ -255,6 +271,13 @@ ifeq ($(TARGET_BUILD_VARIANT),eng)
 COMMON_GLOBAL_CFLAGS += -DLIBXML_THREAD_ENABLED -DLIBXML_TREE_ENABLED
 endif
 
+#NXP audio effects
+PRODUCT_PACKAGES += \
+    libbundlewrapper.so \
+    libreverbwrapper.so \
+    libxmlparser.so \
+    LvmDefaultControlParams.xml \
+    LvmSessionConfigurationMinus1.xml
 
 # Optional GMS applications
 -include vendor/google/PRIVATE/gms/products/gms_optional.mk
@@ -263,24 +286,12 @@ endif
 # Intel Corp Email certificate
 -include vendor/intel/PRIVATE/cert/IntelCorpEmailCert.mk
 
+# Enable ALAC
+PRODUCT_PACKAGES += \
+    libstagefright_soft_alacdec
+
 # Enable HOT SWAP
 PRODUCT_PROPERTY_OVERRIDES += persist.tel.hot_swap.support=true
-
-#enable Widevine drm
-PRODUCT_PROPERTY_OVERRIDES += drm.service.enabled=true
-
-PRODUCT_PACKAGES += com.google.widevine.software.drm.xml \
-    com.google.widevine.software.drm \
-    libdrmwvmplugin \
-    libwvm \
-    libdrmdecrypt \
-    libWVStreamControlAPI_L1 \
-    libwvdrm_L1
-
-ifeq ($(TARGET_BUILD_VARIANT),eng)
- PRODUCT_PACKAGES += \
-     WidevineSamplePlayer
-endif
 
 # Intel VPP/FRC
 PRODUCT_PACKAGES += \

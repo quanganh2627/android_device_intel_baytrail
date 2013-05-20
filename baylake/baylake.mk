@@ -1,9 +1,10 @@
-# Include base makefile
-include $(LOCAL_PATH)/device.mk
-
-LOCAL_PATH := $(TOP)/device/intel/baytrail/baylake
-
 PRODUCT_NAME := baylake
+
+# Include product path
+include $(LOCAL_PATH)/baylakepath.mk
+
+# device specific overlay folder
+PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
 
 # Crash Report / crashinfo
 ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
@@ -51,3 +52,11 @@ endif
 ALSA_CONF_PATH := external/alsa-lib/
 PRODUCT_COPY_FILES += \
     $(ALSA_CONF_PATH)/src/conf/alsa.conf:system/usr/share/alsa/alsa.conf
+
+# specific management of audio_effects.conf
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf
+
+# Include base makefile
+include $(LOCAL_PATH)/device.mk
+

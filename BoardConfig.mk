@@ -1,5 +1,3 @@
-# Force SPID value
-SPID = 0000:0000:0000:0007:0000:0000
 
 include device/intel/common/BoardConfig.mk
 
@@ -34,7 +32,7 @@ DROIDBOOT_SCRATCH_SIZE := 100
 endif
 
 ifeq ($(TARGET_DROIDBOOT_USB_MODE_FASTBOOT),true)
-BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE += g_android.fastboot=1
+BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE += g_android.fastboot=1 droidboot.minbatt=0
 endif
 
 ifneq ($(DROIDBOOT_SCRATCH_SIZE),)

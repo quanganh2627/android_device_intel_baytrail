@@ -4,8 +4,8 @@
     <SubsystemPlugins>
         <Location Folder="/system/lib/parameter-framework-plugins/Audio">
             <Plugin Name="liblpe-subsystem.so"/>
-            <Plugin Name="libamixer-subsystem.so"/>
-            <Plugin Name="libalsactl-subsystem.so"/>
+            <Plugin Name="libtinyamixer-subsystem.so"/>
+            <Plugin Name="libtinyalsactl-subsystem.so"/>
             <Plugin Name="libbluetooth-subsystem.so"/>
         </Location>
         <Location Folder="/system/lib/parameter-framework-plugins/Fs">
