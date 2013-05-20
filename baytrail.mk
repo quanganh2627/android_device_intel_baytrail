@@ -31,6 +31,7 @@ PRODUCT_PACKAGES += \
     libremote-processor \
     remote-process \
     charger \
+    charger_res_images \
     parameter
 
 # light
