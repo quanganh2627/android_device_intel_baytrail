@@ -22,6 +22,10 @@ endif
 FRAMEWORK_ETC_PATH := frameworks/native/data/etc
 PERMISSIONS_PATH := system/etc/permissions
 
+# Touchscreen configuration file
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg
+
 # Wi-Fi
 PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.xml \
