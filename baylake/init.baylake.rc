@@ -100,6 +100,9 @@ on boot
     # triggers the problem.
     chmod 0000 /sys/power/state
 
+    # Reboot in COS on shutdown request when charger is plugged
+    setprop ro.rebootchargermode true
+
 on post-fs-data
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
     mkdir /data/media 0770 media_rw media_rw
