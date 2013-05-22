@@ -105,8 +105,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audio_hal_configurable \
     libaudioresample \
-    libbluetooth-audio \
-    mediabtservice \
     audio.a2dp.default \
     vibrator.$(PRODUCT_DEVICE) \
     audio.usb.default
