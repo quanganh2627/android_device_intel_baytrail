@@ -6,11 +6,11 @@ include device/intel/common/common.mk
 
 # USB port turn around and initialization
 PRODUCT_COPY_FILES += \
-    $(BYT_PATH)/init.byt.usb.rc:root/init.platform.usb.rc \
-    $(BYT_PATH)/init.debug.rc:root/init.debug.rc \
-    $(BYT_PATH)/props.baytrail.rc:root/props.platform.rc \
-    $(BYT_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg \
-    $(BYT_PATH)/mxt1664S-touchscreen.idc:system/usr/idc/mxt1664S-touchscreen.idc
+    $(PLATFORM_PATH)/init.byt.usb.rc:root/init.platform.usb.rc \
+    $(PLATFORM_PATH)/init.debug.rc:root/init.debug.rc \
+    $(PLATFORM_PATH)/props.baytrail.rc:root/props.platform.rc \
+    $(PLATFORM_PATH)/maxtouch.fw:system/etc/firmware/maxtouch.fw \
+    $(PLATFORM_PATH)/mxt1664S-touchscreen.idc:system/usr/idc/mxt1664S-touchscreen.idc
 
 # Kernel Watchdog
 PRODUCT_COPY_FILES += \
@@ -30,6 +30,7 @@ PRODUCT_PACKAGES += \
     libremote-processor \
     remote-process \
     charger \
+    charger_res_images \
     parameter
 
 # light
