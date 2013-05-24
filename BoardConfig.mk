@@ -1,5 +1,3 @@
-# Force SPID value
-SPID = 0000:0000:0000:0007:0000:0000
 
 include device/intel/common/BoardConfig.mk
 

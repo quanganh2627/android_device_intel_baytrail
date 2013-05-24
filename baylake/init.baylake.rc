@@ -60,6 +60,9 @@ on init
     insmod /lib/modules/matrix.ko
     chmod 0640 /dev/matrix
 
+    setprop_from_sysfs /sys/firmware/pidv/iafw_version sys.ia32.version
+    setprop_from_sysfs /sys/firmware/pidv/secfw_version sys.chaabi.version
+
 on boot
     #  Mount debugfs for systrace settings
     mount debugfs none /sys/kernel/debug
@@ -96,6 +99,9 @@ on boot
     # To workaround inability to resume after sleep, disable the access that
     # triggers the problem.
     chmod 0000 /sys/power/state
+
+    # Reboot in COS on shutdown request when charger is plugged
+    setprop ro.rebootchargermode true
 
 on post-fs-data
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
