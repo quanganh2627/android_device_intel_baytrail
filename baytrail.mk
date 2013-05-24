@@ -33,6 +33,10 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     parameter
 
+# Add HdmiSettings app
+PRODUCT_PACKAGES += \
+    HdmiSettings
+
 # light
 PRODUCT_PACKAGES += \
     lights.$(PRODUCT_DEVICE)
