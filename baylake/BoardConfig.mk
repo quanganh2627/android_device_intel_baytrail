@@ -86,6 +86,9 @@ BOARD_USE_LIBVA_INTEL_DRIVER := true
 BOARD_USE_LIBVA := true
 BOARD_USE_LIBMIX := true
 
+#Support background music playback for Widi Multitasking
+ENABLE_BACKGROUND_MUSIC := true
+
 # Settings for the Media SDK library and plug-ins:
 # - USE_MEDIASDK: use Media SDK support or not
 # - MFX_IPP: sets IPP library optimization to use
@@ -103,4 +106,4 @@ OVERRIDE_RS_DRIVER := libRSDriver_intel7.so
 
 # Temporary support for diskinstaller to be used with EFI BIOS.
 # -> should go away as this is not needed with PSI firmware + OTG
-include $(BYT_PATH)/diskinstaller/config.mk
+include $(PLATFORM_PATH)/diskinstaller/config.mk

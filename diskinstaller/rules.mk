@@ -1,3 +1,5 @@
+ifeq ($(TARGET_USE_DISKINSTALLER),true)
+
 # 'make installer_img' to build the USB installer
 
 # Trick the installer boot image into using Google mkbootimg with private var.
@@ -17,3 +19,4 @@ $(PRODUCT_OUT)/startup.nsh: $(PRODUCT_OUT)/kernel $(TARGET_DEVICE_DIR)/BoardConf
 	echo "fs1:\kernel.efi $(BOARD_KERNEL_CMDLINE) initrd=ramdisk-installer.img.gz" > "$(PRODUCT_OUT)/startup.nsh"
 	echo "fs0:\kernel.efi $(BOARD_KERNEL_CMDLINE) initrd=ramdisk.img" >> "$(PRODUCT_OUT)/startup.nsh"
 
+endif #TARGET_USE_DISKINSTALLER
