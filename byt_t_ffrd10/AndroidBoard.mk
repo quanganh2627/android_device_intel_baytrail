@@ -1,1 +1,1 @@
-include vendor/intel/baytrail/AndroidBoard.mk
+include device/intel/baytrail/AndroidBoard.mk

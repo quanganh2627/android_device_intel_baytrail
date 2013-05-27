@@ -3,11 +3,11 @@
 REF_DEVICE_NAME ?= $(TARGET_DEVICE)
 REF_PRODUCT_NAME ?= $(TARGET_PRODUCT)
 
-DEVICE_PATH := vendor/intel/baytrail/baylake
+DEVICE_PATH := device/intel/baytrail/baylake
 
 TARGET_USE_DROIDBOOT := true
 
-include vendor/intel/baytrail/BoardConfig.mk
+include device/intel/baytrail/BoardConfig.mk
 
 # Temporary IFWI does not support signing
 TARGET_OS_SIGNING_METHOD := none

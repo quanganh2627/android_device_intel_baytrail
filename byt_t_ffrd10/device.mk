@@ -11,7 +11,7 @@
 # Superclass
 $(call inherit-product, build/target/product/full_base_no_telephony.mk)
 # Include Dalvik Heap Size Configuration
-$(call inherit-product, vendor/intel/common/dalvik/phone-xhdpi-1024-dalvik-heap.mk)
+$(call inherit-product, device/intel/common/dalvik/phone-xhdpi-1024-dalvik-heap.mk)
 
 # Overrides
 PRODUCT_DEVICE := byt_t_ffrd10
@@ -20,7 +20,7 @@ PRODUCT_MODEL := byt_t_ffrd10
 PRODUCT_CHARACTERISTICS := nosdcard,tablet
 
 # intel common overlay folder
-DEVICE_PACKAGE_OVERLAYS := vendor/intel/common/overlays
+DEVICE_PACKAGE_OVERLAYS := device/intel/common/overlays
 
 OVERRIDE_COPIES := \
     $(LOCAL_PATH)/asound.conf:system/etc/asound.conf \
@@ -306,7 +306,7 @@ PRODUCT_PACKAGES += \
     VppSettings
 
 #audio firmware
-AUDIO_FW_PATH := device/intel/fw/sst/
+AUDIO_FW_PATH := vendor/intel/fw/sst/
 PRODUCT_COPY_FILES += \
     $(AUDIO_FW_PATH)/fw_sst_0f28.bin:system/etc/firmware/fw_sst_0f28.bin \
 
@@ -323,7 +323,7 @@ PRODUCT_COPY_FILES += \
 
 #################################################"
 # Include platform - do not inherit so that variables can be set before inclusion
-include vendor/intel/baytrail/baytrail.mk
+include device/intel/baytrail/baytrail.mk
 ### WORKAROUND
 # Override to be able to load libraries built for baylake.
 # This can probably be removed after fixing gralloc.baylake.so.
