@@ -14,15 +14,6 @@
           </CompoundRule>
         </CompoundRule>
       </Configuration>
-      <Configuration Name="Earpiece">
-        <CompoundRule Type="All">
-          <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Earpiece"/>
-          <CompoundRule Type="Any">
-            <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="Normal"/>
-            <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="RingTone"/>
-          </CompoundRule>
-        </CompoundRule>
-      </Configuration>
       <Configuration Name="Voip.WiredSpeakers">
       <CompoundRule Type="All">
         <CompoundRule Type="Any">
@@ -39,14 +30,6 @@
     </ConfigurableElements>
     <Settings>
       <Configuration Name="WiredSpeakers">
-        <ConfigurableElement Path="/Audio/LPE/HSEP_PATH/STEREO_EQ/ENABLE">
-          <BooleanParameter Name="ENABLE">0</BooleanParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/LPE/HSEP_PATH/MONO_EQ/ENABLE">
-          <BooleanParameter Name="ENABLE">0</BooleanParameter>
-        </ConfigurableElement>
-      </Configuration>
-      <Configuration Name="Earpiece">
         <ConfigurableElement Path="/Audio/LPE/HSEP_PATH/STEREO_EQ/ENABLE">
           <BooleanParameter Name="ENABLE">0</BooleanParameter>
         </ConfigurableElement>
@@ -355,17 +338,6 @@
           </CompoundRule>
         </CompoundRule>
       </Configuration>
-      <Configuration Name="Multimedia.Earpiece">
-        <CompoundRule Type="All">
-          <CompoundRule Type="All">
-            <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Earpiece"/>
-          </CompoundRule>
-          <CompoundRule Type="Any">
-            <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="Normal"/>
-            <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="RingTone"/>
-          </CompoundRule>
-        </CompoundRule>
-      </Configuration>
       <Configuration Name="InCall.IHF">
         <CompoundRule Type="All">
           <CompoundRule Type="All">
@@ -381,16 +353,6 @@
           <CompoundRule Type="Any">
             <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Headset"/>
             <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Headphones"/>
-          </CompoundRule>
-          <CompoundRule Type="Any">
-            <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="InVoipCall"/>
-          </CompoundRule>
-        </CompoundRule>
-      </Configuration>
-      <Configuration Name="InCall.Earpiece">
-        <CompoundRule Type="All">
-          <CompoundRule Type="All">
-            <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Earpiece"/>
           </CompoundRule>
           <CompoundRule Type="Any">
             <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="InVoipCall"/>
@@ -426,18 +388,7 @@
           <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
         </ConfigurableElement>
       </Configuration>
-      <Configuration Name="Multimedia.Earpiece">
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/DAC1">
-          <IntegerParameter Name="DAC1">170 170</IntegerParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME">
-          <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME">
-          <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
-        </ConfigurableElement>
-      </Configuration>
-      <Configuration Name="InCall.IHF">
+     <Configuration Name="InCall.IHF">
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME">
           <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
         </ConfigurableElement>
@@ -454,17 +405,6 @@
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/DAC1">
           <IntegerParameter Name="DAC1">120 120</IntegerParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME">
-          <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
-        </ConfigurableElement>
-      </Configuration>
-      <Configuration Name="InCall.Earpiece">
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/DAC1">
-          <IntegerParameter Name="DAC1">100 100</IntegerParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME">
-          <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME">
           <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
@@ -1443,7 +1383,6 @@
             <CompoundRule Type="Any">
               <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Headset"/>
               <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Headphones"/>
-              <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Earpiece"/>
             </CompoundRule>
           </CompoundRule>
         </CompoundRule>
