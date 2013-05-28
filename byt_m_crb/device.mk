@@ -299,7 +299,7 @@ PRODUCT_PACKAGES += \
     VppSettings
 
 #audio firmware
-AUDIO_FW_PATH := device/intel/fw/sst/
+AUDIO_FW_PATH := vendor/intel/fw/sst/
 PRODUCT_COPY_FILES += \
     $(AUDIO_FW_PATH)/fw_sst_0f28.bin:system/etc/firmware/fw_sst_0f28.bin \
 
