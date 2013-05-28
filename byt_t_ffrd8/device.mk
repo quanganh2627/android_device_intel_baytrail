@@ -156,7 +156,7 @@ endif
 
 # BCM4752 GPS
 PRODUCT_PACKAGES += \
-    gps_bcm_4752_extlna
+    gps_bcm_4752
 
 # bluetooth
 # Copy the needed Broadcom Bluetooth chip firmware files
