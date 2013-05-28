@@ -21,6 +21,16 @@ flashfiles: $(PRODUCT_OUT)/partition.tbl
 	@cp $(PRODUCT_OUT)/byt_psi_encapsulated_ifwi.bin $(FLASHFILE_PATH)/
 	@zip -j $(FLASHFILE_PATH)/$(FLASHFILE_NAME) $(FLASHFILE_PATH)/*
 	@find $(FLASHFILE_PATH) -name '*.zip' -prune -o -type f -exec rm {} \;
+	# copy OTA file
+	@$(eval FLASHFILE_NAME := $(GENERIC_TARGET_NAME)-ota-$(FILE_NAME_TAG).zip)
+	@echo "Copying $(FLASHFILE_NAME)"
+	@cp $(PRODUCT_OUT)/$(FLASHFILE_NAME) $(FLASHFILE_PATH)/
+	# copy OTA input file
+	@$(eval FLASHFILE_NAME := $(GENERIC_TARGET_NAME)-target_files-$(FILE_NAME_TAG).zip)
+	@$(eval FLASHFILE_PATH := $(PUBLISH_PATH)/$(TARGET_PUBLISH_PATH)/ota_inputs/$(PUBLISH_TARGET_BUILD_VARIANT))
+	@mkdir -p $(FLASHFILE_PATH)
+	@echo "Copying $(FLASHFILE_NAME)"
+	@cp $(PRODUCT_OUT)/obj/PACKAGING/target_files_intermediates/$(FLASHFILE_NAME) $(FLASHFILE_PATH)/
 
 blank_flashfiles:
 	@echo "No $@"

@@ -12,6 +12,9 @@ include device/intel/baytrail/BoardConfig.mk
 # Temporary IFWI does not support signing
 TARGET_OS_SIGNING_METHOD := none
 
+# Capsule PATH
+CAPSULE_BINARY := vendor/intel/fw/PRIVATE/ifwi/baylake/byt_t/capsule.bin
+
 #Platform
 BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 
