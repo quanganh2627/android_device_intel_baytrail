@@ -16,6 +16,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/watchdog/init.watchdogd.rc:root/init.watchdog.rc
 
+#keylayout file
+PRODUCT_COPY_FILES += \
+    $(PLATFORM_PATH)/intel_short_long_press.kl:system/usr/keylayout/baytrailaudio_Intel_MID_Audio_Jack.kl
+
 # parameter-framework
 PRODUCT_PACKAGES += \
     libparameter \
