@@ -137,4 +137,4 @@ BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE +=  droidboot.use_installer=1 droidboot.ins
 
 # Temporary support for diskinstaller to be used with EFI BIOS.
 # -> should go away as this is not needed with PSI firmware + OTG
-include $(PLATFORM_PATH)/diskinstaller/config.mk
+#include $(PLATFORM_PATH)/diskinstaller/config.mk
