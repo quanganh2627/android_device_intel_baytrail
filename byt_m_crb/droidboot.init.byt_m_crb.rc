@@ -1,0 +1,4 @@
+# for eth0
+service net_eth0-start /system/bin/sh /init.net.eth0.sh
+    class core
+    oneshot

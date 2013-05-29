@@ -126,6 +126,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072 \
     ro.sf.lcd_density=220
 
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.service.adb.tcp.port=5555 \
+    net.eth0.ip=192.168.42.1 \
+    net.eth0.netmask=255.255.255.0
+
 # Intel fake multiple display
 PRODUCT_PACKAGES += \
     com.intel.multidisplay \
