@@ -28,103 +28,103 @@
                 <version>original</version>
             </file></code_group>
          <command>
-            <string>fastboot oem write_osip_header</string>
+            <string>fastboot -t 192.168.42.1 oem write_osip_header</string>
             <timeout>60000</timeout>
             <retry>2</retry>
             <description>Writing OSIP header</description>
         </command>
         <command>
-            <string>fastboot flash boot $kernel_file</string>
+            <string>fastboot -t 192.168.42.1 flash boot $kernel_file</string>
             <timeout>60000</timeout>
             <retry>2</retry>
             <description>Flashing boot</description>
         </command>
         <command>
-            <string>fastboot flash recovery $recovery_file</string>
+            <string>fastboot -t 192.168.42.1 flash recovery $recovery_file</string>
             <timeout>60000</timeout>
             <retry>2</retry>
             <description>Flashing recovery</description>
         </command>
         <command>
-            <string>fastboot flash fastboot $fastboot_file</string>
+            <string>fastboot -t 192.168.42.1 flash fastboot $fastboot_file</string>
             <timeout>60000</timeout>
             <retry>2</retry>
             <description>Flashing fastboot</description>
         </command>
          <command>
-            <string>fastboot oem start_partitioning</string>
+            <string>fastboot -t 192.168.42.1 oem start_partitioning</string>
             <timeout>60000</timeout>
             <retry>2</retry>
             <description>Start partitioning</description>
         </command>
          <command>
-            <string>fastboot flash /tmp/partition.tbl $partition_table_file</string>
+            <string>fastboot -t 192.168.42.1 flash /tmp/partition.tbl $partition_table_file</string>
             <timeout>60000</timeout>
             <retry>2</retry>
             <description>Push partition table on device</description>
         </command>
         <command>
-            <string>fastboot oem partition /tmp/partition.tbl</string>
+            <string>fastboot -t 192.168.42.1 oem partition /tmp/partition.tbl</string>
             <timeout>60000</timeout>
             <retry>2</retry>
             <description>Apply partition on device</description>
         </command>
         <command>
-            <string>fastboot erase factory</string>
+            <string>fastboot -t 192.168.42.1 erase factory</string>
             <timeout>60000</timeout>
             <retry>2</retry>
             <description>erase factory partition</description>
         </command>
         <command>
-            <string>fastboot erase cache</string>
+            <string>fastboot -t 192.168.42.1 erase cache</string>
             <timeout>60000</timeout>
             <retry>2</retry>
             <description>Erasing cache</description>
         </command>
         <command>
-            <string>fastboot erase system</string>
+            <string>fastboot -t 192.168.42.1 erase system</string>
             <timeout>60000</timeout>
             <retry>2</retry>
             <description>Erasing system</description>
         </command>
         <command>
-            <string>fastboot erase config</string>
+            <string>fastboot -t 192.168.42.1 erase config</string>
             <timeout>60000</timeout>
             <retry>2</retry>
             <description>erase config partition</description>
         </command>
         <command>
-            <string>fastboot erase logs</string>
+            <string>fastboot -t 192.168.42.1 erase logs</string>
             <timeout>60000</timeout>
             <retry>2</retry>
             <description>erase logs partition</description>
         </command>
         <command>
-            <string>fastboot erase spare</string>
+            <string>fastboot -t 192.168.42.1 erase spare</string>
             <timeout>60000</timeout>
             <retry>2</retry>
             <description>erase spare partition</description>
         </command>
         <command>
-            <string>fastboot erase data</string>
+            <string>fastboot -t 192.168.42.1 erase data</string>
             <timeout>60000</timeout>
             <retry>2</retry>
             <description>erase data partition</description>
         </command>
         <command>
-            <string>fastboot oem stop_partitioning</string>
+            <string>fastboot -t 192.168.42.1 oem stop_partitioning</string>
             <timeout>60000</timeout>
             <retry>2</retry>
             <description>Stop partitioning</description>
         </command>
         <command>
-            <string>fastboot flash system $system_file</string>
+            <string>fastboot -t 192.168.42.1 flash system $system_file</string>
             <timeout>300000</timeout>
             <retry>2</retry>
             <description>Flashing system</description>
         </command>
         <command>
-            <string>fastboot continue</string>
+            <string>fastboot -t 192.168.42.1 continue</string>
             <timeout>60000</timeout>
             <retry>2</retry>
             <description>Reboot system</description>
