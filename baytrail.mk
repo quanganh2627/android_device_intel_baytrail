@@ -30,14 +30,19 @@ PRODUCT_PACKAGES += \
     libtinyalsactl-subsystem \
     libfs-subsystem \
     libproperty-subsystem \
-    libremote-processor \
-    remote-process \
     parameter
 
 # Add charger app
 PRODUCT_PACKAGES += \
     charger \
     charger_res_images
+
+# remote-process for parameter-framework tuning interface
+ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
+PRODUCT_PACKAGES += \
+    libremote-processor \
+    remote-process
+endif
 
 # Add HdmiSettings app
 PRODUCT_PACKAGES += \
