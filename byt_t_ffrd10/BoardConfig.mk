@@ -66,7 +66,7 @@ USE_CSS_2_0 := true
 # Enabled HW accelerated JPEG encoder using VA API
 USE_INTEL_JPEG := false
 # Enabled NXP Premium Audio Effect Libraries
-USE_INTEL_LVSE := true
+#USE_INTEL_LVSE := true
 JPEGDEC_USES_GEN := true
 
 ifeq ($(BOARD_KERNEL_CMDLINE),)
