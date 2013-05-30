@@ -24,7 +24,6 @@ PRODUCT_PACKAGES += \
     liblpe-subsystem \
     libtinyamixer-subsystem \
     libtinyalsactl-subsystem \
-    libbluetooth-subsystem \
     libfs-subsystem \
     libproperty-subsystem \
     libremote-processor \
