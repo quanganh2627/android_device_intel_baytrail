@@ -1,4 +1,17 @@
 {
+		"globals": {
+			"partition_format": "%s%d"
+		},
+
+		"storage": {
+			"type": "SSD",
+			"vendor": "SSD/HD vendor",
+			"base_name": "/dev/block/sda",
+			"firmware_version": 0.01,
+			"size": "16G",
+			"revision": 0.01
+		},
+
 		"partitions":
 		{
 			"reserved": {
