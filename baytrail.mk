@@ -37,6 +37,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     HdmiSettings
 
+# Ota and Ota Downloader
+PRODUCT_PACKAGES += \
+    Ota \
+    OtaDownloader
+
 # light
 PRODUCT_PACKAGES += \
     lights.$(PRODUCT_DEVICE)
