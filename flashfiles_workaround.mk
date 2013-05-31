@@ -21,3 +21,5 @@ flashfiles: $(PRODUCT_OUT)/partition.tbl
 	@zip -j $(FLASHFILE_PATH)/$(FLASHFILE_NAME) $(FLASHFILE_PATH)/*
 	@find $(FLASHFILE_PATH) -name '*.zip' -prune -o -type f -exec rm {} \;
 
+blank_flashfiles:
+	@echo "No $@"

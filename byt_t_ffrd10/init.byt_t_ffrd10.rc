@@ -60,6 +60,11 @@ on init
     insmod /lib/modules/matrix.ko
     chmod 0640 /dev/matrix
 
+    setprop_from_sysfs /sys/firmware/pidv/iafw_version sys.ia32.version
+    setprop_from_sysfs /sys/firmware/pidv/secfw_version sys.chaabi.version
+
+
+
 on boot
     #  Mount debugfs for systrace settings
     mount debugfs none /sys/kernel/debug
@@ -206,9 +211,16 @@ on property:ro.debuggable=1
 
 on charger
     start watchdogd
+    # REVERTME - Temp workaround for Baylake bringup.  See BZ 91648.
+    # To workaround inability to resume after sleep, disable the access that
+    # triggers the problem.
+    chmod 0000 /sys/power/state
     insmod /lib/modules/rmi4.ko boot_mode=1
 
     # Invoke fuel gauging helper binary to restore config data
     symlink /dev/max170xx /dev/fg
     chmod 0775 /dev/fg
     start fg_conf
+
+on property:sys.boot_completed=1
+   write /sys/firmware/osnib/clean_osnib 1

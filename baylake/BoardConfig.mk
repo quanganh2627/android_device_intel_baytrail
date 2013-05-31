@@ -3,11 +3,11 @@
 REF_DEVICE_NAME ?= $(TARGET_DEVICE)
 REF_PRODUCT_NAME ?= $(TARGET_PRODUCT)
 
-DEVICE_PATH := vendor/intel/baytrail/baylake
+DEVICE_PATH := device/intel/baytrail/baylake
 
 TARGET_USE_DROIDBOOT := true
 
-include vendor/intel/baytrail/BoardConfig.mk
+include device/intel/baytrail/BoardConfig.mk
 
 # Temporary IFWI does not support signing
 TARGET_OS_SIGNING_METHOD := none
@@ -33,6 +33,7 @@ INTEL_WIDI_BAYTRAIL := true
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
+BOARD_USES_TINY_ALSA_AUDIO := true
 BOARD_USES_AUDIO_HAL_CONFIGURABLE := true
 BOARD_USE_VIBRATOR_ALSA := false
 BUILD_WITH_ALSA_UTILS := true
@@ -57,6 +58,7 @@ USE_CSS_2_0 := true
 USE_INTEL_JPEG := false
 # Enabled NXP Premium Audio Effect Libraries
 USE_INTEL_LVSE := true
+JPEGDEC_USES_GEN := true
 
 ifeq ($(BOARD_KERNEL_CMDLINE),)
 ifeq ($(TARGET_BUILD_VARIANT),eng)
@@ -81,6 +83,10 @@ USE_INTEL_VA:=true
 BOARD_USES_WRS_OMXIL_CORE:=true
 BOARD_USES_MRST_OMX:=true
 USE_INTEL_ASF_EXTRACTOR:=true
+# enabled to use Intel secure AVC Stagefright HW decoder
+USE_INTEL_SECURE_AVC := true
+# enabled to use hardware VP8 decoder
+USE_HW_VP8 := true
 
 BOARD_USE_LIBVA_INTEL_DRIVER := true
 BOARD_USE_LIBVA := true

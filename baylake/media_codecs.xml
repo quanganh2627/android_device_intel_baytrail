@@ -118,6 +118,10 @@ Only the three quirks included above are recognized at this point:
             <Quirk name="requires-hold-extra-buffers" />
         </MediaCodec>
 
+        <MediaCodec name="VAVideoDecoder" type="video/mp4v-es" />
+        <MediaCodec name="VAVideoDecoder" type="video/3gpp" />
+        <MediaCodec name="VAVideoDecoder" type="video/x-vnd.on2.vp8"/>
+
         <MediaCodec name="OMX.google.mpeg4.decoder" type="video/mp4v-es" />
         <MediaCodec name="OMX.google.h263.decoder" type="video/3gpp" />
         <MediaCodec name="OMX.google.vpx.decoder" type="video/x-vnd.on2.vp8" />
@@ -131,12 +135,18 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.google.amrnb.encoder" type="audio/3gpp" />
         <MediaCodec name="CIPAMRWBEncoder" type="audio/amr-wb" />
         <MediaCodec name="OMX.google.amrwb.encoder" type="audio/amr-wb" />
-        <MediaCodec name="OMX.google.h263.encoder" type="video/3gpp" />
         <MediaCodec name="OMX.Intel.hw_ve.h264" type="video/avc" />
         <MediaCodec name="OMX.Intel.VideoEncoder.AVC" type="video/avc">
             <Quirk name="requires-loaded-to-idle-after-allocation" />
         </MediaCodec>
+        <MediaCodec name="OMX.Intel.VideoEncoder.H263" type="video/3gpp">
+            <Quirk name="requires-loaded-to-idle-after-allocation" />
+        </MediaCodec>
+        <MediaCodec name="OMX.Intel.VideoEncoder.MPEG4" type="video/mp4v-es">
+            <Quirk name="requires-loaded-to-idle-after-allocation" />
+        </MediaCodec>
         <MediaCodec name="OMX.google.h264.encoder" type="video/avc" />
+        <MediaCodec name="OMX.google.h263.encoder" type="video/3gpp" />
         <MediaCodec name="OMX.google.mpeg4.encoder" type="video/mp4v-es" />
         <MediaCodec name="OMX.google.flac.encoder" type="audio/flac" />
     </Encoders>

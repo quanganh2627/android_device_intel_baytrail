@@ -1,7 +1,5 @@
-# Force SPID value
-SPID = 0000:0000:0000:0007:0000:0000
 
-include vendor/intel/common/BoardConfig.mk
+include device/intel/common/BoardConfig.mk
 
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1073741824
 

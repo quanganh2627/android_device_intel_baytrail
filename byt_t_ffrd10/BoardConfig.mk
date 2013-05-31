@@ -3,11 +3,11 @@
 REF_DEVICE_NAME ?= baylake
 REF_PRODUCT_NAME ?= baylake
 
-DEVICE_PATH := vendor/intel/baytrail/byt_t_ffrd10
+DEVICE_PATH := device/intel/baytrail/byt_t_ffrd10
 
 TARGET_USE_DROIDBOOT := true
 
-include vendor/intel/baytrail/BoardConfig.mk
+include device/intel/baytrail/BoardConfig.mk
 
 # Temporary IFWI does not support signing
 TARGET_OS_SIGNING_METHOD := none
@@ -57,6 +57,7 @@ USE_CSS_2_0 := true
 USE_INTEL_JPEG := false
 # Enabled NXP Premium Audio Effect Libraries
 USE_INTEL_LVSE := true
+JPEGDEC_USES_GEN := true
 
 ifeq ($(BOARD_KERNEL_CMDLINE),)
 ifeq ($(TARGET_BUILD_VARIANT),eng)
@@ -81,6 +82,10 @@ USE_INTEL_VA:=true
 BOARD_USES_WRS_OMXIL_CORE:=true
 BOARD_USES_MRST_OMX:=true
 USE_INTEL_ASF_EXTRACTOR:=true
+# enabled to use Intel secure AVC Stagefright HW decoder
+USE_INTEL_SECURE_AVC := true
+# enabled to use hardware VP8 decoder
+USE_HW_VP8 := true
 
 BOARD_USE_LIBVA_INTEL_DRIVER := true
 BOARD_USE_LIBVA := true

@@ -1,6 +1,6 @@
-include $(TOP)/vendor/intel/common/wifi/WifiRules.mk
+include $(TOP)/device/intel/common/wifi/WifiRules.mk
 
-SOC_WIFI_DIR = vendor/intel/baytrail/wifi
+SOC_WIFI_DIR = device/intel/baytrail/wifi
 LOCAL_SOC_WIFI_DIR = $(PWD)/$(SOC_WIFI_DIR)
 
 # wifi platform specific configuration files addings
