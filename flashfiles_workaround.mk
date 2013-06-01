@@ -16,6 +16,9 @@ flashfiles: $(PRODUCT_OUT)/partition.tbl
 	@cp $(TARGET_DEVICE_DIR)/flash.xml $(FLASHFILE_PATH)/
 	@cp $(TARGET_DEVICE_DIR)/flash_capsule.xml $(FLASHFILE_PATH)/
 	@cp $(OUT)/partition.tbl $(FLASHFILE_PATH)/
+	# disabled as PLATFORM_PATH is overwritten by GPS makefile
+	# @cp $(PLATFORM_PATH)/installer.cmd $(FLASHFILE_PATH)/
+	@cp $(TARGET_DEVICE_DIR)/../installer.cmd $(FLASHFILE_PATH)/
 	@cp $(IFWI_PREBUILT_PATHS)/dediprog.bin $(FLASHFILE_PATH)/
 	@cp $(IFWI_PREBUILT_PATHS)/capsule.bin $(PRODUCT_OUT)/byt_psi_encapsulated_ifwi.bin
 	@cp $(PRODUCT_OUT)/byt_psi_encapsulated_ifwi.bin $(FLASHFILE_PATH)/
