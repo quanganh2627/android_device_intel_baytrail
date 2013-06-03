@@ -42,6 +42,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
        audio.widi.$(PRODUCT_NAME)
 
+#remote submix audio
+PRODUCT_PACKAGES += \
+       audio.r_submix.default
+
 # parameter-framework files
 PRODUCT_PACKAGES += \
         parameter-framework.audio.byt_t_ffrd8
