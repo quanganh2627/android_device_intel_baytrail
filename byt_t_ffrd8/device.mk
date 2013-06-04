@@ -162,8 +162,7 @@ PRODUCT_PACKAGES += \
 #  - PR: 43241B3=B4
 PRODUCT_PACKAGES += \
     bt_bcm \
-    bt_fw_BCM43241B0_AOB \
-    bt_fw_BCM43241B3_PR
+    bt_fw_BCM43340B0_AOB
 
 # IPV6
 PRODUCT_PACKAGES += \
