@@ -13,7 +13,7 @@
     </SubsystemPlugins>
     <StructureDescriptionFileLocation Path="Structure/Audio/AudioClass.xml"/>
     <SettingsConfiguration>
-        <ConfigurableDomainsFileLocation Path="Settings/Audio/AudioRoutingConfigurableDomains.xml"/>
+        <ConfigurableDomainsFileLocation Path="Settings/Audio/AudioConfigurableDomains.xml"/>
         <!--ConfigurableDomainsFileLocation Path="Settings/Audio/AudioSettingsExport.xml"/-->
         <!--BinarySettingsFileLocation Path="Settings/Audio/AudioSettingsExport.bin"/-->
     </SettingsConfiguration>
