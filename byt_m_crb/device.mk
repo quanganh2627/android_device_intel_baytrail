@@ -93,9 +93,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     msvdx_fw_mfld_DE2.0.bin
 
-# video encoder and camera
-PRODUCT_PACKAGES += \
-    libsharedbuffer
 
 # video editor
 PRODUCT_PACKAGES += \
@@ -190,29 +187,17 @@ PRODUCT_PACKAGES += \
     com.intel.camera.extensions \
     com.intel.camera.extensions.xml
 
-# camera sensor tuning parameter
-PRODUCT_PACKAGES += \
-        libSh3aParamsimx135
-
-# camera firmware
-PRODUCT_PACKAGES += \
-        shisp_2400.bin \
-        shisp_2400b0.bin \
-        shisp_2400b0_cssv2.bin
-
 # video encoder and camera
 PRODUCT_PACKAGES += \
         libsharedbuffer
 
 # board specific files
 PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
-        $(LOCAL_PATH)/camera_profiles.xml:system/etc/camera_profiles.xml
+        $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml
 
 # audio policy file
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/audio_policy.conf:system/etc/audio_policy.conf
-
 
 # Camera app
 PRODUCT_PACKAGES += \

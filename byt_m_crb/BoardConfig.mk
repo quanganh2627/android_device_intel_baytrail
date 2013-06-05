@@ -47,7 +47,8 @@ BOARD_GRAPHIC_IS_GEN := true
 # Set USE_CAMERA_STUB to 'true' for Fake Camera builds,
 # 'false' for libcamera builds to use Camera Imaging(CI) supported by intel.
 USE_CAMERA_STUB := false
-USE_CAMERA_HAL2 := true
+USE_CAMERA_HAL2 := false
+USE_CAMERA_USB := true
 
 USE_INTEL_METABUFFER := true
 
