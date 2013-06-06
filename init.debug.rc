@@ -4,6 +4,7 @@ on init
     export GCOV_PREFIX /data
     export GCOV_PREFIX_STRIP 1
     write /proc/sys/kernel/kptr_restrict 0
+    insmod /lib/modules/lm_dump.ko
 
 on early-boot
     chown system log /logs
