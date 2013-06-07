@@ -105,8 +105,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audio_hal_configurable \
     libaudioresample \
-    libbluetooth-audio \
-    mediabtservice \
     audio.a2dp.default \
     vibrator.$(PRODUCT_DEVICE) \
     audio.usb.default
@@ -156,7 +154,7 @@ endif
 
 # BCM4752 GPS
 PRODUCT_PACKAGES += \
-    gps_bcm_4752_extlna
+    gps_bcm_4752
 
 # bluetooth
 # Copy the needed Broadcom Bluetooth chip firmware files

@@ -20,7 +20,6 @@ BOARD_HAVE_WIFI := true
 INTEL_WIDI := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)
-BOARD_HAVE_GPS := false
 TARGET_HAS_VPP := true
 TARGET_VPP_USE_GEN := true
 COMMON_GLOBAL_CFLAGS += -DGFX_BUF_EXT
@@ -74,7 +73,7 @@ endif
 BOARD_GPU_DRIVERS := i965
 USE_OPENGL_RENDERER := true
 BOARD_KERNEL_CMDLINE += vga=current i915.modeset=1 drm.vblankoffdelay=1 \
-                        acpi_backlight=vendor
+                        acpi_backlight=vendor i915.i915_enable_rc6=0
 
 BOARD_USES_LIBPSS := false
 

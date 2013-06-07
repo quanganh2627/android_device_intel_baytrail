@@ -5,6 +5,8 @@ REF_PRODUCT_NAME ?= $(TARGET_PRODUCT)
 
 TARGET_USE_DROIDBOOT := true
 
+STORAGE_CFLAGS := -DSTORAGE_BASE_PATH=\"/dev/block/sda\" -DSTORAGE_PARTITION_FORMAT=\"%s%d\"
+
 include $(PLATFORM_PATH)/BoardConfig.mk
 
 # Temporary IFWI does not support signing
@@ -18,7 +20,6 @@ BOARD_HAVE_WIFI := true
 INTEL_WIDI := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)
-BOARD_HAVE_GPS := false
 TARGET_HAS_VPP := true
 TARGET_VPP_USE_GEN := true
 COMMON_GLOBAL_CFLAGS += -DGFX_BUF_EXT
@@ -101,3 +102,4 @@ USE_FEATURE_ALAC := true
 
 # Defines Intel library for GPU accelerated Renderscript:
 OVERRIDE_RS_DRIVER := libRSDriver_intel7.so
+

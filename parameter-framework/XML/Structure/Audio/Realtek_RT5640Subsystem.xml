@@ -24,12 +24,11 @@
             <ParameterBlock Name="ANALOG">
                 <BooleanParameter Name="SWITCH" Mapping="Control:'Mono Playback Switch'"/>
             </ParameterBlock>
-            <BooleanParameter Name="SWITCH"  Mapping="Control:'Receiver Switch'"/>
         </ComponentType>
 
         <ComponentType Name="LINEOUT_TYPE">
             <Component Name="ANALOG" Type="PLAYBACK_TYPE" Mapping="Amend1:OUT"/>
-            <BooleanParameter Name="SWITCH"  Mapping="Control:'OUT Channel Switch'"/>
+            <BooleanParameter Name="SWITCH" ArrayLength="2" Mapping="Control:'OUT Channel Switch'"/>
         </ComponentType>
 
         <ComponentType Name="DIGITAL_TYPE">
@@ -435,65 +434,10 @@
             <Component Name="DIGITAL" Type="MIXER_DIGITAL_TYPE"/>
         </ComponentType>
 
-        <ComponentType Name="CTRL_1_TYPE">
-            <EnumParameter Name="SELECT" Size="8" Mapping="Control:'Sel Drc Agc'">
-                <ValuePair Literal="Disable DRC AGC" Numerical="0"/>
-                <ValuePair Literal="Enable DRC to DAC" Numerical="1"/>
-                <ValuePair Literal="Disable DRC AGC" Numerical="2"/>
-                <ValuePair Literal="Enable AGC to ADC" Numerical="3"/>
-            </EnumParameter>
-            <EnumParameter Name="UPDATE_SWITCH" Size="8" Mapping="Control:'Update Drc Agc Switch'">
-                <ValuePair Literal="Disable" Numerical="0"/>
-                <ValuePair Literal="Enable" Numerical="1"/>
-            </EnumParameter>
-            <IntegerParameter Name="ATTACK_SELECT" Size="8" Min="0" Max="16" Mapping="Control:'Drc Agc Attack Select'"/>
-            <EnumParameter Name="RATE_SELECT" Size="8" Mapping="Control:'Drc Agc Rate Sel'">
-                <ValuePair Literal="NONE" Numerical="0"/>
-                <ValuePair Literal="48K" Numerical="1"/>
-                <ValuePair Literal="96K" Numerical="2"/>
-                <ValuePair Literal="192K" Numerical="3"/>
-                <ValuePair Literal="44.1K" Numerical="4"/>
-                <ValuePair Literal="88.2K" Numerical="5"/>
-                <ValuePair Literal="176.4K" Numerical="6"/>
-            </EnumParameter>
-            <IntegerParameter Name="RECOVERY_RATE" Size="8" Min="0" Max="16" Mapping="Control:'Drc Agc Recovery Rate'"/>
-        </ComponentType>
-
-        <ComponentType Name="CTRL_2_TYPE">
-            <IntegerParameter Name="POST_GAIN" Size="8" Min="0" Max="63" Mapping="Control:'Drc Agc Post Bst'"/>
-            <BooleanParameter Name="COMPRESS_SWITCH" Mapping="Control:'En Drc Agc Compress'"/>
-            <EnumParameter Name="RATIO_SELECT" Size="8" Mapping="Control:'Sel Ratio'">
-                <ValuePair Literal="1:1" Numerical="0"/>
-                <ValuePair Literal="1:2" Numerical="1"/>
-                <ValuePair Literal="1:4" Numerical="2"/>
-                <ValuePair Literal="1:8" Numerical="3"/>
-            </EnumParameter>
-            <IntegerParameter Name="PRE_GAIN" Size="8" Min="0" Max="19" Mapping="Control:'Sel_Drc/Agc_Pre_Bst'"/>
-        </ComponentType>
-
-        <ComponentType Name="CTRL_3_TYPE">
-            <IntegerParameter Name="NOISE_GATE_BST_GAIN" Size="8" Min="0" Max="15" Mapping="Control:'Noise Gate Boost'"/>
-            <IntegerParameter Name="THMAX_SELECT" Size="8" Min="0" Max="31" Mapping="Control:'Sel Drc Agc Thmax'"/>
-            <BooleanParameter Name="NOISE_GATE_SWITCH" Mapping="Control:'En Drc Agc Noise Gate'"/>
-            <BooleanParameter Name="NOISE_GATE_HOLD_SWITCH" Mapping="Control:'En Drc Agc Noise Gate Hold'"/>
-            <IntegerParameter Name="NOISE_TH_SELECT" Size="8" Min="0" Max="31" Mapping="Control:'Sel Drc Agc Noise Th'"/>
-        </ComponentType>
-
-        <ComponentType Name="DRC_AGC_CTRL_TYPE">
-            <Component Name="CTRL_1" Type="CTRL_1_TYPE"/>
-            <Component Name="CTRL_2" Type="CTRL_2_TYPE"/>
-            <Component Name="CTRL_3" Type="CTRL_3_TYPE"/>
-        </ComponentType>
-
-        <ComponentType Name="DIGITAL_SND_EFFECT_TYPE">
-            <Component Name="DRC_AGC_CTRL" Type="DRC_AGC_CTRL_TYPE"/>
-        </ComponentType>
-
         <ComponentType Name="SOUND_CARD">
             <Component Name="OUTPUT" Type="OUTPUTS_TYPE"/>
             <Component Name="INPUT" Type="INPUTS_TYPE"/>
             <Component Name="MIXER" Type="MIXER_TYPE"/>
-            <Component Name="DIGITAL_SND_EFFECT" Type="DIGITAL_SND_EFFECT_TYPE"/>
         </ComponentType>
 
     </ComponentLibrary>

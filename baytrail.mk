@@ -24,7 +24,6 @@ PRODUCT_PACKAGES += \
     liblpe-subsystem \
     libtinyamixer-subsystem \
     libtinyalsactl-subsystem \
-    libbluetooth-subsystem \
     libfs-subsystem \
     libproperty-subsystem \
     libremote-processor \
@@ -32,6 +31,15 @@ PRODUCT_PACKAGES += \
     charger \
     charger_res_images \
     parameter
+
+# Add HdmiSettings app
+PRODUCT_PACKAGES += \
+    HdmiSettings
+
+# Ota and Ota Downloader
+PRODUCT_PACKAGES += \
+    Ota \
+    OtaDownloader
 
 # light
 PRODUCT_PACKAGES += \
