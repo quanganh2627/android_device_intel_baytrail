@@ -61,8 +61,8 @@
       <name>PSH Pressure sensor</name>
       <vendor>Intel Inc.</vendor>
       <version>1</version>
-      <maxRange>120000</maxRange>
-      <resolution>0.001</resolution>
+      <maxRange>1200</maxRange>
+      <resolution>0.01</resolution>
       <power>0.001</power>
       <minDelay>50000</minDelay>
     </sensor>
