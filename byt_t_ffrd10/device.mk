@@ -163,7 +163,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     bt_bcm \
     bt_fw_BCM43241B0_AOB \
-    bt_fw_BCM4324B3_AOB
+    bt_fw_BCM43241B3_PR
 
 # IPV6
 PRODUCT_PACKAGES += \
