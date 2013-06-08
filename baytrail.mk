@@ -28,9 +28,12 @@ PRODUCT_PACKAGES += \
     libproperty-subsystem \
     libremote-processor \
     remote-process \
-    charger \
-    charger_res_images \
     parameter
+
+# Add charger app
+PRODUCT_PACKAGES += \
+    charger \
+    charger_res_images
 
 # Add HdmiSettings app
 PRODUCT_PACKAGES += \
