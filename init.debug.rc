@@ -14,6 +14,10 @@ on early-boot
     chmod 0750 /logs/core
     write /proc/sys/kernel/core_pattern /logs/core/%t_%e_%p.core
 
+    # Let Renderscipt run on Baytrail CPU only.
+    # It should be reverted when GEN GPGPU driver is ready.
+    setprop debug.rs.default-CPU-driver 1
+
 on post-fs
     mkdir /data/tombstones 0755 system system
     mkdir /data/system/    0755 system system
