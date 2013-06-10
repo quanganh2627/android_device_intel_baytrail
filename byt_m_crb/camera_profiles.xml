@@ -40,6 +40,7 @@
         <supportedIntelEffectModes value="none,mono,negative,sepia,vivid,still-sky-blue,still-grass-green,still-skin-whiten-low,still-skin-whiten-medium,still-skin-whiten-high"/> <!-- if not support, please set it to "none" -->
         <supportedAwbModes value="auto,incandescent,fluorescent,daylight,cloudy-daylight"/> <!-- if not support, please set it to "" -->
         <defaultAwbMode value="auto"/> <!-- if not support, please set it to "" -->
+        <supportedAwbLock value="false"/>
         <maxEV value="6"/>
         <minEV value="-6"/>
         <stepEV value="0.33333333"/> <!-- if not support, please set it to 0 -->
@@ -48,6 +49,7 @@
         <supportedIso value="iso-auto,iso-100,iso-200,iso-400,iso-800"/> <!-- if not support, please set it to "" -->
         <defaultAeMetering value="auto"/> <!-- one value of the supportedAeMetering. if not support, please set it to "" -->
         <supportedAeMetering value="auto,center,spot"/> <!-- if not support, please set it to "" -->
+        <supportedAeLock value="false"/>
         <defaultFocusMode value="auto"/> <!-- one value of the supportedFocusModes. if not support, please set it to "fixed" -->
         <supportedFocusModes value="auto,infinity,fixed,macro,continuous-video,continuous-picture"/> <!-- if not support, please set it to "fixed" -->
         <VFPPLimitedResolutionList value=""/> <!-- it depends on the real hardware, value could be 1024x768 or other value list. if no need to set, please set it to "" -->
@@ -99,6 +101,7 @@
         <supportedIntelEffectModes value="none,mono,negative,sepia,vivid,still-sky-blue,still-grass-green,still-skin-whiten-low,still-skin-whiten-medium,still-skin-whiten-high"/>
         <supportedAwbModes value="auto,incandescent,fluorescent,daylight,cloudy-daylight"/>
         <defaultAwbMode value="auto"/>
+        <supportedAwbLock value="false"/>
         <maxEV value="6"/>
         <minEV value="-6"/>
         <stepEV value="0.33333333"/>
@@ -107,6 +110,7 @@
         <supportedIso value="iso-auto,iso-100,iso-200,iso-400,iso-800"/>
         <defaultAeMetering value="auto"/>
         <supportedAeMetering value="auto,center,spot"/>
+        <supportedAeLock value="false"/>
         <defaultFocusMode value="fixed"/>
         <supportedFocusModes value="fixed"/>
         <VFPPLimitedResolutionList value=""/>
