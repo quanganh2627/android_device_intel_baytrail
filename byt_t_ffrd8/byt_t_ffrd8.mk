@@ -66,6 +66,10 @@ PRODUCT_PACKAGES += \
     libstagefright_soft_mp3dec_mdp \
     libstagefright_soft_aacdec_mdp
 
+# NFC
+PRODUCT_PACKAGES += \
+    nfc_pn544pc
+
 #alsa conf
 ALSA_CONF_PATH := external/alsa-lib/
 PRODUCT_COPY_FILES += \
