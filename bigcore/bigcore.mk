@@ -52,7 +52,10 @@ PRODUCT_COPY_FILES += \
 
 # specific management of audio_effects.conf
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf
+$(LOCAL_PATH)/mixer_paths_Realtek.xml:system/etc/mixer_paths_Realtek.xml \
+$(LOCAL_PATH)/mixer_paths_Analog_Devices.xml:system/etc/mixer_paths_Analog_Devices.xml \
+$(LOCAL_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+$(LOCAL_PATH)/mixer_paths_unknown.xml:system/etc/mixer_paths_unknown.xml \
 
 # Include base makefile
 include $(LOCAL_PATH)/device.mk
