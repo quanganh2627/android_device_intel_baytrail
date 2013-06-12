@@ -5,7 +5,7 @@ import init.debug.rc
 import init.avc.rc
 # import init.wireless.rc
 # import init.modem.rc
-import init.wifi.rc
+# import init.wifi.rc
 import init.platform.usb.rc
 import init.gps.rc
 import init.bt.rc
@@ -118,6 +118,15 @@ on post-fs-data
     chmod 0444 /system/etc/fg_config.bin
     start fg_conf
 
+    # give system access to wpa_supplicant.conf for backup and restore
+    mkdir /data/system/ 0770 system system
+    mkdir /data/misc/wifi 0770 wifi wifi
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
+    mkdir /data/misc/dhcp 0770 dhcp wifi
+    chmod 0660 /system/etc/wifi/wpa_supplicant.conf
+    chown wifi wifi /system/etc/wifi/wpa_supplicant.conf
+    mkdir /data/system/wpa_supplicant 0770 wifi wifi
+
 on post-fs
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chown system system /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
@@ -167,6 +176,19 @@ service hdcpd /system/bin/hdcpd
 
 service bigcore-setup /system/bin/sh /system/etc/init.bigcore.sh
     class core
+    oneshot
+
+# for wifi
+service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf
+    class main
+    group wifi
+    disabled
+    oneshot
+
+service dhcpcd_wlan0 /system/bin/dhcpcd -d -BK -f /system/etc/dhcpcd/android.conf
+    class main
+    group wifi root system net_admin net_raw
+    disabled
     oneshot
 
 service surfaceflinger /system/bin/surfaceflinger

@@ -18,6 +18,7 @@ PRODUCT_DEVICE := bigcore
 PRODUCT_MODEL := bigcore
 
 PRODUCT_CHARACTERISTICS := nosdcard,tablet
+IWLWIFI_FW_PATH := vendor/intel/fw/wifi/iwlwifi
 
 # intel common overlay folder
 DEVICE_PACKAGE_OVERLAYS := device/intel/common/overlays
@@ -36,8 +37,19 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/mfx_omxil_core.conf:system/etc/mfx_omxil_core.conf \
     $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/sensors/sensor_hal_config_default.xml:system/etc/sensor_hal_config_default.xml \
+    $(LOCAL_PATH)/wifi/wpa_supplicant_bc.conf:system/etc/wifi/wpa_supplicant.conf \
     $(LOCAL_PATH)/libs/gralloc.bigcore.so:system/lib/hw/gralloc.bigcore.so \
-    $(LOCAL_PATH)/libs/libGLES_intel7.so:system/lib/egl/libGLES_intel7.so
+    $(LOCAL_PATH)/libs/libGLES_intel7.so:system/lib/egl/libGLES_intel7.so \
+    $(IWLWIFI_FW_PATH)/iwlwifi-100-5.ucode:system/etc/firmware/iwlwifi-100-5.ucode \
+    $(IWLWIFI_FW_PATH)/iwlwifi-105-6.ucode:system/etc/firmware/iwlwifi-105-6.ucode \
+    $(IWLWIFI_FW_PATH)/iwlwifi-135-6.ucode:system/etc/firmware/iwlwifi-135-6.ucode \
+    $(IWLWIFI_FW_PATH)/iwlwifi-1000-5.ucode:system/etc/firmware/iwlwifi-1000-5.ucode \
+    $(IWLWIFI_FW_PATH)/iwlwifi-2000-6.ucode:system/etc/firmware/iwlwifi-2000-6.ucode \
+    $(IWLWIFI_FW_PATH)/iwlwifi-2030-6.ucode:system/etc/firmware/iwlwifi-2030-6.ucode \
+    $(IWLWIFI_FW_PATH)/iwlwifi-6000g2a-5.ucode:system/etc/firmware/iwlwifi-6000g2a-5.ucode \
+    $(IWLWIFI_FW_PATH)/iwlwifi-6000g2b-5.ucode:system/etc/firmware/iwlwifi-6000g2b-5.ucode \
+    $(IWLWIFI_FW_PATH)/iwlwifi-6000g2b-6.ucode:system/etc/firmware/iwlwifi-6000g2b-6.ucode \
+    $(IWLWIFI_FW_PATH)/iwlwifi-7260-6.ucode:system/etc/firmware/iwlwifi-7260-6.ucode
 
 PRODUCT_COPY_FILES := $(OVERRIDE_COPIES) $(PRODUCT_COPY_FILES)
 # keypad key mapping
@@ -160,15 +172,6 @@ endif
 # BCM4752 GPS
 PRODUCT_PACKAGES += \
     gps_bcm_4752_extlna
-
-# bluetooth
-# Copy the needed Broadcom Bluetooth chip firmware files
-#  - VV: 43241B0 AOB
-#  - PR: 43241B3=B4
-PRODUCT_PACKAGES += \
-    bt_bcm \
-    bt_fw_BCM43241B0_AOB \
-    bt_fw_BCM43241B3_PR
 
 # IPV6
 PRODUCT_PACKAGES += \
