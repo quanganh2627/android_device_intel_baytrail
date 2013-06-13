@@ -4,11 +4,12 @@
 # usage: copy flashfile content to partition
 # droidboot looks for installer.cmd file
 
-if [ $# -eq 2 ]; then
+if [ $# -eq 3 ]; then
     disk=$1
     droidboot_image=$2
+    build_file=$3
 else
-    echo "Usage: $0 block_device droidboot.img"
+    echo "Usage: $0 block_device droidboot.img flashfile.zip"
     exit
 fi
 
@@ -36,5 +37,7 @@ echo "/dev/${disk}4 : start=        0, size=        0, Id= 0" >> /tmp/droidboot_
 sfdisk /dev/${disk} < /tmp/droidboot_installer_partition
 mkfs.vfat /dev/${disk}1
 mount /dev/${disk}1 /mnt
-echo "Please copy files to /mnt, then umount"
+echo "Unzip $build_file to /mnt"
+unzip $build_file -d /mnt
+umount /mnt
 
