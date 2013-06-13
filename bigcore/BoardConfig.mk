@@ -111,6 +111,9 @@ USE_FEATURE_ALAC := true
 # Defines Intel library for GPU accelerated Renderscript:
 OVERRIDE_RS_DRIVER := libRSDriver_intel7.so
 
+# override for SATA support
+STORAGE_CFLAGS ?= -DSTORAGE_BASE_PATH=\"/dev/block/mmcblk0\" -DSTORAGE_PARTITION_FORMAT=\"%s%d\"
+
 # Temporary support for diskinstaller to be used with EFI BIOS.
 # -> should go away as this is not needed with PSI firmware + OTG
 include $(PLATFORM_PATH)/diskinstaller/config.mk

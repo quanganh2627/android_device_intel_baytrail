@@ -103,6 +103,9 @@ on boot
     # Reboot in COS on shutdown request when charger is plugged
     setprop ro.rebootchargermode true
 
+    #Change mmc queue nr_requests from 128 to 32 to reduce write latencies
+    write /sys/block/sda/queue/nr_requests 32
+
 on post-fs-data
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
     mkdir /data/media 0770 media_rw media_rw

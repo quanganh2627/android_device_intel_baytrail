@@ -1,4 +1,11 @@
 {
+      "globals": {
+                "partition_format" : "%s%d"
+        },
+                "storage": {
+                        "base_name": "/dev/block/sda"
+                },
+
 		"partitions":
 		{
 			"reserved": {
@@ -58,7 +65,8 @@
 
 			"data":
 			{
-				"id": 11
+				"id": 14,
+				"mount_options": "nosuid,nodev,noatime,barrier=1,data=ordered"
 			}
 		}
 }

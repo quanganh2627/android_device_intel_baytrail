@@ -22,6 +22,8 @@ endif
 FRAMEWORK_ETC_PATH := frameworks/native/data/etc
 PERMISSIONS_PATH := system/etc/permissions
 
+BIGCORE_USB_INSTALLER := true
+BIGCORE_MKBOOTIMG := out/host/linux-x86/bin/mkbootimg
 # Touchscreen configuration file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg
