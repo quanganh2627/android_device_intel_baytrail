@@ -1,6 +1,6 @@
 #!/bin/sh
 # reserved space of 256M to handle OSIP entries
-# 2G fat partition
+# The rest for fat partition
 # usage: copy flashfile content to partition
 # droidboot looks for installer.cmd file
 
@@ -25,13 +25,10 @@ unzip ${blankphone_zip} droidboot.img -d /tmp
 
 dd if=/tmp/droidboot.img of=/dev/${disk} bs=1M
 
-echo "unit: sectors" > /tmp/droidboot_installer_partition
-echo "/dev/${disk}1 : start=   524322, size=  4194304, Id=83" >> /tmp/droidboot_installer_partition
-echo "/dev/${disk}2 : start=        0, size=        0, Id= 0" >> /tmp/droidboot_installer_partition
-echo "/dev/${disk}3 : start=        0, size=        0, Id= 0" >> /tmp/droidboot_installer_partition
-echo "/dev/${disk}4 : start=        0, size=        0, Id= 0" >> /tmp/droidboot_installer_partition
-
-sfdisk /dev/${disk} < /tmp/droidboot_installer_partition
+#Create one big fat partition
+sfdisk /dev/${disk} -uM << EOF
+256,,83
+EOF
 mkfs.vfat /dev/${disk}1
 mount /dev/${disk}1 /mnt
 echo "Unzip contents to USB installer"
