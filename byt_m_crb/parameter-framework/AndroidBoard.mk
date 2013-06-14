@@ -10,7 +10,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_REQUIRED_MODULES :=  \
 	parameter-framework.audio.baytrail \
 	AudioClass.xml \
-	AudioRoutingConfigurableDomains.xml \
+	AudioConfigurableDomains.xml \
 	ParameterFrameworkConfiguration.xml
 include $(BUILD_PHONY_PACKAGE)
 
@@ -32,9 +32,8 @@ ifeq ($(BOARD_USES_AUDIO_HAL_CONFIGURABLE),true)
 ## Audio Tuning + Routing
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := AudioRoutingConfigurableDomains.xml
+LOCAL_MODULE := AudioConfigurableDomains.xml
 LOCAL_SRC_FILES := XML/Settings/Audio/AudioRoutingConfigurableDomains.xml
-LOCAL_MODULE_STEM := AudioRoutingConfigurableDomains.xml
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/parameter-framework/Settings/Audio
@@ -45,7 +44,7 @@ else
 ## Audio Tuning only
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := AudioRoutingConfigurableDomains.xml
+LOCAL_MODULE := AudioConfigurableDomains.xml
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/parameter-framework/Settings/Audio

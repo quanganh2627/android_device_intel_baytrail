@@ -1,0 +1,3 @@
+on init
+    setprop_from_sysfs /sys/firmware/pidv/iafw_version sys.ia32.version
+    setprop_from_sysfs /sys/firmware/pidv/secfw_version sys.chaabi.version

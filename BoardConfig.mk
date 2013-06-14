@@ -3,6 +3,10 @@ include device/intel/common/BoardConfig.mk
 
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1073741824
 
+FLASHFILE_NO_OTA := false
+
+BOARD_HAS_CAPSULE := true
+
 # Disable recovery for now
 TARGET_MAKE_NO_DEFAULT_RECOVERY := true
 TARGET_NO_RECOVERY := false

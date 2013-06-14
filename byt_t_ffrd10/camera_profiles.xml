@@ -71,6 +71,8 @@
         <supportedPreviewFPSRange value="(10500,30304),(11000,30304),(11500,30304)"/>
         <defaultPreviewFPSRange value="10500,30304"/>
         <hasSlowMotion value="false"/>
+        <supportedAwbLock value="false"/>
+        <supportedAeLock value="false"/>
 -->
 
 <!-- Common, examples for the elements
@@ -98,6 +100,8 @@
         <orientation value="0"/> <!-- one of 0,90,180,270 -->
         <dvs value="false"/>
         <continuousCapture value="true"/>
+        <supportedAwbLock value="false"/>
+        <supportedAeLock value="false"/>
         <supportedPreviewSizes value="1024x768,1024x576,720x480,640x480,640x360,352x288,320x240,176x144"/>
         <supportedVideoSizes value="176x144,320x240,352x288,640x480,720x480,1280x720,1920x1080"/>
 
@@ -120,6 +124,8 @@
         <supportedFlashModes value="off"/>
         <defaultFocusMode value="fixed"/>
         <supportedFocusModes value="fixed"/>
+        <supportedAwbLock value="false"/>
+        <supportedAeLock value="false"/>
         <maxEV value="6"/>
         <minEV value="-6"/>
     </Profiles>
