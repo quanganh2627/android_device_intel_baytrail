@@ -1,4 +1,5 @@
 TARGET_BOARD_PLATFORM := baytrail
+TARGET_BOARD_SOC := valleyview2
 TARGET_BOOTLOADER_BOARD_NAME := $(TARGET_BOARD_PLATFORM)
 
 # Include common environnement
