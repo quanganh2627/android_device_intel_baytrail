@@ -44,6 +44,11 @@ PRODUCT_PACKAGES += \
     remote-process
 endif
 
+# Adobe AIR
+PRODUCT_PACKAGES += \
+    AdobeAIR \
+    libCore.so
+
 # Add HdmiSettings app
 PRODUCT_PACKAGES += \
     HdmiSettings
