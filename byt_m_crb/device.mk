@@ -158,10 +158,6 @@ endif
     libdx-crys \
     start-sep
 
-# BCM4752 GPS
-PRODUCT_PACKAGES += \
-    gps_bcm_4752_extlna
-
 ### DISABLED
 # bluetooth
 #PRODUCT_PACKAGES += \

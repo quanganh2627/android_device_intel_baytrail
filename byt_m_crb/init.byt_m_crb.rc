@@ -7,7 +7,6 @@ import init.avc.rc
 # import init.modem.rc
 import init.wifi.rc
 import init.platform.usb.rc
-import init.gps.rc
 import init.bt.rc
 
 on early-init
