@@ -1,7 +1,7 @@
 # Name of the reference design
 # Should be changed with the original values when starting customization
-REF_DEVICE_NAME ?= baylake
-REF_PRODUCT_NAME ?= baylake
+REF_DEVICE_NAME ?= $(TARGET_DEVICE)
+REF_PRODUCT_NAME ?= $(TARGET_PRODUCT)
 
 TARGET_USE_DROIDBOOT := true
 
