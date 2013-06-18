@@ -7,10 +7,18 @@ include device/intel/common/common.mk
 # USB port turn around and initialization
 PRODUCT_COPY_FILES += \
     $(PLATFORM_PATH)/init.byt.usb.rc:root/init.platform.usb.rc \
-    $(PLATFORM_PATH)/init.debug.rc:root/init.debug.rc \
     $(PLATFORM_PATH)/props.baytrail.rc:root/props.platform.rc \
     $(PLATFORM_PATH)/maxtouch.fw:system/etc/firmware/maxtouch.fw \
     $(PLATFORM_PATH)/mxt1664S-touchscreen.idc:system/usr/idc/mxt1664S-touchscreen.idc
+
+ifeq ($(TARGET_BUILD_VARIANT),user)
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/init.nodebug.rc:root/init.debug.rc
+else
+PRODUCT_COPY_FILES += \
+    $(PLATFORM_PATH)/init.debug.rc:root/init.debug.rc
+endif
+
 
 # Kernel Watchdog
 PRODUCT_COPY_FILES += \
