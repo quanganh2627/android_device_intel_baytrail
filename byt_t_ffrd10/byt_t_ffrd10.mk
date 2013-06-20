@@ -32,8 +32,7 @@ PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.direct.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml
 
 PRODUCT_PACKAGES += \
-        wifi_bcm_43241 \
-        fw_bcmdhd_4324_B4.bin
+        wifi_bcm_43241
 
 #hdmi audio HAL
 PRODUCT_PACKAGES += \
