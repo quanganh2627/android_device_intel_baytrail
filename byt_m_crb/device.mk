@@ -158,10 +158,14 @@ endif
     libdx-crys \
     start-sep
 
-### DISABLED
 # bluetooth
-#PRODUCT_PACKAGES += \
-    bt_bcm
+# Copy the needed Broadcom Bluetooth chip firmware files
+#  - VV: 43241B0 AOB
+#  - PR: 43241B3=B4
+PRODUCT_PACKAGES += \
+    bt_bcm \
+    bt_fw_BCM43241B0_AOB \
+    bt_fw_BCM4324B3_AOB
 
 # IPV6
 PRODUCT_PACKAGES += \
