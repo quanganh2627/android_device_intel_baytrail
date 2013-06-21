@@ -21,10 +21,10 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:layout_width="300dip"
-        android:layout_height="300dip"
+        android:layout_width="270dip"
+        android:layout_height="270dip"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="30dip"
+        android:layout_marginTop="27dip"
         android:layout_marginLeft="-60dip"
         android:background="@drawable/buttons_background_zoom">
         <com.android.videoeditor.widgets.ZoomControl android:id="@+id/editor_zoom"
@@ -33,10 +33,10 @@
             android:clickable="true"/>
     </RelativeLayout>
     <RelativeLayout android:id="@+id/playback_buttons"
-        android:layout_width="300dip"
-        android:layout_height="300dip"
+        android:layout_width="270dip"
+        android:layout_height="270dip"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="30dip"
+        android:layout_marginTop="27dip"
         android:layout_marginRight="-60dip"
         android:background="@drawable/buttons_background">
          <ImageButton android:id="@+id/editor_prev"
@@ -78,7 +78,7 @@
     <TextView android:id="@+id/editor_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="40dip"
+        android:layout_marginRight="0dip"
         android:layout_below="@id/playback_buttons"
         android:layout_alignParentRight="true"
         android:layout_marginTop="-10dip"
@@ -93,16 +93,16 @@
     <FrameLayout android:id="@+id/video_frame_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0dip"
+        android:layout_margin="5dip"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:padding="5dip"
+        android:padding="2dip"
         android:background="@drawable/surface_background">
         <com.android.videoeditor.widgets.PreviewSurfaceView android:id="@+id/video_view"
             android:layout_width="0dip"
-            android:layout_height="340dip"/>
+            android:layout_height="300dip"/>
         <ImageView android:id="@+id/overlay_layer"
             android:layout_width="0dip"
-            android:layout_height="340dip"/>
+            android:layout_height="300dip"/>
     </FrameLayout>
 </com.android.videoeditor.widgets.EditorRelativeLayout>

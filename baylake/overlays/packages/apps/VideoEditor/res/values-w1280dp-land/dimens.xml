@@ -21,12 +21,12 @@
     <dimen name="project_picker_item_width">382dip</dimen>
     <dimen name="project_picker_item_height">192dip</dimen>
 
-    <dimen name="media_layout_height">150dip</dimen>
+    <dimen name="media_layout_height">130dip</dimen>
     <dimen name="timeline_add_media_button_height">48dip</dimen>
     <dimen name="timeline_add_media_button_top_padding">48dip</dimen>
-    <dimen name="overlay_layout_height">64dip</dimen>
-    <dimen name="audio_layout_height">64dip</dimen>
-    <dimen name="playhead_layout_height">32dip</dimen>
+    <dimen name="overlay_layout_height">58dip</dimen>
+    <dimen name="audio_layout_height">58dip</dimen>
+    <dimen name="playhead_layout_height">30dip</dimen>
     <dimen name="playhead_layout_text_size">18sp</dimen>
 
     <dimen name="media_layout_padding">10dip</dimen>
