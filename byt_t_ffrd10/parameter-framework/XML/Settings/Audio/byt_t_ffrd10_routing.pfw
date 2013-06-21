@@ -1,21 +1,3 @@
-
-# Criterions
-
-# TTYDirection : Uplink Downlink
-
-# RoutageState  : Mute Disable Configure Enable Unmute
-
-# OpenedCaptureRoutes  : HwCodecCSV ModemMix BtCSV BtComm HwCodecMedia Fm
-
-# OpenedPlaybackRoutes : HwCodecCSV ModemMix BtCSV BtComm HwCodecMedia
-
-# Mode  : InCsvCall InVoipCall Normal RingTone
-
-# SelectedOutputDevice : Earpiece IHF Headset Headphones SCO SCO_Headset SCO_CarKit A2DP A2DP_Headphones A2DP_Speaker AuxDigital _Widi-Loopback
-
-# SelectedInputDevice  : Communication Ambient Main SCO_Headset Headset AuxDigital VoiceCall Back
-
-
 ##############################
 #	 Mute & Unmute Steps
 ##############################
@@ -157,7 +139,6 @@ supDomain: Routing.Configure
 					ANY
 						SelectedOutputDevice Includes Headset
 						SelectedOutputDevice Includes Headphones
-						SelectedOutputDevice Includes Earpiece
 
 				/Audio/LPE_MIXER/SOUND_CARD/HS/INPUT_STREAM = MIX
 

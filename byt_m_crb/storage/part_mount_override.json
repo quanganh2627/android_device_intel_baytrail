@@ -1,6 +1,10 @@
 {
 		"globals": {
-			"partition_format": "%s%d"
+			"partition_format": "%s%d",
+			"gpt" : {
+				"lba_start_offset": 40
+			}
+
 		},
 
 		"storage": {

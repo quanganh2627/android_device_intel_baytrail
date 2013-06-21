@@ -35,6 +35,14 @@ PRODUCT_PACKAGES += \
         wifi_bcm_43241 \
         fw_bcmdhd_4324_B4.bin
 
+#hdmi audio HAL
+PRODUCT_PACKAGES += \
+       audio.hdmi.$(PRODUCT_NAME)
+
+#widi audio HAL
+PRODUCT_PACKAGES += \
+       audio.widi.$(PRODUCT_NAME)
+
 # parameter-framework files
 PRODUCT_PACKAGES += \
     parameter-framework.audio.byt_t_ffrd10
