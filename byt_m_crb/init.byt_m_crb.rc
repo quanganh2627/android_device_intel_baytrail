@@ -59,6 +59,9 @@ on init
     insmod /lib/modules/matrix.ko
     chmod 0640 /dev/matrix
 
+    # Insert hdmi audio driver
+    insmod /lib/modules/hdmi_audio.ko
+
 on boot
     #  Mount debugfs for systrace settings
     mount debugfs none /sys/kernel/debug
