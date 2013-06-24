@@ -126,6 +126,24 @@ supDomain: Routing.Enable
 		conf: Disable
 			/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/STEREO/ADC_CAPTURE_SWITCH = 0 0
 
+	supDomain: HwCodec.VoicePort
+		domain: Playback
+			conf: Enable
+				ANY
+					OpenedPlaybackRoutes Includes HwCodecCSV
+					OpenedPlaybackRoutes Includes HwCodecComm
+				/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/PLAYBACK_ENABLED = 1
+			conf: Disable
+				/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/PLAYBACK_ENABLED = 0
+
+		domain: Capture
+			conf: Enable
+				ANY
+					OpenedCaptureRoutes Includes HwCodecCSV
+					OpenedCaptureRoutes Includes HwCodecComm
+				/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/CAPTURE_ENABLED = 1
+			conf: Disable
+				/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/CAPTURE_ENABLED = 0
 
 ##############################
 #	 Configure Step
@@ -133,6 +151,12 @@ supDomain: Routing.Enable
 #
 supDomain: Routing.Configure
 	RoutageState Includes Configure
+
+	domain: HwCodec.Calibration
+		conf: Default
+			/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/FORMAT = S16LE
+			/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/CHANNEL_NUMBER = 2
+			/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/SAMPLE_RATE = 48000
 
 	supDomain: LPE_Mixer
 		domain: IHF

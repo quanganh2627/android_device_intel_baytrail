@@ -1360,6 +1360,99 @@
       </Configuration>
     </Settings>
   </ConfigurableDomain>
+  <ConfigurableDomain Name="Routing.Enable.HwCodec.VoicePort.Playback" SequenceAware="false">
+    <Configurations>
+      <Configuration Name="Enable">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Path"/>
+          <CompoundRule Type="Any">
+            <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="HwCodecCSV"/>
+            <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="HwCodecComm"/>
+          </CompoundRule>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="Disable">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Path"/>
+        </CompoundRule>
+      </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/PLAYBACK_ENABLED"/>
+    </ConfigurableElements>
+    <Settings>
+      <Configuration Name="Enable">
+        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/PLAYBACK_ENABLED">
+          <BooleanParameter Name="PLAYBACK_ENABLED">1</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="Disable">
+        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/PLAYBACK_ENABLED">
+          <BooleanParameter Name="PLAYBACK_ENABLED">0</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+    </Settings>
+  </ConfigurableDomain>
+  <ConfigurableDomain Name="Routing.Enable.HwCodec.VoicePort.Capture" SequenceAware="false">
+    <Configurations>
+      <Configuration Name="Enable">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Path"/>
+          <CompoundRule Type="Any">
+            <SelectionCriterionRule SelectionCriterion="OpenedCaptureRoutes" MatchesWhen="Includes" Value="HwCodecCSV"/>
+            <SelectionCriterionRule SelectionCriterion="OpenedCaptureRoutes" MatchesWhen="Includes" Value="HwCodecComm"/>
+          </CompoundRule>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="Disable">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Path"/>
+        </CompoundRule>
+      </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/CAPTURE_ENABLED"/>
+    </ConfigurableElements>
+    <Settings>
+      <Configuration Name="Enable">
+        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/CAPTURE_ENABLED">
+          <BooleanParameter Name="CAPTURE_ENABLED">1</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="Disable">
+        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/CAPTURE_ENABLED">
+          <BooleanParameter Name="CAPTURE_ENABLED">0</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+    </Settings>
+  </ConfigurableDomain>
+  <ConfigurableDomain Name="Routing.Configure.HwCodec.Calibration" SequenceAware="false">
+    <Configurations>
+      <Configuration Name="Default">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Configure"/>
+        </CompoundRule>
+      </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/FORMAT"/>
+      <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/CHANNEL_NUMBER"/>
+      <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/SAMPLE_RATE"/>
+    </ConfigurableElements>
+    <Settings>
+      <Configuration Name="Default">
+        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/FORMAT">
+          <EnumParameter Name="FORMAT">S16LE</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/CHANNEL_NUMBER">
+          <IntegerParameter Name="CHANNEL_NUMBER">2</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/SAMPLE_RATE">
+          <IntegerParameter Name="SAMPLE_RATE">48000</IntegerParameter>
+        </ConfigurableElement>
+      </Configuration>
+    </Settings>
+  </ConfigurableDomain>
   <ConfigurableDomain Name="Routing.Configure.LPE_Mixer.IHF" SequenceAware="false">
     <Configurations>
       <Configuration Name="Activated">

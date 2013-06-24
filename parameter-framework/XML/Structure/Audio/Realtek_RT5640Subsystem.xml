@@ -434,10 +434,23 @@
             <Component Name="DIGITAL" Type="MIXER_DIGITAL_TYPE"/>
         </ComponentType>
 
+        <ComponentType Name="SSP_PORT" Description="Voice Port">
+            <ParameterBlock Name="CONFIG" Mapping="PortConfig">
+                <BooleanParameter Name="PLAYBACK_ENABLED"/>
+                <BooleanParameter Name="CAPTURE_ENABLED"/>
+                <EnumParameter Name="FORMAT" Size="8">
+                    <ValuePair Literal="S16LE" Numerical="2"/>
+                </EnumParameter>
+                <IntegerParameter Name="CHANNEL_NUMBER" Size="8" Min="1" Max="2"/>
+                <IntegerParameter Name="SAMPLE_RATE" Size="16"/>
+           </ParameterBlock>
+        </ComponentType>
+
         <ComponentType Name="SOUND_CARD">
             <Component Name="OUTPUT" Type="OUTPUTS_TYPE"/>
             <Component Name="INPUT" Type="INPUTS_TYPE"/>
             <Component Name="MIXER" Type="MIXER_TYPE"/>
+            <Component Name="VOICE_PORT" Type="SSP_PORT" Mapping="Device:1"/>
         </ComponentType>
 
     </ComponentLibrary>
