@@ -4,5 +4,6 @@
     <SubsystemInclude Path="LPEMixerSubsystem.xml"/>
     <SubsystemInclude Path="Realtek_RT5640Subsystem.xml"/>
     <SubsystemInclude Path="LPESubsystem.xml"/>
+    <SubsystemInclude Path="IMCSubsystem.xml"/>
 </SystemClass>
 

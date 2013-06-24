@@ -1522,5 +1522,497 @@
       </Configuration>
     </Settings>
   </ConfigurableDomain>
+  <ConfigurableDomain Name="Routing.Mute.Modem.Mixing.Capture" SequenceAware="false">
+    <Configurations>
+      <Configuration Name="Unmute">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Flow"/>
+          <SelectionCriterionRule SelectionCriterion="OpenedCaptureRoutes" MatchesWhen="Includes" Value="ModemMix"/>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="Mute">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Flow"/>
+        </CompoundRule>
+      </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/VOLUME/MUTED"/>
+    </ConfigurableElements>
+    <Settings>
+      <Configuration Name="Unmute">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/VOLUME/MUTED">
+          <BooleanParameter Name="MUTED">0</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="Mute">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/VOLUME/MUTED">
+          <BooleanParameter Name="MUTED">1</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+    </Settings>
+  </ConfigurableDomain>
+  <ConfigurableDomain Name="Routing.Mute.Modem.Mixing.Playback" SequenceAware="false">
+    <Configurations>
+      <Configuration Name="Unmute">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Flow"/>
+          <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="ModemMix"/>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="Mute">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Flow"/>
+        </CompoundRule>
+      </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/VOLUME/MUTED"/>
+    </ConfigurableElements>
+    <Settings>
+      <Configuration Name="Unmute">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/VOLUME/MUTED">
+          <BooleanParameter Name="MUTED">0</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="Mute">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/VOLUME/MUTED">
+          <BooleanParameter Name="MUTED">1</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+    </Settings>
+  </ConfigurableDomain>
+  <ConfigurableDomain Name="Routing.Mute.Modem.Voice.Capture" SequenceAware="false">
+    <Configurations>
+      <Configuration Name="Unmute">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Flow"/>
+          <CompoundRule Type="Any">
+            <SelectionCriterionRule SelectionCriterion="OpenedCaptureRoutes" MatchesWhen="Includes" Value="HwCodecCSV"/>
+          </CompoundRule>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="Mute">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Flow"/>
+        </CompoundRule>
+      </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/VOLUME/MUTED"/>
+    </ConfigurableElements>
+    <Settings>
+      <Configuration Name="Unmute">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/VOLUME/MUTED">
+          <BooleanParameter Name="MUTED">0</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="Mute">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/VOLUME/MUTED">
+          <BooleanParameter Name="MUTED">1</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+    </Settings>
+  </ConfigurableDomain>
+  <ConfigurableDomain Name="Routing.Mute.Modem.Voice.Playback" SequenceAware="false">
+    <Configurations>
+      <Configuration Name="Unmute">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Flow"/>
+          <CompoundRule Type="Any">
+            <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="HwCodecCSV"/>
+          </CompoundRule>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="Mute">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Flow"/>
+        </CompoundRule>
+      </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/VOLUME/MUTED"/>
+    </ConfigurableElements>
+    <Settings>
+      <Configuration Name="Unmute">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/VOLUME/MUTED">
+          <BooleanParameter Name="MUTED">0</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="Mute">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/VOLUME/MUTED">
+          <BooleanParameter Name="MUTED">1</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+    </Settings>
+  </ConfigurableDomain>
+  <ConfigurableDomain Name="Routing.Enable.Modem.Voice.capture" SequenceAware="false">
+    <Configurations>
+      <Configuration Name="Enable">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Path"/>
+          <SelectionCriterionRule SelectionCriterion="OpenedCaptureRoutes" MatchesWhen="Includes" Value="HwCodecCSV"/>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="Disable">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Path"/>
+        </CompoundRule>
+      </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S1_RX/DESTINATIONS/SPEECH_TX"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/ENABLED"/>
+    </ConfigurableElements>
+    <Settings>
+      <Configuration Name="Enable">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S1_RX/DESTINATIONS/SPEECH_TX">
+          <BitParameter Name="SPEECH_TX">1</BitParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/ENABLED">
+          <BooleanParameter Name="ENABLED">1</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="Disable">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S1_RX/DESTINATIONS/SPEECH_TX">
+          <BitParameter Name="SPEECH_TX">0</BitParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/ENABLED">
+          <BooleanParameter Name="ENABLED">0</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+    </Settings>
+  </ConfigurableDomain>
+  <ConfigurableDomain Name="Routing.Enable.Modem.Voice.playback" SequenceAware="true">
+    <Configurations>
+      <Configuration Name="Enable">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Path"/>
+          <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="HwCodecCSV"/>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="Disable">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Path"/>
+        </CompoundRule>
+      </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/I2S1_TX"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SIMPLE_TONES/DESTINATIONS/I2S1_TX"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/PCM_GENERAL_DESTINATION"/>
+    </ConfigurableElements>
+    <Settings>
+      <Configuration Name="Enable">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/I2S1_TX">
+          <BitParameter Name="I2S1_TX">1</BitParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SIMPLE_TONES/DESTINATIONS/I2S1_TX">
+          <BitParameter Name="I2S1_TX">1</BitParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/PCM_GENERAL_DESTINATION">
+          <BitParameter Name="PCM_GENERAL_DESTINATION">0</BitParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="Disable">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/PCM_GENERAL_DESTINATION">
+          <BitParameter Name="PCM_GENERAL_DESTINATION">1</BitParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/I2S1_TX">
+          <BitParameter Name="I2S1_TX">0</BitParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SIMPLE_TONES/DESTINATIONS/I2S1_TX">
+          <BitParameter Name="I2S1_TX">0</BitParameter>
+        </ConfigurableElement>
+      </Configuration>
+    </Settings>
+  </ConfigurableDomain>
+  <ConfigurableDomain Name="Routing.Enable.Modem.Mix.Playback" SequenceAware="true">
+    <Configurations>
+      <Configuration Name="Enable">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Path"/>
+          <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="ModemMix"/>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="Disable">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Path"/>
+        </CompoundRule>
+      </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S2_RX/DESTINATIONS/I2S1_TX"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/ENABLED"/>
+    </ConfigurableElements>
+    <Settings>
+      <Configuration Name="Enable">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S2_RX/DESTINATIONS/I2S1_TX">
+          <BitParameter Name="I2S1_TX">1</BitParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/ENABLED">
+          <BooleanParameter Name="ENABLED">1</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="Disable">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/ENABLED">
+          <BooleanParameter Name="ENABLED">0</BooleanParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S2_RX/DESTINATIONS/I2S1_TX">
+          <BitParameter Name="I2S1_TX">0</BitParameter>
+        </ConfigurableElement>
+      </Configuration>
+    </Settings>
+  </ConfigurableDomain>
+  <ConfigurableDomain Name="Routing.Configure.Modem.Calibration" SequenceAware="false">
+    <Configurations>
+      <Configuration Name="Default">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Configure"/>
+          <CompoundRule Type="Any">
+            <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="ModemMix"/>
+            <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="BtCSV"/>
+            <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="HwCodecCSV"/>
+            <SelectionCriterionRule SelectionCriterion="OpenedCaptureRoutes" MatchesWhen="Includes" Value="ModemMix"/>
+            <SelectionCriterionRule SelectionCriterion="OpenedCaptureRoutes" MatchesWhen="Includes" Value="BtCSV"/>
+            <SelectionCriterionRule SelectionCriterion="OpenedCaptureRoutes" MatchesWhen="Includes" Value="HwCodecCSV"/>
+          </CompoundRule>
+        </CompoundRule>
+      </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/CLOCK"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/CLOCK"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/SLAVE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/SLAVE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/SLAVE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/SLAVE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/QUANTIZATION"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/QUANTIZATION"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/QUANTIZATION"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/QUANTIZATION"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/SAMPLING_RATE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/SAMPLING_RATE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/CHANNELS"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/CHANNELS"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/TRANSMISSION_MODE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/TRANSMISSION_MODE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/CLOCK"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/CLOCK"/>
+    </ConfigurableElements>
+    <Settings>
+      <Configuration Name="Default">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/CLOCK">
+          <IntegerParameter Name="CLOCK">0</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/CLOCK">
+          <IntegerParameter Name="CLOCK">0</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/SLAVE">
+          <BooleanParameter Name="SLAVE">0</BooleanParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/SLAVE">
+          <BooleanParameter Name="SLAVE">0</BooleanParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/SLAVE">
+          <BooleanParameter Name="SLAVE">0</BooleanParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/SLAVE">
+          <BooleanParameter Name="SLAVE">0</BooleanParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/QUANTIZATION">
+          <EnumParameter Name="QUANTIZATION">s16</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/QUANTIZATION">
+          <EnumParameter Name="QUANTIZATION">s16</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/QUANTIZATION">
+          <EnumParameter Name="QUANTIZATION">s16</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/QUANTIZATION">
+          <EnumParameter Name="QUANTIZATION">s16</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/SAMPLING_RATE">
+          <EnumParameter Name="SAMPLING_RATE">f48</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/SAMPLING_RATE">
+          <EnumParameter Name="SAMPLING_RATE">f48</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/CHANNELS">
+          <EnumParameter Name="CHANNELS">STEREO</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/CHANNELS">
+          <EnumParameter Name="CHANNELS">STEREO</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE">
+          <EnumParameter Name="MODE">UserDefined15</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE">
+          <EnumParameter Name="MODE">UserDefined15</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/TRANSMISSION_MODE">
+          <EnumParameter Name="TRANSMISSION_MODE">I2S</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/TRANSMISSION_MODE">
+          <EnumParameter Name="TRANSMISSION_MODE">I2S</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/CLOCK">
+          <IntegerParameter Name="CLOCK">0</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/CLOCK">
+          <IntegerParameter Name="CLOCK">0</IntegerParameter>
+        </ConfigurableElement>
+      </Configuration>
+    </Settings>
+  </ConfigurableDomain>
+  <ConfigurableDomain Name="Routing.Configure.Modem.I2S" SequenceAware="false">
+    <Configurations>
+      <Configuration Name="Bluetooth">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Configure"/>
+          <CompoundRule Type="All">
+            <CompoundRule Type="Any">
+              <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="SCO"/>
+              <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="SCO_Headset"/>
+              <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="SCO_CarKit"/>
+              <SelectionCriterionRule SelectionCriterion="SelectedInputDevice" MatchesWhen="Includes" Value="SCO_Headset"/>
+            </CompoundRule>
+            <CompoundRule Type="Any">
+              <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="BtCSV"/>
+              <SelectionCriterionRule SelectionCriterion="OpenedCaptureRoutes" MatchesWhen="Includes" Value="BtCSV"/>
+            </CompoundRule>
+          </CompoundRule>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="Default">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Configure"/>
+        </CompoundRule>
+      </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/SAMPLING_RATE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/SAMPLING_RATE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/CHANNELS"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/CHANNELS"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/TRANSMISSION_MODE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/TRANSMISSION_MODE"/>
+    </ConfigurableElements>
+    <Settings>
+      <Configuration Name="Bluetooth">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/SAMPLING_RATE">
+          <EnumParameter Name="SAMPLING_RATE">f8</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/SAMPLING_RATE">
+          <EnumParameter Name="SAMPLING_RATE">f8</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/CHANNELS">
+          <EnumParameter Name="CHANNELS">MONO</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/CHANNELS">
+          <EnumParameter Name="CHANNELS">MONO</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/TRANSMISSION_MODE">
+          <EnumParameter Name="TRANSMISSION_MODE">PCM</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/TRANSMISSION_MODE">
+          <EnumParameter Name="TRANSMISSION_MODE">PCM</EnumParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="Default">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/SAMPLING_RATE">
+          <EnumParameter Name="SAMPLING_RATE">f48</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/SAMPLING_RATE">
+          <EnumParameter Name="SAMPLING_RATE">f48</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/CHANNELS">
+          <EnumParameter Name="CHANNELS">STEREO</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/CHANNELS">
+          <EnumParameter Name="CHANNELS">STEREO</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/TRANSMISSION_MODE">
+          <EnumParameter Name="TRANSMISSION_MODE">I2S</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/TRANSMISSION_MODE">
+          <EnumParameter Name="TRANSMISSION_MODE">I2S</EnumParameter>
+        </ConfigurableElement>
+      </Configuration>
+    </Settings>
+  </ConfigurableDomain>
+  <ConfigurableDomain Name="Routing.Configure.Modem.Mix.Capture.Uplink" SequenceAware="false">
+    <Configurations>
+      <Configuration Name="Bind">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Configure"/>
+          <SelectionCriterionRule SelectionCriterion="OpenedCaptureRoutes" MatchesWhen="Includes" Value="ModemMix"/>
+          <CompoundRule Type="Any">
+            <SelectionCriterionRule SelectionCriterion="AudioSource" MatchesWhen="Is" Value="VoiceCall"/>
+            <SelectionCriterionRule SelectionCriterion="AudioSource" MatchesWhen="Is" Value="VoiceUplink"/>
+            <SelectionCriterionRule SelectionCriterion="AudioSource" MatchesWhen="Is" Value="Camcorder"/>
+            <SelectionCriterionRule SelectionCriterion="AudioSource" MatchesWhen="Is" Value="VoiceRecognition"/>
+            <SelectionCriterionRule SelectionCriterion="AudioSource" MatchesWhen="Is" Value="Mic"/>
+          </CompoundRule>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="Unbind">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Configure"/>
+        </CompoundRule>
+      </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S1_RX/DESTINATIONS/I2S2_TX"/>
+    </ConfigurableElements>
+    <Settings>
+      <Configuration Name="Bind">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S1_RX/DESTINATIONS/I2S2_TX">
+          <BitParameter Name="I2S2_TX">1</BitParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="Unbind">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S1_RX/DESTINATIONS/I2S2_TX">
+          <BitParameter Name="I2S2_TX">0</BitParameter>
+        </ConfigurableElement>
+      </Configuration>
+    </Settings>
+  </ConfigurableDomain>
+  <ConfigurableDomain Name="Routing.Configure.Modem.Mix.Capture.Downlink" SequenceAware="false">
+    <Configurations>
+      <Configuration Name="Bind">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Configure"/>
+          <SelectionCriterionRule SelectionCriterion="OpenedCaptureRoutes" MatchesWhen="Includes" Value="ModemMix"/>
+          <CompoundRule Type="Any">
+            <SelectionCriterionRule SelectionCriterion="AudioSource" MatchesWhen="Is" Value="VoiceCall"/>
+            <SelectionCriterionRule SelectionCriterion="AudioSource" MatchesWhen="Is" Value="VoiceDownlink"/>
+          </CompoundRule>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="Unbind">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Configure"/>
+        </CompoundRule>
+      </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/I2S2_TX"/>
+    </ConfigurableElements>
+    <Settings>
+      <Configuration Name="Bind">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/I2S2_TX">
+          <BitParameter Name="I2S2_TX">1</BitParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="Unbind">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/I2S2_TX">
+          <BitParameter Name="I2S2_TX">0</BitParameter>
+        </ConfigurableElement>
+      </Configuration>
+    </Settings>
+  </ConfigurableDomain>
 </ConfigurableDomains>
 
