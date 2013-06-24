@@ -16,6 +16,8 @@ supDomain: Routing.Mute
 						SelectedOutputDevice Includes Headphones
 					ANY
 						OpenedPlaybackRoutes Includes HwCodecMedia
+						OpenedPlaybackRoutes Includes HwCodecCSV
+						OpenedPlaybackRoutes Includes HwCodecComm
 
 				/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/SWITCH = 1
 
@@ -27,7 +29,10 @@ supDomain: Routing.Mute
 				ALL
 					SelectedOutputDevice Includes IHF
 					ANY
-						OpenedPlaybackRoutes  Includes HwCodecMedia
+						OpenedPlaybackRoutes Includes HwCodecMedia
+						OpenedPlaybackRoutes Includes HwCodecCSV
+						OpenedPlaybackRoutes Includes HwCodecComm
+
 				/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/SWITCH = 1
 
 			conf: Mute
@@ -39,10 +44,16 @@ supDomain: Routing.Mute
 
 		domain: MainMic
 			conf: Unmute
-				ALL
-					SelectedInputDevice Includes Main
-					ANY
-						OpenedCaptureRoutes  Includes HwCodecMedia
+				ANY
+					ALL
+						SelectedInputDevice Includes Main
+						ANY
+							OpenedCaptureRoutes Includes HwCodecMedia
+							OpenedCaptureRoutes Includes HwCodecComm
+					ALL
+						SelectedOutputDevice Includes IHF
+						OpenedCaptureRoutes Includes HwCodecCSV
+
 				/Audio/REALTEK/SOUND_CARD/INPUT/MIC/INT/SWITCH = 1
 				#Register 0x27[13] & 0x27[5]
 				/Audio/REALTEK/SOUND_CARD/MIXER/DIGITAL/ADC_MIXER/RIGHT/STEREO/2/SWITCH = 1
@@ -60,9 +71,15 @@ supDomain: Routing.Mute
 
 		domain: HeadsetMic
 			conf: Unmute
-				ALL
-					SelectedInputDevice Includes Headset
-					OpenedCaptureRoutes  Includes HwCodecMedia
+				ANY
+					ALL
+						SelectedInputDevice Includes Headset
+						ANY
+							OpenedCaptureRoutes Includes HwCodecMedia
+							OpenedCaptureRoutes Includes HwCodecComm
+					ALL
+						SelectedOutputDevice Includes Headset
+						OpenedCaptureRoutes Includes HwCodecCSV
 				/Audio/REALTEK/SOUND_CARD/INPUT/HEADSET/SWITCH = 1
 				#Register 0x27[14] & 0x27[6]
 				/Audio/REALTEK/SOUND_CARD/MIXER/DIGITAL/ADC_MIXER/RIGHT/STEREO/1/SWITCH = 1
@@ -89,7 +106,7 @@ supDomain: Routing.Enable
 	RoutageState Includes Path
 
 	#Register 0x2A[14] and 0x2A[6]
-	domain: Playback
+	domain: HwCodec.Playback
 		conf: Enable
 			OpenedPlaybackRoutes Includes HwCodecMedia
 			/Audio/REALTEK/SOUND_CARD/MIXER/DIGITAL/DAC_MIXER/STEREO/RIGHT/1/SWITCH = 1
@@ -100,7 +117,7 @@ supDomain: Routing.Enable
 			/Audio/REALTEK/SOUND_CARD/MIXER/DIGITAL/DAC_MIXER/STEREO/LEFT/1/SWITCH = 0
 
 	#Register 0x1C[15] and 0x1C[7], control IF1 path only
-	domain: Capture
+	domain: HwCodec.Capture
 		conf: Enable
 			OpenedCaptureRoutes Includes HwCodecMedia
 
@@ -116,8 +133,6 @@ supDomain: Routing.Enable
 #
 supDomain: Routing.Configure
 	RoutageState Includes Configure
-
-	#//WY 0301, remove MIC switch configuration from this step to Mute/Unmute step
 
 	supDomain: LPE_Mixer
 		domain: IHF
