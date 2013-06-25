@@ -2014,5 +2014,174 @@
       </Configuration>
     </Settings>
   </ConfigurableDomain>
+  <ConfigurableDomain Name="Routing.Configure.Modem.Processing" SequenceAware="false">
+    <Configurations>
+      <Configuration Name="HwCodecCSV.IHF.TTY.Uplink">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Configure"/>
+          <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="HwCodecCSV"/>
+          <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="IHF"/>
+          <SelectionCriterionRule SelectionCriterion="TTYDirection" MatchesWhen="Includes" Value="Uplink"/>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="HwCodecCSV.IHF.TTY.Downlink">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Configure"/>
+          <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="HwCodecCSV"/>
+          <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="IHF"/>
+          <SelectionCriterionRule SelectionCriterion="TTYDirection" MatchesWhen="Includes" Value="Downlink"/>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="HwCodecCSV.IHF.Normal">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Configure"/>
+          <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="HwCodecCSV"/>
+          <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="IHF"/>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="HwCodecCSV.Headset.TTY.Full">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Configure"/>
+          <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="HwCodecCSV"/>
+          <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Headset"/>
+          <SelectionCriterionRule SelectionCriterion="TTYDirection" MatchesWhen="Includes" Value="Downlink"/>
+          <SelectionCriterionRule SelectionCriterion="TTYDirection" MatchesWhen="Includes" Value="Uplink"/>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="HwCodecCSV.Headset.TTY.Uplink">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Configure"/>
+          <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="HwCodecCSV"/>
+          <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Headset"/>
+          <SelectionCriterionRule SelectionCriterion="TTYDirection" MatchesWhen="Includes" Value="Uplink"/>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="HwCodecCSV.Headset.TTY.Downlink">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Configure"/>
+          <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="HwCodecCSV"/>
+          <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Headset"/>
+          <SelectionCriterionRule SelectionCriterion="TTYDirection" MatchesWhen="Includes" Value="Downlink"/>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="HwCodecCSV.Headset.Normal">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Configure"/>
+          <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="HwCodecCSV"/>
+          <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Headset"/>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="HwCodecCSV.Headphone">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Configure"/>
+          <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="HwCodecCSV"/>
+          <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Headphones"/>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="BtCSV.NoHeadsetNrEc.SCO">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Configure"/>
+          <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="BtCSV"/>
+          <SelectionCriterionRule SelectionCriterion="BtHeadsetNrEc" MatchesWhen="Is" Value="False"/>
+          <CompoundRule Type="Any">
+            <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="SCO"/>
+            <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="SCO_Headset"/>
+            <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="SCO_CarKit"/>
+          </CompoundRule>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="Default">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Configure"/>
+        </CompoundRule>
+      </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE"/>
+    </ConfigurableElements>
+    <Settings>
+      <Configuration Name="HwCodecCSV.IHF.TTY.Uplink">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE">
+          <EnumParameter Name="MODE">TTY</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE">
+          <EnumParameter Name="MODE">Handsfree</EnumParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="HwCodecCSV.IHF.TTY.Downlink">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE">
+          <EnumParameter Name="MODE">Handsfree</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE">
+          <EnumParameter Name="MODE">TTY</EnumParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="HwCodecCSV.IHF.Normal">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE">
+          <EnumParameter Name="MODE">Handsfree</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE">
+          <EnumParameter Name="MODE">Handsfree</EnumParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="HwCodecCSV.Headset.TTY.Full">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE">
+          <EnumParameter Name="MODE">TTY</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE">
+          <EnumParameter Name="MODE">TTY</EnumParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="HwCodecCSV.Headset.TTY.Uplink">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE">
+          <EnumParameter Name="MODE">TTY</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE">
+          <EnumParameter Name="MODE">Handsfree</EnumParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="HwCodecCSV.Headset.TTY.Downlink">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE">
+          <EnumParameter Name="MODE">Handsfree</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE">
+          <EnumParameter Name="MODE">TTY</EnumParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="HwCodecCSV.Headset.Normal">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE">
+          <EnumParameter Name="MODE">Headset</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE">
+          <EnumParameter Name="MODE">Headset</EnumParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="HwCodecCSV.Headphone">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE">
+          <EnumParameter Name="MODE">Handsfree</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE">
+          <EnumParameter Name="MODE">Headset</EnumParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="BtCSV.NoHeadsetNrEc.SCO">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE">
+          <EnumParameter Name="MODE">Bluetooth</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE">
+          <EnumParameter Name="MODE">Bluetooth</EnumParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="Default">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE">
+          <EnumParameter Name="MODE">UserDefined15</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE">
+          <EnumParameter Name="MODE">UserDefined15</EnumParameter>
+        </ConfigurableElement>
+      </Configuration>
+    </Settings>
+  </ConfigurableDomain>
 </ConfigurableDomains>
 
