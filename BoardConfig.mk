@@ -49,3 +49,6 @@ ENABLE_SENSOR_HUB := true
 
 # AudioComms
 INTEL_AMC := false
+
+# Software MPEG4 encoder
+SW_MPEG4_ENCODER := true
