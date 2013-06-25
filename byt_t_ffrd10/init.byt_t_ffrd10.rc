@@ -64,6 +64,7 @@ on init
     insmod /lib/modules/hdmi_audio.ko
 
     setprop_from_sysfs /sys/firmware/pidv/iafw_version sys.ia32.version
+    setprop_from_sysfs /sys/firmware/pidv/iafw_version sys.ifwi.version
     setprop_from_sysfs /sys/firmware/pidv/secfw_version sys.chaabi.version
 
 
