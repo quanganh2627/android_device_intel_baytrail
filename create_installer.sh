@@ -13,8 +13,8 @@ else
     exit
 fi
 
-if [ -f /dev/${disk} ]; then
-    echo "$disk does not exist... Aborting"
+if [ ! -b /dev/${disk} ]; then
+    echo "$disk is not a valid block device... Aborting"
     exit
 fi
 
