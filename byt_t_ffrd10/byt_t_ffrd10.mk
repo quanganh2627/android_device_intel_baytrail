@@ -47,6 +47,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     parameter-framework.audio.byt_t_ffrd10
 
+# build the OMX wrapper codecs
+ifeq ($(USE_INTEL_MDP),true)
+PRODUCT_PACKAGES += \
+    libstagefright_soft_mp3dec_mdp \
+    libstagefright_soft_aacdec_mdp
+endif
+
 #alsa conf
 ALSA_CONF_PATH := external/alsa-lib/
 PRODUCT_COPY_FILES += \
