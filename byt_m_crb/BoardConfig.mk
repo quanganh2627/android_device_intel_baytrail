@@ -114,3 +114,10 @@ CAPSULE_BINARY := vendor/intel/fw/PRIVATE/ifwi/baylake/byt_m/capsule.bin
 
 # usb stick installer support
 BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE +=  droidboot.use_installer=1 droidboot.installer_usb=/dev/block/sdb1 droidboot.installer_file=installer.cmd
+
+#Camera
+ADDITIONAL_BUILD_PROPERTIES += \
+				ro.camera.number=1 \
+				ro.camera.0.devname=/dev/video0 \
+				ro.camera.0.facing=back \
+				ro.camera.0.orientation=0
