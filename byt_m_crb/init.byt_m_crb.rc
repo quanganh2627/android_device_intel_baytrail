@@ -7,7 +7,6 @@ import init.avc.rc
 # import init.modem.rc
 import init.wifi.rc
 import init.platform.usb.rc
-import init.gps.rc
 import init.bt.rc
 
 on early-init
@@ -59,6 +58,13 @@ on init
     # Insert matrix for PnP measurements
     insmod /lib/modules/matrix.ko
     chmod 0640 /dev/matrix
+
+    # Insert hdmi audio driver
+    insmod /lib/modules/hdmi_audio.ko
+
+    setprop_from_sysfs /sys/firmware/pidv/iafw_version sys.ia32.version
+    setprop_from_sysfs /sys/firmware/pidv/iafw_version sys.ifwi.version
+    setprop_from_sysfs /sys/firmware/pidv/secfw_version sys.chaabi.version
 
 on boot
     #  Mount debugfs for systrace settings

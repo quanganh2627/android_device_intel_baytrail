@@ -177,3 +177,5 @@ on property:persist.berta.enabled=0
 
 on property:persist.berta.enabled=1
     start berta
+
+import init.dump.rc

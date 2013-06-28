@@ -29,4 +29,4 @@ endif
 # -> should go away as this is not needed with PSI firmware + OTG
 include $(PLATFORM_PATH)/diskinstaller/rules.mk
 
-include $(PLATFORM_PATH)/flashfiles_workaround.mk
+blank_flashfiles: recoveryimage

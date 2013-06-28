@@ -1,7 +1,7 @@
 # Name of the reference design
 # Should be changed with the original values when starting customization
-REF_DEVICE_NAME ?= baylake
-REF_PRODUCT_NAME ?= baylake
+REF_DEVICE_NAME ?= $(TARGET_DEVICE)
+REF_PRODUCT_NAME ?= $(TARGET_PRODUCT)
 
 DEVICE_PATH := device/intel/baytrail/byt_t_ffrd10
 
@@ -34,7 +34,7 @@ INTEL_WIDI_BAYTRAIL := true
 BOARD_USES_ALSA_AUDIO := true
 BOARD_USES_TINY_ALSA_AUDIO := true
 BOARD_USES_AUDIO_HAL_CONFIGURABLE := true
-BOARD_USE_VIBRATOR_ALSA := false
+BOARD_USE_VIBRATOR_ALSA := true
 BUILD_WITH_ALSA_UTILS := true
 BOARD_USES_GENERIC_AUDIO := false
 BOARD_HAVE_AUDIENCE := false
