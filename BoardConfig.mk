@@ -1,8 +1,6 @@
 
 include device/intel/common/BoardConfig.mk
 
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1073741824
-
 FLASHFILE_NO_OTA := false
 
 BOARD_HAS_CAPSULE := true
