@@ -130,6 +130,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     net.eth0.ip=192.168.42.1 \
     net.eth0.netmask=255.255.255.0
 
+# Version of mandatory blankphone
+PRODUCT_PROPERTY_OVERRIDES += ro.blankphone_id=1
+
 # Intel fake multiple display
 PRODUCT_PACKAGES += \
     com.intel.multidisplay \

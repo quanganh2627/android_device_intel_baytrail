@@ -144,6 +144,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072 \
     ro.sf.lcd_density=320
 
+# Version of mandatory blankphone
+PRODUCT_PROPERTY_OVERRIDES += ro.blankphone_id=1
+
 # Intel fake multiple display
 PRODUCT_PACKAGES += \
     com.intel.multidisplay \
