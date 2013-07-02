@@ -67,6 +67,12 @@ PRODUCT_PACKAGES += \
     Ota \
     OtaDownloader
 
+# Crash Report / crashinfo
+ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
+PRODUCT_PACKAGES += \
+    crash_package
+endif
+
 # light
 PRODUCT_PACKAGES += \
     lights.$(PRODUCT_DEVICE)

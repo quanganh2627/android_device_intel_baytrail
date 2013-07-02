@@ -6,18 +6,6 @@ include $(LOCAL_PATH)/byt_t_ffrd8_path.mk
 # device specific overlay folder
 PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
 
-# Crash Report / crashinfo
-ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
-PRODUCT_PACKAGES += \
-    CrashReport \
-    crashinfo \
-    com.google.gson \
-    com.google.gson.xml \
-    logconfig \
-    crashparsing \
-    crashparsing.xml
-endif
-
 # copy permission files
 FRAMEWORK_ETC_PATH := frameworks/native/data/etc
 PERMISSIONS_PATH := system/etc/permissions
