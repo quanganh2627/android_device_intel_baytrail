@@ -94,9 +94,6 @@ on boot
     chmod 0666 /dev/mei
     chmod 0666 /dev/meimm
 
-    # Run surfaceflinger in a standalone process to avoid deadlock against gfx apps.
-    setprop system_init.startsurfaceflinger 0
-
 #   Offload specific properties
 
 #   lpa.tunnelling.enable
@@ -200,12 +197,6 @@ service hdcpd /system/bin/hdcpd
 service baytrail-setup /system/bin/sh /system/etc/init.baytrail.sh
     class core
     oneshot
-
-service surfaceflinger /system/bin/surfaceflinger
-    class main
-    user system
-    group graphics drmrpc
-    onrestart restart zygote
 
 service sensorhubd /system/bin/sensorhubd
     class main
