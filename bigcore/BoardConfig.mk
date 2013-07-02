@@ -12,12 +12,9 @@ include device/intel/baytrail/bigcore/PlatformBoardConfig.mk
 # Temporary IFWI does not support signing
 TARGET_OS_SIGNING_METHOD := none
 
-#Platform
-BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
-
 # Connectivity
 BOARD_HAVE_WIFI := true
-INTEL_WIDI := true
+INTEL_WIDI := false
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)
 BOARD_HAVE_GPS := false
@@ -27,9 +24,6 @@ COMMON_GLOBAL_CFLAGS += -DGFX_BUF_EXT
 TARGET_HAS_MULTIPLE_DISPLAY := false
 
 USE_INTEL_IPP := true
-
-# WiDi
-INTEL_WIDI_BAYTRAIL := true
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
