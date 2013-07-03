@@ -13,7 +13,7 @@ on init
     setprop Audiocomms.Audience.IsPresent "false"
     setprop alsa.mixer.defaultGain 1.0
     setprop Audiocomms.BT.HFP.Supported "false"
-    setprop Audiocomms.Vibrator.IsPresent "false"
+    setprop Audiocomms.Vibrator.IsPresent "true"
 
     # atomisp driver depends on these modules. So load these on init. atomisp
     # driver is loaded from "on charger" trigger as well from init.common.rc
@@ -33,3 +33,9 @@ on property:sys.boot_completed=1
     insmod /lib/modules/ov2722.ko
     insmod /lib/modules/lm3554.ko
     insmod /lib/modules/atomisp-css2400b0_v2.ko dypool_enable=y repool_pgnr=32768
+
+on post-fs
+    # Permissions for Vibrator
+    chown system system /sys/devices/platform/VIB8601:00/vibrator
+    chown system system /sys/devices/platform/VIB8601:00/pwm_ontime_div
+
