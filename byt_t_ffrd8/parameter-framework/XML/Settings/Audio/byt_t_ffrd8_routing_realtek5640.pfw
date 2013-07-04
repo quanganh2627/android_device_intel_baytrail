@@ -17,7 +17,6 @@ supDomain: Routing.Mute
 					ANY
 						OpenedPlaybackRoutes Includes HwCodecMedia
 						OpenedPlaybackRoutes Includes HwCodecCSV
-						OpenedPlaybackRoutes Includes HwCodecComm
 
 				/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/SWITCH = 1
 
@@ -31,7 +30,6 @@ supDomain: Routing.Mute
 					ANY
 						OpenedPlaybackRoutes Includes HwCodecMedia
 						OpenedPlaybackRoutes Includes HwCodecCSV
-						OpenedPlaybackRoutes Includes HwCodecComm
 
 				/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/SWITCH = 1
 
@@ -49,7 +47,6 @@ supDomain: Routing.Mute
 						SelectedInputDevice Includes Main
 						ANY
 							OpenedCaptureRoutes Includes HwCodecMedia
-							OpenedCaptureRoutes Includes HwCodecComm
 					ALL
 						SelectedOutputDevice Includes IHF
 						OpenedCaptureRoutes Includes HwCodecCSV
@@ -74,9 +71,7 @@ supDomain: Routing.Mute
 				ANY
 					ALL
 						SelectedInputDevice Includes Headset
-						ANY
-							OpenedCaptureRoutes Includes HwCodecMedia
-							OpenedCaptureRoutes Includes HwCodecComm
+						OpenedCaptureRoutes Includes HwCodecMedia
 					ALL
 						SelectedOutputDevice Includes Headset
 						OpenedCaptureRoutes Includes HwCodecCSV
@@ -129,18 +124,14 @@ supDomain: Routing.Enable
 	supDomain: HwCodec.VoicePort
 		domain: Playback
 			conf: Enable
-				ANY
-					OpenedPlaybackRoutes Includes HwCodecCSV
-					OpenedPlaybackRoutes Includes HwCodecComm
+				OpenedPlaybackRoutes Includes HwCodecCSV
 				/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/PLAYBACK_ENABLED = 1
 			conf: Disable
 				/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/PLAYBACK_ENABLED = 0
 
 		domain: Capture
 			conf: Enable
-				ANY
-					OpenedCaptureRoutes Includes HwCodecCSV
-					OpenedCaptureRoutes Includes HwCodecComm
+				OpenedCaptureRoutes Includes HwCodecCSV
 				/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/CAPTURE_ENABLED = 1
 			conf: Disable
 				/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/CAPTURE_ENABLED = 0
