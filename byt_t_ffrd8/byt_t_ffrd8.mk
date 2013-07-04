@@ -57,6 +57,7 @@ PRODUCT_PACKAGES += \
 
 # parameter-framework files
 PRODUCT_PACKAGES += \
+        libimc-subsystem \
         parameter-framework.audio.byt_t_ffrd8
 
 # build the OMX wrapper codecs
