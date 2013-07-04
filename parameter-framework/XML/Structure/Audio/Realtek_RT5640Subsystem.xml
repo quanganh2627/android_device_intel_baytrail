@@ -274,13 +274,26 @@
             <Component Name="MONO_MIXER" Type="MONO_MIXER_TYPE" Mapping="Amend1:Mono,Amend2:MIX"/>
         </ComponentType>
 
-        <ComponentType Name="ADC_MIXER_VALUE">
-           <BooleanParameter Name="SWITCH" Mapping="Control:'%1 ADC %2 ADC%3 Switch'"/>
+        <ComponentType Name="ADC_MIXER_COMMON_VALUE">
+           <BooleanParameter Name="SWITCH" Mapping="Control:'%1 ADC MIX%2 ADC%3 Switch'"/>
+        </ComponentType>
+        <ComponentType Name="ADC_MIXER_1_VALUE" Extends="ADC_MIXER_COMMON_VALUE">
+            <EnumParameter Name="SOURCE" Size="8" Mapping="Control:'%1 ADC %2%3 Mux'">
+                <ValuePair Literal="DAC MIX" Numerical="0"/>
+                <ValuePair Literal="ADC" Numerical="1"/>
+            </EnumParameter>
+        </ComponentType>
+        <ComponentType Name="ADC_MIXER_2_VALUE" Extends="ADC_MIXER_COMMON_VALUE">
+            <EnumParameter Name="SOURCE" Size="8" Mapping="Control:'%1 ADC %2%3 Mux'">
+                <ValuePair Literal="DMIC 1" Numerical="0"/>
+                <ValuePair Literal="DMIC 2" Numerical="1"/>
+                <ValuePair Literal="DAC MIX" Numerical="2"/>
+            </EnumParameter>
         </ComponentType>
 
         <ComponentType Name="ADC_MIXER_CHANNEL_TYPE">
-           <Component Name="1" Type="ADC_MIXER_VALUE" Mapping="Amend3:1"/>
-           <Component Name="2" Type="ADC_MIXER_VALUE" Mapping="Amend3:2"/>
+           <Component Name="1" Type="ADC_MIXER_1_VALUE" Mapping="Amend3:1"/>
+           <Component Name="2" Type="ADC_MIXER_2_VALUE" Mapping="Amend3:2"/>
         </ComponentType>
 
         <ComponentType Name="ADC_CHANNEL_TYPE">
@@ -289,72 +302,8 @@
         </ComponentType>
 
         <ComponentType Name="ADC_MIXER_TYPE">
-            <Component Name="RIGHT"  Type="ADC_CHANNEL_TYPE" Mapping="Amend2:MIXR"/>
-            <Component Name="LEFT"   Type="ADC_CHANNEL_TYPE" Mapping="Amend2:MIXL"/>
-            <ParameterBlock Name="RIGHT">
-                <ParameterBlock Name="MONO">
-                    <ParameterBlock Name="1">
-                        <EnumParameter Name="SOURCE" Size="8" Mapping="Control:'Mono ADC R1 Mux'">
-                            <ValuePair Literal="Mono DAC MIXR" Numerical="0"/>
-                            <ValuePair Literal="ADCR" Numerical="1"/>
-                        </EnumParameter>
-                    </ParameterBlock>
-                    <ParameterBlock Name="2">
-                        <EnumParameter Name="SOURCE" Size="8" Mapping="Control:'Mono ADC R2 Mux'">
-                            <ValuePair Literal="DMIC R1" Numerical="0"/>
-                            <ValuePair Literal="DMIC R2" Numerical="1"/>
-                            <ValuePair Literal="Mono DAC MIXR" Numerical="2"/>
-                        </EnumParameter>
-                    </ParameterBlock>
-                </ParameterBlock>
-                <ParameterBlock Name="STEREO">
-                    <ParameterBlock Name="1">
-                        <EnumParameter Name="SOURCE" Size="8" Mapping="Control:'Stereo ADC R1 Mux'">
-                            <ValuePair Literal="DIG MIX" Numerical="0"/>
-                            <ValuePair Literal="ADC" Numerical="1"/>
-                        </EnumParameter>
-                    </ParameterBlock>
-                    <ParameterBlock Name="2">
-                        <EnumParameter Name="SOURCE" Size="8" Mapping="Control:'Stereo ADC R2 Mux'">
-                            <ValuePair Literal="DMIC1" Numerical="0"/>
-                            <ValuePair Literal="DMIC2" Numerical="1"/>
-                            <ValuePair Literal="DIG MIX" Numerical="2"/>
-                        </EnumParameter>
-                    </ParameterBlock>
-                </ParameterBlock>
-            </ParameterBlock>
-            <ParameterBlock Name="LEFT">
-                <ParameterBlock Name="MONO">
-                    <ParameterBlock Name="1">
-                        <EnumParameter Name="SOURCE" Size="8" Mapping="Control:'Mono ADC L1 Mux'">
-                            <ValuePair Literal="Mono DAC MIXL" Numerical="0"/>
-                            <ValuePair Literal="ADCL" Numerical="1"/>
-                        </EnumParameter>
-                    </ParameterBlock>
-                    <ParameterBlock Name="2">
-                        <EnumParameter Name="SOURCE" Size="8" Mapping="Control:'Mono ADC L2 Mux'">
-                            <ValuePair Literal="DMIC L1" Numerical="0"/>
-                            <ValuePair Literal="DMIC L2" Numerical="1"/>
-                            <ValuePair Literal="Mono DAC MIXL" Numerical="2"/>
-                        </EnumParameter>
-                    </ParameterBlock>
-                </ParameterBlock>
-                <ParameterBlock Name="STEREO">
-                    <ParameterBlock Name="1">
-                        <EnumParameter Name="SOURCE" Size="8" Mapping="Control:'Stereo ADC L1 Mux'">
-                            <ValuePair Literal="DIG MIX" Numerical="0"/>
-                            <ValuePair Literal="ADC" Numerical="1"/>
-                        </EnumParameter>
-                    </ParameterBlock>
-                    <ParameterBlock Name="2">
-                        <EnumParameter Name="SOURCE" Size="8" Mapping="Control:'Stereo ADC L2 Mux'">
-                            <ValuePair Literal="DMIC1" Numerical="0"/>
-                            <ValuePair Literal="DMIC2" Numerical="1"/>
-                            <ValuePair Literal="DIG MIX" Numerical="2"/>
-                        </EnumParameter>
-                    </ParameterBlock>
-                </ParameterBlock>
-            </ParameterBlock>
+            <Component Name="RIGHT"  Type="ADC_CHANNEL_TYPE" Mapping="Amend2:R"/>
+            <Component Name="LEFT"   Type="ADC_CHANNEL_TYPE" Mapping="Amend2:L"/>
         </ComponentType>
 
         <ComponentType Name="MONO_DAC_MIXER_VALUE">
