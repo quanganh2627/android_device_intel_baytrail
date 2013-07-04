@@ -41,6 +41,3 @@ endif
 
 # enable libsensorhub
 ENABLE_SENSOR_HUB := true
-
-# AudioComms
-INTEL_AMC := false
