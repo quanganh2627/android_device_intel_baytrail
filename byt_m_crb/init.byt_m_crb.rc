@@ -8,6 +8,7 @@ import init.avc.rc
 import init.wifi.rc
 import init.platform.usb.rc
 import init.bt.rc
+import init.platform.gengfx.rc
 
 on early-init
     # Mesa environment variables

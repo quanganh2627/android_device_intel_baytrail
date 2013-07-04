@@ -9,6 +9,7 @@ import init.wifi.rc
 import init.platform.usb.rc
 import init.gps.rc
 import init.bt.rc
+import init.platform.gengfx.rc
 
 on early-init
     # Mesa environment variables
@@ -186,11 +187,6 @@ on post-fs
 
 # additional baytrail initialization
 service hdcpd /system/bin/hdcpd
-    class main
-    user root
-    group graphics drmrpc
-
-service coreu /system/bin/coreu
     class main
     user root
     group graphics drmrpc
