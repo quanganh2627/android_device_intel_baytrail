@@ -200,7 +200,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
         shisp_2400.bin \
         shisp_2400b0.bin \
-        shisp_2400b0_cssv2.bin
+        shisp_2400b0_cssv2.bin \
+        shisp_2400b0_cssv2_isp_2_2.bin
 
 # video encoder and camera
 PRODUCT_PACKAGES += \
