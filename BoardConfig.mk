@@ -1,8 +1,6 @@
 
 include device/intel/common/BoardConfig.mk
 
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1073741824
-
 FLASHFILE_NO_OTA := false
 
 BOARD_HAS_CAPSULE := true
@@ -49,3 +47,6 @@ ENABLE_SENSOR_HUB := true
 
 # AudioComms
 INTEL_AMC := false
+
+# Software MPEG4 encoder
+SW_MPEG4_ENCODER := true

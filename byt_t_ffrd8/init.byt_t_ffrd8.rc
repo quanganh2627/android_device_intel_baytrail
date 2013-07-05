@@ -64,6 +64,7 @@ on init
     insmod /lib/modules/hdmi_audio.ko
 
     setprop_from_sysfs /sys/firmware/pidv/iafw_version sys.ia32.version
+    setprop_from_sysfs /sys/firmware/pidv/iafw_version sys.ifwi.version
     setprop_from_sysfs /sys/firmware/pidv/secfw_version sys.chaabi.version
 
 on boot
@@ -105,6 +106,9 @@ on boot
 
     # Reboot in COS on shutdown request when charger is plugged
     setprop ro.rebootchargermode true
+
+    #  Enable submix audio path for widi
+    setprop widi.audio.module submix
 
 on post-fs-data
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
@@ -222,6 +226,10 @@ on charger
     mount_all /fstab.charger.${ro.hardware}
 
     start watchdogd
+    # REVERTME - Temp workaround for Baylake bringup.  See BZ 91648.
+    # To workaround inability to resume after sleep, disable the access that
+    # triggers the problem.
+    chmod 0000 /sys/power/state
     insmod /lib/modules/rmi4.ko boot_mode=1
 
     # Invoke fuel gauging helper binary to restore config data

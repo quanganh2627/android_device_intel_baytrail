@@ -1,0 +1,72 @@
+{
+      "globals": {
+                "partition_format" : "%s%d"
+        },
+                "storage": {
+                        "base_name": "/dev/block/sda"
+                },
+
+		"partitions":
+		{
+			"reserved": {
+				"size": 224
+			},
+
+			"FWUP": {
+				"id": 2,
+				"label": null,
+				"lba_start": null,
+				"size": 32,
+				"type": "efi",
+				"fs_type": "hidden",
+				"uuid": "0000000000FF",
+				"priority": 0,
+				"try": 0,
+				"length": 0,
+				"mount_point": null,
+				"mount_options": null,
+				"fs_mgr": null
+			},
+
+			"panic":
+			{
+				"id": 3
+			},
+
+			"factory":
+			{
+				"id": 5
+			},
+
+			"spare":
+			{
+				"id": 6
+			},
+
+			"config":
+			{
+				"id": 7
+			},
+
+			"cache":
+			{
+				"id": 8
+			},
+
+			"logs":
+			{
+				"id": 9
+			},
+
+			"system":
+			{
+				"id": 10
+			},
+
+			"data":
+			{
+				"id": 14,
+				"mount_options": "nosuid,nodev,noatime,barrier=1,data=ordered"
+			}
+		}
+}

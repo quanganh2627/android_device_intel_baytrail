@@ -15,6 +15,7 @@ on init
     # driver is loaded from "on charger" trigger as well from init.common.rc
     insmod /lib/modules/videobuf-core.ko
     insmod /lib/modules/videobuf-vmalloc.ko
+    insmod /lib/modules/vxd392.ko
 
 service media /system/bin/mediaserver
     class main
@@ -23,8 +24,3 @@ service media /system/bin/mediaserver
     ioprio rt 4
 
 on property:sys.boot_completed=1
-    # Defer loading modules that may require firmware till fs is ready
-    insmod /lib/modules/imx1x5.ko
-    insmod /lib/modules/ov2722.ko
-    insmod /lib/modules/lm3554.ko
-    insmod /lib/modules/atomisp.ko

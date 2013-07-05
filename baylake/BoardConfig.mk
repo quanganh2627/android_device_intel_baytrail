@@ -19,9 +19,19 @@ CAPSULE_BINARY := vendor/intel/fw/PRIVATE/ifwi/baylake/byt_t/capsule.bin
 BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 
 # Connectivity
+ifeq (, $(findstring next, $(TARGET_PRODUCT)))
 BOARD_HAVE_WIFI := true
 INTEL_WIDI := true
+INTEL_WIDI_BAYTRAIL := true
 BOARD_HAVE_BLUETOOTH := true
+else
+#disable WIFI/WIDI/BT for 3.9 bringup
+BOARD_HAVE_WIFI := false
+INTEL_WIDI := false
+INTEL_WIDI_BAYTRAIL := false
+BOARD_HAVE_BLUETOOTH := false
+endif
+
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)
 TARGET_HAS_VPP := true
 TARGET_VPP_USE_GEN := true
@@ -30,8 +40,6 @@ TARGET_HAS_MULTIPLE_DISPLAY := true
 
 USE_INTEL_IPP := true
 
-# WiDi
-INTEL_WIDI_BAYTRAIL := true
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -76,7 +84,7 @@ endif
 BOARD_GPU_DRIVERS := i965
 USE_OPENGL_RENDERER := true
 BOARD_KERNEL_CMDLINE += vga=current i915.modeset=1 drm.vblankoffdelay=1 \
-                        acpi_backlight=vendor i915.i915_enable_rc6=0
+                        acpi_backlight=vendor
 
 BOARD_USES_LIBPSS := false
 

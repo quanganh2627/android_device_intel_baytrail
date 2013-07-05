@@ -77,12 +77,14 @@ Only the three quirks included above are recognized at this point:
 
 <MediaCodecs>
     <Decoders>
+        <MediaCodec name="OMX.Intel.mp3.decoder" type="audio/mpeg" />
         <MediaCodec name="CIPMP3Decoder" type="audio/mpeg" />
         <MediaCodec name="OMX.google.mp3.decoder" type="audio/mpeg" />
         <MediaCodec name="CIPAMRNBDecoder" type="audio/3gpp" />
         <MediaCodec name="OMX.google.amrnb.decoder" type="audio/3gpp" />
         <MediaCodec name="CIPAMRWBDecoder" type="audio/amr-wb" />
         <MediaCodec name="OMX.google.amrwb.decoder" type="audio/amr-wb" />
+        <MediaCodec name="OMX.Intel.aac.decoder" type="audio/mp4a-latm" />
         <MediaCodec name="CIPAACDecoder" type="audio/mp4a-latm" />
         <MediaCodec name="OMX.google.aac.decoder" type="audio/mp4a-latm" />
         <MediaCodec name="OMX.google.aac.decoder" type="audio/mp4a-aacextended" />

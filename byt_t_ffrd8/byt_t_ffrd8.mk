@@ -42,9 +42,20 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
        audio.widi.$(PRODUCT_NAME)
 
+#remote submix audio
+PRODUCT_PACKAGES += \
+       audio.r_submix.default
+
 # parameter-framework files
 PRODUCT_PACKAGES += \
         parameter-framework.audio.byt_t_ffrd8
+
+# build the OMX wrapper codecs
+ifeq ($(USE_INTEL_MDP),true)
+PRODUCT_PACKAGES += \
+    libstagefright_soft_mp3dec_mdp \
+    libstagefright_soft_aacdec_mdp
+endif
 
 #alsa conf
 ALSA_CONF_PATH := external/alsa-lib/

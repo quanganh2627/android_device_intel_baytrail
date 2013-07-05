@@ -9,6 +9,7 @@ LOCAL_MODULE := parameter-framework.audio.byt_t_ffrd8
 LOCAL_MODULE_TAGS := optional
 LOCAL_REQUIRED_MODULES :=  \
 	parameter-framework.audio.baytrail \
+	parameter-framework.audio.imc.subsystem \
 	AudioClass.xml \
 	AudioConfigurableDomains.xml \
 	ParameterFrameworkConfiguration.xml

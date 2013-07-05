@@ -21,3 +21,5 @@
 
 add_lunch_combo baylake-eng
 add_lunch_combo baylake-userdebug
+add_lunch_combo baylake_next-eng
+add_lunch_combo baylake_next-userdebug

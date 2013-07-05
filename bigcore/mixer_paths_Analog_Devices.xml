@@ -1,0 +1,24 @@
+<mixer>
+  <!-- These are the initial mixer settings -->
+  <ctl name="PCM Playback Switch" value="0" />
+  <ctl name="PCM Playback Volume" value="31" />
+  <ctl name="Master Playback Volume" value="31" />
+  <ctl name="Master Playback Switch" value="0" />
+  <ctl name="Headphone Playback Switch" value="0" />
+  <ctl name="Headphone Playback Volume" value="31" />
+  <ctl name="Capture Switch" value="0" />
+  <ctl name="Capture Volume" value="15" />
+
+  <path name="speaker">
+    <ctl name="PCM Playback Switch" value="1" />
+    <ctl name="Master Playback Switch" value="1" />
+  </path>
+
+  <path name="headphone">
+    <ctl name="Headphone Playback Switch" value="1" />
+  </path>
+
+  <path name="main-mic-top">
+    <ctl name="Capture Switch" value="1" />
+  </path>
+</mixer>

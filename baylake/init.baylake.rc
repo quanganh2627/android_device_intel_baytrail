@@ -64,6 +64,7 @@ on init
     insmod /lib/modules/hdmi_audio.ko
 
     setprop_from_sysfs /sys/firmware/pidv/iafw_version sys.ia32.version
+    setprop_from_sysfs /sys/firmware/pidv/iafw_version sys.ifwi.version
     setprop_from_sysfs /sys/firmware/pidv/secfw_version sys.chaabi.version
 
 on boot
@@ -129,13 +130,11 @@ on boot
     #  Set autosuspend delay as 30 ms to save power in graphic display
     write /sys/devices/pci0000:00/0000:00:03.4/power/autosuspend_delay_ms 30
 
-    # REVERTME - Temp workaround for Baylake bringup.  See BZ 91648.
-    # To workaround inability to resume after sleep, disable the access that
-    # triggers the problem.
-    chmod 0000 /sys/power/state
-
     # Reboot in COS on shutdown request when charger is plugged
     setprop ro.rebootchargermode true
+
+    #  Enable submix audio path for widi
+    setprop widi.audio.module submix
 
 on post-fs-data
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
