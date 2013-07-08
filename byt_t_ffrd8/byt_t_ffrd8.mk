@@ -60,6 +60,10 @@ PRODUCT_PACKAGES += \
         libimc-subsystem \
         parameter-framework.audio.byt_t_ffrd8
 
+# MAMGR (Modem Audio Manager)
+PRODUCT_PACKAGES += \
+    libmamgr-xmm
+
 # build the OMX wrapper codecs
 ifeq ($(USE_INTEL_MDP),true)
 PRODUCT_PACKAGES += \
