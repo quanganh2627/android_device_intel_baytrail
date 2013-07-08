@@ -71,6 +71,7 @@
         <supportedPreviewFPSRange value="(10500,30304),(11000,30304),(11500,30304)"/>
         <defaultPreviewFPSRange value="10500,30304"/>
         <hasSlowMotion value="false"/>
+        <hasFlash value="true"/>
         <supportedAwbLock value="false"/>
         <supportedAeLock value="false"/>
 -->
@@ -78,7 +79,6 @@
 <!-- Common, examples for the elements
         <subDevName value="/dev/v4l-subdev8"/>
         <fileInject value="true"/>
-        <backFlash value="true"/>
         <maxContinuousRawRingBuffer value="10"/>
         <productName value="ExampleModel"/>
         <manufacturerName value="ExampleMaker"/>
@@ -106,6 +106,7 @@
         <supportedVideoSizes value="176x144,320x240,352x288,640x480,720x480,1280x720,1920x1080"/>
 
         <supportedSceneModes value="auto,portrait,sports,landscape,night,barcode,night-portrait"/>
+        <hasFlash value="true"/>
     </Profiles>
 
     <Profiles cameraId="1">
@@ -128,12 +129,12 @@
         <supportedAeLock value="false"/>
         <maxEV value="6"/>
         <minEV value="-6"/>
+        <hasFlash value="false"/>
     </Profiles>
 
     <Common>
         <subDevName value="/dev/v4l-subdev8"/>
         <fileInject value="true"/>
-        <backFlash value="true"/>
         <maxContinuousRawRingBuffer value="11"/>
         <productName value="ExampleModel"/>
         <manufacturerName value="ExampleMaker"/>

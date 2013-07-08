@@ -74,6 +74,7 @@
         <defaultPreviewFPSRange value="10500,30304"/> <!-- one value of the supportedPreviewFPSRange -->
         <supportedPreviewUpdateModes value="standard,continuous,during-capture,windowless"/>
         <defaultPreviewUpdateMode value="standard"/>
+        <hasFlash value="true"/>
     </Profiles>
 
     <Profiles cameraId="1">
@@ -135,12 +136,12 @@
         <defaultPreviewFPSRange value="10500,30304"/>
         <supportedPreviewUpdateModes value="standard,continuous,during-capture,windowless"/>
         <defaultPreviewUpdateMode value="standard"/>
+        <hasFlash value="false"/>
     </Profiles>
 
     <Common>
         <subDevName value="/dev/v4l-subdev8"/> <!-- it depends on the real hardware -->
         <fileInject value="true"/> <!-- true or false -->
-        <backFlash value="true"/> <!-- true or false -->
         <maxContinuousRawRingBuffer value="11"/>
         <productName value="ExampleModel"/> <!-- cfg the exif -->
         <manufacturerName value="ExampleMaker"/> <!-- cfg the exif -->
