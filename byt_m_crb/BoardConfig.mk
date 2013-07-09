@@ -82,6 +82,8 @@ USE_INTEL_VA:=true
 BOARD_USES_WRS_OMXIL_CORE:=true
 BOARD_USES_MRST_OMX:=true
 USE_INTEL_ASF_EXTRACTOR:=true
+# enabled to use hardware VP8 decoder
+USE_HW_VP8 := true
 
 BOARD_USE_LIBVA_INTEL_DRIVER := true
 BOARD_USE_LIBVA := true
