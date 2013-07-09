@@ -219,7 +219,8 @@ PRODUCT_COPY_FILES += \
 
 # Camera app
 PRODUCT_PACKAGES += \
-    IntelCamera
+    IntelCamera \
+    SocialGallery
 
 # Test Camera is for Test only
 ifeq ($(TARGET_BUILD_VARIANT),eng)
