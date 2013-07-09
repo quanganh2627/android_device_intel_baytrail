@@ -1019,6 +1019,7 @@
       <ConfigurableElement Path="/Audio/CONFIGURATION/ALSA_CONF"/>
       <ConfigurableElement Path="/Audio/CONFIGURATION/IFX_MODEM"/>
       <ConfigurableElement Path="/Audio/CONFIGURATION/FM_CONF"/>
+      <ConfigurableElement Path="/Audio/CONFIGURATION/VOICE_VOLUME_CTRL_PARAMETER"/>
     </ConfigurableElements>
     <Settings>
       <Configuration Name="Default">
@@ -1051,6 +1052,9 @@
               <IntegerParameter Name="VOLUME">62</IntegerParameter>
             </Component>
           </Component>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/CONFIGURATION/VOICE_VOLUME_CTRL_PARAMETER">
+          <StringParameter Name="VOICE_VOLUME_CTRL_PARAMETER">/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/VOLUME/LEVEL</StringParameter>
         </ConfigurableElement>
       </Configuration>
     </Settings>
