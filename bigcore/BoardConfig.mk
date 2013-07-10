@@ -32,7 +32,6 @@ BOARD_USES_AUDIO_HAL_CONFIGURABLE := false
 BOARD_USE_VIBRATOR_ALSA := false
 BUILD_WITH_ALSA_UTILS := false
 BOARD_USES_GENERIC_AUDIO := false
-BOARD_HAVE_AUDIENCE := false
 
 #GEN is one graphic and video engine
 # Bigcore uses the GEN for the graphic and video

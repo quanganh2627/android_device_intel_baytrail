@@ -50,7 +50,6 @@ BOARD_USES_AUDIO_HAL_CONFIGURABLE := true
 BOARD_USE_VIBRATOR_ALSA := true
 BUILD_WITH_ALSA_UTILS := true
 BOARD_USES_GENERIC_AUDIO := false
-BOARD_HAVE_AUDIENCE := false
 
 #GEN is one graphic and video engine
 # Baytrail uses the GEN for the graphic and video
