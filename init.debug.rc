@@ -3,6 +3,7 @@ on init
     # Export gcov variables to enable code coverage on mobile
     export GCOV_PREFIX /data
     export GCOV_PREFIX_STRIP 1
+    write /proc/sys/kernel/kptr_restrict 0
 
 on early-boot
     chown system log /logs
