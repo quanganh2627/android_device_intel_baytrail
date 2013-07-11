@@ -67,5 +67,24 @@
 			{
 				"id": 10
 			}
+		},
+	"oses":
+		{
+
+			"ros": {
+				"mount": [
+					"factory",
+					"config",
+					"logs"
+						]
+				},
+
+			"pos": {
+				"mount": [
+					"factory",
+					"config",
+					"logs"
+						]
+				}
 		}
 }
