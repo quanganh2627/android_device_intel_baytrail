@@ -113,7 +113,11 @@ OVERRIDE_RS_DRIVER := libRSDriver_intel7.so
 BOARD_HAS_ULPMC := true
 
 # Capsule FW PATH
-CAPSULE_BINARY := vendor/intel/fw/PRIVATE/ifwi/baylake/byt_t/capsule.bin
+#CAPSULE_BINARY := vendor/intel/fw/PRIVATE/ifwi/baylake/byt_t/capsule.bin
+CAPSULE_BINARY := prebuilts/intel/vendor/intel/prebuilts/fw/ifwi/baylake/byt_t/capsule.bin
+
 # ULPMC FW PATH
-ULPMC_BINARY := vendor/intel/fw/PRIVATE/ulpmc/ULPMC_FW_PR1.bin
+#ULPMC_BINARY := vendor/intel/fw/PRIVATE/ulpmc/ULPMC_FW_PR1.bin
+ULPMC_BINARY := prebuilts/intel/vendor/intel/prebuilts/fw/ulpmc/ULPMC_V_15_PR1.bin
+
 BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE +=  droidboot.use_installer=1 droidboot.installer_usb=/dev/block/sda1 droidboot.installer_file=installer.cmd
