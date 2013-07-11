@@ -441,6 +441,12 @@
       <ConfigurableElement Path="/Audio/LPE/HSEP_PATH/STEREO_EQ/DIFF_2_CHAN"/>
       <ConfigurableElement Path="/Audio/LPE/HSEP_PATH/STEREO_EQ/LEFT_EQ"/>
       <ConfigurableElement Path="/Audio/LPE/HSEP_PATH/STEREO_EQ/RIGHT_EQ"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/SPEECH/RX/VOLUME/LEVEL"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/SPEECH/TX/VOLUME/LEVEL"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/VOLUME/LEVEL"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/VOLUME/LEVEL"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/VOLUME/LEVEL"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/SIMPLE_TONES/VOLUME/LEVEL"/>
     </ConfigurableElements>
     <Settings>
       <Configuration Name="Default">
@@ -1006,6 +1012,24 @@
             </ParameterBlock>
           </Component>
         </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/SPEECH/RX/VOLUME/LEVEL">
+          <IntegerParameter Name="LEVEL">88</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/SPEECH/TX/VOLUME/LEVEL">
+          <IntegerParameter Name="LEVEL">88</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/VOLUME/LEVEL">
+          <IntegerParameter Name="LEVEL">88</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/VOLUME/LEVEL">
+          <IntegerParameter Name="LEVEL">88</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/VOLUME/LEVEL">
+          <IntegerParameter Name="LEVEL">88</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/SIMPLE_TONES/VOLUME/LEVEL">
+          <IntegerParameter Name="LEVEL">78</IntegerParameter>
+        </ConfigurableElement>
       </Configuration>
     </Settings>
   </ConfigurableDomain>
@@ -1054,7 +1078,7 @@
           </Component>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/CONFIGURATION/VOICE_VOLUME_CTRL_PARAMETER">
-          <StringParameter Name="VOICE_VOLUME_CTRL_PARAMETER">/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/VOLUME/LEVEL</StringParameter>
+          <StringParameter Name="VOICE_VOLUME_CTRL_PARAMETER">/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/VOLUME/LEVEL</StringParameter>
         </ConfigurableElement>
       </Configuration>
     </Settings>
