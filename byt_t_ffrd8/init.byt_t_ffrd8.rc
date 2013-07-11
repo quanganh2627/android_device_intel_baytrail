@@ -97,6 +97,9 @@ on boot
     setprop offload.min.file.duration.secs 20
     setprop offload.compress.device 2
 
+    #Enable/Disable deep buffer property for baytrail
+    setprop lpa.deepbuffer.enable 1
+
     #  Set autosuspend delay as 30 ms to save power in graphic display
     write /sys/devices/pci0000:00/0000:00:03.4/power/autosuspend_delay_ms 30
 
