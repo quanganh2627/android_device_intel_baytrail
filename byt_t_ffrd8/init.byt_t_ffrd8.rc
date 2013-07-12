@@ -89,6 +89,9 @@ on boot
     chmod 0664 /sys/class/backlight/intel_backlight/max_brightness
     chmod 0664 /sys/class/backlight/intel_backlight/actual_brightness
 
+    # Run surfaceflinger in a standalone process to avoid deadlock against gfx apps.
+    setprop system_init.startsurfaceflinger 0
+
     #  Codec Offload property specific to CTP
     setprop lpa.tunnelling.enable 1
     setprop offload.min.file.duration.secs 20
@@ -173,6 +176,12 @@ service hdcpd /system/bin/hdcpd
 service baytrail-setup /system/bin/sh /system/etc/init.baytrail.sh
     class core
     oneshot
+
+service surfaceflinger /system/bin/surfaceflinger
+    class main
+    user system
+    group graphics drmrpc
+    onrestart restart zygote
 
 service sensorhubd /system/bin/sensorhubd
     class main
