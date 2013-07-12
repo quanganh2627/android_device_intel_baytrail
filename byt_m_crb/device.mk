@@ -119,7 +119,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072 \
-    ro.sf.lcd_density=220
+    ro.sf.lcd_density=240
 
 
 PRODUCT_PROPERTY_OVERRIDES += \
