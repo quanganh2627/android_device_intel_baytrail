@@ -69,3 +69,7 @@ PRODUCT_PACKAGES += \
 # light
 PRODUCT_PACKAGES += \
     lights.$(PRODUCT_DEVICE)
+
+# sensorhub
+PRODUCT_PACKAGES += \
+    sensorhubd
