@@ -1,6 +1,7 @@
 # Disable certain rc's for now
 import init.common.rc
 import init.debug.rc
+import init.debug.byt_m_crb.rc
 # import init.diag.rc
 import init.avc.rc
 # import init.wireless.rc
