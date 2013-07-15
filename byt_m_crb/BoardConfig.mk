@@ -110,7 +110,8 @@ BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE += droidboot.disablewipe=1
 BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE += droidboot.disablefbootui=1
 
 # Capsule FW PATH
-CAPSULE_BINARY := vendor/intel/fw/PRIVATE/ifwi/baylake/byt_m/capsule.bin
+#CAPSULE_BINARY := vendor/intel/fw/PRIVATE/ifwi/baylake/byt_m/capsule.bin
+CAPSULE_BINARY := prebuilts/intel/vendor/intel/fw/prebuilts/ifwi/baylake_byt_t/capsule.bin
 
 # usb stick installer support
 BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE +=  droidboot.use_installer=1 droidboot.installer_usb=/dev/block/sdb1 droidboot.installer_file=installer.cmd

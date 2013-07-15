@@ -13,7 +13,8 @@ include device/intel/baytrail/BoardConfig.mk
 TARGET_OS_SIGNING_METHOD := none
 
 # Capsule PATH
-CAPSULE_BINARY := vendor/intel/fw/PRIVATE/ifwi/baylake/byt_t/capsule.bin
+#CAPSULE_BINARY := vendor/intel/fw/PRIVATE/ifwi/baylake/byt_t/capsule.bin
+CAPSULE_BINARY := prebuilts/intel/vendor/intel/fw/prebuilts/ifwi/baylake_byt_t/capsule.bin
 
 #Platform
 BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
