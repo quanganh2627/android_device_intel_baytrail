@@ -85,7 +85,8 @@ PRODUCT_PACKAGES += \
     libmixvbp_mpeg4 \
     libmixvbp_h264 \
     libmixvbp_vc1 \
-    libmixvbp_vp8
+    libmixvbp_vp8 \
+    libmixvbp_h264secure
 
 # libva
 PRODUCT_PACKAGES += \
