@@ -1,6 +1,8 @@
 
 include device/intel/common/BoardConfig.mk
 
+TARGET_ARCH_VARIANT := x86-slm
+
 FLASHFILE_NO_OTA := false
 
 BOARD_HAS_CAPSULE ?= true
