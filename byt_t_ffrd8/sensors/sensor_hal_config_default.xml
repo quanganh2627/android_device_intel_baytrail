@@ -28,8 +28,8 @@
       <name>PSH Proximity sensor</name>
       <vendor>Intel Inc.</vendor>
       <version>1</version>
-      <maxRange>15.0</maxRange>
-      <resolution>15.0</resolution>
+      <maxRange>5.0</maxRange>
+      <resolution>5.0</resolution>
       <power>0.35</power>
       <minDelay>0</minDelay>
     </sensor>
@@ -61,7 +61,7 @@
       <name>PSH Pressure sensor</name>
       <vendor>Intel Inc.</vendor>
       <version>1</version>
-      <maxRange>120000</maxRange>
+      <maxRange>1200</maxRange>
       <resolution>0.001</resolution>
       <power>0.001</power>
       <minDelay>50000</minDelay>
