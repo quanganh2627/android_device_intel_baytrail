@@ -139,7 +139,11 @@ PRODUCT_PACKAGES += \
    libwidiservice \
    libwidiclient \
    libwidimedia \
-   libwidirtsp
+   libwidirtsp \
+   libhwcwidi \
+   libwidiuibc \
+   libwidiuibcjni \
+   WidiInputService
 
 # busybox
 ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
