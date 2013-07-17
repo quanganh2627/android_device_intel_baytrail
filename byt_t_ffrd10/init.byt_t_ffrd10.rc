@@ -267,6 +267,7 @@ on charger
     # Invoke fuel gauging helper binary to restore config data
     symlink /dev/max170xx /dev/fg
     chmod 0775 /dev/fg
+    wait /system/bin/fg_conf
     start fg_conf
 
 on property:sys.boot_completed=1
