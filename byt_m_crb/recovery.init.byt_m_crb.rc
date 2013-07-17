@@ -1,0 +1,4 @@
+service serialno /sbin/serialno /dev/block/sda ro.serialno
+    user root
+    oneshot
+

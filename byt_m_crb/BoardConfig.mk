@@ -7,6 +7,9 @@ TARGET_USE_DROIDBOOT := true
 
 STORAGE_CFLAGS := -DSTORAGE_BASE_PATH=\"/dev/block/sda\" -DSTORAGE_PARTITION_FORMAT=\"%s%d\"
 
+# serialno
+USE_BL_SERIALNO := true
+
 include $(PLATFORM_PATH)/BoardConfig.mk
 
 # Temporary IFWI does not support signing

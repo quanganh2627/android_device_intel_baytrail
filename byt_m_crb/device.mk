@@ -309,6 +309,10 @@ PRODUCT_PROPERTY_OVERRIDES += persist.tel.hot_swap.support=true
 PRODUCT_PACKAGES += \
     VppSettings
 
+# serialno based on sata device
+PRODUCT_PACKAGES += \
+    serialno
+
 #audio firmware
 AUDIO_FW_PATH := vendor/intel/fw/sst/
 PRODUCT_COPY_FILES += \
