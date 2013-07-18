@@ -1,5 +1,5 @@
 oem write_osip_header
-flash:boot#/installer/boot.bin
+flash:boot#/installer/boot.img
 flash:recovery#/installer/recovery.img
 flash:fastboot#/installer/droidboot.img
 oem start_partitioning

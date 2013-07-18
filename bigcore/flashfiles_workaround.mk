@@ -9,7 +9,7 @@ flashfiles: $(PRODUCT_OUT)/partition.tbl
 	@rm -rf $(FLASHFILE_PATH)/*
 	@cp $(PRODUCT_OUT)/kernel $(FLASHFILE_PATH)/mos_kernel.efi
 	@cp $(PRODUCT_OUT)/ramdisk.img $(FLASHFILE_PATH)/mos_ramdisk.img
-	@cp $(PRODUCT_OUT)/boot.bin $(FLASHFILE_PATH)/
+	@cp $(PRODUCT_OUT)/boot.img $(FLASHFILE_PATH)/
 	@cp $(PRODUCT_OUT)/droidboot.img $(FLASHFILE_PATH)/
 	@cp $(PRODUCT_OUT)/recovery.img $(FLASHFILE_PATH)/
 	@cp $(INSTALLED_SYSTEMIMG_GZ_TARGET) $(FLASHFILE_PATH)/
