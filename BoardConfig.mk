@@ -50,3 +50,6 @@ ENABLE_SENSOR_HUB := true
 SW_MPEG4_ENCODER := true
 
 cmdline_extra += oops=panic panic=40
+
+# Security
+BUILD_WITH_SECURITY_FRAMEWORK := txei
