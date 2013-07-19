@@ -166,6 +166,9 @@ on boot
     #  Enable submix audio path for widi
     setprop widi.audio.module submix
 
+    # Enable HDCP 2.1 for Widi
+    setprop widi.hdcp.enable true
+
 on post-fs-data
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
     mkdir /data/media 0770 media_rw media_rw
