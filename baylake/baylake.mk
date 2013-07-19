@@ -1,22 +1,13 @@
+ifeq (,$(filter $(PRODUCT_NAME),baylake_next))
 PRODUCT_NAME := baylake
+endif
+PRODUCT_DEVICE := baylake
 
 # Include product path
 include $(LOCAL_PATH)/baylakepath.mk
 
 # device specific overlay folder
 PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
-
-# Crash Report / crashinfo
-ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
-PRODUCT_PACKAGES += \
-    CrashReport \
-    crashinfo \
-    com.google.gson \
-    com.google.gson.xml \
-    logconfig \
-    crashparsing \
-    crashparsing.xml
-endif
 
 # copy permission files
 FRAMEWORK_ETC_PATH := frameworks/native/data/etc
@@ -36,11 +27,11 @@ PRODUCT_PACKAGES += \
 
 #hdmi audio HAL
 PRODUCT_PACKAGES += \
-       audio.hdmi.$(PRODUCT_NAME)
+       audio.hdmi.$(PRODUCT_DEVICE)
 
 #widi audio HAL
 PRODUCT_PACKAGES += \
-       audio.widi.$(PRODUCT_NAME)
+       audio.widi.$(PRODUCT_DEVICE)
 
 #remote submix audio
 PRODUCT_PACKAGES += \

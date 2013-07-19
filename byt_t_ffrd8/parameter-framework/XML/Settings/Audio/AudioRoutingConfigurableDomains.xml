@@ -441,6 +441,12 @@
       <ConfigurableElement Path="/Audio/LPE/HSEP_PATH/STEREO_EQ/DIFF_2_CHAN"/>
       <ConfigurableElement Path="/Audio/LPE/HSEP_PATH/STEREO_EQ/LEFT_EQ"/>
       <ConfigurableElement Path="/Audio/LPE/HSEP_PATH/STEREO_EQ/RIGHT_EQ"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/SPEECH/RX/VOLUME/LEVEL"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/SPEECH/TX/VOLUME/LEVEL"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/VOLUME/LEVEL"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/VOLUME/LEVEL"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/VOLUME/LEVEL"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/SIMPLE_TONES/VOLUME/LEVEL"/>
     </ConfigurableElements>
     <Settings>
       <Configuration Name="Default">
@@ -1006,6 +1012,24 @@
             </ParameterBlock>
           </Component>
         </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/SPEECH/RX/VOLUME/LEVEL">
+          <IntegerParameter Name="LEVEL">88</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/SPEECH/TX/VOLUME/LEVEL">
+          <IntegerParameter Name="LEVEL">88</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/VOLUME/LEVEL">
+          <IntegerParameter Name="LEVEL">88</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/VOLUME/LEVEL">
+          <IntegerParameter Name="LEVEL">88</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/VOLUME/LEVEL">
+          <IntegerParameter Name="LEVEL">88</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/SIMPLE_TONES/VOLUME/LEVEL">
+          <IntegerParameter Name="LEVEL">78</IntegerParameter>
+        </ConfigurableElement>
       </Configuration>
     </Settings>
   </ConfigurableDomain>
@@ -1019,6 +1043,7 @@
       <ConfigurableElement Path="/Audio/CONFIGURATION/ALSA_CONF"/>
       <ConfigurableElement Path="/Audio/CONFIGURATION/IFX_MODEM"/>
       <ConfigurableElement Path="/Audio/CONFIGURATION/FM_CONF"/>
+      <ConfigurableElement Path="/Audio/CONFIGURATION/VOICE_VOLUME_CTRL_PARAMETER"/>
     </ConfigurableElements>
     <Settings>
       <Configuration Name="Default">
@@ -1051,6 +1076,9 @@
               <IntegerParameter Name="VOLUME">62</IntegerParameter>
             </Component>
           </Component>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/CONFIGURATION/VOICE_VOLUME_CTRL_PARAMETER">
+          <StringParameter Name="VOICE_VOLUME_CTRL_PARAMETER">/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/VOLUME/LEVEL</StringParameter>
         </ConfigurableElement>
       </Configuration>
     </Settings>
@@ -1525,16 +1553,16 @@
       </Configuration>
     </Configurations>
     <ConfigurableElements>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/VOLUME/MUTED"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/VOLUME/MUTED"/>
     </ConfigurableElements>
     <Settings>
       <Configuration Name="Unmute">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/VOLUME/MUTED">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/VOLUME/MUTED">
           <BooleanParameter Name="MUTED">0</BooleanParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="Mute">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/VOLUME/MUTED">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/VOLUME/MUTED">
           <BooleanParameter Name="MUTED">1</BooleanParameter>
         </ConfigurableElement>
       </Configuration>
@@ -1546,38 +1574,6 @@
         <CompoundRule Type="All">
           <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Flow"/>
           <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="ModemMix"/>
-        </CompoundRule>
-      </Configuration>
-      <Configuration Name="Mute">
-        <CompoundRule Type="All">
-          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Flow"/>
-        </CompoundRule>
-      </Configuration>
-    </Configurations>
-    <ConfigurableElements>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/VOLUME/MUTED"/>
-    </ConfigurableElements>
-    <Settings>
-      <Configuration Name="Unmute">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/VOLUME/MUTED">
-          <BooleanParameter Name="MUTED">0</BooleanParameter>
-        </ConfigurableElement>
-      </Configuration>
-      <Configuration Name="Mute">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/VOLUME/MUTED">
-          <BooleanParameter Name="MUTED">1</BooleanParameter>
-        </ConfigurableElement>
-      </Configuration>
-    </Settings>
-  </ConfigurableDomain>
-  <ConfigurableDomain Name="Routing.Mute.Modem.Voice.Capture" SequenceAware="false">
-    <Configurations>
-      <Configuration Name="Unmute">
-        <CompoundRule Type="All">
-          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Flow"/>
-          <CompoundRule Type="Any">
-            <SelectionCriterionRule SelectionCriterion="OpenedCaptureRoutes" MatchesWhen="Includes" Value="HwCodecCSV"/>
-          </CompoundRule>
         </CompoundRule>
       </Configuration>
       <Configuration Name="Mute">
@@ -1602,6 +1598,38 @@
       </Configuration>
     </Settings>
   </ConfigurableDomain>
+  <ConfigurableDomain Name="Routing.Mute.Modem.Voice.Capture" SequenceAware="false">
+    <Configurations>
+      <Configuration Name="Unmute">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Flow"/>
+          <CompoundRule Type="Any">
+            <SelectionCriterionRule SelectionCriterion="OpenedCaptureRoutes" MatchesWhen="Includes" Value="HwCodecCSV"/>
+          </CompoundRule>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="Mute">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Flow"/>
+        </CompoundRule>
+      </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/VOLUME/MUTED"/>
+    </ConfigurableElements>
+    <Settings>
+      <Configuration Name="Unmute">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/VOLUME/MUTED">
+          <BooleanParameter Name="MUTED">0</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="Mute">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/VOLUME/MUTED">
+          <BooleanParameter Name="MUTED">1</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+    </Settings>
+  </ConfigurableDomain>
   <ConfigurableDomain Name="Routing.Mute.Modem.Voice.Playback" SequenceAware="false">
     <Configurations>
       <Configuration Name="Unmute">
@@ -1619,16 +1647,16 @@
       </Configuration>
     </Configurations>
     <ConfigurableElements>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/VOLUME/MUTED"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/VOLUME/MUTED"/>
     </ConfigurableElements>
     <Settings>
       <Configuration Name="Unmute">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/VOLUME/MUTED">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/VOLUME/MUTED">
           <BooleanParameter Name="MUTED">0</BooleanParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="Mute">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/VOLUME/MUTED">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/VOLUME/MUTED">
           <BooleanParameter Name="MUTED">1</BooleanParameter>
         </ConfigurableElement>
       </Configuration>
@@ -1649,23 +1677,23 @@
       </Configuration>
     </Configurations>
     <ConfigurableElements>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S1_RX/DESTINATIONS/SPEECH_TX"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/ENABLED"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S2_RX/DESTINATIONS/SPEECH_TX"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/ENABLED"/>
     </ConfigurableElements>
     <Settings>
       <Configuration Name="Enable">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S1_RX/DESTINATIONS/SPEECH_TX">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S2_RX/DESTINATIONS/SPEECH_TX">
           <BitParameter Name="SPEECH_TX">1</BitParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/ENABLED">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/ENABLED">
           <BooleanParameter Name="ENABLED">1</BooleanParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="Disable">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S1_RX/DESTINATIONS/SPEECH_TX">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S2_RX/DESTINATIONS/SPEECH_TX">
           <BitParameter Name="SPEECH_TX">0</BitParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/ENABLED">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/ENABLED">
           <BooleanParameter Name="ENABLED">0</BooleanParameter>
         </ConfigurableElement>
       </Configuration>
@@ -1686,17 +1714,17 @@
       </Configuration>
     </Configurations>
     <ConfigurableElements>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/I2S1_TX"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SIMPLE_TONES/DESTINATIONS/I2S1_TX"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/I2S2_TX"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SIMPLE_TONES/DESTINATIONS/I2S2_TX"/>
       <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/PCM_GENERAL_DESTINATION"/>
     </ConfigurableElements>
     <Settings>
       <Configuration Name="Enable">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/I2S1_TX">
-          <BitParameter Name="I2S1_TX">1</BitParameter>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/I2S2_TX">
+          <BitParameter Name="I2S2_TX">1</BitParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SIMPLE_TONES/DESTINATIONS/I2S1_TX">
-          <BitParameter Name="I2S1_TX">1</BitParameter>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SIMPLE_TONES/DESTINATIONS/I2S2_TX">
+          <BitParameter Name="I2S2_TX">1</BitParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/PCM_GENERAL_DESTINATION">
           <BitParameter Name="PCM_GENERAL_DESTINATION">0</BitParameter>
@@ -1706,11 +1734,11 @@
         <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/PCM_GENERAL_DESTINATION">
           <BitParameter Name="PCM_GENERAL_DESTINATION">1</BitParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/I2S1_TX">
-          <BitParameter Name="I2S1_TX">0</BitParameter>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/I2S2_TX">
+          <BitParameter Name="I2S2_TX">0</BitParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SIMPLE_TONES/DESTINATIONS/I2S1_TX">
-          <BitParameter Name="I2S1_TX">0</BitParameter>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SIMPLE_TONES/DESTINATIONS/I2S2_TX">
+          <BitParameter Name="I2S2_TX">0</BitParameter>
         </ConfigurableElement>
       </Configuration>
     </Settings>
@@ -1730,24 +1758,24 @@
       </Configuration>
     </Configurations>
     <ConfigurableElements>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S2_RX/DESTINATIONS/I2S1_TX"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/ENABLED"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S1_RX/DESTINATIONS/I2S2_TX"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/ENABLED"/>
     </ConfigurableElements>
     <Settings>
       <Configuration Name="Enable">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S2_RX/DESTINATIONS/I2S1_TX">
-          <BitParameter Name="I2S1_TX">1</BitParameter>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S1_RX/DESTINATIONS/I2S2_TX">
+          <BitParameter Name="I2S2_TX">1</BitParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/ENABLED">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/ENABLED">
           <BooleanParameter Name="ENABLED">1</BooleanParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="Disable">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/ENABLED">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/ENABLED">
           <BooleanParameter Name="ENABLED">0</BooleanParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S2_RX/DESTINATIONS/I2S1_TX">
-          <BitParameter Name="I2S1_TX">0</BitParameter>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S1_RX/DESTINATIONS/I2S2_TX">
+          <BitParameter Name="I2S2_TX">0</BitParameter>
         </ConfigurableElement>
       </Configuration>
     </Settings>
@@ -1769,87 +1797,87 @@
       </Configuration>
     </Configurations>
     <ConfigurableElements>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/CLOCK"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/CLOCK"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/SLAVE"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/SLAVE"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/SLAVE"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/SLAVE"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/QUANTIZATION"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/QUANTIZATION"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/QUANTIZATION"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/QUANTIZATION"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/SAMPLING_RATE"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/SAMPLING_RATE"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/CHANNELS"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/CHANNELS"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/TRANSMISSION_MODE"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/TRANSMISSION_MODE"/>
       <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/CLOCK"/>
       <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/CLOCK"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/SLAVE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/SLAVE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/SLAVE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/SLAVE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/QUANTIZATION"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/QUANTIZATION"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/QUANTIZATION"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/QUANTIZATION"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/SAMPLING_RATE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/SAMPLING_RATE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/CHANNELS"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/CHANNELS"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/TRANSMISSION_MODE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/TRANSMISSION_MODE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/CLOCK"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/CLOCK"/>
     </ConfigurableElements>
     <Settings>
       <Configuration Name="Default">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/CLOCK">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/CLOCK">
           <IntegerParameter Name="CLOCK">0</IntegerParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/CLOCK">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/CLOCK">
           <IntegerParameter Name="CLOCK">0</IntegerParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/SLAVE">
-          <BooleanParameter Name="SLAVE">0</BooleanParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/SLAVE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/SLAVE">
           <BooleanParameter Name="SLAVE">0</BooleanParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/SLAVE">
           <BooleanParameter Name="SLAVE">0</BooleanParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/SLAVE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/SLAVE">
           <BooleanParameter Name="SLAVE">0</BooleanParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/QUANTIZATION">
-          <EnumParameter Name="QUANTIZATION">s16</EnumParameter>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/SLAVE">
+          <BooleanParameter Name="SLAVE">0</BooleanParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/QUANTIZATION">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/QUANTIZATION">
           <EnumParameter Name="QUANTIZATION">s16</EnumParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/QUANTIZATION">
           <EnumParameter Name="QUANTIZATION">s16</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/QUANTIZATION">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/QUANTIZATION">
           <EnumParameter Name="QUANTIZATION">s16</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/SAMPLING_RATE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/QUANTIZATION">
+          <EnumParameter Name="QUANTIZATION">s16</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/SAMPLING_RATE">
           <EnumParameter Name="SAMPLING_RATE">f48</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/SAMPLING_RATE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/SAMPLING_RATE">
           <EnumParameter Name="SAMPLING_RATE">f48</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/CHANNELS">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/CHANNELS">
           <EnumParameter Name="CHANNELS">STEREO</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/CHANNELS">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/CHANNELS">
           <EnumParameter Name="CHANNELS">STEREO</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE">
           <EnumParameter Name="MODE">UserDefined15</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE">
           <EnumParameter Name="MODE">UserDefined15</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/TRANSMISSION_MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/TRANSMISSION_MODE">
           <EnumParameter Name="TRANSMISSION_MODE">I2S</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/TRANSMISSION_MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/TRANSMISSION_MODE">
           <EnumParameter Name="TRANSMISSION_MODE">I2S</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/CLOCK">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/CLOCK">
           <IntegerParameter Name="CLOCK">0</IntegerParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/CLOCK">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/CLOCK">
           <IntegerParameter Name="CLOCK">0</IntegerParameter>
         </ConfigurableElement>
       </Configuration>
@@ -1881,51 +1909,51 @@
       </Configuration>
     </Configurations>
     <ConfigurableElements>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/SAMPLING_RATE"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/SAMPLING_RATE"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/CHANNELS"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/CHANNELS"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/TRANSMISSION_MODE"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/TRANSMISSION_MODE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/SAMPLING_RATE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/SAMPLING_RATE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/CHANNELS"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/CHANNELS"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/TRANSMISSION_MODE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/TRANSMISSION_MODE"/>
     </ConfigurableElements>
     <Settings>
       <Configuration Name="Bluetooth">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/SAMPLING_RATE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/SAMPLING_RATE">
           <EnumParameter Name="SAMPLING_RATE">f8</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/SAMPLING_RATE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/SAMPLING_RATE">
           <EnumParameter Name="SAMPLING_RATE">f8</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/CHANNELS">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/CHANNELS">
           <EnumParameter Name="CHANNELS">MONO</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/CHANNELS">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/CHANNELS">
           <EnumParameter Name="CHANNELS">MONO</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/TRANSMISSION_MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/TRANSMISSION_MODE">
           <EnumParameter Name="TRANSMISSION_MODE">PCM</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/TRANSMISSION_MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/TRANSMISSION_MODE">
           <EnumParameter Name="TRANSMISSION_MODE">PCM</EnumParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="Default">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/SAMPLING_RATE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/SAMPLING_RATE">
           <EnumParameter Name="SAMPLING_RATE">f48</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/SAMPLING_RATE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/SAMPLING_RATE">
           <EnumParameter Name="SAMPLING_RATE">f48</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/CHANNELS">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/CHANNELS">
           <EnumParameter Name="CHANNELS">STEREO</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/CHANNELS">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/CHANNELS">
           <EnumParameter Name="CHANNELS">STEREO</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/TRANSMISSION_MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/TRANSMISSION_MODE">
           <EnumParameter Name="TRANSMISSION_MODE">I2S</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/TRANSMISSION_MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/TRANSMISSION_MODE">
           <EnumParameter Name="TRANSMISSION_MODE">I2S</EnumParameter>
         </ConfigurableElement>
       </Configuration>
@@ -1953,17 +1981,17 @@
       </Configuration>
     </Configurations>
     <ConfigurableElements>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S1_RX/DESTINATIONS/I2S2_TX"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S2_RX/DESTINATIONS/I2S1_TX"/>
     </ConfigurableElements>
     <Settings>
       <Configuration Name="Bind">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S1_RX/DESTINATIONS/I2S2_TX">
-          <BitParameter Name="I2S2_TX">1</BitParameter>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S2_RX/DESTINATIONS/I2S1_TX">
+          <BitParameter Name="I2S1_TX">1</BitParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="Unbind">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S1_RX/DESTINATIONS/I2S2_TX">
-          <BitParameter Name="I2S2_TX">0</BitParameter>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S2_RX/DESTINATIONS/I2S1_TX">
+          <BitParameter Name="I2S1_TX">0</BitParameter>
         </ConfigurableElement>
       </Configuration>
     </Settings>
@@ -1987,17 +2015,17 @@
       </Configuration>
     </Configurations>
     <ConfigurableElements>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/I2S2_TX"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/I2S1_TX"/>
     </ConfigurableElements>
     <Settings>
       <Configuration Name="Bind">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/I2S2_TX">
-          <BitParameter Name="I2S2_TX">1</BitParameter>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/I2S1_TX">
+          <BitParameter Name="I2S1_TX">1</BitParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="Unbind">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/I2S2_TX">
-          <BitParameter Name="I2S2_TX">0</BitParameter>
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/I2S1_TX">
+          <BitParameter Name="I2S1_TX">0</BitParameter>
         </ConfigurableElement>
       </Configuration>
     </Settings>
@@ -2085,87 +2113,87 @@
       </Configuration>
     </Configurations>
     <ConfigurableElements>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE"/>
-      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE"/>
+      <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE"/>
     </ConfigurableElements>
     <Settings>
       <Configuration Name="HwCodecCSV.IHF.TTY.Uplink">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE">
           <EnumParameter Name="MODE">TTY</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE">
           <EnumParameter Name="MODE">Handsfree</EnumParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="HwCodecCSV.IHF.TTY.Downlink">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE">
           <EnumParameter Name="MODE">Handsfree</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE">
           <EnumParameter Name="MODE">TTY</EnumParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="HwCodecCSV.IHF.Normal">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE">
           <EnumParameter Name="MODE">Handsfree</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE">
           <EnumParameter Name="MODE">Handsfree</EnumParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="HwCodecCSV.Headset.TTY.Full">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE">
           <EnumParameter Name="MODE">TTY</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE">
           <EnumParameter Name="MODE">TTY</EnumParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="HwCodecCSV.Headset.TTY.Uplink">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE">
           <EnumParameter Name="MODE">TTY</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE">
           <EnumParameter Name="MODE">Handsfree</EnumParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="HwCodecCSV.Headset.TTY.Downlink">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE">
           <EnumParameter Name="MODE">Handsfree</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE">
           <EnumParameter Name="MODE">TTY</EnumParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="HwCodecCSV.Headset.Normal">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE">
           <EnumParameter Name="MODE">Headset</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE">
           <EnumParameter Name="MODE">Headset</EnumParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="HwCodecCSV.Headphone">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE">
           <EnumParameter Name="MODE">Handsfree</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE">
           <EnumParameter Name="MODE">Headset</EnumParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="BtCSV.NoHeadsetNrEc.SCO">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE">
           <EnumParameter Name="MODE">Bluetooth</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE">
           <EnumParameter Name="MODE">Bluetooth</EnumParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="Default">
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/RX/CONFIG/MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE">
           <EnumParameter Name="MODE">UserDefined15</EnumParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S1/TX/CONFIG/MODE">
+        <ConfigurableElement Path="/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE">
           <EnumParameter Name="MODE">UserDefined15</EnumParameter>
         </ConfigurableElement>
       </Configuration>

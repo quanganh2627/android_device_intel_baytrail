@@ -1,0 +1,4 @@
+service coreu /system/bin/coreu
+    class main
+    user root
+    group graphics drmrpc

@@ -32,7 +32,7 @@
         <maxBurstFPS value="15"/>
         <supportedBurstFPS value="1,3,5,7,15"/>
         <defaultSceneMode value="auto"/> <!-- one value of the supportedSceneModes. if not support, please set it to "" -->
-        <supportedSceneModes value="auto,portrait,sports,landscape,night,barcode,night-portrait,hdr"/> <!-- if not support, please set it to "" -->
+        <supportedSceneModes value="auto,portrait,sports,landscape,night,barcode,night-portrait"/> <!-- if not support, please set it to "" -->
         <defaultFlashMode value="off"/> <!-- one value of the supportedFlashModes. if not support, please set it to "off" -->
         <supportedFlashModes value="auto,off,on,torch"/> <!-- if not support, please set it to "off" -->
         <defaultEffectMode value="none"/> <!-- one value of the supportedEffectModes. if not support, please set it to "none" -->
@@ -74,6 +74,7 @@
         <defaultPreviewFPSRange value="10500,30304"/> <!-- one value of the supportedPreviewFPSRange -->
         <supportedPreviewUpdateModes value="standard,continuous,during-capture,windowless"/>
         <defaultPreviewUpdateMode value="standard"/>
+        <hasFlash value="true"/>
     </Profiles>
 
     <Profiles cameraId="1">
@@ -135,12 +136,12 @@
         <defaultPreviewFPSRange value="10500,30304"/>
         <supportedPreviewUpdateModes value="standard,continuous,during-capture,windowless"/>
         <defaultPreviewUpdateMode value="standard"/>
+        <hasFlash value="false"/>
     </Profiles>
 
     <Common>
         <subDevName value="/dev/v4l-subdev8"/> <!-- it depends on the real hardware -->
         <fileInject value="true"/> <!-- true or false -->
-        <backFlash value="true"/> <!-- true or false -->
         <maxContinuousRawRingBuffer value="11"/>
         <productName value="ExampleModel"/> <!-- cfg the exif -->
         <manufacturerName value="ExampleMaker"/> <!-- cfg the exif -->

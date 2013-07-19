@@ -9,6 +9,7 @@ import init.wifi.rc
 import init.platform.usb.rc
 import init.gps.rc
 import init.bt.rc
+import init.platform.gengfx.rc
 
 on early-init
     # Mesa environment variables
@@ -96,6 +97,9 @@ on boot
     setprop offload.min.file.duration.secs 20
     setprop offload.compress.device 2
 
+    #Enable/Disable deep buffer property for baytrail
+    setprop lpa.deepbuffer.enable 1
+
     #  Set autosuspend delay as 30 ms to save power in graphic display
     write /sys/devices/pci0000:00/0000:00:03.4/power/autosuspend_delay_ms 30
 
@@ -130,13 +134,6 @@ on post-fs
     chown system system /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
     chown system system /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
     chown system system /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq
-
-    # Performance tweaks for interactive governor
-    chown system system /sys/devices/system/cpu/cpufreq/interactive/timer_rate
-    chown system system /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load
-
-    write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 100000
-    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 70
 
     # Volume keys wakeup capability
     chmod 0664 /sys/devices/platform/gpio-keys/enabled_wakeup
