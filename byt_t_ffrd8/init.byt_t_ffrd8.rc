@@ -4,7 +4,7 @@ import init.debug.rc
 # import init.diag.rc
 import init.avc.rc
 # import init.wireless.rc
-# import init.modem.rc
+import init.modem.rc
 import init.wifi.rc
 import init.platform.usb.rc
 import init.gps.rc

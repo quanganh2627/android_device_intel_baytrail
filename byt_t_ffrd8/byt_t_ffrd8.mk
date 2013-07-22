@@ -43,6 +43,21 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
        audio.r_submix.default
 
+# rapid ril
+PRODUCT_PACKAGES += \
+    librapid-ril-core \
+    librapid-ril-util
+
+# PSI Recorder
+ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
+PRODUCT_PACKAGES += \
+    PSI_Recorder
+endif
+
+# Cell Broadcast
+PRODUCT_PACKAGES += \
+    CellBroadcastReceiver
+
 # parameter-framework files
 PRODUCT_PACKAGES += \
         libimc-subsystem \
