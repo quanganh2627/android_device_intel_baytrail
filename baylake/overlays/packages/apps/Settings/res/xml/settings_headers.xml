@@ -142,7 +142,8 @@
     <!-- Manufacturer Extra hook 3 -->
     <header
         android:id="@+id/manufacturer_extra_settings_3"
-        android:icon="@drawable/ic_settings_vpp">
+        android:icon="@drawable/ic_settings_vpp"
+        android:title="@string/vpp_settings">
         <intent android:action="com.intel.settings.VPP_SETTINGS" />
     </header>
 
