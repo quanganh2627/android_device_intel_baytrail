@@ -17,6 +17,16 @@
 
         <ComponentType Name="SPEAKER_TYPE">
             <Component Name="ANALOG" Type="PLAYBACK_TYPE" Mapping="Amend1:Speaker"/>
+            <EnumParameter Name="BOOST" Size="8" Mapping="Control:'Speaker Boost'">
+                <ValuePair Literal="g-6dB" Numerical="0"/>
+                <ValuePair Literal="g-4.5dB" Numerical="1"/>
+                <ValuePair Literal="g-3dB" Numerical="2"/>
+                <ValuePair Literal="g-1.5dB" Numerical="3"/>
+                <ValuePair Literal="gObB" Numerical="4"/>
+                <ValuePair Literal="g+O.83bB" Numerical="5"/>
+                <ValuePair Literal="g+1.58dB" Numerical="6"/>
+                <ValuePair Literal="g+2.28dB" Numerical="7"/>
+            </EnumParameter>
             <BooleanParameter Name="SWITCH"  Mapping="Control:'Ext Spk Switch'"/>
        </ComponentType>
 
