@@ -152,6 +152,7 @@
         <numRecordingBuffers value="9"/>
         <shutterLagCompensationMs value="40"/>
         <mPanoramaMaxSnapshotCount value="10"/>
+	<previewFormat value="V4L2_PIX_FMT_YUYV"/>
         <boardName value="baylake"/>
     </Common>
 </CameraSettings>
