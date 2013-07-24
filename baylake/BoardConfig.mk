@@ -55,6 +55,9 @@ BOARD_USES_GENERIC_AUDIO := false
 # Baytrail uses the GEN for the graphic and video
 BOARD_GRAPHIC_IS_GEN := true
 
+# Set ENABLE_INTEL_CONFIG_18BPP to true for 18BPP mode.
+## ENABLE_INTEL_CONFIG_18BPP := true
+
 # Camera
 # Set USE_CAMERA_STUB to 'true' for Fake Camera builds,
 # 'false' for libcamera builds to use Camera Imaging(CI) supported by intel.
