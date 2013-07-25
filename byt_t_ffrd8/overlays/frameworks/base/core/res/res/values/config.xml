@@ -253,4 +253,7 @@
     -->
     <bool name="config_enableWifiDisplay">true</bool>
 
+    <!-- FLag indicating if the platform is using NXP PN544PC clf -->
+    <bool name="clf_is_pn544pc">true</bool>
+
 </resources>
