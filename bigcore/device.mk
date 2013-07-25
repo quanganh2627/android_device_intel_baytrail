@@ -153,15 +153,26 @@ audio.widi.$(PRODUCT_DEVICE)
 
 #widi
 PRODUCT_PACKAGES += \
-   widi.conf \
-   libwidiservice \
-   libwidiclient \
-   libwidimedia \
-   libwidirtsp \
-   libhwcwidi \
-   libwidiuibc \
-   libwidiuibcjni \
-   WidiInputService
+    widi.conf \
+    libwidiservice \
+    libwidiclient \
+    libwidimedia \
+    libwidirtsp \
+    libhwcwidi \
+    libwidiuibc \
+    libwidiuibcjni \
+    WidiInputService
+
+ifeq ($(TARGET_BUILD_VARIANT), $(filter $(TARGET_BUILD_VARIANT), eng userdebug))
+PRODUCT_PACKAGES += \
+    WirelessDisplaySigmaCapiUI \
+    com.intel.widi.sigmaapi \
+    com.intel.widi.sigmaapi.xml \
+    libwidisigmajni \
+    libsigmacapi \
+    shcli \
+    shsrv
+endif
 
 # busybox
 ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
