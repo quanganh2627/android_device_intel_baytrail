@@ -4,7 +4,7 @@
     <platform>bigcore</platform>
         <code_group name="KERNEL">
             <file TYPE="KERNEL">
-                <name>boot.bin</name>
+                <name>boot.img</name>
                 <version>original</version>
             </file></code_group>
         <code_group name="RECOVERY">

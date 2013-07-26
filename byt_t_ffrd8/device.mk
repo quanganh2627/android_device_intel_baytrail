@@ -139,7 +139,11 @@ PRODUCT_PACKAGES += \
    libwidiservice \
    libwidiclient \
    libwidimedia \
-   libwidirtsp
+   libwidirtsp \
+   libhwcwidi \
+   libwidiuibc \
+   libwidiuibcjni \
+   WidiInputService
 
 # busybox
 ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
@@ -157,12 +161,8 @@ PRODUCT_PACKAGES += \
     gps_bcm_4752
 
 # bluetooth
-# Copy the needed Broadcom Bluetooth chip firmware files
-#  - VV: 43241B0 AOB
-#  - PR: 43241B3=B4
 PRODUCT_PACKAGES += \
-    bt_bcm \
-    bt_fw_BCM43340B0_AOB
+    bt_bcm43340
 
 # IPV6
 PRODUCT_PACKAGES += \

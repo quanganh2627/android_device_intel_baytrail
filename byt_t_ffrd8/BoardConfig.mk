@@ -17,6 +17,7 @@ TARGET_OS_SIGNING_METHOD := none
 BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 
 # Connectivity
+BOARD_HAVE_MODEM := false
 BOARD_HAVE_WIFI := true
 INTEL_WIDI := true
 BOARD_HAVE_BLUETOOTH := true
@@ -38,7 +39,6 @@ BOARD_USES_AUDIO_HAL_CONFIGURABLE := true
 BOARD_USE_VIBRATOR_ALSA := true
 BUILD_WITH_ALSA_UTILS := true
 BOARD_USES_GENERIC_AUDIO := false
-BOARD_HAVE_AUDIENCE := false
 
 #GEN is one graphic and video engine
 # Baytrail uses the GEN for the graphic and video
@@ -62,7 +62,7 @@ JPEGDEC_USES_GEN := true
 
 ifeq ($(BOARD_KERNEL_CMDLINE),)
 ifeq ($(TARGET_BUILD_VARIANT),eng)
-BOARD_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger loglevel=8 drm.debug=0xe kmemleak=off ptrace.ptrace_can_access=1 emmc_ipanic.ipanic_part_number=3 androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) nmi_watchdog=panic softlockup_panic=1 vmalloc=172M
+BOARD_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger loglevel=8 drm.debug=0x0 kmemleak=off ptrace.ptrace_can_access=1 emmc_ipanic.ipanic_part_number=3 androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) nmi_watchdog=panic softlockup_panic=1 vmalloc=172M
 else ifeq ($(TARGET_BUILD_VARIANT),userdebug)
 BOARD_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger loglevel=4 kmemleak=off ptrace.ptrace_can_access=1 emmc_ipanic.ipanic_part_number=3 androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) nmi_watchdog=panic softlockup_panic=1 vmalloc=172M
 else

@@ -125,8 +125,28 @@ on boot
     # Run surfaceflinger in a standalone process to avoid deadlock against gfx apps.
     setprop system_init.startsurfaceflinger 0
 
-    #  Codec Offload property specific to CTP
-    setprop lpa.tunnelling.enable 1
+#   Offload specific properties
+
+#   lpa.tunnelling.enable
+#   A 32 bit value.  To be set in HEX
+#   |---------|--------|--------|--------|
+#   |Byte 3   |Byte 2  |Byte 1  |Byte 0  |
+#   |Reserved |Reserved|Codec   |Feature |
+#   |---------|--------|--------|--------|
+#   First byte from the right represents feature
+#   Second byte represents codec
+#   Third and Fourth byte reserved for future use
+#   Least Significant Byte 1 - feature
+#   Bit position  8th,7th,6th,5th,4th     3rd          2nd      1st
+#   Indication    Reserved for future  Multichannel   Effects   Video
+#   Least Significant Byte 2 - codec
+#   Bit position  8th,7th,6th,5th      4th     3rd      2nd   1st
+#   Indication    Reserved for future WMA-9    EAC3     AAC   MP3
+
+#   Set the HEX value by ORing the bits for each format/feature
+#   Feature disabled for BayTrail
+
+    setprop lpa.tunnelling.enable 0
     setprop offload.min.file.duration.secs 20
     setprop offload.compress.device 2
 
@@ -155,13 +175,6 @@ on post-fs-data
     start fg_conf
 
 on post-fs
-    # Performance tweaks for interactive governor
-    chown system system /sys/devices/system/cpu/cpufreq/interactive/timer_rate
-    chown system system /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load
-
-    write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 100000
-    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 70
-
     # Volume keys wakeup capability
     chmod 0664 /sys/devices/platform/gpio-keys/enabled_wakeup
     chmod 0664 /sys/devices/platform/gpio-keys/disabled_wakeup
@@ -169,7 +182,7 @@ on post-fs
     chown media system /sys/devices/platform/gpio-keys/disabled_wakeup
 
     # Insert touchscreen module
-    insmod /lib/modules/atmel_mxt_1664S.ko
+    insmod /lib/modules/atmel_mxt_ts.ko
 
     #  Permissions for pshfw update tool
     chown system system /dev/i2c-5
@@ -254,6 +267,7 @@ on charger
     # Invoke fuel gauging helper binary to restore config data
     symlink /dev/max170xx /dev/fg
     chmod 0775 /dev/fg
+    wait /system/bin/fg_conf
     start fg_conf
 
 on property:sys.boot_completed=1

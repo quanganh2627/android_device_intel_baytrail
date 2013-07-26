@@ -152,7 +152,6 @@
         <numRecordingBuffers value="9"/>
         <shutterLagCompensationMs value="40"/>
         <mPanoramaMaxSnapshotCount value="10"/>
-        <previewFormat value="V4L2_PIX_FMT_YVU420"/> <!-- define the driver preview output format, V4L2_PIX_FMT_YVU420 or V4L2_PIX_FMT_NV12 -->
         <boardName value="baylake"/>
     </Common>
 </CameraSettings>
