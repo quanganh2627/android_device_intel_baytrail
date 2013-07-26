@@ -157,6 +157,13 @@ on post-fs-data
     start fg_conf
 
 on post-fs
+    # Performance tweaks for interactive governor
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/timer_rate
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load
+
+    write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 100000
+    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 70
+
     # Volume keys wakeup capability
     chmod 0664 /sys/devices/platform/gpio-keys/enabled_wakeup
     chmod 0664 /sys/devices/platform/gpio-keys/disabled_wakeup
