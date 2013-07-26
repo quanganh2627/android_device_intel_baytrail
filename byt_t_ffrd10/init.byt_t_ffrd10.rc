@@ -122,6 +122,11 @@ on boot
     chmod 0664 /sys/class/backlight/intel_backlight/max_brightness
     chmod 0664 /sys/class/backlight/intel_backlight/actual_brightness
 
+    # DRM-WV: TBR
+    chmod 0666 /sys/devices/pci0000:00/0000:00:02.0/resource0
+    chmod 0666 /dev/mei
+    chmod 0666 /dev/meimm
+
     # Run surfaceflinger in a standalone process to avoid deadlock against gfx apps.
     setprop system_init.startsurfaceflinger 0
 

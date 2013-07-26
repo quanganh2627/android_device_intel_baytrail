@@ -103,6 +103,17 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.Intel.hw_vd.vc1" type="video/x-ms-wmv" />
         <MediaCodec name="OMX.Intel.hw_vd.vc1" type="video/wmv" />
 
+         <MediaCodec name="OMX.Intel.VideoDecoder.AVC" type="video/avc" >
+            <Quirk name="requires-loaded-to-idle-after-allocation" />
+            <Quirk name="requires-set-profile-level" />
+            <Quirk name="requires-set-fps" />
+            <Quirk name="requires-hold-extra-buffers" />
+        </MediaCodec>
+        <MediaCodec name="OMX.Intel.VideoDecoder.WMV" type="video/x-ms-wmv" >
+            <Quirk name="requires-loaded-to-idle-after-allocation" />
+            <Quirk name="requires-hold-extra-buffers" />
+        </MediaCodec>
+
         <MediaCodec name="OMX.Intel.VideoDecoder.VPX" type="video/x-vnd.on2.vp8" >
             <Quirk name="requires-loaded-to-idle-after-allocation" />
             <Quirk name="requires-hold-extra-buffers" />
