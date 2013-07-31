@@ -123,7 +123,7 @@ supDomain: Routing.Configure
 		domain: IHF
 			conf: Activated
 				ALL
-					SelectedOutputDevice Is IHF
+					SelectedOutputDevice Includes IHF
 					OpenedPlaybackRoutes Includes HwCodecMedia
 
 				/Audio/LPE_MIXER/SOUND_CARD/IHF/INPUT_STREAM = MIX
@@ -136,6 +136,7 @@ supDomain: Routing.Configure
 			conf: Activated
 				ALL
 					OpenedPlaybackRoutes Includes HwCodecMedia
+					SelectedOutputDevice Excludes IHF
 					ANY
 						SelectedOutputDevice Includes Headset
 						SelectedOutputDevice Includes Headphones
