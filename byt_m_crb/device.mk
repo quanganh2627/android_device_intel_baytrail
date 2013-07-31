@@ -153,7 +153,8 @@ PRODUCT_PACKAGES += \
     libwidiuibc \
     libwidiuibcjni \
     WidiInputService \
-    libstagefright_hdcp
+    libstagefright_hdcp \
+    libwidirtspsink
 
 ifeq ($(TARGET_BUILD_VARIANT), $(filter $(TARGET_BUILD_VARIANT), eng userdebug))
 PRODUCT_PACKAGES += \

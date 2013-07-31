@@ -78,7 +78,7 @@ PRODUCT_PACKAGES += com.google.widevine.software.drm.xml \
     libdrmdecrypt \
     libWVStreamControlAPI_L1 \
     libwvdrm_L1
- 
+
 ifeq ($(TARGET_BUILD_VARIANT),eng)
  PRODUCT_PACKAGES += \
      WidevineSamplePlayer
@@ -167,7 +167,8 @@ PRODUCT_PACKAGES += \
     libwidiuibc \
     libwidiuibcjni \
     WidiInputService \
-    libstagefright_hdcp
+    libstagefright_hdcp \
+    libwidirtspsink
 
 ifeq ($(TARGET_BUILD_VARIANT), $(filter $(TARGET_BUILD_VARIANT), eng userdebug))
 PRODUCT_PACKAGES += \
