@@ -3,7 +3,7 @@ include device/intel/common/BoardConfig.mk
 
 FLASHFILE_NO_OTA := false
 
-BOARD_HAS_CAPSULE := true
+BOARD_HAS_CAPSULE ?= true
 
 # Disable recovery for now
 TARGET_MAKE_NO_DEFAULT_RECOVERY := true
