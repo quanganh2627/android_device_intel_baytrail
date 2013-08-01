@@ -165,6 +165,11 @@ service logsystemstate /system/bin/dumpstate_dropbox.sh -v
     disabled
     oneshot
 
+service gpu_daemon /system/bin/gpu_daemon
+    class main
+    user root
+    group graphics
+    oneshot
 
 # start Berta agent only on property
 service berta /system/berta/run-berta.sh
