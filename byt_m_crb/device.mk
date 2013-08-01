@@ -261,6 +261,11 @@ PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/tablet_core_hardware.xml:$(PERMISSIONS_PATH)/tablet_core_hardware.xml
 #   $(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
 
+ifneq ($(BOARD_HAVE_BLUETOOTH),false)
+PRODUCT_COPY_FILES += \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.bluetooth_le.xml:$(PERMISSIONS_PATH)/android.hardware.bluetooth_le.xml
+endif
+
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/ueventd.common.rc:root/ueventd.$(PRODUCT_DEVICE).rc
 
