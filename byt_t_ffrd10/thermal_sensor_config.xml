@@ -41,10 +41,10 @@
             <!--Temperature thresholds for various states in milli degree celsius-->
             <Threshold>
                 <ThresholdTOff>0</ThresholdTOff>
-                <ThresholdNormal>85000</ThresholdNormal>
+                <ThresholdNormal>90000</ThresholdNormal>
                 <ThresholdWarning>90000</ThresholdWarning>
-                <ThresholdAlert>120000</ThresholdAlert>
-                <ThresholdCritical>150000</ThresholdCritical>
+                <ThresholdAlert>90000</ThresholdAlert>
+                <ThresholdCritical>95000</ThresholdCritical>
             </Threshold>
         </Sensor>
   </Zone>
@@ -64,7 +64,7 @@
         </PollDelay>
         <Sensor>
                <SensorID>2</SensorID>
-               <SensorName>skin1</SensorName>
+               <SensorName>SYSTHERM0</SensorName>
                <SensorPath>auto</SensorPath>
                <InputTemp>temp</InputTemp>
                <LowTemp>trip_point_0_temp</LowTemp>
@@ -72,9 +72,9 @@
                <UEventDevPath>auto</UEventDevPath>
                <Threshold>
                 <ThresholdTOff>0</ThresholdTOff>
-                <ThresholdNormal>38000</ThresholdNormal>
-                <ThresholdWarning>45000</ThresholdWarning>
-                <ThresholdAlert>55000</ThresholdAlert>
+                <ThresholdNormal>42000</ThresholdNormal>
+                <ThresholdWarning>55000</ThresholdWarning>
+                <ThresholdAlert>65000</ThresholdAlert>
                 <ThresholdCritical>78000</ThresholdCritical>
               </Threshold>
         </Sensor>
@@ -95,7 +95,7 @@
        </PollDelay>
        <Sensor>
               <SensorID>3</SensorID>
-              <SensorName>skin0</SensorName>
+              <SensorName>SYSTHERM1</SensorName>
               <SensorPath>auto</SensorPath>
               <InputTemp>temp</InputTemp>
               <LowTemp>trip_point_0_temp</LowTemp>
@@ -133,14 +133,13 @@
               <HighTemp>trip_point_1_temp</HighTemp>
               <Threshold>
                 <ThresholdTOff>0</ThresholdTOff>
-                <ThresholdNormal>48000</ThresholdNormal>
-                <ThresholdWarning>54000</ThresholdWarning>
+                <ThresholdNormal>0</ThresholdNormal>
+                <ThresholdWarning>0</ThresholdWarning>
                 <ThresholdAlert>60000</ThresholdAlert>
                 <ThresholdCritical>68000</ThresholdCritical>
               </Threshold>
        </Sensor>
   </Zone>
-
   <Zone>
     <ZoneID>4</ZoneID>
     <ZoneName>Modem</ZoneName>
@@ -166,9 +165,9 @@
       <Threshold>
         <ThresholdTOff>0</ThresholdTOff>
         <ThresholdNormal>80000</ThresholdNormal>
-        <ThresholdWarning>90000</ThresholdWarning>
-        <ThresholdAlert>100000</ThresholdAlert>
-        <ThresholdCritical>120000</ThresholdCritical>
+        <ThresholdWarning>85000</ThresholdWarning>
+        <ThresholdAlert>90000</ThresholdAlert>
+        <ThresholdCritical>90000</ThresholdCritical>
       </Threshold>
     </Sensor>
     <Sensor>
@@ -181,9 +180,9 @@
       <Threshold>
         <ThresholdTOff>0</ThresholdTOff>
         <ThresholdNormal>80000</ThresholdNormal>
-        <ThresholdWarning>90000</ThresholdWarning>
-        <ThresholdAlert>100000</ThresholdAlert>
-        <ThresholdCritical>120000</ThresholdCritical>
+        <ThresholdWarning>85000</ThresholdWarning>
+        <ThresholdAlert>90000</ThresholdAlert>
+        <ThresholdCritical>90000</ThresholdCritical>
       </Threshold>
     </Sensor>
     <Sensor>
@@ -196,41 +195,10 @@
       <Threshold>
         <ThresholdTOff>0</ThresholdTOff>
         <ThresholdNormal>80000</ThresholdNormal>
-        <ThresholdWarning>90000</ThresholdWarning>
-        <ThresholdAlert>100000</ThresholdAlert>
-        <ThresholdCritical>120000</ThresholdCritical>
+        <ThresholdWarning>85000</ThresholdWarning>
+        <ThresholdAlert>90000</ThresholdAlert>
+        <ThresholdCritical>90000</ThresholdCritical>
       </Threshold>
     </Sensor>
   </Zone>
-
-  <Zone>
-       <ZoneID>5</ZoneID>
-       <ZoneName>SoC</ZoneName>
-       <SupportsUEvent>0</SupportsUEvent>
-       <SensorLogic>0</SensorLogic>
-       <DebounceInterval>2000</DebounceInterval>
-       <PollDelay>
-              <DelayTOff>30000</DelayTOff>
-              <DelayNormal>30000</DelayNormal>
-              <DelayWarning>30000</DelayWarning>
-              <DelayAlert>30000</DelayAlert>
-              <DelayCritical>30000</DelayCritical>
-       </PollDelay>
-       <Sensor>
-              <SensorID>8</SensorID>
-              <SensorName>SoC_DTS0</SensorName>
-              <SensorPath>auto</SensorPath>
-              <InputTemp>temp</InputTemp>
-              <LowTemp>trip_point_0_temp</LowTemp>
-              <HighTemp>trip_point_1_temp</HighTemp>
-              <Threshold>
-                <ThresholdTOff>0</ThresholdTOff>
-                <ThresholdNormal>85000</ThresholdNormal>
-                <ThresholdWarning>90000</ThresholdWarning>
-                <ThresholdAlert>120000</ThresholdAlert>
-                <ThresholdCritical>150000</ThresholdCritical>
-              </Threshold>
-       </Sensor>
-  </Zone>
-
  </thermalconfig>

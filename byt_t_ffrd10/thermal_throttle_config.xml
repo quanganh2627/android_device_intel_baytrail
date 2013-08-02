@@ -28,12 +28,6 @@
     <CDeviceClassPath>android.thermal.BatteryChargeCurrentControl</CDeviceClassPath>
     <CDeviceThrottlePath>auto</CDeviceThrottlePath>
   </ContributingDeviceInfo>
-  <ContributingDeviceInfo>
-    <CDeviceName>SoC</CDeviceName>
-    <CDeviceID>5</CDeviceID>
-    <CDeviceClassPath>android.thermal.SoCControl</CDeviceClassPath>
-    <CDeviceThrottlePath>auto</CDeviceThrottlePath>
-  </ContributingDeviceInfo>
 
   <!--Map the cooling devices with specfic zones for throttling-->
   <ZoneThrottleInfo>
@@ -43,18 +37,18 @@
         if this zone reaches critical thermal state to avoid any user impact-->
     <!--list of cooling device IDs registered for the zone-->
     <CoolingDeviceInfo>
-      <CoolingDevId>5</CoolingDevId>
+      <CoolingDevId>1</CoolingDevId>
       <ThrottleDeviceMask>
           <Normal>0</Normal>
-          <Warning>1</Warning>
-          <Alert>1</Alert>
+          <Warning>0</Warning>
+          <Alert>0</Alert>
           <Critical>1</Critical>
       </ThrottleDeviceMask>
       <!--four states: Normal,Warning,Alert,Critical. 0 - disable throttling,1 - enable throttling, -1 - dont care-->
       <DethrottleDeviceMask>
           <Normal>1</Normal>
-          <Warning>1</Warning>
-          <Alert>1</Alert>
+          <Warning>0</Warning>
+          <Alert>0</Alert>
           <Critical>0</Critical>
       </DethrottleDeviceMask>
       <!--four states: Normal,Warning,Alert,Critical. 0 - disable de-throttling,1 - enable de-throttling, -1 - dont care-->
@@ -65,37 +59,7 @@
     <ZoneID>1</ZoneID>
     <CriticalShutDown>1</CriticalShutDown>
     <CoolingDeviceInfo>
-      <CoolingDevId>2</CoolingDevId>
-      <ThrottleDeviceMask>
-          <Normal>0</Normal>
-          <Warning>1</Warning>
-          <Alert>1</Alert>
-          <Critical>0</Critical>
-      </ThrottleDeviceMask>
-      <DethrottleDeviceMask>
-          <Normal>1</Normal>
-          <Warning>0</Warning>
-          <Alert>1</Alert>
-          <Critical>0</Critical>
-      </DethrottleDeviceMask>
-    </CoolingDeviceInfo>
-    <CoolingDeviceInfo>
-      <CoolingDevId>3</CoolingDevId>
-      <ThrottleDeviceMask>
-          <Normal>0</Normal>
-          <Warning>0</Warning>
-          <Alert>1</Alert>
-          <Critical>0</Critical>
-      </ThrottleDeviceMask>
-      <DethrottleDeviceMask>
-          <Normal>0</Normal>
-          <Warning>1</Warning>
-          <Alert>0</Alert>
-          <Critical>0</Critical>
-      </DethrottleDeviceMask>
-    </CoolingDeviceInfo>
-    <CoolingDeviceInfo>
-      <CoolingDevId>4</CoolingDevId>
+      <CoolingDevId>1</CoolingDevId>
       <ThrottleDeviceMask>
           <Normal>0</Normal>
           <Warning>1</Warning>
@@ -110,7 +74,22 @@
       </DethrottleDeviceMask>
     </CoolingDeviceInfo>
     <CoolingDeviceInfo>
-      <CoolingDevId>5</CoolingDevId>
+      <CoolingDevId>2</CoolingDevId>
+      <ThrottleDeviceMask>
+          <Normal>0</Normal>
+          <Warning>0</Warning>
+          <Alert>1</Alert>
+          <Critical>0</Critical>
+      </ThrottleDeviceMask>
+      <DethrottleDeviceMask>
+          <Normal>1</Normal>
+          <Warning>0</Warning>
+          <Alert>1</Alert>
+          <Critical>0</Critical>
+      </DethrottleDeviceMask>
+    </CoolingDeviceInfo>
+    <CoolingDeviceInfo>
+      <CoolingDevId>4</CoolingDevId>
       <ThrottleDeviceMask>
           <Normal>0</Normal>
           <Warning>1</Warning>
@@ -133,7 +112,7 @@
       <CoolingDevId>2</CoolingDevId>
       <ThrottleDeviceMask>
           <Normal>0</Normal>
-          <Warning>1</Warning>
+          <Warning>0</Warning>
           <Alert>1</Alert>
           <Critical>0</Critical>
       </ThrottleDeviceMask>
@@ -141,41 +120,11 @@
           <Normal>1</Normal>
           <Warning>0</Warning>
           <Alert>1</Alert>
-          <Critical>0</Critical>
-      </DethrottleDeviceMask>
-    </CoolingDeviceInfo>
-    <CoolingDeviceInfo>
-      <CoolingDevId>3</CoolingDevId>
-      <ThrottleDeviceMask>
-          <Normal>0</Normal>
-          <Warning>0</Warning>
-          <Alert>1</Alert>
-          <Critical>0</Critical>
-      </ThrottleDeviceMask>
-      <DethrottleDeviceMask>
-          <Normal>0</Normal>
-          <Warning>1</Warning>
-          <Alert>0</Alert>
           <Critical>0</Critical>
       </DethrottleDeviceMask>
     </CoolingDeviceInfo>
     <CoolingDeviceInfo>
       <CoolingDevId>4</CoolingDevId>
-      <ThrottleDeviceMask>
-          <Normal>0</Normal>
-          <Warning>1</Warning>
-          <Alert>1</Alert>
-          <Critical>1</Critical>
-      </ThrottleDeviceMask>
-      <DethrottleDeviceMask>
-          <Normal>1</Normal>
-          <Warning>1</Warning>
-          <Alert>1</Alert>
-          <Critical>0</Critical>
-      </DethrottleDeviceMask>
-    </CoolingDeviceInfo>
-    <CoolingDeviceInfo>
-      <CoolingDevId>5</CoolingDevId>
       <ThrottleDeviceMask>
           <Normal>0</Normal>
           <Warning>1</Warning>
@@ -194,71 +143,11 @@
   <ZoneThrottleInfo>
     <ZoneID>3</ZoneID>
     <CriticalShutDown>1</CriticalShutDown>
-    <CoolingDeviceInfo>
-      <CoolingDevId>2</CoolingDevId>
-      <ThrottleDeviceMask>
-          <Normal>0</Normal>
-          <Warning>1</Warning>
-          <Alert>1</Alert>
-          <Critical>0</Critical>
-      </ThrottleDeviceMask>
-      <DethrottleDeviceMask>
-          <Normal>1</Normal>
-          <Warning>0</Warning>
-          <Alert>1</Alert>
-          <Critical>0</Critical>
-      </DethrottleDeviceMask>
-    </CoolingDeviceInfo>
-    <CoolingDeviceInfo>
-      <CoolingDevId>4</CoolingDevId>
-      <ThrottleDeviceMask>
-          <Normal>0</Normal>
-          <Warning>1</Warning>
-          <Alert>1</Alert>
-          <Critical>1</Critical>
-      </ThrottleDeviceMask>
-      <DethrottleDeviceMask>
-          <Normal>1</Normal>
-          <Warning>1</Warning>
-          <Alert>1</Alert>
-          <Critical>0</Critical>
-      </DethrottleDeviceMask>
-    </CoolingDeviceInfo>
-    <CoolingDeviceInfo>
-      <CoolingDevId>5</CoolingDevId>
-      <ThrottleDeviceMask>
-          <Normal>0</Normal>
-          <Warning>1</Warning>
-          <Alert>1</Alert>
-          <Critical>1</Critical>
-      </ThrottleDeviceMask>
-      <DethrottleDeviceMask>
-          <Normal>1</Normal>
-          <Warning>1</Warning>
-          <Alert>1</Alert>
-          <Critical>0</Critical>
-      </DethrottleDeviceMask>
-    </CoolingDeviceInfo>
   </ZoneThrottleInfo>
 
   <ZoneThrottleInfo>
     <ZoneID>4</ZoneID>
     <CriticalShutDown>1</CriticalShutDown>
-    <CoolingDeviceInfo>
-      <CoolingDevId>2</CoolingDevId>
-      <ThrottleDeviceMask>
-          <Normal>0</Normal>
-          <Warning>1</Warning>
-          <Alert>1</Alert>
-          <Critical>0</Critical>
-      </ThrottleDeviceMask>
-      <DethrottleDeviceMask>
-          <Normal>1</Normal>
-          <Warning>0</Warning>
-          <Alert>1</Alert>
-          <Critical>0</Critical>
-      </DethrottleDeviceMask>
-    </CoolingDeviceInfo>
     <CoolingDeviceInfo>
       <CoolingDevId>3</CoolingDevId>
       <ThrottleDeviceMask>
@@ -270,45 +159,9 @@
       <DethrottleDeviceMask>
         <Normal>0</Normal>
         <Warning>0</Warning>
-        <Alert>1</Alert>
+        <Alert>0</Alert>
         <Critical>0</Critical>
       </DethrottleDeviceMask>
     </CoolingDeviceInfo>
-    <CoolingDeviceInfo>
-      <CoolingDevId>4</CoolingDevId>
-      <ThrottleDeviceMask>
-          <Normal>0</Normal>
-          <Warning>1</Warning>
-          <Alert>1</Alert>
-          <Critical>1</Critical>
-      </ThrottleDeviceMask>
-      <DethrottleDeviceMask>
-          <Normal>1</Normal>
-          <Warning>1</Warning>
-          <Alert>1</Alert>
-          <Critical>0</Critical>
-      </DethrottleDeviceMask>
-    </CoolingDeviceInfo>
   </ZoneThrottleInfo>
-
-  <ZoneThrottleInfo>
-    <ZoneID>5</ZoneID>
-    <CriticalShutDown>1</CriticalShutDown>
-    <CoolingDeviceInfo>
-      <CoolingDevId>5</CoolingDevId>
-      <ThrottleDeviceMask>
-          <Normal>0</Normal>
-          <Warning>1</Warning>
-          <Alert>1</Alert>
-          <Critical>1</Critical>
-      </ThrottleDeviceMask>
-      <DethrottleDeviceMask>
-          <Normal>1</Normal>
-          <Warning>1</Warning>
-          <Alert>1</Alert>
-          <Critical>0</Critical>
-      </DethrottleDeviceMask>
-    </CoolingDeviceInfo>
-  </ZoneThrottleInfo>
-
 </thermalthrottleconfig>
