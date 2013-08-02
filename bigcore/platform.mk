@@ -10,7 +10,7 @@ PRODUCT_COPY_FILES += \
     $(PLATFORM_PATH)/init.debug.rc:root/init.debug.rc \
     $(PLATFORM_PATH)/props.bigcore.rc:root/props.platform.rc \
     $(PLATFORM_PATH)/maxtouch.fw:system/etc/firmware/maxtouch.fw \
-    $(PLATFORM_PATH)/atmel_mxt_ts.idc:system/usr/idc/atmel_mxt_ts.idc
+    $(PLATFORM_PATH)/mxt1664S-touchscreen.idc:system/usr/idc/mxt1664S-touchscreen.idc
 
 # Kernel Watchdog
 PRODUCT_COPY_FILES += \

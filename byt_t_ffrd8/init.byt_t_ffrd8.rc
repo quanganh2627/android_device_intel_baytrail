@@ -162,7 +162,7 @@ on post-fs
     chown media system /sys/devices/platform/gpio-keys/disabled_wakeup
 
     # Insert touchscreen module
-    insmod /lib/modules/atmel_mxt_ts.ko
+    insmod /lib/modules/atmel_mxt_1664S.ko
 
     #  Permissions for pshfw update tool
     chown system system /dev/i2c-5
