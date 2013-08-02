@@ -16,11 +16,11 @@ endif
 
 .PHONY: images firmware $(TARGET_PRODUCT)
 firmware: ifwi_firmware
-systemimg_gz: droid
+$(TARGET_SYSTEM): droid
 # Legacy target - same as 'make images'
 $(TARGET_PRODUCT): images
 
-images: firmware bootimage systemimg_gz recoveryimage
+images: firmware bootimage $(TARGET_SYSTEM) recoveryimage
 ifeq ($(TARGET_USE_DROIDBOOT),true)
 images: droidbootimage
 endif
