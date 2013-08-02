@@ -83,6 +83,14 @@
         android:fragment="com.android.settings.DisplaySettings"
         android:title="@string/display_settings" />
 
+    <!-- HDMI -->
+    <!-- Manufacturer Extra hook 2 -->
+    <header
+        android:id="@+id/manufacturer_extra_settings_2"
+        android:icon="@drawable/ic_settings_hdmi">
+        <intent android:action="com.intel.settings.HDMI_SETTING" />
+    </header>
+
     <!-- Storage -->
     <header
         android:id="@+id/storage_settings"
@@ -134,7 +142,8 @@
     <!-- Manufacturer Extra hook 3 -->
     <header
         android:id="@+id/manufacturer_extra_settings_3"
-        android:icon="@drawable/ic_settings_vpp">
+        android:icon="@drawable/ic_settings_vpp"
+        android:title="@string/vpp_settings">
         <intent android:action="com.intel.settings.VPP_SETTINGS" />
     </header>
 

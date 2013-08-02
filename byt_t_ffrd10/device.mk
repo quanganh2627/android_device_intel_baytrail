@@ -11,7 +11,7 @@
 # Superclass
 $(call inherit-product, build/target/product/full_base_no_telephony.mk)
 # Include Dalvik Heap Size Configuration
-$(call inherit-product, device/intel/common/dalvik/phone-xhdpi-1024-dalvik-heap.mk)
+$(call inherit-product, device/intel/common/dalvik/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 
 # Overrides
 PRODUCT_DEVICE := byt_t_ffrd10
@@ -68,6 +68,22 @@ PRODUCT_PACKAGES += \
     libgabi++-mfx \
     libstlport-mfx
 
+#enable Widevine drm
+PRODUCT_PROPERTY_OVERRIDES += drm.service.enabled=true
+
+PRODUCT_PACKAGES += com.google.widevine.software.drm.xml \
+    com.google.widevine.software.drm \
+    libdrmwvmplugin \
+    libwvm \
+    libdrmdecrypt \
+    libWVStreamControlAPI_L1 \
+    libwvdrm_L1
+ 
+ifeq ($(TARGET_BUILD_VARIANT),eng)
+ PRODUCT_PACKAGES += \
+     WidevineSamplePlayer
+endif
+
 # omx components
 PRODUCT_PACKAGES += \
     libwrs_omxil_core_pvwrapped \
@@ -76,14 +92,18 @@ PRODUCT_PACKAGES += \
     libOMXVideoDecoderMPEG4 \
     libOMXVideoDecoderWMV \
     libOMXVideoDecoderVP8 \
-    libOMXVideoEncoderAVC
+    libOMXVideoEncoderH263 \
+    libOMXVideoEncoderMPEG4 \
+    libOMXVideoEncoderAVC \
+    libOMXVideoDecoderAVCSecure
 
 # libmix
 PRODUCT_PACKAGES += \
     libmixvbp_mpeg4 \
     libmixvbp_h264 \
     libmixvbp_vc1 \
-    libmixvbp_vp8
+    libmixvbp_vp8 \
+    libmixvbp_h264secure
 
 # libva
 PRODUCT_PACKAGES += \
@@ -135,15 +155,26 @@ audio.widi.$(PRODUCT_DEVICE)
 
 #widi
 PRODUCT_PACKAGES += \
-   widi.conf \
-   libwidiservice \
-   libwidiclient \
-   libwidimedia \
-   libwidirtsp \
-   libhwcwidi \
-   libwidiuibc \
-   libwidiuibcjni \
-   WidiInputService
+    widi.conf \
+    libwidiservice \
+    libwidiclient \
+    libwidimedia \
+    libwidirtsp \
+    libhwcwidi \
+    libwidiuibc \
+    libwidiuibcjni \
+    WidiInputService
+
+ifeq ($(TARGET_BUILD_VARIANT), $(filter $(TARGET_BUILD_VARIANT), eng userdebug))
+PRODUCT_PACKAGES += \
+    WirelessDisplaySigmaCapiUI \
+    com.intel.widi.sigmaapi \
+    com.intel.widi.sigmaapi.xml \
+    libwidisigmajni \
+    libsigmacapi \
+    shcli \
+    shsrv
+endif
 
 # busybox
 ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
@@ -246,6 +277,7 @@ PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.sensor.compass.xml:$(PERMISSIONS_PATH)/android.hardware.sensor.compass.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.sensor.gyroscope.xml:$(PERMISSIONS_PATH)/android.hardware.sensor.gyroscope.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.sensor.light.xml:$(PERMISSIONS_PATH)/android.hardware.sensor.light.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.sensor.proximity.xml:$(PERMISSIONS_PATH)/android.hardware.sensor.proximity.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.usb.host.xml:$(PERMISSIONS_PATH)/android.hardware.usb.host.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.usb.accessory.xml:$(PERMISSIONS_PATH)/android.hardware.usb.accessory.xml \

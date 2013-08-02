@@ -421,7 +421,7 @@
 
         <EncoderProfile quality="timelapsehigh" fileFormat="3gp" duration="30">
             <Video codec="h264"
-                   bitRate="3000000"
+                   bitRate="15000000"
                    width="1280"
                    height="720"
                    frameRate="30" />
@@ -519,19 +519,19 @@
         minBitRate="64000" maxBitRate="15000000"
         minFrameWidth="176" maxFrameWidth="1920"
         minFrameHeight="144" maxFrameHeight="1080"
-        minFrameRate="1" maxFrameRate="30" />
+        minFrameRate="15" maxFrameRate="30" />
 
     <VideoEncoderCap name="h263" enabled="true"
         minBitRate="64000" maxBitRate="2000000"
         minFrameWidth="176" maxFrameWidth="720"
         minFrameHeight="144" maxFrameHeight="480"
-        minFrameRate="1" maxFrameRate="30" />
+        minFrameRate="15" maxFrameRate="30" />
 
     <VideoEncoderCap name="m4v" enabled="true"
         minBitRate="64000" maxBitRate="8000000"
         minFrameWidth="176" maxFrameWidth="720"
         minFrameHeight="144" maxFrameHeight="480"
-        minFrameRate="1" maxFrameRate="30" />
+        minFrameRate="15" maxFrameRate="30" />
 
     <AudioEncoderCap name="aac" enabled="true"
        minBitRate="32000" maxBitRate="320000"

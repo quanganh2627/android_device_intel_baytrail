@@ -76,6 +76,8 @@ PRODUCT_PACKAGES += \
     libOMXVideoDecoderMPEG4 \
     libOMXVideoDecoderWMV \
     libOMXVideoDecoderVP8 \
+    libOMXVideoEncoderH263 \
+    libOMXVideoEncoderMPEG4 \
     libOMXVideoEncoderAVC
 
 # libmix
@@ -83,7 +85,8 @@ PRODUCT_PACKAGES += \
     libmixvbp_mpeg4 \
     libmixvbp_h264 \
     libmixvbp_vc1 \
-    libmixvbp_vp8
+    libmixvbp_vp8 \
+    libmixvbp_h264secure
 
 # libva
 PRODUCT_PACKAGES += \
@@ -119,7 +122,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072 \
-    ro.sf.lcd_density=240
+    ro.sf.lcd_density=213
 
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -138,15 +141,26 @@ audio.widi.$(PRODUCT_DEVICE)
 
 #widi
 PRODUCT_PACKAGES += \
-   widi.conf \
-   libwidiservice \
-   libwidiclient \
-   libwidimedia \
-   libwidirtsp \
-   libhwcwidi \
-   libwidiuibc \
-   libwidiuibcjni \
-   WidiInputService
+    widi.conf \
+    libwidiservice \
+    libwidiclient \
+    libwidimedia \
+    libwidirtsp \
+    libhwcwidi \
+    libwidiuibc \
+    libwidiuibcjni \
+    WidiInputService
+
+ifeq ($(TARGET_BUILD_VARIANT), $(filter $(TARGET_BUILD_VARIANT), eng userdebug))
+PRODUCT_PACKAGES += \
+    WirelessDisplaySigmaCapiUI \
+    com.intel.widi.sigmaapi \
+    com.intel.widi.sigmaapi.xml \
+    libwidisigmajni \
+    libsigmacapi \
+    shcli \
+    shsrv
+endif
 
 # busybox
 ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
@@ -245,8 +259,8 @@ PRODUCT_COPY_FILES += \
 # currently contain all of the bitmaps at xhdpi density so
 # we do this little trick to fall back to the hdpi version
 # if the xhdpi doesn't exist.
-PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
+PRODUCT_AAPT_CONFIG := xlarge large tvdpi hdpi
+PRODUCT_AAPT_PREF_CONFIG := xlarge tvdpi
 
 # usb accessory
 PRODUCT_PACKAGES += \

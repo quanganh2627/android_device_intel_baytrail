@@ -123,3 +123,9 @@ ADDITIONAL_BUILD_PROPERTIES += \
 				ro.camera.0.devname=/dev/video0 \
 				ro.camera.0.facing=back \
 				ro.camera.0.orientation=0
+
+#Set ro.adb.secure to 0 for user build
+ifeq ($(TARGET_BUILD_VARIANT), user)
+ADDITIONAL_DEFAULT_PROPERTIES += \
+                                ro.adb.secure=0
+endif

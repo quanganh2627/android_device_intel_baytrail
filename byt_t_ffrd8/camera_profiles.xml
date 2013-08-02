@@ -22,8 +22,8 @@
         <dvs value="false"/> <!-- true or false -->
         <hasSlowMotion value="false"/> <!-- true or false -->
         <continuousCapture value="true"/> <!-- true or false -->
-        <supportedSnapshotSizes value="320x240,640x480,1024x768,1280x720,1920x1080,2048x1536,2560x1920,3264x1836,3264x2448"/>
-        <supportedPreviewSizes value="1024x768,1024x576,720x480,640x480,640x360,352x288,320x240,176x144"/>
+        <supportedSnapshotSizes value="320x240,640x480,1280x720,1920x1080,2048x1536,2560x1920,3264x1836,3264x2448"/>
+        <supportedPreviewSizes value="1920x1080,1280x720,720x480,640x480,640x360,352x288,320x240,176x144"/>
         <supportedVideoSizes value="176x144,320x240,352x288,640x480,720x480,1280x720,1920x1080"/>
         <flipping value="" value_v=""/> <!-- value: SENSOR_FLIP_H or "", value_v: SENSOR_FLIP_V or "" -->
         <previewViaOverlay value="false"/> <!-- true or false -->
@@ -84,8 +84,8 @@
         <dvs value="false"/>
         <hasSlowMotion value="false"/>
         <continuousCapture value="true"/>
-        <supportedSnapshotSizes value="1280x720,1280x960,1920x1080"/>
-        <supportedPreviewSizes value="1024x768,1024x576,720x480,640x480,640x360,352x288,320x240,176x144"/>
+        <supportedSnapshotSizes value="320x240,640x480,1280x720,1280x960,1920x1080"/>
+        <supportedPreviewSizes value="1280x720,720x480,640x480,640x360,352x288,320x240,176x144"/>
         <supportedVideoSizes value="176x144,320x240,352x288,640x480,720x480,1280x720,1920x1080"/>
         <flipping value="" value_v="SENSOR_FLIP_V"/>
         <previewViaOverlay value="false"/>
@@ -146,13 +146,14 @@
         <productName value="ExampleModel"/> <!-- cfg the exif -->
         <manufacturerName value="ExampleMaker"/> <!-- cfg the exif -->
         <maxZoomFactor value="1024"/>
-        <videoPreviewSizePref value="1024x576"/>
+        <videoPreviewSizePref value="1920x1080"/>
         <supportAIQ value="true"/> <!-- true or false -->
         <supportVideoSnapshot value="true"/> <!-- true or false -->
         <numRecordingBuffers value="9"/>
         <shutterLagCompensationMs value="40"/>
         <mPanoramaMaxSnapshotCount value="10"/>
-        <previewFormat value="V4L2_PIX_FMT_YVU420"/> <!-- define the driver preview output format, V4L2_PIX_FMT_YVU420 or V4L2_PIX_FMT_NV12 -->
+        <previewFormat value="V4L2_PIX_FMT_YUYV"/> <!-- define the driver preview output format, V4L2_PIX_FMT_YVU420 or V4L2_PIX_FMT_NV12 -->
+	<supportPreviewLimitation value="false"/>
         <boardName value="baylake"/>
     </Common>
 </CameraSettings>

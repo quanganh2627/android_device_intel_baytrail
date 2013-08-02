@@ -55,6 +55,9 @@ BOARD_USES_GENERIC_AUDIO := false
 # Baytrail uses the GEN for the graphic and video
 BOARD_GRAPHIC_IS_GEN := true
 
+# Set ENABLE_INTEL_CONFIG_18BPP to true for 18BPP mode.
+## ENABLE_INTEL_CONFIG_18BPP := true
+
 # Camera
 # Set USE_CAMERA_STUB to 'true' for Fake Camera builds,
 # 'false' for libcamera builds to use Camera Imaging(CI) supported by intel.
@@ -81,11 +84,23 @@ BOARD_KERNEL_CMDLINE := console=logk0 earlyprintk=nologger loglevel=0 kmemleak=o
 endif
 endif
 
-# Graphics
+# Graphics - General
 BOARD_GPU_DRIVERS := i965
 USE_OPENGL_RENDERER := true
 BOARD_KERNEL_CMDLINE += vga=current i915.modeset=1 drm.vblankoffdelay=1 \
                         acpi_backlight=vendor
+
+# Graphics - MIPI
+# List of panel ids supported:
+#
+# 1 - Reserved
+# 2 - AUO_B101UAN01
+# 3 - PANASONIC_VXX09F006A00 (Default)
+# 4 - AUO_B080XAT
+# 5 - JDI_LPM070W425B
+#
+# Uncomment the following to enable support for AUO Mango mipi panel
+# BOARD_KERNEL_CMDLINE += i915.mipi_panel_id=4
 
 BOARD_USES_LIBPSS := false
 

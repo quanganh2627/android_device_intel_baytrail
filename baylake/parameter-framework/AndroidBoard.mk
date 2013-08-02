@@ -10,8 +10,14 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_REQUIRED_MODULES :=  \
 	parameter-framework.audio.baytrail \
 	AudioClass.xml \
-	AudioConfigurableDomains.xml \
-	ParameterFrameworkConfiguration.xml
+	AudioConfigurableDomains.xml
+
+ifeq ($(TARGET_BUILD_VARIANT),eng)
+LOCAL_REQUIRED_MODULES += ParameterFrameworkConfiguration.xml
+else
+LOCAL_REQUIRED_MODULES += ParameterFrameworkConfigurationNoTuning.xml
+endif
+
 include $(BUILD_PHONY_PACKAGE)
 
 
@@ -75,7 +81,8 @@ else
 
 # baytrail
 include $(CLEAR_VARS)
-LOCAL_MODULE := ParameterFrameworkConfiguration.xml
+LOCAL_MODULE := ParameterFrameworkConfigurationNoTuning.xml
+LOCAL_MODULE_STEM := ParameterFrameworkConfiguration.xml
 LOCAL_SRC_FILES := XML/ParameterFrameworkConfigurationNoTuning.xml
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := ETC
