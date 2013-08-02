@@ -74,7 +74,7 @@ endif
 BOARD_GPU_DRIVERS := i965
 USE_OPENGL_RENDERER := true
 BOARD_KERNEL_CMDLINE += vga=current i915.modeset=1 drm.vblankoffdelay=1 \
-                        acpi_backlight=vendor
+                        acpi_backlight=vendor i915.i915_rotation=1
 
 BOARD_USES_LIBPSS := false
 
