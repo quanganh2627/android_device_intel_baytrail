@@ -36,6 +36,4 @@
     <!-- Whether to show a preference item for regulatory information in About phone -->
     <bool name="config_show_regulatory_info">false</bool>
 
-    <!-- Display Internal Storage Management menu if true -->
-    <bool name="move_media_file_enabled">false</bool>
 </resources>
