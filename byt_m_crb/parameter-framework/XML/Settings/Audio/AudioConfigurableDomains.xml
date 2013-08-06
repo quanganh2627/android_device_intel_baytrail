@@ -47,6 +47,37 @@
       </Configuration>
     </Settings>
   </ConfigurableDomain>
+  <ConfigurableDomain Name="IHF.SDRC" SequenceAware="false">
+    <Configurations>
+      <Configuration Name="Enabled">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="IHF"/>
+          <CompoundRule Type="Any">
+            <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="Normal"/>
+            <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="RingTone"/>
+          </CompoundRule>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="Disabled">
+        <CompoundRule Type="All"/>
+      </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/LPE/IHF_PATH/SDRC_CTRL/ENABLE"/>
+    </ConfigurableElements>
+    <Settings>
+      <Configuration Name="Enabled">
+        <ConfigurableElement Path="/Audio/LPE/IHF_PATH/SDRC_CTRL/ENABLE">
+          <BooleanParameter Name="ENABLE">1</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="Disabled">
+        <ConfigurableElement Path="/Audio/LPE/IHF_PATH/SDRC_CTRL/ENABLE">
+          <BooleanParameter Name="ENABLE">0</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+    </Settings>
+  </ConfigurableDomain>
   <ConfigurableDomain Name="Headset.Selected" SequenceAware="false">
     <Configurations>
       <Configuration Name="Analog">
@@ -277,7 +308,10 @@
       <ConfigurableElement Path="/Audio/LPE/HSEP_PATH/STEREO_EQ/DIFF_2_CHAN"/>
       <ConfigurableElement Path="/Audio/LPE/HSEP_PATH/STEREO_EQ/LEFT_EQ"/>
       <ConfigurableElement Path="/Audio/LPE/HSEP_PATH/STEREO_EQ/RIGHT_EQ"/>
-      <ConfigurableElement Path="/Audio/LPE/IHF_PATH/SDRC_CTRL"/>
+      <ConfigurableElement Path="/Audio/LPE/IHF_PATH/SDRC_CTRL/NB_BANDS"/>
+      <ConfigurableElement Path="/Audio/LPE/IHF_PATH/SDRC_CTRL/VERTICES"/>
+      <ConfigurableElement Path="/Audio/LPE/IHF_PATH/SDRC_CTRL/ATTACK"/>
+      <ConfigurableElement Path="/Audio/LPE/IHF_PATH/SDRC_CTRL/RELEASE"/>
     </ConfigurableElements>
     <Settings>
       <Configuration Name="Default">
@@ -842,33 +876,36 @@
             </ParameterBlock>
           </Component>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/LPE/IHF_PATH/SDRC_CTRL">
-          <Component Name="SDRC_CTRL">
-            <BooleanParameter Name="ENABLE">1</BooleanParameter>
-            <IntegerParameter Name="NB_BANDS">1</IntegerParameter>
-            <Component Name="VERTICES">
-              <Component Name="LOWER_MOST">
-                <IntegerParameter Name="THRESHOLD">24576</IntegerParameter>
-                <IntegerParameter Name="SLOPE">533</IntegerParameter>
-              </Component>
-              <Component Name="INTERMEDIATE">
-                <IntegerParameter Name="GAIN_AT_THRESHOLD">11264</IntegerParameter>
-                <IntegerParameter Name="THRESHOLD">20480</IntegerParameter>
-                <IntegerParameter Name="SLOPE">544</IntegerParameter>
-              </Component>
-              <Component Name="UPPER_MOST">
-                <IntegerParameter Name="THRESHOLD">1536</IntegerParameter>
-                <IntegerParameter Name="SLOPE">256</IntegerParameter>
-              </Component>
+        <ConfigurableElement Path="/Audio/LPE/IHF_PATH/SDRC_CTRL/NB_BANDS">
+          <IntegerParameter Name="NB_BANDS">1</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/LPE/IHF_PATH/SDRC_CTRL/VERTICES">
+          <Component Name="VERTICES">
+            <Component Name="LOWER_MOST">
+              <IntegerParameter Name="THRESHOLD">24576</IntegerParameter>
+              <IntegerParameter Name="SLOPE">533</IntegerParameter>
             </Component>
-            <Component Name="ATTACK">
-              <IntegerParameter Name="LOUDNESS_RISE_TIME">3</IntegerParameter>
-              <IntegerParameter Name="GAIN_RISE_TIME">50</IntegerParameter>
+            <Component Name="INTERMEDIATE">
+              <IntegerParameter Name="GAIN_AT_THRESHOLD">11264</IntegerParameter>
+              <IntegerParameter Name="THRESHOLD">20480</IntegerParameter>
+              <IntegerParameter Name="SLOPE">544</IntegerParameter>
             </Component>
-            <Component Name="RELEASE">
-              <IntegerParameter Name="LOUDNESS_RISE_TIME">50</IntegerParameter>
-              <IntegerParameter Name="GAIN_RISE_TIME">3</IntegerParameter>
+            <Component Name="UPPER_MOST">
+              <IntegerParameter Name="THRESHOLD">1536</IntegerParameter>
+              <IntegerParameter Name="SLOPE">256</IntegerParameter>
             </Component>
+          </Component>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/LPE/IHF_PATH/SDRC_CTRL/ATTACK">
+          <Component Name="ATTACK">
+            <IntegerParameter Name="LOUDNESS_RISE_TIME">3</IntegerParameter>
+            <IntegerParameter Name="GAIN_RISE_TIME">50</IntegerParameter>
+          </Component>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/LPE/IHF_PATH/SDRC_CTRL/RELEASE">
+          <Component Name="RELEASE">
+            <IntegerParameter Name="LOUDNESS_RISE_TIME">50</IntegerParameter>
+            <IntegerParameter Name="GAIN_RISE_TIME">3</IntegerParameter>
           </Component>
         </ConfigurableElement>
       </Configuration>
