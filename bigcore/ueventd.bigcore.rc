@@ -1,6 +1,0 @@
-# for bluetooth rfkill nodes
-/sys/devices/*/bluetooth/hci0/rfkill* state 0660 bluetooth bluetooth
-/sys/devices/*/bluetooth/hci0/rfkill* type  0440 bluetooth bluetooth
-
-# for video devices
-/dev/video*    0660    media    system
