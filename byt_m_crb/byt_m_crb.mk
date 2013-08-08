@@ -1,5 +1,6 @@
+ifeq (,$(filter $(PRODUCT_NAME), byt_m_crb_next))
 PRODUCT_NAME := byt_m_crb
-
+endif
 # Include product path
 include $(LOCAL_PATH)/byt_m_crb_path.mk
 
@@ -24,11 +25,11 @@ PRODUCT_PACKAGES += \
 
 #hdmi audio HAL
 PRODUCT_PACKAGES += \
-       audio.hdmi.$(PRODUCT_NAME)
+       audio.hdmi.$(PRODUCT_DEVICE)
 
 #widi audio HAL
 PRODUCT_PACKAGES += \
-       audio.widi.$(PRODUCT_NAME)
+       audio.widi.$(PRODUCT_DEVICE)
 
 #remote submix audio
 PRODUCT_PACKAGES += \
