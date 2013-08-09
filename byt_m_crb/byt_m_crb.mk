@@ -52,6 +52,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
+# crashlog conf
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/crashlog.conf:system/etc/crashlog.conf
+
 # Include base makefile
 include $(LOCAL_PATH)/device.mk
 

@@ -127,9 +127,6 @@ on boot
     chmod 0666 /dev/mei
     chmod 0666 /dev/meimm
 
-    # Run surfaceflinger in a standalone process to avoid deadlock against gfx apps.
-    setprop system_init.startsurfaceflinger 0
-
 #   Offload specific properties
 
 #   lpa.tunnelling.enable
@@ -163,6 +160,9 @@ on boot
 
     #  Enable submix audio path for widi
     setprop widi.audio.module submix
+
+    # Enable HDCP 2.1 for Widi
+    setprop widi.hdcp.enable true
 
 on post-fs-data
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
@@ -212,12 +212,6 @@ on post-fs
 service baytrail-setup /system/bin/sh /system/etc/init.baytrail.sh
     class core
     oneshot
-
-service surfaceflinger /system/bin/surfaceflinger
-    class main
-    user system
-    group graphics drmrpc
-    onrestart restart zygote
 
 service sensorhubd /system/bin/sensorhubd
     class main

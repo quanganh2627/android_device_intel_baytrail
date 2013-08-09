@@ -1,0 +1,55 @@
+{
+	"globals": {
+			"gpt" : {
+				"lba_start_offset": 40
+			}
+
+	},
+
+	"partitions":
+		{
+			"reserved": {
+				"size": 224
+			},
+
+			"panic":
+			{
+				"id": 2
+			},
+
+			"factory":
+			{
+				"id": 3
+			},
+
+			"spare":
+			{
+				"id": 4
+			},
+
+			"config":
+			{
+				"id": 5
+			},
+
+			"cache":
+			{
+				"id": 6
+			},
+
+			"logs":
+			{
+				"id": 7
+			},
+
+			"system":
+			{
+				"id": 8
+			},
+
+			"data":
+			{
+				"id": 9
+			}
+		}
+}

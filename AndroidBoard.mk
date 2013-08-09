@@ -6,6 +6,7 @@ include device/intel/common/AndroidBoard.mk
 ifeq (, $(findstring next, $(TARGET_PRODUCT)))
 # Add socwatchdk driver (only if not on kernel next)
 -include $(TOP)/linux/modules/debug_tools/socwatchdk/src/AndroidSOCWatchDK.mk
+-include $(TOP)/vendor/intel/tools/PRIVATE/debug_internal_tools/socwatchdk/src/AndroidSOCWatchDK.mk
 endif
 
 # Add VISA driver

@@ -130,6 +130,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     net.eth0.ip=192.168.42.1 \
     net.eth0.netmask=255.255.255.0
 
+# Version of mandatory blankphone
+PRODUCT_PROPERTY_OVERRIDES += ro.blankphone_id=1
+
 # Intel fake multiple display
 PRODUCT_PACKAGES += \
     com.intel.multidisplay \
@@ -149,7 +152,9 @@ PRODUCT_PACKAGES += \
     libhwcwidi \
     libwidiuibc \
     libwidiuibcjni \
-    WidiInputService
+    WidiInputService \
+    libstagefright_hdcp \
+    libwidirtspsink
 
 ifeq ($(TARGET_BUILD_VARIANT), $(filter $(TARGET_BUILD_VARIANT), eng userdebug))
 PRODUCT_PACKAGES += \
@@ -220,6 +225,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     IntelCamera \
     SocialGallery
+
+# WiDi app
+PRODUCT_PACKAGES += \
+    WirelessDisplayUtil
 
 # Test Camera is for Test only
 ifeq ($(TARGET_BUILD_VARIANT),eng)
@@ -299,6 +308,10 @@ PRODUCT_PROPERTY_OVERRIDES += persist.tel.hot_swap.support=true
 # Intel VPP/FRC
 PRODUCT_PACKAGES += \
     VppSettings
+
+# serialno based on sata device
+PRODUCT_PACKAGES += \
+    serialno
 
 #audio firmware
 AUDIO_FW_PATH := vendor/intel/fw/sst/

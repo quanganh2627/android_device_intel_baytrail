@@ -78,7 +78,7 @@ PRODUCT_PACKAGES += com.google.widevine.software.drm.xml \
     libdrmdecrypt \
     libWVStreamControlAPI_L1 \
     libwvdrm_L1
- 
+
 ifeq ($(TARGET_BUILD_VARIANT),eng)
  PRODUCT_PACKAGES += \
      WidevineSamplePlayer
@@ -144,6 +144,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072 \
     ro.sf.lcd_density=320
 
+# Version of mandatory blankphone
+PRODUCT_PROPERTY_OVERRIDES += ro.blankphone_id=1
+
 # Intel fake multiple display
 PRODUCT_PACKAGES += \
     com.intel.multidisplay \
@@ -163,7 +166,9 @@ PRODUCT_PACKAGES += \
     libhwcwidi \
     libwidiuibc \
     libwidiuibcjni \
-    WidiInputService
+    WidiInputService \
+    libstagefright_hdcp \
+    libwidirtspsink
 
 ifeq ($(TARGET_BUILD_VARIANT), $(filter $(TARGET_BUILD_VARIANT), eng userdebug))
 PRODUCT_PACKAGES += \
@@ -251,6 +256,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     IntelCamera \
     SocialGallery
+
+# WiDi app
+PRODUCT_PACKAGES += \
+    WirelessDisplayUtil
 
 # Test Camera is for Test only
 ifeq ($(TARGET_BUILD_VARIANT),eng)

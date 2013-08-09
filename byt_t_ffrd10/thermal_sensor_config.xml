@@ -54,7 +54,7 @@
         <ZoneName>BackSkin</ZoneName>
         <SupportsUEvent>1</SupportsUEvent>
         <SensorLogic>0</SensorLogic>
-        <DebounceInterval>0</DebounceInterval>
+        <DebounceInterval>1000</DebounceInterval>
         <PollDelay>
                <DelayTOff>30000</DelayTOff>
                <DelayNormal>30000</DelayNormal>
@@ -70,6 +70,7 @@
                <LowTemp>trip_point_0_temp</LowTemp>
                <HighTemp>trip_point_1_temp</HighTemp>
                <UEventDevPath>auto</UEventDevPath>
+               <ErrorCorrection>800</ErrorCorrection>
                <Threshold>
                 <ThresholdTOff>0</ThresholdTOff>
                 <ThresholdNormal>38000</ThresholdNormal>
@@ -85,7 +86,7 @@
        <ZoneName>FrontSkin</ZoneName>
        <SupportsUEvent>1</SupportsUEvent>
        <SensorLogic>0</SensorLogic>
-       <DebounceInterval>0</DebounceInterval>
+       <DebounceInterval>1000</DebounceInterval>
        <PollDelay>
               <DelayTOff>30000</DelayTOff>
               <DelayNormal>30000</DelayNormal>
@@ -101,6 +102,7 @@
               <LowTemp>trip_point_0_temp</LowTemp>
               <HighTemp>trip_point_1_temp</HighTemp>
               <UEventDevPath>auto</UEventDevPath>
+              <ErrorCorrection>800</ErrorCorrection>
               <Threshold>
                 <ThresholdTOff>0</ThresholdTOff>
                 <ThresholdNormal>40000</ThresholdNormal>
