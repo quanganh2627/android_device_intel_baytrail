@@ -112,7 +112,7 @@
   <Zone>
        <ZoneID>3</ZoneID>
        <ZoneName>Skin</ZoneName>
-       <SupportsUEvent>0</SupportsUEvent>
+       <SupportsUEvent>1</SupportsUEvent>
        <SensorLogic>0</SensorLogic>
        <DebounceInterval>0</DebounceInterval>
        <PollDelay>
@@ -129,6 +129,7 @@
               <InputTemp>temp</InputTemp>
               <LowTemp>trip_point_0_temp</LowTemp>
               <HighTemp>trip_point_1_temp</HighTemp>
+              <UEventDevPath>auto</UEventDevPath>
               <Threshold>
                 <ThresholdTOff>0</ThresholdTOff>
                 <ThresholdNormal>40000</ThresholdNormal>
