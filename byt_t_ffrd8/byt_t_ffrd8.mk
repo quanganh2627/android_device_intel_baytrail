@@ -49,12 +49,6 @@ PRODUCT_PACKAGES += \
     librapid-ril-core \
     librapid-ril-util
 
-# PSI Recorder
-ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
-PRODUCT_PACKAGES += \
-    PSI_Recorder
-endif
-
 # Cell Broadcast
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver
