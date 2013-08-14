@@ -23,7 +23,7 @@
                          VideoEditorCap,
                          ExportVideoProfile)>
 <!ELEMENT CamcorderProfiles (EncoderProfile+, ImageEncoding+, ImageDecoding, Camera)>
-<!ATTLIST CamcorderProfiles cameraId (0|1) #REQUIRED>
+<!ATTLIST CamcorderProfiles cameraId (0) #REQUIRED>
 <!ELEMENT EncoderProfile (Video, Audio)>
 <!ATTLIST EncoderProfile quality (high|low) #REQUIRED>
 <!ATTLIST EncoderProfile fileFormat (mp4|3gp) #REQUIRED>
