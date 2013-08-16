@@ -127,6 +127,9 @@ on boot
     chmod 0666 /dev/mei
     chmod 0666 /dev/meimm
 
+    # Run surfaceflinger in a standalone process to avoid deadlock against gfx apps.
+    setprop system_init.startsurfaceflinger 0
+
 #   Offload specific properties
 
 #   lpa.tunnelling.enable
@@ -163,6 +166,15 @@ on boot
 
     # Enable HDCP 2.1 for Widi
     setprop widi.hdcp.enable true
+
+    # Reboot in COS on shutdown request when charger is plugged
+    setprop ro.rebootchargermode true
+
+    #Change mmc read ahead size from 128 to 256 to reduce USB MTP read latencies
+    write /sys/block/mmcblk0/queue/read_ahead_kb 256
+
+    #set dirty background bytes to 16MB to reduce USB MTP write latencies
+    write /proc/sys/vm/dirty_background_bytes 16777216
 
 on post-fs-data
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
@@ -212,6 +224,12 @@ on post-fs
 service baytrail-setup /system/bin/sh /system/etc/init.baytrail.sh
     class core
     oneshot
+
+service surfaceflinger /system/bin/surfaceflinger
+    class main
+    user system
+    group graphics drmrpc
+    onrestart restart zygote
 
 service sensorhubd /system/bin/sensorhubd
     class main

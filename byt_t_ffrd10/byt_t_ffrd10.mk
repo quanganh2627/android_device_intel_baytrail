@@ -1,4 +1,6 @@
+ifeq (,$(filter $(PRODUCT_NAME), byt_t_ffrd10_next))
 PRODUCT_NAME := byt_t_ffrd10
+endif
 
 # Include product path
 include $(LOCAL_PATH)/byt_t_ffrd10_path.mk
@@ -12,7 +14,8 @@ PERMISSIONS_PATH := system/etc/permissions
 
 # Touchscreen configuration file
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg
+    $(LOCAL_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg \
+    $(LOCAL_PATH)/maxtouch_1664S.fw:system/etc/firmware/maxtouch.fw
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
@@ -24,11 +27,11 @@ PRODUCT_PACKAGES += \
 
 #hdmi audio HAL
 PRODUCT_PACKAGES += \
-       audio.hdmi.$(PRODUCT_NAME)
+       audio.hdmi.$(PRODUCT_DEVICE)
 
 #widi audio HAL
 PRODUCT_PACKAGES += \
-       audio.widi.$(PRODUCT_NAME)
+       audio.widi.$(PRODUCT_DEVICE)
 
 #remote submix audio
 PRODUCT_PACKAGES += \

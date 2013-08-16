@@ -9,7 +9,7 @@
 # PRODUCT_COPY_FILES := $(OVERRIDE_COPIES) $(PRODUCT_COPY_FILES)
 
 # Superclass
-$(call inherit-product, build/target/product/full_base_no_telephony.mk)
+$(call inherit-product, build/target/product/full_base_telephony.mk)
 # Include Dalvik Heap Size Configuration
 $(call inherit-product, $(COMMON_PATH)/dalvik/phone-xhdpi-1024-dalvik-heap.mk)
 
@@ -161,6 +161,75 @@ PRODUCT_PACKAGES += \
     shcli \
     shsrv
 endif
+
+# AT Proxy
+PRODUCT_PACKAGES += \
+    proxy
+
+# Restricted Access Region
+PRODUCT_PACKAGES += \
+    libmemrar
+
+#OemTelephony for OEM HOOK API
+PRODUCT_PACKAGES += \
+    com.intel.internal.telephony.OemTelephony \
+     com.intel.internal.telephony.OemTelephony.xml
+
+# SimToolkit app
+PRODUCT_PACKAGES += \
+    Stk
+
+# Modem Trace Server (MTS)
+PRODUCT_PACKAGES += \
+    mts
+
+# AMTL : Android Modem Traces and Logs
+ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
+    PRODUCT_PACKAGES += \
+        Amtl \
+        libamtl_jni
+
+    PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/activate_trace_modem:system/bin/activate_trace_modem \
+        $(LOCAL_PATH)/configure_trace_modem:system/bin/configure_trace_modem \
+        $(LOCAL_PATH)/amtl_configuration.xml:system/etc/amtl_configuration.xml
+endif
+
+# Modem
+PRODUCT_PACKAGES += \
+    modem_flashless
+
+#Intrinsyc RRIL repository
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/rril/repository.txt:system/etc/rril/repository.txt
+
+# Modem Manager
+PRODUCT_PACKAGES += \
+    mmgr \
+    libmodemupdate \
+    nvm_server \
+    libdx_cc7
+#    miu-app
+
+
+# MMGR CWS Client
+PRODUCT_PACKAGES += \
+    CWS_MMGR
+
+# TelephonyEventsNotifier
+ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
+PRODUCT_PACKAGES += \
+    TelephonyEventsNotifier
+endif
+
+
+# MMGR config file
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/mmgr.conf:system/etc/telephony/mmgr.conf \
+    $(LOCAL_PATH)/flashless.conf:system/etc/telephony/flashless.conf
+
+# SIM Hot Swap Property
+PRODUCT_PROPERTY_OVERRIDES += persist.tel.hot_swap.support=true
 
 # busybox
 ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
@@ -324,15 +393,15 @@ PRODUCT_PACKAGES += \
 #audio firmware
 AUDIO_FW_PATH := vendor/intel/fw/sst/
 PRODUCT_COPY_FILES += \
-    $(AUDIO_FW_PATH)/fw_sst_0f28.bin:system/etc/firmware/fw_sst_0f28.bin \
+    $(AUDIO_FW_PATH)/fw_sst_0f28_ffrd8.bin:system/etc/firmware/fw_sst_0f28.bin \
 
 # Board initrc file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.$(PRODUCT_DEVICE).rc:root/init.$(PRODUCT_DEVICE).rc \
-    $(LOCAL_PATH)/init.avc.rc:root/init.avc.rc
+    $(LOCAL_PATH)/init.avc.rc:root/init.avc.rc \
+    $(LOCAL_PATH)/init.modem.rc:root/init.modem.rc
 #    $(LOCAL_PATH)/init.diag.rc:root/init.diag.rc \
 #    $(LOCAL_PATH)/init.wireless.rc:root/init.wireless.rc \
-#    $(LOCAL_PATH)/init.modem.rc:root/init.modem.rc \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab

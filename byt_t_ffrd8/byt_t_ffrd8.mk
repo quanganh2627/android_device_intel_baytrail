@@ -12,7 +12,8 @@ PERMISSIONS_PATH := system/etc/permissions
 
 # Touchscreen configuration file
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg
+    $(LOCAL_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg \
+    $(PLATFORM_PATH)/maxtouch.fw:system/etc/firmware/maxtouch.fw
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
@@ -42,6 +43,21 @@ PRODUCT_PACKAGES += \
 #remote submix audio
 PRODUCT_PACKAGES += \
        audio.r_submix.default
+
+# rapid ril
+PRODUCT_PACKAGES += \
+    librapid-ril-core \
+    librapid-ril-util
+
+# PSI Recorder
+ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
+PRODUCT_PACKAGES += \
+    PSI_Recorder
+endif
+
+# Cell Broadcast
+PRODUCT_PACKAGES += \
+    CellBroadcastReceiver
 
 # parameter-framework files
 PRODUCT_PACKAGES += \

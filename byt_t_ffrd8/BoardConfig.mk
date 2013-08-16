@@ -16,6 +16,28 @@ TARGET_OS_SIGNING_METHOD := none
 #Platform
 BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 
+#Modem
+BOARD_HAVE_MODEM := true
+BOARD_SKIP_NVM := true
+BOARD_MODEM_DICO := "PRx:7160"
+BOARD_MODEM_LIST := 7160_flashless
+BOARD_MODEM_FLASHLESS := true
+BOARD_HAVE_ATPROXY := true
+
+TARGET_PHONE_HAS_OEM_LIBRARY := true
+
+ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
+# GTI is used to perform some tunning on AUD thanks to phonetool
+  BOARD_USES_GTI_FRAMEWORK := true
+endif
+
+# Adding DSDS enabling/disabling property
+ADDITIONAL_DEFAULT_PROPERTIES += persist.dual_sim=none
+
+ifeq ($(TARGET_RIL_DISABLE_STATUS_POLLING),true)
+ADDITIONAL_BUILD_PROPERTIES += ro.ril.status.polling.enable=0
+endif
+
 # Connectivity
 BOARD_HAVE_MODEM := false
 BOARD_HAVE_WIFI := true
@@ -74,7 +96,7 @@ endif
 BOARD_GPU_DRIVERS := i965
 USE_OPENGL_RENDERER := true
 BOARD_KERNEL_CMDLINE += vga=current i915.modeset=1 drm.vblankoffdelay=1 \
-                        acpi_backlight=vendor
+                        acpi_backlight=vendor i915.i915_rotation=1
 
 BOARD_USES_LIBPSS := false
 

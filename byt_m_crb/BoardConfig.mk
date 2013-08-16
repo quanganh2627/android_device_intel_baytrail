@@ -19,10 +19,23 @@ TARGET_OS_SIGNING_METHOD := none
 BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 
 # Connectivity
-BOARD_HAVE_MODEM := false
+ifeq (, $(filter %_next, $(TARGET_PRODUCT)))
 BOARD_HAVE_WIFI := true
 INTEL_WIDI := true
+INTEL_WIDI_BAYTRAIL := true
 BOARD_HAVE_BLUETOOTH := true
+FLASHFILE_NO_OTA := false
+else
+#disable WIFI/WIDI/BT for kernel_next bringup
+BOARD_HAVE_WIFI := false
+INTEL_WIDI := false
+INTEL_WIDI_BAYTRAIL := false
+BOARD_HAVE_BLUETOOTH := false
+FLASHFILE_NO_OTA := true
+endif
+
+# Connectivity
+BOARD_HAVE_MODEM := false
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)
 TARGET_HAS_VPP := true
 TARGET_VPP_USE_GEN := true
@@ -30,9 +43,6 @@ COMMON_GLOBAL_CFLAGS += -DGFX_BUF_EXT
 TARGET_HAS_MULTIPLE_DISPLAY := true
 
 USE_INTEL_IPP := true
-
-# WiDi
-INTEL_WIDI_BAYTRAIL := true
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -64,7 +74,7 @@ USE_INTEL_LVSE := true
 
 ifeq ($(BOARD_KERNEL_CMDLINE),)
 ifeq ($(TARGET_BUILD_VARIANT),eng)
-BOARD_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger loglevel=8 drm.debug=0x0 kmemleak=off ptrace.ptrace_can_access=1 emmc_ipanic.ipanic_part_number=3 androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) nmi_watchdog=panic softlockup_panic=1 vmalloc=172M
+BOARD_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger loglevel=8 drm.debug=0x0 kmemleak=off ptrace.ptrace_can_access=1 emmc_ipanic.ipanic_part_number=3 androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) nmi_watchdog=panic softlockup_panic=1 vmalloc=172M crashkernel=64M@256M
 else ifeq ($(TARGET_BUILD_VARIANT),userdebug)
 BOARD_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger loglevel=4 kmemleak=off ptrace.ptrace_can_access=1 emmc_ipanic.ipanic_part_number=3 androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) nmi_watchdog=panic softlockup_panic=1 vmalloc=172M
 else
