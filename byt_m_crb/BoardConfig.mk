@@ -16,7 +16,7 @@ include $(PLATFORM_PATH)/BoardConfig.mk
 TARGET_OS_SIGNING_METHOD := none
 
 #Platform
-#BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
+BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 
 # Connectivity
 ifeq (, $(filter %_next, $(TARGET_PRODUCT)))
@@ -103,7 +103,7 @@ BOARD_USE_LIBVA := true
 BOARD_USE_LIBMIX := true
 
 #Support background music playback for Widi Multitasking
-ENABLE_BACKGROUND_MUSIC := fasle
+ENABLE_BACKGROUND_MUSIC := true
 
 # Settings for the Media SDK library and plug-ins:
 # - USE_MEDIASDK: use Media SDK support or not

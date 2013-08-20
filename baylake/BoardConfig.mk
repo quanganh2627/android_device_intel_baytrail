@@ -16,7 +16,7 @@ TARGET_OS_SIGNING_METHOD := none
 CAPSULE_BINARY := vendor/intel/fw/PRIVATE/ifwi/baylake/byt_t/capsule.bin
 
 #Platform
-#BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
+BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 
 # Connectivity
 ifeq (, $(findstring next, $(TARGET_PRODUCT)))
