@@ -50,7 +50,6 @@ else
 # Disable WIFI for kernel_next bringup
 BOARD_HAVE_WIFI := false
 endif
-BOARD_HAVE_MODEM := false
 INTEL_WIDI := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)
