@@ -133,9 +133,13 @@ PRODUCT_PACKAGES += \
     com.intel.multidisplay \
     com.intel.multidisplay.xml
 
+#hdmi audio HAL
+PRODUCT_PACKAGES += \
+   audio.hdmi.$(PRODUCT_DEVICE)
+
 #widi audio HAL
 PRODUCT_PACKAGES += \
-audio.widi.$(PRODUCT_DEVICE)
+    audio.widi.$(PRODUCT_DEVICE)
 
 #widi
 PRODUCT_PACKAGES += \

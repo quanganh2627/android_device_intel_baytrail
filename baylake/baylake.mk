@@ -1,7 +1,6 @@
 ifeq (,$(filter $(PRODUCT_NAME),baylake_next baylake_edk2))
 PRODUCT_NAME := baylake
 endif
-PRODUCT_DEVICE := baylake
 
 # Include product path
 include $(LOCAL_PATH)/baylakepath.mk
@@ -25,14 +24,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
         wifi_bcm_43241
-
-#hdmi audio HAL
-PRODUCT_PACKAGES += \
-       audio.hdmi.$(PRODUCT_DEVICE)
-
-#widi audio HAL
-PRODUCT_PACKAGES += \
-       audio.widi.$(PRODUCT_DEVICE)
 
 #remote submix audio
 PRODUCT_PACKAGES += \
