@@ -39,6 +39,8 @@ TARGET_HAS_MULTIPLE_DISPLAY := true
 
 USE_INTEL_IPP := true
 
+# Power_HAL
+POWERHAL_BYT := true
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
