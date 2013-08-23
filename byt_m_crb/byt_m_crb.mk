@@ -1,6 +1,8 @@
 ifeq (,$(filter $(PRODUCT_NAME), byt_m_crb_next))
 PRODUCT_NAME := byt_m_crb
 endif
+PRODUCT_DEVICE := byt_m_crb
+
 # Include product path
 include $(LOCAL_PATH)/byt_m_crb_path.mk
 
