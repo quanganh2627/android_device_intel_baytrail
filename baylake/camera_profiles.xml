@@ -76,6 +76,22 @@
         <supportedPreviewUpdateModes value="standard,continuous,during-capture,windowless"/>
         <defaultPreviewUpdateMode value="standard"/>
         <hasFlash value="true"/>
+        <defaultHdr value=""/>
+        <supportedHdr value=""/>
+        <defaultUltraLowLight value="off"/>
+        <supportedUltraLowLight value="auto,on,off"/>
+        <defaultFaceDetection value="off"/>
+        <supportedFaceDetection value="on,off"/>
+        <defaultFaceRecognition value=""/>
+        <supportedFaceRecognition value=""/>
+        <defaultSmileShutter value="off"/>
+        <supportedSmileShutter value="on,off"/>
+        <defaultBlinkShutter value="off"/>
+        <supportedBlinkShutter value="on,off"/>
+        <defaultPanorama value="off"/>
+        <supportedPanorama value="on,off"/>
+        <defaultSceneDetection value="off"/>
+        <supportedSceneDetection value="on,off"/>
     </Profiles>
 
     <Profiles cameraId="1">
@@ -139,6 +155,22 @@
         <supportedPreviewUpdateModes value="standard,continuous,during-capture,windowless"/>
         <defaultPreviewUpdateMode value="standard"/>
         <hasFlash value="false"/>
+        <defaultHdr value=""/>
+        <supportedHdr value=""/>
+        <defaultUltraLowLight value="off"/>
+        <supportedUltraLowLight value="auto,on,off"/>
+        <defaultFaceDetection value="off"/>
+        <supportedFaceDetection value="on,off"/>
+        <defaultFaceRecognition value=""/>
+        <supportedFaceRecognition value=""/>
+        <defaultSmileShutter value=""/>
+        <supportedSmileShutter value=""/>
+        <defaultBlinkShutter value="off"/>
+        <supportedBlinkShutter value="on,off"/>
+        <defaultPanorama value="off"/>
+        <supportedPanorama value="on,off"/>
+        <defaultSceneDetection value="off"/>
+        <supportedSceneDetection value="on,off"/>
     </Profiles>
 
     <Common>
