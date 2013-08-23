@@ -2,6 +2,11 @@ ifeq (,$(filter $(PRODUCT_NAME), byt_t_ffrd8_next))
 PRODUCT_NAME := byt_t_ffrd8
 endif
 
+# Copy common product apns-conf
+COMMON_PATH := device/intel/common
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/apns-conf.xml:system/etc/apns-conf.xml
+
 # Include product path
 include $(LOCAL_PATH)/byt_t_ffrd8_path.mk
 
