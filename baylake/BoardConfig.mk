@@ -12,6 +12,9 @@ include device/intel/baytrail/BoardConfig.mk
 # Temporary IFWI does not support signing
 TARGET_OS_SIGNING_METHOD := none
 
+# IAFW component to build for this board
+BOARD_IAFW_COMPONENT := brd_baylake
+
 #Platform
 BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 
