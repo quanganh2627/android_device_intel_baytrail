@@ -13,7 +13,8 @@ PERMISSIONS_PATH := system/etc/permissions
 
 # Touchscreen configuration file
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg
+    $(LOCAL_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg \
+    $(LOCAL_PATH)/maxtouch_3432S.fw:system/etc/firmware/maxtouch.fw
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
@@ -56,6 +57,11 @@ PRODUCT_COPY_FILES += \
 # crashlog conf
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/crashlog.conf:system/etc/crashlog.conf
+
+# thermal config files
+PRODUCT_COPY_FILES += \
+         $(LOCAL_PATH)/thermal_sensor_config.xml:system/etc/thermal_sensor_config.xml \
+         $(LOCAL_PATH)/thermal_throttle_config.xml:system/etc/thermal_throttle_config.xml
 
 # Include base makefile
 include $(LOCAL_PATH)/device.mk

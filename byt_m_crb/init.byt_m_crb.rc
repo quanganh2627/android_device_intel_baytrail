@@ -73,11 +73,48 @@ on boot
     mount debugfs none /sys/kernel/debug
 
     #  Permissions for Thermal Management
-    chown system system /sys/class/power_supply/bq24192_charger/device/charge_current_limit
     chown system system /sys/module/intel_mid_osip/parameters/force_shutdown_occured
     chown system system /sys/module/intel_mid_osip/parameters/thermal_shutdown_occured
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chown system system /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
+    chown system system /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
+    chown system system /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq
     chown system system /sys/class/thermal/cooling_device0/cur_state
     chown system system /sys/class/thermal/cooling_device1/cur_state
+    chown system system /sys/class/thermal/cooling_device2/cur_state
+    chown system system /sys/class/thermal/cooling_device3/cur_state
+    chown system system /sys/class/thermal/cooling_device4/cur_state
+    chown system system /sys/class/thermal/cooling_device5/cur_state
+    chown system system /sys/class/thermal/cooling_device6/cur_state
+    chown system system /sys/class/thermal/cooling_device7/cur_state
+    chown system system /sys/class/thermal/thermal_zone0/trip_point_0_temp
+    chown system system /sys/class/thermal/thermal_zone0/trip_point_1_temp
+    chown system system /sys/class/thermal/thermal_zone1/trip_point_0_temp
+    chown system system /sys/class/thermal/thermal_zone1/trip_point_1_temp
+    chown system system /sys/class/thermal/thermal_zone2/trip_point_0_temp
+    chown system system /sys/class/thermal/thermal_zone2/trip_point_1_temp
+    chown system system /sys/class/thermal/thermal_zone3/trip_point_0_temp
+    chown system system /sys/class/thermal/thermal_zone3/trip_point_1_temp
+    chown system system /sys/class/thermal/thermal_zone4/trip_point_0_temp
+    chown system system /sys/class/thermal/thermal_zone4/trip_point_1_temp
+    chown system system /sys/class/thermal/thermal_zone5/trip_point_0_temp
+    chown system system /sys/class/thermal/thermal_zone5/trip_point_1_temp
+    chown system system /sys/class/thermal/thermal_zone6/trip_point_0_temp
+    chown system system /sys/class/thermal/thermal_zone6/trip_point_1_temp
+    chown system system /sys/class/thermal/thermal_zone7/trip_point_0_temp
+    chown system system /sys/class/thermal/thermal_zone7/trip_point_1_temp
+    chown system system /sys/class/thermal/thermal_zone8/trip_point_0_temp
+    chown system system /sys/class/thermal/thermal_zone8/trip_point_1_temp
+    chown system system /sys/class/thermal/thermal_zone9/trip_point_0_temp
+    chown system system /sys/class/thermal/thermal_zone9/trip_point_1_temp
+    chown system system /sys/devices/platform/coretemp.0/temp2_threshold1
+    chown system system /sys/devices/platform/coretemp.0/temp2_threshold2
+    chown system system /sys/devices/platform/coretemp.0/temp3_threshold1
+    chown system system /sys/devices/platform/coretemp.0/temp3_threshold2
+    chown system system /sys/devices/platform/coretemp.0/temp4_threshold1
+    chown system system /sys/devices/platform/coretemp.0/temp4_threshold2
+    chown system system /sys/devices/platform/coretemp.0/temp5_threshold1
+    chown system system /sys/devices/platform/coretemp.0/temp5_threshold2
 
     # GEN Graphics specific setup.
     chown system system /dev/card0
@@ -93,6 +130,9 @@ on boot
     chmod 0666 /sys/devices/pci0000:00/0000:00:02.0/resource0
     chmod 0666 /dev/mei
     chmod 0666 /dev/meimm
+
+    # Run surfaceflinger in a standalone process to avoid deadlock against gfx apps.
+    setprop system_init.startsurfaceflinger 0
 
 #   Offload specific properties
 
@@ -194,6 +234,12 @@ service hdcpd /system/bin/hdcpd
 service baytrail-setup /system/bin/sh /system/etc/init.baytrail.sh
     class core
     oneshot
+
+service surfaceflinger /system/bin/surfaceflinger
+    class main
+    user system
+    group graphics drmrpc
+    onrestart restart zygote
 
 service sensorhubd /system/bin/sensorhubd
     class main

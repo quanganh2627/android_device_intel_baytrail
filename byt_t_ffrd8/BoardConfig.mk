@@ -79,7 +79,7 @@ USE_CSS_2_0 := true
 # Enabled HW accelerated JPEG encoder using VA API
 USE_INTEL_JPEG := false
 # Enabled NXP Premium Audio Effect Libraries
-USE_INTEL_LVSE := true
+#USE_INTEL_LVSE := true
 JPEGDEC_USES_GEN := true
 
 ifeq ($(BOARD_KERNEL_CMDLINE),)
@@ -137,4 +137,4 @@ BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE +=  droidboot.use_installer=1 droidboot.ins
 
 # Temporary support for diskinstaller to be used with EFI BIOS.
 # -> should go away as this is not needed with PSI firmware + OTG
-include $(PLATFORM_PATH)/diskinstaller/config.mk
+#include $(PLATFORM_PATH)/diskinstaller/config.mk
