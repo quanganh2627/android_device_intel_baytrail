@@ -10,6 +10,7 @@ PRODUCT_COPY_FILES += \
     $(PLATFORM_PATH)/init.byt.usb.rc:root/init.platform.usb.rc \
     $(PLATFORM_PATH)/init.byt.gengfx.rc:root/init.platform.gengfx.rc \
     $(PLATFORM_PATH)/props.baytrail.rc:root/props.platform.rc \
+    $(PLATFORM_PATH)/maxtouch.fw:system/etc/firmware/maxtouch.fw \
     $(PLATFORM_PATH)/atmel_mxt_ts.idc:system/usr/idc/atmel_mxt_ts.idc
 
 ifeq ($(TARGET_BUILD_VARIANT),user)

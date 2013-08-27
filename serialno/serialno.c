@@ -25,13 +25,6 @@
 #include <cutils/properties.h>
 #include <android/log.h>
 
-#include <md5.h>
-
-/* When this was written, bionic's md5.h did not define this. */
-#ifndef MD5_DIGEST_LENGTH
-#define MD5_DIGEST_LENGTH 16
-#endif
-
 #define LOG_TAG "serialno_applet"
 
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
@@ -44,8 +37,6 @@ int main(int argc, const char *argv[])
 	int fd = -1;
 	int i;
 	char serialno[SERIALNO_SIZE + 1];
-	MD5_CTX md5_ctx;
-	unsigned char md5[MD5_DIGEST_LENGTH];
 
 	if (argc != 3) {
 		LOGE("usage: %s [drive] [property_name]\n", argv[0]);
@@ -66,13 +57,14 @@ int main(int argc, const char *argv[])
 		goto error2;
 	}
 
-	MD5_Init(&md5_ctx);
-	MD5_Update(&md5_ctx, id.serial_no, sizeof(id.serial_no));
-	MD5_Final(md5, &md5_ctx);
+	memset(serialno, 'x', sizeof(serialno));
+	serialno[SERIALNO_SIZE] = '\0';
 
-	for (i = 0; i < SERIALNO_SIZE/2; ++i)
-		sprintf(&serialno[i*2], "%02x", md5[i]);
-
+	for (i = 0; i < SERIALNO_SIZE ; i++) {
+		if (isalnum(id.serial_no[i])) {
+			serialno[i] = id.serial_no[i];
+		}
+	}
 
 	if (property_set(argv[2], serialno)) {
 		LOGE("Failed to set property: %s (%d)\n",

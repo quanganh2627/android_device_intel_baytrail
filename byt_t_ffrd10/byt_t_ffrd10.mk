@@ -14,8 +14,7 @@ PERMISSIONS_PATH := system/etc/permissions
 
 # Touchscreen configuration file
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg \
-    $(LOCAL_PATH)/maxtouch_1664S.fw:system/etc/firmware/maxtouch.fw
+    $(LOCAL_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
