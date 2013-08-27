@@ -12,6 +12,9 @@ USE_BL_SERIALNO := true
 
 include $(PLATFORM_PATH)/BoardConfig.mk
 
+# Disable sparse build until we move to B-2 and re-use ethernet PCI card
+TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
+
 # Temporary IFWI does not support signing
 TARGET_OS_SIGNING_METHOD := none
 
