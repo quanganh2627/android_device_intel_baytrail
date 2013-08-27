@@ -113,7 +113,7 @@
                    frameRate="30" />
 
             <Audio codec="aac"
-                   bitRate="320000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -152,7 +152,7 @@
                    frameRate="30" />
 
             <Audio codec="aac"
-                   bitRate="32000"
+                   bitRate="128000"
                    sampleRate="48000"
                    channels="2" />
 
@@ -166,7 +166,7 @@
                    frameRate="30" />
 
             <Audio codec="aac"
-                   bitRate="32000"
+                   bitRate="128000"
                    sampleRate="48000"
                    channels="2" />
 
@@ -180,7 +180,7 @@
                    frameRate="30" />
 
             <Audio codec="aac"
-                   bitRate="320000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -206,7 +206,7 @@
                    frameRate="30" />
 
             <Audio codec="aac"
-                   bitRate="320000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -258,7 +258,7 @@
                    frameRate="30" />
 
             <Audio codec="aac"
-                   bitRate="320000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -271,7 +271,7 @@
                    frameRate="30" />
 
             <Audio codec="aac"
-                   bitRate="320000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
