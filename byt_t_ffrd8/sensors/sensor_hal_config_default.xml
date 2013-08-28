@@ -18,7 +18,7 @@
       <name>PSH Ambient Light sensor</name>
       <vendor>Intel Inc.</vendor>
       <version>1</version>
-      <maxRange>6000.0</maxRange>
+      <maxRange>6553.5</maxRange>
       <resolution>0.1</resolution>
       <power>0.35</power>
       <minDelay>0</minDelay>
