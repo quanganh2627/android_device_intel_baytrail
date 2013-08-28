@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <sensor_hal_config>
-  <accelerometer>
-    <sensor>
+  <sensor type="accelerometer" category="libsensorhub">
+    <device>
       <name>PSH Accelerometer</name>
       <vendor>Intel Inc.</vendor>
       <version>1</version>
@@ -10,21 +10,23 @@
       <resolution unit="GRAVITY_EARTH">0.000488281</resolution>
       <power>0.006</power>
       <minDelay>10000</minDelay>
-    </sensor>
-  </accelerometer>
-  <light>
-    <sensor>
+      <scale axis_x="0.001" axis_y="0.001" axis_z="0.001" unit="GRAVITY_EARTH"></scale>
+    </device>
+  </sensor>
+  <sensor type="light" category="libsensorhub">
+    <device>
       <name>PSH Ambient Light sensor</name>
       <vendor>Intel Inc.</vendor>
       <version>1</version>
-      <maxRange>50000.0</maxRange>
-      <resolution>1.0</resolution>
+      <maxRange>6000.0</maxRange>
+      <resolution>0.1</resolution>
       <power>0.35</power>
       <minDelay>0</minDelay>
-    </sensor>
-  </light>
-  <proximity>
-    <sensor>
+      <scale axis_x="0.1"></scale>
+    </device>
+  </sensor>
+  <sensor type="proximity" category="libsensorhub">
+    <device>
       <name>PSH Proximity sensor</name>
       <vendor>Intel Inc.</vendor>
       <version>1</version>
@@ -32,10 +34,11 @@
       <resolution>5.0</resolution>
       <power>0.35</power>
       <minDelay>0</minDelay>
-    </sensor>
-  </proximity>
-  <compass>
-    <sensor>
+      <scale axis_x="5.0"></scale>
+    </device>
+  </sensor>
+  <sensor type="compass" category="libsensorhub">
+    <device>
       <name>PSH Magnetic field sensor</name>
       <vendor>Intel Inc.</vendor>
       <version>1</version>
@@ -43,10 +46,11 @@
       <resolution>0.5</resolution>
       <power>0.1</power>
       <minDelay>10000</minDelay>
-    </sensor>
-  </compass>
-  <gyroscope>
-    <sensor>
+      <scale axis_x="0.1" axis_y="0.1" axis_z="0.1"></scale>
+    </device>
+  </sensor>
+  <sensor type="gyroscope" category="libsensorhub">
+    <device>
       <name>PSH Gyroscope sensor</name>
       <vendor>Intel Inc.</vendor>
       <version>1</version>
@@ -54,10 +58,11 @@
       <resolution unit="M_PI">0.000555556</resolution>   <!-- 1/10/180 -->
       <power>6.1</power>
       <minDelay>10000</minDelay>
-    </sensor>
-  </gyroscope>
-  <gravity>
-    <sensor>
+      <scale axis_x="0.000555556" axis_y="0.000555556" axis_z="0.000555556" unit="M_PI"></scale> <!-- 1/10/180 -->
+    </device>
+  </sensor>
+  <sensor type="gravity" category="libsensorhub">
+    <device>
       <name>PSH Gravity sensor</name>
       <vendor>Intel Inc.</vendor>
       <version>1</version>
@@ -65,10 +70,12 @@
       <resolution unit="GRAVITY_EARTH">0.000488281</resolution>
       <power>0.006</power>
       <minDelay>10000</minDelay>
-    </sensor>
-  </gravity>
-  <linear_acceleration>
-    <sensor>
+      <mapper axis_x="X" axis_y="Y" axis_z="Z"></mapper>
+      <scale axis_x="0.0000000152587890625" axis_y="0.0000000152587890625" axis_z="0.0000000152587890625" unit="GRAVITY_EARTH"></scale> <!-- 1/1000/65536 -->
+    </device>
+  </sensor>
+  <sensor type="linear_acceleration" category="libsensorhub">
+    <device>
       <name>PSH Linear Acceleration sensor</name>
       <vendor>Intel Inc.</vendor>
       <version>1</version>
@@ -76,10 +83,11 @@
       <resolution unit="GRAVITY_EARTH">0.000488281</resolution>
       <power>0.006</power>
       <minDelay>10000</minDelay>
-    </sensor>
-  </linear_acceleration>
-  <rotation_vector>
-    <sensor>
+      <scale axis_x="0.001" axis_y="0.001" axis_z="0.001" unit="GRAVITY_EARTH"></scale>
+    </device>
+  </sensor>
+  <sensor type="rotation_vector" category="libsensorhub">
+    <device>
       <name>PSH Rotation Vector sensor</name>
       <vendor>Intel Inc.</vendor>
       <version>1</version>
@@ -87,10 +95,11 @@
       <resolution>0.0000000596046</resolution>   <!-- 1.0/(1<<24) -->
       <power>0.106</power>
       <minDelay>10000</minDelay>
-    </sensor>
-  </rotation_vector>
-  <orientation>
-    <sensor>
+      <scale axis_x="0.0000152587890625" axis_y="0.0000152587890625" axis_z="0.0000152587890625" axis_w="0.0000152587890625"></scale> <!-- 1/65536 -->
+    </device>
+  </sensor>
+  <sensor type="orientation" category="libsensorhub">
+    <device>
       <name>PSH Orientation sensor</name>
       <vendor>Intel Inc.</vendor>
       <version>1</version>
@@ -98,10 +107,11 @@
       <resolution>1.0</resolution>
       <power>0.106</power>
       <minDelay>10000</minDelay>
-    </sensor>
-  </orientation>
-  <gesture_flick>
-    <sensor>
+      <scale axis_x="0.0000152587890625" axis_y="0.0000152587890625" axis_z="0.0000152587890625"></scale> <!-- 1/65536 -->
+    </device>
+  </sensor>
+  <sensor type="gesture_flick" category="libsensorhub">
+    <device>
       <name>PSH Gesture Flick sensor</name>
       <vendor>Intel Inc.</vendor>
       <version>1</version>
@@ -109,10 +119,10 @@
       <resolution>1.0</resolution>
       <power>0.006</power>
       <minDelay>0</minDelay>
-    </sensor>
-  </gesture_flick>
-  <terminal>
-    <sensor>
+    </device>
+  </sensor>
+  <sensor type="terminal" category="libsensorhub">
+    <device>
       <name>PSH Terminal sensor</name>
       <vendor>Intel Inc.</vendor>
       <version>1</version>
@@ -120,17 +130,18 @@
       <resolution>1.0</resolution>
       <power>0.006</power>
       <minDelay>0</minDelay>
-    </sensor>
-  </terminal>
-  <proximity instance_number="2">
-    <sensor>
-      <name>PSH Proximity sensor SEC</name>
+    </device>
+  </sensor>
+  <sensor type="proximity" category="libsensorhub">
+    <device>
+      <name>PSH Proximity sensor Secondary</name>
       <vendor>Intel Inc.</vendor>
       <version>1</version>
-      <maxRange>5.0</maxRange>
-      <resolution>5.0</resolution>
+      <maxRange>1.0</maxRange>
+      <resolution>1.0</resolution>
       <power>0.35</power>
       <minDelay>0</minDelay>
-    </sensor>
-  </proximity>
+      <scale axis_x="1.0"></scale>
+    </device>
+  </sensor>
 </sensor_hal_config>
