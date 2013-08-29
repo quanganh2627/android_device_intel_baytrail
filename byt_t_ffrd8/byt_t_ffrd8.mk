@@ -1,4 +1,6 @@
+ifeq (,$(filter $(PRODUCT_NAME), byt_t_ffrd8_next))
 PRODUCT_NAME := byt_t_ffrd8
+endif
 
 # Include product path
 include $(LOCAL_PATH)/byt_t_ffrd8_path.mk

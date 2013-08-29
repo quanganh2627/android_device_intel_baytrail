@@ -7,6 +7,11 @@ TARGET_USE_DROIDBOOT := true
 
 include $(PLATFORM_PATH)/BoardConfig.mk
 
+# Disable OTA for kernel-next bring up
+ifneq (, $(filter %_next, $(TARGET_PRODUCT)))
+FLASHFILE_NO_OTA := true
+endif
+
 # TEMPORARY : Capsule is not enabled for now
 BOARD_HAS_CAPSULE := false
 
