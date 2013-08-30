@@ -12,6 +12,9 @@ USE_BL_SERIALNO := true
 
 include $(PLATFORM_PATH)/BoardConfig.mk
 
+# Disable sparse build until we move to B-2 and re-use ethernet PCI card
+TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
+
 # Temporary IFWI does not support signing
 TARGET_OS_SIGNING_METHOD := none
 
@@ -123,9 +126,6 @@ OVERRIDE_RS_DRIVER := libRSDriver_intel7.so
 BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE += droidboot.disablewipe=1
 #temporary workaround to speed up flashing with fastboot
 BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE += droidboot.disablefbootui=1
-
-# Capsule FW PATH
-CAPSULE_BINARY := vendor/intel/fw/PRIVATE/ifwi/baylake/byt_m/capsule.bin
 
 # usb stick installer support
 BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE +=  droidboot.use_installer=1 droidboot.installer_usb=/dev/block/sdb1 droidboot.installer_file=installer.cmd

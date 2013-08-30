@@ -68,14 +68,14 @@
       <CoolingDevId>2</CoolingDevId>
       <ThrottleDeviceMask>
           <Normal>0</Normal>
-          <Warning>1</Warning>
+          <Warning>0</Warning>
           <Alert>1</Alert>
           <Critical>0</Critical>
       </ThrottleDeviceMask>
       <DethrottleDeviceMask>
           <Normal>1</Normal>
           <Warning>0</Warning>
-          <Alert>1</Alert>
+          <Alert>0</Alert>
           <Critical>0</Critical>
       </DethrottleDeviceMask>
     </CoolingDeviceInfo>
@@ -133,14 +133,14 @@
       <CoolingDevId>2</CoolingDevId>
       <ThrottleDeviceMask>
           <Normal>0</Normal>
-          <Warning>1</Warning>
+          <Warning>0</Warning>
           <Alert>1</Alert>
           <Critical>0</Critical>
       </ThrottleDeviceMask>
       <DethrottleDeviceMask>
           <Normal>1</Normal>
           <Warning>0</Warning>
-          <Alert>1</Alert>
+          <Alert>0</Alert>
           <Critical>0</Critical>
       </DethrottleDeviceMask>
     </CoolingDeviceInfo>
@@ -163,7 +163,7 @@
       <CoolingDevId>4</CoolingDevId>
       <ThrottleDeviceMask>
           <Normal>0</Normal>
-          <Warning>1</Warning>
+          <Warning>0</Warning>
           <Alert>1</Alert>
           <Critical>1</Critical>
       </ThrottleDeviceMask>
@@ -178,7 +178,7 @@
       <CoolingDevId>5</CoolingDevId>
       <ThrottleDeviceMask>
           <Normal>0</Normal>
-          <Warning>1</Warning>
+          <Warning>0</Warning>
           <Alert>1</Alert>
           <Critical>1</Critical>
       </ThrottleDeviceMask>
@@ -198,14 +198,14 @@
       <CoolingDevId>2</CoolingDevId>
       <ThrottleDeviceMask>
           <Normal>0</Normal>
-          <Warning>1</Warning>
+          <Warning>0</Warning>
           <Alert>1</Alert>
           <Critical>0</Critical>
       </ThrottleDeviceMask>
       <DethrottleDeviceMask>
           <Normal>1</Normal>
           <Warning>0</Warning>
-          <Alert>1</Alert>
+          <Alert>0</Alert>
           <Critical>0</Critical>
       </DethrottleDeviceMask>
     </CoolingDeviceInfo>
@@ -248,14 +248,14 @@
       <CoolingDevId>2</CoolingDevId>
       <ThrottleDeviceMask>
           <Normal>0</Normal>
-          <Warning>1</Warning>
+          <Warning>0</Warning>
           <Alert>1</Alert>
           <Critical>0</Critical>
       </ThrottleDeviceMask>
       <DethrottleDeviceMask>
           <Normal>1</Normal>
           <Warning>0</Warning>
-          <Alert>1</Alert>
+          <Alert>0</Alert>
           <Critical>0</Critical>
       </DethrottleDeviceMask>
     </CoolingDeviceInfo>
