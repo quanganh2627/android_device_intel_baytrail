@@ -24,14 +24,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
         wifi_bcm_43241
 
-#hdmi audio HAL
-PRODUCT_PACKAGES += \
-       audio.hdmi.$(PRODUCT_DEVICE)
-
-#widi audio HAL
-PRODUCT_PACKAGES += \
-       audio.widi.$(PRODUCT_DEVICE)
-
 #remote submix audio
 PRODUCT_PACKAGES += \
        audio.r_submix.default
@@ -62,6 +54,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
          $(LOCAL_PATH)/thermal_sensor_config.xml:system/etc/thermal_sensor_config.xml \
          $(LOCAL_PATH)/thermal_throttle_config.xml:system/etc/thermal_throttle_config.xml
+
+# Kdump
+PRODUCT_PACKAGES_ENG += kdumpramdisk
 
 # Include base makefile
 include $(LOCAL_PATH)/device.mk

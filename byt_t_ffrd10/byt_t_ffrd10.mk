@@ -25,14 +25,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
         wifi_bcm_43241
 
-#hdmi audio HAL
-PRODUCT_PACKAGES += \
-       audio.hdmi.$(PRODUCT_DEVICE)
-
-#widi audio HAL
-PRODUCT_PACKAGES += \
-       audio.widi.$(PRODUCT_DEVICE)
-
 #remote submix audio
 PRODUCT_PACKAGES += \
        audio.r_submix.default

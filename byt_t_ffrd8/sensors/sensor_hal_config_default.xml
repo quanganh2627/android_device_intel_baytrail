@@ -56,17 +56,6 @@
       <minDelay>10000</minDelay>
     </sensor>
   </gyroscope>
-  <pressure>
-    <sensor>
-      <name>PSH Pressure sensor</name>
-      <vendor>Intel Inc.</vendor>
-      <version>1</version>
-      <maxRange>1200</maxRange>
-      <resolution>0.001</resolution>
-      <power>0.001</power>
-      <minDelay>50000</minDelay>
-    </sensor>
-  </pressure>
   <gravity>
     <sensor>
       <name>PSH Gravity sensor</name>
@@ -133,4 +122,15 @@
       <minDelay>0</minDelay>
     </sensor>
   </terminal>
+  <proximity instance_number="2">
+    <sensor>
+      <name>PSH Proximity sensor SEC</name>
+      <vendor>Intel Inc.</vendor>
+      <version>1</version>
+      <maxRange>5.0</maxRange>
+      <resolution>5.0</resolution>
+      <power>0.35</power>
+      <minDelay>0</minDelay>
+    </sensor>
+  </proximity>
 </sensor_hal_config>

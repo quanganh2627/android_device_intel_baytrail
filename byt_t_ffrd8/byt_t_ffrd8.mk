@@ -23,22 +23,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
         wifi_bcm_4334x
 
-#hdmi audio HAL
-PRODUCT_PACKAGES += \
-       audio.hdmi.$(PRODUCT_NAME)
-
 # Revert me to fg_config.bin instead of fg_config_$(TARGET_PRODUCT) once BZ119617 is resoved
 #Fuel gauge related
 PRODUCT_PACKAGES += \
-       fg_conf fg_config_$(TARGET_PRODUCT).bin
-
-# Revert me remove copying fg_config.bin once BZ119617 is resolved
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fg_config/fg_config.bin:system/etc/fg_config.bin
-
-#widi audio HAL
-PRODUCT_PACKAGES += \
-       audio.widi.$(PRODUCT_NAME)
+       fg_conf fg_config.bin
 
 #remote submix audio
 PRODUCT_PACKAGES += \
@@ -48,12 +36,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     librapid-ril-core \
     librapid-ril-util
-
-# PSI Recorder
-ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
-PRODUCT_PACKAGES += \
-    PSI_Recorder
-endif
 
 # Cell Broadcast
 PRODUCT_PACKAGES += \
