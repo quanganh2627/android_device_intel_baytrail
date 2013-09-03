@@ -233,6 +233,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/mmgr.conf:system/etc/telephony/mmgr.conf \
     $(LOCAL_PATH)/flashless.conf:system/etc/telephony/flashless.conf
 
+# Enable LTE telephony framework support
+PRODUCT_PROPERTY_OVERRIDES += persist.tel.lteOnGsmDevice=true
+
 # SIM Hot Swap Property
 PRODUCT_PROPERTY_OVERRIDES += persist.tel.hot_swap.support=true
 
