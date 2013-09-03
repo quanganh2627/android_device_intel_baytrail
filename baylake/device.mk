@@ -221,8 +221,6 @@ PRODUCT_PACKAGES += \
 
 # camera firmware
 PRODUCT_PACKAGES += \
-        shisp_2400.bin \
-        shisp_2400b0.bin \
         shisp_2400b0_cssv2.bin \
         shisp_2400b0_cssv2_isp_2_2.bin
 
