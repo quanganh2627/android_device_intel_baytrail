@@ -96,9 +96,11 @@ BOARD_KERNEL_CMDLINE += vga=current i915.modeset=1 drm.vblankoffdelay=1 \
 #
 # 1 - Reserved
 # 2 - AUO_B101UAN01
-# 3 - PANASONIC_VXX09F006A00 (Default)
+# 3 - PANASONIC_VXX09F006A00
 # 4 - AUO_B080XAT
 # 5 - JDI_LPM070W425B
+#
+# The default is eDP (i.e., none of the above).
 #
 # Uncomment the following to enable support for AUO Mango mipi panel
 # BOARD_KERNEL_CMDLINE += i915.mipi_panel_id=4

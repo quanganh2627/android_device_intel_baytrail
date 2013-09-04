@@ -107,6 +107,23 @@ USE_OPENGL_RENDERER := true
 BOARD_KERNEL_CMDLINE += vga=current i915.modeset=1 drm.vblankoffdelay=1 \
                         acpi_backlight=vendor i915.i915_rotation=1
 
+# Graphics - MIPI
+# List of panel ids supported:
+#
+# 1 - Reserved
+# 2 - AUO_B101UAN01
+# 3 - PANASONIC_VXX09F006A00
+# 4 - AUO_B080XAT
+# 5 - JDI_LPM070W425B
+#
+# The default is eDP (i.e., none of the above).
+#
+# Uncomment the following to enable support for AUO Mango mipi panel
+# BOARD_KERNEL_CMDLINE += i915.mipi_panel_id=4
+
+# Normal panel for FFRD8.  This is no longer the default.
+BOARD_KERNEL_CMDLINE += i915.mipi_panel_id=3
+
 BOARD_USES_LIBPSS := false
 
 INTEL_VA:=true
