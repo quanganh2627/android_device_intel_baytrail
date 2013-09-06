@@ -15,9 +15,9 @@
 -->
 
 <resources>
-    <dimen name="app_icon_size">60dp</dimen>
+    <dimen name="app_icon_size">72dp</dimen>
     <dimen name="app_icon_padding_top">0dp</dimen>
-    <dimen name="reveal_radius">60dp</dimen>
+    <dimen name="reveal_radius">72dp</dimen>
 
 <!-- Hotseat -->
     <dimen name="button_bar_height">82dp</dimen>
@@ -75,7 +75,7 @@
     <dimen name="folder_preview_size">70dp</dimen>
     <dimen name="folder_width_gap">2dp</dimen>
     <dimen name="folder_height_gap">2dp</dimen>
-    <dimen name="folder_padding">2dp</dimen>
+    <dimen name="folder_padding">4dp</dimen>
 
 <!-- Workspace padding -->
     <dimen name="workspace_left_padding_port">0dp</dimen>
@@ -97,8 +97,8 @@
 
 <!-- Workspace cell size -->
     <dimen name="workspace_cell_width_land">96dp</dimen>
-    <dimen name="workspace_cell_width_port">80dp</dimen>
-    <dimen name="workspace_cell_height_land">80dp</dimen>
+    <dimen name="workspace_cell_width_port">96dp</dimen>
+    <dimen name="workspace_cell_height_land">96dp</dimen>
     <dimen name="workspace_cell_height_port">96dp</dimen>
     <dimen name="workspace_width_gap_land">50dp</dimen>
     <dimen name="workspace_width_gap_port">0dp</dimen>

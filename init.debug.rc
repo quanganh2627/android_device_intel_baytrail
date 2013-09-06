@@ -4,6 +4,7 @@ on init
     export GCOV_PREFIX /data
     export GCOV_PREFIX_STRIP 1
     write /proc/sys/kernel/kptr_restrict 0
+    insmod /lib/modules/lm_dump.ko
 
 on early-boot
     chown system log /logs
@@ -44,6 +45,28 @@ on post-fs-data
 
     #you must enable next line when you don`t use crashlogd
     #write /proc/emmc_ipanic_console 1
+
+on ramconsole
+    setprop ro.debuggable 1
+    mount_all /fstab.ramconsole.${ro.hardware}
+    mount debugfs none /sys/kernel/debug
+
+    start watchdogd
+    # REVERTME - Temp workaround for Baylake bringup.  See BZ 91648.
+    # To workaround inability to resume after sleep, disable the access that
+    # triggers the problem.
+    chmod 0000 /sys/power/state
+    insmod /lib/modules/rmi4.ko boot_mode=1
+
+    # Invoke fuel gauging helper binary to restore config data
+    symlink /dev/max170xx /dev/fg
+    chmod 0775 /dev/fg
+    wait /system/bin/fg_conf
+    start fg_conf
+
+    # install fw dump module
+    insmod /lib/modules/lm_dump.ko
+    start crashdump
 
 on charger
     # basic networking for "adb root"
@@ -109,6 +132,10 @@ on property:persist.service.memmonitor.on=0
 # crash and log services
 service crashlogd /system/bin/crashlogd
     class late_start
+
+service crashdump /system/bin/crashlogd -ramdump
+    disabled
+    oneshot
 
 service ap_logfs /system/bin/logcat -b system -b events -b main -b radio -n 20 -r 5000 -v threadtime -f /logs/aplog
     class main

@@ -12,6 +12,9 @@ endif
 # Add VISA driver
 -include $(TOP)/vendor/intel/tools/PRIVATE/debug_internal_tools/visadk/driver/src/AndroidVISA.mk
 
+# Add LM driver
+-include $(TOP)/vendor/intel/tools/PRIVATE/debug_internal_tools/lmdk/AndroidLMDK.mk
+
 # wifi
 ifeq ($(strip $(BOARD_HAVE_WIFI)),true)
 include $(DEVICE_PATH)/wifi/WifiRules.mk
