@@ -42,6 +42,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
        audio.r_submix.default
 
+# bcu hal
+PRODUCT_PACKAGES += \
+    bcu.default
+
 # rapid ril
 PRODUCT_PACKAGES += \
     librapid-ril-core \
