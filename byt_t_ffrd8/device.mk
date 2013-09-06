@@ -195,7 +195,8 @@ ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
 
     PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/activate_trace_modem:system/bin/activate_trace_modem \
-        $(LOCAL_PATH)/configure_trace_modem:system/bin/configure_trace_modem
+        $(LOCAL_PATH)/configure_trace_modem:system/bin/configure_trace_modem \
+        $(LOCAL_PATH)/amtl_configuration.xml:system/etc/amtl_configuration.xml
 endif
 
 # Modem
