@@ -11,7 +11,7 @@
 # Superclass
 $(call inherit-product, build/target/product/full_base_no_telephony.mk)
 # Include Dalvik Heap Size Configuration
-$(call inherit-product, device/intel/common/dalvik/phone-xhdpi-1024-dalvik-heap.mk)
+$(call inherit-product, device/intel/common/dalvik/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 
 # Overrides
 PRODUCT_DEVICE := baylake
@@ -221,8 +221,6 @@ PRODUCT_PACKAGES += \
 
 # camera firmware
 PRODUCT_PACKAGES += \
-        shisp_2400.bin \
-        shisp_2400b0.bin \
         shisp_2400b0_cssv2.bin \
         shisp_2400b0_cssv2_isp_2_2.bin
 

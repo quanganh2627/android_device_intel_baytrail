@@ -45,6 +45,8 @@ endif
 # enable libsensorhub
 ENABLE_SENSOR_HUB := true
 
+# enable scalable sensor HAL
+ENABLE_SCALABLE_SENSOR_HAL := true
 
 # Software MPEG4 encoder
 SW_MPEG4_ENCODER := true

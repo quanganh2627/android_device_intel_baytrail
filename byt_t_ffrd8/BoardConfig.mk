@@ -7,6 +7,11 @@ TARGET_USE_DROIDBOOT := true
 
 include $(PLATFORM_PATH)/BoardConfig.mk
 
+# Disable OTA for kernel-next bring up
+ifneq (, $(filter %_next, $(TARGET_PRODUCT)))
+FLASHFILE_NO_OTA := true
+endif
+
 # TEMPORARY : Capsule is not enabled for now
 BOARD_HAS_CAPSULE := false
 
@@ -39,8 +44,12 @@ ADDITIONAL_BUILD_PROPERTIES += ro.ril.status.polling.enable=0
 endif
 
 # Connectivity
-BOARD_HAVE_MODEM := false
+ifeq (, $(filter %_next, $(TARGET_PRODUCT)))
 BOARD_HAVE_WIFI := true
+else
+# Disable WIFI for kernel_next bringup
+BOARD_HAVE_WIFI := false
+endif
 INTEL_WIDI := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)

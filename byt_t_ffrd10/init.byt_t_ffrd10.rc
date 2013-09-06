@@ -233,7 +233,9 @@ service surfaceflinger /system/bin/surfaceflinger
 
 service sensorhubd /system/bin/sensorhubd
     class main
+    user system
     group system
+    socket sensorhubd stream 600 system system
     oneshot
 
 # for eth0
@@ -275,10 +277,6 @@ on charger
     mount_all /fstab.charger.${ro.hardware}
 
     start watchdogd
-    # REVERTME - Temp workaround for Baylake bringup.  See BZ 91648.
-    # To workaround inability to resume after sleep, disable the access that
-    # triggers the problem.
-    chmod 0000 /sys/power/state
     insmod /lib/modules/rmi4.ko boot_mode=1
 
     # Invoke fuel gauging helper binary to restore config data

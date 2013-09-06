@@ -76,6 +76,8 @@ PRODUCT_PACKAGES += \
     libOMXVideoDecoderMPEG4 \
     libOMXVideoDecoderWMV \
     libOMXVideoDecoderVP8 \
+    libOMXVideoEncoderH263 \
+    libOMXVideoEncoderMPEG4 \
     libOMXVideoEncoderAVC
 
 # libmix
@@ -195,8 +197,7 @@ ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
 
     PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/activate_trace_modem:system/bin/activate_trace_modem \
-        $(LOCAL_PATH)/configure_trace_modem:system/bin/configure_trace_modem \
-        $(LOCAL_PATH)/amtl_configuration.xml:system/etc/amtl_configuration.xml
+        $(LOCAL_PATH)/configure_trace_modem:system/bin/configure_trace_modem
 endif
 
 # Modem
@@ -287,8 +288,6 @@ PRODUCT_PACKAGES += \
 
 # camera firmware
 PRODUCT_PACKAGES += \
-        shisp_2400.bin \
-        shisp_2400b0.bin \
         shisp_2400b0_cssv2.bin \
         shisp_2400b0_cssv2_isp_2_2.bin
 

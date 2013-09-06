@@ -21,3 +21,7 @@
 
 add_lunch_combo byt_t_ffrd8-eng
 add_lunch_combo byt_t_ffrd8-userdebug
+add_lunch_combo byt_t_ffrd8_next-eng
+add_lunch_combo byt_t_ffrd8_next-userdebug
+
+

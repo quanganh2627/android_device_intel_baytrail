@@ -243,7 +243,9 @@ service surfaceflinger /system/bin/surfaceflinger
 
 service sensorhubd /system/bin/sensorhubd
     class main
+    user system
     group system
+    socket sensorhubd stream 600 system system
     oneshot
 
 service serialno /sbin/serialno /dev/block/sda ro.serialno
