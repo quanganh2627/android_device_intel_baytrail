@@ -13,6 +13,9 @@ $(call inherit-product, build/target/product/full_base_no_telephony.mk)
 # Include Dalvik Heap Size Configuration
 $(call inherit-product, $(COMMON_PATH)/dalvik/tablet-xhdpi-2048-dalvik-heap.mk)
 
+# tools for Iago installer
+$(call inherit-product, bootable/iago/iago.mk)
+
 # Overrides
 PRODUCT_DEVICE := byt_m_crb
 PRODUCT_MODEL := byt_m_crb
@@ -307,6 +310,9 @@ PRODUCT_PACKAGES += \
 
 # Intel Corp Email certificate
 -include vendor/intel/PRIVATE/cert/IntelCorpEmailCert.mk
+
+# efi boot manager
+PRODUCT_PACKAGES += efibootmgr
 
 # Enable ALAC
 PRODUCT_PACKAGES += \

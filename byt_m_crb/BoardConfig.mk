@@ -5,6 +5,18 @@ REF_PRODUCT_NAME ?= $(TARGET_PRODUCT)
 
 TARGET_USE_DROIDBOOT := true
 
+# For use with iago/gummiboot
+TARGET_USE_EFI := true
+TARGET_USE_GUMMIBOOT := true
+ifeq ($(TARGET_USE_EFI),true)
+ifneq ($(TARGET_NO_RECOVERY),true)
+INSTALLED_RECOVERYIMAGE_TARGET := $(PRODUCT_OUT)/recovery.img
+else
+INSTALLED_RECOVERYIMAGE_TARGET :=
+endif
+endif
+
+
 STORAGE_CFLAGS := -DSTORAGE_BASE_PATH=\"/dev/block/sda\" -DSTORAGE_PARTITION_FORMAT=\"%s%d\"
 
 # serialno
@@ -151,3 +163,51 @@ endif
 
 # Define Platform Sensor Hub firmware name
 SENSORHUB_FW_NAME := psh_byt_m_crb.bin
+# Including OTC iago/gummiboot installer as new method of
+# installation with EFI BIOS.
+ifeq ($(TARGET_KERNEL_ARCH),)
+TARGET_KERNEL_ARCH := i386
+endif
+# Allow creation of iago live USB/CD images
+TARGET_USE_IAGO := true
+TARGET_IAGO_PLUGINS := \
+        bootable/iago/plugins/gummiboot \
+        bootable/iago/plugins/syslinux \
+
+TARGET_IAGO_INI := $(DEVICE_PATH)/iago.ini
+TARGET_USE_MOKMANAGER := true
+
+TARGET_EFI_APPS := \
+        $(PRODUCT_OUT)/efi/gummiboot.efi \
+        $(PRODUCT_OUT)/efi/shim.efi \
+
+ifneq ($(TARGET_USE_MOKMANAGER),false)
+TARGET_EFI_APPS += $(PRODUCT_OUT)/efi/MokManager.efi
+endif
+
+INSTALLED_EFI_BINARY_TARGET += $(TARGET_EFI_APPS)
+
+ifeq ($(TARGET_BUILD_VARIANT),user)
+TARGET_IAGO_INI += $(DEVICE_PATH)/iago-production.ini
+endif
+
+ifeq ($(TARGET_STAGE_DROIDBOOT),true)
+TARGET_IAGO_PLUGINS += bootable/iago/plugins/droidboot
+endif
+
+TARGET_NO_BOOTLOADER := false
+
+########################################################################
+# PORTED FROM OTC FOR SIGNED BOOTIMAGE, THIS WILL BE OF INTEREST TO
+# TEAM WORKING ON BOOTLOADER FOR BYT/CHT.
+# Test key to sign boot image
+#TARGET_BOOT_IMAGE_KEY := vendor/intel/support/testkeys/bios/DB.key
+
+# Command run by MKBOOTIMG to sign target's boot image. It is expected to:
+# () Take unsigned image from STDIN
+# () Output signature's content ONLY to STDOUT
+#TARGET_BOOT_IMAGE_SIGN_CMD := openssl dgst -sha256 -sign $(TARGET_BOOT_IMAGE_KEY)
+
+#BOARD_MKBOOTIMG_ARGS := --signsize 256  --signexec "$(TARGET_BOOT_IMAGE_SIGN_CMD)"
+########################################################################
+
