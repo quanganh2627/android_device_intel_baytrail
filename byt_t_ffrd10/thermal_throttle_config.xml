@@ -163,7 +163,7 @@
       <CoolingDevId>4</CoolingDevId>
       <ThrottleDeviceMask>
           <Normal>0</Normal>
-          <Warning>0</Warning>
+          <Warning>1</Warning>
           <Alert>1</Alert>
           <Critical>1</Critical>
       </ThrottleDeviceMask>
@@ -178,7 +178,7 @@
       <CoolingDevId>5</CoolingDevId>
       <ThrottleDeviceMask>
           <Normal>0</Normal>
-          <Warning>0</Warning>
+          <Warning>1</Warning>
           <Alert>1</Alert>
           <Critical>1</Critical>
       </ThrottleDeviceMask>
