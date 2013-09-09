@@ -355,8 +355,8 @@ PRODUCT_COPY_FILES += \
 # Board initrc file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.$(PRODUCT_DEVICE).rc:root/init.$(PRODUCT_DEVICE).rc \
-    $(LOCAL_PATH)/init.avc.rc:root/init.avc.rc
-#    $(LOCAL_PATH)/init.diag.rc:root/init.diag.rc \
+    $(LOCAL_PATH)/init.avc.rc:root/init.avc.rc \
+    $(LOCAL_PATH)/init.diag.rc:root/init.diag.rc
 #    $(LOCAL_PATH)/init.wireless.rc:root/init.wireless.rc \
 #    $(LOCAL_PATH)/init.modem.rc:root/init.modem.rc \
 
