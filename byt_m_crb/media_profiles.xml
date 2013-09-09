@@ -107,7 +107,7 @@
 
         <EncoderProfile quality="high" fileFormat="3gp" duration="60">
             <Video codec="h264"
-                   bitRate="8000000"
+                   bitRate="15000000"
                    width="1280"
                    height="720"
                    frameRate="30" />
@@ -147,7 +147,7 @@
 
         <EncoderProfile quality="720p" fileFormat="3gp" duration="60">
             <Video codec="h264"
-                   bitRate="8000000"
+                   bitRate="15000000"
                    width="1280"
                    height="720"
                    frameRate="30" />
@@ -173,7 +173,7 @@
 
         <EncoderProfile quality="timelapsehigh" fileFormat="3gp" duration="30">
             <Video codec="h264"
-                   bitRate="8000000"
+                   bitRate="15000000"
                    width="1280"
                    height="720"
                    frameRate="30" />
@@ -212,7 +212,7 @@
 
         <EncoderProfile quality="timelapse720p" fileFormat="3gp" duration="30">
             <Video codec="h264"
-                   bitRate="8000000"
+                   bitRate="15000000"
                    width="1280"
                    height="720"
                    frameRate="30" />
