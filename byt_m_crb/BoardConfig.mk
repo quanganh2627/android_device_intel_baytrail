@@ -134,7 +134,7 @@ BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE +=  droidboot.use_installer=1 droidboot.ins
 ADDITIONAL_BUILD_PROPERTIES += \
 				ro.camera.number=1 \
 				ro.camera.0.devname=/dev/video0 \
-				ro.camera.0.facing=back \
+				ro.camera.0.facing=front \
 				ro.camera.0.orientation=0
 
 #Set ro.adb.secure to 0 for user build
