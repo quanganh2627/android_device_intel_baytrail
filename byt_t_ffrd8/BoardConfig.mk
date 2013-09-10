@@ -44,12 +44,7 @@ ADDITIONAL_BUILD_PROPERTIES += ro.ril.status.polling.enable=0
 endif
 
 # Connectivity
-ifeq (, $(filter %_next, $(TARGET_PRODUCT)))
 BOARD_HAVE_WIFI := true
-else
-# Disable WIFI for kernel_next bringup
-BOARD_HAVE_WIFI := false
-endif
 INTEL_WIDI := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)

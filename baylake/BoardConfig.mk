@@ -16,18 +16,14 @@ TARGET_OS_SIGNING_METHOD := none
 BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 
 # Connectivity
-ifeq (, $(findstring next, $(TARGET_PRODUCT)))
 BOARD_HAVE_WIFI := true
 INTEL_WIDI := true
 INTEL_WIDI_BAYTRAIL := true
 BOARD_HAVE_BLUETOOTH := true
+
+ifeq (, $(findstring next, $(TARGET_PRODUCT)))
 FLASHFILE_NO_OTA := false
 else
-#disable WIFI/WIDI/BT for 3.9 bringup
-BOARD_HAVE_WIFI := false
-INTEL_WIDI := false
-INTEL_WIDI_BAYTRAIL := false
-BOARD_HAVE_BLUETOOTH := false
 FLASHFILE_NO_OTA := true
 endif
 
