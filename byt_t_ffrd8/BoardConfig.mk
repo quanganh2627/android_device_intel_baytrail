@@ -12,9 +12,6 @@ ifneq (, $(filter %_next, $(TARGET_PRODUCT)))
 FLASHFILE_NO_OTA := true
 endif
 
-# TEMPORARY : Capsule is not enabled for now
-BOARD_HAS_CAPSULE := false
-
 # Temporary IFWI does not support signing
 TARGET_OS_SIGNING_METHOD := none
 
