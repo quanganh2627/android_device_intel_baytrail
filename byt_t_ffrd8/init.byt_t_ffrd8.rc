@@ -257,6 +257,3 @@ on charger
     chmod 0775 /dev/fg
     wait /system/bin/fg_conf
     start fg_conf
-
-on property:sys.boot_completed=1
-    write /sys/firmware/osnib/clean_osnib 1

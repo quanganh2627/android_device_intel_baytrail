@@ -288,6 +288,3 @@ on charger
     symlink /dev/max170xx /dev/fg
     chmod 0775 /dev/fg
     start fg_conf
-
-on property:sys.boot_completed=1
-    write /sys/firmware/osnib/clean_osnib 1
