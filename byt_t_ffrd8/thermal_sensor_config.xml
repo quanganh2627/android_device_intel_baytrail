@@ -174,4 +174,65 @@
        </Sensor>
   </Zone>
 
+  <Zone>
+    <ZoneID>5</ZoneID>
+    <ZoneName>Modem</ZoneName>
+    <SupportsUEvent>0</SupportsUEvent>
+    <SensorLogic>0</SensorLogic>
+    <DebounceInterval>2000</DebounceInterval>
+    <PollDelay>
+      <DelayTOff>30000</DelayTOff>
+      <DelayNormal>30000</DelayNormal>
+      <DelayWarning>30000</DelayWarning>
+      <DelayAlert>30000</DelayAlert>
+      <DelayCritical>30000</DelayCritical>
+    </PollDelay>
+    <Sensor>
+      <!--Modem Sensor IDs are enumerated from OemtelephonyConstants class
+      during runtime-->
+      <SensorID>6</SensorID>
+      <SensorName>Modem_PCB</SensorName>
+      <SensorPath>auto</SensorPath>
+      <InputTemp>invalid</InputTemp>
+      <HighTemp>invalid</HighTemp>
+      <LowTemp>invalid</LowTemp>
+      <Threshold>
+        <ThresholdTOff>0</ThresholdTOff>
+        <ThresholdNormal>80000</ThresholdNormal>
+        <ThresholdWarning>90000</ThresholdWarning>
+        <ThresholdAlert>100000</ThresholdAlert>
+        <ThresholdCritical>120000</ThresholdCritical>
+      </Threshold>
+    </Sensor>
+    <Sensor>
+      <SensorID>7</SensorID>
+      <SensorName>Modem_RF</SensorName>
+      <SensorPath>auto</SensorPath>
+      <InputTemp>invalid</InputTemp>
+      <HighTemp>invalid</HighTemp>
+      <LowTemp>invalid</LowTemp>
+      <Threshold>
+        <ThresholdTOff>0</ThresholdTOff>
+        <ThresholdNormal>80000</ThresholdNormal>
+        <ThresholdWarning>90000</ThresholdWarning>
+        <ThresholdAlert>100000</ThresholdAlert>
+        <ThresholdCritical>120000</ThresholdCritical>
+      </Threshold>
+    </Sensor>
+    <Sensor>
+      <SensorID>8</SensorID>
+      <SensorName>Modem_BB</SensorName>
+      <SensorPath>auto</SensorPath>
+      <InputTemp>invalid</InputTemp>
+      <HighTemp>invalid</HighTemp>
+      <LowTemp>invalid</LowTemp>
+      <Threshold>
+        <ThresholdTOff>0</ThresholdTOff>
+        <ThresholdNormal>80000</ThresholdNormal>
+        <ThresholdWarning>90000</ThresholdWarning>
+        <ThresholdAlert>100000</ThresholdAlert>
+        <ThresholdCritical>120000</ThresholdCritical>
+      </Threshold>
+    </Sensor>
+  </Zone>
  </thermalconfig>

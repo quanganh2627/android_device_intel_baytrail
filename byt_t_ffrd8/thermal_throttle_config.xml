@@ -22,7 +22,12 @@
     <CDeviceClassPath>android.thermal.SoCControl</CDeviceClassPath>
     <CDeviceThrottlePath>auto</CDeviceThrottlePath>
   </ContributingDeviceInfo>
-
+  <ContributingDeviceInfo>
+      <CDeviceName>Modem</CDeviceName>
+      <CDeviceID>4</CDeviceID>
+      <CDeviceClassPath>android.thermal.ModemCooling</CDeviceClassPath>
+      <CDeviceThrottlePath>none</CDeviceThrottlePath>
+  </ContributingDeviceInfo>
   <!--Map the cooling devices with specfic zones for throttling-->
 
   <ZoneThrottleInfo>
@@ -216,6 +221,41 @@
           <Warning>1</Warning>
           <Alert>0</Alert>
           <Critical>0</Critical>
+      </DethrottleDeviceMask>
+    </CoolingDeviceInfo>
+  </ZoneThrottleInfo>
+
+  <ZoneThrottleInfo>
+    <ZoneID>5</ZoneID>
+    <CriticalShutDown>1</CriticalShutDown>
+    <CoolingDeviceInfo>
+      <CoolingDevId>1</CoolingDevId>
+      <ThrottleDeviceMask>
+        <Normal>0</Normal>
+        <Warning>1</Warning>
+        <Alert>1</Alert>
+        <Critical>0</Critical>
+      </ThrottleDeviceMask>
+      <DethrottleDeviceMask>
+        <Normal>1</Normal>
+        <Warning>1</Warning>
+        <Alert>1</Alert>
+        <Critical>0</Critical>
+      </DethrottleDeviceMask>
+    </CoolingDeviceInfo>
+    <CoolingDeviceInfo>
+      <CoolingDevId>2</CoolingDevId>
+      <ThrottleDeviceMask>
+        <Normal>0</Normal>
+        <Warning>1</Warning>
+        <Alert>1</Alert>
+        <Critical>0</Critical>
+      </ThrottleDeviceMask>
+      <DethrottleDeviceMask>
+        <Normal>1</Normal>
+        <Warning>1</Warning>
+        <Alert>1</Alert>
+        <Critical>0</Critical>
       </DethrottleDeviceMask>
     </CoolingDeviceInfo>
   </ZoneThrottleInfo>
