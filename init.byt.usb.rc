@@ -106,3 +106,15 @@ on property:sys.usb.config=rndis,acm,adb
     write /sys/class/android_usb/android0/enable 1
     start adbd
     setprop sys.usb.state ${sys.usb.config}
+
+# USB vBus status changed to normal
+on property:sys.usb.vbus=normal
+   write /sys/class/usb_otg/otg0/a_bus_drop 0
+
+# USB vBus status changed to warning
+on property:sys.usb.vbus=warning
+   write /sys/class/usb_otg/otg0/a_bus_drop 0
+
+# USB vBus status changed to critical
+on property:sys.usb.vbus=critical
+   write /sys/class/usb_otg/otg0/a_bus_drop 1
