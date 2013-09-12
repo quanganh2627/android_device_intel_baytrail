@@ -24,15 +24,11 @@ BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 # Connectivity
 ifeq (, $(filter %_next, $(TARGET_PRODUCT)))
 BOARD_HAVE_WIFI := true
-INTEL_WIDI := true
-INTEL_WIDI_BAYTRAIL := true
 BOARD_HAVE_BLUETOOTH := true
 FLASHFILE_NO_OTA := false
 else
 #disable WIFI/WIDI/BT for kernel_next bringup
 BOARD_HAVE_WIFI := false
-INTEL_WIDI := false
-INTEL_WIDI_BAYTRAIL := false
 BOARD_HAVE_BLUETOOTH := false
 FLASHFILE_NO_OTA := true
 endif
@@ -46,6 +42,10 @@ COMMON_GLOBAL_CFLAGS += -DGFX_BUF_EXT
 TARGET_HAS_MULTIPLE_DISPLAY := true
 
 USE_INTEL_IPP := true
+
+# Widi
+INTEL_WIDI := true
+INTEL_WIDI_BAYTRAIL := true
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
