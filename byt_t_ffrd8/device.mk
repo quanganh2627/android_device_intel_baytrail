@@ -219,7 +219,7 @@ PRODUCT_PACKAGES += \
 
 # MMGR CWS Client
 PRODUCT_PACKAGES += \
-    CWS_MMGR
+    CWS_SERVICE_MANAGER
 
 # TelephonyEventsNotifier
 ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
