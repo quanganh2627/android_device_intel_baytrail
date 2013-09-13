@@ -68,6 +68,22 @@ PRODUCT_PACKAGES += \
     libgabi++-mfx \
     libstlport-mfx
 
+#enable Widevine drm
+PRODUCT_PROPERTY_OVERRIDES += drm.service.enabled=true
+
+PRODUCT_PACKAGES += com.google.widevine.software.drm.xml \
+    com.google.widevine.software.drm \
+    libdrmwvmplugin \
+    libwvm \
+    libdrmdecrypt \
+    libWVStreamControlAPI_L1 \
+    libwvdrm_L1
+
+ifeq ($(TARGET_BUILD_VARIANT),eng)
+ PRODUCT_PACKAGES += \
+     WidevineSamplePlayer
+endif
+
 # omx components
 PRODUCT_PACKAGES += \
     libwrs_omxil_core_pvwrapped \
@@ -78,7 +94,8 @@ PRODUCT_PACKAGES += \
     libOMXVideoDecoderVP8 \
     libOMXVideoEncoderH263 \
     libOMXVideoEncoderMPEG4 \
-    libOMXVideoEncoderAVC
+    libOMXVideoEncoderAVC \
+    libOMXVideoDecoderAVCSecure
 
 # libmix
 PRODUCT_PACKAGES += \
