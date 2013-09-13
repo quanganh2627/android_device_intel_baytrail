@@ -44,12 +44,7 @@ ADDITIONAL_BUILD_PROPERTIES += ro.ril.status.polling.enable=0
 endif
 
 # Connectivity
-ifeq (, $(filter %_next, $(TARGET_PRODUCT)))
 BOARD_HAVE_WIFI := true
-else
-# Disable WIFI for kernel_next bringup
-BOARD_HAVE_WIFI := false
-endif
 INTEL_WIDI := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)
@@ -67,7 +62,7 @@ INTEL_WIDI_BAYTRAIL := true
 BOARD_USES_ALSA_AUDIO := true
 BOARD_USES_TINY_ALSA_AUDIO := true
 BOARD_USES_AUDIO_HAL_CONFIGURABLE := true
-BOARD_USE_VIBRATOR_ALSA := true
+BOARD_USE_VIBRATOR := true
 BUILD_WITH_ALSA_UTILS := true
 BOARD_USES_GENERIC_AUDIO := false
 
@@ -106,6 +101,23 @@ BOARD_GPU_DRIVERS := i965
 USE_OPENGL_RENDERER := true
 BOARD_KERNEL_CMDLINE += vga=current i915.modeset=1 drm.vblankoffdelay=1 \
                         acpi_backlight=vendor i915.i915_rotation=1
+
+# Graphics - MIPI
+# List of panel ids supported:
+#
+# 1 - Reserved
+# 2 - AUO_B101UAN01
+# 3 - PANASONIC_VXX09F006A00
+# 4 - AUO_B080XAT
+# 5 - JDI_LPM070W425B
+#
+# The default is eDP (i.e., none of the above).
+#
+# Uncomment the following to enable support for AUO Mango mipi panel
+# BOARD_KERNEL_CMDLINE += i915.mipi_panel_id=4
+
+# Normal panel for FFRD8.  This is no longer the default.
+BOARD_KERNEL_CMDLINE += i915.mipi_panel_id=3
 
 BOARD_USES_LIBPSS := false
 

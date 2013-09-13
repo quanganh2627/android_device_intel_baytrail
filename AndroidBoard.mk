@@ -18,7 +18,7 @@ include $(DEVICE_PATH)/wifi/WifiRules.mk
 endif
 
 .PHONY: images firmware $(TARGET_PRODUCT)
-firmware: ifwi_firmware
+
 $(TARGET_SYSTEM): droid
 # Legacy target - same as 'make images'
 $(TARGET_PRODUCT): images

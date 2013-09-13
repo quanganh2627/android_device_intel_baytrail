@@ -3,7 +3,6 @@ REF_PRODUCT_NAME := baylake
 
 KERNEL_SRC_DIR := linux/kernel-next
 
-DROIDBOOT_NO_GUI := true
 include $(LOCAL_PATH)/baylakepath.mk
 
 # Replace platform USB with "next" version - first found has precedence

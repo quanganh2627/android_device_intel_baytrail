@@ -24,8 +24,11 @@ PRODUCT_COPY_FILES += \
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
-    $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.xml
+ifeq (, $(filter %_next, $(TARGET_PRODUCT)))
+PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.direct.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml
+endif
 
 PRODUCT_PACKAGES += \
         wifi_bcm_4334x
@@ -51,7 +54,8 @@ PRODUCT_PACKAGES += \
 # parameter-framework files
 PRODUCT_PACKAGES += \
         libimc-subsystem \
-        parameter-framework.audio.byt_t_ffrd8
+        parameter-framework.audio.byt_t_ffrd8 \
+        parameter-framework.vibrator.baytrail
 
 # MAMGR (Modem Audio Manager)
 PRODUCT_PACKAGES += \
@@ -70,6 +74,9 @@ PRODUCT_COPY_FILES += \
 # specific management of audio_effects.conf
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf
+
+# Add component-testing applications
+PRODUCT_PACKAGES_ENG += mcd-test
 
 # Include base makefile
 include $(LOCAL_PATH)/device.mk

@@ -16,18 +16,14 @@ TARGET_OS_SIGNING_METHOD := none
 BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 
 # Connectivity
-ifeq (, $(findstring next, $(TARGET_PRODUCT)))
 BOARD_HAVE_WIFI := true
 INTEL_WIDI := true
 INTEL_WIDI_BAYTRAIL := true
 BOARD_HAVE_BLUETOOTH := true
+
+ifeq (, $(findstring next, $(TARGET_PRODUCT)))
 FLASHFILE_NO_OTA := false
 else
-#disable WIFI/WIDI/BT for 3.9 bringup
-BOARD_HAVE_WIFI := false
-INTEL_WIDI := false
-INTEL_WIDI_BAYTRAIL := false
-BOARD_HAVE_BLUETOOTH := false
 FLASHFILE_NO_OTA := true
 endif
 
@@ -48,7 +44,7 @@ USE_INTEL_IPP := true
 BOARD_USES_ALSA_AUDIO := true
 BOARD_USES_TINY_ALSA_AUDIO := true
 BOARD_USES_AUDIO_HAL_CONFIGURABLE := true
-BOARD_USE_VIBRATOR_ALSA := true
+BOARD_USE_VIBRATOR := true
 BUILD_WITH_ALSA_UTILS := true
 BOARD_USES_GENERIC_AUDIO := false
 
@@ -96,9 +92,11 @@ BOARD_KERNEL_CMDLINE += vga=current i915.modeset=1 drm.vblankoffdelay=1 \
 #
 # 1 - Reserved
 # 2 - AUO_B101UAN01
-# 3 - PANASONIC_VXX09F006A00 (Default)
+# 3 - PANASONIC_VXX09F006A00
 # 4 - AUO_B080XAT
 # 5 - JDI_LPM070W425B
+#
+# The default is eDP (i.e., none of the above).
 #
 # Uncomment the following to enable support for AUO Mango mipi panel
 # BOARD_KERNEL_CMDLINE += i915.mipi_panel_id=4
