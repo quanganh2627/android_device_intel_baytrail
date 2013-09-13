@@ -1,5 +1,6 @@
 on init
     mkdir /logs
+    mkdir /pstore 0750 root log
     # Export gcov variables to enable code coverage on mobile
     export GCOV_PREFIX /data
     export GCOV_PREFIX_STRIP 1
@@ -18,6 +19,9 @@ on early-boot
     # Let Renderscipt run on Baytrail CPU only.
     # It should be reverted when GEN GPGPU driver is ready.
     setprop debug.rs.default-CPU-driver 1
+
+on boot
+    mount pstore none /pstore
 
 on post-fs
     mkdir /data/tombstones 0755 system system
