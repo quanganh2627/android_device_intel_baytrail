@@ -63,10 +63,10 @@
     <dimen name="cell_layout_left_padding_land">4dp</dimen>
     <dimen name="cell_layout_right_padding_port">4dp</dimen>
     <dimen name="cell_layout_right_padding_land">4dp</dimen>
-    <dimen name="cell_layout_top_padding_port">12dp</dimen>
-    <dimen name="cell_layout_top_padding_land">12dp</dimen>
-    <dimen name="cell_layout_bottom_padding_port">8dp</dimen>
-    <dimen name="cell_layout_bottom_padding_land">8dp</dimen>
+    <dimen name="cell_layout_top_padding_port">106dp</dimen>
+    <dimen name="cell_layout_top_padding_land">106dp</dimen>
+    <dimen name="cell_layout_bottom_padding_port">106dp</dimen>
+    <dimen name="cell_layout_bottom_padding_land">106dp</dimen>
 
 <!-- Folders -->
     <!-- The size of the image which sits behind the preview of the folder contents -->
@@ -78,9 +78,9 @@
     <dimen name="folder_padding">4dp</dimen>
 
 <!-- Workspace padding -->
-    <dimen name="workspace_left_padding_port">0dp</dimen>
+    <dimen name="workspace_left_padding_port">40dp</dimen>
     <dimen name="workspace_left_padding_land">0dp</dimen>
-    <dimen name="workspace_right_padding_port">0dp</dimen>
+    <dimen name="workspace_right_padding_port">40dp</dimen>
     <dimen name="workspace_right_padding_land">0dp</dimen>
 
     <dimen name="workspace_top_padding_port">@dimen/qsb_bar_height_inset</dimen>
@@ -102,6 +102,6 @@
     <dimen name="workspace_cell_height_port">96dp</dimen>
     <dimen name="workspace_width_gap_land">50dp</dimen>
     <dimen name="workspace_width_gap_port">0dp</dimen>
-    <dimen name="workspace_height_gap_land">16dp</dimen>
+    <dimen name="workspace_height_gap_land">4dp</dimen>
     <dimen name="workspace_height_gap_port">70dp</dimen>
 </resources>
