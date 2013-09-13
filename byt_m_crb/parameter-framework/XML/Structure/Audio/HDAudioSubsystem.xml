@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Subsystem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Schemas/Subsystem.xsd" Name="HDAUDIO" Type="ALSACTL" Endianness="Little">
+        <ComponentLibrary>
+                <ComponentType Name="DEVICE_MONO">
+                    <BooleanParameter Name="ENABLED" Mapping="Control:%2%1 Switch"/>
+                    <IntegerParameter Name="VOLUME" Size="8" Min="0" Max="30" Mapping="Control:%2%1 Volume"/>
+                </ComponentType>
+
+                <ComponentType Name="DEVICE_STEREO">
+                    <BooleanParameter Name="ENABLED" ArrayLength="2" Mapping="Control:%2%1 Switch"/>
+                </ComponentType>
+
+                <ComponentType Name="DEVICE_STEREO_PLAYBACK" Extends="DEVICE_STEREO">
+                    <IntegerParameter Name="VOLUME" ArrayLength="2" Size="8" Min="0" Max="30" Mapping="Control:%2%1 Volume"/>
+                </ComponentType>
+
+                <ComponentType Name="DEVICE_STEREO_CAPTURE">
+                    <EnumParameter Name="SOURCE" Size="8" Mapping="Control:'Input Source'">
+                        <ValuePair Literal="REAR_MIC" Numerical="0"/>
+                        <ValuePair Literal="FRONT_MIC" Numerical="1"/>
+                        <ValuePair Literal="LINE" Numerical="2"/>
+                    </EnumParameter>
+                    <IntegerParameter Name="VOLUME" ArrayLength="2" Size="8" Min="0" Max="31" Mapping="Control:Capture Volume"/>
+                    <BooleanParameter Name="ENABLED" ArrayLength="2" Mapping="Control:Capture Switch"/>
+                </ComponentType>
+
+                <ComponentType Name="OUTPUT">
+                    <Component Name="HEADSET" Type="DEVICE_STEREO_PLAYBACK" Mapping="Amend2:Headphone "/>
+                    <Component Name="MASTER" Type="DEVICE_MONO" Mapping="Amend2:Master "/>
+                    <Component Name="SPEAKER" Type="DEVICE_STEREO_PLAYBACK" Mapping="Amend2:PCM "/>
+                </ComponentType>
+
+                <ComponentType Name="INPUT">
+                    <ParameterBlock Name="DEVICE">
+                        <Component Name="0" Type="DEVICE_STEREO_CAPTURE" Mapping="Index:0"/>
+                        <Component Name="1" Type="DEVICE_STEREO_CAPTURE" Mapping="Index:1"/>
+                        <Component Name="2" Type="DEVICE_STEREO_CAPTURE" Mapping="Index:2"/>
+                    </ParameterBlock>
+                </ComponentType>
+        </ComponentLibrary>
+
+        <InstanceDefinition>
+                <Component Name="INPUT" Type="INPUT" Mapping="Card:MID,Amend1:Capture,Debug"/>
+                <Component Name="OUTPUT" Type="OUTPUT" Mapping="Card:MID,Amend1:Playback,Debug"/>
+        </InstanceDefinition>
+</Subsystem>
