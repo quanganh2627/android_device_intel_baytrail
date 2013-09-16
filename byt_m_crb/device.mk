@@ -24,7 +24,7 @@ DEVICE_PACKAGE_OVERLAYS := $(COMMON_PATH)/overlays
 
 OVERRIDE_COPIES := \
     $(LOCAL_PATH)/asound.conf:system/etc/asound.conf \
-    $(LOCAL_PATH)/init.baylake.sh:root/init.baylake.sh \
+    $(LOCAL_PATH)/init.baytrail.sh:root/init.baytrail.sh \
     $(LOCAL_PATH)/egl.cfg:system/lib/egl/egl.cfg \
     $(LOCAL_PATH)/init.net.eth0.sh:root/init.net.eth0.sh
 
