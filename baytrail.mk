@@ -23,6 +23,7 @@ endif
 
 # Kernel Watchdog
 PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/watchdog/init.watchdog.sh:root/init.watchdog.sh \
     $(COMMON_PATH)/watchdog/init.watchdogd.rc:root/init.watchdog.rc
 
 #keylayout file
