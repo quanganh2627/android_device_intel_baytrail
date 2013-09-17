@@ -46,7 +46,7 @@
         if this zone reaches critical thermal state to avoid any user impact-->
     <!--list of cooling device IDs registered for the zone-->
     <CoolingDeviceInfo>
-      <CoolingDevId>4</CoolingDevId>
+      <CoolingDevId>1</CoolingDevId>
       <ThrottleDeviceMask>
           <Normal>0</Normal>
           <Warning>1</Warning>
@@ -61,6 +61,21 @@
           <Critical>0</Critical>
       </DethrottleDeviceMask>
       <!--four states: Normal,Warning,Alert,Critical. 0 - disable de-throttling,1 - enable de-throttling, -1 - dont care-->
+    </CoolingDeviceInfo>
+    <CoolingDeviceInfo>
+      <CoolingDevId>4</CoolingDevId>
+      <ThrottleDeviceMask>
+          <Normal>0</Normal>
+          <Warning>1</Warning>
+          <Alert>1</Alert>
+          <Critical>1</Critical>
+      </ThrottleDeviceMask>
+      <DethrottleDeviceMask>
+          <Normal>1</Normal>
+          <Warning>1</Warning>
+          <Alert>1</Alert>
+          <Critical>0</Critical>
+      </DethrottleDeviceMask>
     </CoolingDeviceInfo>
   </ZoneThrottleInfo>
 
