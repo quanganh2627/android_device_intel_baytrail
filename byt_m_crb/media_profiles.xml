@@ -302,6 +302,9 @@
         minSampleRate="8000" maxSampleRate="48000"
         minChannels="1" maxChannels="2" />
 
+    <VideoEditorCap maxInputFrameWidth="1920" maxInputFrameHeight="1088"
+        maxOutputFrameWidth="1920" maxOutputFrameHeight="1088" maxPrefetchYUVFrames="6"/>
+
     <ExportVideoProfile name="h263" profile="1" level="1" />
     <ExportVideoProfile name="h264" profile="1" level="4096" />
     <ExportVideoProfile name="m4v" profile="1" level="16" />
