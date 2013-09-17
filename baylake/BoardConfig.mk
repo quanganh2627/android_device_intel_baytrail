@@ -54,9 +54,6 @@ BOARD_USES_GENERIC_AUDIO := false
 # Baytrail uses the GEN for the graphic and video
 BOARD_GRAPHIC_IS_GEN := true
 
-# Set ENABLE_INTEL_CONFIG_18BPP to true for 18BPP mode.
-## ENABLE_INTEL_CONFIG_18BPP := true
-
 # Camera
 # Set USE_CAMERA_STUB to 'true' for Fake Camera builds,
 # 'false' for libcamera builds to use Camera Imaging(CI) supported by intel.
@@ -88,6 +85,17 @@ BOARD_GPU_DRIVERS := i965
 USE_OPENGL_RENDERER := true
 BOARD_KERNEL_CMDLINE += vga=current i915.modeset=1 drm.vblankoffdelay=1 \
                         acpi_backlight=vendor
+
+# Set ENABLE_INTEL_CONFIG_18BPP to true for 18BPP mode.
+## ENABLE_INTEL_CONFIG_18BPP := true
+
+# DPST - Enable i915.bpp18_video_dpst flag for 18bpp source content
+# This flag if enabled will enable DPST only in video playback scenario
+ifeq ($(ENABLE_INTEL_CONFIG_18BPP),true)
+BOARD_KERNEL_CMDLINE += i915.bpp18_video_dpst=1
+else
+BOARD_KERNEL_CMDLINE += i915.bpp18_video_dpst=0
+endif
 
 # Graphics - MIPI
 # List of panel ids supported:
