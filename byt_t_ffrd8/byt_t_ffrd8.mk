@@ -81,6 +81,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
+# CMS configuration files
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/cms_throttle_config.xml:system/etc/cms_throttle_config.xml \
+    $(LOCAL_PATH)/cms_device_config.xml:system/etc/cms_device_config.xml
+
 # Add component-testing applications
 PRODUCT_PACKAGES_ENG += mcd-test
 
