@@ -20,7 +20,7 @@ BOARD_HAVE_MODEM := true
 BOARD_SKIP_NVM := false
 
 BOARD_MODEM_LIST := 7160_flashless
-BOARD_HAVE_ATPROXY := true
+BOARD_HAVE_ATPROXY := false
 
 TARGET_PHONE_HAS_OEM_LIBRARY := true
 
@@ -37,8 +37,8 @@ ADDITIONAL_BUILD_PROPERTIES += ro.ril.status.polling.enable=0
 endif
 
 # Connectivity
-BOARD_HAVE_WIFI := true
-INTEL_WIDI := true
+BOARD_HAVE_WIFI := false
+INTEL_WIDI := false
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_CONF_PATH)
 TARGET_HAS_VPP := true
@@ -60,10 +60,10 @@ INTEL_WIDI_BAYTRAIL := true
 POWERHAL_BYT := true
 
 # Audio
-BOARD_USES_ALSA_AUDIO := true
+BOARD_USES_ALSA_AUDIO := false
 BOARD_USES_TINY_ALSA_AUDIO := true
 BOARD_USES_AUDIO_HAL_CONFIGURABLE := true
-BOARD_USE_VIBRATOR := true
+BOARD_USE_VIBRATOR := false
 BUILD_WITH_ALSA_UTILS := true
 BOARD_USES_GENERIC_AUDIO := false
 
@@ -77,8 +77,8 @@ BOARD_GRAPHIC_IS_GEN := true
 # Camera
 # Set USE_CAMERA_STUB to 'true' for Fake Camera builds,
 # 'false' for libcamera builds to use Camera Imaging(CI) supported by intel.
-USE_CAMERA_STUB := false
-USE_CAMERA_HAL2 := true
+USE_CAMERA_STUB := true
+USE_CAMERA_HAL2 := false
 
 USE_INTEL_METABUFFER := true
 
@@ -132,7 +132,7 @@ BOARD_USES_LIBPSS := false
 
 INTEL_VA:=true
 USE_INTEL_VA:=true
-BOARD_USES_WRS_OMXIL_CORE:=true
+BOARD_USES_WRS_OMXIL_CORE:=false
 BOARD_USES_MRST_OMX:=true
 USE_INTEL_ASF_EXTRACTOR:=true
 # enabled to use Intel secure AVC Stagefright HW decoder
@@ -152,7 +152,7 @@ ENABLE_BACKGROUND_MUSIC := true
 # - MFX_IPP: sets IPP library optimization to use
 USE_MEDIASDK := true
 # Enable CIP Codecs
-USE_INTEL_MDP := true
+USE_INTEL_MDP := false
 
 ifeq ($(DOLBY_DAP),true)
 # Disabled NXP Premium Audio Effect Libraries
@@ -167,7 +167,7 @@ MFX_IPP := p8
 # enabled to use Intel audio SRC (sample rate conversion)
 USE_INTEL_SRC := true
 # enabled to use ALAC
-USE_FEATURE_ALAC := true
+USE_FEATURE_ALAC := false
 
 # Defines Intel library for GPU accelerated Renderscript:
 OVERRIDE_RS_DRIVER := libRSDriver_intel7.so

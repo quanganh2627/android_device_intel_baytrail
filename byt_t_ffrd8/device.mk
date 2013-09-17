@@ -168,7 +168,7 @@ PRODUCT_PACKAGES += \
    audio.hdmi.$(PRODUCT_DEVICE)
 
 #widi audio HAL
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     audio.widi.$(PRODUCT_DEVICE)
 
 #widi
@@ -205,7 +205,7 @@ PRODUCT_PACKAGES += \
     libmemrar
 
 #OemTelephony for OEM HOOK API
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     com.intel.internal.telephony.OemTelephony \
      com.intel.internal.telephony.OemTelephony.xml
 
@@ -214,7 +214,7 @@ PRODUCT_PACKAGES += \
     Stk
 
 # Modem Trace Server (MTS)
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     mts
 
 # AMTL : Android Modem Traces and Logs
@@ -238,7 +238,7 @@ PRODUCT_COPY_FILES += \
         $(DEVICE_CONF_PATH)/rril/repository.txt:system/etc/rril/repository.txt
 
 # Modem Manager
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     mmgr \
     libmodemupdate \
     nvm_server \
@@ -334,7 +334,7 @@ PRODUCT_COPY_FILES += \
 
 
 # Camera app
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     IntelCamera \
     SocialGallery
 
@@ -344,7 +344,7 @@ PRODUCT_PACKAGES += \
 
 # Test Camera is for Test only
 ifeq ($(TARGET_BUILD_VARIANT),eng)
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     TestCamera
 endif
 
