@@ -202,7 +202,8 @@ endif
 
 # Modem
 PRODUCT_PACKAGES += \
-    modem
+    modem \
+    modem_nvm
 
 #Intrinsyc RRIL repository
 PRODUCT_COPY_FILES += \
