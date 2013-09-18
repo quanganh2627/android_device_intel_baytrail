@@ -212,8 +212,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     mmgr \
     libmodemupdate \
-    nvm_server \
-    libdx_cc7
+    nvm_server
 #    miu-app
 
 
