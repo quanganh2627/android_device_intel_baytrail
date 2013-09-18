@@ -1,10 +1,10 @@
 # Superclass
 include device/intel/baytrail/baytrail.mk
 
-PRODUCT_NAME := bayleybay
-PRODUCT_DEVICE := bayleybay
+PRODUCT_NAME := baylake
+PRODUCT_DEVICE := baylake
 
-LOCAL_PATH := device/intel/baytrail/bayleybay
+LOCAL_PATH := device/intel/baytrail/baylake
 
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/init.rc:root/init.$(TARGET_PRODUCT).rc \

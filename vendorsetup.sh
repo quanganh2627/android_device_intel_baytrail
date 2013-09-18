@@ -21,3 +21,4 @@
 # function: add_lunch_combo generic-eng
 
 add_lunch_combo bayleybay-eng
+add_lunch_combo baylake-eng
