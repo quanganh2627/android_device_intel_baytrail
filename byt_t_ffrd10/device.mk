@@ -35,7 +35,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/mfx_omxil_core.conf:system/etc/mfx_omxil_core.conf \
     $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/sensors/sensor_hal_config_default.xml:system/etc/sensor_hal_config_default.xml
-
 PRODUCT_COPY_FILES := $(OVERRIDE_COPIES) $(PRODUCT_COPY_FILES)
 # keypad key mapping
 PRODUCT_PACKAGES += \
@@ -292,8 +291,9 @@ PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.usb.host.xml:$(PERMISSIONS_PATH)/android.hardware.usb.host.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.usb.accessory.xml:$(PERMISSIONS_PATH)/android.hardware.usb.accessory.xml \
-    $(FRAMEWORK_ETC_PATH)/tablet_core_hardware.xml:$(PERMISSIONS_PATH)/tablet_core_hardware.xml
-#   $(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
+    $(FRAMEWORK_ETC_PATH)/tablet_core_hardware.xml:$(PERMISSIONS_PATH)/tablet_core_hardware.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.audio.low_latency.xml:$(PERMISSIONS_PATH)/android.hardware.audio.low_latency.xml
+#  $(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/ueventd.common.rc:root/ueventd.$(PRODUCT_DEVICE).rc
@@ -355,8 +355,8 @@ PRODUCT_COPY_FILES += \
 # Board initrc file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.$(PRODUCT_DEVICE).rc:root/init.$(PRODUCT_DEVICE).rc \
-    $(LOCAL_PATH)/init.avc.rc:root/init.avc.rc
-#    $(LOCAL_PATH)/init.diag.rc:root/init.diag.rc \
+    $(LOCAL_PATH)/init.avc.rc:root/init.avc.rc \
+    $(LOCAL_PATH)/init.diag.rc:root/init.diag.rc
 #    $(LOCAL_PATH)/init.wireless.rc:root/init.wireless.rc \
 #    $(LOCAL_PATH)/init.modem.rc:root/init.modem.rc \
 

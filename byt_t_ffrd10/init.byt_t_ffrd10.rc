@@ -1,7 +1,7 @@
 # Disable certain rc's for now
 import init.common.rc
 import init.debug.rc
-# import init.diag.rc
+import init.diag.rc
 import init.avc.rc
 # import init.wireless.rc
 # import init.modem.rc
@@ -187,6 +187,16 @@ on post-fs-data
     start fg_conf
 
 on post-fs
+
+    # Performance tweaks for interactive governor
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/timer_rate
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/touchboost_freq
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/boostpulse
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/touchboostpulse
+    chmod 0222 /sys/devices/system/cpu/cpufreq/interactive/boostpulse
+    chmod 0222 /sys/devices/system/cpu/cpufreq/interactive/touchboostpulse
+
     # Volume keys wakeup capability
     chmod 0664 /sys/devices/platform/gpio-keys/enabled_wakeup
     chmod 0664 /sys/devices/platform/gpio-keys/disabled_wakeup
