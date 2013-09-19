@@ -21,8 +21,8 @@ BOARD_HAVE_WIFI := true
 BOARD_HAVE_BLUETOOTH := true
 FLASHFILE_NO_OTA := false
 else
-#disable WIFI/WIDI/BT for kernel_next bringup
-BOARD_HAVE_WIFI := false
+#disable BT for kernel_next bringup
+BOARD_HAVE_WIFI := true
 BOARD_HAVE_BLUETOOTH := false
 FLASHFILE_NO_OTA := true
 endif

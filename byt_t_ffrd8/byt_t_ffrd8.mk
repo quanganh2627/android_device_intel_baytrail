@@ -25,10 +25,8 @@ PRODUCT_COPY_FILES += \
 # Wi-Fi
 PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.xml
-ifeq (, $(filter %_next, $(TARGET_PRODUCT)))
 PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.direct.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml
-endif
 
 PRODUCT_PACKAGES += \
         wifi_bcm_4334x
