@@ -50,6 +50,7 @@ Group RequestTimeouts
     ReportSmsMemoryStatus              60000
     GetIPAddress                       30000
     GetDNS                             30000
+    QuerySimSmsStoreStatus             30000
 
     //  Video Telephony API timeouts
     HangupVT                           40000
@@ -165,11 +166,6 @@ Group Modem
 //          supported
 //   TempOoSNotificationEnable    0
 
-// IMS dependent paramters
-// Default values 0 (disabled)
-    IMSCapable                    0
-    EnableSMSOverIP               0
-
 //Definition of the class of a apn type, as follow:
 //1: hsi only, the data path uses always a hsi channel.
 //2: hsi prefered, the data path uses a hsi channel if available otherwise a mux channel.
@@ -205,8 +201,61 @@ Group Modem
 //   customAPNName    apn.example.com
 //   customAPNType    IPV4V6
 
+// Specify mode of operation ID for command:AT+CEMODE=<mode ID>
+// If missing, the default <mode ID> is '1' (CS/PS Voice Centric)
+// For Baytrail FFRD8 <mode ID> must be '2' (CS/PS Data Centric)
+    ModeOfOperation             2
+
+// System Capability settings - Set a modem's capabilities using various flags
+//  These flags control the sending of init commands to a channel during initialization.
+//      "VoiceCapable" - Set to "0" to disable voice calls, otherwise enabled by default.
+/      "SmsOverCSCapable" - Set to "0" to disable SMS over CS, otherwise enabled by default.
+//      "SmsOverPSCapable" - Set to "0" to disable SMS over PS, otherwise enabled by default.
+//      "StkCapable" - Set to "0" to disable STK support, otherwise enabled by default.
+//      "EnableXDATASTATReporting" - Set to "1" to enable data call status reporting, otherwise
+//                                  disabled by default.
+//      "IMSCapable" - Set to "1" to enable IMS support, otherwise disabled by default.
+//      "SMSOverIPCapable" - Set to "1" to enable SMS over IP, otherwise disabled by default.
+//      "SupportCGPIAF" - Set to "1" to support new implementation based on +CGPIAF direct format
+//                        (for IMC IPV6 AT commands), or set to "0" to keep the current behavior.
+    VoiceCapable                0
+    SmsOverCSCapable            1
+    SmsOverPSCapable            1
+//    StkCapable                  0
+//    EnableXDATASTATReporting    1
+//    IMSCapable                  1
+//    EnableSMSOverIP             1
+//    SMSOverIPCapable            1
+    SupportCGPIAF               0
+
+// IMEI blacklist - A list of default IMEIs which could be flashed to the device.  The device
+//      will not register on a live network if any of these IMEIs are used.
+//      IMEIs listed below must be separated by spaces.
+    ImeiBlackList       000000000000000 004999010640000 // default IMEIs for IMC
+
 // Log levels
 Group Logging
     CallDropReporting           0    // 0: disable (default), 1: enable
     LogLevel                    2    // 4: Critical, 3: Warning, 2: Info, 1: Verbose
 
+// Silo Configuration - A bitmask of the silos assigned for each channel.
+// Setting the appropriate bit in the mask adds the silo to the channel:
+//      bit 11: Common silo       1000 0000 0000
+//      bit 8-10: Reserved for new silos
+//      bit 7: IMS silo          1000 0000
+//      bit 6: Misc silo         0100 0000
+//      bit 5: Phonebook silo    0010 0000
+//      bit 4: Network silo      0001 0000
+//      bit 3: Data silo         0000 1000
+//      bit 2: SMS silo          0000 0100
+//      bit 1: SIM silo          0000 0010
+//      bit 0: Voice silo        0000 0001
+//
+Group ChannelSiloConfiguration
+    SilosATCmdChannel       0x840    // Misc and common silo (2)
+    SilosDLC2Channel        0x810    // Network and common silo (2)
+    SilosDLC6Channel        0x805    // Voice, SMS and common silo (3).
+    SilosDLC8Channel        0x802    // SIM and common silo (2)
+    SilosURCChannel         0x8F7    // All silos except data
+    SilosOEMChannel         0x800    // common silo only (1)
+    SilosDataChannel        0x808    // Data and common silo (2)
