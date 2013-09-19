@@ -54,7 +54,8 @@ PRODUCT_COPY_FILES += \
 
 # specific management of audio_effects.conf
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf
+      $(LOCAL_PATH)/audio_effects_adge_webrtc.conf:system/etc/audio_effects.conf
+
 
 # thermal config files
 PRODUCT_COPY_FILES += \
