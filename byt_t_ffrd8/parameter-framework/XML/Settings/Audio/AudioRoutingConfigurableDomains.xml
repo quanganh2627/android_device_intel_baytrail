@@ -265,7 +265,7 @@
           <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/DAC1">
-          <IntegerParameter Name="DAC1">120 120</IntegerParameter>
+          <IntegerParameter Name="DAC1">153 153</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME">
           <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
@@ -934,15 +934,15 @@
           <Component Name="VERTICES">
             <Component Name="LOWER_MOST">
               <IntegerParameter Name="THRESHOLD">24576</IntegerParameter>
-              <IntegerParameter Name="SLOPE">533</IntegerParameter>
+              <IntegerParameter Name="SLOPE">256</IntegerParameter>
             </Component>
             <Component Name="INTERMEDIATE">
-              <IntegerParameter Name="GAIN_AT_THRESHOLD">11264</IntegerParameter>
-              <IntegerParameter Name="THRESHOLD">20480</IntegerParameter>
-              <IntegerParameter Name="SLOPE">544</IntegerParameter>
+              <IntegerParameter Name="GAIN_AT_THRESHOLD">7680</IntegerParameter>
+              <IntegerParameter Name="THRESHOLD">15360</IntegerParameter>
+              <IntegerParameter Name="SLOPE">469</IntegerParameter>
             </Component>
             <Component Name="UPPER_MOST">
-              <IntegerParameter Name="THRESHOLD">1536</IntegerParameter>
+              <IntegerParameter Name="THRESHOLD">2304</IntegerParameter>
               <IntegerParameter Name="SLOPE">256</IntegerParameter>
             </Component>
           </Component>
