@@ -77,6 +77,7 @@ USE_CSS_2_0 := true
 USE_INTEL_JPEG := false
 # Enabled NXP Premium Audio Effect Libraries
 USE_INTEL_LVSE := true
+USE_WEBRTC_EFFECTS := true
 
 ifeq ($(BOARD_KERNEL_CMDLINE),)
 ifeq ($(TARGET_BUILD_VARIANT),eng)

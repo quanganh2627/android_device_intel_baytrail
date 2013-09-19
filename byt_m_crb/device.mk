@@ -305,8 +305,8 @@ PRODUCT_PACKAGES += \
     libreverbwrapper.so \
     libxmlparser.so \
     LvmDefaultControlParams.xml \
-    LvmSessionConfigurationMinus1.xml
-
+    LvmSessionConfigurationMinus1.xml \
+    audio_effects.conf
 # Optional GMS applications
 -include vendor/google/PRIVATE/gms/products/gms_optional.mk
 

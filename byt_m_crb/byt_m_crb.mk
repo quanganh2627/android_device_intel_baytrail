@@ -53,8 +53,9 @@ PRODUCT_COPY_FILES += \
     $(ALSA_CONF_PATH)/src/conf/alsa.conf:system/usr/share/alsa/alsa.conf
 
 # specific management of audio_effects.conf
+
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf
+    $(LOCAL_PATH)/audio_effects_adge_webrtc.conf:system/etc/audio_effects.conf
 
 # crashlog conf
 PRODUCT_COPY_FILES += \
