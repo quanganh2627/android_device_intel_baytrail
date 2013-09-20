@@ -279,6 +279,7 @@ on property:ro.debuggable=1
 on charger
     mount_all /fstab.charger.${ro.hardware}
 
+    setprop ro.boot.min.cap 3
     start watchdogd
     # REVERTME - Temp workaround for Baylake bringup.  See BZ 91648.
     # To workaround inability to resume after sleep, disable the access that
