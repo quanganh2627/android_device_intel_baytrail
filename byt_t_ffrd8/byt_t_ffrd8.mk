@@ -66,6 +66,10 @@ PRODUCT_PACKAGES += \
     libstagefright_soft_mp3dec_mdp \
     libstagefright_soft_aacdec_mdp
 
+# NFC
+PRODUCT_PACKAGES += \
+    nfc_pn544pc
+
 #alsa conf
 ALSA_CONF_PATH := external/alsa-lib/
 PRODUCT_COPY_FILES += \
@@ -77,6 +81,11 @@ PRODUCT_COPY_FILES += \
 
 # Add component-testing applications
 PRODUCT_PACKAGES_ENG += mcd-test
+
+# thermal config files
+PRODUCT_COPY_FILES += \
+         $(LOCAL_PATH)/thermal_sensor_config.xml:system/etc/thermal_sensor_config.xml \
+         $(LOCAL_PATH)/thermal_throttle_config.xml:system/etc/thermal_throttle_config.xml
 
 # Include base makefile
 include $(LOCAL_PATH)/device.mk

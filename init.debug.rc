@@ -33,18 +33,6 @@ on post-fs-data
     # Enable by default android java wakelock logging
     setprop wakelock.trace 1
 
-    # Collect emmc ipanic data, free resources and re-arm trigger
-    copy /proc/emmc_ipanic_console /data/dontpanic/emmc_ipanic_console
-    chown root log /data/dontpanic/emmc_ipanic_console
-    chmod 0640 /data/dontpanic/emmc_ipanic_console
-
-    copy /proc/emmc_ipanic_threads /data/dontpanic/emmc_ipanic_threads
-    chown root log /data/dontpanic/emmc_ipanic_threads
-    chmod 0640 /data/dontpanic/emmc_ipanic_threads
-
-    #you must enable next line when you don`t use crashlogd
-    #write /proc/emmc_ipanic_console 1
-
 on charger
     # basic networking for "adb root"
     ifup lo

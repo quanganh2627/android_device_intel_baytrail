@@ -24,9 +24,7 @@ BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 #Modem
 BOARD_HAVE_MODEM := true
 BOARD_SKIP_NVM := true
-BOARD_MODEM_DICO := "PRx:7160"
 BOARD_MODEM_LIST := 7160_flashless
-BOARD_MODEM_FLASHLESS := true
 BOARD_HAVE_ATPROXY := true
 
 TARGET_PHONE_HAS_OEM_LIBRARY := true
@@ -57,6 +55,9 @@ USE_INTEL_IPP := true
 
 # WiDi
 INTEL_WIDI_BAYTRAIL := true
+
+# NFC
+-include vendor/intel/hardware/nfc/NfcBoardConfig.mk
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true

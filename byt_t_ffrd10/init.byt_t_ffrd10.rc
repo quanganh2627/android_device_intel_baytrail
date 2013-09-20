@@ -1,7 +1,7 @@
 # Disable certain rc's for now
 import init.common.rc
 import init.debug.rc
-# import init.diag.rc
+import init.diag.rc
 import init.avc.rc
 # import init.wireless.rc
 # import init.modem.rc
@@ -288,6 +288,8 @@ on charger
     chmod 0775 /dev/fg
     wait /system/bin/fg_conf
     start fg_conf
+
+    insmod /lib/modules/atomisp-css2400b0_v2.ko
 
 on property:sys.boot_completed=1
    write /sys/firmware/osnib/clean_osnib 1

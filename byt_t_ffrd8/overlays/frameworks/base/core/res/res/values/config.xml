@@ -232,9 +232,9 @@
     <!-- set to true if telephony oem hooks are supported by framework -->
     <bool name="config_usage_oem_hooks_supported">true</bool>
     <!-- Intel Telephony OEM Hook supports data state reporting property -->
-    <string name="oemhook_datastate_property">tel.internal.oem.datastate</string>
+    <string name="oemhook_datastate_property">gsm.internal.oem.datastate</string>
     <!-- Intel Telephony oemhook supports flag indicating concurrent data property -->
-    <string name="oemhook_concurrentdata_property">tel.internal.oem.concurrency</string>
+    <string name="oemhook_concurrentdata_property">gsm.internal.oem.concurrency</string>
     <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
          autodetected from the Configuration. -->
     <bool name="config_showNavigationBar">true</bool>
@@ -252,5 +252,8 @@
          * The device must be provisioned with HDCP keys (for protected content).
     -->
     <bool name="config_enableWifiDisplay">true</bool>
+
+    <!-- FLag indicating if the platform is using NXP PN544PC clf -->
+    <bool name="clf_is_pn544pc">true</bool>
 
 </resources>

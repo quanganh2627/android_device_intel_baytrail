@@ -1,7 +1,7 @@
 # Disable certain rc's for now
 import init.common.rc
 import init.debug.rc
-# import init.diag.rc
+import init.diag.rc
 import init.avc.rc
 # import init.wireless.rc
 import init.modem.rc
@@ -73,11 +73,40 @@ on boot
     mount debugfs none /sys/kernel/debug
 
     #  Permissions for Thermal Management
-    chown system system /sys/class/power_supply/bq24192_charger/device/charge_current_limit
     chown system system /sys/module/intel_mid_osip/parameters/force_shutdown_occured
     chown system system /sys/module/intel_mid_osip/parameters/thermal_shutdown_occured
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chown system system /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
+    chown system system /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
+    chown system system /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq
     chown system system /sys/class/thermal/cooling_device0/cur_state
     chown system system /sys/class/thermal/cooling_device1/cur_state
+    chown system system /sys/class/thermal/cooling_device2/cur_state
+    chown system system /sys/class/thermal/cooling_device3/cur_state
+    chown system system /sys/class/thermal/cooling_device4/cur_state
+    chown system system /sys/class/thermal/cooling_device5/cur_state
+    chown system system /sys/class/thermal/thermal_zone0/trip_point_0_temp
+    chown system system /sys/class/thermal/thermal_zone0/trip_point_1_temp
+    chown system system /sys/class/thermal/thermal_zone1/trip_point_0_temp
+    chown system system /sys/class/thermal/thermal_zone1/trip_point_1_temp
+    chown system system /sys/class/thermal/thermal_zone2/trip_point_0_temp
+    chown system system /sys/class/thermal/thermal_zone2/trip_point_1_temp
+    chown system system /sys/class/thermal/thermal_zone3/trip_point_0_temp
+    chown system system /sys/class/thermal/thermal_zone3/trip_point_1_temp
+    chown system system /sys/class/thermal/thermal_zone4/trip_point_0_temp
+    chown system system /sys/class/thermal/thermal_zone4/trip_point_1_temp
+    chown system system /sys/class/thermal/thermal_zone5/trip_point_0_temp
+    chown system system /sys/class/thermal/thermal_zone5/trip_point_1_temp
+    chown system system /sys/class/thermal/thermal_zone6/trip_point_0_temp
+    chown system system /sys/class/thermal/thermal_zone6/trip_point_1_temp
+    chown system system /sys/devices/platform/coretemp.0/temp2_threshold1
+    chown system system /sys/devices/platform/coretemp.0/temp2_threshold2
+    chown system system /sys/devices/platform/coretemp.0/temp3_threshold1
+    chown system system /sys/devices/platform/coretemp.0/temp3_threshold2
+    chown system system /sys/devices/platform/coretemp.0/temp4_threshold1
+    chown system system /sys/devices/platform/coretemp.0/temp4_threshold2
+    chown system system /sys/devices/platform/coretemp.0/temp5_threshold1
+    chown system system /sys/devices/platform/coretemp.0/temp5_threshold2
 
     # GEN Graphics specific setup.
     chown system system /dev/card0
@@ -259,6 +288,8 @@ on charger
     chmod 0775 /dev/fg
     wait /system/bin/fg_conf
     start fg_conf
+
+    insmod /lib/modules/atomisp-css2400b0_v2.ko
 
 on property:sys.boot_completed=1
     write /sys/firmware/osnib/clean_osnib 1

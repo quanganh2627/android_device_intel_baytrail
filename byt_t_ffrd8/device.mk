@@ -202,7 +202,7 @@ endif
 
 # Modem
 PRODUCT_PACKAGES += \
-    modem_flashless
+    modem
 
 #Intrinsyc RRIL repository
 PRODUCT_COPY_FILES += \
@@ -219,7 +219,7 @@ PRODUCT_PACKAGES += \
 
 # MMGR CWS Client
 PRODUCT_PACKAGES += \
-    CWS_MMGR
+    CWS_SERVICE_MANAGER
 
 # TelephonyEventsNotifier
 ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
@@ -335,6 +335,8 @@ PERMISSIONS_PATH := system/etc/permissions
 PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.touchscreen.multitouch.jazzhand.xml:$(PERMISSIONS_PATH)/android.hardware.touchscreen.multitouch.jazzhand.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.location.gps.xml:$(PERMISSIONS_PATH)/android.hardware.location.gps.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.camera.flash-autofocus.xml:$(PERMISSIONS_PATH)/android.hardware.camera.flash-autofocus.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.camera.front.xml:$(PERMISSIONS_PATH)/android.hardware.camera.front.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.sensor.accelerometer.xml:$(PERMISSIONS_PATH)/android.hardware.sensor.accelerometer.xml \
@@ -410,8 +412,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.$(PRODUCT_DEVICE).rc:root/init.$(PRODUCT_DEVICE).rc \
     $(LOCAL_PATH)/init.avc.rc:root/init.avc.rc \
-    $(LOCAL_PATH)/init.modem.rc:root/init.modem.rc
-#    $(LOCAL_PATH)/init.diag.rc:root/init.diag.rc \
+    $(LOCAL_PATH)/init.modem.rc:root/init.modem.rc \
+    $(LOCAL_PATH)/init.diag.rc:root/init.diag.rc
 #    $(LOCAL_PATH)/init.wireless.rc:root/init.wireless.rc \
 
 PRODUCT_COPY_FILES += \
