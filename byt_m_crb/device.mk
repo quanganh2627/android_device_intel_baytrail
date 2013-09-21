@@ -147,7 +147,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.service.adb.tcp.port=5555 \
     net.eth0.ip=192.168.42.1 \
-    net.eth0.netmask=255.255.255.0
+    net.eth0.netmask=255.255.255.0 \
+    net.dns1=8.8.4.4
 
 # Version of mandatory blankphone
 PRODUCT_PROPERTY_OVERRIDES += ro.blankphone_id=1
