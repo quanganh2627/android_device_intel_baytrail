@@ -7,11 +7,6 @@ TARGET_USE_DROIDBOOT := true
 
 include $(PLATFORM_PATH)/BoardConfig.mk
 
-# Disable OTA for kernel-next bring up
-ifneq (, $(filter %_next, $(TARGET_PRODUCT)))
-FLASHFILE_NO_OTA := true
-endif
-
 # Temporary IFWI does not support signing
 TARGET_OS_SIGNING_METHOD := none
 
