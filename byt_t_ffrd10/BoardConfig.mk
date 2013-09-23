@@ -86,6 +86,9 @@ BOARD_KERNEL_CMDLINE := console=logk0 earlyprintk=nologger loglevel=0 kmemleak=o
 endif
 endif
 
+# TCO
+BOARD_KERNEL_CMDLINE += enable_tco=1
+
 # Graphics
 BOARD_GPU_DRIVERS := i965
 USE_OPENGL_RENDERER := true
