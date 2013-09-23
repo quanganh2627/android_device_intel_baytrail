@@ -10,6 +10,10 @@ include $(LOCAL_PATH)/baylakepath.mk
 PRODUCT_COPY_FILES += \
     $(PLATFORM_PATH)/init.byt_next.usb.rc:root/init.platform.usb.rc
 
+# File init.baylake_next.gengfx.rc is being added before the other use
+# of this destination, so it will have precedence.
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/init.baylake_next.gengfx.rc:root/init.platform.gengfx.rc
+
 # Include base product makefile
 include $(LOCAL_PATH)/baylake.mk
 
