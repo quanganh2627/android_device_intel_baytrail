@@ -103,7 +103,9 @@ PRODUCT_PACKAGES += \
     libmixvbp_h264 \
     libmixvbp_vc1 \
     libmixvbp_vp8 \
-    libmixvbp_h264secure
+    libmixvbp_h264secure \
+    libmix_videovpp \
+    libjpegdec
 
 # libva
 PRODUCT_PACKAGES += \
