@@ -3,6 +3,7 @@ include device/intel/baytrail/baytrail.mk
 
 PRODUCT_NAME := baylake
 PRODUCT_DEVICE := baylake
+PRODUCT_MODEL := Bay Lake
 
 LOCAL_PATH := device/intel/baytrail/baylake
 
