@@ -6,28 +6,66 @@ supDomain: Routing.Mute
 	# Definition of Mute and Unmute for futur use in this supDomain
 	RoutageState Includes Flow
 
-	supDomain: HWCodec.Capture
+	supDomain: Codec.Playback
+
+		domain: Headset
+			conf: Unmute
+				ALL
+					ANY
+						SelectedOutputDevice Includes Headset
+						SelectedOutputDevice Includes Headphones
+					ANY
+						OpenedPlaybackRoutes Includes HwCodecMedia
+						OpenedPlaybackRoutes Includes Media
+
+				/Audio/HDAUDIO/OUTPUT/HEADSET/ENABLED = 1 1
+
+			conf: Mute
+				/Audio/HDAUDIO/OUTPUT/HEADSET/ENABLED = 0 0
+
+		domain: IHF
+			conf: Unmute
+				ALL
+					SelectedOutputDevice Includes IHF
+					ANY
+						OpenedPlaybackRoutes Includes HwCodecMedia
+						OpenedPlaybackRoutes Includes Media
+
+				/Audio/HDAUDIO/OUTPUT/SPEAKER/ENABLED = 1 1
+
+			conf: Mute
+
+				/Audio/HDAUDIO/OUTPUT/SPEAKER/ENABLED = 0 0
+
+		domain: Master
+			conf: Unmute
+				ALL
+					ANY
+						SelectedOutputDevice Includes Headset
+						SelectedOutputDevice Includes Headphones
+						SelectedOutputDevice Includes IHF
+					ANY
+						OpenedPlaybackRoutes Includes HwCodecMedia
+						OpenedPlaybackRoutes Includes Media
+
+				/Audio/HDAUDIO/OUTPUT/MASTER/ENABLED = 1
+
+			conf: Mute
+				/Audio/HDAUDIO/OUTPUT/MASTER/ENABLED = 0
+
+
+	supDomain: Codec.Capture
 
 		domain: MainMic
 			conf: Unmute
 				ALL
 					SelectedInputDevice Includes Main
-					ANY
-						OpenedCaptureRoutes  Includes HwCodecMedia
-				/Audio/REALTEK/SOUND_CARD/INPUT/MIC/INT/SWITCH = 1
+					OpenedCaptureRoutes Includes HwCodecMedia
+
+				/Audio/HDAUDIO/INPUT/DEVICE/1/ENABLED = 1 1
 
 			conf: Mute
-				/Audio/REALTEK/SOUND_CARD/INPUT/MIC/INT/SWITCH = 0
-
-		domain: HeadsetMic
-			conf: Unmute
-				ALL
-					SelectedInputDevice Includes Headset
-					OpenedCaptureRoutes  Includes HwCodecMedia
-				/Audio/REALTEK/SOUND_CARD/INPUT/HEADSET/SWITCH = 1
-
-			conf: Mute
-				/Audio/REALTEK/SOUND_CARD/INPUT/HEADSET/SWITCH = 0
+				/Audio/HDAUDIO/INPUT/DEVICE/1/ENABLED = 0 0
 
 
 ##############################
@@ -39,16 +77,6 @@ supDomain: Routing.Enable
 	# Definition of Enable and Disable for future use in this supDomain
 	RoutageState Includes Path
 
-	#Register 0x1C[15] and 0x1C[7], control IF1 path only
-	domain: Capture
-		conf: Enable
-			OpenedCaptureRoutes Includes HwCodecMedia
-
-			/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/STEREO/ADC_CAPTURE_SWITCH = 1 1
-
-		conf: Disable
-			/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/STEREO/ADC_CAPTURE_SWITCH = 0 0
-
 
 ##############################
 #	 Configure Step
@@ -57,56 +85,13 @@ supDomain: Routing.Enable
 supDomain: Routing.Configure
 	RoutageState Includes Configure
 
-	#//WY 0301, remove MIC switch configuration from this step to Mute/Unmute step
+	domain: Codec.Capture
+		conf: RearMic
 
-	supDomain: LPE_Mixer
-		domain: IHF
-			conf: Activated
-				ALL
-					SelectedOutputDevice Includes IHF
-					OpenedPlaybackRoutes Includes HwCodecMedia
+			OpenedCaptureRoutes Includes HwCodecMedia
+			SelectedInputDevice Includes Main
+			
+			/Audio/HDAUDIO/INPUT/DEVICE/1/SOURCE = REAR_MIC
 
-				/Audio/LPE_MIXER/SOUND_CARD/IHF/INPUT_STREAM = MIX
-
-			conf: Deactivated
-
-				/Audio/LPE_MIXER/SOUND_CARD/IHF/INPUT_STREAM = NONE
-
-		domain: HS
-			conf: Activated
-				ALL
-					OpenedPlaybackRoutes Includes HwCodecMedia
-					SelectedOutputDevice Excludes IHF
-					ANY
-						SelectedOutputDevice Includes Headset
-						SelectedOutputDevice Includes Headphones
-
-				/Audio/LPE_MIXER/SOUND_CARD/HS/INPUT_STREAM = MIX
-
-			conf: Deactivated
-
-				/Audio/LPE_MIXER/SOUND_CARD/HS/INPUT_STREAM = NONE
-
-	supDomain: HWCodec.Playback
-
-		domain: Headset
-			conf: Activated
-				ANY
-					SelectedOutputDevice Includes Headset
-					SelectedOutputDevice Includes Headphones
-
-				/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/SWITCH = 1
-
-			conf: Deactivated
-				/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/SWITCH = 0
-
-		domain: IHF
-			conf: Activated
-				ALL
-					SelectedOutputDevice Includes IHF
-
-				/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/SWITCH = 1
-
-			conf: Deactivated
-
-				/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/SWITCH = 0
+		conf: Line
+			/Audio/HDAUDIO/INPUT/DEVICE/1/SOURCE = LINE

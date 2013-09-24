@@ -8,9 +8,10 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := parameter-framework.audio.byt_m_crb
 LOCAL_MODULE_TAGS := optional
 LOCAL_REQUIRED_MODULES :=  \
-	parameter-framework.audio.baytrail \
-	AudioClass.xml \
-	AudioConfigurableDomains.xml
+    parameter-framework.audio.common \
+    HDAudioSubsystem.xml \
+    AudioClass.xml \
+    AudioConfigurableDomains.xml
 
 ifeq ($(TARGET_BUILD_VARIANT),eng)
 LOCAL_REQUIRED_MODULES += ParameterFrameworkConfiguration.xml
@@ -32,6 +33,16 @@ LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/parameter-framework/Structure/Audio
 LOCAL_SRC_FILES := XML/Structure/Audio/$(LOCAL_MODULE)
 include $(BUILD_PREBUILT)
 
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := HDAudioSubsystem.xml
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/parameter-framework/Structure/Audio
+LOCAL_SRC_FILES := XML/Structure/Audio/$(LOCAL_MODULE)
+include $(BUILD_PREBUILT)
+
+##################################################
 
 ifeq ($(BOARD_USES_AUDIO_HAL_CONFIGURABLE),true)
 
