@@ -1,4 +1,9 @@
+# Common BoardConfig options for any device that has
+# a Bay Trail SoC
+
 include device/intel/common/BoardConfig.mk
+
+TARGET_BOARD_PLATFORM := baytrail
 
 ifeq ($(ANDROID_CONSOLE),usb)
 BOARD_CONSOLE_DEVICE := ttyUSB0,115200n8
