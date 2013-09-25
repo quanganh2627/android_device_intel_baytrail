@@ -332,6 +332,8 @@
       </Configuration>
     </Configurations>
     <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/CODECFS/AUDIO_PMDOWN/TIME"/>
+      <ConfigurableElement Path="/Audio/CODECFS/VOICE_PMDOWN/TIME"/>
       <ConfigurableElement Path="/Audio/LPE/MIC1_PATH/GAIN_CTRL/ENABLE"/>
       <ConfigurableElement Path="/Audio/LPE/MIC1_PATH/GAIN_CTRL/CHANNELS"/>
       <ConfigurableElement Path="/Audio/LPE/MIC2_PATH/GAIN_CTRL/ENABLE"/>
@@ -365,6 +367,12 @@
     </ConfigurableElements>
     <Settings>
       <Configuration Name="Default">
+        <ConfigurableElement Path="/Audio/CODECFS/AUDIO_PMDOWN/TIME">
+          <IntegerParameter Name="TIME">0</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/CODECFS/VOICE_PMDOWN/TIME">
+          <IntegerParameter Name="TIME">0</IntegerParameter>
+        </ConfigurableElement>
         <ConfigurableElement Path="/Audio/LPE/MIC1_PATH/GAIN_CTRL/ENABLE">
           <BooleanParameter Name="ENABLE">1</BooleanParameter>
         </ConfigurableElement>

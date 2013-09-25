@@ -8,10 +8,11 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := parameter-framework.audio.byt_t_ffrd8
 LOCAL_MODULE_TAGS := optional
 LOCAL_REQUIRED_MODULES :=  \
-	parameter-framework.audio.baytrail \
-	parameter-framework.audio.imc.subsystem \
-	AudioClass.xml \
-	AudioConfigurableDomains.xml
+    parameter-framework.audio.baytrail \
+    parameter-framework.audio.imc.subsystem \
+    parameter-framework.audio.pmdown_time.subsystem \
+    AudioClass.xml \
+    AudioConfigurableDomains.xml
 
 ifeq ($(TARGET_BUILD_VARIANT),eng)
 LOCAL_REQUIRED_MODULES += ParameterFrameworkConfiguration.xml
