@@ -80,3 +80,7 @@ PRODUCT_PACKAGES += \
 # sensorhub
 PRODUCT_PACKAGES += \
     sensorhubd
+
+# IAFW
+PRODUCT_PACKAGES += \
+    ia32fw

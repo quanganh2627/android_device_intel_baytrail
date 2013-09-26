@@ -18,6 +18,9 @@ TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
 # Temporary IFWI does not support signing
 TARGET_OS_SIGNING_METHOD := none
 
+# IAFW component to build for this board
+BOARD_IAFW_COMPONENT := brd_bayleybay
+
 #Platform
 BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 
@@ -98,6 +101,8 @@ USE_INTEL_VA:=true
 BOARD_USES_WRS_OMXIL_CORE:=true
 BOARD_USES_MRST_OMX:=true
 USE_INTEL_ASF_EXTRACTOR:=true
+# enabled to use Intel secure AVC Stagefright HW decoder
+USE_INTEL_SECURE_AVC := true
 # enabled to use hardware VP8 decoder
 USE_HW_VP8 := true
 
