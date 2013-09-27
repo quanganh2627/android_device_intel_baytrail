@@ -80,6 +80,10 @@ Group RILSettings
     OpenPortRetries                     30
     OpenPortInterval                    1000    // Value is in ms
 
+// Pin Caching mode
+// 1 - Pin caching in file system
+// 2 - Pin caching in NVRAM
+    PinCachingMode 1
 
 // Settable values for the InitCmds group include:
 //   PreInitCmds,  PreReinitCmds,  PreUnlockCmds,  PreSmsInitCmds
