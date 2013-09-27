@@ -9,9 +9,6 @@ TARGET_USE_DROIDBOOT := true
 
 include device/intel/baytrail/BoardConfig.mk
 
-# Temporary IFWI does not support signing
-TARGET_OS_SIGNING_METHOD := none
-
 # IAFW component to build for this board
 BOARD_IAFW_COMPONENT := brd_baylake
 
