@@ -20,15 +20,13 @@ PERMISSIONS_PATH := system/etc/permissions
 # Touchscreen configuration file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg \
-    $(PLATFORM_PATH)/maxtouch.fw:system/etc/firmware/maxtouch.fw
+    $(LOCAL_PATH)/maxtouch_1664S_8.fw:system/etc/firmware/maxtouch.fw
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.xml
-ifeq (, $(filter %_next, $(TARGET_PRODUCT)))
 PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.direct.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml
-endif
 
 PRODUCT_PACKAGES += \
         wifi_bcm_4334x
@@ -41,6 +39,10 @@ PRODUCT_PACKAGES += \
 #remote submix audio
 PRODUCT_PACKAGES += \
        audio.r_submix.default
+
+# bcu hal
+PRODUCT_PACKAGES += \
+    bcu.default
 
 # rapid ril
 PRODUCT_PACKAGES += \

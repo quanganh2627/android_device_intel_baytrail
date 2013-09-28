@@ -21,8 +21,8 @@ BOARD_HAVE_WIFI := true
 BOARD_HAVE_BLUETOOTH := true
 FLASHFILE_NO_OTA := false
 else
-#disable WIFI/WIDI/BT for kernel_next bringup
-BOARD_HAVE_WIFI := false
+#disable BT for kernel_next bringup
+BOARD_HAVE_WIFI := true
 BOARD_HAVE_BLUETOOTH := false
 FLASHFILE_NO_OTA := true
 endif
@@ -40,6 +40,9 @@ COMMON_GLOBAL_CFLAGS += -DGFX_BUF_EXT
 TARGET_HAS_MULTIPLE_DISPLAY := true
 
 USE_INTEL_IPP := true
+
+#Power_HAL
+POWERHAL_BYT := true
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true

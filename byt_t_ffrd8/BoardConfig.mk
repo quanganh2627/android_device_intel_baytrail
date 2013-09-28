@@ -12,9 +12,6 @@ ifneq (, $(filter %_next, $(TARGET_PRODUCT)))
 FLASHFILE_NO_OTA := true
 endif
 
-# TEMPORARY : Capsule is not enabled for now
-BOARD_HAS_CAPSULE := false
-
 # Temporary IFWI does not support signing
 TARGET_OS_SIGNING_METHOD := none
 
@@ -23,7 +20,8 @@ BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 
 #Modem
 BOARD_HAVE_MODEM := true
-BOARD_SKIP_NVM := true
+BOARD_SKIP_NVM := false
+
 BOARD_MODEM_LIST := 7160_flashless
 BOARD_HAVE_ATPROXY := true
 
@@ -66,6 +64,9 @@ BOARD_USES_AUDIO_HAL_CONFIGURABLE := true
 BOARD_USE_VIBRATOR := true
 BUILD_WITH_ALSA_UTILS := true
 BOARD_USES_GENERIC_AUDIO := false
+
+#BCU HAL
+BCUHAL_BYT := true
 
 #GEN is one graphic and video engine
 # Baytrail uses the GEN for the graphic and video

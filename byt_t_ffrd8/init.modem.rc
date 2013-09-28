@@ -101,7 +101,7 @@ service mmgr /system/bin/mmgr
     class core
     socket mmgr stream 660 system radio
     user system
-    group radio cache inet misc system usb
+    group radio cache inet misc system usb security
     enabled
 
 # adding nvm manager

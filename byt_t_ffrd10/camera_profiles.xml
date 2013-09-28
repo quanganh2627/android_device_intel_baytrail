@@ -255,7 +255,7 @@
     <Common>
         <subDevName value="/dev/v4l-subdev8"/> <!-- it depends on the real hardware -->
         <fileInject value="true"/> <!-- true or false -->
-        <maxContinuousRawRingBuffer value="11"/>
+        <maxContinuousRawRingBuffer value="12"/>
         <productName value="ExampleModel"/> <!-- cfg the exif -->
         <manufacturerName value="ExampleMaker"/> <!-- cfg the exif -->
         <maxZoomFactor value="1024"/>
