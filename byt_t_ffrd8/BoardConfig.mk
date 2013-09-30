@@ -156,6 +156,9 @@ OVERRIDE_RS_DRIVER := libRSDriver_intel7.so
 # usb stick installer support
 BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE +=  droidboot.use_installer=1 droidboot.installer_usb=/dev/block/sda1 droidboot.installer_file=installer.cmd
 
+# Enable Android Security Framework
+USE_INTEL_ASF := true
+
 # Temporary support for diskinstaller to be used with EFI BIOS.
 # -> should go away as this is not needed with PSI firmware + OTG
 #include $(PLATFORM_PATH)/diskinstaller/config.mk
