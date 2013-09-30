@@ -30,11 +30,22 @@ OVERRIDE_COPIES := \
 
 # Make generic definetion of media components.
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/wrs_omxil_components.list:system/etc/wrs_omxil_components.list \
     $(LOCAL_PATH)/mfx_omxil_core.conf:system/etc/mfx_omxil_core.conf \
     $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/sensors/sensor_hal_config_default.xml:system/etc/sensor_hal_config_default.xml
+
+ifneq ($(DOLBY_UDC),true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/media_codecs.xml:system/etc/media_codecs.xml
+else
+PRODUCT_PACKAGES += \
+    media_codecs.xml
+endif
+ifeq ($(DOLBY_DAP),true)
+PRODUCT_PACKAGES += \
+    audio_effects.conf
+endif
 
 PRODUCT_COPY_FILES := $(OVERRIDE_COPIES) $(PRODUCT_COPY_FILES)
 # keypad key mapping

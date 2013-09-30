@@ -10,6 +10,9 @@ PRODUCT_COPY_FILES += \
 # Include product path
 include $(LOCAL_PATH)/byt_t_ffrd8_path.mk
 
+# Dolby DS1
+-include vendor/intel/PRIVATE/dolby_ds1/dolbyds1.mk
+
 # device specific overlay folder
 PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
 
@@ -77,9 +80,11 @@ ALSA_CONF_PATH := external/alsa-lib/
 PRODUCT_COPY_FILES += \
     $(ALSA_CONF_PATH)/src/conf/alsa.conf:system/usr/share/alsa/alsa.conf
 
+ifndef DOLBY_DAP
 # specific management of audio_effects.conf
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf
+endif
 
 # CMS configuration files
 PRODUCT_COPY_FILES += \
@@ -93,6 +98,23 @@ PRODUCT_PACKAGES_ENG += mcd-test
 PRODUCT_COPY_FILES += \
          $(LOCAL_PATH)/thermal_sensor_config.xml:system/etc/thermal_sensor_config.xml \
          $(LOCAL_PATH)/thermal_throttle_config.xml:system/etc/thermal_throttle_config.xml
+
+ifdef DOLBY_DAP
+    PRODUCT_PACKAGES += \
+        Ds \
+        dolby_ds \
+        dolby_ds.xml \
+        ds1-default.xml \
+        DsUI
+    ifdef DOLBY_DAP_OPENSLES
+        PRODUCT_PACKAGES += \
+            libdseffect
+    endif
+endif #DOLBY_DAP
+ifdef DOLBY_UDC
+    PRODUCT_PACKAGES += \
+        libstagefright_soft_ddpdec
+endif #DOLBY_UDC
 
 # Include base makefile
 include $(LOCAL_PATH)/device.mk
