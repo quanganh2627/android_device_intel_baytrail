@@ -388,9 +388,34 @@
             <Component Name="INF"       Type="INF_TYPE"/>
         </ComponentType>
 
+        <!--REALTEK Internal Mux settings that may be used to bypass DSP-->
+        <!-- To find the related muxes in Realtek datasheet 'Digital Mixer Path' diagram,
+             remove _SOURCE from below names: you will then get the mux output net name -->
+        <ComponentType Name="MIXER_VOICE_DSP_TYPE">
+            <EnumParameter Name="IF2_ADC_L_SOURCE" Size="8" Mapping="Control:'IF2 ADC L Mux'">
+                <ValuePair Literal="TXDP" Numerical="0"/>
+                <ValuePair Literal="MONO_ADC_MIXER_L" Numerical="1"/>
+            </EnumParameter>
+            <EnumParameter Name="IF2_ADC_R_SOURCE" Size="8" Mapping="Control:'IF2 ADC R Mux'">
+                <ValuePair Literal="TXDP" Numerical="0"/>
+                <ValuePair Literal="MONO_ADC_MIXER_R" Numerical="1"/>
+            </EnumParameter>
+            <EnumParameter Name="DACL2_SOURCE" Size="8" Mapping="Control:'DAC L2 Mux'">
+                <ValuePair Literal="IF2_DAC_L" Numerical="0"/>
+                <ValuePair Literal="BASS_DAC" Numerical="1"/>
+                <ValuePair Literal="TXDC" Numerical="2"/>
+            </EnumParameter>
+            <EnumParameter Name="DACR2_SOURCE" Size="8" Mapping="Control:'DAC R2 Mux'">
+                <ValuePair Literal="IF2_DAC_R" Numerical="0"/>
+                <ValuePair Literal="IF2_ADC_R" Numerical="1"/>
+                <ValuePair Literal="TXDC" Numerical="2"/>
+            </EnumParameter>
+        </ComponentType>
+
         <ComponentType Name="MIXER_TYPE">
             <Component Name="ANALOG"  Type="MIXER_ANALOG_TYPE"/>
             <Component Name="DIGITAL" Type="MIXER_DIGITAL_TYPE"/>
+            <Component Name="VOICE_DSP" Type="MIXER_VOICE_DSP_TYPE"/>
         </ComponentType>
 
         <ComponentType Name="SSP_PORT" Description="Voice Port">

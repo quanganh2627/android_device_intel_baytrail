@@ -1596,6 +1596,10 @@
       <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/FORMAT"/>
       <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/CHANNEL_NUMBER"/>
       <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/SAMPLE_RATE"/>
+      <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/MIXER/VOICE_DSP/IF2_ADC_L_SOURCE"/>
+      <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/MIXER/VOICE_DSP/IF2_ADC_R_SOURCE"/>
+      <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/MIXER/VOICE_DSP/DACL2_SOURCE"/>
+      <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/MIXER/VOICE_DSP/DACR2_SOURCE"/>
     </ConfigurableElements>
     <Settings>
       <Configuration Name="Default">
@@ -1607,6 +1611,18 @@
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/VOICE_PORT/CONFIG/SAMPLE_RATE">
           <IntegerParameter Name="SAMPLE_RATE">48000</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/MIXER/VOICE_DSP/IF2_ADC_L_SOURCE">
+          <EnumParameter Name="IF2_ADC_L_SOURCE">MONO_ADC_MIXER_L</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/MIXER/VOICE_DSP/IF2_ADC_R_SOURCE">
+          <EnumParameter Name="IF2_ADC_R_SOURCE">MONO_ADC_MIXER_R</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/MIXER/VOICE_DSP/DACL2_SOURCE">
+          <EnumParameter Name="DACL2_SOURCE">IF2_DAC_L</EnumParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/MIXER/VOICE_DSP/DACR2_SOURCE">
+          <EnumParameter Name="DACR2_SOURCE">IF2_DAC_R</EnumParameter>
         </ConfigurableElement>
       </Configuration>
     </Settings>
