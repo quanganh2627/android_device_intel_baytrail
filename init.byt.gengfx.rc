@@ -1,3 +1,8 @@
+
+on boot
+    #Give permission to system to use i915_videostatus sysfs interface
+    chown system system /sys/class/drm/card0/power/i915_videostatus
+
 service coreu /system/bin/coreu
     class main
     user root
