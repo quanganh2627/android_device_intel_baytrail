@@ -51,7 +51,7 @@ USE_MDS_LEGACY := true
 USE_INTEL_IPP := true
 
 # WiDi
-INTEL_WIDI_BAYTRAIL := true
+INTEL_WIDI_BAYTRAIL := false
 
 # NFC
 -include vendor/intel/hardware/nfc/common/NfcBoardConfig.mk
@@ -73,6 +73,7 @@ BCUHAL_BYT := true
 #GEN is one graphic and video engine
 # Baytrail uses the GEN for the graphic and video
 BOARD_GRAPHIC_IS_GEN := true
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
 # Camera
 # Set USE_CAMERA_STUB to 'true' for Fake Camera builds,
