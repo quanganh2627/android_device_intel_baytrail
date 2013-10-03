@@ -119,23 +119,6 @@ Group Modem
 //      If missing, the default value will be "1" and cell info will be supported.
     EnableCellInfo              1
 
-
-// Rx Diversity settings - Control enabling/disabling of 3G Rx Diversity feature
-//      and optional 2G DARP field.
-//  RxDiversity3GEnable
-//      If set to "1", enable 3G Rx Diversity, else if "0", disable.
-//      If missing, ignore Rx Diversity settings.
-//  RxDiversity2GDARP
-//      If "0", 2G DARP not supported
-//      If "1", DARP phase 1
-//      If "2", DARP phase 2 "traffic only"
-//      If "3", DARP phase 2 "always on"
-//      If missing, default value will be "1": DARP phase 1.
-//      If "-1", ignore parameter.
-    RxDiversity3GEnable         1
-    RxDiversity2GDARP           1   // DARP phase 1
-
-
 //  Set Fast Dormancy Timer
 //    "FDDelayTimer" = integer value in range of 1 to 60 (seconds)
 //    "SCRITimer" = integer value in range of 1 to 120 (seconds)
