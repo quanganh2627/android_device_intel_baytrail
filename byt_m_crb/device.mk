@@ -24,7 +24,7 @@ DEVICE_PACKAGE_OVERLAYS := $(COMMON_PATH)/overlays
 
 OVERRIDE_COPIES := \
     $(LOCAL_PATH)/asound.conf:system/etc/asound.conf \
-    $(LOCAL_PATH)/init.baylake.sh:root/init.baylake.sh \
+    $(LOCAL_PATH)/init.baytrail.sh:root/init.baytrail.sh \
     $(LOCAL_PATH)/egl.cfg:system/lib/egl/egl.cfg \
     $(LOCAL_PATH)/init.net.eth0.sh:root/init.net.eth0.sh
 
@@ -103,7 +103,9 @@ PRODUCT_PACKAGES += \
     libmixvbp_h264 \
     libmixvbp_vc1 \
     libmixvbp_vp8 \
-    libmixvbp_h264secure
+    libmixvbp_h264secure \
+    libmix_videovpp \
+    libjpegdec
 
 # libva
 PRODUCT_PACKAGES += \
@@ -145,7 +147,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.service.adb.tcp.port=5555 \
     net.eth0.ip=192.168.42.1 \
-    net.eth0.netmask=255.255.255.0
+    net.eth0.netmask=255.255.255.0 \
+    net.dns1=8.8.4.4
 
 # Version of mandatory blankphone
 PRODUCT_PROPERTY_OVERRIDES += ro.blankphone_id=1
@@ -305,8 +308,8 @@ PRODUCT_PACKAGES += \
     libreverbwrapper.so \
     libxmlparser.so \
     LvmDefaultControlParams.xml \
-    LvmSessionConfigurationMinus1.xml
-
+    LvmSessionConfigurationMinus1.xml \
+    audio_effects.conf
 # Optional GMS applications
 -include vendor/google/PRIVATE/gms/products/gms_optional.mk
 

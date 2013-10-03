@@ -221,7 +221,7 @@ service hdcpd /system/bin/hdcpd
     user root
     group graphics drmrpc
 
-service baytrail-setup /system/bin/sh /system/etc/init.baytrail.sh
+service baytrail-setup /system/bin/sh /init.baytrail.sh
     class core
     oneshot
 
@@ -246,6 +246,17 @@ service serialno /sbin/serialno /dev/block/sda ro.serialno
 # for eth0
 service net_eth0-start /system/bin/sh /init.net.eth0.sh
     class core
+    oneshot
+
+service dhcpcd_eth0 /system/bin/dhcpcd -d -BK -f /system/etc/dhcpcd/android.conf
+    class main
+    group root system net_admin net_raw
+    disabled
+    oneshot
+
+service iprenew_eth0 /system/bin/dhcpcd -n
+    class main
+    disabled
     oneshot
 
 # create virtual SD card at /mnt/sdcard, based on the /data/media directory
@@ -288,6 +299,3 @@ on charger
     symlink /dev/max170xx /dev/fg
     chmod 0775 /dev/fg
     start fg_conf
-
-on property:sys.boot_completed=1
-    write /sys/firmware/osnib/clean_osnib 1

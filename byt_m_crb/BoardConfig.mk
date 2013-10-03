@@ -61,6 +61,7 @@ BOARD_USES_GENERIC_AUDIO := false
 #GEN is one graphic and video engine
 # Baytrail uses the GEN for the graphic and video
 BOARD_GRAPHIC_IS_GEN := true
+INTEL_FEATURE_ETHERNET := true
 
 # Camera
 # Set USE_CAMERA_STUB to 'true' for Fake Camera builds,
@@ -77,6 +78,7 @@ USE_CSS_2_0 := true
 USE_INTEL_JPEG := false
 # Enabled NXP Premium Audio Effect Libraries
 USE_INTEL_LVSE := true
+USE_WEBRTC_EFFECTS := true
 
 ifeq ($(BOARD_KERNEL_CMDLINE),)
 ifeq ($(TARGET_BUILD_VARIANT),eng)

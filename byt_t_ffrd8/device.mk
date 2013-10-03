@@ -372,7 +372,8 @@ PRODUCT_PACKAGES += \
     libreverbwrapper.so \
     libxmlparser.so \
     LvmDefaultControlParams.xml \
-    LvmSessionConfigurationMinus1.xml
+    LvmSessionConfigurationMinus1.xml \
+    audio_effects.conf
 
 # Optional GMS applications
 -include vendor/google/PRIVATE/gms/products/gms_optional.mk
@@ -395,7 +396,7 @@ PRODUCT_PACKAGES += \
 #audio firmware
 AUDIO_FW_PATH := vendor/intel/fw/sst/
 PRODUCT_COPY_FILES += \
-    $(AUDIO_FW_PATH)/fw_sst_0f28_ffrd8.bin:system/etc/firmware/fw_sst_0f28.bin \
+    $(AUDIO_FW_PATH)/fw_sst_0f28.bin:system/etc/firmware/fw_sst_0f28.bin \
 
 # Board initrc file
 PRODUCT_COPY_FILES += \

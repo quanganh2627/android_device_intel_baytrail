@@ -8,6 +8,7 @@ include $(LOCAL_PATH)/byt_m_crb_path.mk
 
 # device specific overlay folder
 PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
+PRODUCT_PACKAGE_OVERLAYS += $(TOP)/vendor/intel/apps/EthernetSettings/overlays
 
 # copy permission files
 FRAMEWORK_ETC_PATH := frameworks/native/data/etc
@@ -47,14 +48,19 @@ PRODUCT_PACKAGES += \
     libstagefright_soft_mp3dec_mdp \
     libstagefright_soft_aacdec_mdp
 
+# Ethernet
+PRODUCT_PACKAGES += \
+    EthernetSettings
+
 #alsa conf
 ALSA_CONF_PATH := external/alsa-lib/
 PRODUCT_COPY_FILES += \
     $(ALSA_CONF_PATH)/src/conf/alsa.conf:system/usr/share/alsa/alsa.conf
 
 # specific management of audio_effects.conf
+
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf
+    $(LOCAL_PATH)/audio_effects_adge_webrtc.conf:system/etc/audio_effects.conf
 
 # crashlog conf
 PRODUCT_COPY_FILES += \
