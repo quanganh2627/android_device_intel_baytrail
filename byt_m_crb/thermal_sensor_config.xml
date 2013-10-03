@@ -15,7 +15,7 @@
         <ZoneID>0</ZoneID>
         <ZoneName>CPU</ZoneName>
         <!--If 1, supports UEvent, otherwise poll-->
-        <SupportsUEvent>1</SupportsUEvent>
+        <SupportsUEvent>0</SupportsUEvent>
         <!--1 AND logic, 0 OR Logic-->
         <SensorLogic>0</SensorLogic>
         <!--Debounce Interval for this Zone. In milli degrees-->

@@ -3,11 +3,9 @@
 
 include device/intel/common/AndroidBoard.mk
 
-ifneq ($(BOARD_HAVE_KNEXT), true)
 # Add socwatchdk driver
 -include $(TOP)/linux/modules/debug_tools/socwatchdk/src/AndroidSOCWatchDK.mk
 -include $(TOP)/vendor/intel/tools/PRIVATE/debug_internal_tools/socwatchdk/src/AndroidSOCWatchDK.mk
-endif
 
 # Add VISA driver
 -include $(TOP)/vendor/intel/tools/PRIVATE/debug_internal_tools/visadk/driver/src/AndroidVISA.mk

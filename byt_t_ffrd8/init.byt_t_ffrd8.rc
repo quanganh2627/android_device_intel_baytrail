@@ -279,11 +279,8 @@ on property:ro.debuggable=1
 on charger
     mount_all /fstab.charger.${ro.hardware}
 
+    setprop ro.boot.min.cap 3
     start watchdogd
-    # REVERTME - Temp workaround for Baylake bringup.  See BZ 91648.
-    # To workaround inability to resume after sleep, disable the access that
-    # triggers the problem.
-    chmod 0000 /sys/power/state
     insmod /lib/modules/rmi4.ko boot_mode=1
 
     # Invoke fuel gauging helper binary to restore config data
@@ -293,6 +290,3 @@ on charger
     start fg_conf
 
     insmod /lib/modules/atomisp-css2400b0_v2.ko
-
-on property:sys.boot_completed=1
-    write /sys/firmware/osnib/clean_osnib 1

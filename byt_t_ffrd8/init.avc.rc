@@ -39,3 +39,6 @@ on post-fs
     chown system system /sys/devices/platform/VIB8601:00/vibrator
     chown system system /sys/devices/platform/VIB8601:00/pwm_ontime_div
 
+    # Permissions for pmdown_time
+    chown media system /sys/devices/platform/AMCR0F28:00/Baytrail\ Audio/pmdown_time
+    chown media system /sys/devices/platform/AMCR0F28:00/Baytrail\ Voice/pmdown_time

@@ -230,6 +230,11 @@ on post-fs
     chown system system /sys/devices/platform/msic_ocd/msic_current/batt_level
 
 # additional baytrail initialization
+service hdcpd /system/bin/hdcpd
+    class main
+    user root
+    group graphics drmrpc
+
 service baytrail-setup /system/bin/sh /system/etc/init.baytrail.sh
     class core
     oneshot
@@ -300,5 +305,3 @@ on charger
 
     insmod /lib/modules/atomisp-css2400b0_v2.ko
 
-on property:sys.boot_completed=1
-   write /sys/firmware/osnib/clean_osnib 1

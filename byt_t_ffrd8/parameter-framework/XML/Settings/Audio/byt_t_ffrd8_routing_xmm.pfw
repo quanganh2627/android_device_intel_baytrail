@@ -32,6 +32,7 @@ supDomain: Routing.Mute
 			conf: Unmute
 				ANY
 					OpenedCaptureRoutes Includes HwCodecCSV
+					OpenedCaptureRoutes Includes BtCSV
 				/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/VOLUME/MUTED = 0
 
 			conf: Mute
@@ -43,6 +44,7 @@ supDomain: Routing.Mute
 			conf: Unmute
 				ANY
 					OpenedPlaybackRoutes Includes HwCodecCSV
+					OpenedPlaybackRoutes Includes BtCSV
 				/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/VOLUME/MUTED = 0
 
 			conf: Mute
@@ -60,7 +62,9 @@ supDomain: Routing.Enable
 		supDomain: Voice
 			domain: capture
 				conf: Enable
-					OpenedCaptureRoutes Includes HwCodecCSV
+					ANY
+						OpenedCaptureRoutes Includes HwCodecCSV
+						OpenedCaptureRoutes Includes BtCSV
 					#enable modem
 					/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/I2S2_RX/DESTINATIONS/SPEECH_TX = 1
 					/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/ENABLED = 1
@@ -75,7 +79,9 @@ supDomain: Routing.Enable
 			domain: playback sequenceAware
 
 				conf: Enable
-					OpenedPlaybackRoutes Includes HwCodecCSV
+					ANY
+						OpenedPlaybackRoutes Includes HwCodecCSV
+						OpenedCaptureRoutes Includes BtCSV
 					#enable modem
 					/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SPEECH_RX/DESTINATIONS/I2S2_TX = 1
 					/Audio/IMC/SOUND_CARD/SWITCH_MATRIX/SIMPLE_TONES/DESTINATIONS/I2S2_TX = 1

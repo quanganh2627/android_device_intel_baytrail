@@ -15,14 +15,14 @@
         </CompoundRule>
       </Configuration>
       <Configuration Name="Voip.WiredSpeakers">
-      <CompoundRule Type="All">
-        <CompoundRule Type="Any">
-          <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Headphones"/>
-          <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Headset"/>
+        <CompoundRule Type="All">
+          <CompoundRule Type="Any">
+            <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Headphones"/>
+            <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Headset"/>
+          </CompoundRule>
+          <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="InVoipCall"/>
         </CompoundRule>
-        <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="InVoipCall"/>
-      </CompoundRule>
-    </Configuration>
+      </Configuration>
     </Configurations>
     <ConfigurableElements>
       <ConfigurableElement Path="/Audio/LPE/HSEP_PATH/STEREO_EQ/ENABLE"/>
@@ -52,6 +52,7 @@
       <Configuration Name="Enabled">
         <CompoundRule Type="All">
           <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="IHF"/>
+          <SelectionCriterionRule SelectionCriterion="BypassNonLinearPp" MatchesWhen="Is" Value="Off"/>
           <CompoundRule Type="Any">
             <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="Normal"/>
             <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="RingTone"/>
@@ -169,16 +170,18 @@
       <Configuration Name="InCall.FrontMic">
         <CompoundRule Type="All">
           <SelectionCriterionRule SelectionCriterion="SelectedInputDevice" MatchesWhen="Is" Value="Main"/>
-          <CompoundRule Type="All">
+          <CompoundRule Type="Any">
             <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="InVoipCall"/>
+            <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="InCsvCall"/>
           </CompoundRule>
         </CompoundRule>
       </Configuration>
       <Configuration Name="InCall.HeadsetMic">
         <CompoundRule Type="All">
           <SelectionCriterionRule SelectionCriterion="SelectedInputDevice" MatchesWhen="Is" Value="Headset"/>
-          <CompoundRule Type="All">
+          <CompoundRule Type="Any">
             <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="InVoipCall"/>
+            <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="InCsvCall"/>
           </CompoundRule>
         </CompoundRule>
       </Configuration>
@@ -216,13 +219,13 @@
   </ConfigurableDomain>
   <ConfigurableDomain Name="OutputDevice.Selected" SequenceAware="false">
     <Configurations>
-      <Configuration Name="IHF">
+      <Configuration Name="Multimedia.IHF">
         <CompoundRule Type="All">
           <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Is" Value="IHF"/>
           <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="IsNot" Value="InCsvCall"/>
         </CompoundRule>
       </Configuration>
-      <Configuration Name="Headset">
+      <Configuration Name="Multimedia.Headset">
         <CompoundRule Type="All">
           <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Excludes" Value="IHF"/>
           <CompoundRule Type="Any">
@@ -232,7 +235,7 @@
           <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="IsNot" Value="InCsvCall"/>
         </CompoundRule>
       </Configuration>
-      <Configuration Name="IHF.Headset">
+      <Configuration Name="Multimedia.IHF.Headset">
         <CompoundRule Type="All">
           <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="IHF"/>
           <CompoundRule Type="Any">
@@ -242,6 +245,22 @@
           <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="IsNot" Value="InCsvCall"/>
         </CompoundRule>
       </Configuration>
+      <Configuration Name="InCallCsv.IHF">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Is" Value="IHF"/>
+          <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="InCsvCall"/>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="InCallCsv.Headset">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Excludes" Value="IHF"/>
+          <CompoundRule Type="Any">
+            <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Headset"/>
+            <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Headphones"/>
+          </CompoundRule>
+          <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="InCsvCall"/>
+        </CompoundRule>
+      </Configuration>
     </Configurations>
     <ConfigurableElements>
       <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME"/>
@@ -249,7 +268,7 @@
       <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/DAC1"/>
     </ConfigurableElements>
     <Settings>
-      <Configuration Name="IHF">
+      <Configuration Name="Multimedia.IHF">
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME">
           <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
         </ConfigurableElement>
@@ -260,18 +279,18 @@
           <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
         </ConfigurableElement>
       </Configuration>
-      <Configuration Name="Headset">
+      <Configuration Name="Multimedia.Headset">
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME">
           <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/DAC1">
-          <IntegerParameter Name="DAC1">120 120</IntegerParameter>
+          <IntegerParameter Name="DAC1">153 153</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME">
           <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
         </ConfigurableElement>
       </Configuration>
-      <Configuration Name="IHF.Headset">
+      <Configuration Name="Multimedia.IHF.Headset">
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME">
           <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
         </ConfigurableElement>
@@ -280,6 +299,28 @@
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME">
           <IntegerParameter Name="VOLUME">17 17</IntegerParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="InCallCsv.IHF">
+        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME">
+          <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/DAC1">
+          <IntegerParameter Name="DAC1">170 170</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME">
+          <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="InCallCsv.Headset">
+        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME">
+          <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/DAC1">
+          <IntegerParameter Name="DAC1">120 120</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME">
+          <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
         </ConfigurableElement>
       </Configuration>
     </Settings>
@@ -291,12 +332,8 @@
       </Configuration>
     </Configurations>
     <ConfigurableElements>
-      <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/MIXER/DIGITAL/ADC_MIXER/RIGHT/STEREO/2/SWITCH"/>
-      <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/MIXER/DIGITAL/ADC_MIXER/LEFT/STEREO/2/SWITCH"/>
-      <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/MIXER/DIGITAL/ADC_MIXER/RIGHT/STEREO/1/SWITCH"/>
-      <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/MIXER/DIGITAL/ADC_MIXER/LEFT/STEREO/1/SWITCH"/>
-      <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/MIXER/DIGITAL/DAC_MIXER/STEREO/RIGHT/1/SWITCH"/>
-      <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/MIXER/DIGITAL/DAC_MIXER/STEREO/LEFT/1/SWITCH"/>
+      <ConfigurableElement Path="/Audio/CODECFS/AUDIO_PMDOWN/TIME"/>
+      <ConfigurableElement Path="/Audio/CODECFS/VOICE_PMDOWN/TIME"/>
       <ConfigurableElement Path="/Audio/LPE/MIC1_PATH/GAIN_CTRL/ENABLE"/>
       <ConfigurableElement Path="/Audio/LPE/MIC1_PATH/GAIN_CTRL/CHANNELS"/>
       <ConfigurableElement Path="/Audio/LPE/MIC2_PATH/GAIN_CTRL/ENABLE"/>
@@ -330,23 +367,11 @@
     </ConfigurableElements>
     <Settings>
       <Configuration Name="Default">
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/MIXER/DIGITAL/ADC_MIXER/RIGHT/STEREO/2/SWITCH">
-          <BooleanParameter Name="SWITCH">1</BooleanParameter>
+        <ConfigurableElement Path="/Audio/CODECFS/AUDIO_PMDOWN/TIME">
+          <IntegerParameter Name="TIME">0</IntegerParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/MIXER/DIGITAL/ADC_MIXER/LEFT/STEREO/2/SWITCH">
-          <BooleanParameter Name="SWITCH">1</BooleanParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/MIXER/DIGITAL/ADC_MIXER/RIGHT/STEREO/1/SWITCH">
-          <BooleanParameter Name="SWITCH">1</BooleanParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/MIXER/DIGITAL/ADC_MIXER/LEFT/STEREO/1/SWITCH">
-          <BooleanParameter Name="SWITCH">1</BooleanParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/MIXER/DIGITAL/DAC_MIXER/STEREO/RIGHT/1/SWITCH">
-          <BooleanParameter Name="SWITCH">1</BooleanParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/MIXER/DIGITAL/DAC_MIXER/STEREO/LEFT/1/SWITCH">
-          <BooleanParameter Name="SWITCH">1</BooleanParameter>
+        <ConfigurableElement Path="/Audio/CODECFS/VOICE_PMDOWN/TIME">
+          <IntegerParameter Name="TIME">0</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/LPE/MIC1_PATH/GAIN_CTRL/ENABLE">
           <BooleanParameter Name="ENABLE">1</BooleanParameter>
@@ -934,15 +959,15 @@
           <Component Name="VERTICES">
             <Component Name="LOWER_MOST">
               <IntegerParameter Name="THRESHOLD">24576</IntegerParameter>
-              <IntegerParameter Name="SLOPE">533</IntegerParameter>
+              <IntegerParameter Name="SLOPE">256</IntegerParameter>
             </Component>
             <Component Name="INTERMEDIATE">
-              <IntegerParameter Name="GAIN_AT_THRESHOLD">11264</IntegerParameter>
-              <IntegerParameter Name="THRESHOLD">20480</IntegerParameter>
-              <IntegerParameter Name="SLOPE">544</IntegerParameter>
+              <IntegerParameter Name="GAIN_AT_THRESHOLD">7680</IntegerParameter>
+              <IntegerParameter Name="THRESHOLD">15360</IntegerParameter>
+              <IntegerParameter Name="SLOPE">469</IntegerParameter>
             </Component>
             <Component Name="UPPER_MOST">
-              <IntegerParameter Name="THRESHOLD">1536</IntegerParameter>
+              <IntegerParameter Name="THRESHOLD">2304</IntegerParameter>
               <IntegerParameter Name="SLOPE">256</IntegerParameter>
             </Component>
           </Component>
