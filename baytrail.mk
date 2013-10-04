@@ -5,7 +5,9 @@ LOCAL_PATH := device/intel/baytrail
 
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/init.baytrail.rc:root/init.baytrail.rc \
-	$(LOCAL_PATH)/init.recovery.baytrail.rc:root/init.recovery.baytrail.rc
+	$(LOCAL_PATH)/init.recovery.baytrail.rc:root/init.recovery.baytrail.rc \
+	$(LOCAL_PATH)/media_codecs.xml:system/etc/media_codecs.xml \
+	$(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml
 
 $(call inherit-mixin, cpu-arch, slm)
 
