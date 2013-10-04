@@ -2,3 +2,7 @@ service coreu /system/bin/coreu
     class main
     user root
     group graphics drmrpc
+
+# To-be-REVERTED - Temporary workaround- For kernel 3.10 until issue fixed.
+on early-init
+    setprop intel.hwc.overlayrgb.enable 0
