@@ -13,3 +13,9 @@ include $(PLATFORM_PATH)/AndroidBoard.mk
 flashfiles: liveimg
 # parameter-framework
 include $(DEVICE_CONF_PATH)/parameter-framework/AndroidBoard.mk
+
+liveimg:
+	@rm -rf $(PUBLISH_PATH)/$(TARGET_PUBLISH_PATH)/uefi-images/$(TARGET_BUILD_VARIANT)
+	@mkdir -p $(PUBLISH_PATH)/$(TARGET_PUBLISH_PATH)/uefi-images/$(TARGET_BUILD_VARIANT)
+	@cp $(PRODUCT_OUT)/live.img $(PUBLISH_PATH)/$(TARGET_PUBLISH_PATH)/uefi-images/$(TARGET_BUILD_VARIANT)/
+	@$(ACP) -rpf $(PRODUCT_OUT)/iago/images/*.img $(PUBLISH_PATH)/$(TARGET_PUBLISH_PATH)/uefi-images/$(TARGET_BUILD_VARIANT)/
