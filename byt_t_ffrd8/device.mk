@@ -435,6 +435,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab
 
+# Android Security Framework
+PRODUCT_PACKAGES += \
+        com.intel.asf \
+        com.intel.asf.xml \
+        securityfileservice \
+        SecurityManagerService
+
 #################################################"
 # Include platform - do not inherit so that variables can be set before inclusion
 include $(PLATFORM_PATH)/baytrail.mk
