@@ -162,6 +162,9 @@ BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE +=  droidboot.use_installer=1 droidboot.ins
 # Enable Android Security Framework
 INTEL_FEATURE_ASF := true
 
+# Use shared object of ia_face
+USE_SHARED_IA_FACE := true
+
 # Temporary support for diskinstaller to be used with EFI BIOS.
 # -> should go away as this is not needed with PSI firmware + OTG
 #include $(PLATFORM_PATH)/diskinstaller/config.mk
