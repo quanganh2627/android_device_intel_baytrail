@@ -8,10 +8,6 @@ service coreu /system/bin/coreu
     user root
     group graphics drmrpc
 
-# To-be-REVERTED - Temporary workaround- For kernel 3.10 until issue fixed.
-on early-init
-    setprop intel.hwc.overlayrgb.enable 0
-
 on early-boot
     # RenderScript Properties
     # debug.rs.default-CPU-driver - 0 (default) to use GPGPU, 1 to use CPU
