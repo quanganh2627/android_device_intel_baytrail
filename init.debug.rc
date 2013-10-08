@@ -16,6 +16,9 @@ on early-boot
     chmod 0750 /logs/core
     write /proc/sys/kernel/core_pattern /logs/core/%t_%e_%p.core
 
+    # Enable Renderscript Vectorizer
+    setprop debug.rs.x86vectorizer 1
+
 on boot
     mount pstore none /pstore
 
