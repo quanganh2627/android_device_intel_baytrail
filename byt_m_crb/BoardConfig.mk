@@ -129,7 +129,6 @@ USE_FEATURE_ALAC := true
 # Defines Intel library for GPU accelerated Renderscript:
 OVERRIDE_RS_DRIVER := libRSDriver_intel7.so
 
-BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE += droidboot.disablewipe=1
 #temporary workaround to speed up flashing with fastboot
 BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE += droidboot.disablefbootui=1
 
