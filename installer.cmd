@@ -9,7 +9,7 @@ erase:cache
 erase:system
 erase:config
 erase:logs
-erase:spare
+erase:misc
 erase:data
 oem stop_partitioning
 flash:system#/installer/system.img.gz
