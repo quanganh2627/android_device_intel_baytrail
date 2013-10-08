@@ -31,7 +31,7 @@ PRODUCT_COPY_FILES += \
 #PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.direct.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml
 
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
         wifi_bcm_4334x
 
 # Revert me to fg_config.bin instead of fg_config_$(TARGET_PRODUCT) once BZ119617 is resoved
