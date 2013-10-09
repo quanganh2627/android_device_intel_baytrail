@@ -244,12 +244,6 @@ PRODUCT_PACKAGES += \
     TelephonyEventsNotifier
 endif
 
-
-# MMGR config file
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/mmgr.conf:system/etc/telephony/mmgr.conf \
-    $(LOCAL_PATH)/flashless.conf:system/etc/telephony/flashless.conf
-
 # Enable LTE telephony framework support
 PRODUCT_PROPERTY_OVERRIDES += persist.tel.lteOnGsmDevice=true
 
