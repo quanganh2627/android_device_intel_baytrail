@@ -214,7 +214,7 @@ PRODUCT_PACKAGES += \
     Stk
 
 # Modem Trace Server (MTS)
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     mts
 
 # AMTL : Android Modem Traces and Logs
@@ -238,7 +238,7 @@ PRODUCT_COPY_FILES += \
         $(DEVICE_CONF_PATH)/rril/repository.txt:system/etc/rril/repository.txt
 
 # Modem Manager
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     mmgr \
     libmodemupdate \
     nvm_server \
