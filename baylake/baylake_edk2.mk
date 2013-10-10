@@ -6,6 +6,9 @@ BOARD_HAS_CAPSULE := false
 
 FORCE_FLASHFILE_NO_OTA := true
 
+TARGET_PARTITIONING_SCHEME := "full-gpt"
+TARGET_BIOS_TYPE := "uefi"
+
 # Include base product makefile
 include $(LOCAL_PATH)/baylake.mk
 
