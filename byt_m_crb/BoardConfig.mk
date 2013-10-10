@@ -46,6 +46,9 @@ TARGET_HAS_MULTIPLE_DISPLAY := true
 
 USE_INTEL_IPP := true
 
+# Power_HAL
+POWERHAL_BYT := true
+
 # Widi
 INTEL_WIDI := true
 INTEL_WIDI_BAYTRAIL := true

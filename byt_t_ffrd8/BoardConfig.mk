@@ -55,6 +55,9 @@ INTEL_WIDI_BAYTRAIL := true
 # NFC
 -include vendor/intel/hardware/nfc/NfcBoardConfig.mk
 
+# Power_HAL
+POWERHAL_BYT := true
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 BOARD_USES_TINY_ALSA_AUDIO := true
