@@ -124,6 +124,13 @@ Group Modem
 //      If missing, the default value will be "1" and cell info will be supported.
     EnableCellInfo              1
 
+// EnableCipheringInd - Enable support for reporting of ciphering indication
+//      If set to "1", Ciphering Indication is supported
+//      If set to "0", Ciphering Indication is not supported
+//      If missing, the default value will be "1" and Ciphering indication is
+//      supported.
+    EnableCipheringInd          1
+
 //  Set Fast Dormancy Timer
 //    "FDDelayTimer" = integer value in range of 1 to 60 (seconds)
 //    "SCRITimer" = integer value in range of 1 to 120 (seconds)
