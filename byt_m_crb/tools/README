@@ -1,0 +1,12 @@
+This folder contains tools used for development
+
+sync_img:
+sync_img tool is used to transfer the updated image to running android system
+using ADB connection.
+
+Steps to use sync_img:
+1. adb connect <device_ip>
+2. adb remount
+3. sync_img -k ( to flash the boot.img image)
+
+
