@@ -10,9 +10,6 @@ include $(PLATFORM_PATH)/BoardConfig.mk
 # TEMPORARY : Capsule is not enabled for now
 BOARD_HAS_CAPSULE := false
 
-# Temporary IFWI does not support signing
-TARGET_OS_SIGNING_METHOD := none
-
 # IAFW component to build for this board
 BOARD_IAFW_COMPONENT := brd_baylake
 

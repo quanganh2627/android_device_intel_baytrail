@@ -15,9 +15,6 @@ include $(PLATFORM_PATH)/BoardConfig.mk
 # Disable sparse build until we move to B-2 and re-use ethernet PCI card
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
 
-# Temporary IFWI does not support signing
-TARGET_OS_SIGNING_METHOD := none
-
 # IAFW component to build for this board
 BOARD_IAFW_COMPONENT := brd_bayleybay
 
@@ -61,7 +58,6 @@ BOARD_USES_GENERIC_AUDIO := false
 #GEN is one graphic and video engine
 # Baytrail uses the GEN for the graphic and video
 BOARD_GRAPHIC_IS_GEN := true
-INTEL_FEATURE_ETHERNET := true
 
 # Camera
 # Set USE_CAMERA_STUB to 'true' for Fake Camera builds,
@@ -89,6 +85,9 @@ else
 BOARD_KERNEL_CMDLINE := console=logk0 earlyprintk=nologger loglevel=0 kmemleak=off androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) vmalloc=172M
 endif
 endif
+
+# Enable TCO WCDG
+BOARD_KERNEL_CMDLINE += enable_tco=1
 
 # Graphics
 BOARD_GPU_DRIVERS := i965
