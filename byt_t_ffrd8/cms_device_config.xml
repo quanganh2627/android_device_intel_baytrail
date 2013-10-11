@@ -18,12 +18,11 @@
 		<devName>camera</devName>
 		<devID>2</devID>
 		<throttleTrigger>
-                        <!-- currently 1-enable flash and 0-disable flash -->
 			<name>battLevel</name>
-			<normal>1</normal>
-			<warning>0</warning>
-			<alert>0</alert>
-			<critical>0</critical>
+			<normal>0</normal>
+			<warning>1</warning>
+			<alert>2</alert>
+			<critical>3</critical>
 		</throttleTrigger>
 		<throttleTrigger>
 			<name>battTemp</name>
