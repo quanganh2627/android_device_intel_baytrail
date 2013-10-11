@@ -130,8 +130,8 @@ BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE += droidboot.disablewipe=1
 #temporary workaround to speed up flashing with fastboot
 BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE += droidboot.disablefbootui=1
 
-# usb stick installer support
-BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE +=  droidboot.use_installer=1 droidboot.installer_usb=/dev/block/sdb1 droidboot.installer_file=installer.cmd
+# usb stick/sdcard installer support
+BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE +=  droidboot.use_installer=1 droidboot.installer_usb=/dev/block/sdb1 droidboot.installer_sdcard=/dev/block/mmcblk1p1 droidboot.installer_file=installer.cmd
 
 #Camera
 ADDITIONAL_BUILD_PROPERTIES += \

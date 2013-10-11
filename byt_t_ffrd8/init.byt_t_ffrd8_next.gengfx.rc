@@ -1,8 +1,0 @@
-service coreu /system/bin/coreu
-    class main
-    user root
-    group graphics drmrpc
-
-# Temporary - REVERTME - For kernel_next, early port:
-on early-init
-    setprop intel.hwc.overlayrgb.enable 0

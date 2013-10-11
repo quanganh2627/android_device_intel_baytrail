@@ -1,4 +1,25 @@
+
+on boot
+    #Give permission to system to use i915_videostatus sysfs interface
+    chown system system /sys/class/drm/card0/power/i915_videostatus
+
 service coreu /system/bin/coreu
     class main
     user root
     group graphics drmrpc
+
+# To-be-REVERTED - Temporary workaround- For kernel 3.10 until issue fixed.
+on early-init
+    setprop intel.hwc.overlayrgb.enable 0
+
+on early-boot
+    # RenderScript Properties
+    # debug.rs.default-CPU-driver - 0 (default) to use GPGPU, 1 to use CPU
+    # When debug.rs.default-CPU-driver is set to 0, use props as below:
+    #   debug.rs.gpu.renderscript 0: run rs on CPU, 1: run rs on GPGPU
+    #   debug.rs.gpu.filterscript 0: run fs on CPU, 1: run fs on GPGPU
+    #   debug.rs.gpu.rsIntrinsic  0: run intrinsic on CPU, 1: on GPGPU
+    # These are the settings recommended by the RenderScript team:
+    setprop debug.rs.gpu.filterscript    1
+    setprop debug.rs.gpu.renderscript    1
+    setprop debug.rs.gpu.rsIntrinsic     0

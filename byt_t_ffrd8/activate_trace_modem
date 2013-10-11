@@ -4,18 +4,13 @@
 # Configuration available
 #
 # activate_trace_modem
-# 			-on -e1 -o : write on emmc (100MB) oneshot
-# 			-on -e1 -p : write on emmc (100MB) persistent
-# 			-on -e2 -o : write on emmc extented (600MB) oneshot
-# 			-on -e2 -p : write on emmc extented (600MB) persistent
-# 			-on -sd1 -o : write on sd (100MB) oneshot
-# 			-on -sd1 -p : write on sd (100MB) persistent
-# 			-on -sd2 -o : write on sd extended (600MB) oneshot
-# 			-on -sd2 -p : write on sd extended (600MB) persistent
-# 			-on -usb -o : write on usb oneshot
-# 			-off : stop mts
-# 			-on -mux : active mux traces channels 0 to 17
-# 			-off -mux : disable mux traces
+#			-on -e1 -o : write on emmc (100MB) oneshot
+#			-on -e1 -p : write on emmc (100MB) persistent
+#			-on -e2 -o : write on emmc extented (600MB) oneshot
+#			-on -e2 -p : write on emmc extented (600MB) persistent
+#			-off : stop mts
+#			-on -mux : active mux traces channels 0 to 17
+#			-off -mux : disable mux traces
 ################################################################################
 
 
@@ -55,19 +50,7 @@ then
 			setprop persist.service.mtsp.enable 0
 			exit 0
 		fi
-		if [ -n "$mts_name" ] && [ $mts_name = "mtssd" ]
-		then
-			echo "activate_trace_modem" $1 ": sd (100MB) persistent disabled"
-			setprop persist.service.mtsp.enable 0
-			exit 0
-		fi
-		if [ -n "$mts_name" ] && [ $mts_name = "mtsextsd" ]
-		then
-			echo "activate_trace_modem" $1 ": sd extended (600MB) persistent disabled"
-			setprop persist.service.mtsp.enable 0
-			exit 0
-		fi
-	elif [ -n "$mtsp_persist_status" ] && [ $mtsp_persist_status != "stopped" ]
+	elif [ -n "$mtsp_status" ] && [ $mtsp_status != "stopped" ]
 	then
 		if [ -n "$mts_name" ] && [ $mts_name = "mtsfs" ]
 		then
@@ -81,18 +64,6 @@ then
 			stop mtsp
 			exit 0
 		fi
-		if [ -n "$mts_name" ] && [ $mts_name = "mtssd" ]
-		then
-			echo "activate_trace_modem" $1 ": sdcard extended (100MB) disabled"
-			stop mtsp
-			exit 0
-		fi
-		if [ -n "$mts_name" ] && [ $mts_name = "mtsextsd" ]
-		then
-			echo "activate_trace_modem" $1 ": sd extended (600MB) persistent disabled"
-			stop mtsp
-			exit 0
-		fi
 	else
 		echo "ERROR : mts is not activated!"
 		exit 0
@@ -100,7 +71,7 @@ then
 fi
 
 
-if [ "$1" = "-on" ] && ( [ "$2" = "-e1" ] || [ "$2" = "-e2" ] || [ "$2" = "-sd1" ] || [ "$2" = "-sd2" ] || [ "$2" = "-mux" ] )
+if [ "$1" = "-on" ] && ( [ "$2" = "-e1" ] || [ "$2" = "-e2" ] || [ "$2" = "-mux" ] )
 then
 	if [ "$2" = "-mux" ] && [ -z "$3" ]
 	then
@@ -134,37 +105,7 @@ then
 			setprop persist.service.mts.rotate_num "3"
 			setprop persist.service.mts.rotate_size "200000"
 			setprop persist.service.mts.name "mtsextfs"
-			echo "activate_trace_modem" $1 ": sd extended (600MB) enabled"
-			start mtsp
-			exit 0
-		elif [ "$2" = "-sd1" ]
-		then
-			if [ ! -d "/mnt/sdcard/logs/" ]
-			then
-				mkdir "/mnt/sdcard/logs/"
-			fi
-			setprop persist.service.mts.input "/dev/ttyACM1"
-			setprop persist.service.mts.output "/mnt/sdcard/logs/bplog"
-			setprop persist.service.mts.output_type "f"
-			setprop persist.service.mts.rotate_num "5"
-			setprop persist.service.mts.rotate_size "20000"
-			setprop persist.service.mts.name "mtssd"
-			echo "activate_trace_modem" $1 ": sd (100MB) enabled"
-			start mtsp
-			exit 0
-		elif [ "$2" = "-sd2" ]
-		then
-			if [ ! -d "/mnt/sdcard/logs/" ]
-			then
-				mkdir "/mnt/sdcard/logs/"
-			fi
-			setprop persist.service.mts.input "/dev/ttyACM1"
-			setprop persist.service.mts.output "/mnt/sdcard/logs/bplog"
-			setprop persist.service.mts.output_type "f"
-			setprop persist.service.mts.rotate_num "3"
-			setprop persist.service.mts.rotate_size "200000"
-			setprop persist.service.mts.name "mtsextsd"
-			echo "activate_trace_modem" $1 ": sd extended (600MB) enabled"
+			echo "activate_trace_modem" $1 ": emmc (600MB) enabled"
 			start mtsp
 			exit 0
 		fi
@@ -192,42 +133,18 @@ then
 			setprop persist.service.mtsp.enable 1
 			echo "activate_trace_modem" $1 ": emmc extended (600MB) persistent enabled"
 			exit 0
-		elif [ "$2" = "-sd1" ]
-		then
-			setprop persist.service.mts.input "/dev/ttyACM1"
-			setprop persist.service.mts.output "/mnt/sdcard/logs/bplog"
-			setprop persist.service.mts.output_type "f"
-			setprop persist.service.mts.rotate_num "5"
-			setprop persist.service.mts.rotate_size "20000"
-			setprop persist.service.mts.name "mtssd"
-			setprop persist.service.mtsp.enable 1
-			echo "activate_trace_modem" $1 ": sd (100MB) persistent enabled"
-			exit 0
-		elif [ "$2" = "-sd2" ]
-		then
-			setprop persist.service.mts.input "/dev/ttyACM1"
-			setprop persist.service.mts.output "/mnt/sdcard/logs/bplog"
-			setprop persist.service.mts.output_type "f"
-			setprop persist.service.mts.rotate_num "3"
-			setprop persist.service.mts.rotate_size "200000"
-			setprop persist.service.mts.name "mtsextsd"
-			setprop persist.service.mtsp.enable 1
-			echo "activate_trace_modem" $1 ": sd extended (600MB) persistent enabled"
-			exit 0
 		fi
 	else
 		echo "Please add the argument -o OR -p !"
 	fi
 else
-	echo "USAGE: activate_trace_modem [-on -e1|-e2|-sd1|-sd2 -o|-p]"
+	echo "USAGE: activate_trace_modem [-on -e1|-e2 -o|-p]"
 	echo "USAGE: activate_trace_modem [-off]"
 	echo "USAGE: activate_trace_modem [-on|-off -mux]"
 	echo "       -on: enable"
 	echo "       -off: disable"
 	echo "       -e1: write on emmc (100Mb)"
 	echo "       -e2: write on emmc (600Mb)"
-	echo "       -sd1: write on sdcard (100Mb)"
-	echo "       -sd2: write on sdcard (600Mb)"
 	echo "       -mux : mux traces channels 0 to 17"
 	echo "       -o: oneshot"
 	echo "       -p: persistent"
