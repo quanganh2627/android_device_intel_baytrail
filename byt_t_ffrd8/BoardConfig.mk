@@ -153,7 +153,7 @@ ENABLE_BACKGROUND_MUSIC := true
 # - MFX_IPP: sets IPP library optimization to use
 USE_MEDIASDK := true
 # Enable CIP Codecs
-USE_INTEL_MDP := false
+USE_INTEL_MDP := true
 
 ifeq ($(DOLBY_DAP),true)
 # Disabled NXP Premium Audio Effect Libraries
