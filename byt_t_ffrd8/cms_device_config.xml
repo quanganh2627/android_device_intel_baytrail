@@ -19,10 +19,10 @@
 		<devID>2</devID>
 		<throttleTrigger>
 			<name>battLevel</name>
-			<normal>0</normal>
-			<warning>1</warning>
-			<alert>2</alert>
-			<critical>3</critical>
+			<normal>1</normal>
+			<warning>0</warning>
+			<alert>0</alert>
+			<critical>0</critical>
 		</throttleTrigger>
 		<throttleTrigger>
 			<name>battTemp</name>
