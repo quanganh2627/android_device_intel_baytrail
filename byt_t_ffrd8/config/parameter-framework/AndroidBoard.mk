@@ -19,6 +19,7 @@ LOCAL_REQUIRED_MODULES :=  \
     parameter-framework.audio.baytrail \
     parameter-framework.audio.imc.subsystem \
     parameter-framework.audio.pmdown_time.subsystem \
+    parameter-framework.audio.intelSSP.subsystem \
     AudioClass.xml
 
 ifeq ($(TARGET_BUILD_VARIANT),eng)
