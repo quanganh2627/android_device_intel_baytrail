@@ -17,4 +17,5 @@ $(call inherit-mixin, boot-arch, efi)
 $(call inherit-mixin, graphics, ufo)
 $(call inherit-mixin, ethernet, static)
 $(call inherit-mixin, fastboot, userfastboot)
+$(call inherit-mixin, video, ufo)
 
