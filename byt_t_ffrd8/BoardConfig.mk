@@ -15,4 +15,5 @@ BOARD_KERNEL_CMDLINE += \
 
 # Display and backlight Setting for Kernel
 BOARD_KERNEL_CMDLINE += i915.mipi_panel_id=3 i915.i915_rotation=1 \
+                        i915.modeset=1 \
                         acpi_backlight=vendor
