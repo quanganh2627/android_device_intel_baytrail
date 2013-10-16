@@ -7,17 +7,17 @@ include device/intel/common/common.mk
 
 # USB port turn around and initialization
 PRODUCT_COPY_FILES += \
-    $(PLATFORM_PATH)/init.byt.usb.rc:root/init.platform.usb.rc \
-    $(PLATFORM_PATH)/init.byt.gengfx.rc:root/init.platform.gengfx.rc \
-    $(PLATFORM_PATH)/props.baytrail.rc:root/props.platform.rc \
-    $(PLATFORM_PATH)/atmel_mxt_ts.idc:system/usr/idc/atmel_mxt_ts.idc
+    $(PLATFORM_CONF_PATH)/init.byt.usb.rc:root/init.platform.usb.rc \
+    $(PLATFORM_CONF_PATH)/init.byt.gengfx.rc:root/init.platform.gengfx.rc \
+    $(PLATFORM_CONF_PATH)/props.baytrail.rc:root/props.platform.rc \
+    $(PLATFORM_CONF_PATH)/atmel_mxt_ts.idc:system/usr/idc/atmel_mxt_ts.idc
 
 ifeq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/init.nodebug.rc:root/init.debug.rc
 else
 PRODUCT_COPY_FILES += \
-    $(PLATFORM_PATH)/init.debug.rc:root/init.debug.rc
+    $(PLATFORM_CONF_PATH)/init.debug.rc:root/init.debug.rc
 endif
 
 
@@ -28,7 +28,7 @@ PRODUCT_COPY_FILES += \
 
 #keylayout file
 PRODUCT_COPY_FILES += \
-    $(PLATFORM_PATH)/intel_short_long_press.kl:system/usr/keylayout/baytrailaudio_Intel_MID_Audio_Jack.kl
+    $(PLATFORM_CONF_PATH)/intel_short_long_press.kl:system/usr/keylayout/baytrailaudio_Intel_MID_Audio_Jack.kl
 
 # parameter-framework
 PRODUCT_PACKAGES += \

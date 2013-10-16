@@ -14,7 +14,7 @@ include $(LOCAL_PATH)/byt_t_ffrd8_path.mk
 -include vendor/intel/PRIVATE/dolby_ds1/dolbyds1.mk
 
 # device specific overlay folder
-PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
+PRODUCT_PACKAGE_OVERLAYS := $(DEVICE_CONF_PATH)/overlays
 
 # copy permission files
 FRAMEWORK_ETC_PATH := frameworks/native/data/etc
@@ -22,8 +22,8 @@ PERMISSIONS_PATH := system/etc/permissions
 
 # Touchscreen configuration file
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg \
-    $(LOCAL_PATH)/maxtouch_1664S_8.fw:system/etc/firmware/maxtouch.fw
+    $(DEVICE_CONF_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg \
+    $(DEVICE_CONF_PATH)/maxtouch_1664S_8.fw:system/etc/firmware/maxtouch.fw
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
@@ -83,21 +83,21 @@ PRODUCT_COPY_FILES += \
 ifndef DOLBY_DAP
 # specific management of audio_effects.conf
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf
+    $(DEVICE_CONF_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf
 endif
 
 # CMS configuration files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/cms_throttle_config.xml:system/etc/cms_throttle_config.xml \
-    $(LOCAL_PATH)/cms_device_config.xml:system/etc/cms_device_config.xml
+    $(DEVICE_CONF_PATH)/cms_throttle_config.xml:system/etc/cms_throttle_config.xml \
+    $(DEVICE_CONF_PATH)/cms_device_config.xml:system/etc/cms_device_config.xml
 
 # Add component-testing applications
 PRODUCT_PACKAGES_ENG += mcd-test
 
 # thermal config files
 PRODUCT_COPY_FILES += \
-         $(LOCAL_PATH)/thermal_sensor_config.xml:system/etc/thermal_sensor_config.xml \
-         $(LOCAL_PATH)/thermal_throttle_config.xml:system/etc/thermal_throttle_config.xml
+         $(DEVICE_CONF_PATH)/thermal_sensor_config.xml:system/etc/thermal_sensor_config.xml \
+         $(DEVICE_CONF_PATH)/thermal_throttle_config.xml:system/etc/thermal_throttle_config.xml
 
 ifdef DOLBY_DAP
     PRODUCT_PACKAGES += \

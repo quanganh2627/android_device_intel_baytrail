@@ -1,0 +1,9 @@
+on property:persist.service.kdumpd.enable=1
+    start kdumpd
+
+on property:persist.service.kdumpd.enable=0
+    stop kdumpd
+
+service kdumpd /system/bin/logwrapper /system/bin/kexec-i386 -d -p /system/lib/kdump/kdumpbzImage --initrd=/system/lib/kdump/kdumpramdisk.img --append="1 console=ttyS0,115200 maxcpus=1 reset_devices pci=noearly intel_scu_watchdog_evo.disable_kernel_watchdog=1"
+    disabled
+    oneshot

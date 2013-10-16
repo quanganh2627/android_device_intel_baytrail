@@ -5,7 +5,7 @@ endif
 include $(LOCAL_PATH)/byt_m_crb_path.mk
 
 # device specific overlay folder
-PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
+PRODUCT_PACKAGE_OVERLAYS := $(DEVICE_CONF_PATH)/overlays
 
 # copy permission files
 FRAMEWORK_ETC_PATH := frameworks/native/data/etc
@@ -13,8 +13,8 @@ PERMISSIONS_PATH := system/etc/permissions
 
 # Touchscreen configuration file
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg \
-    $(LOCAL_PATH)/maxtouch_3432S.fw:system/etc/firmware/maxtouch.fw
+    $(DEVICE_CONF_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg \
+    $(DEVICE_CONF_PATH)/maxtouch_3432S.fw:system/etc/firmware/maxtouch.fw
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
@@ -44,16 +44,16 @@ PRODUCT_COPY_FILES += \
 
 # specific management of audio_effects.conf
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf
+    $(DEVICE_CONF_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
 # crashlog conf
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/crashlog.conf:system/etc/crashlog.conf
+    $(DEVICE_CONF_PATH)/crashlog.conf:system/etc/crashlog.conf
 
 # thermal config files
 PRODUCT_COPY_FILES += \
-         $(LOCAL_PATH)/thermal_sensor_config.xml:system/etc/thermal_sensor_config.xml \
-         $(LOCAL_PATH)/thermal_throttle_config.xml:system/etc/thermal_throttle_config.xml
+         $(DEVICE_CONF_PATH)/thermal_sensor_config.xml:system/etc/thermal_sensor_config.xml \
+         $(DEVICE_CONF_PATH)/thermal_throttle_config.xml:system/etc/thermal_throttle_config.xml
 
 # Kdump
 PRODUCT_PACKAGES_ENG += kdumpramdisk

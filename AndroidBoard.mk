@@ -15,7 +15,7 @@ include device/intel/common/AndroidBoard.mk
 
 # wifi
 ifeq ($(strip $(BOARD_HAVE_WIFI)),true)
-include $(DEVICE_PATH)/wifi/WifiRules.mk
+include $(DEVICE_CONF_PATH)/wifi/WifiRules.mk
 endif
 
 .PHONY: images firmware $(TARGET_PRODUCT)
@@ -28,9 +28,5 @@ images: firmware bootimage $(TARGET_SYSTEM) recoveryimage
 ifeq ($(TARGET_USE_DROIDBOOT),true)
 images: droidbootimage
 endif
-
-# Temporary support for diskinstaller to be used with EFI BIOS.
-# -> should go away as this is not needed with PSI firmware + OTG
-include $(PLATFORM_PATH)/diskinstaller/rules.mk
 
 blank_flashfiles: recoveryimage

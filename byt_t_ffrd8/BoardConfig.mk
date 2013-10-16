@@ -41,7 +41,7 @@ endif
 BOARD_HAVE_WIFI := true
 INTEL_WIDI := true
 BOARD_HAVE_BLUETOOTH := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_CONF_PATH)
 TARGET_HAS_VPP := true
 TARGET_VPP_USE_GEN := true
 COMMON_GLOBAL_CFLAGS += -DGFX_BUF_EXT
@@ -172,7 +172,3 @@ INTEL_FEATURE_ASF := true
 
 # Use shared object of ia_face
 USE_SHARED_IA_FACE := true
-
-# Temporary support for diskinstaller to be used with EFI BIOS.
-# -> should go away as this is not needed with PSI firmware + OTG
-#include $(PLATFORM_PATH)/diskinstaller/config.mk
