@@ -11,8 +11,9 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/init.rc:root/init.$(TARGET_PRODUCT).rc \
 	$(LOCAL_PATH)/init.recovery.rc:root/init.recovery.$(TARGET_PRODUCT).rc \
 
-$(call inherit-mixin, gms, true)
+$(call inherit-mixin, gms, false)
 $(call inherit-mixin, houdini, true)
 $(call inherit-mixin, boot-arch, sfi)
-$(call inherit-mixin, graphics, ufo)
+$(call inherit-mixin, graphics, software)
+$(call inherit-mixin, display-density, high)
 
