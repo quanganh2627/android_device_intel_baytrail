@@ -16,4 +16,5 @@ $(call inherit-mixin, houdini, true)
 $(call inherit-mixin, boot-arch, sfi)
 $(call inherit-mixin, graphics, software)
 $(call inherit-mixin, display-density, high)
+$(call inherit-mixin, touch, max_1664S_8)
 
