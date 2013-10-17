@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2010 The Android Open Source Project
+<!-- Copyright (C) 2013 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -35,6 +35,13 @@
         android:fragment="com.android.settings.bluetooth.BluetoothSettings"
         android:title="@string/bluetooth_settings_title"
         android:icon="@drawable/ic_settings_bluetooth2" />
+
+    <!-- Ethernet -->
+    <header
+        android:id="@+id/manufacturer_extra_settings_4"
+        android:icon="@drawable/ic_settings_ethernet" >
+        <intent android:action="com.intel.ethernet.ETHERNET_SETTING" />
+    </header>
 
     <!-- Hotspot -->
     <header
