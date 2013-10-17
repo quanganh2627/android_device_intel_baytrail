@@ -485,26 +485,26 @@
             <IntegerParameter Name="NB_BANDS">1</IntegerParameter>
             <Component Name="VERTICES">
               <Component Name="LOWER_MOST">
-                <IntegerParameter Name="THRESHOLD">24576</IntegerParameter>
-                <IntegerParameter Name="SLOPE">533</IntegerParameter>
+                <IntegerParameter Name="THRESHOLD">15360</IntegerParameter>
+                <IntegerParameter Name="SLOPE">384</IntegerParameter>
               </Component>
               <Component Name="INTERMEDIATE">
-                <IntegerParameter Name="GAIN_AT_THRESHOLD">11264</IntegerParameter>
-                <IntegerParameter Name="THRESHOLD">20480</IntegerParameter>
-                <IntegerParameter Name="SLOPE">544</IntegerParameter>
+                <IntegerParameter Name="GAIN_AT_THRESHOLD">3840</IntegerParameter>
+                <IntegerParameter Name="THRESHOLD">10240</IntegerParameter>
+                <IntegerParameter Name="SLOPE">448</IntegerParameter>
               </Component>
               <Component Name="UPPER_MOST">
-                <IntegerParameter Name="THRESHOLD">1536</IntegerParameter>
+                <IntegerParameter Name="THRESHOLD">2304</IntegerParameter>
                 <IntegerParameter Name="SLOPE">256</IntegerParameter>
               </Component>
             </Component>
             <Component Name="ATTACK">
-              <IntegerParameter Name="LOUDNESS_RISE_TIME">3</IntegerParameter>
+              <IntegerParameter Name="LOUDNESS_RISE_TIME">10</IntegerParameter>
               <IntegerParameter Name="GAIN_RISE_TIME">50</IntegerParameter>
             </Component>
             <Component Name="RELEASE">
-              <IntegerParameter Name="LOUDNESS_RISE_TIME">50</IntegerParameter>
-              <IntegerParameter Name="GAIN_RISE_TIME">3</IntegerParameter>
+              <IntegerParameter Name="LOUDNESS_RISE_TIME">10</IntegerParameter>
+              <IntegerParameter Name="GAIN_RISE_TIME">20</IntegerParameter>
             </Component>
           </Component>
         </ConfigurableElement>
