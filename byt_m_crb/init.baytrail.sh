@@ -5,8 +5,8 @@
 # Sleeps are ok... but don't put anything in this file that
 # could possibly go into init.<platform>.rc
 
-lid=`getprop init.panel_ignore_lid`
-[ "$lid" != "" ] && echo $lid > /sys/module/i915/parameters/panel_ignore_lid
+#lid=`getprop init.panel_ignore_lid`
+#[ "$lid" != "" ] && echo $lid > /sys/module/i915/parameters/panel_ignore_lid
 
 for dirname in /sys/class/scsi_host/host* ; do
         if [ -e $dirname/link_power_management_policy ]
@@ -16,9 +16,9 @@ for dirname in /sys/class/scsi_host/host* ; do
 done
 
 # Used for UFO graphics driver; harmless if some other driver is used
-if test ! -f /data/ufo.prop; then
-    ln -s /system/etc/ufo.prop /data/ufo.prop
-    chmod 644 /data/ufo.prop
-fi
+#if test ! -f /data/ufo.prop; then
+#    ln -s /system/etc/ufo.prop /data/ufo.prop
+#    chmod 644 /data/ufo.prop
+#fi
 
 exit 0

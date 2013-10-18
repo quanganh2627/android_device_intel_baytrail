@@ -244,12 +244,6 @@ PRODUCT_PACKAGES += \
     TelephonyEventsNotifier
 endif
 
-
-# MMGR config file
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/mmgr.conf:system/etc/telephony/mmgr.conf \
-    $(LOCAL_PATH)/flashless.conf:system/etc/telephony/flashless.conf
-
 # Enable LTE telephony framework support
 PRODUCT_PROPERTY_OVERRIDES += persist.tel.lteOnGsmDevice=true
 
@@ -360,6 +354,7 @@ PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.sensor.compass.xml:$(PERMISSIONS_PATH)/android.hardware.sensor.compass.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.sensor.gyroscope.xml:$(PERMISSIONS_PATH)/android.hardware.sensor.gyroscope.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.sensor.light.xml:$(PERMISSIONS_PATH)/android.hardware.sensor.light.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.sensor.proximity.xml:$(PERMISSIONS_PATH)/android.hardware.sensor.proximity.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.usb.host.xml:$(PERMISSIONS_PATH)/android.hardware.usb.host.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.usb.accessory.xml:$(PERMISSIONS_PATH)/android.hardware.usb.accessory.xml \
