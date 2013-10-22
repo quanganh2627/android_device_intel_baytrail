@@ -103,6 +103,9 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.Intel.hw_vd.vc1" type="video/x-ms-wmv" />
         <MediaCodec name="OMX.Intel.hw_vd.vc1" type="video/wmv" />
 
+        <MediaCodec name="OMX.google.mpeg4.decoder" type="video/mp4v-es" />
+        <MediaCodec name="OMX.google.h263.decoder" type="video/3gpp" />
+
          <MediaCodec name="OMX.Intel.VideoDecoder.AVC" type="video/avc" >
             <Quirk name="requires-loaded-to-idle-after-allocation" />
             <Quirk name="requires-set-profile-level" />
@@ -135,8 +138,6 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="VAVideoDecoder" type="video/3gpp" />
         <MediaCodec name="VAVideoDecoder" type="video/x-vnd.on2.vp8"/>
 
-        <MediaCodec name="OMX.google.mpeg4.decoder" type="video/mp4v-es" />
-        <MediaCodec name="OMX.google.h263.decoder" type="video/3gpp" />
         <MediaCodec name="OMX.google.vpx.decoder" type="video/x-vnd.on2.vp8" />
         <MediaCodec name="OMX.google.h264.decoder" type="video/avc" />
     </Decoders>
