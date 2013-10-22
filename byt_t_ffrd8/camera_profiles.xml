@@ -76,6 +76,7 @@
         <supportedPreviewUpdateModes value="standard,continuous,during-capture,windowless"/>
         <defaultPreviewUpdateMode value="standard"/>
         <hasFlash value="true"/>
+        <synchronizeExposure value="true"/>
     </Profiles>
 
     <Profiles cameraId="1">
