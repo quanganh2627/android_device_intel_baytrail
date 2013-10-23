@@ -317,7 +317,7 @@ PRODUCT_PACKAGES += \
 # camera firmware
 PRODUCT_PACKAGES += \
         shisp_2400b0_cssv2.bin \
-        shisp_2400b0_cssv2_isp_2_2.bin
+        shisp_2400b0_v21.bin
 
 # video encoder and camera
 PRODUCT_PACKAGES += \
