@@ -137,7 +137,7 @@ Group Modem
 //      If set to "3", "Always on": MAFD is enabled at boot time and remains on
 //          during device power cycle.
 //      If value is missing, default mode is "2": "Display Driven".
-    FDMode                      1
+    FDMode                      2
 
 // Temporary Out of Service (OoS) Notifications - Enable/disable support for
 //      Temporary OoS notications.
