@@ -170,5 +170,8 @@ BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE +=  droidboot.use_installer=1 droidboot.ins
 # Enable Android Security Framework
 INTEL_FEATURE_ASF := true
 
+# Supported ASF Version
+PLATFORM_ASF_VERSION := 1
+
 # Use shared object of ia_face
 USE_SHARED_IA_FACE := true
