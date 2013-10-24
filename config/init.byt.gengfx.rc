@@ -14,8 +14,8 @@ on early-boot
     # When debug.rs.default-CPU-driver is set to 0, use props as below:
     #   debug.rs.gpu.renderscript 0: run rs on CPU, 1: run rs on GPGPU
     #   debug.rs.gpu.filterscript 0: run fs on CPU, 1: run fs on GPGPU
-    #   debug.rs.gpu.rsIntrinsic  0: run intrinsic on CPU, 1: on GPGPU
+    #   debug.rs.gpu.rsIntrinsic 0: run intrinsic on CPU, 1: on GPGPU
     # These are the settings recommended by the RenderScript team:
-    setprop debug.rs.gpu.filterscript    1
-    setprop debug.rs.gpu.renderscript    1
-    setprop debug.rs.gpu.rsIntrinsic     0
+    setprop debug.rs.gpu.filterscript 1
+    setprop debug.rs.gpu.renderscript 1
+    setprop debug.rs.gpu.rsIntrinsic 1
