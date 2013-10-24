@@ -65,6 +65,10 @@ PRODUCT_COPY_FILES += \
          $(LOCAL_PATH)/thermal_sensor_config.xml:system/etc/thermal_sensor_config.xml \
          $(LOCAL_PATH)/thermal_throttle_config.xml:system/etc/thermal_throttle_config.xml
 
+# crashlog conf
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/crashlog.conf:system/etc/crashlog.conf
+
 # Include base makefile
 include $(LOCAL_PATH)/device.mk
 
