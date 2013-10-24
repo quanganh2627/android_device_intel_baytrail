@@ -15,7 +15,13 @@ on init
     # driver is loaded from "on charger" trigger as well from init.common.rc
     insmod /lib/modules/videobuf-core.ko
     insmod /lib/modules/videobuf-vmalloc.ko
+    insmod /lib/modules/videobuf2-core.ko
+    insmod /lib/modules/videobuf2-memops.ko
+    insmod /lib/modules/videobuf2-vmalloc.ko
     insmod /lib/modules/vxd392.ko
+
+    #load usb video class driver for usbcamera.
+    insmod /lib/modules/uvcvideo.ko
 
 service media /system/bin/mediaserver
     class main
