@@ -180,9 +180,9 @@ on post-fs-data
     mkdir /data/misc/firmware 0770 system system
 
     #Invoke fuel gauging helper binary to restore config data
+    chmod 0770 /dev/max170xx
+    chown system system /dev/max170xx
     symlink /dev/max170xx /dev/fg
-    chmod 0775 /dev/fg
-    chmod 0775 /dev/max170xx
     chown system system /sys/class/power_supply/max17047_battery/model_name
     chown system system /sys/class/power_supply/max17047_battery/serial_number
     start fg_conf
