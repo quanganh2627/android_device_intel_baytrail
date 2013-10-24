@@ -11,6 +11,8 @@ endif
 
 BOARD_HAS_CAPSULE ?= true
 
+HAS_SPINOR := true
+
 # Disable recovery for now
 TARGET_MAKE_NO_DEFAULT_RECOVERY := true
 TARGET_NO_RECOVERY := false
