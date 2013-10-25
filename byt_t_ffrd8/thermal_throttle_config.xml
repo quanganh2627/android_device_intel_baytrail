@@ -227,7 +227,7 @@
 
   <ZoneThrottleInfo>
     <ZoneID>5</ZoneID>
-    <CriticalShutDown>1</CriticalShutDown>
+    <CriticalShutDown>0</CriticalShutDown>
     <CoolingDeviceInfo>
       <CoolingDevId>1</CoolingDevId>
       <ThrottleDeviceMask>
