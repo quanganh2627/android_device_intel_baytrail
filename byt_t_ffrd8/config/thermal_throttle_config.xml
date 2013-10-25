@@ -7,25 +7,24 @@
   <ContributingDeviceInfo>
     <CDeviceName>Display</CDeviceName>
     <CDeviceID>1</CDeviceID>
-    <CDeviceClassPath>android.thermal.BrightnessControl</CDeviceClassPath>
-    <CDeviceThrottlePath>none</CDeviceThrottlePath>
+    <CDeviceClassPath>com.android.server.thermal.BrightnessControl</CDeviceClassPath>
   </ContributingDeviceInfo>
   <ContributingDeviceInfo>
     <CDeviceName>Battery</CDeviceName>
     <CDeviceID>2</CDeviceID>
-    <CDeviceClassPath>android.thermal.BatteryChargeCurrentControl</CDeviceClassPath>
+    <CDeviceClassPath>com.android.server.thermal.BatteryChargeCurrentControl</CDeviceClassPath>
     <CDeviceThrottlePath>auto</CDeviceThrottlePath>
   </ContributingDeviceInfo>
   <ContributingDeviceInfo>
     <CDeviceName>SoC</CDeviceName>
     <CDeviceID>3</CDeviceID>
-    <CDeviceClassPath>android.thermal.SoCControl</CDeviceClassPath>
+    <CDeviceClassPath>com.android.server.thermal.SoCControl</CDeviceClassPath>
     <CDeviceThrottlePath>auto</CDeviceThrottlePath>
   </ContributingDeviceInfo>
   <ContributingDeviceInfo>
       <CDeviceName>Modem</CDeviceName>
       <CDeviceID>4</CDeviceID>
-      <CDeviceClassPath>android.thermal.ModemCooling</CDeviceClassPath>
+      <CDeviceClassPath>com.android.server.thermal.ModemCooling</CDeviceClassPath>
       <CDeviceThrottlePath>none</CDeviceThrottlePath>
   </ContributingDeviceInfo>
   <!--Map the cooling devices with specfic zones for throttling-->

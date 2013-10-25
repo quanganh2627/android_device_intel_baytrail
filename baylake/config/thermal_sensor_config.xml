@@ -158,7 +158,7 @@
       during runtime-->
       <SensorID>5</SensorID>
       <SensorName>Modem_PCB</SensorName>
-      <SensorPath>auto</SensorPath>
+      <SensorPath>none</SensorPath>
       <InputTemp>invalid</InputTemp>
       <HighTemp>invalid</HighTemp>
       <LowTemp>invalid</LowTemp>
@@ -173,7 +173,7 @@
     <Sensor>
       <SensorID>6</SensorID>
       <SensorName>Modem_RF</SensorName>
-      <SensorPath>auto</SensorPath>
+      <SensorPath>none</SensorPath>
       <InputTemp>invalid</InputTemp>
       <HighTemp>invalid</HighTemp>
       <LowTemp>invalid</LowTemp>
@@ -188,7 +188,7 @@
     <Sensor>
       <SensorID>7</SensorID>
       <SensorName>Modem_BB</SensorName>
-      <SensorPath>auto</SensorPath>
+      <SensorPath>none</SensorPath>
       <InputTemp>invalid</InputTemp>
       <HighTemp>invalid</HighTemp>
       <LowTemp>invalid</LowTemp>
