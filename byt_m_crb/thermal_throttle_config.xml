@@ -9,6 +9,15 @@
     <CDeviceID>1</CDeviceID>
     <CDeviceClassPath>android.thermal.CPUMaxFreqControl</CDeviceClassPath>
     <CDeviceThrottlePath>none</CDeviceThrottlePath>
+    <!--Throttle values are the set of values that a cooling device takes as input.-->
+    <!--The values can be for eg. frequencies for CPU cooling device,-->
+    <!--brightness cap for display cooling device, chargecurrent limit for batery etc.-->
+    <ThrottleValues>
+      <ThrottleNormal>1464000</ThrottleNormal>
+      <ThrottleWarning>1909000</ThrottleWarning>
+      <ThrottleAlert>1826000</ThrottleAlert>
+      <ThrottleCritical>996000</ThrottleCritical>
+    </ThrottleValues>
   </ContributingDeviceInfo>
   <ContributingDeviceInfo>
     <CDeviceName>Display</CDeviceName>
@@ -37,7 +46,7 @@
         if this zone reaches critical thermal state to avoid any user impact-->
     <!--list of cooling device IDs registered for the zone-->
     <CoolingDeviceInfo>
-      <CoolingDevId>4</CoolingDevId>
+      <CoolingDevId>1</CoolingDevId>
       <ThrottleDeviceMask>
           <Normal>0</Normal>
           <Warning>1</Warning>
@@ -52,6 +61,21 @@
           <Critical>0</Critical>
       </DethrottleDeviceMask>
       <!--four states: Normal,Warning,Alert,Critical. 0 - disable de-throttling,1 - enable de-throttling, -1 - dont care-->
+    </CoolingDeviceInfo>
+    <CoolingDeviceInfo>
+      <CoolingDevId>4</CoolingDevId>
+      <ThrottleDeviceMask>
+          <Normal>0</Normal>
+          <Warning>1</Warning>
+          <Alert>1</Alert>
+          <Critical>1</Critical>
+      </ThrottleDeviceMask>
+      <DethrottleDeviceMask>
+          <Normal>1</Normal>
+          <Warning>1</Warning>
+          <Alert>1</Alert>
+          <Critical>0</Critical>
+      </DethrottleDeviceMask>
     </CoolingDeviceInfo>
   </ZoneThrottleInfo>
 

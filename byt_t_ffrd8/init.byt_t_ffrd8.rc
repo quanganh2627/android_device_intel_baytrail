@@ -173,6 +173,13 @@ on boot
     setprop net.tcp.buffersize.gprs    4092,8760,65536,4096,8760,65536
     setprop net.tcp.buffersize.evdo    4094,87380,262144,4096,16384,262144
 
+# Lte coexistence ( can be enabled the following: NRT / NRT+RT )
+# Enable LTE Coexistence NRT (Non Real Time)
+    setprop persist.service.cwsmgr.coex 1
+
+# Disable LTE coexistence RT (Real Time). Should be set to 0 to enable.
+    setprop persist.service.cwsmgr.nortcoex 1
+
     #  Set autosuspend delay as 30 ms to save power in graphic display
     write /sys/devices/pci0000:00/0000:00:03.4/power/autosuspend_delay_ms 30
 
@@ -184,6 +191,12 @@ on boot
 
     # Enable HDCP 2.1 for Widi
     setprop widi.hdcp.enable true
+
+    #Change mmc read ahead size from 128 to 256 to reduce USB MTP read latencies
+    write /sys/block/mmcblk0/queue/read_ahead_kb 256
+
+    #set dirty background bytes to 24MB to reduce USB MTP write latencies
+    write /proc/sys/vm/dirty_background_bytes 25165824
 
 on post-fs-data
     # we will remap this as /mnt/sdcard with the sdcard fuse tool

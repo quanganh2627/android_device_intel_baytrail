@@ -92,6 +92,12 @@ BOARD_KERNEL_CMDLINE += vga=current i915.modeset=1 drm.vblankoffdelay=1 \
 # Set ENABLE_INTEL_CONFIG_18BPP to true for 18BPP mode.
 ## ENABLE_INTEL_CONFIG_18BPP := true
 
+# When UEFI is enabled, we use the UEFI runtime services to reset and
+# shutdown the platform
+ifeq ($(TARGET_BIOS_TYPE),"uefi")
+BOARD_KERNEL_CMDLINE += reboot=efi
+endif
+
 # DPST - Enable i915.bpp18_video_dpst flag for 18bpp source content
 # This flag if enabled will enable DPST only in video playback scenario
 ifeq ($(ENABLE_INTEL_CONFIG_18BPP),true)
