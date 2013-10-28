@@ -7,6 +7,9 @@ PRODUCT_DEVICE := byt_t_ffrd10
 # Include product path
 include $(LOCAL_PATH)/byt_t_ffrd10_path.mk
 
+#NXP Effects
+-include vendor/intel/PRIVATE/lifevibes/nxp.mk
+
 # device specific overlay folder
 PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
 
