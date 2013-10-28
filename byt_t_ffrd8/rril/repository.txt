@@ -215,7 +215,7 @@ Group Modem
 //    EnableSMSOverIP             1
 //    SMSOverIPCapable            1
     SupportCGPIAF               0
-    NwInitiatedContextAct       1
+    NwInitiatedContextAct       0
     EnableSignalStrengthReporting 1
 
 // IMEI blacklist - A list of default IMEIs which could be flashed to the device.  The device
