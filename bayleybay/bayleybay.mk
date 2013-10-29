@@ -20,4 +20,5 @@ $(call inherit-mixin, ethernet, static)
 $(call inherit-mixin, fastboot, userfastboot)
 $(call inherit-mixin, video, ufo)
 $(call inherit-mixin, governor, interactive)
+$(call inherit-mixin, liblights, intel)
 
