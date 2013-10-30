@@ -99,6 +99,10 @@ PRODUCT_COPY_FILES += \
          $(DEVICE_CONF_PATH)/thermal_sensor_config.xml:system/etc/thermal_sensor_config.xml \
          $(DEVICE_CONF_PATH)/thermal_throttle_config.xml:system/etc/thermal_throttle_config.xml
 
+# crashlog conf
+PRODUCT_COPY_FILES += \
+         $(DEVICE_CONF_PATH)/crashlog.conf:system/etc/crashlog.conf
+
 ifdef DOLBY_DAP
     PRODUCT_PACKAGES += \
         Ds \
