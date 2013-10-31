@@ -11,7 +11,7 @@
 # Superclass
 $(call inherit-product, build/target/product/full_base_no_telephony.mk)
 # Include Dalvik Heap Size Configuration
-$(call inherit-product, $(COMMON_PATH)/dalvik/phone-xhdpi-1024-dalvik-heap.mk)
+$(call inherit-product, $(COMMON_PATH)/dalvik/tablet-xhdpi-2048-dalvik-heap.mk)
 
 # Overrides
 PRODUCT_DEVICE := byt_m_crb
