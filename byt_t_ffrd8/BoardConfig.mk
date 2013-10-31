@@ -53,7 +53,7 @@ USE_INTEL_IPP := true
 INTEL_WIDI_BAYTRAIL := true
 
 # NFC
--include vendor/intel/hardware/nfc/NfcBoardConfig.mk
+-include vendor/intel/hardware/nfc/common/NfcBoardConfig.mk
 
 # Power_HAL
 POWERHAL_BYT := true

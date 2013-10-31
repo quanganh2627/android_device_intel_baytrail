@@ -128,13 +128,13 @@
           <BooleanParameter Name="ENABLE">1</BooleanParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/LPE/MIC1_PATH/GAIN_CTRL/GAIN">
-          <IntegerParameter Name="GAIN">8</IntegerParameter>
+          <IntegerParameter Name="GAIN">0</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/LPE/MIC2_PATH/MONO_EQ/ENABLE">
           <BooleanParameter Name="ENABLE">1</BooleanParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/LPE/MIC2_PATH/GAIN_CTRL/GAIN">
-          <IntegerParameter Name="GAIN">8</IntegerParameter>
+          <IntegerParameter Name="GAIN">0</IntegerParameter>
         </ConfigurableElement>
       </Configuration>
     </Settings>
@@ -197,12 +197,12 @@
       </Configuration>
       <Configuration Name="Multimedia.FrontMic">
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/STEREO/VOLUME">
-          <IntegerParameter Name="VOLUME">111 111</IntegerParameter>
+          <IntegerParameter Name="VOLUME">90 90</IntegerParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="Multimedia.HeadsetMic">
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/STEREO/VOLUME">
-          <IntegerParameter Name="VOLUME">95 95</IntegerParameter>
+          <IntegerParameter Name="VOLUME">111 111</IntegerParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="InCall.FrontMic">
@@ -273,7 +273,7 @@
           <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/DAC1">
-          <IntegerParameter Name="DAC1">170 170</IntegerParameter>
+          <IntegerParameter Name="DAC1">175 175</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME">
           <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
@@ -295,7 +295,7 @@
           <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/DAC1">
-          <IntegerParameter Name="DAC1">170 170</IntegerParameter>
+          <IntegerParameter Name="DAC1">175 175</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME">
           <IntegerParameter Name="VOLUME">17 17</IntegerParameter>
@@ -409,9 +409,9 @@
         <ConfigurableElement Path="/Audio/LPE/MIC1_PATH/MONO_EQ/FIR_COEFFS">
           <ParameterBlock Name="FIR_COEFFS">
             <FixedPointParameter Name="INPUT_GAIN">1.000000</FixedPointParameter>
-            <FixedPointParameter Name="OUTPUT_GAIN">2.677900</FixedPointParameter>
+            <FixedPointParameter Name="OUTPUT_GAIN">2.8840332</FixedPointParameter>
             <IntegerParameter Name="TAP_COUNT">64</IntegerParameter>
-            <FixedPointParameter Name="TAPS">0.003930 0.000450 -0.002500 -0.003440 -0.003410 -0.002920 -0.000970 0.002860 0.006680 0.007200 0.003080 -0.003780 -0.009520 -0.012050 -0.011230 -0.008270 -0.002620 0.006010 0.017120 0.026700 0.031700 0.029440 0.021200 0.006280 -0.012480 -0.033900 -0.047760 -0.050560 -0.029230 0.009030 0.119410 0.226280 0.119410 0.009030 -0.029230 -0.050560 -0.047760 -0.033900 -0.012480 0.006280 0.021200 0.029440 0.031700 0.026700 0.017120 0.006010 -0.002620 -0.008270 -0.011230 -0.012050 -0.009520 -0.003780 0.003080 0.007200 0.006680 0.002860 -0.000970 -0.002920 -0.003410 -0.003440 -0.002500 0.000450 0.003930 0.000000</FixedPointParameter>
+            <FixedPointParameter Name="TAPS">0.000000 0.000671 0.001465 0.001984 0.002533 0.002747 0.003235 0.003876 0.005188 0.006470 0.007538 0.007019 0.005280 0.001953 -0.001465 -0.005310 -0.008789 -0.012909 -0.015533 -0.016449 -0.014099 -0.011871 -0.008057 -0.009064 -0.005188 0.010345 0.015625 0.018585 0.086090 0.055145 0.085266 0.323975 0.085266 0.055145 0.086090 0.018585 0.015625 0.010345 -0.005188 -0.009064 -0.008057 -0.011871 -0.014099 -0.016449 -0.015533 -0.012909 -0.008789 -0.005310 -0.001465 0.001953 0.005280 0.007019 0.007538 0.006470 0.005188 0.003876 0.003235 0.002747 0.002533 0.001984 0.001465 0.000671 0.000000 0.000000</FixedPointParameter>
           </ParameterBlock>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/LPE/MIC1_PATH/MONO_EQ/IIR_COEFFS">
@@ -486,9 +486,9 @@
         <ConfigurableElement Path="/Audio/LPE/MIC2_PATH/MONO_EQ/FIR_COEFFS">
           <ParameterBlock Name="FIR_COEFFS">
             <FixedPointParameter Name="INPUT_GAIN">1.000000</FixedPointParameter>
-            <FixedPointParameter Name="OUTPUT_GAIN">2.677900</FixedPointParameter>
+            <FixedPointParameter Name="OUTPUT_GAIN">2.66381</FixedPointParameter>
             <IntegerParameter Name="TAP_COUNT">64</IntegerParameter>
-            <FixedPointParameter Name="TAPS">0.003930 0.000450 -0.002500 -0.003440 -0.003410 -0.002920 -0.000970 0.002860 0.006680 0.007200 0.003080 -0.003780 -0.009520 -0.012050 -0.011230 -0.008270 -0.002620 0.006010 0.017120 0.026700 0.031700 0.029440 0.021200 0.006280 -0.012480 -0.033900 -0.047760 -0.050560 -0.029230 0.009030 0.119410 0.226280 0.119410 0.009030 -0.029230 -0.050560 -0.047760 -0.033900 -0.012480 0.006280 0.021200 0.029440 0.031700 0.026700 0.017120 0.006010 -0.002620 -0.008270 -0.011230 -0.012050 -0.009520 -0.003780 0.003080 0.007200 0.006680 0.002860 -0.000970 -0.002920 -0.003410 -0.003440 -0.002500 0.000450 0.003930 0.000000</FixedPointParameter>
+            <FixedPointParameter Name="TAPS">-0.000214 0.000519 0.001678 0.003052 0.004669 0.006012 0.006805 0.006561 0.005371 0.003571 0.002075 0.001068 0.001068 0.001129 0.000427 -0.002930 -0.008636 -0.015472 -0.019836 -0.019104 -0.011292 -0.001038 0.007935 0.006897 -0.003052 -0.010712 -0.014404 -0.011200 0.050293 0.091156 0.140533 0.273773 0.140533 0.091156 0.050293 -0.011200 -0.014404 -0.010712 -0.003052 0.006897 0.007935 -0.001038 -0.011292 -0.019104 -0.019836 -0.015472 -0.008636 -0.002930 0.000427 0.001129 0.001068 0.001068 0.002075 0.003571 0.005371 0.006561 0.006805 0.006012 0.004669 0.003052 0.001678 0.000519 -0.000214 0.000000</FixedPointParameter>
           </ParameterBlock>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/LPE/MIC2_PATH/MONO_EQ/IIR_COEFFS">
@@ -565,9 +565,9 @@
               </BitParameterBlock>
               <ParameterBlock Name="FIR_COEFFS">
                 <FixedPointParameter Name="INPUT_GAIN">1.000000</FixedPointParameter>
-                <FixedPointParameter Name="OUTPUT_GAIN">2.181300</FixedPointParameter>
+                <FixedPointParameter Name="OUTPUT_GAIN">4.09375</FixedPointParameter>
                 <IntegerParameter Name="TAP_COUNT">64</IntegerParameter>
-                <FixedPointParameter Name="TAPS">0.001890 -0.000180 -0.000030 0.000670 0.001030 0.001190 0.002220 0.003050 0.002800 0.000820 -0.000300 0.000390 0.003080 0.003720 0.002740 0.000850 0.002070 0.001980 -0.000880 -0.008200 -0.009150 -0.006890 -0.005850 -0.021080 -0.028590 -0.011320 0.046080 0.060600 0.003380 -0.145530 0.064750 0.462060 0.064750 -0.145530 0.003380 0.060600 0.046080 -0.011320 -0.028590 -0.021080 -0.005850 -0.006890 -0.009150 -0.008200 -0.000880 0.001980 0.002070 0.000850 0.002740 0.003720 0.003080 0.000390 -0.000300 0.000820 0.002800 0.003050 0.002220 0.001190 0.001030 0.000670 -0.000030 -0.000180 0.001890 0.000000</FixedPointParameter>
+                <FixedPointParameter Name="TAPS">0.000275 -0.000122 -0.000580 -0.001465 -0.001709 -0.001801 -0.000702 0.000641 0.002808 0.004211 0.006073 0.006989 0.007904 0.006958 0.006134 0.002899 -0.000153 -0.003784 -0.004211 -0.005676 -0.005646 -0.007751 -0.007843 -0.026520 -0.037231 -0.034363 -0.076569 -0.078278 0.104218 -0.024353 0.025360 0.624207 0.025360 -0.024353 0.104218 -0.078278 -0.076569 -0.034363 -0.037231 -0.026520 -0.007843 -0.007751 -0.005646 -0.005676 -0.004211 -0.003784 -0.000153 0.002899 0.006134 0.006958 0.007904 0.006989 0.006073 0.004211 0.002808 0.000641 -0.000702 -0.001801 -0.001709 -0.001465 -0.000580 -0.000122 0.000275 0.000000</FixedPointParameter>
               </ParameterBlock>
               <ParameterBlock Name="IIR_COEFFS">
                 <ParameterBlock Name="SECTIONS">
@@ -638,9 +638,9 @@
               </BitParameterBlock>
               <ParameterBlock Name="FIR_COEFFS">
                 <FixedPointParameter Name="INPUT_GAIN">1.000000</FixedPointParameter>
-                <FixedPointParameter Name="OUTPUT_GAIN">2.181300</FixedPointParameter>
+                <FixedPointParameter Name="OUTPUT_GAIN">2.03857</FixedPointParameter>
                 <IntegerParameter Name="TAP_COUNT">64</IntegerParameter>
-                <FixedPointParameter Name="TAPS">0.001890 -0.000180 -0.000030 0.000670 0.001030 0.001190 0.002220 0.003050 0.002800 0.000820 -0.000300 0.000390 0.003080 0.003720 0.002740 0.000850 0.002070 0.001980 -0.000880 -0.008200 -0.009150 -0.006890 -0.005850 -0.021080 -0.028590 -0.011320 0.046080 0.060600 0.003380 -0.145530 0.064750 0.462060 0.064750 -0.145530 0.003380 0.060600 0.046080 -0.011320 -0.028590 -0.021080 -0.005850 -0.006890 -0.009150 -0.008200 -0.000880 0.001980 0.002070 0.000850 0.002740 0.003720 0.003080 0.000390 -0.000300 0.000820 0.002800 0.003050 0.002220 0.001190 0.001030 0.000670 -0.000030 -0.000180 0.001890 0.000000</FixedPointParameter>
+                <FixedPointParameter Name="TAPS">0.000366 -0.000275 -0.000458 -0.000885 -0.000702 -0.000854 -0.000977 -0.002167 -0.002899 -0.003845 -0.004211 -0.006317 -0.007690 -0.008636 -0.006653 -0.002686 0.004120 0.006226 0.006531 0.007263 0.009918 0.002930 0.002411 0.009369 0.010773 -0.016510 -0.030212 0.008118 0.091949 -0.099487 -0.017334 0.603577 -0.017334 -0.099487 0.091949 0.008118 -0.030212 -0.016510 0.010773 0.009369 0.002411 0.002930 0.009918 0.007263 0.006531 0.006226 0.004120 -0.002686 -0.006653 -0.008636 -0.007690 -0.006317 -0.004211 -0.003845 -0.002899 -0.002167 -0.000977 -0.000854 -0.000702 -0.000885 -0.000458 -0.000275 0.000366 0.000000</FixedPointParameter>
               </ParameterBlock>
               <ParameterBlock Name="IIR_COEFFS">
                 <ParameterBlock Name="SECTIONS">
@@ -958,13 +958,13 @@
         <ConfigurableElement Path="/Audio/LPE/IHF_PATH/SDRC_CTRL/VERTICES">
           <Component Name="VERTICES">
             <Component Name="LOWER_MOST">
-              <IntegerParameter Name="THRESHOLD">24576</IntegerParameter>
-              <IntegerParameter Name="SLOPE">256</IntegerParameter>
+              <IntegerParameter Name="THRESHOLD">15360</IntegerParameter>
+              <IntegerParameter Name="SLOPE">384</IntegerParameter>
             </Component>
             <Component Name="INTERMEDIATE">
-              <IntegerParameter Name="GAIN_AT_THRESHOLD">7680</IntegerParameter>
-              <IntegerParameter Name="THRESHOLD">15360</IntegerParameter>
-              <IntegerParameter Name="SLOPE">469</IntegerParameter>
+              <IntegerParameter Name="GAIN_AT_THRESHOLD">3840</IntegerParameter>
+              <IntegerParameter Name="THRESHOLD">10240</IntegerParameter>
+              <IntegerParameter Name="SLOPE">448</IntegerParameter>
             </Component>
             <Component Name="UPPER_MOST">
               <IntegerParameter Name="THRESHOLD">2304</IntegerParameter>
@@ -974,14 +974,14 @@
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/LPE/IHF_PATH/SDRC_CTRL/ATTACK">
           <Component Name="ATTACK">
-            <IntegerParameter Name="LOUDNESS_RISE_TIME">3</IntegerParameter>
+            <IntegerParameter Name="LOUDNESS_RISE_TIME">10</IntegerParameter>
             <IntegerParameter Name="GAIN_RISE_TIME">50</IntegerParameter>
           </Component>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/LPE/IHF_PATH/SDRC_CTRL/RELEASE">
           <Component Name="RELEASE">
-            <IntegerParameter Name="LOUDNESS_RISE_TIME">50</IntegerParameter>
-            <IntegerParameter Name="GAIN_RISE_TIME">3</IntegerParameter>
+            <IntegerParameter Name="LOUDNESS_RISE_TIME">10</IntegerParameter>
+            <IntegerParameter Name="GAIN_RISE_TIME">20</IntegerParameter>
           </Component>
         </ConfigurableElement>
       </Configuration>
