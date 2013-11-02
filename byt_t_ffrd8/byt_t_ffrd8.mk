@@ -14,7 +14,7 @@ include $(LOCAL_PATH)/byt_t_ffrd8_path.mk
 -include vendor/intel/PRIVATE/dolby_ds1/dolbyds1.mk
 
 # device specific overlay folder
-PRODUCT_PACKAGE_OVERLAYS := $(DEVICE_CONF_PATH)/overlays
+#PRODUCT_PACKAGE_OVERLAYS := $(DEVICE_CONF_PATH)/overlays
 
 # copy permission files
 FRAMEWORK_ETC_PATH := frameworks/native/data/etc
