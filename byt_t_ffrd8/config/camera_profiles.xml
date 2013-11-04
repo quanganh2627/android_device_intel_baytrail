@@ -77,6 +77,8 @@
         <defaultPreviewUpdateMode value="standard"/>
         <hasFlash value="true"/>
         <synchronizeExposure value="true"/>
+        <supportedHighSpeedResolutionFps value="1280x720@60,1920x1080@60"/>
+        <maxHighSpeedDvsResolution value="1920x1080"/>
     </Profiles>
 
     <Profiles cameraId="1">
