@@ -258,6 +258,9 @@ endif
 # Enable LTE telephony framework support
 PRODUCT_PROPERTY_OVERRIDES += persist.tel.lteOnGsmDevice=true
 
+# Set default network type to LTE/GSM/WCDMA (9)
+PRODUCT_PROPERTY_OVERRIDES += ro.telephony.default_network=9
+
 # SIM Hot Swap Property
 PRODUCT_PROPERTY_OVERRIDES += persist.tel.hot_swap.support=true
 
