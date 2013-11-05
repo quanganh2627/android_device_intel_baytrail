@@ -20,8 +20,8 @@
 		<throttleTrigger>
 			<name>battLevel</name>
 			<normal>0</normal>
-			<warning>1</warning>
-			<alert>2</alert>
+			<warning>3</warning>
+			<alert>3</alert>
 			<critical>3</critical>
 		</throttleTrigger>
 		<throttleTrigger>
