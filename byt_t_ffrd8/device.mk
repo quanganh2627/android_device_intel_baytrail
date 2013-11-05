@@ -241,8 +241,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     mmgr \
     libmodemupdate \
-    nvm_server
-#    miu-app
+    nvm_server \
+    miu-app
 
 
 # MMGR CWS Client
