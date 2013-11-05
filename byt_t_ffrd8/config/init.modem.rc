@@ -26,13 +26,13 @@ service atproxy_usbreset /system/bin/atproxy_usbreset
 # mts persistent
 service mtsp /system/bin/mts
     user system
-    group radio log media_rw sdcard_rw
+    group radio log media_rw sdcard_rw inet
     disabled
 
 # mts oneshot
 service mtso /system/bin/mts
     user system
-    group radio log media_rw sdcard_rw
+    group radio log media_rw sdcard_rw inet
     oneshot
     disabled
 
