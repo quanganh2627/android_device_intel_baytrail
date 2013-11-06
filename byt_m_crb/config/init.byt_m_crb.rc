@@ -70,7 +70,7 @@ on init
 
 on boot
     #  Mount debugfs for systrace settings
-    mount debugfs none /sys/kernel/debug
+    mount debugfs none /sys/kernel/debug mode=0755
 
     #  Permissions for Thermal Management
     chown system system /sys/module/intel_mid_osip/parameters/force_shutdown_occured
