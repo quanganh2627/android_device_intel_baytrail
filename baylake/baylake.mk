@@ -11,10 +11,15 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/init.rc:root/init.$(TARGET_PRODUCT).rc \
 	$(LOCAL_PATH)/init.recovery.rc:root/init.recovery.$(TARGET_PRODUCT).rc \
 
-$(call inherit-mixin, gms, true)
+$(call inherit-mixin, audio, pc_alc262)
+$(call inherit-mixin, gms, false)
 $(call inherit-mixin, houdini, true)
 $(call inherit-mixin, boot-arch, efi)
-$(call inherit-mixin, graphics, mesa)
+$(call inherit-mixin, graphics, ufo)
 $(call inherit-mixin, ethernet, static)
 $(call inherit-mixin, fastboot, userfastboot)
+$(call inherit-mixin, video, ufo)
+$(call inherit-mixin, governor, interactive)
+$(call inherit-mixin, liblights, intel)
+$(call inherit-mixin, power, interactive_gov)
 
