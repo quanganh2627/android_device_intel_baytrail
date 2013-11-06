@@ -20,7 +20,7 @@ PRODUCT_MODEL := byt_t_ffrd8
 PRODUCT_CHARACTERISTICS := nosdcard,tablet
 
 # intel common overlay folder
-# DEVICE_PACKAGE_OVERLAYS := $(COMMON_PATH)/overlays
+DEVICE_PACKAGE_OVERLAYS := $(COMMON_PATH)/overlays
 
 OVERRIDE_COPIES := \
     $(DEVICE_CONF_PATH)/asound.conf:system/etc/asound.conf \
