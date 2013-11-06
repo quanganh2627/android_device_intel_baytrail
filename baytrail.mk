@@ -23,8 +23,16 @@ endif
 
 # Kernel Watchdog
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/watchdog/init.watchdog.sh:root/init.watchdog.sh \
     $(COMMON_PATH)/watchdog/init.watchdogd.rc:root/init.watchdog.rc
+ifeq ($(TARGET_BIOS_TYPE),"uefi")
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/watchdog/init.watchdog_uefi.sh:root/init.watchdog.sh
+PRODUCT_PACKAGES += \
+    uefivar
+else
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/watchdog/init.watchdog.sh:root/init.watchdog.sh
+endif
 
 #keylayout file
 PRODUCT_COPY_FILES += \
