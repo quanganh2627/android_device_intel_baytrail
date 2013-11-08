@@ -1,4 +1,4 @@
-ifeq (,$(filter $(PRODUCT_NAME),baylake_next baylake_edk2))
+ifeq (,$(filter $(PRODUCT_NAME),baylake_next baylake_edk2 baylake_64))
 PRODUCT_NAME := baylake
 endif
 
@@ -6,7 +6,7 @@ endif
 include $(LOCAL_PATH)/baylakepath.mk
 
 # device specific overlay folder
-PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
+PRODUCT_PACKAGE_OVERLAYS := $(DEVICE_CONF_PATH)/overlays
 
 # copy permission files
 FRAMEWORK_ETC_PATH := frameworks/native/data/etc
@@ -14,8 +14,8 @@ PERMISSIONS_PATH := system/etc/permissions
 
 # Touchscreen configuration file
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg \
-    $(PLATFORM_PATH)/maxtouch.fw:system/etc/firmware/maxtouch.fw
+    $(DEVICE_CONF_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg \
+    $(PLATFORM_CONF_PATH)/maxtouch.fw:system/etc/firmware/maxtouch.fw
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
@@ -45,12 +45,12 @@ PRODUCT_COPY_FILES += \
 
 # specific management of audio_effects.conf
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf
+    $(DEVICE_CONF_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
 # thermal config files
 PRODUCT_COPY_FILES += \
-         $(LOCAL_PATH)/thermal_sensor_config.xml:system/etc/thermal_sensor_config.xml \
-         $(LOCAL_PATH)/thermal_throttle_config.xml:system/etc/thermal_throttle_config.xml
+         $(DEVICE_CONF_PATH)/thermal_sensor_config.xml:system/etc/thermal_sensor_config.xml \
+         $(DEVICE_CONF_PATH)/thermal_throttle_config.xml:system/etc/thermal_throttle_config.xml
 
 # Include base makefile
 include $(LOCAL_PATH)/device.mk

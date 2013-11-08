@@ -3,11 +3,9 @@
 REF_DEVICE_NAME ?= $(TARGET_DEVICE)
 REF_PRODUCT_NAME ?= $(TARGET_PRODUCT)
 
-DEVICE_PATH := device/intel/baytrail/baylake
-
 TARGET_USE_DROIDBOOT := true
 
-include device/intel/baytrail/BoardConfig.mk
+include $(PLATFORM_PATH)/BoardConfig.mk
 
 # Temporary IFWI does not support signing
 TARGET_OS_SIGNING_METHOD := none
@@ -34,7 +32,7 @@ ifeq ($(FORCE_FLASHFILE_NO_OTA),true)
 FLASHFILE_NO_OTA := true
 endif
 
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_CONF_PATH)
 TARGET_HAS_VPP := true
 TARGET_VPP_USE_GEN := true
 COMMON_GLOBAL_CFLAGS += -DGFX_BUF_EXT
@@ -153,7 +151,3 @@ USE_FEATURE_ALAC := true
 
 # Defines Intel library for GPU accelerated Renderscript:
 OVERRIDE_RS_DRIVER := libRSDriver_intel7.so
-
-# Temporary support for diskinstaller to be used with EFI BIOS.
-# -> should go away as this is not needed with PSI firmware + OTG
-#include $(PLATFORM_PATH)/diskinstaller/config.mk

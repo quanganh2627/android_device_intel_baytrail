@@ -23,18 +23,18 @@ PRODUCT_CHARACTERISTICS := nosdcard,tablet
 DEVICE_PACKAGE_OVERLAYS := device/intel/common/overlays
 
 OVERRIDE_COPIES := \
-    $(LOCAL_PATH)/asound.conf:system/etc/asound.conf \
-    $(LOCAL_PATH)/init.baylake.sh:root/init.baylake.sh \
-    $(LOCAL_PATH)/egl.cfg:system/lib/egl/egl.cfg \
-    $(LOCAL_PATH)/init.net.eth0.sh:root/init.net.eth0.sh
+    $(DEVICE_CONF_PATH)/asound.conf:system/etc/asound.conf \
+    $(DEVICE_CONF_PATH)/init.baylake.sh:root/init.baylake.sh \
+    $(DEVICE_CONF_PATH)/egl.cfg:system/lib/egl/egl.cfg \
+    $(DEVICE_CONF_PATH)/init.net.eth0.sh:root/init.net.eth0.sh
 
 # Make generic definetion of media components.
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/wrs_omxil_components.list:system/etc/wrs_omxil_components.list \
-    $(LOCAL_PATH)/mfx_omxil_core.conf:system/etc/mfx_omxil_core.conf \
-    $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
-    $(LOCAL_PATH)/sensors/sensor_hal_config_default.xml:system/etc/sensor_hal_config_default.xml
+    $(DEVICE_CONF_PATH)/media_codecs.xml:system/etc/media_codecs.xml \
+    $(DEVICE_CONF_PATH)/wrs_omxil_components.list:system/etc/wrs_omxil_components.list \
+    $(DEVICE_CONF_PATH)/mfx_omxil_core.conf:system/etc/mfx_omxil_core.conf \
+    $(DEVICE_CONF_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
+    $(DEVICE_CONF_PATH)/sensors/sensor_hal_config_default.xml:system/etc/sensor_hal_config_default.xml
 
 PRODUCT_COPY_FILES := $(OVERRIDE_COPIES) $(PRODUCT_COPY_FILES)
 # keypad key mapping
@@ -230,12 +230,12 @@ PRODUCT_PACKAGES += \
 
 # board specific files
 PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
-        $(LOCAL_PATH)/camera_profiles.xml:system/etc/camera_profiles.xml
+        $(DEVICE_CONF_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
+        $(DEVICE_CONF_PATH)/camera_profiles.xml:system/etc/camera_profiles.xml
 
 # audio policy file
 PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/audio_policy.conf:system/etc/audio_policy.conf
+        $(DEVICE_CONF_PATH)/audio_policy.conf:system/etc/audio_policy.conf
 
 
 # Camera app
@@ -356,15 +356,15 @@ PRODUCT_COPY_FILES += \
 
 # Board initrc file
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.$(PRODUCT_DEVICE).rc:root/init.$(PRODUCT_DEVICE).rc \
-    $(LOCAL_PATH)/init.avc.rc:root/init.avc.rc \
-    $(LOCAL_PATH)/init.diag.rc:root/init.diag.rc
-#    $(LOCAL_PATH)/init.wireless.rc:root/init.wireless.rc \
-#    $(LOCAL_PATH)/init.modem.rc:root/init.modem.rc \
+    $(DEVICE_CONF_PATH)/init.$(PRODUCT_DEVICE).rc:root/init.$(PRODUCT_DEVICE).rc \
+    $(DEVICE_CONF_PATH)/init.avc.rc:root/init.avc.rc \
+    $(DEVICE_CONF_PATH)/init.diag.rc:root/init.diag.rc
+#    $(DEVICE_CONF_PATH)/init.wireless.rc:root/init.wireless.rc \
+#    $(DEVICE_CONF_PATH)/init.modem.rc:root/init.modem.rc \
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab
+    $(DEVICE_CONF_PATH)/vold.fstab:system/etc/vold.fstab
 
 #################################################"
 # Include platform - do not inherit so that variables can be set before inclusion
-include device/intel/baytrail/baytrail.mk
+include $(PLATFORM_PATH)/baytrail.mk

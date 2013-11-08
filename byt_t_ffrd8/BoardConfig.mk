@@ -41,7 +41,7 @@ endif
 BOARD_HAVE_WIFI := true
 INTEL_WIDI := true
 BOARD_HAVE_BLUETOOTH := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_CONF_PATH)
 TARGET_HAS_VPP := true
 TARGET_VPP_USE_GEN := true
 COMMON_GLOBAL_CFLAGS += -DGFX_BUF_EXT
@@ -85,8 +85,6 @@ USE_CSS_2_0 := true
 
 # Enabled HW accelerated JPEG encoder using VA API
 USE_INTEL_JPEG := false
-# Enabled NXP Premium Audio Effect Libraries
-#USE_INTEL_LVSE := true
 JPEGDEC_USES_GEN := true
 
 ifeq ($(BOARD_KERNEL_CMDLINE),)
@@ -147,6 +145,16 @@ ENABLE_BACKGROUND_MUSIC := true
 USE_MEDIASDK := true
 # Enable CIP Codecs
 USE_INTEL_MDP := true
+
+ifeq ($(DOLBY_DAP),true)
+# Disabled NXP Premium Audio Effect Libraries
+USE_INTEL_LVSE := false
+else
+# Enabled NXP Premium Audio Effect Libraries
+USE_INTEL_LVSE := false
+#USE_INTEL_LVSE := true
+endif
+
 MFX_IPP := p8
 # enabled to use Intel audio SRC (sample rate conversion)
 USE_INTEL_SRC := true
@@ -162,9 +170,8 @@ BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE +=  droidboot.use_installer=1 droidboot.ins
 # Enable Android Security Framework
 INTEL_FEATURE_ASF := true
 
+# Supported ASF Version
+PLATFORM_ASF_VERSION := 1
+
 # Use shared object of ia_face
 USE_SHARED_IA_FACE := true
-
-# Temporary support for diskinstaller to be used with EFI BIOS.
-# -> should go away as this is not needed with PSI firmware + OTG
-#include $(PLATFORM_PATH)/diskinstaller/config.mk
