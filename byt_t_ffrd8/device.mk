@@ -205,7 +205,7 @@ PRODUCT_PACKAGES += \
     libmemrar
 
 #OemTelephony for OEM HOOK API
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     com.intel.internal.telephony.OemTelephony \
      com.intel.internal.telephony.OemTelephony.xml
 
