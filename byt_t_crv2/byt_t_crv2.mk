@@ -45,14 +45,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     bcu.default
 
+# parameter-framework files
+PRODUCT_PACKAGES += \
+        libimc-subsystem \
+        parameter-framework.audio.byt_t_crv2 \
+        parameter-framework.vibrator.baytrail
+
 # build the OMX wrapper codecs
 PRODUCT_PACKAGES += \
     libstagefright_soft_mp3dec_mdp \
     libstagefright_soft_aacdec_mdp
-
-# NFC
-PRODUCT_PACKAGES += \
-    nfc_pn544pc
 
 #alsa conf
 ALSA_CONF_PATH := external/alsa-lib/
