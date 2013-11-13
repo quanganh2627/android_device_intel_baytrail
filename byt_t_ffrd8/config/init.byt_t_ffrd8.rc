@@ -344,3 +344,9 @@ on property:sys.inotify.max_user_watches=*
 service securityfile /system/bin/securityfileservice
     class main
     user root
+
+# ASF securitydevice service; providing device control access
+# to authorized ASF applications.
+service securitydevice /system/bin/securitydeviceservice
+    class main
+    user root

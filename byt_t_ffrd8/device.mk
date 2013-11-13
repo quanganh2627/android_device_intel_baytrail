@@ -449,7 +449,9 @@ PRODUCT_PACKAGES += \
         com.intel.asf \
         com.intel.asf.xml \
         securityfileservice \
+        securitydeviceservice \
         SecurityManagerService
+
 
 #################################################"
 # Include platform - do not inherit so that variables can be set before inclusion
