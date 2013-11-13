@@ -133,7 +133,7 @@ BOARD_USES_LIBPSS := false
 
 INTEL_VA:=true
 USE_INTEL_VA:=true
-BOARD_USES_WRS_OMXIL_CORE:=true
+BOARD_USES_WRS_OMXIL_CORE:= true
 BOARD_USES_MRST_OMX:=true
 USE_INTEL_ASF_EXTRACTOR:=true
 # enabled to use Intel secure AVC Stagefright HW decoder
@@ -168,7 +168,7 @@ MFX_IPP := p8
 # enabled to use Intel audio SRC (sample rate conversion)
 USE_INTEL_SRC := true
 # enabled to use ALAC
-USE_FEATURE_ALAC := false
+USE_FEATURE_ALAC := true
 
 # Defines Intel library for GPU accelerated Renderscript:
 OVERRIDE_RS_DRIVER := libRSDriver_intel7.so
