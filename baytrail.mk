@@ -205,3 +205,5 @@ PRODUCT_PACKAGES += \
     libsepdrmjni \
     SepService
 
+# Adding for Netflix app to do dynamic resolution switching
+ADDITIONAL_BUILD_PROPERTIES += ro.streaming.video.drs=true
