@@ -1,0 +1,10 @@
+/system      ext4    /dev/block/sda9
+/cache       ext4    /dev/block/sda7
+/data        ext4    /dev/block/sda10    length=-16384
+/boot        emmc    /dev/block/sda3
+/recovery    emmc    /dev/block/sda4
+/misc        emmc    /dev/block/sda5
+/bootloader  vfat    /dev/block/sda1
+/bootloader2 vfat    /dev/block/sda2
+/fastboot    emmc    /dev/block/sda11
+/sdcard      vfat    /dev/block/sdb1

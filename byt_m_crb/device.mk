@@ -336,15 +336,19 @@ PRODUCT_COPY_FILES += \
 
 # Board initrc file
 PRODUCT_COPY_FILES += \
-    $(DEVICE_CONF_PATH)/init.$(PRODUCT_DEVICE).rc:root/init.$(PRODUCT_DEVICE).rc \
-    $(DEVICE_CONF_PATH)/init.debug.$(PRODUCT_DEVICE).rc:root/init.debug.$(PRODUCT_DEVICE).rc \
-    $(DEVICE_CONF_PATH)/init.avc.rc:root/init.avc.rc \
-    $(DEVICE_CONF_PATH)/init.diag.rc:root/init.diag.rc
-#    $(DEVICE_CONF_PATH)/init.wireless.rc:root/init.wireless.rc \
-#    $(DEVICE_CONF_PATH)/init.modem.rc:root/init.modem.rc \
+
+    $(LOCAL_PATH)/init.$(PRODUCT_DEVICE).rc:root/init.$(PRODUCT_DEVICE).rc \
+    $(LOCAL_PATH)/init.debug.$(PRODUCT_DEVICE).rc:root/init.debug.$(PRODUCT_DEVICE).rc \
+    $(LOCAL_PATH)/init.avc.rc:root/init.avc.rc \
+    $(LOCAL_PATH)/init.sensors.rc:root/init.sensors.rc \
+    $(LOCAL_PATH)/init.diag.rc:root/init.diag.rc \
+    $(LOCAL_PATH)/init.recovery.rc:root/init.recovery.$(PRODUCT_DEVICE).rc
+#    $(LOCAL_PATH)/init.wireless.rc:root/init.wireless.rc \
+#    $(LOCAL_PATH)/init.modem.rc:root/init.modem.rc \
 
 PRODUCT_COPY_FILES += \
-    $(DEVICE_CONF_PATH)/vold.fstab:system/etc/vold.fstab
+    $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \
+    $(LOCAL_PATH)/fstab:root/fstab.$(PRODUCT_DEVICE)
 
 # Camera applications: LaunchCamera
     PRODUCT_PACKAGES += \

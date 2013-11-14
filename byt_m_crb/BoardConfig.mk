@@ -3,28 +3,57 @@
 REF_DEVICE_NAME ?= $(TARGET_DEVICE)
 REF_PRODUCT_NAME ?= $(TARGET_PRODUCT)
 
-TARGET_USE_DROIDBOOT := true
-
-# For use with iago/gummiboot
-TARGET_USE_EFI := true
+# XXX what uses this?
 TARGET_USE_GUMMIBOOT := true
-ifeq ($(TARGET_USE_EFI),true)
-ifneq ($(TARGET_NO_RECOVERY),true)
-INSTALLED_RECOVERYIMAGE_TARGET := $(PRODUCT_OUT)/recovery.img
-else
-INSTALLED_RECOVERYIMAGE_TARGET :=
-endif
-endif
-
 
 STORAGE_CFLAGS := -DSTORAGE_BASE_PATH=\"/dev/block/sda\" -DSTORAGE_PARTITION_FORMAT=\"%s%d\"
 
 # serialno
 USE_BL_SERIALNO := true
 
-TARGET_OS_SIGNING_METHOD := isu_plat2
-
 include $(PLATFORM_PATH)/BoardConfig.mk
+
+# -- Droidboot Defines --
+TARGET_USE_DROIDBOOT := true
+# Policy here is to not stage it in production builds
+ifneq ($(TARGET_BUILD_VARIANT),user)
+TARGET_STAGE_DROIDBOOT := true
+else
+TARGET_STAGE_DROIDBOOT := false
+endif
+TARGET_DROIDBOOT_LIBS := libdbadbd libdbupdate
+DROIDBOOT_HARDWARE_INITRC := $(DEVICE_PATH)/init.recovery.rc
+DROIDBOOT_SCRATCH_SIZE := 1000
+TARGET_BOOTLOADER_BOARD_NAME := byt_m_crb
+
+# EFI targets use standard Android recovery and boot images
+# Override a bunch of stuff set in superclass
+TARGET_MAKE_NO_DEFAULT_RECOVERY := false
+TARGET_MAKE_NO_DEFAULT_OTA_PACKAGE := false
+TARGET_MAKE_NO_DEFAULT_BOOTIMAGE := false
+TARGET_BOOTIMAGE_USE_EXT2 := false
+
+TARGET_RECOVERY_UI_LIB := libbigcore_recovery_ui
+
+# For recovery console minui
+TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
+
+# Addional Edify command implementations
+TARGET_RECOVERY_UPDATER_LIBS += libbigcore_updater
+
+# Extra libraries needed to be rolled into recovery updater
+TARGET_RECOVERY_UPDATER_EXTRA_LIBS := libgpt_static
+
+# Python extensions to build/tools/releasetools for constructing
+# OTA Update packages
+TARGET_RELEASETOOLS_EXTENSIONS := device/intel/baytrail/byt_m_crb/recovery/releasetools.py
+
+# Add EFI apps to the target-files-package
+TARGET_EFI_APPS := $(PRODUCT_OUT)/efi/gummiboot.efi $(PRODUCT_OUT)/efi/shim.efi
+INSTALLED_RADIOIMAGE_TARGET := $(TARGET_EFI_APPS)
+
+# This is a restricted boot device; users will not be able to enroll their own keys
+TARGET_USE_MOKMANAGER := false
 
 # Disable sparse build until we move to B-2 and re-use ethernet PCI card
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
@@ -105,6 +134,19 @@ BOARD_KERNEL_CMDLINE := console=logk0 earlyprintk=nologger loglevel=0 kmemleak=o
 endif
 endif
 
+ifeq ($(TARGET_KERNEL_ARCH),)
+TARGET_KERNEL_ARCH := i386
+endif
+
+# Allow creation of iago live USB/CD images
+TARGET_USE_IAGO := true
+TARGET_IAGO_PLUGINS := bootable/iago/plugins/gummiboot bootable/iago/plugins/droidboot
+ifeq ($(TARGET_STAGE_DROIDBOOT),true)
+TARGET_IAGO_INI := $(DEVICE_PATH)/iago.ini
+else
+TARGET_IAGO_INI := $(DEVICE_PATH)/iago.nofastboot.ini
+endif
+
 # Graphics
 USE_OPENGL_RENDERER := true
 BOARD_KERNEL_CMDLINE += vga=current i915.modeset=1 drm.vblankoffdelay=1 \
@@ -141,13 +183,6 @@ USE_FEATURE_ALAC := true
 
 # Defines Intel library for GPU accelerated Renderscript:
 OVERRIDE_RS_DRIVER := libRSDriver_intel7.so
-
-BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE += droidboot.disablewipe=1
-#temporary workaround to speed up flashing with fastboot
-BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE += droidboot.disablefbootui=1
-
-# usb stick/sdcard installer support
-BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE +=  droidboot.use_installer=1 droidboot.installer_usb=/dev/block/sdb1 droidboot.installer_sdcard=/dev/block/mmcblk1p1 droidboot.installer_file=installer.cmd
 
 #Camera
 ADDITIONAL_BUILD_PROPERTIES += \
@@ -211,4 +246,3 @@ TARGET_NO_BOOTLOADER := false
 
 #BOARD_MKBOOTIMG_ARGS := --signsize 256  --signexec "$(TARGET_BOOT_IMAGE_SIGN_CMD)"
 ########################################################################
-

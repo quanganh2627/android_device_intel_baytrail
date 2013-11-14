@@ -19,3 +19,17 @@ liveimg:
 	@mkdir -p $(PUBLISH_PATH)/$(TARGET_PUBLISH_PATH)/uefi-images/$(TARGET_BUILD_VARIANT)
 	@cp $(PRODUCT_OUT)/live.img $(PUBLISH_PATH)/$(TARGET_PUBLISH_PATH)/uefi-images/$(TARGET_BUILD_VARIANT)/
 	@$(ACP) -rpf $(PRODUCT_OUT)/iago/images/*.img $(PUBLISH_PATH)/$(TARGET_PUBLISH_PATH)/uefi-images/$(TARGET_BUILD_VARIANT)/
+
+# 'dbimages' for use with Droidboot or sync_img
+.PHONY: dbimages
+dbimages: $(PRODUCT_OUT)/system.img.gz \
+          recoveryimage \
+          bootimage \
+          userdataimage
+
+DBUPDATE_BLOB := $(PRODUCT_OUT)/dbupdate.bin
+
+ifeq ($(TARGET_STAGE_DROIDBOOT),true)
+dbimages: droidboot-bootimage $(DBUPDATE_BLOB)
+droidcore: dbimages
+endif
