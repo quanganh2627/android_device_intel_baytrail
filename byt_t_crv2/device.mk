@@ -202,7 +202,7 @@ endif
 
 # bluetooth
 PRODUCT_PACKAGES += \
-    bt_bcm43340
+    bt_rtl8723b
 
 # IPV6
 PRODUCT_PACKAGES += \
