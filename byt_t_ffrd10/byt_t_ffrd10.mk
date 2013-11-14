@@ -7,6 +7,9 @@ PRODUCT_DEVICE := byt_t_ffrd10
 # Include product path
 include $(LOCAL_PATH)/byt_t_ffrd10_path.mk
 
+#NXP Effects
+-include vendor/intel/PRIVATE/lifevibes/nxp.mk
+
 # device specific overlay folder
 PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
 
@@ -61,6 +64,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
          $(LOCAL_PATH)/thermal_sensor_config.xml:system/etc/thermal_sensor_config.xml \
          $(LOCAL_PATH)/thermal_throttle_config.xml:system/etc/thermal_throttle_config.xml
+
+# crashlog conf
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/crashlog.conf:system/etc/crashlog.conf
 
 # Include base makefile
 include $(LOCAL_PATH)/device.mk

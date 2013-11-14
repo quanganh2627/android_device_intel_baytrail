@@ -6,6 +6,9 @@ PRODUCT_DEVICE := byt_m_crb
 # Include product path
 include $(LOCAL_PATH)/byt_m_crb_path.mk
 
+#NXP Effects
+-include vendor/intel/PRIVATE/lifevibes/nxp.mk
+
 # device specific overlay folder
 PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
 PRODUCT_PACKAGE_OVERLAYS += $(TOP)/vendor/intel/apps/EthernetSettings/overlays
