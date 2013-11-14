@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConfigurableDomains xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/etc/parameter-framework/Schemas/ConfigurableDomains.xsd" SystemClassName="Audio">
+  <ConfigurableDomain Name="Calibration" SequenceAware="false">
+    <Configurations>
+      <Configuration Name="Default">
+        <CompoundRule Type="All"/>
+      </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/HDAUDIO/INPUT/DEVICE/0/VOLUME"/>
+      <ConfigurableElement Path="/Audio/HDAUDIO/INPUT/DEVICE/1/VOLUME"/>
+      <ConfigurableElement Path="/Audio/HDAUDIO/INPUT/DEVICE/2/VOLUME"/>
+      <ConfigurableElement Path="/Audio/HDAUDIO/OUTPUT/HEADSET/VOLUME"/>
+      <ConfigurableElement Path="/Audio/HDAUDIO/OUTPUT/MASTER/VOLUME"/>
+      <ConfigurableElement Path="/Audio/HDAUDIO/OUTPUT/SPEAKER/VOLUME"/>
+    </ConfigurableElements>
+    <Settings>
+      <Configuration Name="Default">
+        <ConfigurableElement Path="/Audio/HDAUDIO/INPUT/DEVICE/0/VOLUME">
+          <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/HDAUDIO/INPUT/DEVICE/1/VOLUME">
+          <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/HDAUDIO/INPUT/DEVICE/2/VOLUME">
+          <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/HDAUDIO/OUTPUT/HEADSET/VOLUME">
+          <IntegerParameter Name="VOLUME">30 30</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/HDAUDIO/OUTPUT/MASTER/VOLUME">
+          <IntegerParameter Name="VOLUME">30</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/HDAUDIO/OUTPUT/SPEAKER/VOLUME">
+          <IntegerParameter Name="VOLUME">30 30</IntegerParameter>
+        </ConfigurableElement>
+      </Configuration>
+    </Settings>
+  </ConfigurableDomain>
+  <ConfigurableDomain Name="Routing.Mute.Codec.Playback.Headset" SequenceAware="false">
+    <Configurations>
+      <Configuration Name="Unmute">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Flow"/>
+          <CompoundRule Type="All">
+            <CompoundRule Type="Any">
+              <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Headset"/>
+              <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Headphones"/>
+            </CompoundRule>
+            <CompoundRule Type="Any">
+              <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="HwCodecMedia"/>
+              <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="Media"/>
+            </CompoundRule>
+          </CompoundRule>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="Mute">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Flow"/>
+        </CompoundRule>
+      </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/HDAUDIO/OUTPUT/HEADSET/ENABLED"/>
+    </ConfigurableElements>
+    <Settings>
+      <Configuration Name="Unmute">
+        <ConfigurableElement Path="/Audio/HDAUDIO/OUTPUT/HEADSET/ENABLED">
+          <BooleanParameter Name="ENABLED">1 1</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="Mute">
+        <ConfigurableElement Path="/Audio/HDAUDIO/OUTPUT/HEADSET/ENABLED">
+          <BooleanParameter Name="ENABLED">0 0</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+    </Settings>
+  </ConfigurableDomain>
+  <ConfigurableDomain Name="Routing.Mute.Codec.Playback.IHF" SequenceAware="false">
+    <Configurations>
+      <Configuration Name="Unmute">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Flow"/>
+          <CompoundRule Type="All">
+            <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="IHF"/>
+            <CompoundRule Type="Any">
+              <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="HwCodecMedia"/>
+              <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="Media"/>
+            </CompoundRule>
+          </CompoundRule>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="Mute">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Flow"/>
+        </CompoundRule>
+      </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/HDAUDIO/OUTPUT/SPEAKER/ENABLED"/>
+    </ConfigurableElements>
+    <Settings>
+      <Configuration Name="Unmute">
+        <ConfigurableElement Path="/Audio/HDAUDIO/OUTPUT/SPEAKER/ENABLED">
+          <BooleanParameter Name="ENABLED">1 1</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="Mute">
+        <ConfigurableElement Path="/Audio/HDAUDIO/OUTPUT/SPEAKER/ENABLED">
+          <BooleanParameter Name="ENABLED">0 0</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+    </Settings>
+  </ConfigurableDomain>
+  <ConfigurableDomain Name="Routing.Mute.Codec.Playback.Master" SequenceAware="false">
+    <Configurations>
+      <Configuration Name="Unmute">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Flow"/>
+          <CompoundRule Type="All">
+            <CompoundRule Type="Any">
+              <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Headset"/>
+              <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Headphones"/>
+              <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="IHF"/>
+            </CompoundRule>
+            <CompoundRule Type="Any">
+              <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="HwCodecMedia"/>
+              <SelectionCriterionRule SelectionCriterion="OpenedPlaybackRoutes" MatchesWhen="Includes" Value="Media"/>
+            </CompoundRule>
+          </CompoundRule>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="Mute">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Flow"/>
+        </CompoundRule>
+      </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/HDAUDIO/OUTPUT/MASTER/ENABLED"/>
+    </ConfigurableElements>
+    <Settings>
+      <Configuration Name="Unmute">
+        <ConfigurableElement Path="/Audio/HDAUDIO/OUTPUT/MASTER/ENABLED">
+          <BooleanParameter Name="ENABLED">1</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="Mute">
+        <ConfigurableElement Path="/Audio/HDAUDIO/OUTPUT/MASTER/ENABLED">
+          <BooleanParameter Name="ENABLED">0</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+    </Settings>
+  </ConfigurableDomain>
+  <ConfigurableDomain Name="Routing.Mute.Codec.Capture.MainMic" SequenceAware="false">
+    <Configurations>
+      <Configuration Name="Unmute">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Flow"/>
+          <CompoundRule Type="All">
+            <SelectionCriterionRule SelectionCriterion="SelectedInputDevice" MatchesWhen="Includes" Value="Main"/>
+            <SelectionCriterionRule SelectionCriterion="OpenedCaptureRoutes" MatchesWhen="Includes" Value="HwCodecMedia"/>
+          </CompoundRule>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="Mute">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Flow"/>
+        </CompoundRule>
+      </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/HDAUDIO/INPUT/DEVICE/1/ENABLED"/>
+    </ConfigurableElements>
+    <Settings>
+      <Configuration Name="Unmute">
+        <ConfigurableElement Path="/Audio/HDAUDIO/INPUT/DEVICE/1/ENABLED">
+          <BooleanParameter Name="ENABLED">1 1</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="Mute">
+        <ConfigurableElement Path="/Audio/HDAUDIO/INPUT/DEVICE/1/ENABLED">
+          <BooleanParameter Name="ENABLED">0 0</BooleanParameter>
+        </ConfigurableElement>
+      </Configuration>
+    </Settings>
+  </ConfigurableDomain>
+  <ConfigurableDomain Name="Routing.Configure.Codec.Capture" SequenceAware="false">
+    <Configurations>
+      <Configuration Name="RearMic">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Configure"/>
+          <SelectionCriterionRule SelectionCriterion="OpenedCaptureRoutes" MatchesWhen="Includes" Value="HwCodecMedia"/>
+          <SelectionCriterionRule SelectionCriterion="SelectedInputDevice" MatchesWhen="Includes" Value="Main"/>
+        </CompoundRule>
+      </Configuration>
+      <Configuration Name="Line">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Configure"/>
+        </CompoundRule>
+      </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/HDAUDIO/INPUT/DEVICE/1/SOURCE"/>
+    </ConfigurableElements>
+    <Settings>
+      <Configuration Name="RearMic">
+        <ConfigurableElement Path="/Audio/HDAUDIO/INPUT/DEVICE/1/SOURCE">
+          <EnumParameter Name="SOURCE">REAR_MIC</EnumParameter>
+        </ConfigurableElement>
+      </Configuration>
+      <Configuration Name="Line">
+        <ConfigurableElement Path="/Audio/HDAUDIO/INPUT/DEVICE/1/SOURCE">
+          <EnumParameter Name="SOURCE">LINE</EnumParameter>
+        </ConfigurableElement>
+      </Configuration>
+    </Settings>
+  </ConfigurableDomain>
+</ConfigurableDomains>
+
