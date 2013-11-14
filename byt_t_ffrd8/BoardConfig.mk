@@ -133,7 +133,7 @@ BOARD_USES_LIBPSS := false
 
 INTEL_VA:=true
 USE_INTEL_VA:=true
-BOARD_USES_WRS_OMXIL_CORE:=false
+BOARD_USES_WRS_OMXIL_CORE:=true
 BOARD_USES_MRST_OMX:=true
 USE_INTEL_ASF_EXTRACTOR:=true
 # enabled to use Intel secure AVC Stagefright HW decoder
