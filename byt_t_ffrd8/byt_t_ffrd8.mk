@@ -26,9 +26,9 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/maxtouch_1664S_8.fw:system/etc/firmware/maxtouch.fw
 
 # Wi-Fi
-# PRODUCT_COPY_FILES += \
+ PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.xml
-#PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.direct.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml
 
 PRODUCT_PACKAGES += \
