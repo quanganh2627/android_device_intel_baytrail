@@ -58,6 +58,9 @@ PRODUCT_COPY_FILES += \
 # Kdump
 PRODUCT_PACKAGES_ENG += kdumpramdisk
 
+# BIOS update capsule file
+PRODUCT_PACKAGES += byt_m_bios.cap
+
 # Include base makefile
 include $(LOCAL_PATH)/device.mk
 

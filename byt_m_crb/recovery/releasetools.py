@@ -134,6 +134,8 @@ def IncrementalOTA_VerifyEnd(info):
     for fn, tf, sf, size, patch_sha in patch_list:
         info.script.PatchCheck("/"+fn, tf.sha1, sf.sha1)
 
+def IncrementalOTA_InstallBegin(info):
+    info.script.script.append('if get_bcb_status("%s") == "" then' % (bcb_device,))
 
 def swap_entries(info):
     fstab = info.script.info.get("fstab", None)
@@ -145,8 +147,18 @@ def finalize_esp(info):
     info.script.script.append('copy_shim();')
     info.script.script.append('copy_capsules("/system/etc/firmware/capsules");')
     info.script.script.append('unmount("/bootloader");')
+    info.script.script.append('unmount("/system");')
     swap_entries(info)
-    #info.script.script.append('set_bcb_command("%s", "recovery-firmware");' % (bcb_device,))
+
+    info.script.script.append('set_bcb_command("%s", "recovery-firmware");' % (bcb_device,))
+    info.script.script.append('abort("BCB update / reboot failed!");')
+    info.script.script.append('endif;')
+    info.script.script.append('if is_substring("FAILED", get_bcb_status("%s")) then' % (bcb_device,))
+    info.script.script.append('    abort("Firmware update failed!");')
+    info.script.script.append('endif;')
+    info.script.script.append('if get_bcb_status("%s") == "OK" then' % (bcb_device,))
+    info.script.script.append('    ui_print("Firmware update successful\n");')
+    info.script.script.append('endif;')
 
 
 def IncrementalOTA_InstallEnd(info):
@@ -191,6 +203,11 @@ def FullOTA_Assertions(info):
     SetBcbDevice(info)
     EspUpdateInit(info, False)
     MountEsp(info)
+
+
+def FullOTA_InstallBegin(info):
+    # Open up a block if the status field is empty; normal update phase
+    info.script.script.append('if get_bcb_status("%s") == "" then' % (bcb_device,))
 
 
 def FullOTA_InstallEnd(info):

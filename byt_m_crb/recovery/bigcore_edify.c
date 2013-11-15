@@ -252,6 +252,63 @@ static int write_bcb(const char *device, const struct bootloader_message *bcb)
 }
 
 
+static Value *GetBCBStatus(const char *name, State *state, int __unused argc, Expr *argv[])
+{
+    char *device;
+    char *status;
+    struct bootloader_message bcb;
+
+    if (ReadArgs(state, argv, 1, &device))
+        return NULL;
+
+    if (strlen(device) == 0) {
+        ErrorAbort(state, "%s: Missing required argument", name);
+        return NULL;
+    }
+
+    if (read_bcb(device, &bcb)) {
+        ErrorAbort(state, "%s: Failed to read Bootloader Control Block", name);
+        return NULL;
+    }
+
+    status = strdup(bcb.status);
+    printf("Read status '%s' from Bootloader Control Block\n", status);
+
+    return StringValue(status);
+}
+
+/* Hackery: Recovery Console no longer really supports controlled reboots
+ * during the update process; if we get to finish_recovery() in recovery.cpp,
+ * everything is reset. Since we want to continue doing recovery operations
+ * we need to save the log file and reboot here */
+static const char *TEMPORARY_LOG_FILE = "/tmp/recovery.log";
+static const char *LOG_FILE = "/cache/recovery/log";
+
+/* Android BootReceiver eats the /cache/recovery/log file and the
+ * last_log file is overwritten on each boot into recovery console.
+ * so save this under a different name so the logs from the first
+ * phase can be inspected manually */
+static const char *LAST_LOG_FILE = "/cache/recovery/last_log_phase1";
+
+static void copy_log_file(const char* source, const char* destination, int append) {
+    FILE *log = fopen(destination, append ? "a" : "w");
+    if (log == NULL) {
+        printf("Can't open %s: %s\n", destination, strerror(errno));
+        return;
+    }
+
+    FILE *tmplog = fopen(source, "r");
+    if (tmplog != NULL) {
+        if (append)
+            fseek(tmplog, 0, SEEK_END);  // Since last write
+        char buf[4096];
+        while (fgets(buf, sizeof(buf), tmplog))
+            fputs(buf, log);
+        fclose(tmplog);
+    }
+    fclose(log);
+}
+
 
 static Value *SetBCBCommand(const char *name, State *state, int __unused argc, Expr *argv[])
 {
@@ -283,6 +340,20 @@ static Value *SetBCBCommand(const char *name, State *state, int __unused argc, E
         return NULL;
     }
 
+    printf("Stash log files and reboot\n");
+    copy_log_file(TEMPORARY_LOG_FILE, LOG_FILE, 1);
+    copy_log_file(TEMPORARY_LOG_FILE, LAST_LOG_FILE, 0);
+
+    chmod(LOG_FILE, 0600);
+    chown(LOG_FILE, 1000, 1000);   // system user
+    chmod(LAST_LOG_FILE, 0640);
+
+    umount("/cache");
+
+    sync();
+    android_reboot(ANDROID_RB_RESTART, 0, 0);
+
+    /* Shouldn't get here */
     return StringValue(strdup(""));
 }
 
@@ -667,6 +738,7 @@ void Register_libbigcore_updater(void)
     RegisterFunction("copy_partition", CopyPartFn);
     RegisterFunction("copy_capsules", CopyCapsulesFn);
     RegisterFunction("set_bcb_command", SetBCBCommand);
+    RegisterFunction("get_bcb_status", GetBCBStatus);
     RegisterFunction("copy_shim", CopyShimFn);
 }
 
