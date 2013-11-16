@@ -15,9 +15,6 @@ include $(PLATFORM_PATH)/BoardConfig.mk
 # Disable sparse build until we move to B-2 and re-use ethernet PCI card
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
 
-# Temporary IFWI does not support signing
-TARGET_OS_SIGNING_METHOD := none
-
 # IAFW component to build for this board
 BOARD_IAFW_COMPONENT := brd_bayleybay
 
@@ -42,7 +39,9 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_CONF_PATH)
 TARGET_HAS_VPP := true
 TARGET_VPP_USE_GEN := true
 COMMON_GLOBAL_CFLAGS += -DGFX_BUF_EXT
+# MultiDisplay service
 TARGET_HAS_MULTIPLE_DISPLAY := true
+USE_MDS_LEGACY := true
 
 USE_INTEL_IPP := true
 

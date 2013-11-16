@@ -284,7 +284,7 @@
           <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/DAC1">
-          <IntegerParameter Name="DAC1">153 153</IntegerParameter>
+          <IntegerParameter Name="DAC1">148 148</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME">
           <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
@@ -295,7 +295,7 @@
           <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/DAC1">
-          <IntegerParameter Name="DAC1">175 175</IntegerParameter>
+          <IntegerParameter Name="DAC1">150 150</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME">
           <IntegerParameter Name="VOLUME">17 17</IntegerParameter>

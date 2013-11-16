@@ -23,6 +23,7 @@
         <hasSlowMotion value="false"/> <!-- true or false -->
         <continuousCapture value="true"/> <!-- true or false -->
         <supportedSnapshotSizes value="320x240,640x480,1024x768,1280x720,1920x1080,2048x1536,2560x1920,3264x1836,3264x2448"/>
+        <defaultSnapshotSize value="1920x1080"/>
         <supportedPreviewSizes value="1920x1080,1280x960,1280x720,720x480,640x480,640x360,352x288,320x240,176x144"/>
         <supportedVideoSizes value="176x144,320x240,352x288,640x480,720x480,1280x720,1920x1080"/>
         <videoPreviewSizePref value="1920x1080"/>
@@ -79,6 +80,8 @@
         <synchronizeExposure value="true"/>
         <supportedHighSpeedResolutionFps value="1280x720@60,1920x1080@60"/>
         <maxHighSpeedDvsResolution value="1920x1080"/>
+        <supportedUltraLowLight value=""/>
+        <defaultUltraLowLight value=""/>
     </Profiles>
 
     <Profiles cameraId="1">
@@ -89,6 +92,7 @@
         <hasSlowMotion value="false"/>
         <continuousCapture value="true"/>
         <supportedSnapshotSizes value="320x240,640x480,1024x768,1280x720,1280x960,1920x1080"/>
+        <defaultSnapshotSize value="1920x1080"/>
         <supportedPreviewSizes value="1280x720,720x480,640x480,640x360,352x288,320x240,176x144"/>
         <supportedVideoSizes value="176x144,320x240,352x288,640x480,720x480,1280x720,1920x1080"/>
         <videoPreviewSizePref value="1280x720"/>
@@ -142,6 +146,8 @@
         <supportedPreviewUpdateModes value="standard,continuous,during-capture,windowless"/>
         <defaultPreviewUpdateMode value="standard"/>
         <hasFlash value="false"/>
+        <supportedUltraLowLight value=""/>
+        <defaultUltraLowLight value=""/>
     </Profiles>
 
     <Common>
