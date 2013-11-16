@@ -79,8 +79,6 @@
         <synchronizeExposure value="true"/>
         <supportedHighSpeedResolutionFps value="1280x720@60,1920x1080@60"/>
         <maxHighSpeedDvsResolution value="1920x1080"/>
-        <supportedUltraLowLight value=""/>
-        <defaultUltraLowLight value=""/>
     </Profiles>
 
     <Profiles cameraId="1">
@@ -144,8 +142,6 @@
         <supportedPreviewUpdateModes value="standard,continuous,during-capture,windowless"/>
         <defaultPreviewUpdateMode value="standard"/>
         <hasFlash value="false"/>
-        <supportedUltraLowLight value=""/>
-        <defaultUltraLowLight value=""/>
     </Profiles>
 
     <Common>
