@@ -182,6 +182,11 @@ INTEL_FEATURE_ASF := true
 # Supported ASF Version
 PLATFORM_ASF_VERSION := 1
 
+# Add the ASF library to the BOOTCLASSPATH
+ifeq ($(strip $(INTEL_FEATURE_ASF)),true)
+PRODUCT_BOOT_JARS := ${PRODUCT_BOOT_JARS}:com.intel.asf
+endif
+
 # Use shared object of ia_face
 USE_SHARED_IA_FACE := true
 
