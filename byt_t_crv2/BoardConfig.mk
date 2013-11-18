@@ -7,10 +7,10 @@ TARGET_USE_DROIDBOOT := true
 
 BOARD_HAS_CAPSULE := false
 
-include $(PLATFORM_PATH)/BoardConfig.mk
-
 # Temporary IFWI does not support signing
-TARGET_OS_SIGNING_METHOD := none
+TARGET_OS_SIGNING_METHOD := xfstk
+
+include $(PLATFORM_PATH)/BoardConfig.mk
 
 # IAFW component to build for this board
 BOARD_IAFW_COMPONENT := brd_baylake

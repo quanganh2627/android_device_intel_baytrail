@@ -10,6 +10,8 @@ STORAGE_CFLAGS := -DSTORAGE_BASE_PATH=\"/dev/block/sda\" -DSTORAGE_PARTITION_FOR
 # serialno
 USE_BL_SERIALNO := true
 
+TARGET_OS_SIGNING_METHOD := isu_plat2
+
 include $(PLATFORM_PATH)/BoardConfig.mk
 
 # Disable sparse build until we move to B-2 and re-use ethernet PCI card

@@ -5,6 +5,8 @@ REF_PRODUCT_NAME ?= $(TARGET_PRODUCT)
 
 TARGET_USE_DROIDBOOT := true
 
+TARGET_OS_SIGNING_METHOD := isu_plat2
+
 include $(PLATFORM_PATH)/BoardConfig.mk
 
 # IAFW component to build for this board
