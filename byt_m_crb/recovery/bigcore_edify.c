@@ -416,14 +416,20 @@ static struct gpt_entry *find_android_partition(struct gpt *gpt, const char *nam
     uint32_t i;
     struct gpt_entry *e;
     int ret;
+    int nlen = strlen(name);
 
     partition_for_each(gpt, i, e) {
         char *pname = gpt_entry_get_name(e);
+        int plen = strlen(pname);
         if (!pname)
             return NULL;
 
-        /* Skip over the 'install id' */
-        ret = strcmp(pname + 16, name);
+        if (nlen > plen)
+            continue;
+
+        /* Match partition that ends with the specifid name
+         * Various schemes prepend additional data */
+        ret = strcmp(pname + (plen - nlen), name);
         free(pname);
         if (!ret)
             return e;
