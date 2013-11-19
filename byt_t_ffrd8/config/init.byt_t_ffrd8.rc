@@ -282,7 +282,7 @@ service sensorhubd /system/bin/sensorhubd
     class main
     user system
     group system
-    socket sensorhubd stream 600 system system
+    socket sensorhubd stream 666 system system
 
 # for eth0
 service net_eth0-start /system/bin/sh /system/etc/init.net.eth0.sh
