@@ -141,11 +141,11 @@ endif
 # Allow creation of iago live USB/CD images
 TARGET_USE_IAGO := true
 TARGET_IAGO_PLUGINS := bootable/iago/plugins/gummiboot bootable/iago/plugins/droidboot
-ifeq ($(TARGET_STAGE_DROIDBOOT),true)
 TARGET_IAGO_INI := $(DEVICE_PATH)/iago.ini
-else
-TARGET_IAGO_INI := $(DEVICE_PATH)/iago.nofastboot.ini
+ifneq ($(TARGET_STAGE_DROIDBOOT),true)
+TARGET_IAGO_INI += $(DEVICE_PATH)/iago.nofastboot.ini
 endif
+TARGET_IAGO_DEFAULT_INI := $(DEVICE_PATH)/iago-default.ini
 
 # Graphics
 USE_OPENGL_RENDERER := true
