@@ -56,4 +56,4 @@ cmdline_extra += oops=panic panic=40
 # Security
 BUILD_WITH_SECURITY_FRAMEWORK := txei
 
-INTEL_FEATURE_ARKHAM := true
+INTEL_FEATURE_ARKHAM := false
