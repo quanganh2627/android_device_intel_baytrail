@@ -16,8 +16,8 @@
 
                 <ComponentType Name="DEVICE_STEREO_CAPTURE">
                     <EnumParameter Name="SOURCE" Size="8" Mapping="Control:'Input Source'">
-                        <ValuePair Literal="REAR_MIC" Numerical="0"/>
-                        <ValuePair Literal="FRONT_MIC" Numerical="1"/>
+                        <ValuePair Literal="FRONT_MIC" Numerical="0"/>
+                        <ValuePair Literal="REAR_MIC" Numerical="1"/>
                         <ValuePair Literal="LINE" Numerical="2"/>
                     </EnumParameter>
                     <IntegerParameter Name="VOLUME" ArrayLength="2" Size="8" Min="0" Max="31" Mapping="Control:Capture Volume"/>
