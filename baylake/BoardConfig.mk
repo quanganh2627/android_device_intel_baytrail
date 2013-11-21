@@ -140,6 +140,10 @@ USE_INTEL_MDP := true
 MFX_IPP := p8
 # enabled to use Intel audio SRC (sample rate conversion)
 USE_INTEL_SRC := true
+# Disabled - Do not use of Intel audio SRC in media framework only.
+# this workaround will be removed after Intel SRC support non-standard
+# input sampling rate dynamically.
+USE_INTEL_SRC_IN_MEDIAFRAMEWORK := false
 # enabled to use ALAC
 USE_FEATURE_ALAC := true
 
