@@ -168,7 +168,7 @@ PRODUCT_PACKAGES += \
    audio.hdmi.$(PRODUCT_DEVICE)
 
 #widi audio HAL
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     audio.widi.$(PRODUCT_DEVICE)
 
 #widi
@@ -449,7 +449,9 @@ PRODUCT_PACKAGES += \
         com.intel.asf \
         com.intel.asf.xml \
         securityfileservice \
+        securitydeviceservice \
         SecurityManagerService
+
 
 #################################################"
 # Include platform - do not inherit so that variables can be set before inclusion

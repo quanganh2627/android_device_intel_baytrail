@@ -185,6 +185,9 @@ on post-fs-data
     chown system system /sys/class/power_supply/max17047_battery/serial_number
     start fg_conf
 
+    # Enable Dynamic Turbo feature
+    setprop persist.thermal.turbo.dynamic 1
+
 on post-fs
     # Performance tweaks for interactive governor
     chown system system /sys/devices/system/cpu/cpufreq/interactive/timer_rate
@@ -192,8 +195,8 @@ on post-fs
     chown system system /sys/devices/system/cpu/cpufreq/interactive/touchboost_freq
     chown system system /sys/devices/system/cpu/cpufreq/interactive/boostpulse
     chown system system /sys/devices/system/cpu/cpufreq/interactive/touchboostpulse
-    chmod 0222 /sys/devices/system/cpu/cpufreq/interactive/touchboostpulse
-    chmod 0222 /sys/devices/system/cpu/cpufreq/interactive/boostpulse
+    chmod 0220 /sys/devices/system/cpu/cpufreq/interactive/touchboostpulse
+    chmod 0220 /sys/devices/system/cpu/cpufreq/interactive/boostpulse
 
     # Volume keys wakeup capability
     chmod 0664 /sys/devices/platform/gpio-keys/enabled_wakeup
@@ -243,7 +246,7 @@ service sensorhubd /system/bin/sensorhubd
     class main
     user system
     group system
-    socket sensorhubd stream 600 system system
+    socket sensorhubd stream 666 system system
     oneshot
 
 # for eth0

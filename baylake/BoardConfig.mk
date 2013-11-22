@@ -15,8 +15,8 @@ BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 
 # Connectivity
 BOARD_HAVE_WIFI := true
-INTEL_WIDI := true
-INTEL_WIDI_BAYTRAIL := true
+INTEL_WIDI := false
+INTEL_WIDI_BAYTRAIL := false
 BOARD_HAVE_BLUETOOTH := true
 
 ifeq (, $(findstring next, $(TARGET_PRODUCT)))
@@ -121,7 +121,7 @@ BOARD_USES_LIBPSS := false
 
 INTEL_VA:=true
 USE_INTEL_VA:=true
-BOARD_USES_WRS_OMXIL_CORE:=true
+BOARD_USES_WRS_OMXIL_CORE:=false
 BOARD_USES_MRST_OMX:=true
 USE_INTEL_ASF_EXTRACTOR:=true
 # enabled to use Intel secure AVC Stagefright HW decoder

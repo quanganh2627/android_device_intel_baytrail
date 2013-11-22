@@ -5,6 +5,8 @@ REF_PRODUCT_NAME ?= $(TARGET_PRODUCT)
 
 TARGET_USE_DROIDBOOT := true
 
+TARGET_OS_SIGNING_METHOD := isu_plat2
+
 include $(PLATFORM_PATH)/BoardConfig.mk
 
 # IAFW component to build for this board
@@ -36,7 +38,7 @@ endif
 
 # Connectivity
 BOARD_HAVE_WIFI := true
-INTEL_WIDI := true
+INTEL_WIDI := false
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_CONF_PATH)
 TARGET_HAS_VPP := true
@@ -49,7 +51,7 @@ USE_MDS_LEGACY := true
 USE_INTEL_IPP := true
 
 # WiDi
-INTEL_WIDI_BAYTRAIL := true
+INTEL_WIDI_BAYTRAIL := false
 
 # NFC
 -include vendor/intel/hardware/nfc/common/NfcBoardConfig.mk
@@ -71,6 +73,7 @@ BCUHAL_BYT := true
 #GEN is one graphic and video engine
 # Baytrail uses the GEN for the graphic and video
 BOARD_GRAPHIC_IS_GEN := true
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
 # Camera
 # Set USE_CAMERA_STUB to 'true' for Fake Camera builds,
@@ -88,13 +91,20 @@ JPEGDEC_USES_GEN := true
 
 ifeq ($(BOARD_KERNEL_CMDLINE),)
 ifeq ($(TARGET_BUILD_VARIANT),eng)
-BOARD_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger loglevel=8 drm.debug=0x0 kmemleak=off ptrace.ptrace_can_access=1 emmc_ipanic.ipanic_part_number=3 androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) nmi_watchdog=panic softlockup_panic=1 vmalloc=172M
+BOARD_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger loglevel=8 drm.debug=0x0 kmemleak=off ptrace.ptrace_can_access=1 androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) nmi_watchdog=panic softlockup_panic=1 vmalloc=172M
 else ifeq ($(TARGET_BUILD_VARIANT),userdebug)
-BOARD_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger loglevel=4 kmemleak=off ptrace.ptrace_can_access=1 emmc_ipanic.ipanic_part_number=3 androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) nmi_watchdog=panic softlockup_panic=1 vmalloc=172M
+BOARD_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger loglevel=4 kmemleak=off ptrace.ptrace_can_access=1 androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) nmi_watchdog=panic softlockup_panic=1 vmalloc=172M
 else
-BOARD_KERNEL_CMDLINE := console=logk0 earlyprintk=nologger loglevel=0 kmemleak=off emmc_ipanic.ipanic_part_number=3 androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) vmalloc=172M
+BOARD_KERNEL_CMDLINE := console=logk0 earlyprintk=nologger loglevel=0 kmemleak=off androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) vmalloc=172M
 endif
 endif
+
+ifeq ($(TARGET_PARTITIONING_SCHEME),"full-gpt")
+PARTITION_PANIC_ID := 8
+else
+PARTITION_PANIC_ID := 3
+endif
+BOARD_KERNEL_CMDLINE += emmc_ipanic.ipanic_part_number=$(PARTITION_PANIC_ID)
 
 # Graphics
 BOARD_GPU_DRIVERS := i965
@@ -123,7 +133,7 @@ BOARD_USES_LIBPSS := false
 
 INTEL_VA:=true
 USE_INTEL_VA:=true
-BOARD_USES_WRS_OMXIL_CORE:=true
+BOARD_USES_WRS_OMXIL_CORE:= true
 BOARD_USES_MRST_OMX:=true
 USE_INTEL_ASF_EXTRACTOR:=true
 # enabled to use Intel secure AVC Stagefright HW decoder
@@ -136,7 +146,7 @@ BOARD_USE_LIBVA := true
 BOARD_USE_LIBMIX := true
 
 #Support background music playback for Widi Multitasking
-ENABLE_BACKGROUND_MUSIC := true
+ENABLE_BACKGROUND_MUSIC := false
 
 # Settings for the Media SDK library and plug-ins:
 # - USE_MEDIASDK: use Media SDK support or not

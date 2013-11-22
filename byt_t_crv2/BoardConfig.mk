@@ -7,10 +7,10 @@ TARGET_USE_DROIDBOOT := true
 
 BOARD_HAS_CAPSULE := false
 
-include $(PLATFORM_PATH)/BoardConfig.mk
-
 # Temporary IFWI does not support signing
-TARGET_OS_SIGNING_METHOD := none
+TARGET_OS_SIGNING_METHOD := xfstk
+
+include $(PLATFORM_PATH)/BoardConfig.mk
 
 # IAFW component to build for this board
 BOARD_IAFW_COMPONENT := brd_baylake
@@ -29,15 +29,14 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_CONF_PATH)
 TARGET_HAS_VPP := true
 TARGET_VPP_USE_GEN := true
 COMMON_GLOBAL_CFLAGS += -DGFX_BUF_EXT
+# MultiDisplay service
 TARGET_HAS_MULTIPLE_DISPLAY := true
+USE_MDS_LEGACY := true
 
 USE_INTEL_IPP := true
 
 # WiDi
 INTEL_WIDI_BAYTRAIL := true
-
-# NFC
--include vendor/intel/hardware/nfc/common/NfcBoardConfig.mk
 
 # Power_HAL
 POWERHAL_BYT := true

@@ -11,7 +11,7 @@ PRODUCT_COPY_FILES += \
 include $(LOCAL_PATH)/byt_t_ffrd8_path.mk
 
 # Dolby DS1
--include vendor/intel/PRIVATE/dolby_ds1/dolbyds1.mk
+#-include vendor/intel/PRIVATE/dolby_ds1/dolbyds1.mk
 
 # device specific overlay folder
 PRODUCT_PACKAGE_OVERLAYS := $(DEVICE_CONF_PATH)/overlays
@@ -26,7 +26,7 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/maxtouch_1664S_8.fw:system/etc/firmware/maxtouch.fw
 
 # Wi-Fi
-PRODUCT_COPY_FILES += \
+ PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.xml
 PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.direct.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml
@@ -98,6 +98,10 @@ PRODUCT_PACKAGES_ENG += mcd-test
 PRODUCT_COPY_FILES += \
          $(DEVICE_CONF_PATH)/thermal_sensor_config.xml:system/etc/thermal_sensor_config.xml \
          $(DEVICE_CONF_PATH)/thermal_throttle_config.xml:system/etc/thermal_throttle_config.xml
+
+# crashlog conf
+PRODUCT_COPY_FILES += \
+         $(DEVICE_CONF_PATH)/crashlog.conf:system/etc/crashlog.conf
 
 ifdef DOLBY_DAP
     PRODUCT_PACKAGES += \
