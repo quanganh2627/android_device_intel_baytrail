@@ -38,7 +38,7 @@ endif
 
 # Connectivity
 BOARD_HAVE_WIFI := true
-INTEL_WIDI := false
+INTEL_WIDI := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_CONF_PATH)
 TARGET_HAS_VPP := true
@@ -51,7 +51,7 @@ USE_MDS_LEGACY := true
 USE_INTEL_IPP := true
 
 # WiDi
-INTEL_WIDI_BAYTRAIL := false
+INTEL_WIDI_BAYTRAIL := true
 
 # NFC
 -include vendor/intel/hardware/nfc/common/NfcBoardConfig.mk
