@@ -8,6 +8,7 @@ import init.modem.rc
 import init.wifi.rc
 import init.platform.usb.rc
 import init.gps.rc
+import init.nfc.rc
 import init.bt.rc
 import init.platform.gengfx.rc
 
