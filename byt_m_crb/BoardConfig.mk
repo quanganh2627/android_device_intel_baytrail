@@ -63,8 +63,9 @@ USE_INTEL_IPP := true
 POWERHAL_BYT := true
 
 # Widi
-INTEL_WIDI := true
+INTEL_WIDI := false
 INTEL_WIDI_BAYTRAIL := true
+#INTEL_WIDI_BAYTRAIL := false
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -113,7 +114,7 @@ BOARD_USES_LIBPSS := false
 
 INTEL_VA:=true
 USE_INTEL_VA:=true
-BOARD_USES_WRS_OMXIL_CORE:=true
+BOARD_USES_WRS_OMXIL_CORE:=false
 BOARD_USES_MRST_OMX:=true
 USE_INTEL_ASF_EXTRACTOR:=true
 # enabled to use hardware VP8 decoder
@@ -124,7 +125,7 @@ BOARD_USE_LIBVA := true
 BOARD_USE_LIBMIX := true
 
 #Support background music playback for Widi Multitasking
-ENABLE_BACKGROUND_MUSIC := true
+#ENABLE_BACKGROUND_MUSIC := true
 
 # Settings for the Media SDK library and plug-ins:
 # - USE_MEDIASDK: use Media SDK support or not
