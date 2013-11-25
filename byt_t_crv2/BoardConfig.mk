@@ -21,9 +21,11 @@ BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 #Modem
 BOARD_HAVE_MODEM := false
 
+FLASHFILE_NO_OTA := true
+
 # Connectivity
 BOARD_HAVE_WIFI := true
-INTEL_WIDI := true
+INTEL_WIDI := false
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_CONF_PATH)
 TARGET_HAS_VPP := true
@@ -36,7 +38,7 @@ USE_MDS_LEGACY := true
 USE_INTEL_IPP := true
 
 # WiDi
-INTEL_WIDI_BAYTRAIL := true
+INTEL_WIDI_BAYTRAIL := false
 
 # Power_HAL
 POWERHAL_BYT := true
@@ -120,7 +122,7 @@ BOARD_USE_LIBVA := true
 BOARD_USE_LIBMIX := true
 
 #Support background music playback for Widi Multitasking
-ENABLE_BACKGROUND_MUSIC := true
+ENABLE_BACKGROUND_MUSIC := false
 
 # Settings for the Media SDK library and plug-ins:
 # - USE_MEDIASDK: use Media SDK support or not
