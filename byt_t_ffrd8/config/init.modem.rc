@@ -114,7 +114,7 @@ service nvmmanager /system/bin/nvm_server
     oneshot
 
 # Load Intrinsyc RapidRIL
-service ril-daemon /system/bin/rild -l /system/lib/librapid-ril-core.so -- -a /dev/gsmtty12 -n /dev/gsmtty2 -m /dev/gsmtty6 -c /dev/gsmtty8 -u /dev/gsmtty1 -o /dev/gsmtty9 -d /dev/gsmtty3 -d /dev/gsmtty4 -d /dev/gsmtty15
+service ril-daemon /system/bin/rild -l /system/lib/librapid-ril-core.so -- -a /dev/gsmtty12 -n /dev/gsmtty2 -m /dev/gsmtty6 -c /dev/gsmtty8 -u /dev/gsmtty1 -o /dev/gsmtty9 -d /dev/gsmtty3 -d /dev/gsmtty4 -d /dev/gsmtty15 -d /dev/gsmtty16 -d /dev/gsmtty17
     socket rild stream 660 root radio
     socket rild-debug stream 660 radio system
     class main
