@@ -161,25 +161,25 @@ Group Modem
 //          supported
 //   TempOoSNotificationEnable    0
 
-//Definition of the class of a apn type, as follow:
-//1: hsi only, the data path uses always a hsi channel.
-//2: hsi prefered, the data path uses a hsi channel if available otherwise a mux channel.
-//3: mux only, the data path uses always a mux channel.
+//Definition of the class of a apn type, as follows:
+//1: always use a direct channel to the modem
+//2: direct channel prefered, will fall back to a mux channel if no direct channel available
+//3: always use a mux channel.
+//
+//Note: a 'direct channel' means a direct AP <=> modem connection without going through the GSM
+//      MUX layer
    ApnTypeDefault    1
    ApnTypeDUN        1
-   ApnTypeIMS        3
-   ApnTypeMMS        3
-   ApnTypeCBS        3
-   ApnTypeFOTA       3
-   ApnTypeSUPL       3
-   ApnTypeHIPRI      3
+   ApnTypeIMS        2
+   ApnTypeMMS        2
+   ApnTypeCBS        2
+   ApnTypeFOTA       2
+   ApnTypeSUPL       2
+   ApnTypeHIPRI      2
 
-//Total of hsi channels reserved for data directly over HSI. The class 1 and class 2 apns
+//Total of direct channels reserved for data. The class 1 and class 2 apns
 //should be defined accordingly.
-//total class 1 + total class 2 apns should be less or equal to
-//HsiChannelsReservedForDataDirectlyoverHsi.
-//The remaining hsi channels are reserved for others uses. Exemple logging over hsi.
-   HsiDataDirect    2
+   HsiDataDirect    5
 
 
 // USSD - Enable/Disable support for Unstructured Supplementary Service Data
