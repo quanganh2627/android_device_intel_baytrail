@@ -184,3 +184,6 @@ PLATFORM_ASF_VERSION := 1
 
 # Use shared object of ia_face
 USE_SHARED_IA_FACE := true
+
+# Use panorama v1.1
+IA_PANORAMA_VERSION := 1.1
