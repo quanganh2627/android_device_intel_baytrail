@@ -152,3 +152,6 @@ USE_FEATURE_ALAC := true
 
 # Defines Intel library for GPU accelerated Renderscript:
 OVERRIDE_RS_DRIVER := libRSDriver_intel7.so
+
+# Define Platform Sensor Hub firmware name
+SENSORHUB_FW_NAME := psh_baylake.bin

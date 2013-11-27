@@ -187,3 +187,6 @@ USE_SHARED_IA_FACE := true
 
 # Use panorama v1.1
 IA_PANORAMA_VERSION := 1.1
+
+# Define Platform Sensor Hub firmware name
+SENSORHUB_FW_NAME := psh_byt_t_ffrd8.bin
