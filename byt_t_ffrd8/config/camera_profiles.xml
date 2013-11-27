@@ -78,6 +78,7 @@
         <defaultPreviewUpdateMode value="standard"/>
         <hasFlash value="true"/>
         <synchronizeExposure value="true"/>
+        <supportedRecordingFramerates value="60,30,15,10"/>
         <supportedHighSpeedResolutionFps value="1280x720@60,1920x1080@60"/>
         <maxHighSpeedDvsResolution value="1920x1080"/>
         <supportedUltraLowLight value=""/>
