@@ -27,6 +27,7 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/bayleybay/bayleybay.mk \
+    $(LOCAL_DIR)/bayleybay32/bayleybay32.mk \
     $(LOCAL_DIR)/baylake/baylake.mk \
     $(LOCAL_DIR)/baylake32/baylake32.mk \
     $(LOCAL_DIR)/byt_t_ffrd8/byt_t_ffrd8.mk
