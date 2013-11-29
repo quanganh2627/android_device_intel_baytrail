@@ -39,11 +39,11 @@
                  android:emulated="true"
                  android:mtpReserve="100"
                  android:primary="true" />
-    <storage android:mountPoint="/storage/sdcard_ext"
+    <storage android:mountPoint="/storage/sdcard1"
                  android:storageDescription="@string/storage_sd_card"
                  android:removable="true"
                  android:primary="false" />
-    <storage android:mountPoint="/storage/usbcard"
+    <storage android:mountPoint="/storage/usbcard1"
                  android:storageDescription="@string/storage_usb"
                  android:removable="true"
                  android:primary="false" />
