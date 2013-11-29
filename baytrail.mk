@@ -80,7 +80,10 @@ PRODUCT_PACKAGES += \
 
 # sensorhub
 PRODUCT_PACKAGES += \
-    sensorhubd
+    sensorhubd      \
+    psh_bk.bin      \
+    fwupdatetool    \
+    fwupdate_script.sh
 
 # IAFW
 PRODUCT_PACKAGES += \

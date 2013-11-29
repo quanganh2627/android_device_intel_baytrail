@@ -123,7 +123,7 @@ PRODUCT_PACKAGES += \
     ufo_test
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=131072 \
+    ro.opengles.version=196608 \
     ro.sf.lcd_density=213
 
 

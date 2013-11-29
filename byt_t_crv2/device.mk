@@ -152,7 +152,7 @@ PRODUCT_PACKAGES += \
     ufo_test
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=131072 \
+    ro.opengles.version=196608 \
     ro.sf.lcd_density=240
 
 # Version of mandatory blankphone
@@ -249,7 +249,7 @@ PRODUCT_PACKAGES += \
 # camera firmware
 PRODUCT_PACKAGES += \
         shisp_2400b0_cssv2.bin \
-        shisp_2400b0_cssv2_isp_2_2.bin
+        shisp_2400b0_v21.bin
 
 # video encoder and camera
 PRODUCT_PACKAGES += \
