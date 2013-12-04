@@ -19,7 +19,7 @@
         <sensorType value="SENSOR_TYPE_RAW"/> <!-- SENSOR_TYPE_SOC or SENSOR_TYPE_RAW -->
         <facing value="CAMERA_FACING_BACK"/> <!-- CAMERA_FACING_FRONT or CAMERA_FACING_BACK -->
         <orientation value="0"/> <!-- one of 0,90,180,270 -->
-        <dvs value="false"/> <!-- true or false -->
+        <dvs value="true"/> <!-- true or false -->
         <hasSlowMotion value="false"/> <!-- true or false -->
         <continuousCapture value="true"/> <!-- true or false -->
         <supportedSnapshotSizes value="320x240,640x480,1024x768,1280x720,1920x1080,2048x1536,2560x1920,3264x1836,3264x2448"/>
@@ -88,7 +88,7 @@
         <sensorType value="SENSOR_TYPE_RAW"/>
         <facing value="CAMERA_FACING_FRONT"/>
         <orientation value="0"/>
-        <dvs value="false"/>
+        <dvs value="true"/>
         <hasSlowMotion value="false"/>
         <continuousCapture value="true"/>
         <supportedSnapshotSizes value="320x240,640x480,1024x768,1280x720,1280x960,1920x1080"/>
