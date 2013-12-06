@@ -35,7 +35,7 @@
 <qrtbl10>0x02480</qrtbl10>
 <qrtbl20>0x0F06</qrtbl20>
 <qrtbl30>0x0B06</qrtbl30>
-<full_soc_thr>0x05A00</full_soc_thr>
+<full_soc_thr>0x05F00</full_soc_thr>
 <vempty>0x0AF5A</vempty>
 <cell_sample1>0x09F50</cell_sample1>
 <cell_sample2>0x0B710</cell_sample2>
@@ -51,8 +51,8 @@
 <cell_sample12>0x0C640</cell_sample12>
 <cell_sample13>0x0C910</cell_sample13>
 <cell_sample14>0x0CB90</cell_sample14>
-<cell_sample15>0x0D0F0</cell_sample15>
-<cell_sample16>0x0D650</cell_sample16>
+<cell_sample15>0x0D330</cell_sample15>
+<cell_sample16>0x0D730</cell_sample16>
 <cell_sample17>0x0020</cell_sample17>
 <cell_sample18>0x01F40</cell_sample18>
 <cell_sample19>0x03AF0</cell_sample19>
@@ -66,9 +66,9 @@
 <cell_sample27>0x0980</cell_sample27>
 <cell_sample28>0x09F0</cell_sample28>
 <cell_sample29>0x008F0</cell_sample29>
-<cell_sample30>0x007F0</cell_sample30>
-<cell_sample31>0x007D0</cell_sample31>
-<cell_sample32>0x007D0</cell_sample32>
+<cell_sample30>0x00810</cell_sample30>
+<cell_sample31>0x005C0</cell_sample31>
+<cell_sample32>0x005C0</cell_sample32>
 <cell_sample33>0x0100</cell_sample33>
 <cell_sample34>0x0100</cell_sample34>
 <cell_sample35>0x0100</cell_sample35>
