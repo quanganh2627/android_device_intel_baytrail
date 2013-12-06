@@ -149,3 +149,6 @@ ifeq ($(TARGET_BUILD_VARIANT), user)
 ADDITIONAL_DEFAULT_PROPERTIES += \
                                 ro.adb.secure=0
 endif
+
+# Define Platform Sensor Hub firmware name
+SENSORHUB_FW_NAME := psh_byt_m_crb.bin

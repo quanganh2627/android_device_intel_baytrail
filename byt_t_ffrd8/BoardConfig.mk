@@ -38,7 +38,7 @@ endif
 
 # Connectivity
 BOARD_HAVE_WIFI := true
-INTEL_WIDI := false
+INTEL_WIDI := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_CONF_PATH)
 TARGET_HAS_VPP := true
@@ -51,7 +51,7 @@ USE_MDS_LEGACY := true
 USE_INTEL_IPP := true
 
 # WiDi
-INTEL_WIDI_BAYTRAIL := false
+INTEL_WIDI_BAYTRAIL := true
 
 # NFC
 -include vendor/intel/hardware/nfc/common/NfcBoardConfig.mk
@@ -83,7 +83,7 @@ USE_CAMERA_HAL2 := true
 
 USE_INTEL_METABUFFER := true
 
-USE_CSS_2_0 := true
+USE_CSS_2_1 := true
 
 # Enabled HW accelerated JPEG encoder using VA API
 USE_INTEL_JPEG := false
@@ -182,5 +182,16 @@ INTEL_FEATURE_ASF := true
 # Supported ASF Version
 PLATFORM_ASF_VERSION := 1
 
+# Add the ASF library to the BOOTCLASSPATH
+ifeq ($(strip $(INTEL_FEATURE_ASF)),true)
+PRODUCT_BOOT_JARS := ${PRODUCT_BOOT_JARS}:com.intel.asf
+endif
+
 # Use shared object of ia_face
 USE_SHARED_IA_FACE := true
+
+# Use panorama v1.1
+IA_PANORAMA_VERSION := 1.1
+
+# Define Platform Sensor Hub firmware name
+SENSORHUB_FW_NAME := psh_byt_t_ffrd8.bin

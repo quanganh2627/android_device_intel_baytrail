@@ -168,7 +168,7 @@ PRODUCT_PACKAGES += \
    audio.hdmi.$(PRODUCT_DEVICE)
 
 #widi audio HAL
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     audio.widi.$(PRODUCT_DEVICE)
 
 #widi

@@ -78,6 +78,7 @@
         <defaultPreviewUpdateMode value="standard"/>
         <hasFlash value="true"/>
         <synchronizeExposure value="true"/>
+        <supportedRecordingFramerates value="60,30,15,10"/>
         <supportedHighSpeedResolutionFps value="1280x720@60,1920x1080@60"/>
         <maxHighSpeedDvsResolution value="1920x1080"/>
         <supportedUltraLowLight value=""/>
@@ -148,6 +149,8 @@
         <hasFlash value="false"/>
         <supportedUltraLowLight value=""/>
         <defaultUltraLowLight value=""/>
+        <verticalFOV value="320x240@42.5,640x480@42.5,1024x768@42.5,1280x720@42.5,1280x960@42.5,1920x1080@42.5"/>
+        <horizontalFOV value="320x240@52.5,640x480@52.5,1024x768@52.5,1280x720@64.5,1280x960@52.5,1920x1080@64.5"/>
     </Profiles>
 
     <Common>
