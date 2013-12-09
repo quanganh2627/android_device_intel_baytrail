@@ -254,8 +254,8 @@ static int write_bcb(const char *device, const struct bootloader_message *bcb)
 
 static Value *GetBCBStatus(const char *name, State *state, int __unused argc, Expr *argv[])
 {
-    char *device;
-    char *status;
+    char *device = NULL;
+    char *status = NULL;
     struct bootloader_message bcb;
 
     if (ReadArgs(state, argv, 1, &device))
@@ -272,7 +272,8 @@ static Value *GetBCBStatus(const char *name, State *state, int __unused argc, Ex
     }
 
     status = strdup(bcb.status);
-    printf("Read status '%s' from Bootloader Control Block\n", status);
+    printf("Read status '%s' from Bootloader Control Block\n",
+        ((NULL == status) ? "**FAILED**" : status));
 
     return StringValue(status);
 }
@@ -420,10 +421,10 @@ static struct gpt_entry *find_android_partition(struct gpt *gpt, const char *nam
 
     partition_for_each(gpt, i, e) {
         char *pname = gpt_entry_get_name(e);
-        int plen = strlen(pname);
         if (!pname)
             return NULL;
 
+        int plen = strlen(pname);
         if (nlen > plen)
             continue;
 
@@ -479,7 +480,7 @@ static char *follow_links(char *dev)
     buf[ret] = '\0';
 
     dest = strdup(buf);
-    printf("%s --> %s\n", dev, dest);
+    printf("%s --> %s\n", dev, ((NULL == dest) ? "NULL" : dest));
     free(dev);
     return dest;
 }
