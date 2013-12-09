@@ -1,5 +1,13 @@
 PRODUCT_NAME := byt_t_crv2
 
+BOARD_HAS_CAPSULE := false
+FORCE_FLASHFILE_NO_OTA := true
+TARGET_PARTITIONING_SCHEME := "full-gpt"
+TARGET_BIOS_TYPE := "uefi"
+HAS_SPINOR := true
+USE_FPT := true
+BOARD_HAVE_LIMITED_POWERON_FEATURES := true
+
 # Copy common product apns-conf
 COMMON_PATH := device/intel/common
 PRODUCT_COPY_FILES += \
