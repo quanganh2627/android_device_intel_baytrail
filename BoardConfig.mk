@@ -21,5 +21,3 @@ TARGET_KERNEL_SOURCE := linux/kernel-uefi
 TARGET_KERNEL_ARCH := x86_64
 TARGET_KERNEL_CONFIG := $(TARGET_KERNEL_ARCH)_bigcore_android_defconfig
 
-TARGET_IAGO_INI := device/intel/baytrail/iago.ini
-

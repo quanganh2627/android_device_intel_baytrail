@@ -1,7 +1,5 @@
 include device/intel/baytrail/BoardConfig.mk
 
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 805306368
-
 TARGET_USE_MOKMANAGER := true
 TARGET_IAGO_DEFAULT_INI := device/intel/baytrail/baylake/iago-default.ini
 

@@ -1,9 +1,6 @@
 include device/intel/baytrail/BoardConfig.mk
 
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 872415232
-
 TARGET_USE_MOKMANAGER := true
-TARGET_IAGO_DEFAULT_INI := device/intel/baytrail/bayleybay/iago-default.ini
 
 # Note, Iago installer also sets androidboot.disk via bootloader
 # config, if Iago not used you will need to add
