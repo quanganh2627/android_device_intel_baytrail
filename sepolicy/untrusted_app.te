@@ -1,0 +1,4 @@
+allow untrusted_app gpu_device:chr_file { read write ioctl open getattr };
+allow untrusted_app init:binder call;
+allow untrusted_app init_tmpfs:file read;
+

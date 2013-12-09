@@ -76,3 +76,17 @@ INTEL_FEATURE_ARKHAM := false
 ifeq ($(INTEL_FEATURE_ARKHAM),true)
 PRODUCT_BOOT_JARS := $(PRODUCT_BOOT_JARS):com.intel.arkham.services
 endif
+
+BOARD_SEPOLICY_DIRS :=\
+	device/intel/baytrail/sepolicy
+
+BOARD_SEPOLICY_UNION :=\
+	file_contexts \
+	seapp_contexts \
+	genfs_contexts \
+	device.te \
+	healthd.te \
+	app.te \
+	untrusted_app.te \
+	surfaceflinger.te \
+	zygote.te
