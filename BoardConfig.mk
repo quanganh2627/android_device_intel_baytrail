@@ -19,6 +19,16 @@ BOARD_SKIP_NVM := false
 
 ENABLE_GEN_GRAPHICS := true
 
+# RenderScript Properties
+# debug.rs.default-CPU-driver 1: force on CPU, 0 (default): use props as below:
+#   rs.gpu.renderscript 0: run rs on CPU, 1: run rs on GPGPU
+#   rs.gpu.filterscript 0: run fs on CPU, 1: run fs on GPGPU
+#   rs.gpu.rsIntrinsic  0: run intrinsic on CPU, 1: on GPGPU
+# These are the settings recommended by the RenderScript team:
+ADDITIONAL_BUILD_PROPERTIES += rs.gpu.renderscript=1 \
+                               rs.gpu.filterscript=1 \
+                               rs.gpu.rsIntrinsic=1
+
 ifneq ($(TARGET_NO_RECOVERY),true)
 TARGET_RECOVERY_UI_LIB := libintel_recovery_ui
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"

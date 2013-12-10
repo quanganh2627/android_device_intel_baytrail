@@ -18,4 +18,4 @@ on early-boot
     # These are the settings recommended by the RenderScript team:
     setprop debug.rs.gpu.filterscript    1
     setprop debug.rs.gpu.renderscript    1
-    setprop debug.rs.gpu.rsIntrinsic     0
+    setprop debug.rs.gpu.rsIntrinsic     1
