@@ -24,16 +24,9 @@ BOARD_IAFW_COMPONENT := brd_bayleybay
 BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 
 # Connectivity
-ifeq (, $(filter %_next, $(TARGET_PRODUCT)))
 BOARD_HAVE_WIFI := true
 BOARD_HAVE_BLUETOOTH := true
 FLASHFILE_NO_OTA := false
-else
-#disable BT for kernel_next bringup
-BOARD_HAVE_WIFI := true
-BOARD_HAVE_BLUETOOTH := false
-FLASHFILE_NO_OTA := true
-endif
 
 # Connectivity
 BOARD_HAVE_MODEM := false
