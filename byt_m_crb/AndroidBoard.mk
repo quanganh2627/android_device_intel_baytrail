@@ -19,6 +19,11 @@ liveimg:
 	@mkdir -p $(PUBLISH_PATH)/$(TARGET_PUBLISH_PATH)/uefi-images/$(TARGET_BUILD_VARIANT)
 	@cp $(PRODUCT_OUT)/live.img $(PUBLISH_PATH)/$(TARGET_PUBLISH_PATH)/uefi-images/$(TARGET_BUILD_VARIANT)/
 	@$(ACP) -rpf $(PRODUCT_OUT)/iago/images/*.img $(PUBLISH_PATH)/$(TARGET_PUBLISH_PATH)/uefi-images/$(TARGET_BUILD_VARIANT)/
+	@cp $(HOST_OUT)/bin/adb  $(PUBLISH_PATH)/$(TARGET_PUBLISH_PATH)/uefi-images/$(TARGET_BUILD_VARIANT)/
+	@cp $(HOST_OUT)/bin/fastboot $(PUBLISH_PATH)/$(TARGET_PUBLISH_PATH)/uefi-images/$(TARGET_BUILD_VARIANT)/
+
+provimg:
+	@cp $(PRODUCT_OUT)/provision.img $(PUBLISH_PATH)/$(TARGET_PUBLISH_PATH)/uefi-images/$(TARGET_BUILD_VARIANT)/
 
 # 'dbimages' for use with Droidboot or sync_img
 .PHONY: dbimages
