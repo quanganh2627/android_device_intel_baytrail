@@ -44,8 +44,8 @@
                 <ThresholdTOff>0</ThresholdTOff>
                 <ThresholdNormal>85000</ThresholdNormal>
                 <ThresholdWarning>90000</ThresholdWarning>
-                <ThresholdAlert>90000</ThresholdAlert>
-                <ThresholdCritical>90000</ThresholdCritical>
+                <ThresholdAlert>105000</ThresholdAlert>
+                <ThresholdCritical>105000</ThresholdCritical>
             </Threshold>
         </Sensor>
   </Zone>
