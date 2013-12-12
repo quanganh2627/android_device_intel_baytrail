@@ -3,6 +3,7 @@
 <!-- List of throttle reasons and devices to throttle in each state -->
 <!-- Intel Corporation 2013 -->
 <cmsThrottleTrigger>
+	<useThermalService>0</useThermalService>
 	<throttleTrigger>
 		<name>battLevel</name>
 		<normal>
@@ -52,7 +53,7 @@
 			<devID>2</devID>
 		</alert>
 		<critical>
-                        <temp-gt>0</temp-gt>
+                        <temp-gt>-15</temp-gt>
 			<devID>2</devID>
 		</critical>
 	</throttleTrigger>
