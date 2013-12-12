@@ -71,6 +71,10 @@ USE_INTEL_METABUFFER := true
 
 USE_CSS_2_0 := true
 
+#'false' for libcamerausb to use 50HZ power line frequency for 50HZ light frequency
+# if light frequency is 60HZ, set it to true
+USE_60HZ_POWER_LINE_FREQUENCY := false
+
 # Enabled HW accelerated JPEG encoder using VA API
 USE_INTEL_JPEG := false
 USE_WEBRTC_EFFECTS := true
