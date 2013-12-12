@@ -26,3 +26,5 @@ $(call inherit-mixin, camera-usb, usb)
 $(call inherit-mixin, storage, 1xSD_3xUSB)
 $(call inherit-mixin, bluetooth, intel)
 $(call inherit-mixin, wifi, intel-compat)
+$(call inherit-mixin, sensors, hid_sensorhub_bytm)
+
