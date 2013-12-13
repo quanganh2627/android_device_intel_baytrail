@@ -6,7 +6,6 @@ import init.avc.rc
 # import init.wireless.rc
 import init.wifi.rc
 import init.platform.usb.rc
-import init.gps.rc
 import init.bt.rc
 import init.platform.gengfx.rc
 

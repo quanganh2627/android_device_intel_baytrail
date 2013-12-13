@@ -83,10 +83,9 @@ endif
 endif
 
 # Graphics
-BOARD_GPU_DRIVERS := i965
 USE_OPENGL_RENDERER := true
 BOARD_KERNEL_CMDLINE += vga=current i915.modeset=1 drm.vblankoffdelay=1 \
-                        acpi_backlight=vendor i915.i915_rotation=1
+                        acpi_backlight=vendor
 
 # Graphics - MIPI
 # List of panel ids supported:
@@ -158,5 +157,16 @@ INTEL_FEATURE_ASF := true
 # Supported ASF Version
 PLATFORM_ASF_VERSION := 1
 
+# Add the ASF library to the BOOTCLASSPATH
+ifeq ($(strip $(INTEL_FEATURE_ASF)),true)
+PRODUCT_BOOT_JARS := ${PRODUCT_BOOT_JARS}:com.intel.asf
+endif
+
 # Use shared object of ia_face
 USE_SHARED_IA_FACE := true
+
+# Use panorama v1.1
+IA_PANORAMA_VERSION := 1.1
+
+# Define Platform Sensor Hub firmware name
+SENSORHUB_FW_NAME := psh_baylake.bin

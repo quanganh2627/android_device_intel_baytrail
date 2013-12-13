@@ -3,7 +3,11 @@ include device/intel/common/BoardConfig.mk
 
 TARGET_ARCH_VARIANT := x86-slm
 
-FLASHFILE_NO_OTA := false
+ifeq ($(FORCE_FLASHFILE_NO_OTA),true)
+  FLASHFILE_NO_OTA := true
+else
+  FLASHFILE_NO_OTA := false
+endif
 
 BOARD_HAS_CAPSULE ?= true
 
@@ -59,3 +63,6 @@ cmdline_extra += oops=panic panic=40
 BUILD_WITH_SECURITY_FRAMEWORK := txei
 
 INTEL_FEATURE_ARKHAM := false
+ifeq ($(INTEL_FEATURE_ARKHAM),true)
+PRODUCT_BOOT_JARS := $(PRODUCT_BOOT_JARS):com.intel.arkham.services
+endif

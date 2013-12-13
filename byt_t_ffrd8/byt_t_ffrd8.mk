@@ -1,4 +1,4 @@
-ifeq (,$(filter $(PRODUCT_NAME), byt_t_ffrd8_next byt_t_ffrd8_64))
+ifeq (,$(filter $(PRODUCT_NAME), byt_t_ffrd8_next byt_t_ffrd8_64 byt_t_ffrd8_edk2))
 PRODUCT_NAME := byt_t_ffrd8
 endif
 

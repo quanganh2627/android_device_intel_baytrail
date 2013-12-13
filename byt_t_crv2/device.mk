@@ -153,7 +153,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608 \
-    ro.sf.lcd_density=240
+    ro.sf.lcd_density=160
 
 # Version of mandatory blankphone
 PRODUCT_PROPERTY_OVERRIDES += ro.blankphone_id=1
@@ -206,10 +206,6 @@ endif
 #PRODUCT_PACKAGES += \
     libdx-crys \
     start-sep
-
-# BCM4752 GPS
-PRODUCT_PACKAGES += \
-    gps_bcm_4752
 
 # bluetooth
 PRODUCT_PACKAGES += \
@@ -291,7 +287,6 @@ FRAMEWORK_ETC_PATH := frameworks/native/data/etc
 PERMISSIONS_PATH := system/etc/permissions
 PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.touchscreen.multitouch.jazzhand.xml:$(PERMISSIONS_PATH)/android.hardware.touchscreen.multitouch.jazzhand.xml \
-    $(FRAMEWORK_ETC_PATH)/android.hardware.location.gps.xml:$(PERMISSIONS_PATH)/android.hardware.location.gps.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.camera.flash-autofocus.xml:$(PERMISSIONS_PATH)/android.hardware.camera.flash-autofocus.xml \
@@ -319,8 +314,8 @@ PRODUCT_COPY_FILES += \
 # currently contain all of the bitmaps at xhdpi density so
 # we do this little trick to fall back to the hdpi version
 # if the xhdpi doesn't exist.
-PRODUCT_AAPT_CONFIG := normal large xlarge hdpi
-PRODUCT_AAPT_PREF_CONFIG := hdpi
+PRODUCT_AAPT_CONFIG := normal large xlarge mdpi
+PRODUCT_AAPT_PREF_CONFIG := mdpi
 
 # usb accessory
 PRODUCT_PACKAGES += \

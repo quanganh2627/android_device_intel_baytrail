@@ -238,6 +238,10 @@ on post-fs
     chown 3700 3700 /dev/sep_sec_driver
     chmod 0660 /dev/sep_sec_driver
 
+	# Permissions for monzax
+	chown system system /dev/monzax
+    chmod 0660 /dev/monzax
+
     # Permissions for LED
     chown system system /sys/class/leds/intel_keypad_led/brightness
 
@@ -267,6 +271,11 @@ service sensorhubd /system/bin/sensorhubd
     user system
     group system
     socket sensorhubd stream 666 system system
+
+service rfid_monzaxd /system/bin/rfid_monzaxd
+    class main
+    user system
+    group system
 
 # for eth0
 service net_eth0-start /system/bin/sh /system/etc/init.net.eth0.sh

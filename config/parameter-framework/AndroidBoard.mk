@@ -15,6 +15,7 @@ LOCAL_REQUIRED_MODULES :=  \
     LPEMixerSubsystem.xml
 include $(BUILD_PHONY_PACKAGE)
 
+##################################################
 # PACKAGE : parameter-framework.audio.pmdown_time.subsystem
 
 include $(CLEAR_VARS)
@@ -24,6 +25,17 @@ LOCAL_REQUIRED_MODULES :=  \
     SysfsPmdownTimeSubsystem.xml
 include $(BUILD_PHONY_PACKAGE)
 
+##################################################
+# PACKAGE : parameter-framework.audio.intelSSP.subsystem
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := parameter-framework.audio.intelSSP.subsystem
+LOCAL_MODULE_TAGS := optional
+LOCAL_REQUIRED_MODULES :=  \
+    IntelSSPSubsystem.xml
+include $(BUILD_PHONY_PACKAGE)
+
+##################################################
 # PACKAGE : parameter-framework.vibrator.baytrail
 
 include $(CLEAR_VARS)
@@ -75,6 +87,17 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := SysfsPmdownTimeSubsystem.xml
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/parameter-framework/Structure/Audio
+LOCAL_SRC_FILES := XML/Structure/Audio/$(LOCAL_MODULE)
+include $(BUILD_PREBUILT)
+
+##################################################
+# MODULES REQUIRED by parameter-framework.audio.intelSSP.subsystem
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := IntelSSPSubsystem.xml
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/parameter-framework/Structure/Audio

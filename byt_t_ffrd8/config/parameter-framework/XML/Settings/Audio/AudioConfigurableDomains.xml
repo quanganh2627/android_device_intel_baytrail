@@ -1032,6 +1032,7 @@
       <ConfigurableElement Path="/Audio/CONFIGURATION/ALSA_CONF"/>
       <ConfigurableElement Path="/Audio/CONFIGURATION/IFX_MODEM"/>
       <ConfigurableElement Path="/Audio/CONFIGURATION/FM_CONF"/>
+      <ConfigurableElement Path="/Audio/INTEL_SSP/CONFIGURATION"/>
       <ConfigurableElement Path="/Audio/CONFIGURATION/VOICE_VOLUME_CTRL_PARAMETER"/>
     </ConfigurableElements>
     <Settings>
@@ -1063,6 +1064,16 @@
             </Component>
             <Component Name="HEADSET">
               <IntegerParameter Name="VOLUME">62</IntegerParameter>
+            </Component>
+          </Component>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/INTEL_SSP/CONFIGURATION">
+          <Component Name="CONFIGURATION">
+            <Component Name="SSP_BT">
+              <BooleanParameter Name="MASTER">1</BooleanParameter>
+            </Component>
+            <Component Name="SSP_MODEM">
+              <BooleanParameter Name="MASTER">0</BooleanParameter>
             </Component>
           </Component>
         </ConfigurableElement>

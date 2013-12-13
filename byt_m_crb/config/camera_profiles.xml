@@ -147,7 +147,6 @@
         <manufacturerName value="ExampleMaker"/> <!-- cfg the exif -->
         <maxZoomFactor value="1024"/>
         <videoPreviewSizePref value="1024x576"/>
-        <supportAIQ value="true"/> <!-- true or false -->
         <supportVideoSnapshot value="true"/> <!-- true or false -->
         <numRecordingBuffers value="9"/>
         <shutterLagCompensationMs value="40"/>
