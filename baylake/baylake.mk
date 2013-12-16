@@ -11,7 +11,7 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/init.rc:root/init.$(TARGET_PRODUCT).rc \
 	$(LOCAL_PATH)/init.recovery.rc:root/init.recovery.$(TARGET_PRODUCT).rc \
 
-$(call inherit-mixin, audio, pc_alc262)
+$(call inherit-mixin, audio, byt_alc262)
 $(call inherit-mixin, gms, true)
 $(call inherit-mixin, houdini, true)
 $(call inherit-mixin, boot-arch, efi)
