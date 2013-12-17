@@ -20,6 +20,4 @@
     <!-- Boolean to specify whether or not NFC should be default
          enabled -->
     <bool name="nfc_on_default">false</bool>
-    <bool name="use_nxp_se_patch">false</bool>
-    <bool name="nfc_nxp_fri_1_3">true</bool>
 </resources>
