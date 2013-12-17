@@ -127,7 +127,7 @@ on boot
 #   Set the HEX value by ORing the bits for each format/feature
 
     setprop audio.offload.capabilities 0
-    setprop audio.offload.disable 1
+    setprop audio.offload.disable 0
     setprop audio.offload.min.duration.secs 20
     setprop offload.compress.device 2
     setprop audio.device.name baytrailaudio
