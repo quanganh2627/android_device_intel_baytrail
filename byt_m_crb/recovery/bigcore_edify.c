@@ -516,7 +516,10 @@ static Value *SwapEntriesFn(const char *name, State *state,
 
     /* If the device node is a symlink, follow it to the 'real'
      * device node and then get the node for the entire disk */
-    dev = follow_links(dev);
+    if (NULL == (dev = follow_links(dev))) {
+        ErrorAbort(state, "%s: failed to get node link", name);
+        goto done;
+    }
 
     if (make_disk_node(dev)) {
         ErrorAbort(state, "%s: Unable to get disk node for partition %s",
