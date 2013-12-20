@@ -153,7 +153,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608 \
-    ro.sf.lcd_density=160
+    ro.sf.lcd_density=240
 
 # Version of mandatory blankphone
 PRODUCT_PROPERTY_OVERRIDES += ro.blankphone_id=1
@@ -314,8 +314,8 @@ PRODUCT_COPY_FILES += \
 # currently contain all of the bitmaps at xhdpi density so
 # we do this little trick to fall back to the hdpi version
 # if the xhdpi doesn't exist.
-PRODUCT_AAPT_CONFIG := normal large xlarge mdpi
-PRODUCT_AAPT_PREF_CONFIG := mdpi
+PRODUCT_AAPT_CONFIG := normal large xlarge hdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # usb accessory
 PRODUCT_PACKAGES += \
