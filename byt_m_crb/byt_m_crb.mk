@@ -1,4 +1,4 @@
-ifeq (,$(filter $(PRODUCT_NAME), byt_m_crb_next))
+ifeq ($(PRODUCT_NAME),)
 PRODUCT_NAME := byt_m_crb
 endif
 # Include product path

@@ -21,11 +21,7 @@ INTEL_WIDI := false
 INTEL_WIDI_BAYTRAIL := false
 BOARD_HAVE_BLUETOOTH := true
 
-ifeq (, $(findstring next, $(TARGET_PRODUCT)))
 FLASHFILE_NO_OTA := false
-else
-FLASHFILE_NO_OTA := true
-endif
 
 ifeq ($(FORCE_FLASHFILE_NO_OTA),true)
 FLASHFILE_NO_OTA := true

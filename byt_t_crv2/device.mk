@@ -153,7 +153,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608 \
-    ro.sf.lcd_density=240
+    ro.sf.lcd_density=160
 
 # Version of mandatory blankphone
 PRODUCT_PROPERTY_OVERRIDES += ro.blankphone_id=1
@@ -172,18 +172,7 @@ PRODUCT_PACKAGES += \
     audio.widi.$(PRODUCT_DEVICE)
 
 #widi
-PRODUCT_PACKAGES += \
-    widi.conf \
-    libwidiservice \
-    libwidiclient \
-    libwidimedia \
-    libwidirtsp \
-    libhwcwidi \
-    libwidiuibc \
-    libwidiuibcjni \
-    WidiInputService \
-    libstagefright_hdcp \
-    libwidirtspsink
+PRODUCT_PACKAGES += widi
 
 ifeq ($(TARGET_BUILD_VARIANT), $(filter $(TARGET_BUILD_VARIANT), eng userdebug))
 PRODUCT_PACKAGES += \
@@ -314,8 +303,8 @@ PRODUCT_COPY_FILES += \
 # currently contain all of the bitmaps at xhdpi density so
 # we do this little trick to fall back to the hdpi version
 # if the xhdpi doesn't exist.
-PRODUCT_AAPT_CONFIG := normal large xlarge hdpi
-PRODUCT_AAPT_PREF_CONFIG := hdpi
+PRODUCT_AAPT_CONFIG := normal large xlarge mdpi
+PRODUCT_AAPT_PREF_CONFIG := mdpi
 
 # usb accessory
 PRODUCT_PACKAGES += \

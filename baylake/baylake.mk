@@ -1,4 +1,4 @@
-ifeq (,$(filter $(PRODUCT_NAME),baylake_next baylake_edk2 baylake_64))
+ifeq ($(PRODUCT_NAME),)
 PRODUCT_NAME := baylake
 endif
 

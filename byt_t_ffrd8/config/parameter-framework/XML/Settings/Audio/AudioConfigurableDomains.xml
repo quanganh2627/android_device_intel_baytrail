@@ -1010,13 +1010,13 @@
         <ConfigurableElement Path="/Audio/LPE/IHF_PATH/SDRC_CTRL/ATTACK">
           <Component Name="ATTACK">
             <IntegerParameter Name="LOUDNESS_RISE_TIME">10</IntegerParameter>
-            <IntegerParameter Name="GAIN_RISE_TIME">50</IntegerParameter>
+            <IntegerParameter Name="GAIN_RISE_TIME">256</IntegerParameter>
           </Component>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/LPE/IHF_PATH/SDRC_CTRL/RELEASE">
           <Component Name="RELEASE">
             <IntegerParameter Name="LOUDNESS_RISE_TIME">10</IntegerParameter>
-            <IntegerParameter Name="GAIN_RISE_TIME">20</IntegerParameter>
+            <IntegerParameter Name="GAIN_RISE_TIME">128</IntegerParameter>
           </Component>
         </ConfigurableElement>
       </Configuration>

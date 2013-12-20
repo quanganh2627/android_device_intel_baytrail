@@ -149,18 +149,7 @@ PRODUCT_PACKAGES += \
     audio.widi.$(PRODUCT_DEVICE)
 
 #widi
-PRODUCT_PACKAGES += \
-    widi.conf \
-    libwidiservice \
-    libwidiclient \
-    libwidimedia \
-    libwidirtsp \
-    libhwcwidi \
-    libwidiuibc \
-    libwidiuibcjni \
-    WidiInputService \
-    libstagefright_hdcp \
-    libwidirtspsink
+PRODUCT_PACKAGES += widi
 
 ifeq ($(TARGET_BUILD_VARIANT), $(filter $(TARGET_BUILD_VARIANT), eng userdebug))
 PRODUCT_PACKAGES += \
