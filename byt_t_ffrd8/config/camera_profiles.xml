@@ -145,6 +145,7 @@
         <supportedPreviewUpdateModes value="standard,continuous,during-capture,windowless"/>
         <defaultPreviewUpdateMode value="standard"/>
         <hasFlash value="false"/>
+        <supportedRecordingFramerates value="30,15,10"/>
         <supportedUltraLowLight value=""/>
         <defaultUltraLowLight value=""/>
         <verticalFOV value="320x240@42.5,640x480@42.5,1024x768@42.5,1280x720@42.5,1280x960@42.5,1920x1080@42.5"/>
