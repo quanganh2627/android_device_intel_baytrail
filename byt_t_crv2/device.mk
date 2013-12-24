@@ -323,6 +323,10 @@ PRODUCT_PACKAGES += \
     LvmDefaultControlParams.xml \
     LvmSessionConfigurationMinus1.xml
 
+#For Audio Offload support
+PRODUCT_PACKAGES += \
+    audio.codec_offload.$(PRODUCT_DEVICE)
+
 # Optional GMS applications
 -include vendor/google/PRIVATE/gms/products/gms_optional.mk
 

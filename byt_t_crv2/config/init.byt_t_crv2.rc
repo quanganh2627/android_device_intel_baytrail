@@ -103,28 +103,24 @@ on boot
 
 #   Offload specific properties
 
-#   lpa.tunnelling.enable
+#   audio.offload.capabilities
 #   A 32 bit value.  To be set in HEX
-#   |---------|--------|--------|--------|
-#   |Byte 3   |Byte 2  |Byte 1  |Byte 0  |
-#   |Reserved |Reserved|Codec   |Feature |
-#   |---------|--------|--------|--------|
-#   First byte from the right represents feature
-#   Second byte represents codec
-#   Third and Fourth byte reserved for future use
-#   Least Significant Byte 1 - feature
+#   |---------|--------|--------|-------------|
+#   |Byte 3   |Byte 2  |Byte 1  |Byte 0       |
+#   |Reserved |Reserved|Reserved|capabilities |
+#   |---------|--------|--------|-------------|
+#   First byte from the right represents capabilities
 #   Bit position  8th,7th,6th,5th,4th     3rd          2nd      1st
 #   Indication    Reserved for future  Multichannel   Effects   Video
-#   Least Significant Byte 2 - codec
-#   Bit position  8th,7th,6th,5th      4th     3rd      2nd   1st
-#   Indication    Reserved for future WMA-9    EAC3     AAC   MP3
+#   Second, Third and Forth byte are reserved for future use
 
 #   Set the HEX value by ORing the bits for each format/feature
-#   Feature disabled for BayTrail
 
-    setprop lpa.tunnelling.enable 0
-    setprop offload.min.file.duration.secs 20
-    setprop offload.compress.device 2
+    setprop audio.offload.capabilities 0
+    setprop audio.offload.disable 0
+    setprop audio.offload.min.duration.secs 20
+    setprop offload.compress.device 1
+    setprop audio.device.name baytrailaudio
 
     #Enable/Disable deep buffer property for baytrail
    setprop lpa.deepbuffer.enable 1
