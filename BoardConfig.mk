@@ -72,7 +72,7 @@ cmdline_extra += oops=panic panic=40
 # Security
 BUILD_WITH_SECURITY_FRAMEWORK := txei
 
-INTEL_FEATURE_ARKHAM := false
+INTEL_FEATURE_ARKHAM := true
 ifeq ($(INTEL_FEATURE_ARKHAM),true)
 PRODUCT_BOOT_JARS := $(PRODUCT_BOOT_JARS):com.intel.arkham.services
 endif
@@ -83,15 +83,14 @@ BOARD_SEPOLICY_DIRS :=\
 BOARD_SEPOLICY_UNION :=\
 	file_contexts \
 	seapp_contexts \
-	file.te \
+        file.te \
 	genfs_contexts \
-	fs_use \
+        fs_use \
 	device.te \
 	healthd.te \
 	app.te \
 	untrusted_app.te \
 	surfaceflinger.te \
-	vold.te \
-	ecryptfs.te \
-	zygote.te \
-	netd.te
+        vold.te \
+        ecryptfs.te \
+	zygote.te
