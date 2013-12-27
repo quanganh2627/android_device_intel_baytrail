@@ -35,6 +35,11 @@
     <CDeviceClassPath>com.android.server.thermal.BatteryChargeCurrentControl</CDeviceClassPath>
     <CDeviceThrottlePath>auto</CDeviceThrottlePath>
   </ContributingDeviceInfo>
+  <ContributingDeviceInfo>
+    <CDeviceName>ModemAirplane</CDeviceName>
+    <CDeviceID>5</CDeviceID>
+    <CDeviceClassPath>none</CDeviceClassPath>
+  </ContributingDeviceInfo>
 
   <!--Map the cooling devices with specfic zones for throttling-->
   <ZoneThrottleInfo>

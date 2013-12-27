@@ -188,8 +188,6 @@
         <item>"wifi_p2p,13,1,0,-1,true"</item>
         <item>"bluetooth,7,7,1,-1,true"</item>
         <item>"mobile_ia,14,0,2,-1,true"</item>
-        <item>"bip_gprs1,15,0,2,-1,true"</item>
-        <item>"bip_gprs2,16,0,2,-1,true"</item>
     </string-array>
 
     <!-- This string array should be overridden by the device to present a list of radio
@@ -214,8 +212,6 @@
         <item>11</item> <!-- TYPE_MOBILE_IMS -->
         <item>12</item> <!-- TYPE_MOBILE_CBS -->
         <item>14</item> <!-- TYPE_MOBILE_IA -->
-        <item>15</item> <!-- TYPE_MOBILE_BIP_GPRS1 -->
-        <item>16</item> <!-- TYPE_MOBILE_BIP_GPRS2 -->
     </integer-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable

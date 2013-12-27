@@ -11,6 +11,8 @@ endif
 
 BOARD_HAS_CAPSULE ?= true
 
+HAS_SPINOR := true
+
 # Disable recovery for now
 TARGET_MAKE_NO_DEFAULT_RECOVERY := true
 TARGET_NO_RECOVERY := false
@@ -44,9 +46,6 @@ TARGET_DROIDBOOT_USB_MODE_FASTBOOT := true
 TARGET_MAKE_NO_DEFAULT_OTA_PACKAGE := true
 TARGET_RELEASETOOLS_EXTENSIONS := $(HOST_OUT)/bin/releasetools.py
 OTA_FROM_TARGET_FILES := $(HOST_OUT)/bin/ota_from_target_files
-# Size in megabytes of Droidboot USB buffer, must be as large
-# as the largest image we need to flash
-DROIDBOOT_SCRATCH_SIZE := 100
 DROIDBOOT_USE_INSTALLER := true
 endif
 
@@ -72,7 +71,7 @@ cmdline_extra += oops=panic panic=40
 # Security
 BUILD_WITH_SECURITY_FRAMEWORK := txei
 
-INTEL_FEATURE_ARKHAM := true
+INTEL_FEATURE_ARKHAM := false
 ifeq ($(INTEL_FEATURE_ARKHAM),true)
 PRODUCT_BOOT_JARS := $(PRODUCT_BOOT_JARS):com.intel.arkham.services
 endif
@@ -83,14 +82,15 @@ BOARD_SEPOLICY_DIRS :=\
 BOARD_SEPOLICY_UNION :=\
 	file_contexts \
 	seapp_contexts \
-        file.te \
+	file.te \
 	genfs_contexts \
-        fs_use \
+	fs_use \
 	device.te \
 	healthd.te \
 	app.te \
 	untrusted_app.te \
 	surfaceflinger.te \
-        vold.te \
-        ecryptfs.te \
-	zygote.te
+	vold.te \
+	ecryptfs.te \
+	zygote.te \
+	netd.te

@@ -27,6 +27,12 @@
       <CDeviceClassPath>com.android.server.thermal.ModemCooling</CDeviceClassPath>
       <CDeviceThrottlePath>none</CDeviceThrottlePath>
   </ContributingDeviceInfo>
+  <ContributingDeviceInfo>
+      <CDeviceName>ModemAirplane</CDeviceName>
+      <CDeviceID>5</CDeviceID>
+      <CDeviceClassPath>none</CDeviceClassPath>
+  </ContributingDeviceInfo>
+
   <!--Map the cooling devices with specfic zones for throttling-->
 
   <ZoneThrottleInfo>
@@ -256,6 +262,15 @@
         <Alert>1</Alert>
         <Critical>0</Critical>
       </DethrottleDeviceMask>
+    </CoolingDeviceInfo>
+    <CoolingDeviceInfo>
+      <CoolingDevId>5</CoolingDevId>
+      <ThrottleDeviceMask>
+        <Normal>0</Normal>
+        <Warning>0</Warning>
+        <Alert>0</Alert>
+        <Critical>1</Critical>
+      </ThrottleDeviceMask>
     </CoolingDeviceInfo>
   </ZoneThrottleInfo>
 

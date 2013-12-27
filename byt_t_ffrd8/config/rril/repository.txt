@@ -213,9 +213,6 @@ Group Modem
 //      "SMSOverIPCapable" - Set to "1" to enable SMS over IP, otherwise disabled by default.
 //      "SupportCGPIAF" - Set to "1" to support new implementation based on +CGPIAF direct format
 //                        (for IMC IPV6 AT commands), or set to "0" to keep the current behavior.
-//      "NwInitiatedContextAct" - Set to "1" configures modem to send automatic positive response
-//                          for NW initiated context activation. Set to "0" configures modem to
-//                          send automatic negative response for NW initiated context activation.
 //      "EnableSignalStrengthReporting" - Set to "1" configures the modem to report signal strength
 //                          changes via an URC.
     VoiceCapable                0
@@ -227,7 +224,6 @@ Group Modem
 //    EnableSMSOverIP             1
 //    SMSOverIPCapable            1
     SupportCGPIAF               0
-    NwInitiatedContextAct       0
     EnableSignalStrengthReporting 1
 
 // IMEI blacklist - A list of default IMEIs which could be flashed to the device.  The device

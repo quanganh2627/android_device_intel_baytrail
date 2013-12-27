@@ -1,9 +1,0 @@
-# for eth0
-service net_eth0-start /system/bin/sh /init.net.eth0.sh
-    class core
-    oneshot
-
-service serialno /sbin/serialno /dev/block/sda ro.serialno
-    user root
-    oneshot
-
