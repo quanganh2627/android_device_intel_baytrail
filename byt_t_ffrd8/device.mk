@@ -363,6 +363,7 @@ PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.sensor.gyroscope.xml:$(PERMISSIONS_PATH)/android.hardware.sensor.gyroscope.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.sensor.light.xml:$(PERMISSIONS_PATH)/android.hardware.sensor.light.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.sensor.proximity.xml:$(PERMISSIONS_PATH)/android.hardware.sensor.proximity.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.telephony.gsm.xml:$(PERMISSIONS_PATH)/android.hardware.telephony.gsm.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.usb.host.xml:$(PERMISSIONS_PATH)/android.hardware.usb.host.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.usb.accessory.xml:$(PERMISSIONS_PATH)/android.hardware.usb.accessory.xml \
