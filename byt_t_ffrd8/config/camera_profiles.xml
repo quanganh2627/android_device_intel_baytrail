@@ -148,7 +148,7 @@
         <supportedUltraLowLight value=""/>
         <defaultUltraLowLight value=""/>
         <verticalFOV value="320x240@42.5,640x480@42.5,1024x768@42.5,1280x720@42.5,1280x960@42.5,1920x1080@42.5"/>
-        <horizontalFOV value="320x240@52.5,640x480@52.5,1024x768@52.5,1280x720@64.5,1280x960@52.5,1920x1080@64.5"/>
+        <horizontalFOV value="320x240@64.5,640x480@64.5,1024x768@64.5,1280x720@64.5,1280x960@64.5,1920x1080@64.5"/>
     </Profiles>
 
     <Common>
