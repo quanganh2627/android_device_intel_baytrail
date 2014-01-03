@@ -1,3 +1,9 @@
+allow netd kernel:system module_request;
+allow netd self:capability sys_module;
+
 # Allow netd to use /dev/socket/wpa_wlan1
 allow netd socket_device:dir { write remove_name add_name };
-allow netd socket_device:sock_file { create unlink };
+allow netd socket_device:sock_file { create unlink setattr };
+# Allow netd to load modules
+allow netd kernel:system module_request;
+allow netd self:capability sys_module;
