@@ -106,13 +106,6 @@ BOARD_KERNEL_CMDLINE := console=logk0 earlyprintk=nologger loglevel=0 kmemleak=o
 endif
 endif
 
-ifeq ($(TARGET_PARTITIONING_SCHEME),"full-gpt")
-PARTITION_PANIC_ID := 8
-else
-PARTITION_PANIC_ID := 3
-endif
-BOARD_KERNEL_CMDLINE += emmc_ipanic.ipanic_part_number=$(PARTITION_PANIC_ID)
-
 # Graphics
 USE_OPENGL_RENDERER := true
 BOARD_KERNEL_CMDLINE += vga=current i915.modeset=1 drm.vblankoffdelay=1 \
