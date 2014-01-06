@@ -54,14 +54,6 @@
 			<IntegerParameter Name="CHANNELS" Size="8" Min="1" Max="2" Mapping="ParamId:0x601"/>
 			<IntegerParameter Name="GAIN" Size="8" Signed="true" Min="-96" Max="42" Mapping="ParamId:0x602" Unit="dB"/>
 		</ComponentType>
-		<ComponentType Name="MUTE_CTRL" Mapping="AlgoId:0x68">
-			<BooleanParameter Name="ENABLE" Mapping="AlgoEnable"/>
-			<IntegerParameter Name="CHANNELS" Size="8" Min="1" Max="2" Mapping="ParamId:0x701"/>
-			<ParameterBlock Name="MUTE">
-				<BooleanParameter Name="FULL" Mapping="ParamId:0x702"/>
-				<BooleanParameter Name="HALF" Mapping="ParamId:0x703"/>
-			</ParameterBlock>
-		</ComponentType>
 		<ComponentType Name="VERTEX">
 			<IntegerParameter Name="THRESHOLD" Size="16" Min="0" Max="35840" Unit="-dBfs*256" Mapping="ParamId:0x802" Description="Compressor Threshold x"/>
 			<IntegerParameter Name="SLOPE" Size="16" Min="0" Max="65535" Mapping="ParamId:0x806" Description="Slope of characteristic for loudness less than compressor threshold x"/>
@@ -93,12 +85,10 @@
 		<ComponentType Name="HSEP_PLAYBACK_PATH">
 			<Component Name="MONO_EQ" Type="MONO_EQ"/>
 			<Component Name="STEREO_EQ" Type="STEREO_EQ"/>
-			<Component Name="MUTE_CTRL" Type="MUTE_CTRL"/>
 		</ComponentType>
 		<ComponentType Name="IHF_PLAYBACK_PATH">
 			<Component Name="STEREO_EQ" Type="STEREO_EQ"/>
 			<Component Name="GAIN_CTRL" Type="GAIN_CTRL"/>
-			<Component Name="MUTE_CTRL" Type="MUTE_CTRL"/>
 			<Component Name="SDRC_CTRL" Type="SDRC_CTRL"/>
 		</ComponentType>
 	</ComponentLibrary>
