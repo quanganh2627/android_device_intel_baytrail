@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConfigurableDomains xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/etc/parameter-framework/Schemas/ConfigurableDomains.xsd" SystemClassName="Audio">
+    <ConfigurableDomain Name="Calibration" SequenceAware="false">
+        <Configurations>
+            <Configuration Name="Default">
+                <CompoundRule Type="All"/>
+            </Configuration>
+        </Configurations>
+        <ConfigurableElements>
+            <ConfigurableElement Path="/Audio/HDAUDIO/INPUT/DEVICE/0/VOLUME"/>
+            <ConfigurableElement Path="/Audio/HDAUDIO/INPUT/DEVICE/1/VOLUME"/>
+            <ConfigurableElement Path="/Audio/HDAUDIO/INPUT/DEVICE/2/VOLUME"/>
+            <ConfigurableElement Path="/Audio/HDAUDIO/OUTPUT/HEADSET/VOLUME"/>
+            <ConfigurableElement Path="/Audio/HDAUDIO/OUTPUT/MASTER/VOLUME"/>
+            <ConfigurableElement Path="/Audio/HDAUDIO/OUTPUT/SPEAKER/VOLUME"/>
+        </ConfigurableElements>
+        <Settings>
+            <Configuration Name="Default">
+                <ConfigurableElement Path="/Audio/HDAUDIO/INPUT/DEVICE/0/VOLUME">
+                    <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
+                </ConfigurableElement>
+                <ConfigurableElement Path="/Audio/HDAUDIO/INPUT/DEVICE/1/VOLUME">
+                    <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
+                </ConfigurableElement>
+                <ConfigurableElement Path="/Audio/HDAUDIO/INPUT/DEVICE/2/VOLUME">
+                    <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
+                </ConfigurableElement>
+                <ConfigurableElement Path="/Audio/HDAUDIO/OUTPUT/HEADSET/VOLUME">
+                    <IntegerParameter Name="VOLUME">30 30</IntegerParameter>
+                </ConfigurableElement>
+                <ConfigurableElement Path="/Audio/HDAUDIO/OUTPUT/MASTER/VOLUME">
+                    <IntegerParameter Name="VOLUME">30</IntegerParameter>
+                </ConfigurableElement>
+                <ConfigurableElement Path="/Audio/HDAUDIO/OUTPUT/SPEAKER/VOLUME">
+                    <IntegerParameter Name="VOLUME">30 30</IntegerParameter>
+                </ConfigurableElement>
+            </Configuration>
+        </Settings>
+    </ConfigurableDomain>
+</ConfigurableDomains>
