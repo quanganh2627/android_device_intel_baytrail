@@ -173,3 +173,7 @@ SENSORHUB_FW_NAME := psh_baylake.bin
 
 # Sensor
 USE_GENERAL_SENSOR_DRIVER := true
+
+# disable libsensorhub
+ENABLE_SENSOR_HUB := false
+

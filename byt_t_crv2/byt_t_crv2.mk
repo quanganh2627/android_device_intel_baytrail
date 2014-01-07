@@ -31,12 +31,11 @@ PRODUCT_COPY_FILES += \
 
 # sensor config files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/config/sensors/sensor_hal_config_general_default.xml:system/etc/sensor_hal_config_general_default.xml \
-    $(LOCAL_PATH)/config/sensors/sensor_hal_config_general_bytcr1.xml:system/etc/sensor_hal_config_general_bytcr1.xml
+    $(LOCAL_PATH)/config/sensors/sensor_hal_config_default.xml:system/etc/sensor_hal_config_default.xml \
+    $(LOCAL_PATH)/config/sensors/sensor_hal_config_bytcr1.xml:system/etc/sensor_hal_config_bytcr1.xml
 
 # sensor driver config
 PRODUCT_PACKAGES += sensor_config.bin
-
 
 PRODUCT_PACKAGES += \
         wifi_rtl_8723
