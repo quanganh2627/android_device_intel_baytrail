@@ -3,7 +3,7 @@
 REF_DEVICE_NAME ?= $(TARGET_DEVICE)
 REF_PRODUCT_NAME ?= $(TARGET_PRODUCT)
 
-TARGET_USE_DROIDBOOT := true
+TARGET_USE_DROIDBOOT := false
 
 # For use with iago/gummiboot
 TARGET_USE_EFI := true
