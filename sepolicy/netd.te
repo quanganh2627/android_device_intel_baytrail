@@ -7,3 +7,4 @@ allow netd socket_device:sock_file { create unlink setattr };
 # Allow netd to load modules
 allow netd kernel:system module_request;
 allow netd self:capability sys_module;
+allow netd system:unix_dgram_socket sendto;
