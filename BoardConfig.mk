@@ -76,12 +76,6 @@ ifeq ($(INTEL_FEATURE_ARKHAM),true)
 PRODUCT_BOOT_JARS := $(PRODUCT_BOOT_JARS):com.intel.arkham.services
 endif
 
-ifeq ($(strip $(INTEL_FEATURE_ARKHAM)),true)
-ADDITIONAL_BUILD_PROPERTIES += \
-ro.intel.arkham.enabled=true \
-ro.intel.arkham.maxcontainers=1
-endif
-
 BOARD_SEPOLICY_DIRS :=\
 	device/intel/baytrail/sepolicy
 
