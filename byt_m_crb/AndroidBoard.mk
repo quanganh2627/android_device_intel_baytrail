@@ -32,4 +32,5 @@ DBUPDATE_BLOB := $(PRODUCT_OUT)/dbupdate.bin
 ifeq ($(TARGET_STAGE_DROIDBOOT),true)
 dbimages: droidboot-bootimage $(DBUPDATE_BLOB)
 droidcore: dbimages
+flashfiles: dbimages
 endif
