@@ -1,10 +1,11 @@
-/system      ext4    /dev/block/sda9
-/cache       ext4    /dev/block/sda7
-/data        ext4    /dev/block/sda10    length=-16384
-/boot        emmc    /dev/block/sda3
-/recovery    emmc    /dev/block/sda4
-/misc        emmc    /dev/block/sda5
-/bootloader  vfat    /dev/block/sda1
-/bootloader2 vfat    /dev/block/sda2
-/fastboot    emmc    /dev/block/sda11
-/sdcard      vfat    /dev/block/sdb1
+/dev/block/sda9		/system         ext4    ro                                         wait
+/dev/block/sda8		/factory        ext4    ro                                         wait
+/dev/block/sda7		/cache          ext4    noatime,nosuid,nodev,errors=panic          wait,check
+/dev/block/sda10	/data           ext4    noatime,nosuid,nodev,errors=panic          wait,check,encryptable=footer
+/dev/block/sda3		/boot           emmc    defaults                                   defaults
+/dev/block/sda4		/recovery       emmc    defaults                                   defaults
+/dev/block/sda5		/misc           emmc    defaults                                   defaults
+/dev/block/sda1		/bootloader     vfat    defaults                                   recoveryonly
+/dev/block/sda2		/bootloader2    vfat    defaults                                   recoveryonly
+/dev/block/sda11	/fastboot       emmc    defaults                                   defaults
+/dev/block/sdb1		/sdcard		vfat	defaults				   recoveryonly
