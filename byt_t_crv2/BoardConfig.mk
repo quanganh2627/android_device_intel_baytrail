@@ -170,3 +170,6 @@ IA_PANORAMA_VERSION := 1.1
 
 # Define Platform Sensor Hub firmware name
 SENSORHUB_FW_NAME := psh_baylake.bin
+
+# Sensor
+USE_GENERAL_SENSOR_DRIVER := true
