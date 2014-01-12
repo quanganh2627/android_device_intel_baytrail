@@ -100,3 +100,7 @@ BOARD_SEPOLICY_UNION :=\
 	ecryptfs.te \
 	zygote.te \
 	netd.te
+
+TARGET_BOOT_IMAGE_KEY_PAIR ?= build/target/product/security/testkey
+TARGET_BOOT_IMAGE_SIGN_CMD := vendor/intel/support/getsignature.sh $(TARGET_BOOT_IMAGE_KEY_PAIR).pk8
+BOARD_MKBOOTIMG_ARGS := --signsize 256  --signexec "$(TARGET_BOOT_IMAGE_SIGN_CMD)"
