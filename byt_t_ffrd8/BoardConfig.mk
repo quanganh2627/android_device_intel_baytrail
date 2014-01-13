@@ -5,12 +5,7 @@ REF_PRODUCT_NAME ?= $(TARGET_PRODUCT)
 
 TARGET_USE_DROIDBOOT := true
 
-# Disable signing boot.img to be able to change kernel cmdline easily
-ifeq ($(TARGET_BUILD_VARIANT),eng)
-       TARGET_OS_SIGNING_METHOD := xfstk
-else
-       TARGET_OS_SIGNING_METHOD := isu_plat2
-endif
+TARGET_OS_SIGNING_METHOD := isu_plat2
 
 include $(PLATFORM_PATH)/BoardConfig.mk
 
