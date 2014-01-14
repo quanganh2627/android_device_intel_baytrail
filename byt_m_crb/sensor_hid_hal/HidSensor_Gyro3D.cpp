@@ -68,18 +68,7 @@ int GyroSensor::processEvent(unsigned char *raw_data, size_t raw_data_len){
         return  - 1;
     }
     sample = (struct gyro_3d_sample*)raw_data;
-    if (GetUnitValue() == HID_USAGE_SENSOR_UNITS_DEGREES_PER_SECOND){
-        mPendingEvent.data[0] = mPendingEvent.gyro.x = CONVERT_G_D_VTF16E14_X
-            (GetChannelBytesUsedSize(CHANNEL_X), GetExponentValue(), sample->gyro_x)
-            ;
-        mPendingEvent.data[1] = mPendingEvent.gyro.y = CONVERT_G_D_VTF16E14_Y
-            (GetChannelBytesUsedSize(CHANNEL_Y), GetExponentValue(), sample->gyro_y)
-            ;
-        mPendingEvent.data[2] = mPendingEvent.gyro.z = CONVERT_G_D_VTF16E14_Z
-            (GetChannelBytesUsedSize(CHANNEL_Z), GetExponentValue(), sample->gyro_z)
-            ;
-    }
-    else if (GetUnitValue() == HID_USAGE_SENSOR_UNITS_RADIANS_PER_SECOND){
+    if (GetUnitValue() == HID_USAGE_SENSOR_UNITS_RADIANS_PER_SECOND){
         mPendingEvent.data[0] = mPendingEvent.gyro.x = CONVERT_FROM_VTF16
             (GetChannelBytesUsedSize(CHANNEL_X), GetExponentValue(), sample->gyro_x)
             ;
@@ -91,7 +80,15 @@ int GyroSensor::processEvent(unsigned char *raw_data, size_t raw_data_len){
             ;
     }
     else{
-        ALOGE("Gyro Unit is not supported");
+        mPendingEvent.data[0] = mPendingEvent.gyro.x = CONVERT_G_D_VTF16E14_X
+            (GetChannelBytesUsedSize(CHANNEL_X), GetExponentValue(), sample->gyro_x)
+            ;
+        mPendingEvent.data[1] = mPendingEvent.gyro.y = CONVERT_G_D_VTF16E14_Y
+            (GetChannelBytesUsedSize(CHANNEL_Y), GetExponentValue(), sample->gyro_y)
+            ;
+        mPendingEvent.data[2] = mPendingEvent.gyro.z = CONVERT_G_D_VTF16E14_Z
+            (GetChannelBytesUsedSize(CHANNEL_Z), GetExponentValue(), sample->gyro_z)
+            ;
     }
 
     ALOGV("GYRO 3D Sample %fm/s2 %fm/s2 %fm/s2\n", mPendingEvent.gyro.x,
