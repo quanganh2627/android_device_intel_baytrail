@@ -62,7 +62,7 @@
       <power>0.1</power>
       <minDelay>20000</minDelay>
       <mapper axis_x="X" axis_y="Y" axis_z="Z"></mapper>
-      <scale axis_x="0.3173828125" axis_y="0.3173828125" axis_z="-0.152587890625"></scale>
+      <scale axis_x="0.0625" axis_y="0.0625" axis_z="-0.0625"></scale>
     </device>
   </sensor>
   <sensor type="light">
