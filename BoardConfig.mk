@@ -58,10 +58,10 @@ BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE += droidboot.scratch=$(DROIDBOOT_SCRATCH_SI
 endif
 
 # enable libsensorhub
-ENABLE_SENSOR_HUB := true
+ENABLE_SENSOR_HUB := false
 
 # enable scalable sensor HAL
-ENABLE_SCALABLE_SENSOR_HAL := true
+ENABLE_SCALABLE_SENSOR_HAL := false
 
 # Software MPEG4 encoder
 SW_MPEG4_ENCODER := true

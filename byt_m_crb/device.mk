@@ -340,6 +340,7 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/init.debug.$(PRODUCT_DEVICE).rc:root/init.debug.$(PRODUCT_DEVICE).rc \
     $(DEVICE_CONF_PATH)/init.avc.rc:root/init.avc.rc \
     $(DEVICE_CONF_PATH)/init.diag.rc:root/init.diag.rc\
+    $(DEVICE_CONF_PATH)/init.sensors.rc:root/init.sensors.rc \
     $(LOCAL_PATH)/init.recovery.rc:root/init.recovery.$(PRODUCT_DEVICE).rc
 #    $(DEVICE_CONF_PATH)/init.wireless.rc:root/init.wireless.rc \
 #    $(DEVICE_CONF_PATH)/init.modem.rc:root/init.modem.rc \

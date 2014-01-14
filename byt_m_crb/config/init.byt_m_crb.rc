@@ -10,6 +10,7 @@ import init.wifi.rc
 import init.platform.usb.rc
 import init.bt.rc
 import init.platform.gengfx.rc
+import init.sensors.rc
 
 on early-init
     # Mesa environment variables
@@ -170,6 +171,20 @@ on boot
 
     # Enable HDCP 2.1 for Widi
     setprop widi.hdcp.enable true
+
+    #  Load IIO modules and hid sensor hub modules
+    insmod lib/modules/mfd-core.ko
+    insmod lib/modules/industrialio.ko
+    insmod lib/modules/kfifo_buf.ko
+    insmod lib/modules/industrialio-triggered-buffer.ko
+    insmod lib/modules/hid-sensor-hub.ko
+    insmod lib/modules/hid-sensor-iio-common.ko
+    insmod lib/modules/hid-sensor-trigger.ko
+    insmod lib/modules/hid-sensor-accel-3d.ko
+    insmod lib/modules/hid-sensor-gyro-3d.ko
+    insmod lib/modules/hid-sensor-magn-3d.ko
+    insmod lib/modules/hid-sensor-als.ko
+
 
 on post-fs-data
     mkdir /install 0700 root root
