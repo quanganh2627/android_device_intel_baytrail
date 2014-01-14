@@ -35,7 +35,7 @@
         <defaultSceneMode value="auto"/> <!-- one value of the supportedSceneModes. if not support, please set it to "" -->
         <supportedSceneModes value="auto,portrait,sports,landscape,night,barcode,night-portrait"/> <!-- if not support, please set it to "" -->
         <defaultFlashMode value="off"/> <!-- one value of the supportedFlashModes. if not support, please set it to "off" -->
-        <supportedFlashModes value="auto,off,on,torch"/> <!-- if not support, please set it to "off" -->
+        <supportedFlashModes value="off"/> <!-- if not support, please set it to "off" -->
         <defaultEffectMode value="none"/> <!-- one value of the supportedEffectModes. if not support, please set it to "none" -->
         <supportedEffectModes value="none,mono,negative,sepia"/> <!-- if not support, please set it to "none" -->
         <supportedIntelEffectModes value="none,mono,negative,sepia,vivid,still-sky-blue,still-grass-green,still-skin-whiten-low,still-skin-whiten-medium,still-skin-whiten-high"/> <!-- if not support, please set it to "none" -->
@@ -143,7 +143,7 @@
     </Profiles>
 
     <Common>
-        <subDevName value="/dev/v4l-subdev8"/> <!-- it depends on the real hardware -->
+        <subDevName value="/dev/v4l-subdev7"/> <!-- it depends on the real hardware -->
         <fileInject value="true"/> <!-- true or false -->
         <maxContinuousRawRingBuffer value="12"/>
         <productName value="ExampleModel"/> <!-- cfg the exif -->
