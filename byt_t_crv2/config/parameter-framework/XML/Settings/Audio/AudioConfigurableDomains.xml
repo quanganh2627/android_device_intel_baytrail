@@ -112,9 +112,10 @@
     </Configurations>
     <ConfigurableElements>
       <ConfigurableElement Path="/Audio/TI/OUTPUT/HEADPHONE/DRIVER_GAIN"/>
-      <ConfigurableElement Path="/Audio/TI/OUTPUT/HEADPHONE/ANALOG_VOLUME"/>
+      <ConfigurableElement Path="/Audio/TI/OUTPUT/HEADPHONE/ANALOG/VOLUME/0/LEVEL"/>
+      <ConfigurableElement Path="/Audio/TI/OUTPUT/HEADPHONE/ANALOG/VOLUME/1/LEVEL"/>
       <ConfigurableElement Path="/Audio/TI/OUTPUT/SPEAKER/DRIVER_GAIN"/>
-      <ConfigurableElement Path="/Audio/TI/OUTPUT/SPEAKER/ANALOG_VOLUME"/>
+      <ConfigurableElement Path="/Audio/TI/OUTPUT/SPEAKER/ANALOG/VOLUME/LEVEL"/>
       <ConfigurableElement Path="/Audio/TI/MIXER/DAC/VOLUME"/>
     </ConfigurableElements>
     <Settings>
@@ -122,14 +123,17 @@
         <ConfigurableElement Path="/Audio/TI/OUTPUT/HEADPHONE/DRIVER_GAIN">
           <IntegerParameter Name="DRIVER_GAIN">0 0</IntegerParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/TI/OUTPUT/HEADPHONE/ANALOG_VOLUME">
-          <IntegerParameter Name="ANALOG_VOLUME">0 0</IntegerParameter>
+        <ConfigurableElement Path="/Audio/TI/OUTPUT/HEADPHONE/ANALOG/VOLUME/0/LEVEL">
+          <IntegerParameter Name="LEVEL">0</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/TI/OUTPUT/HEADPHONE/ANALOG/VOLUME/1/LEVEL">
+          <IntegerParameter Name="LEVEL">0</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/TI/OUTPUT/SPEAKER/DRIVER_GAIN">
           <IntegerParameter Name="DRIVER_GAIN">1</IntegerParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/TI/OUTPUT/SPEAKER/ANALOG_VOLUME">
-          <IntegerParameter Name="ANALOG_VOLUME">100</IntegerParameter>
+        <ConfigurableElement Path="/Audio/TI/OUTPUT/SPEAKER/ANALOG/VOLUME/LEVEL">
+          <IntegerParameter Name="LEVEL">100</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/TI/MIXER/DAC/VOLUME">
           <IntegerParameter Name="VOLUME">127 127</IntegerParameter>
@@ -139,14 +143,17 @@
         <ConfigurableElement Path="/Audio/TI/OUTPUT/HEADPHONE/DRIVER_GAIN">
           <IntegerParameter Name="DRIVER_GAIN">1 1</IntegerParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/TI/OUTPUT/HEADPHONE/ANALOG_VOLUME">
-          <IntegerParameter Name="ANALOG_VOLUME">127 127</IntegerParameter>
+        <ConfigurableElement Path="/Audio/TI/OUTPUT/HEADPHONE/ANALOG/VOLUME/0/LEVEL">
+          <IntegerParameter Name="LEVEL">127</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/TI/OUTPUT/HEADPHONE/ANALOG/VOLUME/1/LEVEL">
+          <IntegerParameter Name="LEVEL">127</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/TI/OUTPUT/SPEAKER/DRIVER_GAIN">
           <IntegerParameter Name="DRIVER_GAIN">0</IntegerParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/TI/OUTPUT/SPEAKER/ANALOG_VOLUME">
-          <IntegerParameter Name="ANALOG_VOLUME">0</IntegerParameter>
+        <ConfigurableElement Path="/Audio/TI/OUTPUT/SPEAKER/ANALOG/VOLUME/LEVEL">
+          <IntegerParameter Name="LEVEL">0</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/TI/MIXER/DAC/VOLUME">
           <IntegerParameter Name="VOLUME">127 127</IntegerParameter>
@@ -156,14 +163,17 @@
         <ConfigurableElement Path="/Audio/TI/OUTPUT/HEADPHONE/DRIVER_GAIN">
           <IntegerParameter Name="DRIVER_GAIN">1 1</IntegerParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/TI/OUTPUT/HEADPHONE/ANALOG_VOLUME">
-          <IntegerParameter Name="ANALOG_VOLUME">100 100</IntegerParameter>
+        <ConfigurableElement Path="/Audio/TI/OUTPUT/HEADPHONE/ANALOG/VOLUME/0/LEVEL">
+          <IntegerParameter Name="LEVEL">100</IntegerParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Audio/TI/OUTPUT/HEADPHONE/ANALOG/VOLUME/1/LEVEL">
+          <IntegerParameter Name="LEVEL">100</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/TI/OUTPUT/SPEAKER/DRIVER_GAIN">
           <IntegerParameter Name="DRIVER_GAIN">1</IntegerParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/TI/OUTPUT/SPEAKER/ANALOG_VOLUME">
-          <IntegerParameter Name="ANALOG_VOLUME">100</IntegerParameter>
+        <ConfigurableElement Path="/Audio/TI/OUTPUT/SPEAKER/ANALOG/VOLUME/LEVEL">
+          <IntegerParameter Name="LEVEL">100</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/TI/MIXER/DAC/VOLUME">
           <IntegerParameter Name="VOLUME">127 127</IntegerParameter>

@@ -41,6 +41,10 @@
             <Component Name="RIGHT" Type="DAC_RIGHT_TYPE"/>
         </ComponentType>
 
+        <ComponentType Name="ADC_SWITCH_TYPE">
+            <Component Name="MUTE" Type="UNMUTE_TYPE" Mapping="Amend1:ADC"/>
+        </ComponentType>
+
         <ComponentType Name="INPUT_SWITCH_TYPE">
             <IntegerParameter Name="SWITCH" Size="8" Min="0" Max="3" Mapping="Control:'%1 %2'"/>
         </ComponentType>
@@ -56,18 +60,32 @@
             <Component Name="MIC1RP" Type="INPUT_SWITCH_TYPE" Mapping="Amend2:MIC1RP_IMP_CNTL"/>
         </ComponentType>
 
+        <ComponentType Name="SPEAKER_VOLUME_TYPE">
+            <ParameterBlock Name="VOLUME" Mapping="Volume:'Left Analog Channel Gain'">
+                <BooleanParameter Name="MUTED"/>
+                <IntegerParameter Name="LEVEL" Size="8" Min="0" Max="127" Unit="0.5dB" Description="127 is 0dB"/>
+            </ParameterBlock>
+        </ComponentType>
+
         <ComponentType Name="SPEAKER_TYPE">
             <BooleanParameter Name="ENABLED"  Mapping="Control:'Ext Spk Switch'"/>
             <IntegerParameter Name="DRIVER_GAIN" Size="8" Min="0" Max="4" Mapping="Control:'SP Driver Gain'"/>
-            <IntegerParameter Name="ANALOG_VOLUME" Size="8" Min="0" Max="127" Mapping="Control:'Left Analog Channel Gain'"/>
+            <Component Name="ANALOG" Type="SPEAKER_VOLUME_TYPE"/>
             <BooleanParameter Name="ANALOG_ON" Mapping="Control:'Speaker Analog Volume Switch'"/>
             <Component Name="UNMUTE" Type="UNMUTE_TYPE" Mapping="Amend1:SP driver"/>
+        </ComponentType>
+
+        <ComponentType Name="HEADPHONE_VOLUME_TYPE">
+            <ParameterBlock Name="VOLUME" ArrayLength="2" Mapping="Volume:'HP Analog Gain'">
+                <BooleanParameter Name="MUTED"/>
+                <IntegerParameter Name="LEVEL" Size="8" Min="0" Max="127" Unit="0.5dB" Description="127 is 0dB"/>
+            </ParameterBlock>
         </ComponentType>
 
         <ComponentType Name="HEADPHONE_TYPE">
             <BooleanParameter Name="ENABLED"  Mapping="Control:'Headphone Switch'"/>
             <IntegerParameter Name="DRIVER_GAIN" Size="8" Min="0" Max="9" ArrayLength="2"  Mapping="Control:'HP Driver Gain'"/>
-            <IntegerParameter Name="ANALOG_VOLUME" Size="8" Min="0" Max="127" ArrayLength="2"  Mapping="Control:'HP Analog Gain'"/>
+            <Component Name="ANALOG" Type="HEADPHONE_VOLUME_TYPE"/>
             <BooleanParameter Name="L_SWITCH" Mapping="Control:'HP Left Analog Volume Switch'"/>
             <BooleanParameter Name="R_SWITCH" Mapping="Control:'HP Right Analog Volume Switch'"/>
             <Component Name="UNMUTE" Type="UNMUTE_DOUBLE_TYPE" Mapping="Amend1:HP driver"/>
@@ -86,6 +104,7 @@
 
         <ComponentType Name="MIXER_TYPE">
             <Component Name="DAC" Type="DAC_SWITCH_TYPE"/>
+            <Component Name="ADC" Type="ADC_SWITCH_TYPE"/>
             <Component Name="M_INPUT" Type="MIC_TYPE_M" Mapping="Amend1:M_Input_Mixer"/>
             <Component Name="P_INPUT" Type="MIC_TYPE_P" Mapping="Amend1:P_Input_Mixer"/>
         </ComponentType>
