@@ -5,6 +5,7 @@ TARGET_PARTITIONING_SCHEME := "full-gpt"
 TARGET_BIOS_TYPE := "uefi"
 HAS_SPINOR := true
 USE_FPT := true
+BOARD_USE_WARMDUMP := true
 
 # Copy common product apns-conf
 COMMON_PATH := device/intel/common
