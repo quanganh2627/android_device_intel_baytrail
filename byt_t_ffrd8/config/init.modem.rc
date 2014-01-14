@@ -102,7 +102,6 @@ service mmgr /system/bin/mmgr
     socket mmgr stream 660 system radio
     user system
     group radio cache inet misc system usb security
-    enabled
 
 # adding nvm manager
 service nvmmanager /system/bin/nvm_server
@@ -118,5 +117,4 @@ service ril-daemon /system/bin/rild -l /system/lib/librapid-ril-core.so -- -a /d
     class main
     user root
     group radio cache inet misc audio
-    enabled
 
