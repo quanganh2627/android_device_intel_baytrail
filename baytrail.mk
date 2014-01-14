@@ -36,6 +36,17 @@ PRODUCT_PACKAGES += \
     ia32fw
 endif
 
+# Firmware versioning
+ifeq ($(TARGET_BIOS_TYPE),"uefi")
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/firmware/smbios_firmware_props.rc:root/init.firmware.rc
+PRODUCT_PACKAGES += \
+    intel_fw_props
+else
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/firmware/pidv_firmware_props.rc:root/init.firmware.rc
+endif
+
 #keylayout file
 PRODUCT_COPY_FILES += \
     $(PLATFORM_CONF_PATH)/intel_short_long_press.kl:system/usr/keylayout/baytrailaudio_Intel_MID_Audio_Jack.kl
