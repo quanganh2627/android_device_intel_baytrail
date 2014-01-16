@@ -27,8 +27,6 @@ BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 #Modem
 BOARD_HAVE_MODEM := false
 
-FLASHFILE_NO_OTA := true
-
 # Connectivity
 BOARD_HAVE_WIFI := true
 INTEL_WIDI := false

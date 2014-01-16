@@ -1,7 +1,6 @@
 PRODUCT_NAME := byt_t_crv2
 
 BOARD_HAS_CAPSULE := false
-FORCE_FLASHFILE_NO_OTA := true
 TARGET_PARTITIONING_SCHEME := "full-gpt"
 TARGET_BIOS_TYPE := "uefi"
 HAS_SPINOR := true
