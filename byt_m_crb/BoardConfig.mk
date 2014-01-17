@@ -98,7 +98,7 @@ USE_INTEL_IPP := true
 POWERHAL_BYT := true
 
 # Widi
-INTEL_WIDI := false
+INTEL_WIDI := true
 INTEL_WIDI_BAYTRAIL := true
 #INTEL_WIDI_BAYTRAIL := false
 
