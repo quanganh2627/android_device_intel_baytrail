@@ -139,7 +139,7 @@ PRODUCT_PACKAGES += \
     audio_hal_configurable \
     libaudioresample \
     audio.a2dp.default \
-    vibrator.$(PRODUCT_DEVICE) \
+    vibrator.x86 \
     audio.usb.default
 
 # sensors
