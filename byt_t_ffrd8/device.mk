@@ -215,10 +215,6 @@ ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
         $(DEVICE_CONF_PATH)/configure_trace_modem:system/bin/configure_trace_modem
 endif
 
-#Intrinsyc RRIL repository
-PRODUCT_COPY_FILES += \
-        $(DEVICE_CONF_PATH)/rril/repository.txt:system/etc/rril/repository.txt
-
 # Modem
 PRODUCT_PACKAGES += \
     mmgr \
