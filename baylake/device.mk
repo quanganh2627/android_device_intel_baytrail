@@ -140,6 +140,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audio.hdmi.$(PRODUCT_DEVICE)
 
+#usb dock audio
+PRODUCT_PACKAGES += \
+    audio.hs_usb.$(PRODUCT_DEVICE)
+
 #widi audio HAL
 PRODUCT_PACKAGES += \
     audio.widi.$(PRODUCT_DEVICE)

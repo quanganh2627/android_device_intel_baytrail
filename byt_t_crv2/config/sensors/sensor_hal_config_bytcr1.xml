@@ -4,47 +4,47 @@
   <sensor type="accelerometer" category="linux_driver"> <!--category="linux_driver" is default-->
     <platform_config driver_node_type="input_event"> <!-- driver_node_type="input_event" is default -->
       <name>accel</name>
-      <activate_node>/sys/bus/i2c/devices/3-0011/enable</activate_node>
-      <poll_node>/sys/bus/i2c/devices/3-0011/poll</poll_node>
+      <activate_node>/sys/bus/i2c/devices/3-0019/enable</activate_node>
+      <poll_node>/sys/bus/i2c/devices/3-0019/poll</poll_node>
       <data_node></data_node>
     </platform_config>
     <device>
-      <name>BMC150 Accelerometer</name>
-      <vendor>BOSCH</vendor>
+      <name>MODEL_LSM303DLHC 3-axis Accelerometer</name>
+      <vendor>STMicroelectronics</vendor>
       <version>1</version>
       <maxRange unit="GRAVITY_EARTH">2</maxRange>
-      <resolution unit="GRAVITY_EARTH">0.0009765625</resolution>
+      <resolution unit="GRAVITY_EARTH">0.001</resolution>
       <power>0.11</power>
       <minDelay>10000</minDelay>
-      <mapper axis_x="X" axis_y="Y" axis_z="Z"></mapper>
-      <scale axis_x="0.0009765625" axis_y="0.0009765625" axis_z="0.0009765625" unit="GRAVITY_EARTH"></scale>
+      <mapper axis_x="Y" axis_y="X" axis_z="Z"></mapper>
+      <scale axis_x="0.001" axis_y="-0.001" axis_z="0.001" unit="GRAVITY_EARTH"></scale>
     </device>
   </sensor>
   <sensor type="gyroscope">
     <platform_config>
       <name>gyro</name>
-      <activate_node>/sys/bus/i2c/devices/3-0068/enable</activate_node>
-      <poll_node>/sys/bus/i2c/devices/3-0068/poll</poll_node>
+      <activate_node>/sys/bus/i2c/devices/3-0068/enable;/sys/bus/i2c/devices/3-006b/enable</activate_node>
+      <poll_node>/sys/bus/i2c/devices/3-0068/poll;/sys/bus/i2c/devices/3-006b/poll</poll_node>
       <calibration_file>/data/gyro.conf</calibration_file>
       <calibration_function>GyroscopeGenericCalibration</calibration_function>
     </platform_config>
     <device>
-      <name>BMG160 Gyroscope sensor</name>
-      <vendor>BOSCH</vendor>
+      <name>L3G4200D Gyroscope sensor</name>
+      <vendor>STMicroelectronics</vendor>
       <version>1</version>
       <maxRange unit="M_PI">11.1111111111111</maxRange>         <!-- 2000/180 -->
-      <resolution unit="M_PI">0.00033875339</resolution>        <!-- 1/180/16.4 -->
+      <resolution unit="M_PI">0.000388888888888889</resolution>   <!-- 70/1000/180 -->
       <power>6.1</power>
       <minDelay>10000</minDelay>
-      <mapper axis_x="Y" axis_y="X" axis_z="Z"></mapper>
-      <scale axis_x="0.00033875339" axis_y="-0.00033875339" axis_z="0.00033875339" unit="M_PI"></scale>
+      <mapper axis_x="X" axis_y="Y" axis_z="Z"></mapper>
+      <scale axis_x="-0.000388888888888889" axis_y="0.000388888888888889" axis_z="-0.000388888888888889" unit="M_PI"></scale>
     </device>
   </sensor>
   <sensor type="compass">
     <platform_config driver_node_type="input_event">
       <name>comp</name>
-      <activate_node>/sys/bus/i2c/devices/3-0013/enable</activate_node>
-      <poll_node>/sys/bus/i2c/devices/3-0013/poll</poll_node>
+      <activate_node>/sys/bus/i2c/devices/3-001e/enable</activate_node>
+      <poll_node>/sys/bus/i2c/devices/3-001e/poll</poll_node>
       <data_node></data_node>
       <driver_calibration_node></driver_calibration_node>
       <driver_calibration_file></driver_calibration_file>
@@ -54,15 +54,33 @@
       <fliter_length>50</fliter_length>
     </platform_config>
     <device>
-      <name>BMC150 Magnetic field sensor</name>
-      <vendor>BOSCH</vendor>
+      <name>MODEL_LSM303DLHC 3-axis Magnetic field sensor</name>
+      <vendor>STMicroelectronics</vendor>
       <version>1</version>
-      <maxRange>2500.0</maxRange>
-      <resolution>0.3</resolution>
+      <maxRange>250.0</maxRange>
+      <resolution>0.15</resolution>
       <power>0.1</power>
       <minDelay>20000</minDelay>
-      <mapper axis_x="X" axis_y="Y" axis_z="Z"></mapper>
-      <scale axis_x="0.3173828125" axis_y="0.3173828125" axis_z="-0.152587890625"></scale>
+      <mapper axis_x="Y" axis_y="X" axis_z="Z"></mapper>
+      <scale axis_x="0.149253731343283" axis_y="0.149253731343283" axis_z="-0.166666666666667"></scale>
+    </device>
+  </sensor>
+  <sensor type="pressure">
+    <platform_config>
+      <name>lps331ap_pressure</name>
+      <activate_node>/sys/bus/i2c/devices/3-005d/enable</activate_node>
+      <poll_node>/sys/bus/i2c/devices/3-005d/poll</poll_node>
+    </platform_config>
+    <device>
+      <name>ST LPS331AP Pressure Sensor</name>
+      <vendor>STMicroelectronics</vendor>
+      <version>1</version>
+      <maxRange>1260.0</maxRange>
+      <resolution>0.24</resolution>
+      <power>0.001</power>
+      <minDelay>75000</minDelay>
+      <mapper axis_x="X"></mapper>
+      <scale  axis_x="0.000244140625"></scale>
     </device>
   </sensor>
   <sensor type="light">

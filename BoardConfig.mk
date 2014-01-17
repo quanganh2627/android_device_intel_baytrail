@@ -71,10 +71,13 @@ cmdline_extra += oops=panic panic=40
 # Graphic:disable sync framework
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 
+# Dalvik
+DEFAULT_JIT_CODE_GENERATOR := PCG
+
 # Security
 BUILD_WITH_SECURITY_FRAMEWORK := txei
 
-INTEL_FEATURE_ARKHAM := false
+INTEL_FEATURE_ARKHAM := true
 ifeq ($(INTEL_FEATURE_ARKHAM),true)
 PRODUCT_BOOT_JARS := $(PRODUCT_BOOT_JARS):com.intel.arkham.services
 endif

@@ -23,8 +23,8 @@
     <!-- Flag indicating if hac is enabled -->
     <bool name="hac_enabled">true</bool>
 
-    <!-- Flag indicating if the phone is a lte wcdma phone -->
-    <bool name="lte_wcdma_phone">true</bool>
+    <!-- Show enabled lte option for lte device -->
+    <bool name="config_enabled_lte" translatable="false">true</bool>
 
     <!-- Flag indicating the usage of OEM Hooks for telephony -->
     <bool name="config_usage_oem_hooks_supported">true</bool>
