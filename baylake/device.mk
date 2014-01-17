@@ -333,10 +333,12 @@ PRODUCT_PACKAGES += com.google.widevine.software.drm.xml \
     libWVStreamControlAPI_L1 \
     libwvdrm_L1
 
-ifeq ($(TARGET_BUILD_VARIANT),eng)
- PRODUCT_PACKAGES += \
-     WidevineSamplePlayer
-endif
+PRODUCT_PACKAGES_ENG += WidevineSamplePlayer
+
+# WV Modular
+PRODUCT_PACKAGES += libwvdrmengine
+
+PRODUCT_PACKAGES_ENG += ExoPlayerDemo
 
 # Intel VPP/FRC
 PRODUCT_PACKAGES += \
