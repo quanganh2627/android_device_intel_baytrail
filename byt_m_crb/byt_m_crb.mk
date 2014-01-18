@@ -1,6 +1,11 @@
 ifeq (,$(filter $(PRODUCT_NAME), byt_m_crb_next byt_m_crb_64))
 PRODUCT_NAME := byt_m_crb
 endif
+
+# This flag need to be set to true for Wilkins peak WIFI card
+# otherwise it should be false for Broadcom.
+BOARD_HAS_WILKINS_PEAK_CHIP := false
+
 # Include product path
 include $(LOCAL_PATH)/byt_m_crb_path.mk
 
@@ -21,8 +26,14 @@ PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.direct.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml
 
+ifeq ($(BOARD_HAS_WILKINS_PEAK_CHIP),true)
+PRODUCT_PACKAGES += \
+	wifi_intel_wkp
+else
 PRODUCT_PACKAGES += \
         wifi_bcm_43241
+endif
+
 
 #remote submix audio
 PRODUCT_PACKAGES += \
