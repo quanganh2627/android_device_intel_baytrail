@@ -34,6 +34,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
         wifi_bcm_4334x
 
+# Copy sar manager resources
+PRODUCT_COPY_FILES += \
+    $(DEVICE_CONF_PATH)/sarconfig.xml:system/etc/sarconfig.xml
+
 # Revert me to fg_config.bin instead of fg_config_$(TARGET_PRODUCT) once BZ119617 is resoved
 #Fuel gauge related
 PRODUCT_PACKAGES += \
@@ -79,6 +83,11 @@ PRODUCT_PACKAGES += \
 # NFC
 PRODUCT_PACKAGES += \
     nfc_pn544pc
+
+#SARManager
+PRODUCT_PACKAGES += \
+    com.intel.internal.telephony.SARManager \
+    com.intel.internal.telephony.SARManager.xml
 
 #alsa conf
 ALSA_CONF_PATH := external/alsa-lib/

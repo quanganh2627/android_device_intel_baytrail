@@ -68,6 +68,9 @@ SW_MPEG4_ENCODER := true
 
 cmdline_extra += oops=panic panic=40
 
+# Graphic:disable sync framework
+TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
+
 # Security
 BUILD_WITH_SECURITY_FRAMEWORK := txei
 

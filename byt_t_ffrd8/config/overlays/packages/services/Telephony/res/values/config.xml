@@ -33,4 +33,11 @@
     <string name="config_oem_hook_jar_file">/system/framework/com.intel.internal.telephony.OemTelephony.jar</string>
     <!-- The oem hook class name -->
     <string name="config_oem_hook_class_name">com.intel.internal.telephony.OemTelephony.OemTelephonyInterfaceCreator</string>
+
+    <!-- Flag indicating the support of SAR Manager -->
+    <bool name="config_usage_sar_manager_supported">true</bool>
+    <!-- The SAR manager jar file name -->
+    <string name="config_sar_manager_jar_file">/system/framework/com.intel.internal.telephony.SARManager.jar</string>
+    <!-- The SAR Manager class name -->
+    <string name="config_sar_manager_class_name">com.intel.internal.telephony.SARManager.SARManagerCreator</string>
 </resources>
