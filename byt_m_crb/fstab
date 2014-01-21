@@ -8,4 +8,4 @@
 #/dev/block/sda6         /install        ext4    ro                                         wait
 /dev/block/sda7         /cache          ext4    noatime,nosuid,nodev,errors=panic          wait,check
 /dev/block/sda8         /factory        ext4    ro                                         wait
-/dev/block/sda10        /data           ext4    noatime,nosuid,nodev,errors=panic          wait,check,encryptable=footer
+/dev/block/sda10        /data           ext4    noatime,noauto_da_alloc,nosuid,nodev,errors=panic          wait,check,encryptable=footer
