@@ -28,12 +28,14 @@
 #include "HidSensor_Gyro3D.h"
 #include "HidSensor_Compass3D.h"
 #include "HidSensor_ALS.h"
+#include "HidSensor_Pressure.h"
 
 static const struct sensor_t sSensorList[] = {
     AccelSensor::sSensorInfo_accel3D,
     GyroSensor::sSensorInfo_gyro3D,
     CompassSensor::sSensorInfo_compass3D,
     ALSSensor::sSensorInfo_als,
+    PressureSensor::sSensorInfo_pressure,
 };
 
 const struct sensor_t* BoardConfig::sensorList()
@@ -94,6 +96,7 @@ void BoardConfig::initSensors(SensorBase* sensors[])
     sensors[gyro] = new GyroSensor();
     sensors[compass] = new CompassSensor();
     sensors[light] = new ALSSensor();
+    sensors[pressure] = new PressureSensor();
 }
 
 int BoardConfig::handleToDriver(int handle)
@@ -104,6 +107,7 @@ int BoardConfig::handleToDriver(int handle)
     case ID_M:
         return compass;
     case ID_PR:
+	return pressure;
     case ID_T:
         return -EINVAL;
     case ID_GY:

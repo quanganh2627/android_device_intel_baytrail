@@ -35,6 +35,7 @@ sensor_src_files := HidSensor_Accel3D.cpp \
 		    HidSensor_Gyro3D.cpp \
 		    HidSensor_Compass3D.cpp \
 		    HidSensor_ALS.cpp \
+		    HidSensor_Pressure.cpp \
 
 include external/stlport/libstlport.mk
 LOCAL_C_INCLUDES += $(LOCAL_PATH) 

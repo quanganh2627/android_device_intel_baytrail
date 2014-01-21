@@ -27,6 +27,7 @@ enum {
     gyro,
     compass,
     light,
+    pressure,
     numSensorDrivers,
     numFds,
 };
@@ -176,6 +177,9 @@ inline float convert_from_vtf_format(int size, int exponent, unsigned int value)
 #define CONVERT_M_MG_VTF16E14_X(s,d,x) (convert_from_vtf_format(s,d,x)/10)
 #define CONVERT_M_MG_VTF16E14_Y(s,d,x) (convert_from_vtf_format(s,d,x)/10)
 #define CONVERT_M_MG_VTF16E14_Z(s,d,x) (convert_from_vtf_format(s,d,x)/10)
+
+/* from bar to mbar(= hPA) */
+#define CONVERT_PR_HPA_VTF16E14(s,d,x) ((1000.0f)*convert_from_vtf_format(s,d,x))
 
 /*****************************************************************************/
 

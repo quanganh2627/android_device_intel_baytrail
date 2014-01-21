@@ -180,6 +180,7 @@ on boot
     insmod lib/modules/hid-sensor-gyro-3d.ko
     insmod lib/modules/hid-sensor-magn-3d.ko
     insmod lib/modules/hid-sensor-als.ko
+    insmod lib/modules/hid-sensor-pres-drv.ko
 
 
 on post-fs-data
