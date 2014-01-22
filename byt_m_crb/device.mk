@@ -370,6 +370,13 @@ PRODUCT_COPY_FILES += \
     PRODUCT_PACKAGES += \
     LaunchCamera
 
+# intel-dptf executable
+PRODUCT_PACKAGES += \
+    esif_uf
+
+PRODUCT_COPY_FILES += \
+    $(foreach f, $(wildcard $(COMMON_PATH)/intel-dptf/Packages/DSP/*), $(f):system/bin/dsp/$(notdir $(f)))
+
 #################################################"
 # Include platform - do not inherit so that variables can be set before inclusion
 include $(PLATFORM_PATH)/baytrail.mk
