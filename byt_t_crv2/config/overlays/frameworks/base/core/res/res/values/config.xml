@@ -268,9 +268,6 @@
     -->
     <bool name="config_enableWifiDisplay">true</bool>
 
-    <!-- FLag indicating if the platform is using NXP PN544PC clf -->
-    <bool name="clf_is_pn544pc">true</bool>
-
     <!-- Set to true if the wifi display supports compositing content stored in gralloc
          protected buffers. For this to be true, there must exist a protected hardware path
          for surface flinger to composite and send protected buffers to the wifi display video encoder.

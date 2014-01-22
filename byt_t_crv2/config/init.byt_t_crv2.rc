@@ -45,6 +45,7 @@ on init
     setprop_from_sysfs /sys/firmware/pidv/iafw_version sys.ia32.version
     setprop_from_sysfs /sys/firmware/pidv/iafw_version sys.ifwi.version
     setprop_from_sysfs /sys/firmware/pidv/secfw_version sys.chaabi.version
+    setprop_from_sysfs /sys/firmware/pidv/pdr_version sys.pdr.version
 
 on boot
     #  Mount debugfs for systrace settings
@@ -318,13 +319,6 @@ service surfaceflinger /system/bin/surfaceflinger
     group graphics drmrpc
     onrestart restart zygote
 
-service sensorhubd /system/bin/sensorhubd
-    class main
-    user system
-    group system
-    socket sensorhubd stream 666 system system
-    oneshot
-
 # for eth0
 service net_eth0-start /system/bin/sh /system/etc/init.net.eth0.sh
     class core
@@ -367,7 +361,7 @@ on charger
     wait /system/bin/fg_conf
     start fg_conf
 
-    insmod /lib/modules/atomisp-css2400b0_v2.ko
+    insmod /lib/modules/atomisp-css2400b0_v21.ko
 
 
 # ASF dynamically adjusts the inotify max_user_watches

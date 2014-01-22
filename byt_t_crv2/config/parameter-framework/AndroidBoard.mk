@@ -17,8 +17,8 @@ LOCAL_MODULE := parameter-framework.audio.byt_t_crv2.nodomains
 LOCAL_MODULE_TAGS := optional
 LOCAL_REQUIRED_MODULES :=  \
     parameter-framework.audio.baytrail \
-    parameter-framework.audio.imc.subsystem \
-    parameter-framework.audio.pmdown_time.subsystem \
+    SysfsPmdownTimeBytcrSubsystem.xml \
+    TI_TLV320AIC3100Subsystem.xml \
     AudioClass.xml
 
 ifeq ($(TARGET_BUILD_VARIANT),eng)
@@ -42,6 +42,24 @@ LOCAL_SRC_FILES := XML/Structure/Audio/$(LOCAL_MODULE)
 include $(BUILD_PREBUILT)
 
 
+include $(CLEAR_VARS)
+LOCAL_MODULE := TI_TLV320AIC3100Subsystem.xml
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/parameter-framework/Structure/Audio
+LOCAL_SRC_FILES := XML/Structure/Audio/$(LOCAL_MODULE)
+include $(BUILD_PREBUILT)
+
+
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := SysfsPmdownTimeBytcrSubsystem.xml
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/parameter-framework/Structure/Audio
+LOCAL_SRC_FILES := XML/Structure/Audio/$(LOCAL_MODULE)
+include $(BUILD_PREBUILT)
+
 ifeq ($(BOARD_USES_AUDIO_HAL_CONFIGURABLE),true)
 
 ## Audio Tuning + Routing
@@ -61,8 +79,7 @@ $(LOCAL_BUILT_MODULE): MY_SRC_FILES := \
         $(TARGET_OUT_ETC)/parameter-framework/ParameterFrameworkConfiguration.xml \
         $(LOCAL_PATH)/criteria.txt \
         $(LOCAL_PATH)/XML/Settings/Audio/AudioConfigurableDomains.xml \
-        $(LOCAL_PATH)/XML/Settings/Audio/byt_t_crv2_routing_realtek5640.pfw \
-        $(LOCAL_PATH)/XML/Settings/Audio/byt_t_crv2_routing_xmm.pfw
+        $(LOCAL_PATH)/XML/Settings/Audio/byt_t_crv2_routing_tlv320aic3100.pfw
 
 $(LOCAL_BUILT_MODULE): $(LOCAL_REQUIRED_MODULES)
 	$(hide) mkdir -p $(dir $@)

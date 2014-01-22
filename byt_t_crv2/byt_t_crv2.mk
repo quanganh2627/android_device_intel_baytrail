@@ -1,5 +1,13 @@
 PRODUCT_NAME := byt_t_crv2
 
+BOARD_HAS_CAPSULE := false
+FORCE_FLASHFILE_NO_OTA := true
+TARGET_PARTITIONING_SCHEME := "full-gpt"
+TARGET_BIOS_TYPE := "uefi"
+HAS_SPINOR := true
+USE_FPT := true
+BOARD_HAVE_LIMITED_POWERON_FEATURES := true
+
 # Copy common product apns-conf
 COMMON_PATH := device/intel/common
 PRODUCT_COPY_FILES += \
@@ -31,15 +39,14 @@ PRODUCT_COPY_FILES += \
 
 # sensor config files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/config/sensors/sensor_hal_config_general_default.xml:system/etc/sensor_hal_config_general_default.xml \
-    $(LOCAL_PATH)/config/sensors/sensor_hal_config_general_bytcr1.xml:system/etc/sensor_hal_config_general_bytcr1.xml
+    $(LOCAL_PATH)/config/sensors/sensor_hal_config_default.xml:system/etc/sensor_hal_config_default.xml \
+    $(LOCAL_PATH)/config/sensors/sensor_hal_config_bytcr1.xml:system/etc/sensor_hal_config_bytcr1.xml
 
 # sensor driver config
 PRODUCT_PACKAGES += sensor_config.bin
 
-
 PRODUCT_PACKAGES += \
-        wifi_bcm_4334x
+        wifi_rtl_8723
 
 # Revert me to fg_config.bin instead of fg_config_$(TARGET_PRODUCT) once BZ119617 is resoved
 #Fuel gauge related

@@ -32,6 +32,8 @@ PRODUCT_PACKAGES += \
 else
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/watchdog/init.watchdog.sh:root/init.watchdog.sh
+PRODUCT_PACKAGES += \
+    ia32fw
 endif
 
 #keylayout file
@@ -95,10 +97,6 @@ PRODUCT_PACKAGES += \
     psh_bk.bin      \
     fwupdatetool    \
     fwupdate_script.sh
-
-# IAFW
-PRODUCT_PACKAGES += \
-    ia32fw
 
 # Identity Protection Technology (IPT)
 PRODUCT_PACKAGES += \

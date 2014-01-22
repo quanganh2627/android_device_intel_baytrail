@@ -17,7 +17,7 @@
 				"label": null,
 				"lba_start": null,
 				"size": 32,
-				"type": "efi",
+				"type": "data",
 				"fs_type": "hidden",
 				"uuid": "0000000000FF",
 				"priority": 0,
