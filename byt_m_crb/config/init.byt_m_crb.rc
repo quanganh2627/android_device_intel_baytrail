@@ -30,8 +30,7 @@ on early-init
 
 
 on init
-    # Create removable storage path
-    mkdir /storage/usbcard 0000 system system
+    export SECONDARY_STORAGE /storage/sdcard1
 
     # See storage config details at http://source.android.com/tech/storage/
     mkdir /mnt/shell/emulated 0700 shell shell
@@ -49,9 +48,6 @@ on init
     symlink /storage/emulated/legacy /storage/sdcard0
     symlink /mnt/shell/emulated/0 /storage/emulated/legacy
 
-    # Support external SD card
-    mkdir /storage/sdcard_ext 0000 system system
-    symlink /storage/sdcard_ext /mnt/sdcard_ext
 
     write /sys/class/graphics/fbcon/cursor_blink 0
     mkdir /data/system/ 0770 system system
