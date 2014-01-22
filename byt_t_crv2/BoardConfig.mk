@@ -124,7 +124,7 @@ BOARD_USE_LIBVA := true
 BOARD_USE_LIBMIX := true
 
 #Support background music playback for Widi Multitasking
-ENABLE_BACKGROUND_MUSIC := false
+ENABLE_BACKGROUND_MUSIC := true
 
 # Settings for the Media SDK library and plug-ins:
 # - USE_MEDIASDK: use Media SDK support or not
