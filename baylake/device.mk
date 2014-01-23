@@ -176,6 +176,9 @@ endif
 # BCM4752 GPS
 PRODUCT_PACKAGES += \
     gps_bcm_4752_extlna
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.spid.gps.pmm=disabled \
+    ro.spid.gps.tty=ttyMFD1
 
 # bluetooth
 PRODUCT_PACKAGES += \
