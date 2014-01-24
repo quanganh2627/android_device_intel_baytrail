@@ -10,6 +10,12 @@ BOARD_HAS_CAPSULE := false
 # Set ISU as signing tool
 TARGET_OS_SIGNING_METHOD := isu
 
+# Android Security Framework
+# must be set before include PLATFORM/BoardConfig.mk
+INTEL_FEATURE_ASF := true
+# Supported ASF Version
+PLATFORM_ASF_VERSION := 1
+
 include $(PLATFORM_PATH)/BoardConfig.mk
 
 # IAFW component to build for this board
@@ -158,16 +164,6 @@ OVERRIDE_RS_DRIVER := libRSDriver_intel7.so
 # usb stick installer support
 BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE +=  droidboot.use_installer=1 droidboot.installer_usb=/dev/block/sda1 droidboot.installer_file=installer.cmd
 
-# Enable Android Security Framework
-INTEL_FEATURE_ASF := true
-
-# Supported ASF Version
-PLATFORM_ASF_VERSION := 1
-
-# Add the ASF library to the BOOTCLASSPATH
-ifeq ($(strip $(INTEL_FEATURE_ASF)),true)
-PRODUCT_BOOT_JARS := ${PRODUCT_BOOT_JARS}:com.intel.asf
-endif
 
 # Use shared object of ia_face
 USE_SHARED_IA_FACE := true
