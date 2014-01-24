@@ -23,13 +23,13 @@ ENABLE_GEN_GRAPHICS := true
 
 # RenderScript Properties
 # debug.rs.default-CPU-driver 1: force on CPU, 0 (default): use props as below:
-#   rs.gpu.renderscript 0: run rs on CPU, 1: run rs on GPGPU
-#   rs.gpu.filterscript 0: run fs on CPU, 1: run fs on GPGPU
-#   rs.gpu.rsIntrinsic  0: run intrinsic on CPU, 1: on GPGPU
-# These are the settings recommended by the RenderScript team:
-ADDITIONAL_BUILD_PROPERTIES += rs.gpu.renderscript=1 \
-                               rs.gpu.filterscript=1 \
-                               rs.gpu.rsIntrinsic=1
+# debug.rs.dev.scripts      cpu: run rs/fs on CPU,     gpu: run rs/fs on GPGPU
+# debug.rs.dev.intrinsics   cpu: run intrinsic on CPU  gpu: on GPGPU
+ifeq ($(TARGET_BUILD_VARIANT), $(filter $(TARGET_BUILD_VARIANT), eng userdebug))
+ADDITIONAL_BUILD_PROPERTIES += \
+    debug.rs.dev.scripts=gpu \
+    debug.rs.dev.intrinsics=gpu
+endif
 
 ifneq ($(TARGET_NO_RECOVERY),true)
 TARGET_RECOVERY_UI_LIB := libintel_recovery_ui
