@@ -1,13 +1,13 @@
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_USE_DROIDBOOT),true)
+ifeq ($(TARGET_USE_USERFASTBOOT),true)
 # Plug-in libary for Droidboot
 include $(CLEAR_VARS)
 LOCAL_MODULE := libdbadbd
 LOCAL_SRC_FILES := dbadbd.c
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := STATIC_LIBRARIES
-LOCAL_C_INCLUDES := bootable/droidboot
+LOCAL_C_INCLUDES := bootable/userfastboot
 LOCAL_CFLAGS := -Wall -Werror -Wno-unused-parameter
 ifneq ($(DROIDBOOT_NO_GUI),true)
 LOCAL_CFLAGS += -DUSE_GUI
@@ -19,7 +19,7 @@ LOCAL_MODULE := libdbupdate
 LOCAL_SRC_FILES := dbupdate.c
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := STATIC_LIBRARIES
-LOCAL_C_INCLUDES := bootable/droidboot
+LOCAL_C_INCLUDES := bootable/userfastboot
 LOCAL_CFLAGS := -Wall -Werror -Wno-unused-parameter
 ifneq ($(DROIDBOOT_NO_GUI),true)
 LOCAL_CFLAGS += -DUSE_GUI
@@ -37,4 +37,4 @@ $(DBUPDATE_BLOB): \
 			--output $@ \
 			$(DBUPDATE_FILES)
 
-endif # TARGET_USE_DROIDBOOT
+endif # TARGET_USE_USERFASTBOOT

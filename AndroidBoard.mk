@@ -30,7 +30,7 @@ $(TARGET_SYSTEM): droid
 $(TARGET_PRODUCT): images
 
 images: firmware bootimage $(TARGET_SYSTEM) recoveryimage
-ifeq ($(TARGET_USE_DROIDBOOT),true)
+ifeq ($(TARGET_USE_USERFASTBOOT),true)
 images: droidbootimage
 endif
 

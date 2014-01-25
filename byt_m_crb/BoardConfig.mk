@@ -20,12 +20,12 @@ PLATFORM_ASF_VERSION := 1
 include $(PLATFORM_PATH)/BoardConfig.mk
 
 # -- Droidboot Defines --
-TARGET_USE_DROIDBOOT := true
+TARGET_USE_USERFASTBOOT := true
 # Policy here is to not stage it in production builds
 ifneq ($(TARGET_BUILD_VARIANT),user)
-TARGET_STAGE_DROIDBOOT := true
+TARGET_STAGE_USERFASTBOOT := true
 else
-TARGET_STAGE_DROIDBOOT := false
+TARGET_STAGE_USERFASTBOOT := false
 endif
 TARGET_DROIDBOOT_LIBS := libdbadbd libdbupdate
 DROIDBOOT_HARDWARE_INITRC := $(DEVICE_PATH)/init.recovery.rc
@@ -146,9 +146,8 @@ endif
 
 # Allow creation of iago live USB/CD images
 TARGET_USE_IAGO := true
-TARGET_IAGO_PLUGINS := bootable/iago/plugins/gummiboot
 TARGET_IAGO_INI := $(DEVICE_PATH)/iago.ini
-ifneq ($(TARGET_STAGE_DROIDBOOT),true)
+ifneq ($(TARGET_STAGE_USERFASTBOOT),true)
 TARGET_IAGO_INI += $(DEVICE_PATH)/iago.nofastboot.ini
 endif
 TARGET_IAGO_DEFAULT_INI := $(DEVICE_PATH)/iago-default.ini
@@ -235,8 +234,8 @@ ifeq ($(TARGET_BUILD_VARIANT),user)
 TARGET_IAGO_INI += $(DEVICE_PATH)/iago-production.ini
 endif
 
-ifeq ($(TARGET_STAGE_DROIDBOOT),true)
-TARGET_IAGO_PLUGINS += bootable/iago/plugins/droidboot
+ifeq ($(TARGET_STAGE_USERFASTBOOT),true)
+TARGET_IAGO_PLUGINS += bootable/iago/plugins/userfastboot
 endif
 
 TARGET_NO_BOOTLOADER := false
