@@ -235,5 +235,16 @@ PRODUCT_PACKAGES += \
     libsepdrmjni \
     SepService
 
+# Prebuilt HAL packages - Graphics
+PRODUCT_PACKAGES += \
+    hwcomposer.$(TARGET_BOARD_PLATFORM) \
+    libdrm_intel \
+    ufo \
+    ufo_test
+
+# Prebuilt HAL packages - Vibrator
+PRODUCT_PACKAGES += \
+    vibrator.$(TARGET_BOARD_PLATFORM)
+
 # Adding for Netflix app to do dynamic resolution switching
 ADDITIONAL_BUILD_PROPERTIES += ro.streaming.video.drs=true

@@ -139,19 +139,11 @@ PRODUCT_PACKAGES += \
     audio_hal_configurable \
     libaudioresample \
     audio.a2dp.default \
-    vibrator.x86 \
     audio.usb.default
 
 # sensors
 PRODUCT_PACKAGES += \
     sensors.$(PRODUCT_DEVICE)
-
-# Graphics
-PRODUCT_PACKAGES += \
-    hwcomposer.$(PRODUCT_DEVICE) \
-    libdrm_intel \
-    ufo \
-    ufo_test
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608 \
@@ -452,7 +444,3 @@ PRODUCT_COPY_FILES += \
 #################################################"
 # Include platform - do not inherit so that variables can be set before inclusion
 include $(PLATFORM_PATH)/baytrail.mk
-### WORKAROUND
-# Override to be able to load libraries built for baylake.
-# This can probably be removed after fixing gralloc.baylake.so.
-TARGET_BOOTLOADER_BOARD_NAME := baylake

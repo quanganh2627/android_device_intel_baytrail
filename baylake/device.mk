@@ -110,19 +110,11 @@ PRODUCT_PACKAGES += \
     audio_hal_configurable \
     libaudioresample \
     audio.a2dp.default \
-    vibrator.x86 \
     audio.usb.default
 
 # sensors
 PRODUCT_PACKAGES += \
     sensors.$(PRODUCT_DEVICE)
-
-# Graphics
-PRODUCT_PACKAGES += \
-    hwcomposer.$(PRODUCT_DEVICE) \
-    libdrm_intel \
-    ufo \
-    ufo_test
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608 \
