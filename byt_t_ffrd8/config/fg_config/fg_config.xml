@@ -28,7 +28,7 @@
 <etc>0x0E0</etc>
 <rsense>0x01</rsense>
 <cfg>0x02210</cfg>
-<learn_cfg>0x260F</learn_cfg>
+<learn_cfg>0x2606</learn_cfg>
 <filter_cfg>0x087A4</filter_cfg>
 <relax_cfg>0x0506B</relax_cfg>
 <qrtbl00>0x05000</qrtbl00>
