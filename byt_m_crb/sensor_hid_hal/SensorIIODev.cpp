@@ -64,7 +64,7 @@ int SensorIIODev::discover()
 {
     int cnt;
     int status;
-    int ret;
+    int ret = -1;
 
     // Allow overriding sample_delay_min_ms via properties using
     // the IIO device name.  e.g.:
@@ -239,7 +239,7 @@ void SensorIIODev::ListFiles(const std::string& dir){
 // For example if the device is "iio:device1", this will return 1
 int SensorIIODev::FindDeviceNumberFromName(const std::string& name, const std::string&
     prefix){
-    int dev_number;
+    int dev_number = -1;
     std::vector < std::string > files = std::vector < std::string > ();
     std::string device_name;
 
