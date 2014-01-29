@@ -89,11 +89,9 @@ ALSA_CONF_PATH := external/alsa-lib/
 PRODUCT_COPY_FILES += \
     $(ALSA_CONF_PATH)/src/conf/alsa.conf:system/usr/share/alsa/alsa.conf
 
-ifndef DOLBY_DAP
-# specific management of audio_effects.conf
+# specific management of audio_pre_effects.conf
 PRODUCT_COPY_FILES += \
-    $(DEVICE_CONF_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf
-endif
+    $(DEVICE_CONF_PATH)/audio_pre_effects.conf:system/vendor/etc/audio_pre_effects.conf
 
 # CMS configuration files
 PRODUCT_COPY_FILES += \

@@ -391,7 +391,8 @@ PRODUCT_PACKAGES += \
     libreverbwrapper.so \
     libxmlparser.so \
     LvmDefaultControlParams.xml \
-    LvmSessionConfigurationMinus1.xml
+    LvmSessionConfigurationMinus1.xml \
+    audio_effects.conf
 
 #For Audio Offload support
 PRODUCT_PACKAGES += \
