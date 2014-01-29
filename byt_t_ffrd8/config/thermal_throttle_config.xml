@@ -8,6 +8,13 @@
     <CDeviceName>Display</CDeviceName>
     <CDeviceID>1</CDeviceID>
     <CDeviceClassPath>com.android.server.thermal.BrightnessControl</CDeviceClassPath>
+    <CDeviceThrottlePath>none</CDeviceThrottlePath>
+    <ThrottleValues>
+      <ThrottleNormal>100</ThrottleNormal>
+      <ThrottleWarning>40</ThrottleWarning>
+      <ThrottleAlert>40</ThrottleAlert>
+      <ThrottleCritical>40</ThrottleCritical>
+    </ThrottleValues>
   </ContributingDeviceInfo>
   <ContributingDeviceInfo>
     <CDeviceName>Battery</CDeviceName>
