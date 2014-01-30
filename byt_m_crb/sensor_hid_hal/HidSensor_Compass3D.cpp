@@ -52,7 +52,7 @@ CompassSensor::CompassSensor(): SensorIIODev("magn_3d", "in_magn_scale", "in_mag
     // CDD 4.2 requires 10Hz.  20Hz is the maximum for HSB.
     sample_delay_min_ms = 50;
 
-    ALOGE("<<ComassSensor 3D: constructor!");
+    ALOGV("<<ComassSensor 3D: constructor!");
 }
 
 int CompassSensor::processEvent(unsigned char *raw_data, size_t raw_data_len){
@@ -75,7 +75,7 @@ int CompassSensor::processEvent(unsigned char *raw_data, size_t raw_data_len){
     mPendingEvent.data[2] = mPendingEvent.magnetic.z = CONVERT_M_MG_VTF16E14_Z
         (GetChannelBytesUsedSize(CHANNEL_Z), GetExponentValue(), sample->compass_z);
 
-    ALOGE("COMPASS 3D Sample %fuT %fuT %fuT\n", mPendingEvent.magnetic.x,
+    ALOGV("COMPASS 3D Sample %fuT %fuT %fuT\n", mPendingEvent.magnetic.x,
         mPendingEvent.magnetic.y, mPendingEvent.magnetic.z);
     ALOGV("<<%s", __func__);
     return 0;

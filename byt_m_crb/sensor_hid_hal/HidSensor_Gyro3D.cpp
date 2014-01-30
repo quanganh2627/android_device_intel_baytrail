@@ -59,7 +59,7 @@ GyroSensor::GyroSensor(): SensorIIODev("gyro_3d", "in_anglvel_scale", "in_anglve
 int GyroSensor::processEvent(unsigned char *raw_data, size_t raw_data_len){
     struct gyro_3d_sample *sample;
 
-    ALOGE(">>%s", __func__);
+    ALOGV(">>%s", __func__);
     if (IsDeviceInitialized() == false){
         ALOGE("Device was not initialized \n");
         return  - 1;

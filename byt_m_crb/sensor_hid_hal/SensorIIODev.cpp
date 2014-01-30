@@ -39,7 +39,7 @@ SensorIIODev::SensorIIODev(const std::string& dev_name, const std::string& units
                raw_buffer(NULL),
                sample_delay_min_ms(0)
 {
-    ALOGE("%s", __func__);
+    ALOGV("%s", __func__);
 }
 
 SensorIIODev::SensorIIODev(const std::string& dev_name, const std::string& units,
@@ -57,7 +57,7 @@ SensorIIODev::SensorIIODev(const std::string& dev_name, const std::string& units
                raw_buffer(NULL)
 {
 
-    ALOGE("%s", __func__);
+    ALOGV("%s", __func__);
 }
 
 int SensorIIODev::discover()
@@ -75,7 +75,7 @@ int SensorIIODev::discover()
     if(*sampmin)
         sample_delay_min_ms = strtol(sampmin, NULL, 10);
 
-    ALOGE(">>%s discover", __func__);
+    ALOGD(">>%s discover", __func__);
     for (cnt = 0; cnt < retry_count; cnt++) {
         status = ParseIIODirectory(device_name);
         if (status >= 0){
@@ -83,7 +83,7 @@ int SensorIIODev::discover()
             initialized = true;
             filename << "/dev/iio:device" << device_number;
             mDevPath = filename.str();
-            ALOGE("mDevPath %s", mDevPath.c_str());
+            ALOGV("mDevPath %s", mDevPath.c_str());
             ret = 0;
             break;
         }
@@ -100,7 +100,7 @@ int SensorIIODev::discover()
 
 int SensorIIODev::AllocateRxBuffer()
 {
-    ALOGE(">>%s Allocate:%d", __func__, datum_size * buffer_len);
+    ALOGV(">>%s Allocate:%d", __func__, datum_size * buffer_len);
     raw_buffer = new unsigned char[datum_size * buffer_len];
     if (!raw_buffer) {
         ALOGE("AllocateRxBuffer: Failed\n");
@@ -111,7 +111,7 @@ int SensorIIODev::AllocateRxBuffer()
 
 int SensorIIODev::FreeRxBuffer()
 {
-    ALOGE(">>%s", __func__);
+    ALOGV(">>%s", __func__);
     delete []raw_buffer;
     raw_buffer = NULL;
     return 0;
@@ -121,7 +121,7 @@ int SensorIIODev::enable(int enabled)
 {
     int ret =0;
 
-    ALOGE(">>%s enabled:%d", __func__, enabled);
+    ALOGD(">>%s enabled:%d", __func__, enabled);
 
     if (mEnabled == enabled) {
         return 0;
@@ -174,7 +174,7 @@ int SensorIIODev::setDelay(int64_t delay_ns){
     int ms = nsToMs(delay_ns);
     int r;
 
-    ALOGE(">>%s %ld", __func__, delay_ns);
+    ALOGV(">>%s %ld", __func__, delay_ns);
     if (IsDeviceInitialized() == false){
         ALOGE("Device was not initialized \n");
         return  -EFAULT;
@@ -183,7 +183,7 @@ int SensorIIODev::setDelay(int64_t delay_ns){
         if ((r = SetSampleDelay(GetDeviceNumber(), ms)) < 0)
             return r;
     }
-    ALOGE("<<%s", __func__);
+    ALOGV("<<%s", __func__);
     return 0;
 }
 
@@ -231,7 +231,7 @@ void SensorIIODev::ListFiles(const std::string& dir){
     GetDir(dir, files);
 
     for (unsigned int i = 0; i < files.size(); i++){
-        ALOGE("File List.. %s\n", (char*)files[i].c_str());
+        ALOGV("File List.. %s\n", (char*)files[i].c_str());
     }
 }
 
@@ -272,7 +272,7 @@ int SensorIIODev::FindDeviceNumberFromName(const std::string& name, const std::s
         }
         std::getline(ifn, device_name);
         if (name.compare(device_name) == 0){
-            ALOGE("matched %s\n", device_name.c_str());
+            ALOGV("matched %s\n", device_name.c_str());
             ifn.close();
             return dev_number;
         }
@@ -289,7 +289,7 @@ int SensorIIODev::SetUpTrigger(int dev_num){
 
     trigger_name << device_name << "-dev" << dev_num;
     if (trigger_name.str().length()){
-        ALOGE("trigger_name %s\n", (char*)trigger_name.str().c_str());
+        ALOGV("trigger_name %s\n", (char*)trigger_name.str().c_str());
         trigger_num = FindDeviceNumberFromName(trigger_name.str(), "trigger");
         if (trigger_num < 0){
             ALOGE("Failed to find trigger\n");
@@ -308,7 +308,7 @@ int SensorIIODev::SetUpBufferLen(int len){
     std::stringstream filename;
     std::stringstream len_str;
 
-    ALOGE("%s: len:%d", __func__, len);
+    ALOGV("%s: len:%d", __func__, len);
 
     filename << buffer_dir_name.str() << "/" << "length";
 
@@ -328,7 +328,7 @@ int SensorIIODev::EnableBuffer(int status){
     std::stringstream filename;
     std::stringstream status_str;
 
-    ALOGE("%s: len:%d", __func__, status);
+    ALOGV("%s: len:%d", __func__, status);
 
     filename << buffer_dir_name.str() << "/" << "enable";
     PathOps path_ops;
@@ -352,7 +352,7 @@ int SensorIIODev::EnableChannels(){
     unsigned char signchar, bits_used, total_bits, shift, unused;
     SensorIIOChannel iio_channel;
 
-    ALOGE(">>%s", __func__);
+    ALOGV(">>%s", __func__);
     scan_el_dir.str(std::string());
     scan_el_dir << dev_device_name.str() << FORMAT_SCAN_ELEMENTS_DIR;
     GetDir(scan_el_dir.str(), files);
@@ -383,7 +383,7 @@ int SensorIIODev::BuildChannelList(){
     SensorIIOChannel iio_channel;
     std::string type_name;
 
-    ALOGE(">>%s", __func__);
+    ALOGV(">>%s", __func__);
     scan_el_dir.str(std::string());
     scan_el_dir << dev_device_name.str() << FORMAT_SCAN_ELEMENTS_DIR;
     GetDir(scan_el_dir.str(), files);
@@ -415,7 +415,7 @@ int SensorIIODev::BuildChannelList(){
 
             iio_channel.name = files[i].substr(0, files[i].length() - 3);
 
-            ALOGE("IIO channel name:%s\n", (char*)iio_channel.name.c_str());
+            ALOGV("IIO channel name:%s\n", (char*)iio_channel.name.c_str());
             file_type << scan_el_dir.str() << "/" << iio_channel.name <<
                 "_type";
 
@@ -456,7 +456,7 @@ int SensorIIODev::BuildChannelList(){
             info_array.push_back(iio_channel);
         }
     }
-    ALOGE("<<%s", __func__);
+    ALOGV("<<%s", __func__);
     return counter;
 }
 
@@ -466,7 +466,7 @@ int SensorIIODev::GetSizeFromChannels(){
         SensorIIOChannel channel = info_array[i];
         size += channel.bytes;
     }
-    ALOGE("%s:%d:%d", __func__, info_array.size(), size);
+    ALOGD("%s:%d:%d", __func__, info_array.size(), size);
     return size;
 }
 
@@ -484,7 +484,7 @@ int SensorIIODev::ParseIIODirectory(const std::string& name){
     int ret;
     int size;
 
-    ALOGE(">>%s", __func__);
+    ALOGV(">>%s", __func__);
 
     dev_device_name.str(std::string());
     buffer_dir_name.str(std::string());
@@ -532,8 +532,8 @@ int SensorIIODev::ParseIIODirectory(const std::string& name){
     }
 
     datum_size = GetSizeFromChannels();
-    ALOGE("Datum Size %d", datum_size);
-    ALOGE("<<%s", __func__);
+    ALOGV("Datum Size %d", datum_size);
+    ALOGV("<<%s", __func__);
     return 0;
 }
 
@@ -543,7 +543,7 @@ int SensorIIODev::SetDataReadyTrigger(int dev_num, bool status){
     std::stringstream trigger_name;
     int trigger_num;
 
-    ALOGE("%s: status:%d", __func__, status);
+    ALOGV("%s: status:%d", __func__, status);
 
     filename << dev_device_name.str() << "/trigger/current_trigger";
     trigger_name << device_name << "-dev" << dev_num;
@@ -567,7 +567,7 @@ int SensorIIODev::DeviceActivate(int dev_num, int state){
     std::stringstream filename;
     std::stringstream activate_str;
 
-    //ALOGE("%s: Device Activate:%d", __func__, rate);
+    ALOGV("%s: Device Activate:%d", __func__, state);
     return 0;
 }
 
@@ -576,7 +576,7 @@ int SensorIIODev::DeviceSetSensitivity(int dev_num, int value){
     std::stringstream filename;
     std::stringstream sensitivity_str;
 
-    ALOGE("%s: Sensitivity :%d", __func__, value);
+    ALOGV("%s: Sensitivity :%d", __func__, value);
 
     filename << IIO_DIR << "/" << "iio:device" << dev_num << "/" << channel_prefix_str << "hysteresis";
 
@@ -595,7 +595,7 @@ int SensorIIODev::SetSampleDelay(int dev_num, int period){
     std::stringstream filename;
     std::stringstream sample_rate_str;
 
-    //ALOGE("%s: sample_rate:%d", __func__, rate);
+    ALOGV("%s: sample_rate:%d", __func__, period);
 
     if (sample_delay_min_ms && period < sample_delay_min_ms)
         period = sample_delay_min_ms;
