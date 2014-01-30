@@ -1,17 +1,8 @@
-on post-fs
-    chmod 0666 /dev/iio:device0
-    chmod 0666 /dev/iio:device1
-    chmod 0666 /dev/iio:device2
-    chmod 0666 /dev/iio:device3
-    chmod 0666 /dev/iio:device4
-
 on device-added-/dev/iio:device0
     # Sensor permissions
     chown system system /dev/iio:device0
-    chmod 0666 /dev/iio:device0
     chown system system /sys/bus/iio/devices/iio:device0
     chown system system /sys/bus/iio/devices/trigger0
-    chmod 0444 /sys/bus/iio/devices/iio:device0/in_accel_hysteresis
     chown system system	/sys/bus/iio/devices/iio:device0/in_accel_hysteresis
     chown system system	/sys/bus/iio/devices/iio:device0/in_accel_sampling_frequency
     chown system system /sys/bus/iio/devices/iio:device0/in_accel_offset
@@ -25,7 +16,6 @@ on device-added-/dev/iio:device0
     chown system system /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_z_en
 
 on device-added-/dev/iio:device1
-    chmod 0666 /dev/iio:device1
     chown system system /dev/iio:device1
     chown system system /sys/bus/iio/devices/iio:device1
     chown system system /sys/bus/iio/devices/trigger1
@@ -43,7 +33,6 @@ on device-added-/dev/iio:device1
 
 
 on device-added-/dev/iio:device2
-    chmod 0666 /dev/iio:device2
     chown system system /dev/iio:device2
     chown system system /sys/bus/iio/devices/iio:device2
     chown system system /sys/bus/iio/devices/trigger2
@@ -60,32 +49,29 @@ on device-added-/dev/iio:device2
     chown system system /sys/bus/iio/devices/iio:device2/scan_elements/in_magn_z_en
 
 on device-added-/dev/iio:device3
-    chmod 0666 /dev/iio:device3
     chown system system /dev/iio:device3
     chown system system /sys/bus/iio/devices/iio:device3
     chown system system /sys/bus/iio/devices/trigger3
     chown system system /sys/bus/iio/devices/iio:device3/in_intensity_sampling_frequency
-    chmod 0444  /sys/bus/iio/devices/iio:device3/in_intensity_hysteresis
-    chown system system /sys/bus/iio/devices/iio:device3/in_intensisty_hysteresis
+    chown system system /sys/bus/iio/devices/iio:device3/in_intensity_hysteresis
     chown system system /sys/bus/iio/devices/iio:device3/in_intensity_offset
     chown system system /sys/bus/iio/devices/iio:device3/in_intensity_scale
-    chown system system /sys/bus/iio/devices/iio:device3/scan_elements/in_intensity_both_en
     chown system system /sys/bus/iio/devices/iio:device3/buffer
     chown system system /sys/bus/iio/devices/iio:device3/buffer/enable
     chown system system /sys/bus/iio/devices/iio:device3/buffer/length
+    chown system system /sys/bus/iio/devices/iio:device3/trigger/current_trigger
+    chown system system /sys/bus/iio/devices/iio:device3/scan_elements/in_intensity_both_en
 
 on device-added-/dev/iio:device4
-    chmod 0666 /dev/iio:device4
     chown system system /dev/iio:device4
     chown system system /sys/bus/iio/devices/iio:device4
     chown system system /sys/bus/iio/devices/trigger4
-    chown system system /sys/bus/iio/devices/iio:device4/sampling_frequency
-    chmod 0444  /sys/bus/iio/devices/iio:device4/hyst_raw
-    chown system system /sys/bus/iio/devices/iio:device4/hyst_raw
-    chown system system /sys/bus/iio/devices/iio:device4/in_pressure_raw
+    chown system system /sys/bus/iio/devices/iio:device4/in_pressure_hysteresis
+    chown system system /sys/bus/iio/devices/iio:device4/in_pressure_sampling_frequency
     chown system system /sys/bus/iio/devices/iio:device4/in_pressure_offset
     chown system system /sys/bus/iio/devices/iio:device4/in_pressure_scale
     chown system system /sys/bus/iio/devices/iio:device4/buffer
     chown system system /sys/bus/iio/devices/iio:device4/buffer/enable
     chown system system /sys/bus/iio/devices/iio:device4/buffer/length
     chown system system /sys/bus/iio/devices/iio:device4/trigger/current_trigger
+    chown system system /sys/bus/iio/devices/iio:device4/scan_elements/in_pressure_en

@@ -40,7 +40,7 @@ struct pressure_sample{
 
 const struct sensor_t PressureSensor::sSensorInfo_pressure = {
     "HID_SENSOR Barometer Sensor", "STMicroelectronics", 1, SENSORS_PRESSURE_HANDLE,
-        SENSOR_TYPE_PRESSURE, RANGE_PRESS, RESOLUTION_PRESS, POWERCONSUMP_PRESS, PRESS_MINDELAY,
+        SENSOR_TYPE_PRESSURE, RANGE_PRESS, RESOLUTION_PRESS, POWERCONSUMP_PRESS, PRESS_MINDELAY, 0, 0, {}
 };
 
 const long HID_USAGE_SENSOR_UNITS_PASCAL = 0xF1E1;

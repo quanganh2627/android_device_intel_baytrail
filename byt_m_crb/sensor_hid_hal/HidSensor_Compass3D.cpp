@@ -38,7 +38,7 @@ struct compass_3d_sample{
 
 const struct sensor_t CompassSensor::sSensorInfo_compass3D = {
     "HID_SENSOR Compass 3D", "Intel", 1, SENSORS_MAGNETIC_FIELD_HANDLE,
-        SENSOR_TYPE_MAGNETIC_FIELD, RANGE_M, RESOLUTION_M, 0.1f, 0
+    SENSOR_TYPE_MAGNETIC_FIELD, RANGE_M, RESOLUTION_M, 0.1f, 1000000, 0, 0, {}
 };
 const int retry_cnt = 10;
 
@@ -51,6 +51,7 @@ CompassSensor::CompassSensor(): SensorIIODev("magn_3d", "in_magn_scale", "in_mag
 
     // CDD 4.2 requires 10Hz.  20Hz is the maximum for HSB.
     sample_delay_min_ms = 50;
+
     ALOGE("<<ComassSensor 3D: constructor!");
 }
 

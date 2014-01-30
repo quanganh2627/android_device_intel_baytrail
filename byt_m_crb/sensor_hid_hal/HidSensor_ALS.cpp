@@ -33,7 +33,7 @@ struct als_sample{
 
 const struct sensor_t ALSSensor::sSensorInfo_als = {
     "HID_SENSOR ALS", "Intel", 1, SENSORS_LIGHT_HANDLE, SENSOR_TYPE_LIGHT,
-        50000.0f, 1.0f, 0.75f, 0
+    50000.0f, 1.0f, 0.75f, 0, 0, 0, {}
     ,
 };
 const int retry_cnt = 10;
