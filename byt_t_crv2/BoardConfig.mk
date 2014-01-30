@@ -85,6 +85,9 @@ BOARD_KERNEL_CMDLINE := console=logk0 earlyprintk=nologger loglevel=0 kmemleak=o
 endif
 endif
 
+# Revert-me : Force Cold reset
+BOARD_KERNEL_CMDLINE += reboot=pci,cold
+
 # Graphics
 USE_OPENGL_RENDERER := true
 BOARD_KERNEL_CMDLINE += vga=current i915.modeset=1 drm.vblankoffdelay=1 \
