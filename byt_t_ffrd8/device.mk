@@ -239,6 +239,8 @@ PRODUCT_PACKAGES += \
     nvm_server \
     miu-app
 
+PRODUCT_PACKAGES_DEBUG += \
+    mmgr-debug
 
 # MMGR CWS Client
 PRODUCT_PACKAGES += \
