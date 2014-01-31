@@ -26,6 +26,7 @@ service media /system/bin/mediaserver
 
 on property:sys.boot_completed=1
     # Defer loading modules that may require firmware till fs is ready
+    insmod /lib/modules/libmsrlisthelper.ko
     insmod /lib/modules/imx1x5.ko
     insmod /lib/modules/ov2722.ko
     insmod /lib/modules/lm3554.ko
