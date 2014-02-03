@@ -187,7 +187,7 @@
   </ConfigurableDomain>
   <ConfigurableDomain Name="Routing.Configure.Codec.Capture" SequenceAware="false">
     <Configurations>
-      <Configuration Name="RearMic">
+      <Configuration Name="FrontMic">
         <CompoundRule Type="All">
           <SelectionCriterionRule SelectionCriterion="RoutageState" MatchesWhen="Includes" Value="Configure"/>
           <SelectionCriterionRule SelectionCriterion="OpenedCaptureRoutes" MatchesWhen="Includes" Value="HwCodecMedia"/>
@@ -204,9 +204,9 @@
       <ConfigurableElement Path="/Audio/HDAUDIO/INPUT/DEVICE/1/SOURCE"/>
     </ConfigurableElements>
     <Settings>
-      <Configuration Name="RearMic">
+      <Configuration Name="FrontMic">
         <ConfigurableElement Path="/Audio/HDAUDIO/INPUT/DEVICE/1/SOURCE">
-          <EnumParameter Name="SOURCE">REAR_MIC</EnumParameter>
+          <EnumParameter Name="SOURCE">FRONT_MIC</EnumParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="Line">

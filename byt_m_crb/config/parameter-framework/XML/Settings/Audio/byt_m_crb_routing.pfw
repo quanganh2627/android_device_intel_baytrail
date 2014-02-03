@@ -86,12 +86,12 @@ supDomain: Routing.Configure
 	RoutageState Includes Configure
 
 	domain: Codec.Capture
-		conf: RearMic
+		conf: FrontMic
 
 			OpenedCaptureRoutes Includes HwCodecMedia
 			SelectedInputDevice Includes Main
 			
-			/Audio/HDAUDIO/INPUT/DEVICE/1/SOURCE = REAR_MIC
+			/Audio/HDAUDIO/INPUT/DEVICE/1/SOURCE = FRONT_MIC
 
 		conf: Line
 			/Audio/HDAUDIO/INPUT/DEVICE/1/SOURCE = LINE
