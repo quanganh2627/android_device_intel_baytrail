@@ -6,7 +6,7 @@ TARGET_USE_MOKMANAGER := true
 # config, if Iago not used you will need to add
 # androidboot.disk=pci0000:00/0000:00:13.0
 BOARD_KERNEL_CMDLINE += \
-		androidboot.sdcard=sdb
+		androidboot.sdcard=mmcblk0p1
 
 # Releasetools extensions for updating EFI System Partition and
 # userfastboot (if present). Product teams will need to copy this
