@@ -5,8 +5,6 @@ REF_PRODUCT_NAME ?= $(TARGET_PRODUCT)
 
 TARGET_USE_DROIDBOOT := true
 
-BOARD_HAS_CAPSULE := false
-
 # Set ISU as signing tool
 TARGET_OS_SIGNING_METHOD := isu
 
