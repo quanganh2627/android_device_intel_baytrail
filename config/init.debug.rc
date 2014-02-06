@@ -22,6 +22,7 @@ on early-boot
 
 on boot
     mount pstore none /pstore
+    mount efivarfs none /sys/firmware/efi/efivars
 
 on post-fs
     mkdir /data/tombstones 0755 system system
