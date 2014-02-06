@@ -1,0 +1,12 @@
+<!--
+	TODO: Change the camera facing from BACK to FRONT after the custom app is checked in.
+	      Only one camera is enabled now and it is dynamic.
+-->
+<camera>
+    <prop>
+        <vendorId value="04f2"/>
+        <productId value="b3c2"/>
+        <facing value="CAMERA_FACING_BACK" />
+        <orientation value="0" />
+    </prop>
+</camera>
