@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<sensor_driver_config>
+<sensor_driver_config flags="0" dbg_level="0" dbg_sensors="0">
   <sensor name="pressure">
     <basic_info>
       <i2c_bus_num>3</i2c_bus_num>
@@ -243,6 +243,19 @@
 	writereg_0x51_0_1 = 4;
 	writereg_0x52_0_1 = 23;
 
+	/*trim data*/
+	readreg_0x5d_0_1;
+	readreg_0x5e_0_1;
+	readreg_0x64_0_1;
+	readreg_0x65_0_1;
+	readreg_0x70_0_1;
+	readreg_0x71_0_1;
+	readreg_0x6a_0_2;
+	readreg_0x68_0_2;
+	readreg_0x6e_0_2;
+	readreg_0x62_0_2;
+	readreg_0x6c_0_2;
+
         /*enter suspend mode*/
         /*readreg_0x4b_0_1;
         writereg_0x4b_0_1 = regbuf_0x4b_1 & 0xf7; */
@@ -265,8 +278,8 @@
       <int_ack>
       </int_ack>
       <get_data_x><![CDATA[
-        /*do compensation on all layyer with triming values which can be get at initial*/
-        readreg_0x42_0x0_6;
+        /*do compensation with triming values which can be get at initial*/
+        readreg_0x42_0x0_8;
         return le16_to_cpu(regbuf_0x42_2) >> 3;
         ]]>
       </get_data_x>
@@ -275,7 +288,7 @@
         ]]>
       </get_data_y>
       <get_data_z><![CDATA[
-        return le16_to_cpu(regbuf_0x46_2) >> 3;
+        return le16_to_cpu(regbuf_0x46_2) >> 1;
         ]]>
       </get_data_z>
     </sensor_actions>

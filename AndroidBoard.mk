@@ -13,6 +13,11 @@ include device/intel/common/AndroidBoard.mk
 # Add LM driver
 -include $(TOP)/vendor/intel/tools/PRIVATE/debug_internal_tools/lmdk/AndroidLMDK.mk
 
+# Add ioaccess driver for PETS
+ifeq ($(TARGET_BUILD_VARIANT), eng)
+include linux/modules/ioaccess/AndroidIOA.mk
+endif
+
 # wifi
 ifeq ($(strip $(BOARD_HAVE_WIFI)),true)
 include $(DEVICE_CONF_PATH)/wifi/WifiRules.mk

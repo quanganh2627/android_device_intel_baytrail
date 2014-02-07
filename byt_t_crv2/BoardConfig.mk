@@ -21,11 +21,9 @@ BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 #Modem
 BOARD_HAVE_MODEM := false
 
-FLASHFILE_NO_OTA := true
-
 # Connectivity
 BOARD_HAVE_WIFI := true
-INTEL_WIDI := false
+INTEL_WIDI := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_CONF_PATH)
 TARGET_HAS_VPP := true
@@ -33,12 +31,11 @@ TARGET_VPP_USE_GEN := true
 COMMON_GLOBAL_CFLAGS += -DGFX_BUF_EXT
 # MultiDisplay service
 TARGET_HAS_MULTIPLE_DISPLAY := true
-USE_MDS_LEGACY := true
 
 USE_INTEL_IPP := true
 
 # WiDi
-INTEL_WIDI_BAYTRAIL := false
+INTEL_WIDI_BAYTRAIL := true
 
 # Power_HAL
 POWERHAL_BYT := true
@@ -82,13 +79,6 @@ BOARD_KERNEL_CMDLINE := console=logk0 earlyprintk=nologger loglevel=0 kmemleak=o
 endif
 endif
 
-ifeq ($(TARGET_PARTITIONING_SCHEME),"full-gpt")
-PARTITION_PANIC_ID := 8
-else
-PARTITION_PANIC_ID := 3
-endif
-BOARD_KERNEL_CMDLINE += emmc_ipanic.ipanic_part_number=$(PARTITION_PANIC_ID)
-
 # Graphics
 USE_OPENGL_RENDERER := true
 BOARD_KERNEL_CMDLINE += vga=current i915.modeset=1 drm.vblankoffdelay=1 \
@@ -128,7 +118,7 @@ BOARD_USE_LIBVA := true
 BOARD_USE_LIBMIX := true
 
 #Support background music playback for Widi Multitasking
-ENABLE_BACKGROUND_MUSIC := false
+ENABLE_BACKGROUND_MUSIC := true
 
 # Settings for the Media SDK library and plug-ins:
 # - USE_MEDIASDK: use Media SDK support or not

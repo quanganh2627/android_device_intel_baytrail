@@ -90,10 +90,12 @@ PRODUCT_PACKAGES += com.google.widevine.software.drm.xml \
     libWVStreamControlAPI_L1 \
     libwvdrm_L1
 
-ifeq ($(TARGET_BUILD_VARIANT),eng)
- PRODUCT_PACKAGES += \
-     WidevineSamplePlayer
-endif
+PRODUCT_PACKAGES_ENG += WidevineSamplePlayer
+
+# WV Modular
+PRODUCT_PACKAGES += libwvdrmengine
+
+PRODUCT_PACKAGES_ENG += ExoPlayerDemo
 
 # omx components
 PRODUCT_PACKAGES += \
@@ -137,7 +139,7 @@ PRODUCT_PACKAGES += \
     audio_hal_configurable \
     libaudioresample \
     audio.a2dp.default \
-    vibrator.$(PRODUCT_DEVICE) \
+    vibrator.x86 \
     audio.usb.default
 
 # sensors
@@ -237,7 +239,6 @@ PRODUCT_PACKAGES += \
 
 # camera firmware
 PRODUCT_PACKAGES += \
-        shisp_2400b0_cssv2.bin \
         shisp_2400b0_v21.bin
 
 # video encoder and camera

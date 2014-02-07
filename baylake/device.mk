@@ -110,7 +110,7 @@ PRODUCT_PACKAGES += \
     audio_hal_configurable \
     libaudioresample \
     audio.a2dp.default \
-    vibrator.$(PRODUCT_DEVICE) \
+    vibrator.x86 \
     audio.usb.default
 
 # sensors
@@ -176,6 +176,9 @@ endif
 # BCM4752 GPS
 PRODUCT_PACKAGES += \
     gps_bcm_4752_extlna
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.spid.gps.pmm=disabled \
+    ro.spid.gps.tty=ttyMFD1
 
 # bluetooth
 PRODUCT_PACKAGES += \
@@ -214,8 +217,7 @@ PRODUCT_PACKAGES += \
 
 # camera firmware
 PRODUCT_PACKAGES += \
-        shisp_2400b0_cssv2.bin \
-        shisp_2400b0_cssv2_isp_2_2.bin
+        shisp_2400b0_v21.bin
 
 # video encoder and camera
 PRODUCT_PACKAGES += \
@@ -333,10 +335,12 @@ PRODUCT_PACKAGES += com.google.widevine.software.drm.xml \
     libWVStreamControlAPI_L1 \
     libwvdrm_L1
 
-ifeq ($(TARGET_BUILD_VARIANT),eng)
- PRODUCT_PACKAGES += \
-     WidevineSamplePlayer
-endif
+PRODUCT_PACKAGES_ENG += WidevineSamplePlayer
+
+# WV Modular
+PRODUCT_PACKAGES += libwvdrmengine
+
+PRODUCT_PACKAGES_ENG += ExoPlayerDemo
 
 # Intel VPP/FRC
 PRODUCT_PACKAGES += \

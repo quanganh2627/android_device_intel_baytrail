@@ -47,7 +47,6 @@ TARGET_VPP_USE_GEN := true
 COMMON_GLOBAL_CFLAGS += -DGFX_BUF_EXT
 # MultiDisplay service
 TARGET_HAS_MULTIPLE_DISPLAY := true
-USE_MDS_LEGACY := true
 
 USE_INTEL_IPP := true
 
@@ -99,13 +98,6 @@ else
 BOARD_KERNEL_CMDLINE := console=logk0 earlyprintk=nologger loglevel=0 kmemleak=off androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) vmalloc=172M
 endif
 endif
-
-ifeq ($(TARGET_PARTITIONING_SCHEME),"full-gpt")
-PARTITION_PANIC_ID := 8
-else
-PARTITION_PANIC_ID := 3
-endif
-BOARD_KERNEL_CMDLINE += emmc_ipanic.ipanic_part_number=$(PARTITION_PANIC_ID)
 
 # Graphics
 USE_OPENGL_RENDERER := true

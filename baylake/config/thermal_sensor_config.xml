@@ -14,10 +14,10 @@
   <Zone>
         <ZoneID>0</ZoneID>
         <ZoneName>CPU</ZoneName>
+        <!--ZoneLogic is a mandatory tag and should be placed after ZoneID and ZoneName-->
+        <ZoneLogic>Raw</ZoneLogic>
         <!--If 1, supports UEvent, otherwise poll-->
         <SupportsUEvent>1</SupportsUEvent>
-        <!--1 AND logic, 0 OR Logic-->
-        <SensorLogic>0</SensorLogic>
         <!--Debounce Interval for this Zone. In milli degrees-->
         <DebounceInterval>2000</DebounceInterval>
         <PollDelay>
@@ -52,8 +52,8 @@
   <Zone>
         <ZoneID>1</ZoneID>
         <ZoneName>BackSkin</ZoneName>
+        <ZoneLogic>Raw</ZoneLogic>
         <SupportsUEvent>1</SupportsUEvent>
-        <SensorLogic>0</SensorLogic>
         <DebounceInterval>0</DebounceInterval>
         <PollDelay>
                <DelayTOff>30000</DelayTOff>
@@ -83,8 +83,8 @@
   <Zone>
        <ZoneID>2</ZoneID>
        <ZoneName>FrontSkin</ZoneName>
+       <ZoneLogic>Raw</ZoneLogic>
        <SupportsUEvent>1</SupportsUEvent>
-       <SensorLogic>0</SensorLogic>
        <DebounceInterval>0</DebounceInterval>
        <PollDelay>
               <DelayTOff>30000</DelayTOff>
@@ -114,8 +114,8 @@
   <Zone>
        <ZoneID>3</ZoneID>
        <ZoneName>Battery</ZoneName>
+       <ZoneLogic>Raw</ZoneLogic>
        <SupportsUEvent>0</SupportsUEvent>
-       <SensorLogic>0</SensorLogic>
        <DebounceInterval>2000</DebounceInterval>
        <PollDelay>
               <DelayTOff>30000</DelayTOff>
@@ -143,8 +143,8 @@
   <Zone>
     <ZoneID>4</ZoneID>
     <ZoneName>Modem</ZoneName>
+    <ZoneLogic>Modem</ZoneLogic>
     <SupportsUEvent>0</SupportsUEvent>
-    <SensorLogic>0</SensorLogic>
     <DebounceInterval>2000</DebounceInterval>
     <PollDelay>
       <DelayTOff>30000</DelayTOff>

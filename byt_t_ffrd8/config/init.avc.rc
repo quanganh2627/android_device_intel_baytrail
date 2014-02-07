@@ -15,6 +15,8 @@ on init
     setprop Audiocomms.BT.HFP.Supported "false"
     setprop Audiocomms.Vibrator.IsPresent "true"
     setprop camera.hal.control 24
+    #audio setup delay - FW Init and first render time in ms
+    setprop lpa.audiosetup.time 85
 
     # atomisp driver depends on these modules. So load these on init. atomisp
     # driver is loaded from "on charger" trigger as well from init.common.rc
@@ -25,7 +27,7 @@ on init
 service media /system/bin/mediaserver
     class main
     user media
-    group system audio camera media_rw sdcard_rw inet net_bt net_bt_admin net_bw_acct drmrpc net_raw security radio
+    group system audio camera media_rw sdcard_rw inet net_bt net_bt_admin net_bw_acct drmrpc net_raw security radio mediadrm
     ioprio rt 4
 
 on property:sys.boot_completed=1

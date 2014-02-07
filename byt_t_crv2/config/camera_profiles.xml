@@ -75,7 +75,7 @@
         <defaultPreviewFPSRange value="10500,30304"/> <!-- one value of the supportedPreviewFPSRange -->
         <supportedPreviewUpdateModes value="standard,continuous,during-capture,windowless"/>
         <defaultPreviewUpdateMode value="standard"/>
-        <hasFlash value="true"/>
+        <hasFlash value="false"/>
         <synchronizeExposure value="true"/>
     </Profiles>
 

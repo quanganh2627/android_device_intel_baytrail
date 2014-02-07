@@ -108,6 +108,9 @@ PRODUCT_COPY_FILES += \
 # Add component-testing applications
 PRODUCT_PACKAGES_ENG += mcd-test
 
+PRODUCT_PACKAGES_DEBUG += \
+    run_test_ipc.sh
+
 # thermal config files
 PRODUCT_COPY_FILES += \
          $(DEVICE_CONF_PATH)/thermal_sensor_config.xml:system/etc/thermal_sensor_config.xml \

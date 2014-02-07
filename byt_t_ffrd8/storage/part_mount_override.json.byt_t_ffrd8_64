@@ -8,27 +8,11 @@
 
 	"partitions":
 		{
-			"reserved": {
+			"ESP": {
 				"id": 1,
 				"label": null,
 				"lba_start": null,
-				"size": 130,
-				"type": "data",
-				"fs_type": "hidden",
-				"uuid": "FFFFFFFFFFF0",
-				"priority": 0,
-				"try": 0,
-				"length": 0,
-				"mount_point": null,
-				"mount_options": null,
-				"fs_mgr": null
-			},
-
-			"ESP": {
-				"id": 2,
-				"label": null,
-				"lba_start": null,
-				"size": 33,
+				"size": 64,
 				"type": "efi",
 				"fs_type": "vfat",
 				"uuid": "C12A7328-F81F-11D2-BA4B-00A0C93EC93B",
@@ -38,6 +22,22 @@
 				"mount_point": null,
 				"mount_options": null,
 				"fs_mgr": "wait"
+			},
+
+			"reserved": {
+				"id": 2,
+				"label": null,
+				"lba_start": null,
+				"size": 64,
+				"type": "data",
+				"fs_type": "hidden",
+				"uuid": "FFFFFFFFFFF0",
+				"priority": 0,
+				"try": 0,
+				"length": 0,
+				"mount_point": null,
+				"mount_options": null,
+				"fs_mgr": null
 			},
 
 			"boot": {
@@ -91,13 +91,29 @@
 			"reserved_1": {
 				"id": 6,
 				"label": null,
-				"lba_start": 458792,
-				"size": 32,
+				"lba_start": null,
+				"size": 16,
 				"type": "data",
 				"fs_type": "hidden",
-				"uuid": "0000000000FF",
+				"uuid": "FFFFFFFFFFF1",
 				"priority": 0,
-				"try": 0,
+				"try": 3,
+				"length": 0,
+				"mount_point": null,
+				"mount_options": null,
+				"fs_mgr": null
+			},
+
+			"test": {
+				"id": 7,
+				"label": null,
+				"lba_start": null,
+				"size": 64,
+				"type": "data",
+				"fs_type": "hidden",
+				"uuid": "000000000104",
+				"priority": 12,
+				"try": 3,
 				"length": 0,
 				"mount_point": null,
 				"mount_options": null,
@@ -106,42 +122,42 @@
 
 			"panic":
 			{
-				"id": 7
+				"id": 8
 			},
 
 			"factory":
 			{
-				"id": 8
+				"id": 9
 			},
 
 			"misc":
 			{
-				"id": 9
+				"id": 10
 			},
 
 			"config":
 			{
-				"id": 10
+				"id": 11
 			},
 
 			"cache":
 			{
-				"id": 11
+				"id": 12
 			},
 
 			"logs":
 			{
-				"id": 12
+				"id": 13
 			},
 
 			"system":
 			{
-				"id": 13
+				"id": 14
 			},
 
 			"data":
 			{
-				"id": 14
+				"id": 15
 			}
 		},
 

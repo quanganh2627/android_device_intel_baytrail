@@ -31,7 +31,6 @@ on post-fs
 on post-fs-data
     mkdir /logs/modemcrash 0775 system system
     mkdir /logs/stats 0775 system system
-    mkdir /logs/gps 0775 system system
     mkdir /logs/aplogs 0775 system log
 
     # Enable by default android java wakelock logging
@@ -63,7 +62,6 @@ on charger
     domainname localdomain
     mkdir /logs/modemcrash 0775 system system
     mkdir /logs/stats 0775 system system
-    mkdir /logs/gps 0775 system system
     mkdir /logs/aplogs 0775 system log
     setprop persist.service.apklogfs.enable 1
     setprop sys.usb.config iadb
