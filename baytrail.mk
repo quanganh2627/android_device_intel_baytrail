@@ -109,6 +109,10 @@ PRODUCT_PACKAGES += \
     fwupdatetool    \
     fwupdate_script.sh
 
+# rfid/pss service
+PRODUCT_PACKAGES += \
+    rfid_monzaxd
+
 # Identity Protection Technology (IPT)
 PRODUCT_PACKAGES += \
     libiha \
