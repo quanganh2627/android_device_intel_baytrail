@@ -32,7 +32,6 @@ $(call inherit-mixin, video-img, vxd392)
 $(call inherit-mixin, security, txei)
 $(call inherit-mixin, selinux, enforcing)
 $(call inherit-mixin, thermals, thermal-daemon)
-$(call inherit-mixin, apps-for-android, true)
 $(call inherit-mixin, touch, usb_hid)
 $(call inherit-mixin, miracast, intel_miracast)
 
