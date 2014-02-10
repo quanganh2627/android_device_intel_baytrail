@@ -62,6 +62,14 @@ on boot
     chown system system /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
     chown system system /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
     chown system system /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chown system system /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq
+    chown system system /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
+    chown system system /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chown system system /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+    chown system system /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
+    chown system system /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
     chown system system /sys/class/thermal/cooling_device0/cur_state
     chown system system /sys/class/thermal/cooling_device1/cur_state
     chown system system /sys/class/thermal/cooling_device2/cur_state
@@ -240,22 +248,22 @@ service fg_conf /system/bin/fg_conf -w
 
 on property:ro.debuggable=1
    # Permissions for OSMonitor app
-   chmod 0666 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-   chmod 0666 /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq
-   chmod 0666 /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
-   chmod 0666 /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq
-   chmod 0666 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-   chmod 0666 /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
-   chmod 0666 /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
-   chmod 0666 /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
-   chmod 0666 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-   chmod 0666 /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
-   chmod 0666 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
-   chmod 0666 /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq
-   chmod 0666 /sys/kernel/debug/pmu_dev_stats
-   chmod 0666 /sys/devices/system/cpu/cpu1/online
-   chmod 0666 /sys/devices/system/cpu/cpu3/online
-   chmod 0666 /sys/module/intel_soc_pmu/parameters/s0ix
+   chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+   chmod 0664 /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq
+   chmod 0664 /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
+   chmod 0664 /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq
+   chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+   chmod 0664 /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+   chmod 0664 /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
+   chmod 0664 /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
+   chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+   chmod 0664 /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
+   chmod 0664 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
+   chmod 0664 /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq
+   chmod 0664 /sys/kernel/debug/pmu_dev_stats
+   chmod 0664 /sys/devices/system/cpu/cpu1/online
+   chmod 0664 /sys/devices/system/cpu/cpu3/online
+   chmod 0664 /sys/module/intel_soc_pmu/parameters/s0ix
 
 on charger
     mount_all /fstab.charger.${ro.hardware}
