@@ -76,13 +76,19 @@ USE_INTEL_JPEG := false
 JPEGDEC_USES_GEN := true
 
 ifeq ($(BOARD_KERNEL_CMDLINE),)
+DEBUG_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger \
+                        ptrace.ptrace_can_access=1 nmi_watchdog=panic softlockup_panic=1
 ifeq ($(TARGET_BUILD_VARIANT),eng)
-BOARD_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger loglevel=8 drm.debug=0x0 kmemleak=off ptrace.ptrace_can_access=1 androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) nmi_watchdog=panic softlockup_panic=1 vmalloc=172M
-else ifeq ($(TARGET_BUILD_VARIANT),userdebug)
-BOARD_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger loglevel=4 kmemleak=off ptrace.ptrace_can_access=1 androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) nmi_watchdog=panic softlockup_panic=1 vmalloc=172M
+DEBUG_KERNEL_CMDLINE := $(DEBUG_KERNEL_CMDLINE) loglevel=8 drm.debug=0x0
 else
-BOARD_KERNEL_CMDLINE := console=logk0 earlyprintk=nologger loglevel=0 kmemleak=off  androidboot.bootmedia=$(BOARD_BOOTMEDIA) androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) vmalloc=172M
+ifeq ($(TARGET_BUILD_VARIANT),userdebug)
+DEBUG_KERNEL_CMDLINE := $(DEBUG_KERNEL_CMDLINE) loglevel=4
+else
+DEBUG_KERNEL_CMDLINE := loglevel=0
 endif
+endif
+BOARD_KERNEL_CMDLINE = $(DEBUG_KERNEL_CMDLINE) androidboot.bootmedia=$(BOARD_BOOTMEDIA) \
+                        androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) vmalloc=172M
 endif
 
 # Revert-me : Force Cold reset
@@ -176,4 +182,3 @@ USE_GENERAL_SENSOR_DRIVER := true
 
 # disable libsensorhub
 ENABLE_SENSOR_HUB := false
-
