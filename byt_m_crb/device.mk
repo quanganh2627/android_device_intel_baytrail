@@ -366,6 +366,14 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/vold.fstab:system/etc/vold.fstab \
     $(LOCAL_PATH)/fstab:root/fstab.$(PRODUCT_DEVICE)
 
+# Android Security Framework
+PRODUCT_PACKAGES += \
+        com.intel.asf \
+        com.intel.asf.xml \
+        securityfileservice \
+        securitydeviceservice \
+        SecurityManagerService
+
 # Camera applications: LaunchCamera
     PRODUCT_PACKAGES += \
     LaunchCamera

@@ -11,6 +11,12 @@ STORAGE_CFLAGS := -DSTORAGE_BASE_PATH=\"/dev/block/sda\" -DSTORAGE_PARTITION_FOR
 # serialno
 USE_BL_SERIALNO := true
 
+# Android Security Framework
+# must be set before include PLATFORM/BoardConfig.mk
+INTEL_FEATURE_ASF := true
+# Supported ASF Version
+PLATFORM_ASF_VERSION := 1
+
 include $(PLATFORM_PATH)/BoardConfig.mk
 
 # -- Droidboot Defines --
