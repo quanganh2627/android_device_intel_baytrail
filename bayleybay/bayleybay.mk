@@ -34,4 +34,4 @@ $(call inherit-mixin, selinux, enforcing)
 $(call inherit-mixin, thermals, thermal-daemon)
 $(call inherit-mixin, touch, usb_hid)
 $(call inherit-mixin, miracast, intel_miracast)
-$(call inherit-mixin, widevine, classic)
+

@@ -107,9 +107,7 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.google.h263.decoder" type="video/3gpp" />
 
          <MediaCodec name="OMX.Intel.VideoDecoder.AVC" type="video/avc" >
-            <Quirk name="requires-allocate-on-output-ports"/>
-            <Quirk name="requires-allocate-on-input-ports"/>
-            <Quirk name="requires-loaded-to-idle-after-allocation for secure" />
+            <Quirk name="requires-loaded-to-idle-after-allocation" />
             <Quirk name="requires-set-profile-level" />
             <Quirk name="requires-set-fps" />
             <Quirk name="requires-hold-extra-buffers" />
