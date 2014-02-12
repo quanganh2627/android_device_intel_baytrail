@@ -79,10 +79,17 @@ BOARD_KERNEL_CMDLINE := console=logk0 earlyprintk=nologger loglevel=0 kmemleak=o
 endif
 endif
 
+# Revert-me : Force Cold reset
+BOARD_KERNEL_CMDLINE += reboot=pci,cold
+
 # Graphics
 USE_OPENGL_RENDERER := true
 BOARD_KERNEL_CMDLINE += vga=current i915.modeset=1 drm.vblankoffdelay=1 \
                         acpi_backlight=vendor
+
+# System's VSYNC phase offsets in nanoseconds
+VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
+SF_VSYNC_EVENT_PHASE_OFFSET_NS := 5000000
 
 # Graphics - MIPI
 # List of panel ids supported:

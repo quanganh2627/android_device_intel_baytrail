@@ -104,6 +104,10 @@ USE_OPENGL_RENDERER := true
 BOARD_KERNEL_CMDLINE += vga=current i915.modeset=1 drm.vblankoffdelay=1 \
                         acpi_backlight=vendor i915.i915_rotation=1
 
+# System's VSYNC phase offsets in nanoseconds
+VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
+SF_VSYNC_EVENT_PHASE_OFFSET_NS := 5000000
+
 # Graphics - MIPI
 # List of panel ids supported:
 #

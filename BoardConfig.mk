@@ -68,9 +68,6 @@ SW_MPEG4_ENCODER := true
 
 cmdline_extra += oops=panic panic=40
 
-# Graphic:disable sync framework
-TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
-
 # Dalvik
 DEFAULT_JIT_CODE_GENERATOR := PCG
 
