@@ -231,7 +231,8 @@ PRODUCT_PACKAGES += \
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \
-    libkeymaster
+    libkeymaster \
+    keystore.$(TARGET_BOARD_PLATFORM)
 
 
 # Adding for Netflix app to do dynamic resolution switching
