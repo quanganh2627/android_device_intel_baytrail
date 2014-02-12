@@ -98,6 +98,9 @@ PRODUCT_PACKAGES += \
     crash_package
 endif
 
+#Opencl
+PRODUCT_PACKAGES += opencl_bundle
+
 # light
 PRODUCT_PACKAGES += \
     lights.$(PRODUCT_DEVICE)
