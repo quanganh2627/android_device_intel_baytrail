@@ -17,8 +17,6 @@ HAS_SPINOR := true
 TARGET_MAKE_NO_DEFAULT_RECOVERY := true
 TARGET_NO_RECOVERY := false
 
-BOARD_SKIP_NVM := false
-
 ENABLE_GEN_GRAPHICS := true
 
 # RenderScript Properties

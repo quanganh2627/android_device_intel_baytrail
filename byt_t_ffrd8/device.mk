@@ -215,21 +215,17 @@ ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
         $(DEVICE_CONF_PATH)/configure_trace_modem:system/bin/configure_trace_modem
 endif
 
-# Modem
-PRODUCT_PACKAGES += \
-    modem \
-    modem_nvm
-
 #Intrinsyc RRIL repository
 PRODUCT_COPY_FILES += \
         $(DEVICE_CONF_PATH)/rril/repository.txt:system/etc/rril/repository.txt
 
-# Modem Manager
+# Modem
 PRODUCT_PACKAGES += \
     mmgr \
     libmodemupdate \
     nvm_server \
-    miu-app
+    miu-app \
+    modem
 
 PRODUCT_PACKAGES_DEBUG += \
     mmgr-debug
