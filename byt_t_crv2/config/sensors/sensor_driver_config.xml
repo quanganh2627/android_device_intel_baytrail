@@ -829,7 +829,7 @@
 	writereg_0x3_0x0_2 = 1;
 	writereg_0x2_0x0_2 = 251;
 	writereg_0x1_0x0_2 = 250;
-	global_1 = global_1 | 0x823;
+	global_1 = global_1 | 0x1823;
 	writereg_0x0_0x0_2 = global_1;
         ]]>
       </init>
@@ -869,7 +869,7 @@
 	writereg_0x0_0x0_2 = global_1;
 
 	/*return als data in lux*/
-	return regbuf_0x4_2 * 42 / 1000;
+	return regbuf_0x4_2 * 336 / 1000;
         ]]>
       </get_data_x>
       <get_data_y>
