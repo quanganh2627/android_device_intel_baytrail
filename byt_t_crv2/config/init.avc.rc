@@ -13,7 +13,7 @@ on init
     setprop Audiocomms.Audience.IsPresent "false"
     setprop alsa.mixer.defaultGain 1.0
     setprop Audiocomms.BT.HFP.Supported "false"
-    setprop Audiocomms.Vibrator.IsPresent "true"
+    setprop Audiocomms.Vibrator.IsPresent "false"
     setprop camera.hal.control 24
 
     # atomisp driver depends on these modules. So load these on init. atomisp
@@ -37,10 +37,6 @@ on property:sys.boot_completed=1
     insmod /lib/modules/atomisp-css2400b0_v21.ko dypool_enable=y repool_pgnr=32768
 
 on post-fs
-    # Permissions for Vibrator
-    chown system system /sys/devices/platform/VIB8601:00/vibrator
-    chown system system /sys/devices/platform/VIB8601:00/pwm_ontime_div
-
     # Permissions for pmdown_time
     chown media system /sys/devices/platform/AMCR0F28:00/Baytrail\ Audio/pmdown_time
     chown media system /sys/devices/platform/AMCR0F28:00/Baytrail\ Voice/pmdown_time
