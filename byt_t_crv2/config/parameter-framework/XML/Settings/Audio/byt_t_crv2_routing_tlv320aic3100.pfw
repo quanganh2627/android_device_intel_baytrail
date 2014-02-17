@@ -144,26 +144,3 @@ supDomain: Routing.Configure
 
 			conf: Deactivated
 				/Audio/TI/MIXER/DAC/LEFT/DAC_L/SWITCH = 0
-
-		domain: Headset
-			conf: Activated
-				ANY
-					SelectedOutputDevice Includes Headset
-					SelectedOutputDevice Includes Headphones
-
-				/Audio/LPE_MIXER/SOUND_CARD/HS/INPUT_STREAM = 1
-
-
-			conf: Deactivated
-				/Audio/LPE_MIXER/SOUND_CARD/HS/INPUT_STREAM = 0
-
-		domain: IHF
-			conf: Activated
-				ALL
-					SelectedOutputDevice Includes IHF
-
-				/Audio/LPE_MIXER/SOUND_CARD/IHF/INPUT_STREAM = 1
-
-			conf: Deactivated
-				/Audio/LPE_MIXER/SOUND_CARD/IHF/INPUT_STREAM = 0
-
