@@ -168,6 +168,10 @@ on boot
     #set dirty background bytes to 24MB to reduce USB MTP write latencies
     write /proc/sys/vm/dirty_background_bytes 25165824
 
+    #adjust lowmemorykiller threshold for 1G RAM
+    write /sys/module/lowmemorykiller/parameters/minfree 4288,6360,8432,10004,16476,32720
+    chmod 0644 /sys/module/lowmemorykiller/parameters/minfree
+
 on post-fs-data
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
     mkdir /data/media 0770 media_rw media_rw
