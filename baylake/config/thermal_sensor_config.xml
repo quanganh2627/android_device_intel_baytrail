@@ -2,51 +2,130 @@
 <!--  Thermal Management Configuration File -->
 <!--  Intel Corporation 2011-2012  -->
 <thermalconfig>
-
-<!--Platform Parameters-->
+  <!-- Config xml file version should be in sync with iTUX version number-->
+  <ConfigFileVersion>2.5</ConfigFileVersion>
+  <!--Platform Parameters-->
   <PlatformInfo>
-    <PlatformThermalStates>5</PlatformThermalStates>
-    <!-- namely TM_OFF, NORMAL, WARNING, ALERT, and CRITICAL.-->
-    <!-- in the increasing order of thermal severity-->
+      <PlatformName>baylake</PlatformName>
+      <!--namely TM_OFF, NORMAL, WARNING, ALERT, and CRITICAL.-->
+      <!--in the increasing order of thermal severity-->
+      <PlatformThermalStates>5</PlatformThermalStates>
+      <!--standard sensor devices register as /sys/class/thermal/thermal_zoneX. Herein
+      referred as 'Path Enumerated at Runtime by Framework in Kernel Thermal' or PERFKT-->
   </PlatformInfo>
+
+  <Sensor>
+      <!-- name matching 'type' file in below sensor path -->
+      <SensorName>Core 0</SensorName>
+      <!--sysfs path for InputTemp & other files. "auto" implies look in PERFKT path-->
+      <SensorPath>/sys/devices/platform/coretemp.0/</SensorPath>
+      <!--InputTemp: sysfs Interface names to read Temperature in milli degree celsius
+      for PERFKT sensors this file is called 'temp'-->
+      <InputTemp>temp2_input</InputTemp>
+      <!--temp2_threshold2: sysfs Interface names to set lower threshold Temperature in
+      milli degree celsius for PERFKT sensors this file is called 'trip_point_1_temp'.
+      for PERFKT sensors set "auto"-->
+      <HighTemp>temp2_threshold2</HighTemp>
+      <!--temp2_threshold1: sysfs Interface names to set lower threshold Temperature in
+      milli degree celsius for PERFKT sensors this file is called 'trip_point_0_temp'.
+      for PERFKT sensors set "auto"-->
+      <LowTemp>temp2_threshold1</LowTemp>
+      <!--UEventDevPath for event observer to listen. "auto" for PERFKT sensors-->
+      <UEventDevPath>DEVPATH=/devices/platform/coretemp.0</UEventDevPath>
+  </Sensor>
+
+  <Sensor>
+      <SensorName>SYSTHERM0</SensorName>
+      <SensorPath>auto</SensorPath>
+      <InputTemp>temp</InputTemp>
+      <LowTemp>auto</LowTemp>
+      <HighTemp>auto</HighTemp>
+      <!--if High/Low Temp is auto by default trip_point_1_temp and  -->
+      <!-- trip_point_0_temp will be updated respectively-->
+      <UEventDevPath>auto</UEventDevPath>
+  </Sensor>
+
+  <Sensor>
+     <SensorName>SYSTHERM1</SensorName>
+     <SensorPath>auto</SensorPath>
+     <InputTemp>temp</InputTemp>
+     <LowTemp>auto</LowTemp>
+     <HighTemp>auto</HighTemp>
+     <UEventDevPath>auto</UEventDevPath>
+  </Sensor>
+
+  <Sensor>
+      <SensorName>byt_battery</SensorName>
+      <SensorPath>auto</SensorPath>
+      <InputTemp>temp</InputTemp>
+      <LowTemp>auto</LowTemp>
+      <HighTemp>auto</HighTemp>
+  </Sensor>
+
+  <Sensor>
+      <!--Modem Sensor IDs are enumerated from OemtelephonyConstants class
+      during runtime-->
+      <SensorName>Modem_PCB</SensorName>
+      <SensorPath>none</SensorPath>
+      <InputTemp>invalid</InputTemp>
+      <HighTemp>invalid</HighTemp>
+      <LowTemp>invalid</LowTemp>
+  </Sensor>
+
+  <Sensor>
+      <SensorName>Modem_RF</SensorName>
+      <SensorPath>none</SensorPath>
+      <InputTemp>invalid</InputTemp>
+      <HighTemp>invalid</HighTemp>
+      <LowTemp>invalid</LowTemp>
+  </Sensor>
+
+  <Sensor>
+      <SensorName>Modem_BB</SensorName>
+      <SensorPath>none</SensorPath>
+      <InputTemp>invalid</InputTemp>
+      <HighTemp>invalid</HighTemp>
+      <LowTemp>invalid</LowTemp>
+  </Sensor>
 
 <!--Thermal Zones-->
   <Zone>
         <ZoneID>0</ZoneID>
         <ZoneName>CPU</ZoneName>
-        <!--ZoneLogic is a mandatory tag and should be placed after ZoneID and ZoneName-->
+        <!--ZoneLogic: [ Raw | VirtualSkin | VirtualAmbient | Modem ]
+        mandatory tag to be followed after ZoneID and ZoneName -->
         <ZoneLogic>Raw</ZoneLogic>
-        <!--If 1, supports UEvent, otherwise poll-->
+        <!--SupportsUEvent: [0|1], 0 implies polled zone, 1 implies interrupt/UEvent
+        tag is ignored for Modem zone -->
         <SupportsUEvent>1</SupportsUEvent>
-        <!--Debounce Interval for this Zone. In milli degrees-->
+        <!-- polling loop delay in milli seconds for different thermal bands-->
         <DebounceInterval>2000</DebounceInterval>
         <PollDelay>
+            <!--DelayOff is dummy entry. Practically not used-->
             <DelayTOff>30000</DelayTOff>
             <DelayNormal>30000</DelayNormal>
             <DelayWarning>30000</DelayWarning>
             <DelayAlert>30000</DelayAlert>
+            <!--DelayCritical is a dummy entry when <CriticalShutDown> is enabled-->
             <DelayCritical>30000</DelayCritical>
         </PollDelay>
         <!--Temperature thresholds for various states in milli degree celsius-->
         <ZoneThreshold>
+            <!--TOff is the initial state when thermal service just starts -->
             <ZoneThresholdTOff>0</ZoneThresholdTOff>
+            <!--ThresholdNormal: upper limit threshold of NORMAL band. i.e enty to WARN-->
             <ZoneThresholdNormal>90000</ZoneThresholdNormal>
+            <!--ThresholdWarning: upper limit threshold of WARN band-->
             <ZoneThresholdWarning>90000</ZoneThresholdWarning>
+            <!--ThresholdAlert: upper limit threshold of ALERT band-->
             <ZoneThresholdAlert>90000</ZoneThresholdAlert>
+            <!--ThresholdCritical: upper limit threshold of CRITICAL band. Not used-->
             <ZoneThresholdCritical>95000</ZoneThresholdCritical>
         </ZoneThreshold>
-        <Sensor>
-            <SensorID>1</SensorID>
+        <!--Raw zone uses MAX of constituent sensor's raw values-->
+        <SensorAttrib>
             <SensorName>Core 0</SensorName>
-            <!--Sysfs path to read Temperature. "auto" means the path is standard
-                (/sys/class/thermal/thermal_zoneX/) and enumerated at run time-->
-            <SensorPath>/sys/devices/platform/coretemp.0/</SensorPath>
-            <!--Sysfs Interface names to read Temperature-->
-            <InputTemp>temp2_input</InputTemp>
-            <HighTemp>temp2_threshold2</HighTemp>
-            <LowTemp>temp2_threshold1</LowTemp>
-            <UEventDevPath>DEVPATH=/devices/platform/coretemp.0</UEventDevPath>
-        </Sensor>
+        </SensorAttrib>
   </Zone>
 
   <Zone>
@@ -69,15 +148,9 @@
                <ZoneThresholdAlert>65000</ZoneThresholdAlert>
                <ZoneThresholdCritical>78000</ZoneThresholdCritical>
         </ZoneThreshold>
-        <Sensor>
-               <SensorID>2</SensorID>
-               <SensorName>SYSTHERM0</SensorName>
-               <SensorPath>auto</SensorPath>
-               <InputTemp>temp</InputTemp>
-               <LowTemp>trip_point_0_temp</LowTemp>
-               <HighTemp>trip_point_1_temp</HighTemp>
-               <UEventDevPath>auto</UEventDevPath>
-        </Sensor>
+        <SensorAttrib>
+            <SensorName>SYSTHERM0</SensorName>
+        </SensorAttrib>
   </Zone>
 
   <Zone>
@@ -100,15 +173,9 @@
               <ZoneThresholdAlert>65000</ZoneThresholdAlert>
               <ZoneThresholdCritical>68000</ZoneThresholdCritical>
        </ZoneThreshold>
-       <Sensor>
-              <SensorID>3</SensorID>
-              <SensorName>SYSTHERM1</SensorName>
-              <SensorPath>auto</SensorPath>
-              <InputTemp>temp</InputTemp>
-              <LowTemp>trip_point_0_temp</LowTemp>
-              <HighTemp>trip_point_1_temp</HighTemp>
-              <UEventDevPath>auto</UEventDevPath>
-       </Sensor>
+       <SensorAttrib>
+           <SensorName>SYSTHERM1</SensorName>
+       </SensorAttrib>
   </Zone>
 
   <Zone>
@@ -131,15 +198,11 @@
               <ZoneThresholdAlert>60000</ZoneThresholdAlert>
               <ZoneThresholdCritical>68000</ZoneThresholdCritical>
        </ZoneThreshold>
-       <Sensor>
-              <SensorID>4</SensorID>
-              <SensorName>byt_battery</SensorName>
-              <SensorPath>auto</SensorPath>
-              <InputTemp>temp</InputTemp>
-              <LowTemp>trip_point_0_temp</LowTemp>
-              <HighTemp>trip_point_1_temp</HighTemp>
-       </Sensor>
+       <SensorAttrib>
+           <SensorName>byt_battery</SensorName>
+       </SensorAttrib>
   </Zone>
+
   <Zone>
     <ZoneID>4</ZoneID>
     <ZoneName>Modem</ZoneName>
@@ -160,31 +223,14 @@
       <ZoneThresholdAlert>90000</ZoneThresholdAlert>
       <ZoneThresholdCritical>90000</ZoneThresholdCritical>
     </ZoneThreshold>
-    <Sensor>
-      <!--Modem Sensor IDs are enumerated from OemtelephonyConstants class
-      during runtime-->
-      <SensorID>5</SensorID>
-      <SensorName>Modem_PCB</SensorName>
-      <SensorPath>none</SensorPath>
-      <InputTemp>invalid</InputTemp>
-      <HighTemp>invalid</HighTemp>
-      <LowTemp>invalid</LowTemp>
-    </Sensor>
-    <Sensor>
-      <SensorID>6</SensorID>
-      <SensorName>Modem_RF</SensorName>
-      <SensorPath>none</SensorPath>
-      <InputTemp>invalid</InputTemp>
-      <HighTemp>invalid</HighTemp>
-      <LowTemp>invalid</LowTemp>
-    </Sensor>
-    <Sensor>
-      <SensorID>7</SensorID>
-      <SensorName>Modem_BB</SensorName>
-      <SensorPath>none</SensorPath>
-      <InputTemp>invalid</InputTemp>
-      <HighTemp>invalid</HighTemp>
-      <LowTemp>invalid</LowTemp>
-    </Sensor>
+    <SensorAttrib>
+        <SensorName>Modem_PCB</SensorName>
+    </SensorAttrib>
+    <SensorAttrib>
+        <SensorName>Modem_BB</SensorName>
+    </SensorAttrib>
+    <SensorAttrib>
+        <SensorName>Modem_RF</SensorName>
+    </SensorAttrib>
   </Zone>
  </thermalconfig>

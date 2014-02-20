@@ -2,13 +2,28 @@
 <!--  Thermal Management Configuration File -->
 <!--  Intel Corporation 2011-2012  -->
 <thermalthrottleconfig>
+  <!-- Config xml file version should be in sync with iTUX version number-->
+  <ConfigFileVersion>2.5</ConfigFileVersion>
+
+  <!--Platform Parameters-->
+  <PlatformInfo>
+      <!--PlatformName reference. In future will be compared against ro.board.platform-->
+      <PlatformName>baytrail_crv</PlatformName>
+      <!--standard cooling devices register in /sys/class/thermal/cooling_deviceX/ Herein
+      referred as 'Path Enumerated at Runtime by Framework in Kernel Thermal' or PERFKT-->
+  </PlatformInfo>
 
   <!--Cooling Devices-->
   <ContributingDeviceInfo>
     <CDeviceName>Display</CDeviceName>
     <CDeviceID>1</CDeviceID>
+    <!--CDeviceClassPath: pluggable custom class path name or "auto" meaning no separate plugin required-->
     <CDeviceClassPath>com.android.server.thermal.BrightnessControl</CDeviceClassPath>
+    <!--CDevicethrottlePath: "auto" means lookin PERFTK path. "none" means implemented inside plugin -->
     <CDeviceThrottlePath>none</CDeviceThrottlePath>
+    <!--Throttle values are written to cooling device throttle path -->
+    <!--values can be a absolute target unit (eg cpu frequencies) or -->
+    <!--relative levels (e.g 0,1,2 for charge level or brightness limit percentage) -->
     <ThrottleValues>
       <ThrottleNormal>100</ThrottleNormal>
       <ThrottleWarning>40</ThrottleWarning>
@@ -16,24 +31,28 @@
       <ThrottleCritical>40</ThrottleCritical>
     </ThrottleValues>
   </ContributingDeviceInfo>
+
   <ContributingDeviceInfo>
     <CDeviceName>Battery</CDeviceName>
     <CDeviceID>2</CDeviceID>
     <CDeviceClassPath>com.android.server.thermal.BatteryChargeCurrentControl</CDeviceClassPath>
     <CDeviceThrottlePath>auto</CDeviceThrottlePath>
   </ContributingDeviceInfo>
+
   <ContributingDeviceInfo>
     <CDeviceName>SoC</CDeviceName>
     <CDeviceID>3</CDeviceID>
     <CDeviceClassPath>com.android.server.thermal.SoCControl</CDeviceClassPath>
     <CDeviceThrottlePath>auto</CDeviceThrottlePath>
   </ContributingDeviceInfo>
+
   <ContributingDeviceInfo>
       <CDeviceName>Modem</CDeviceName>
       <CDeviceID>4</CDeviceID>
       <CDeviceClassPath>com.android.server.thermal.ModemCooling</CDeviceClassPath>
       <CDeviceThrottlePath>none</CDeviceThrottlePath>
   </ContributingDeviceInfo>
+
   <ContributingDeviceInfo>
       <CDeviceName>ModemAirplane</CDeviceName>
       <CDeviceID>5</CDeviceID>

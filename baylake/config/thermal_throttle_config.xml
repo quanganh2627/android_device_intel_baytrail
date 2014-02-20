@@ -2,15 +2,26 @@
 <!--  Thermal Management Configuration File -->
 <!--  Intel Corporation 2011-2012  -->
 <thermalthrottleconfig>
+  <!-- Config xml file version should be in sync with iTUX version number-->
+  <ConfigFileVersion>2.5</ConfigFileVersion>
+
+  <!--Platform Parameters-->
+  <PlatformInfo>
+      <!--PlatformName reference. In future will be compared against ro.board.platform-->
+      <PlatformName>baylake</PlatformName>
+      <!--standard cooling devices register in /sys/class/thermal/cooling_deviceX/ Herein
+      referred as 'Path Enumerated at Runtime by Framework in Kernel Thermal' or PERFKT-->
+  </PlatformInfo>
 
   <!--Cooling Devices-->
   <ContributingDeviceInfo>
     <CDeviceName>CPU</CDeviceName>
     <CDeviceID>1</CDeviceID>
+    <!--CDeviceClassPath: pluggable custom class path name or "auto" meaning no separate plugin required-->
     <CDeviceClassPath>com.android.server.thermal.CPUMaxFreqControl</CDeviceClassPath>
-    <!--Throttle values are the set of values that a cooling device takes as input.-->
-    <!--The values can be for eg. frequencies for CPU cooling device,-->
-    <!--brightness cap for display cooling device, chargecurrent limit for batery etc.-->
+    <!--Throttle values are written to cooling device throttle path -->
+    <!--values can be a absolute target unit (eg cpu frequencies) or -->
+    <!--relative levels (e.g 0,1,2 for charge level or brightness limit percentage) -->
     <ThrottleValues>
       <ThrottleNormal>1464000</ThrottleNormal>
       <ThrottleWarning>1909000</ThrottleWarning>
@@ -18,23 +29,28 @@
       <ThrottleCritical>996000</ThrottleCritical>
     </ThrottleValues>
   </ContributingDeviceInfo>
+
   <ContributingDeviceInfo>
     <CDeviceName>Display</CDeviceName>
     <CDeviceID>2</CDeviceID>
     <CDeviceClassPath>com.android.server.thermal.BrightnessControl</CDeviceClassPath>
   </ContributingDeviceInfo>
+
   <ContributingDeviceInfo>
       <CDeviceName>Modem</CDeviceName>
       <CDeviceID>3</CDeviceID>
       <CDeviceClassPath>com.android.server.thermal.ModemCooling</CDeviceClassPath>
+      <!--CDevicethrottlePath: "auto" means lookin PERFTK path. "none" means implemented inside plugin -->
       <CDeviceThrottlePath>none</CDeviceThrottlePath>
   </ContributingDeviceInfo>
+
   <ContributingDeviceInfo>
     <CDeviceName>Battery</CDeviceName>
     <CDeviceID>4</CDeviceID>
     <CDeviceClassPath>com.android.server.thermal.BatteryChargeCurrentControl</CDeviceClassPath>
     <CDeviceThrottlePath>auto</CDeviceThrottlePath>
   </ContributingDeviceInfo>
+
   <ContributingDeviceInfo>
     <CDeviceName>ModemAirplane</CDeviceName>
     <CDeviceID>5</CDeviceID>
