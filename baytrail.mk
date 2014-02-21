@@ -246,5 +246,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vibrator.$(TARGET_BOARD_PLATFORM)
 
+# Keymaster HAL
+PRODUCT_PACKAGES += \
+    keystore.$(TARGET_BOARD_PLATFORM)
+
 # Adding for Netflix app to do dynamic resolution switching
 ADDITIONAL_BUILD_PROPERTIES += ro.streaming.video.drs=true
