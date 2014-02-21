@@ -235,7 +235,6 @@ PRODUCT_PACKAGES += \
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \
-    libkeymaster \
     keystore.$(TARGET_BOARD_PLATFORM)
 
 
