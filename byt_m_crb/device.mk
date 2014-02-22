@@ -83,6 +83,7 @@ PRODUCT_PACKAGES += com.google.widevine.software.drm.xml \
     libwvdrm_L1
 
 PRODUCT_PACKAGES_ENG += WidevineSamplePlayer
+PRODUCT_PACKAGES_ENG += WidiReceiver
 
 # WV Modular
 PRODUCT_PACKAGES += libwvdrmengine
