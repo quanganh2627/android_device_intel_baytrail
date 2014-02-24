@@ -45,7 +45,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.direct.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml
 
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
         wifi_bcm_4334x
 
 # Copy sar manager resources
@@ -58,7 +58,7 @@ PRODUCT_PACKAGES += \
        fg_conf fg_config.bin
 
 #remote submix audio
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
        audio.r_submix.default
 
 # bcu hal
@@ -66,31 +66,31 @@ PRODUCT_PACKAGES += \
     bcu.default
 
 # rapid ril
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     librapid-ril-core \
     librapid-ril-util
 
 # Cell Broadcast
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     CellBroadcastReceiver
 
 # parameter-framework files
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
         libimc-subsystem \
         parameter-framework.audio.byt_t_ffrd8 \
         parameter-framework.vibrator.byt_t_ffrd8
 
 # MAMGR (Modem Audio Manager)
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libmamgr-xmm
 
 # build the OMX wrapper codecs
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libstagefright_soft_mp3dec_mdp \
     libstagefright_soft_aacdec_mdp
 
 # NFC
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     nfc_pn544pc
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -99,7 +99,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.nfc.clk=xtal
 
 #SARManager
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     com.intel.internal.telephony.SARManager \
     com.intel.internal.telephony.SARManager.xml
 
@@ -118,7 +118,7 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/cms_device_config.xml:system/etc/cms_device_config.xml
 
 # Add component-testing applications
-PRODUCT_PACKAGES_ENG += mcd-test
+#PRODUCT_PACKAGES_ENG += mcd-test
 
 PRODUCT_PACKAGES_DEBUG += \
     run_test_ipc.sh

@@ -1,7 +1,7 @@
 
 include device/intel/common/BoardConfig.mk
 
-TARGET_ARCH_VARIANT := x86-slm
+TARGET_ARCH_VARIANT := silvermont
 
 ifeq ($(FORCE_FLASHFILE_NO_OTA),true)
   FLASHFILE_NO_OTA := true
@@ -15,8 +15,8 @@ BOARD_HAS_CAPSULE ?= true
 PRODUCT_LIBRARY_PATH := $(PRODUCT_LIBRARY_PATH):/system/lib/egl
 
 # Disable recovery for now
-TARGET_MAKE_NO_DEFAULT_RECOVERY := true
-TARGET_NO_RECOVERY := false
+#TARGET_MAKE_NO_DEFAULT_RECOVERY := true
+#TARGET_NO_RECOVERY := false
 
 ENABLE_GEN_GRAPHICS := true
 
@@ -33,7 +33,7 @@ endif
 ifneq ($(TARGET_NO_RECOVERY),true)
 TARGET_RECOVERY_UI_LIB := libintel_recovery_ui
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
-TARGET_RECOVERY_UPDATER_LIBS += libintel_updater
+#TARGET_RECOVERY_UPDATER_LIBS += libintel_updater
 endif
 
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
@@ -72,7 +72,7 @@ DEFAULT_JIT_CODE_GENERATOR := PCG
 BUILD_WITH_SECURITY_FRAMEWORK := txei
 
 # enable WebRTC
-ENABLE_WEBRTC := true
+ENABLE_WEBRTC := false
 
 INTEL_FEATURE_ARKHAM := false
 ifeq ($(INTEL_FEATURE_ARKHAM),true)
@@ -85,10 +85,10 @@ ro.intel.arkham.enabled=true \
 ro.intel.arkham.maxcontainers=1
 endif
 
-BOARD_SEPOLICY_DIRS :=\
+#BOARD_SEPOLICY_DIRS :=\
 	device/intel/baytrail/sepolicy
 
-BOARD_SEPOLICY_UNION :=\
+#BOARD_SEPOLICY_UNION :=\
 	file_contexts \
 	seapp_contexts \
 	file.te \

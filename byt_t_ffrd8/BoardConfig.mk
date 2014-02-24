@@ -3,13 +3,13 @@
 REF_DEVICE_NAME ?= $(TARGET_DEVICE)
 REF_PRODUCT_NAME ?= $(TARGET_PRODUCT)
 
-TARGET_USE_DROIDBOOT := true
+TARGET_USE_DROIDBOOT := false
 
 TARGET_OS_SIGNING_METHOD := isu_plat2
 
 # Android Security Framework
 # must be set before include PLATFORM/BoardConfig.mk
-INTEL_FEATURE_ASF := true
+INTEL_FEATURE_ASF := false
 # Supported ASF Version
 PLATFORM_ASF_VERSION := 2
 
@@ -22,10 +22,10 @@ BOARD_IAFW_COMPONENT := brd_baylake
 BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 
 #Modem
-BOARD_HAVE_MODEM := true
+BOARD_HAVE_MODEM := false
 
 BOARD_MODEM_LIST := 7160_flashless
-BOARD_HAVE_ATPROXY := true
+BOARD_HAVE_ATPROXY := false
 
 TARGET_PHONE_HAS_OEM_LIBRARY := true
 
@@ -44,14 +44,14 @@ endif
 # Connectivity
 BOARD_HAVE_WIFI := true
 DISABLE_WIFI_5GHZ := true
-INTEL_WIDI := true
+INTEL_WIDI := false
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_CONF_PATH)
 TARGET_HAS_VPP := true
-TARGET_VPP_USE_GEN := true
+TARGET_VPP_USE_GEN := false
 COMMON_GLOBAL_CFLAGS += -DGFX_BUF_EXT
 # MultiDisplay service
-TARGET_HAS_MULTIPLE_DISPLAY := true
+TARGET_HAS_MULTIPLE_DISPLAY := false
 
 USE_INTEL_IPP := true
 
@@ -65,11 +65,12 @@ INTEL_WIDI_BAYTRAIL := true
 POWERHAL_BYT := true
 
 # Audio
-BOARD_USES_ALSA_AUDIO := true
-BOARD_USES_TINY_ALSA_AUDIO := true
-BOARD_USES_AUDIO_HAL_CONFIGURABLE := true
+BOARD_USES_ALSA_AUDIO := false
+BOARD_USES_TINY_ALSA_AUDIO := false
+BOARD_USES_AUDIO_HAL_CONFIGURABLE := false 
 ifneq (,$(filter $(TARGET_BUILD_VARIANT),eng userdebug))
 # Enable ALSA utils for eng and user debug builds
+BOARD_USE_VIBRATOR := false
 BUILD_WITH_ALSA_UTILS := true
 endif
 BOARD_USES_GENERIC_AUDIO := false
@@ -86,11 +87,11 @@ NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 # Set USE_CAMERA_STUB to 'true' for Fake Camera builds,
 # 'false' for libcamera builds to use Camera Imaging(CI) supported by intel.
 USE_CAMERA_STUB := false
-USE_CAMERA_HAL2 := true
+USE_CAMERA_HAL2 := false
 
 USE_INTEL_METABUFFER := true
 
-USE_CSS_2_1 := true
+USE_CSS_2_1 := false
 
 # Enabled HW accelerated JPEG encoder using VA API
 USE_INTEL_JPEG := false
@@ -98,7 +99,6 @@ USE_INTEL_JPEGDEC := true
 # DS1 and NXP effects cannot co-exist
 # Enabled NXP Premium Audio Effect Libraries
 USE_INTEL_LVSE := false
-#USE_INTEL_LVSE := true
 
 ifeq ($(BOARD_KERNEL_CMDLINE),)
 DEBUG_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger \
@@ -112,7 +112,7 @@ DEBUG_KERNEL_CMDLINE := loglevel=0
 endif
 BOARD_KERNEL_CMDLINE = $(DEBUG_KERNEL_CMDLINE) androidboot.bootmedia=$(BOARD_BOOTMEDIA) \
                         androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) vmalloc=172M \
-                        debug_locks=0
+                        debug_locks=0 selinux=0
 endif
 
 # Graphics
@@ -168,7 +168,7 @@ ENABLE_BACKGROUND_MUSIC := true
 # - MFX_IPP: sets IPP library optimization to use
 USE_MEDIASDK := true
 # Enable CIP Codecs
-USE_INTEL_MDP := true
+USE_INTEL_MDP := false
 
 MFX_IPP := p8
 # enabled to use Intel audio SRC (sample rate conversion)

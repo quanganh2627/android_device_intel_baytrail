@@ -95,7 +95,7 @@ PRODUCT_PACKAGES_ENG += ExoPlayerDemo
 PRODUCT_PACKAGES += liboemcrypto
 
 # omx components
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libwrs_omxil_core_pvwrapped \
     libOMXVideoDecoderAVC \
     libOMXVideoDecoderAVCSecure \
@@ -108,7 +108,7 @@ PRODUCT_PACKAGES += \
     libOMXVideoEncoderAVC
 
 # libmix
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libmixvbp_mpeg4 \
     libmixvbp_h264 \
     libmixvbp_vc1 \
@@ -119,7 +119,7 @@ PRODUCT_PACKAGES += \
     libjpeg_hw
 
 # libva
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     vainfo \
     pvr_drv_video
 
@@ -131,11 +131,11 @@ PRODUCT_PACKAGES += \
     libsharedbuffer
 
 # video editor
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libI420colorconvert
 
 # hardware HAL
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     audio_hal_configurable \
     libaudioresample \
     audio.a2dp.default \
@@ -153,26 +153,26 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += ro.blankphone_id=1
 
 # Intel fake multiple display
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     com.intel.multidisplay \
     com.intel.multidisplay.xml
 
 #hdmi audio HAL
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
    audio.hdmi.$(PRODUCT_DEVICE)
 
 #usb dock audio
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     audio.hs_usb.$(PRODUCT_DEVICE)
 
 #widi audio HAL
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     audio.widi.$(PRODUCT_DEVICE)
 
 #widi
-PRODUCT_PACKAGES += widi
+#PRODUCT_PACKAGES += widi
 
-PRODUCT_PACKAGES_DEBUG += \
+#PRODUCT_PACKAGES_DEBUG += \
     WirelessDisplaySigmaCapiUI \
     com.intel.widi.sigmaapi \
     com.intel.widi.sigmaapi.xml \
@@ -182,7 +182,7 @@ PRODUCT_PACKAGES_DEBUG += \
     shsrv
 
 # AT Proxy
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     proxy
 
 # Restricted Access Region
@@ -190,21 +190,21 @@ PRODUCT_PACKAGES += \
     libmemrar
 
 #OemTelephony for OEM HOOK API
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     com.intel.internal.telephony.OemTelephony \
      com.intel.internal.telephony.OemTelephony.xml
 
 # SimToolkit app
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     Stk
 
 # Modem Trace Server (MTS)
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     mts
 
 # AMTL : Android Modem Traces and Logs
 ifneq (,$(filter $(TARGET_BUILD_VARIANT),eng userdebug))
-    PRODUCT_PACKAGES += \
+  #  PRODUCT_PACKAGES += \
         Amtl \
         libamtl_jni
 
@@ -214,22 +214,22 @@ ifneq (,$(filter $(TARGET_BUILD_VARIANT),eng userdebug))
 endif
 
 # Modem
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     mmgr \
     libmodemupdate \
     nvm_server \
     miu-app \
     modem
 
-PRODUCT_PACKAGES_DEBUG += \
+#PRODUCT_PACKAGES_DEBUG += \
     mmgr-debug
 
 # MMGR CWS Client
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     CWS_SERVICE_MANAGER
 
 # TelephonyEventsNotifier
-PRODUCT_PACKAGES_DEBUG += \
+#PRODUCT_PACKAGES_DEBUG += \
     TelephonyEventsNotifier
 
 # Set default network type to LTE/GSM/WCDMA (9)
@@ -282,17 +282,17 @@ PRODUCT_PACKAGES += \
     camera.$(PRODUCT_DEVICE)
 
 # IntelCamera Parameters extensions
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libintelcamera_jni \
     com.intel.camera.extensions \
     com.intel.camera.extensions.xml
 
 # camera sensor tuning parameter
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
         libSh3aParamsimx135
 
 # camera firmware
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
         hdr_v2_fw_css21_2400b0 \
         shisp_2400b0_v21.bin
 
@@ -311,16 +311,16 @@ PRODUCT_COPY_FILES += \
 
 
 # Camera app
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     IntelCamera \
     SocialGallery
 
 # WiDi app
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     WirelessDisplayUtil
 
 # Test Camera is for Test only
-PRODUCT_PACKAGES_ENG += \
+#PRODUCT_PACKAGES_ENG += \
     TestCamera
 
 # Filesystem management tools
@@ -373,7 +373,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
 
 #NXP audio effects
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libbundlewrapper.so \
     libreverbwrapper.so \
     libxmlparser.so \
@@ -382,25 +382,25 @@ PRODUCT_PACKAGES += \
     audio_effects.conf
 
 #For Audio Offload support
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     audio.codec_offload.$(PRODUCT_DEVICE)
 
 # Optional GMS applications
--include vendor/google/PRIVATE/gms/products/gms_optional.mk
+#-include vendor/google/PRIVATE/gms/products/gms_optional.mk
 
 
 # Intel Corp Email certificate
--include vendor/intel/PRIVATE/cert/IntelCorpEmailCert.mk
+#-include vendor/intel/PRIVATE/cert/IntelCorpEmailCert.mk
 
 # Enable ALAC
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libstagefright_soft_alacdec
 
 # Enable HOT SWAP
 PRODUCT_PROPERTY_OVERRIDES += persist.tel.hot_swap.support=true
 
 # Intel VPP/FRC
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     VppSettings
 
 #audio firmware
@@ -430,5 +430,5 @@ PRODUCT_COPY_FILES += \
 include $(PLATFORM_PATH)/baytrail.mk
 
 # Prebuilt HAL packages - Vibrator
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     vibrator.$(TARGET_BOARD_PLATFORM)

@@ -69,7 +69,7 @@ PRODUCT_PACKAGES += \
     charger_res_images
 
 # remote-process for parameter-framework tuning interface
-PRODUCT_PACKAGES_DEBUG += \
+#PRODUCT_PACKAGES_DEBUG += \
     libremote-processor \
     remote-process
 
@@ -77,11 +77,11 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES_ENG += FPT TXEManuf
 
 # Add HdmiSettings app
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     HdmiSettings
 
 # Ota and Ota Downloader
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     Ota \
     OtaDownloader
 
@@ -90,14 +90,14 @@ PRODUCT_PACKAGES_DEBUG += \
     crash_package
 
 #Opencl
-PRODUCT_PACKAGES += opencl_bundle
+#PRODUCT_PACKAGES += opencl_bundle
 
 # light
 PRODUCT_PACKAGES += \
     lights.$(PRODUCT_DEVICE)
 
 # sensorhub
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     sensorhubd      \
     libsensorhub    \
     psh_bk.bin      \
@@ -105,22 +105,22 @@ PRODUCT_PACKAGES += \
     fwupdate_script.sh
 
 # rfid/pss service
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     rfid_monzaxd
 
 # IPTrak
-PRODUCT_PACKAGES_DEBUG += \
+#PRODUCT_PACKAGES_DEBUG += \
     IPTrak
 
 # WebRTC reference app
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     videoP2P
 
-PRODUCT_PACKAGES_DEBUG += \
+#PRODUCT_PACKAGES_DEBUG += \
     WebRTCDemo
 
 # Identity Protection Technology (IPT)
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libiha \
     libsepipt \
     EPIDClientConfig.txt \
@@ -230,7 +230,7 @@ PRODUCT_PACKAGES += \
     PAVP_Group_VLV2EPIDPROD_Public_Keys.bin
 
 # Security service
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     com.intel.security.service.sepmanager \
     com.intel.security.service.sepmanager.xml \
     com.intel.security.lib.sepdrmjni \
