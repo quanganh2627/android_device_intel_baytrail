@@ -88,9 +88,6 @@ BOARD_KERNEL_CMDLINE = $(DEBUG_KERNEL_CMDLINE) androidboot.bootmedia=$(BOARD_BOO
                         androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) vmalloc=172M
 endif
 
-# Revert-me : Force Cold reset
-BOARD_KERNEL_CMDLINE += reboot=pci,cold
-
 # Limit slub order on CRv2 wiht 1G RAM
 BOARD_KERNEL_CMDLINE += slub_max_order=2
 
