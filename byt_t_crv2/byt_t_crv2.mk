@@ -38,11 +38,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.direct.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml
 
-# sensor config files
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/config/sensors/sensor_hal_config_default.xml:system/etc/sensor_hal_config_default.xml \
-    $(LOCAL_PATH)/config/sensors/sensor_hal_config_bytcr1.xml:system/etc/sensor_hal_config_bytcr1.xml
-
 # sensor driver config
 PRODUCT_PACKAGES += sensor_config.bin
 

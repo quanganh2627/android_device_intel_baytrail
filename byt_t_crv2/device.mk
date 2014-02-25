@@ -32,8 +32,7 @@ OVERRIDE_COPIES := \
 PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/wrs_omxil_components.list:system/etc/wrs_omxil_components.list \
     $(DEVICE_CONF_PATH)/mfx_omxil_core.conf:system/etc/mfx_omxil_core.conf \
-    $(DEVICE_CONF_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
-    $(DEVICE_CONF_PATH)/sensors/sensor_hal_config_default.xml:system/etc/sensor_hal_config_default.xml
+    $(DEVICE_CONF_PATH)/media_profiles.xml:system/etc/media_profiles.xml
 
 ifneq ($(DOLBY_UDC),true)
 PRODUCT_COPY_FILES += \
