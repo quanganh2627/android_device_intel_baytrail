@@ -70,7 +70,7 @@
         <stepSharpness value=""/>
         <defaultSharpness value=""/>
         <supportedSharpness value=""/>
-        <supportedPreviewFrameRate value="30,15,10"/>
+        <supportedPreviewFrameRate value="60,30,15,10"/>
         <supportedPreviewFPSRange value="(10500,30304),(11000,30304),(11500,30304)"/>
         <defaultPreviewFPSRange value="10500,30304"/> <!-- one value of the supportedPreviewFPSRange -->
         <supportedPreviewUpdateModes value="standard,continuous,during-capture,windowless"/>

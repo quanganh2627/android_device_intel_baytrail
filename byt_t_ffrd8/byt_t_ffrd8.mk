@@ -75,11 +75,6 @@ PRODUCT_PACKAGES += \
     libstagefright_soft_mp3dec_mdp \
     libstagefright_soft_aacdec_mdp
 
-# rfid/pss service
-PRODUCT_PACKAGES += \
-    libmonzax_service.so \
-    rfid_monzaxd
-
 # NFC
 PRODUCT_PACKAGES += \
     nfc_pn544pc

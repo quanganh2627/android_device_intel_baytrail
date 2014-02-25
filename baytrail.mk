@@ -109,6 +109,10 @@ PRODUCT_PACKAGES += \
     fwupdatetool    \
     fwupdate_script.sh
 
+# rfid/pss service
+PRODUCT_PACKAGES += \
+    rfid_monzaxd
+
 # Identity Protection Technology (IPT)
 PRODUCT_PACKAGES += \
     libiha \
@@ -227,6 +231,13 @@ PRODUCT_PACKAGES += \
     com.intel.security.lib.sepdrmjni.xml \
     libsepdrmjni \
     SepService
+
+
+# Keymaster HAL
+PRODUCT_PACKAGES += \
+    libkeymaster \
+    keystore.$(TARGET_BOARD_PLATFORM)
+
 
 # Adding for Netflix app to do dynamic resolution switching
 ADDITIONAL_BUILD_PROPERTIES += ro.streaming.video.drs=true
