@@ -27,13 +27,24 @@ PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.direct.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml
 
 ifeq ($(BOARD_HAS_WILKINS_PEAK_CHIP),true)
-PRODUCT_PACKAGES += \
-	wifi_intel_wkp
-else
-PRODUCT_PACKAGES += \
-        wifi_bcm_43241
-endif
 
+BOARD_HAVE_BLUETOOTH_IBT := true
+BLUETOOTH_HCI_USE_USB := true
+
+# include firmware for wilkins peak bluetooth
+$(call inherit-product-if-exists,vendor/intel/hardware/bluetooth/fw/btfw.mk)
+
+PRODUCT_PACKAGES += \
+        wifi_intel_wkp \
+        hciconfig
+else
+
+BOARD_HAVE_BLUETOOTH_BCM := true
+
+PRODUCT_PACKAGES += \
+        wifi_bcm_43241 \
+        bt_bcm43241
+endif
 
 #remote submix audio
 PRODUCT_PACKAGES += \
