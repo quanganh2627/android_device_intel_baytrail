@@ -2,9 +2,9 @@ ifeq (,$(filter $(PRODUCT_NAME), byt_m_crb_next byt_m_crb_64))
 PRODUCT_NAME := byt_m_crb
 endif
 
-# This flag need to be set to true for Wilkins peak WIFI card
-# otherwise it should be false for Broadcom.
-BOARD_HAS_WILKINS_PEAK_CHIP := false
+# This flag need to be set to true for Wilkins peak WIFI and Blueooth
+# card otherwise it should be false for Broadcom.
+BOARD_HAS_WILKINS_PEAK_CHIP := true
 
 # Include product path
 include $(LOCAL_PATH)/byt_m_crb_path.mk
