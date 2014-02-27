@@ -10,7 +10,8 @@ PRODUCT_COPY_FILES += \
     $(PLATFORM_CONF_PATH)/init.byt.usb.rc:root/init.platform.usb.rc \
     $(PLATFORM_CONF_PATH)/init.byt.gengfx.rc:root/init.platform.gengfx.rc \
     $(PLATFORM_CONF_PATH)/props.baytrail.rc:root/props.platform.rc \
-    $(PLATFORM_CONF_PATH)/atmel_mxt_ts.idc:system/usr/idc/atmel_mxt_ts.idc
+    $(PLATFORM_CONF_PATH)/atmel_mxt_ts.idc:system/usr/idc/atmel_mxt_ts.idc \
+    $(PLATFORM_CONF_PATH)/synaptics_dsx.idc:system/usr/idc/synaptics_dsx.idc
 
 ifeq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_COPY_FILES += \
