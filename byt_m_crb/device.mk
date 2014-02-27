@@ -382,7 +382,7 @@ PRODUCT_PACKAGES += \
 
 # intel-dptf executable
 PRODUCT_PACKAGES += \
-    esif_uf
+    esif_ufd
 
 PRODUCT_COPY_FILES += \
     $(foreach f, $(wildcard $(COMMON_PATH)/intel-dptf/Packages/DSP/*), $(f):system/bin/dsp/$(notdir $(f)))
