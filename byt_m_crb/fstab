@@ -4,10 +4,10 @@
 # The filesystem that contains the filesystem checker binary (typically /system) cannot
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
-/dev/block/mmcblk0p7         /system         ext4    ro                                         wait
-#/dev/block/mmcblk0p6         /install        ext4    ro                                         wait
-/dev/block/mmcblk0p8         /cache          ext4    noatime,nosuid,nodev,errors=panic          wait,check
-/dev/block/mmcblk0p10        /factory        ext4    ro                                         wait
-/dev/block/mmcblk0p9         /data           ext4    noatime,noauto_da_alloc,nosuid,nodev,errors=panic          wait,check,encryptable=footer
-*/block/mmcblk1              auto            vfat    defaults                                   voldmanaged=sdcard1:auto
-*/block/sd                   auto            vfat    defaults                                   voldmanaged=usbcard1:auto
+/dev/block/sda7         /system         ext4    ro                                         wait
+#/dev/block/sda6         /install        ext4    ro                                         wait
+/dev/block/sda8         /cache          ext4    noatime,nosuid,nodev,errors=panic          wait,check
+/dev/block/sda10        /factory        ext4    ro                                         wait
+/dev/block/sda9         /data           ext4    noatime,noauto_da_alloc,nosuid,nodev,errors=panic          wait,check,encryptable=footer
+*/block/mmcblk1		auto		vfat    defaults                                   voldmanaged=sdcard1:auto
+*/block/sd              auto            vfat    defaults                                   voldmanaged=usbcard1:auto
