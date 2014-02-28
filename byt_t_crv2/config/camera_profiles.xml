@@ -145,7 +145,7 @@
     <Common>
         <subDevName value="/dev/v4l-subdev7"/> <!-- it depends on the real hardware -->
         <fileInject value="true"/> <!-- true or false -->
-        <maxContinuousRawRingBuffer value="12"/>
+        <maxContinuousRawRingBuffer value="10"/>
         <productName value="ExampleModel"/> <!-- cfg the exif -->
         <manufacturerName value="ExampleMaker"/> <!-- cfg the exif -->
         <maxZoomFactor value="1024"/>

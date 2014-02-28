@@ -34,7 +34,7 @@ on property:sys.boot_completed=1
     insmod /lib/modules/imx1x5.ko
     insmod /lib/modules/ov2722.ko
     insmod /lib/modules/lm3554.ko
-    insmod /lib/modules/atomisp-css2400b0_v21.ko dypool_enable=y repool_pgnr=32768
+    insmod /lib/modules/atomisp-css2400b0_v21.ko dypool_enable=y repool_pgnr=18432 dypool_pgnr=18432
 
 on post-fs
     # Permissions for pmdown_time
