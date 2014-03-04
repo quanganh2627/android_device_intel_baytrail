@@ -27,7 +27,7 @@ on init
 service media /system/bin/mediaserver
     class main
     user media
-    group system audio camera media_rw sdcard_rw inet net_bt net_bt_admin net_bw_acct drmrpc net_raw security radio mediadrm
+    group system audio camera media_rw sdcard_rw inet net_bt net_bt_admin net_bw_acct drmrpc net_raw security radio mediadrm mei
     ioprio rt 4
 
 on property:sys.boot_completed=1
