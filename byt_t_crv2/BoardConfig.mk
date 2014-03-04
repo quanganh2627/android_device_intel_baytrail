@@ -89,6 +89,9 @@ endif
 # Revert-me : Force Cold reset
 BOARD_KERNEL_CMDLINE += reboot=pci,cold
 
+# Limit slub order on CRv2 wiht 1G RAM
+BOARD_KERNEL_CMDLINE += slub_max_order=2
+
 # Graphics
 USE_OPENGL_RENDERER := true
 BOARD_KERNEL_CMDLINE += vga=current i915.modeset=1 drm.vblankoffdelay=1 \
