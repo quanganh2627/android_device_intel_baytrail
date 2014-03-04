@@ -23,9 +23,9 @@
         <hasSlowMotion value="false"/> <!-- true or false -->
         <continuousCapture value="true"/> <!-- true or false -->
         <supportedSnapshotSizes value="320x240,640x480,1280x720,1600x1200"/>
-        <supportedPreviewSizes value="1600x1200,1280x960,1280x720,720x480,640x480,640x360,352x288,320x240,176x144"/>
+        <supportedPreviewSizes value="1280x960,1280x720,720x480,640x480,640x360,352x288,320x240,176x144"/>
         <supportedVideoSizes value="176x144,320x240,352x288,640x480,720x480,1280x720,1920x1080"/>
-        <videoPreviewSizePref value="1600x1200"/>
+        <videoPreviewSizePref value="1280x720"/>
         <flipping value="" value_v=""/> <!-- value: SENSOR_FLIP_H or "", value_v: SENSOR_FLIP_V or "" -->
         <previewViaOverlay value="false"/> <!-- true or false -->
         <supportedBurstLength value="1,3,5,10"/> <!-- if not support, please set it to "" -->
@@ -70,12 +70,13 @@
         <stepSharpness value=""/>
         <defaultSharpness value=""/>
         <supportedSharpness value=""/>
-        <supportedPreviewFrameRate value="60,30,15,10"/>
+        <supportedPreviewFrameRate value="30,15,10"/>
         <supportedPreviewFPSRange value="(10500,30304),(11000,30304),(11500,30304)"/>
         <defaultPreviewFPSRange value="10500,30304"/> <!-- one value of the supportedPreviewFPSRange -->
         <supportedPreviewUpdateModes value="standard,continuous,during-capture,windowless"/>
         <defaultPreviewUpdateMode value="standard"/>
         <hasFlash value="false"/>
+        <supportedRecordingFramerates value="30,15,10"/>
         <synchronizeExposure value="true"/>
     </Profiles>
 
@@ -140,6 +141,7 @@
         <supportedPreviewUpdateModes value="standard,continuous,during-capture,windowless"/>
         <defaultPreviewUpdateMode value="standard"/>
         <hasFlash value="false"/>
+        <supportedRecordingFramerates value="30,15,10"/>
     </Profiles>
 
     <Common>
