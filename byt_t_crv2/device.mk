@@ -310,10 +310,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
 
-ifeq ($(TARGET_BUILD_VARIANT),eng)
-COMMON_GLOBAL_CFLAGS += -DLIBXML_THREAD_ENABLED -DLIBXML_TREE_ENABLED
-endif
-
 #NXP audio effects
 PRODUCT_PACKAGES += \
     libbundlewrapper.so \
