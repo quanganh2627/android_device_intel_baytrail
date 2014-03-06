@@ -38,13 +38,6 @@ PRODUCT_COPY_FILES += \
 ifneq ($(DOLBY_UDC),true)
 PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/media_codecs.xml:system/etc/media_codecs.xml
-else
-PRODUCT_PACKAGES += \
-    media_codecs.xml
-endif
-ifeq ($(DOLBY_DAP),true)
-PRODUCT_PACKAGES += \
-    audio_effects.conf
 endif
 
 PRODUCT_COPY_FILES := $(OVERRIDE_COPIES) $(PRODUCT_COPY_FILES)

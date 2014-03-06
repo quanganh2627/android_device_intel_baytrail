@@ -91,6 +91,10 @@ USE_CSS_2_1 := true
 
 # Enabled HW accelerated JPEG encoder using VA API
 USE_INTEL_JPEG := false
+# DS1 and NXP effects cannot co-exist
+# Enabled NXP Premium Audio Effect Libraries
+USE_INTEL_LVSE := false
+#USE_INTEL_LVSE := true
 JPEGDEC_USES_GEN := true
 
 ifeq ($(BOARD_KERNEL_CMDLINE),)
@@ -161,15 +165,6 @@ ENABLE_BACKGROUND_MUSIC := true
 USE_MEDIASDK := true
 # Enable CIP Codecs
 USE_INTEL_MDP := true
-
-ifeq ($(DOLBY_DAP),true)
-# Disabled NXP Premium Audio Effect Libraries
-USE_INTEL_LVSE := false
-else
-# Enabled NXP Premium Audio Effect Libraries
-USE_INTEL_LVSE := false
-#USE_INTEL_LVSE := true
-endif
 
 MFX_IPP := p8
 # enabled to use Intel audio SRC (sample rate conversion)

@@ -113,23 +113,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
          $(DEVICE_CONF_PATH)/crashlog.conf:system/etc/crashlog.conf
 
-ifdef DOLBY_DAP
-    PRODUCT_PACKAGES += \
-        Ds \
-        dolby_ds \
-        dolby_ds.xml \
-        ds1-default.xml \
-        DsUI
-    ifdef DOLBY_DAP_OPENSLES
-        PRODUCT_PACKAGES += \
-            libdseffect
-    endif
-endif #DOLBY_DAP
-ifdef DOLBY_UDC
-    PRODUCT_PACKAGES += \
-        libstagefright_soft_ddpdec
-endif #DOLBY_UDC
-
 # Include base makefile
 include $(LOCAL_PATH)/device.mk
 
