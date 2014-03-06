@@ -46,6 +46,9 @@ on init
     # Insert hdmi audio driver
     insmod /lib/modules/hdmi_audio.ko
 
+    # Insert fps throttle driver
+    insmod /lib/modules/fps_throttle.ko
+
     setprop_from_sysfs /sys/firmware/pidv/iafw_version sys.ia32.version
     setprop_from_sysfs /sys/firmware/pidv/iafw_version sys.ifwi.version
     setprop_from_sysfs /sys/firmware/pidv/secfw_version sys.chaabi.version
@@ -100,6 +103,8 @@ on boot
     chown system system /sys/devices/platform/coretemp.0/temp4_threshold2
     chown system system /sys/devices/platform/coretemp.0/temp5_threshold1
     chown system system /sys/devices/platform/coretemp.0/temp5_threshold2
+    chown system system /sys/fps_throttle/notify
+    chown system system /sys/fps_throttle/handshake
 
     # GEN Graphics specific setup.
     chown system system /dev/card0
