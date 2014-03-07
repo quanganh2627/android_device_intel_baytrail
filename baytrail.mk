@@ -78,11 +78,6 @@ endif
 # Add FPT and TXEManuf
 PRODUCT_PACKAGES_ENG += FPT TXEManuf
 
-# Adobe AIR
-PRODUCT_PACKAGES += \
-    AdobeAIR \
-    libCore.so
-
 # Add HdmiSettings app
 PRODUCT_PACKAGES += \
     HdmiSettings
