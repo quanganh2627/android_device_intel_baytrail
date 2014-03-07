@@ -37,23 +37,23 @@
   </Sensor>
 
   <Sensor>
-      <SensorName>skin1</SensorName>
+      <SensorName>SYSTHERM0</SensorName>
       <SensorPath>auto</SensorPath>
       <InputTemp>temp</InputTemp>
       <LowTemp>auto</LowTemp>
       <HighTemp>auto</HighTemp>
       <UEventDevPath>auto</UEventDevPath>
-      <ErrorCorrection>800</ErrorCorrection>
+      <ErrorCorrection>1000</ErrorCorrection>
   </Sensor>
 
   <Sensor>
-      <SensorName>skin0</SensorName>
+      <SensorName>SYSTHERM2</SensorName>
       <SensorPath>auto</SensorPath>
       <InputTemp>temp</InputTemp>
       <LowTemp>auto</LowTemp>
       <HighTemp>auto</HighTemp>
       <UEventDevPath>auto</UEventDevPath>
-      <ErrorCorrection>800</ErrorCorrection>
+      <ErrorCorrection>1000</ErrorCorrection>
   </Sensor>
 
   <Sensor>
@@ -147,9 +147,8 @@
   <Zone>
         <ZoneID>1</ZoneID>
         <ZoneName>BackSkin</ZoneName>
-        <ZoneLogic>Raw</ZoneLogic>
+        <ZoneLogic>VirtualSkin</ZoneLogic>
         <SupportsUEvent>1</SupportsUEvent>
-        <DebounceInterval>1000</DebounceInterval>
         <PollDelay>
                <DelayTOff>30000</DelayTOff>
                <DelayNormal>30000</DelayNormal>
@@ -165,16 +164,17 @@
                 <ZoneThresholdCritical>78000</ZoneThresholdCritical>
         </ZoneThreshold>
         <SensorAttrib>
-            <SensorName>skin1</SensorName>
+            <SensorName>SYSTHERM0</SensorName>
+            <Weight>873</Weight>
         </SensorAttrib>
+        <Offset>-4139</Offset>
   </Zone>
 
   <Zone>
        <ZoneID>2</ZoneID>
        <ZoneName>FrontSkin</ZoneName>
-       <ZoneLogic>Raw</ZoneLogic>
+       <ZoneLogic>VirtualSkin</ZoneLogic>
        <SupportsUEvent>1</SupportsUEvent>
-       <DebounceInterval>1000</DebounceInterval>
        <PollDelay>
               <DelayTOff>30000</DelayTOff>
               <DelayNormal>30000</DelayNormal>
@@ -190,8 +190,10 @@
               <ZoneThresholdCritical>60000</ZoneThresholdCritical>
        </ZoneThreshold>
        <SensorAttrib>
-           <SensorName>skin0</SensorName>
+           <SensorName>SYSTHERM2</SensorName>
+           <Weight>553</Weight>
        </SensorAttrib>
+       <Offset>11848</Offset>
   </Zone>
 
   <Zone>
