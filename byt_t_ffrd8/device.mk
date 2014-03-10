@@ -134,6 +134,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libI420colorconvert
 
+#IFX-modem
+PRODUCT_PACKAGES += \
+    libmcdr
+
 # hardware HAL
 PRODUCT_PACKAGES += \
     audio_hal_configurable \
