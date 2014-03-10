@@ -101,8 +101,6 @@ on boot
 
     # DRM-WV: TBR
     chmod 0664 /sys/devices/pci0000:00/0000:00:02.0/resource0
-    chmod 0666 /dev/mei
-    chmod 0666 /dev/meimm
 
     # Run surfaceflinger in a standalone process to avoid deadlock against gfx apps.
     setprop system_init.startsurfaceflinger 0
@@ -288,6 +286,11 @@ service fg_conf /system/bin/fg_conf -w
     group system
     oneshot
     disabled
+
+service drm /system/bin/drmserver
+    class main
+    user drm
+    group drm system inet drmrpc sdcard_r security mei
 
 on property:ro.debuggable=1
    # Permissions for OSMonitor app
