@@ -79,6 +79,10 @@ PRODUCT_PACKAGES += \
     libgabi++-mfx \
     libstlport-mfx
 
+#IFX-modem
+PRODUCT_PACKAGES += \
+    libmcdr
+
 #enable Widevine drm
 PRODUCT_PROPERTY_OVERRIDES += drm.service.enabled=true
 
