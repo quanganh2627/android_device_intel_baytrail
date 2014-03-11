@@ -446,7 +446,7 @@
             </BitParameterBlock>
             <ParameterBlock Name="FIR_COEFFS">
               <FixedPointParameter Name="INPUT_GAIN" ValueSpace="Raw">4096</FixedPointParameter>
-              <FixedPointParameter Name="OUTPUT_GAIN" ValueSpace="Raw">16768</FixedPointParameter>
+              <FixedPointParameter Name="OUTPUT_GAIN" ValueSpace="Raw">5734</FixedPointParameter>
               <IntegerParameter Name="TAP_COUNT">64</IntegerParameter>
               <FixedPointParameter Name="TAPS" ValueSpace="Raw">9 -4 -19 -48 -56 -59 -23 21 92 138 199 229 259 228 201 95 -5 -124 -138 -186 -185 -254 -257 -869 -1220 -1126 -2509 -2565 3415 -798 831 20454 831 -798 3415 -2565 -2509 -1126 -1220 -869 -257 -254 -185 -186 -138 -124 -5 95 201 228 259 229 199 138 92 21 -23 -59 -56 -48 -19 -4 9 0</FixedPointParameter>
             </ParameterBlock>
@@ -625,7 +625,7 @@
             </BitParameterBlock>
             <ParameterBlock Name="FIR_COEFFS">
               <FixedPointParameter Name="INPUT_GAIN">1.000000</FixedPointParameter>
-              <FixedPointParameter Name="OUTPUT_GAIN">4.09375</FixedPointParameter>
+              <FixedPointParameter Name="OUTPUT_GAIN">1.40000</FixedPointParameter>
               <IntegerParameter Name="TAP_COUNT">64</IntegerParameter>
               <FixedPointParameter Name="TAPS">0.000275 -0.000122 -0.000580 -0.001465 -0.001709 -0.001801 -0.000702 0.000641 0.002808 0.004211 0.006073 0.006989 0.007904 0.006958 0.006134 0.002899 -0.000153 -0.003784 -0.004211 -0.005676 -0.005646 -0.007751 -0.007843 -0.026520 -0.037231 -0.034363 -0.076569 -0.078278 0.104218 -0.024353 0.025360 0.624207 0.025360 -0.024353 0.104218 -0.078278 -0.076569 -0.034363 -0.037231 -0.026520 -0.007843 -0.007751 -0.005646 -0.005676 -0.004211 -0.003784 -0.000153 0.002899 0.006134 0.006958 0.007904 0.006989 0.006073 0.004211 0.002808 0.000641 -0.000702 -0.001801 -0.001709 -0.001465 -0.000580 -0.000122 0.000275 0.000000</FixedPointParameter>
             </ParameterBlock>
