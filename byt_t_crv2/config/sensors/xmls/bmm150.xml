@@ -53,23 +53,28 @@
 	readreg_0x62_0_2;
 	readreg_0x6c_0_2;
 
-        /*enter suspend mode*/
-        /*readreg_0x4b_0_1;
-        writereg_0x4b_0_1 = regbuf_0x4b_1 & 0xf7; */
+	/*enter suspend mode by 0x4b[0]=0*/
+        readreg_0x4b_0_1;
+        writereg_0x4b_0_1 = regbuf_0x4b_1 & 0xf7;
         ]]>
       </init>
       <deinit>
       </deinit>
       <enable><![CDATA[
-        /*enter active mode */
+        /*enter sleep mode from suspend mode*/
+        readreg_0x4b_0_1;
+        writereg_0x4b_0_1 = regbuf_0x4b_1 | 0x1;
+        /*enter active mode*/
         readreg_0x4c_0_1;
 	writereg_0x4c_0_1 = regbuf_0x4c_1 & 0xf9;
         ]]>
       </enable>
       <disable><![CDATA[
-        /*enter sleep mode*/
+        /*enter sleep mode from active mode*/
 	writereg_0x4c_0_1 = (regbuf_0x4c_1 & 0xf9 ) | 0x6;
 	/*enter suspend mode by 0x4b[0]=0*/
+        readreg_0x4b_0_1;
+        writereg_0x4b_0_1 = regbuf_0x4b_1 & 0xf7;
         ]]>
       </disable>
       <int_ack>

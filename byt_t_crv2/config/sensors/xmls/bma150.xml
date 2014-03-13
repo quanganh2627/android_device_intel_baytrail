@@ -138,6 +138,14 @@
         /*enable orient int*/
         readreg_0x16_0_1;
         writereg_0x16_0_1 = regbuf_0x16_1 | 0x40;
+
+        /*set lowpower mode in LPM1*/
+        readreg_0x12_0_1;
+        writereg_0x12_0_1 = regbuf_0x12_1 & 0xbf;
+        sleep_1;
+        /*set suspend mode*/
+        readreg_0x11_0_1;
+        writereg_0x11_0_1 = (regbuf_0x11_1 & 0x1f) | 0x80;
 	]]>
       </init>
       <deinit>
@@ -159,7 +167,7 @@
         sleep_1;
         /*set suspend mode*/
         readreg_0x11_0_1;
-        writereg_0x11_0_1 = (regbuf_0x11_1 & 0x1f) | 0x4;
+        writereg_0x11_0_1 = (regbuf_0x11_1 & 0x1f) | 0x80;
         ]]>
       </disable>
       <int_ack><![CDATA[
