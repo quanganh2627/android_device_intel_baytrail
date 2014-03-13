@@ -361,7 +361,8 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/init.avc.rc:root/init.avc.rc \
     $(DEVICE_CONF_PATH)/init.diag.rc:root/init.diag.rc\
     $(DEVICE_CONF_PATH)/init.sensors.rc:root/init.sensors.rc \
-    $(LOCAL_PATH)/init.recovery.rc:root/init.recovery.$(PRODUCT_DEVICE).rc
+    $(LOCAL_PATH)/init.recovery.rc:root/init.recovery.$(PRODUCT_DEVICE).rc \
+    $(LOCAL_PATH)/init.utilitynet.sh:system/etc/init.utilitynet.sh
 #    $(DEVICE_CONF_PATH)/init.wireless.rc:root/init.wireless.rc \
 #    $(DEVICE_CONF_PATH)/init.modem.rc:root/init.modem.rc \
 

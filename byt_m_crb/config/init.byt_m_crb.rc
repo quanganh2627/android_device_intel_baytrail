@@ -51,6 +51,8 @@ on init
     setprop_from_sysfs /sys/firmware/pidv/iafw_version sys.ifwi.version
     setprop_from_sysfs /sys/firmware/pidv/secfw_version sys.chaabi.version
 
+    setprop service.adb.tcp.port 5555
+
 on boot
     #  Mount debugfs for systrace settings
     mount debugfs none /sys/kernel/debug mode=0755
@@ -237,6 +239,8 @@ on post-fs
     # Permissions for BCU Driver
     chown system system /sys/devices/platform/msic_ocd/msic_current/batt_level
 
+    setprop ro.intel.ethernet true
+
 # additional baytrail initialization
 service hdcpd /system/bin/hdcpd
     class main
@@ -266,10 +270,33 @@ service serialno /sbin/serialno /dev/block/sda ro.serialno
     oneshot
 
 # for eth0
-service net_eth0-start /system/bin/sh /init.net.eth0.sh
-    class core
+service dhcpcd_eth0 /system/bin/dhcpcd -d -BK -f /system/etc/dhcpcd/android.conf
+    class main
+    group root system net_admin net_raw
+    disabled
     oneshot
 
+service iprenew_eth0 /system/bin/dhcpcd -n
+    class main
+    disabled
+    oneshot
+
+service utilitynet-eth0 /system/bin/sh /system/etc/init.utilitynet.sh eth0
+    class core
+    disabled
+    oneshot
+
+on device-added-/dev/eth0
+    start utilitynet-eth0
+
+# Adb over Network
+on property:service.adb.tcp.port=5555
+    stop adbd
+    start adbd
+
+on property:service.adb.tcp.port=-1
+    stop adbd
+    start adbd
 
 service fg_conf /system/bin/fg_conf -w
     group system
