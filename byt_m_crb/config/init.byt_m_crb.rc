@@ -299,6 +299,40 @@ service net_eth0-start /system/bin/sh /system/etc/init.net.eth0.sh
     class core
     oneshot
 
+service dhcpcd_eth0 /system/bin/dhcpcd -d -BK -f /system/etc/dhcpcd/android.conf
+    class main
+    group root system net_admin net_raw
+    disabled
+    oneshot
+
+service iprenew_eth0 /system/bin/dhcpcd -n
+    class main
+    disabled
+    oneshot
+
+service utilitynet-eth0 /system/bin/sh /system/etc/init.utilitynet.sh eth0
+    class core
+    disabled
+    oneshot
+
+on device-added-/dev/eth0
+    start utilitynet-eth0
+
+on post-fs
+    setprop ro.intel.ethernet true
+
+# Adb over Network
+on post-fs
+    setprop service.adb.tcp.port 5555
+
+on property:service.adb.tcp.port=5555
+    stop adbd
+    start adbd
+
+on property:service.adb.tcp.port=-1
+    stop adbd
+    start adbd
+
 service fg_conf /system/bin/fg_conf -w
     group system
     oneshot
