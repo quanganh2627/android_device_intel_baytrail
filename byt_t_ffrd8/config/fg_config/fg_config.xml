@@ -35,7 +35,7 @@
 <qrtbl10>0x02480</qrtbl10>
 <qrtbl20>0x0F06</qrtbl20>
 <qrtbl30>0x0B06</qrtbl30>
-<full_soc_thr>0x05F00</full_soc_thr>
+<full_soc_thr>0x06200</full_soc_thr>
 <vempty>0x0AF5A</vempty>
 <cell_sample1>0x09F50</cell_sample1>
 <cell_sample2>0x0B710</cell_sample2>
