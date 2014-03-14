@@ -68,6 +68,10 @@ PRODUCT_PACKAGES += \
         libimc-subsystem \
         parameter-framework.audio.anzhen4_mrd7
 
+# MAMGR (Modem Audio Manager)
+PRODUCT_PACKAGES += \
+	libmamgr-xmm
+
 # build the OMX wrapper codecs
 PRODUCT_PACKAGES += \
     libstagefright_soft_mp3dec_mdp \
