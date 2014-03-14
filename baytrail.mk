@@ -34,7 +34,8 @@ else
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/watchdog/init.watchdog.sh:root/init.watchdog.sh
 PRODUCT_PACKAGES += \
-    ia32fw
+    ia32fw \
+    ia32fw_dfx
 endif
 
 # Firmware versioning
