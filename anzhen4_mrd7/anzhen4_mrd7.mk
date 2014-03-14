@@ -67,7 +67,8 @@ PRODUCT_PACKAGES += \
 # parameter-framework files
 PRODUCT_PACKAGES += \
         libimc-subsystem \
-        parameter-framework.audio.anzhen4_mrd7
+        parameter-framework.audio.anzhen4_mrd7 \
+	parameter-framework.vibrator.anzhen4_mrd7
 
 # MAMGR (Modem Audio Manager)
 PRODUCT_PACKAGES += \
