@@ -7,7 +7,7 @@ on init
     setprop alsa.mixer.headsetMic Mic1
     setprop alsa.mixer.defaultCard baytrailaudio
     setprop audiocomms.modemLib ""
-    setprop audiocomms.XMM.primaryChannel ""
+    setprop audiocomms.XMM.primaryChannel "/dev/ttyACM4"
     setprop audiocomms.XMM.secondaryChannel ""
     setprop audiocomms.XMM.isDualSimModem false
     setprop Audiocomms.Audience.IsPresent "false"

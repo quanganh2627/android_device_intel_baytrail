@@ -357,6 +357,26 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     VppSettings
 
+#H350's ril
+#ifeq ($(ENABLE_MODULE_H350),true)
+PRODUCT_PACKAGES += \
+	rild \
+	libril \
+	libght-ril \
+	ght-log \
+	ght-foat
+
+# Modem Manager
+PRODUCT_PACKAGES += \
+	mmgr
+
+# 	# AT Proxy
+PRODUCT_PACKAGES += \
+	proxy \
+	proxy-recovery \
+	ATProxy
+#endif
+
 #audio firmware
 AUDIO_FW_PATH := vendor/intel/fw/sst/
 PRODUCT_COPY_FILES += \
@@ -369,6 +389,11 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/init.$(PRODUCT_DEVICE).rc:root/init.$(PRODUCT_DEVICE).rc \
     $(DEVICE_CONF_PATH)/init.avc.rc:root/init.avc.rc \
     $(DEVICE_CONF_PATH)/init.diag.rc:root/init.diag.rc
+
+#ifeq ($(ENABLE_MODULE_H350),true)
+PRODUCT_COPY_FILES += \
+	$(DEVICE_CONF_PATH)/init.modem.ght.rc:root/init.modem.rc
+#endif
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/vold.fstab:system/etc/vold.fstab

@@ -24,6 +24,7 @@ BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 
 #Modem
 BOARD_HAVE_MODEM := false
+ENABLE_MODULE_H350 := true
 
 # Connectivity
 BOARD_HAVE_WIFI := true
@@ -182,3 +183,4 @@ USE_GENERAL_SENSOR_DRIVER := true
 
 # disable libsensorhub
 ENABLE_SENSOR_HUB := false
+BOARD_HAVE_ATPROXY := true
