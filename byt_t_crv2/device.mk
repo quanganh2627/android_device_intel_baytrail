@@ -230,6 +230,7 @@ PRODUCT_PACKAGES += \
 
 # camera firmware
 PRODUCT_PACKAGES += \
+        hdr_v2_fw_css21_2400b0 \
         shisp_2400b0_v21.bin
 
 # video encoder and camera
