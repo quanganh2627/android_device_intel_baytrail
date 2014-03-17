@@ -45,7 +45,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/sensors/sensor_hal_config_bytcr1.xml:system/etc/sensor_hal_config_bytcr1.xml
 
 # sensor driver config
-PRODUCT_PACKAGES += sensor_config.bin
+PRODUCT_PACKAGES += sensor_config.bin \
+		    libsensorcalibration
 
 PRODUCT_PACKAGES += \
         wifi_rtl_8723
