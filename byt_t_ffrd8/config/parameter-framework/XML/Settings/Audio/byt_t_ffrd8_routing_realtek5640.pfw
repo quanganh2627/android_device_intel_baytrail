@@ -7,21 +7,6 @@ supDomain: Routing.Mute
 	RoutageState Includes Flow
 
 	supDomain: HWCodec.Playback
-		domain: IHF
-			conf: Unmute
-				ALL
-					SelectedOutputDevice Includes IHF
-					ANY
-						OpenedPlaybackRoutes Includes HwCodecMedia
-						OpenedPlaybackRoutes Includes HwCodecCSV
-
-				/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME/0/MUTED = 0
-				/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME/1/MUTED = 0
-
-			conf: Mute
-				/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME/0/MUTED = 1
-				/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME/1/MUTED = 1
-
 		domain: Headset
 			conf: Unmute
 				ALL
