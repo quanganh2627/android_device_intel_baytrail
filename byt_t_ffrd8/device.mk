@@ -71,6 +71,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libstagefrighthw
 
+# IFX Modem
+PRODUCT_PACKAGES += \
+    libmcdr
+
 # Media SDK and OMX IL components
 PRODUCT_PACKAGES += \
     libmfxhw32 \
