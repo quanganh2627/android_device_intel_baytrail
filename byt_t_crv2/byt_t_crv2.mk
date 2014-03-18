@@ -31,6 +31,7 @@ PERMISSIONS_PATH := system/etc/permissions
 PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg \
     $(DEVICE_CONF_PATH)/maxtouch_1664S_8.fw:system/etc/firmware/maxtouch.fw
+KERNEL_DIFFCONFIG := $(LOCAL_PATH)/$(PRODUCT_NAME)_diffconfig
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
