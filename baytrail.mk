@@ -235,3 +235,5 @@ PRODUCT_PACKAGES += \
 
 # Adding for Netflix app to do dynamic resolution switching
 ADDITIONAL_BUILD_PROPERTIES += ro.streaming.video.drs=true
+# Disable the graceful shutdown in case of "longlong" press on power
+ADDITIONAL_BUILD_PROPERTIES += ro.disablelonglongpress=true
