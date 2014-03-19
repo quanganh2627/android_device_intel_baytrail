@@ -20,6 +20,11 @@
     <!-- Use terminal sensor to detect window orientation to optimize accelerometer performance -->
     <bool name="config_TerminalDetectWindowOrientation">true</bool>
 
+    <!-- Boolean indicating whether the wifi chipset supports the scan always mechanism.
+         This mechanism allows to maintain the wifi stack up and running even when for the
+         system Wi-Fi is off -->
+    <bool translatable="false" name="config_wifi_scanalways_support">false</bool>
+
     <bool name="config_proximityScreenOffAvailable">false</bool>
     <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->

@@ -53,6 +53,11 @@ Group RequestTimeouts
     GetDNS                             30000
     QuerySimSmsStoreStatus             30000
     SetInitialAttachApn               300000
+    EnterSimPin                        20000
+    EnterSimPin2                       20000
+    ChangeSimPin                       20000
+    ChangeSimPin2                      20000
+    SilentPinEntry                     20000
 
     //  Video Telephony API timeouts
     HangupVT                           40000
