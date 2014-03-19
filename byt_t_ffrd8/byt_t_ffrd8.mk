@@ -2,6 +2,8 @@ ifeq ($(PRODUCT_NAME),)
 PRODUCT_NAME := byt_t_ffrd8
 endif
 
+BLANK_FLASHFILES_CONFIG := $(DEVICE_CONF_PATH)/blankflashfiles.json
+
 # Copy common product apns-conf
 COMMON_PATH := device/intel/common
 PRODUCT_COPY_FILES += \
