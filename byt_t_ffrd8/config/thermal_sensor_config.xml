@@ -75,14 +75,6 @@
   <Sensor>
       <!--Modem Sensor IDs are enumerated from OemtelephonyConstants class
       during runtime-->
-      <SensorName>Modem_PCB</SensorName>
-      <SensorPath>none</SensorPath>
-      <InputTemp>invalid</InputTemp>
-      <HighTemp>invalid</HighTemp>
-      <LowTemp>invalid</LowTemp>
-  </Sensor>
-
-  <Sensor>
       <SensorName>Modem_BB</SensorName>
       <SensorPath>none</SensorPath>
       <InputTemp>invalid</InputTemp>
@@ -92,6 +84,22 @@
 
   <Sensor>
       <SensorName>Modem_RF</SensorName>
+      <SensorPath>none</SensorPath>
+      <InputTemp>invalid</InputTemp>
+      <HighTemp>invalid</HighTemp>
+      <LowTemp>invalid</LowTemp>
+  </Sensor>
+
+  <Sensor>
+      <SensorName>Modem_PMU</SensorName>
+      <SensorPath>none</SensorPath>
+      <InputTemp>invalid</InputTemp>
+      <HighTemp>invalid</HighTemp>
+      <LowTemp>invalid</LowTemp>
+  </Sensor>
+
+  <Sensor>
+      <SensorName>Modem_PA</SensorName>
       <SensorPath>none</SensorPath>
       <InputTemp>invalid</InputTemp>
       <HighTemp>invalid</HighTemp>
@@ -257,13 +265,16 @@
       <ZoneThresholdCritical>120000</ZoneThresholdCritical>
     </ZoneThreshold>
     <SensorAttrib>
-        <SensorName>Modem_PCB</SensorName>
-    </SensorAttrib>
-    <SensorAttrib>
         <SensorName>Modem_BB</SensorName>
     </SensorAttrib>
     <SensorAttrib>
         <SensorName>Modem_RF</SensorName>
+    </SensorAttrib>
+    <SensorAttrib>
+        <SensorName>Modem_PMU</SensorName>
+    </SensorAttrib>
+    <SensorAttrib>
+        <SensorName>Modem_PA</SensorName>
     </SensorAttrib>
   </Zone>
  </thermalconfig>
