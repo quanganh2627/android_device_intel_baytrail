@@ -1,11 +1,4 @@
 {
-	"globals": {
-			"gpt" : {
-				"lba_start_offset": 40
-			}
-
-	},
-
 	"partitions":
 		{
 			"reserved": {
