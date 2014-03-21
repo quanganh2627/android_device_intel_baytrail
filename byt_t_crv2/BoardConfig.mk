@@ -12,7 +12,7 @@ TARGET_OS_SIGNING_METHOD := isu
 # must be set before include PLATFORM/BoardConfig.mk
 INTEL_FEATURE_ASF := true
 # Supported ASF Version
-PLATFORM_ASF_VERSION := 2
+PLATFORM_ASF_VERSION := 1
 
 include $(PLATFORM_PATH)/BoardConfig.mk
 
