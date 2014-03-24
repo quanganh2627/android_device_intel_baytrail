@@ -9,7 +9,7 @@
 # PRODUCT_COPY_FILES := $(OVERRIDE_COPIES) $(PRODUCT_COPY_FILES)
 
 # Superclass
-$(call inherit-product, build/target/product/full_base_no_telephony.mk)
+$(call inherit-product, build/target/product/full_base_telephony.mk)
 # Include Dalvik Heap Size Configuration
 $(call inherit-product, $(COMMON_PATH)/dalvik/tablet-xhdpi-2048-dalvik-heap.mk)
 
