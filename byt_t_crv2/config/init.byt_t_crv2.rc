@@ -233,6 +233,7 @@ on post-fs
     chown system system /sys/bus/i2c/devices/5-0040/data_size
 
     #  General Sensor Driver module
+    insmod /lib/modules/sensor_general_plugin1_0.ko
     chown system system /sys/devices/generalsensor/start
     chown system system /sys/devices/generalsensor/dbglevel
     chown system system /sys/devices/generalsensor/dbgsensors

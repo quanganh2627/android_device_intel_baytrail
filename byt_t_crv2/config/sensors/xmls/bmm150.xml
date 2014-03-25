@@ -82,15 +82,124 @@
       <get_data_x><![CDATA[
         /*do compensation with triming values which can be get at initial*/
         readreg_0x42_0x0_8;
-        return le16_to_cpu(regbuf_0x42_2) >> 3;
+        local_1 = le16_to_cpu(regbuf_0x42_2) >> 3;
+	__extern_c__ {
+
+	/*Raw data process algos for bmc150 compass
+	* Output 16LSB/uT with temperature compensation
+	*/
+	#define DIG_X1	((s8)data->regbuf[0x5d])
+	#define DIG_Y1	((s8)data->regbuf[0x5e])
+	#define DIG_X2	((s8)data->regbuf[0x64])
+	#define DIG_Y2	((s8)data->regbuf[0x65])
+	#define DIG_XY1	((u8)data->regbuf[0x71])
+	#define DIG_XY2	((s8)data->regbuf[0x70])
+
+	#define DIG_Z1	((u16)((data->regbuf[0x6b] << 8) | data->regbuf[0x6a]))
+	#define DIG_Z2	((s16)((data->regbuf[0x69] << 8) | data->regbuf[0x68]))
+	#define DIG_Z3	((s16)((data->regbuf[0x6f] << 8) | data->regbuf[0x6e]))
+	#define DIG_Z4	((s16)((data->regbuf[0x63] << 8) | data->regbuf[0x62]))
+
+	#define DIG_XYZ1 ((u16)(((data->regbuf[0x6d] & 0x7f) << 8) | data->regbuf[0x6c]))
+	#define DATA_R ((u16)((data->regbuf[0x49] << 6) | ((data->regbuf[0x48] & 0xfc) >> 2)))
+
+	short mdata_x = (short)local_1;
+	unsigned short data_R = DATA_R;
+	short inter_retval;
+
+	SENSOR_DBG(DBG_LEVEL4, data->dbg_on, "%s 0x%x",
+			data->config->input_name, data_R);
+
+	if (mdata_x == -4096)
+		local_1 = (int)(-2147483647-1);
+	else {
+		inter_retval = ((short)(((unsigned short)
+				((((int)DIG_XYZ1) << 14) /
+				(data_R != 0 ? data_R : DIG_XYZ1))) -
+				((unsigned short)0x4000)));
+
+		inter_retval = ((short)((((int)mdata_x) *
+				((((((((int)DIG_XY2) *
+				((((int)inter_retval) *
+				((int)inter_retval)) >> 7)) +
+				(((int)inter_retval) *
+				((int)(((short)DIG_XY1)
+				<< 7)))) >> 9) +
+				((int)0x100000)) *
+				((int)(((short)DIG_X2) +
+				((short)0xA0)))) >> 12)) >> 13)) +
+				(((short)DIG_X1) << 3);
+
+		local_1 = inter_retval;
+	}
+	return 0;
+	}
+	return local_1;
         ]]>
       </get_data_x>
       <get_data_y><![CDATA[
-        return le16_to_cpu(regbuf_0x44_2) >> 3;
+        local_1 = le16_to_cpu(regbuf_0x44_2) >> 3;
+	__extern_c__ {
+	short mdata_y = (short)local_1;
+	unsigned short data_R = DATA_R;
+	short inter_retval;
+
+	SENSOR_DBG(DBG_LEVEL4, data->dbg_on, "%s 0x%x",
+			data->config->input_name, data_R);
+
+	if (mdata_y == -4096)
+		local_1 = (int)(-2147483647-1);
+	else {
+		inter_retval = ((short)(((unsigned short)(((
+				(int)DIG_XYZ1) << 14) /
+				(data_R != 0 ?
+				data_R : DIG_XYZ1))) -
+				((unsigned short)0x4000)));
+
+		inter_retval = ((short)((((int)mdata_y) *
+				((((((((int)
+				DIG_XY2) *
+				((((int) inter_retval) *
+				((int)inter_retval)) >> 7)) +
+				(((int)inter_retval) *
+				((int)(((short)
+				DIG_XY1) << 7)))) >> 9) +
+				((int)0x100000)) *
+				((int)(((short)DIG_Y2)
+				+ ((short)0xA0))))
+				>> 12)) >> 13)) +
+				(((short)DIG_Y1) << 3);
+
+		local_1 = inter_retval;
+	}
+	return 0;
+	}
+	return local_1;
         ]]>
       </get_data_y>
       <get_data_z><![CDATA[
-        return le16_to_cpu(regbuf_0x46_2) >> 1;
+        local_1 = le16_to_cpu(regbuf_0x46_2) >> 1;
+	__extern_c__ {
+	short mdata_z = (short)local_1;
+	unsigned short data_R = DATA_R;
+
+	SENSOR_DBG(DBG_LEVEL4, data->dbg_on, "%s 0x%x",
+			data->config->input_name, data_R);
+
+	if (mdata_z != -16384) {
+		local_1 = (((((int)(mdata_z - DIG_Z4)) << 15) -
+			((((int)DIG_Z3) *
+			((int)(((short)data_R) -
+			((short)DIG_XYZ1))))>>2)) /
+			(DIG_Z2+
+			((short)(((((int)DIG_Z1) *
+			((((short)data_R) << 1)))+(1<<15))>>16))));
+	} else
+		local_1 = ((int)(-2147483647-1));
+
+	return 0;
+	}
+	return local_1;
         ]]>
       </get_data_z>
     </sensor_actions>
