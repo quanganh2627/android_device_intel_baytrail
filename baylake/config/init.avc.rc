@@ -9,7 +9,6 @@ on init
     setprop Audiocomms.Audience.IsPresent "false"
     setprop alsa.mixer.defaultGain 1.0
     setprop Audiocomms.BT.HFP.Supported "false"
-    setprop Audiocomms.Vibrator.IsPresent "false"
     setprop camera.hal.control 24
 
     # atomisp driver depends on these modules. So load these on init. atomisp

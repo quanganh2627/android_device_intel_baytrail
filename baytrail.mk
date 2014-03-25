@@ -241,10 +241,6 @@ PRODUCT_PACKAGES += \
     ufo \
     ufo_test
 
-# Prebuilt HAL packages - Vibrator
-PRODUCT_PACKAGES += \
-    vibrator.$(TARGET_BOARD_PLATFORM)
-
 # Keymaster HAL
 PRODUCT_PACKAGES += \
     keystore.$(TARGET_BOARD_PLATFORM)

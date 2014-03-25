@@ -438,3 +438,7 @@ PRODUCT_COPY_FILES += \
 #################################################"
 # Include platform - do not inherit so that variables can be set before inclusion
 include $(PLATFORM_PATH)/baytrail.mk
+
+# Prebuilt HAL packages - Vibrator
+PRODUCT_PACKAGES += \
+    vibrator.$(TARGET_BOARD_PLATFORM)

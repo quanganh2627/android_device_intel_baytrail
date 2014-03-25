@@ -13,7 +13,6 @@ on init
     setprop Audiocomms.Audience.IsPresent "false"
     setprop alsa.mixer.defaultGain 1.0
     setprop Audiocomms.BT.HFP.Supported "false"
-    setprop Audiocomms.Vibrator.IsPresent "true"
     setprop camera.hal.control 24
     #audio setup delay - FW Init and first render time in ms
     setprop lpa.audiosetup.time 85
