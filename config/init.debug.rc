@@ -125,11 +125,11 @@ service crashdump /system/bin/crashlogd -ramdump
     oneshot
 
 service ap_logfs /system/bin/logcat -b system -b events -b main -b radio -n 20 -r5000 -v threadtime -f /logs/aplog
-    class main
+    class core
     disabled
 
 service apk_logfs /system/bin/logcat -b system -b events -b main -b radio -b kernel -n 20 -r5000 -v threadtime -f /logs/aplog
-    class main
+    class core
     disabled
 
 service apk_logsd /system/bin/logcat -b system -b events -b main -b radio -b kernel -n 20 -r5000 -v threadtime -f /sdcard/aplog
