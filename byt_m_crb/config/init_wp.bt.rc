@@ -35,3 +35,8 @@ service pbap /system/bin/sdptool add --channel=19 PBAP
     group bluetooth net_bt_admin
     disabled
     oneshot
+
+service dhcpcd_bt-pan /system/bin/dhcpcd -d -ABKL -f /system/etc/dhcpcd/android-bt.conf
+    class main
+    disabled
+    oneshot
