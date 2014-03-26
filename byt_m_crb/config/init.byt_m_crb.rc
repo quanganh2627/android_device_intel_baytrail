@@ -335,3 +335,6 @@ on charger
     symlink /dev/max170xx /dev/fg
     chmod 0775 /dev/fg
     start fg_conf
+
+service esif_ufd /system/bin/esif_ufd
+    class main
