@@ -385,9 +385,17 @@ PRODUCT_PACKAGES += \
 
 # intel-dptf executable
 PRODUCT_PACKAGES += \
-    esif_ufd
+    esif_ufd \
+    Dptf \
+    DptfPolicyActive \
+    DptfPolicyCritical \
+    DptfPolicyPassive \
+    esif.conf \
+    dsp.dv \
+    startup.dv \
+    combined.xsl
 
-PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
     $(foreach f, $(wildcard $(COMMON_PATH)/intel-dptf/Packages/DSP/*), $(f):system/bin/dsp/$(notdir $(f)))
 
 #################################################"
