@@ -406,6 +406,17 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/CsmConfig.xml:system/vendor/etc/CsmConfig.xml
 
+# intel-dptf executable
+PRODUCT_PACKAGES += \
+    esif_ufd \
+    Dptf \
+    DptfPolicyActive \
+    DptfPolicyCritical \
+    DptfPolicyPassive \
+    esif.conf \
+    dsp.dv \
+    combined.xsl
+
 #################################################"
 # Include platform - do not inherit so that variables can be set before inclusion
 include $(PLATFORM_PATH)/baytrail.mk

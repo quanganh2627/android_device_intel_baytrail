@@ -1,0 +1,24 @@
+on init
+    # Create /mnt/dptf mountpoint to be used by esif_ufd service
+    # creating the pid file
+    mkdir /mnt/dptf 0770 dptf dptf
+    mount tmpfs tmpfs /mnt/dptf mode=0770,uid=2999,gid=2999
+
+    # Install DPTF Lower Framework modules
+    insmod lib/modules/esif_lf.ko
+    insmod lib/modules/dptf_acpi.ko
+
+on post-fs-data
+    # Create data directory for DPTF for logging purposes, etc.
+    mkdir /data/misc/dptf 0770 dptf dptf
+
+    # Set this property to enable DPTF Android helper service
+    # This service listens to S3/S5 uevent requests from DPTF
+    # native daemon
+    setprop persist.service.dptf 1
+
+# DPTF native daemon
+service esif_ufd /system/bin/esif_ufd
+    class main
+    user dptf
+    group system
