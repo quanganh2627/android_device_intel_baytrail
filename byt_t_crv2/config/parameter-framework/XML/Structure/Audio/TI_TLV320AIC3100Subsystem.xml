@@ -69,7 +69,7 @@
 
         <ComponentType Name="SPEAKER_TYPE">
             <BooleanParameter Name="ENABLED"  Mapping="Control:'Ext Spk Switch'"/>
-            <IntegerParameter Name="DRIVER_GAIN" Size="8" Min="0" Max="4" Mapping="Control:'SP Driver Gain'"/>
+            <IntegerParameter Name="DRIVER_GAIN" Size="8" Min="0" Max="3" Mapping="Control:'SP Driver Gain'"/>
             <Component Name="ANALOG" Type="SPEAKER_VOLUME_TYPE"/>
             <BooleanParameter Name="ANALOG_ON" Mapping="Control:'Speaker Analog Volume Switch'"/>
             <Component Name="UNMUTE" Type="UNMUTE_TYPE" Mapping="Amend1:SP driver"/>

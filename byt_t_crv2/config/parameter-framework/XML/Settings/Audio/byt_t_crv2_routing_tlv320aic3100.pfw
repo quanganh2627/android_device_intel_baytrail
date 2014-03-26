@@ -6,15 +6,39 @@ supDomain: Routing.Mute
 	# Definition of Mute and Unmute for futur use in this supDomain
 	RoutageState Includes Flow
 
+	supDomain: HWCodec.Capture
+
+		domain: MainMic
+			conf: Unmute
+				ALL
+					SelectedInputDevice Includes Main
+					OpenedCaptureRoutes Includes HwCodecMedia
+				/Audio/TI/INPUT/BUILTIN_MIC/ENABLED = 1
+
+			conf: Mute
+				/Audio/TI/INPUT/BUILTIN_MIC/ENABLED = 0
+
+
+		domain: HeadsetMic
+			conf: Unmute
+				ALL
+					SelectedInputDevice Includes Headset
+					OpenedCaptureRoutes Includes HwCodecMedia
+				/Audio/TI/INPUT/HEADSET_MIC/ENABLED = 1
+
+			conf: Mute
+				/Audio/TI/INPUT/HEADSET_MIC/ENABLED = 0
 	supDomain: HWCodec.Playback
 		domain: IHF
 			conf: Unmute
 				ALL
 					SelectedOutputDevice Includes IHF
+				/Audio/TI/OUTPUT/SPEAKER/ENABLED = 1
 				/Audio/TI/OUTPUT/SPEAKER/ANALOG/VOLUME/MUTED = 0
 				/Audio/TI/OUTPUT/SPEAKER/UNMUTE/ENABLED = 1
 
 			conf: Mute
+				/Audio/TI/OUTPUT/SPEAKER/ENABLED = 0
 				/Audio/TI/OUTPUT/SPEAKER/ANALOG/VOLUME/MUTED = 1
 				/Audio/TI/OUTPUT/SPEAKER/UNMUTE/ENABLED = 0
 
@@ -23,11 +47,13 @@ supDomain: Routing.Mute
 				ANY
 					SelectedOutputDevice Includes Headset
 					SelectedOutputDevice Includes Headphones
+				/Audio/TI/OUTPUT/HEADPHONE/ENABLED = 1
 				/Audio/TI/OUTPUT/HEADPHONE/ANALOG/VOLUME/0/MUTED = 0
 				/Audio/TI/OUTPUT/HEADPHONE/ANALOG/VOLUME/1/MUTED = 0
 				/Audio/TI/OUTPUT/HEADPHONE/UNMUTE/ENABLED = 1 1
 
 			conf: Mute
+				/Audio/TI/OUTPUT/HEADPHONE/ENABLED = 0
 				/Audio/TI/OUTPUT/HEADPHONE/ANALOG/VOLUME/0/MUTED = 1
 				/Audio/TI/OUTPUT/HEADPHONE/ANALOG/VOLUME/1/MUTED = 1
 				/Audio/TI/OUTPUT/HEADPHONE/UNMUTE/ENABLED = 0 0
@@ -45,12 +71,10 @@ supDomain: Routing.Enable
 				ALL
 					SelectedInputDevice Includes Main
 					OpenedCaptureRoutes Includes HwCodecMedia
-				/Audio/TI/INPUT/BUILTIN_MIC/ENABLED = 1
 				/Audio/TI/MIXER/P_INPUT/MIC1LP/SWITCH = 2
 				/Audio/TI/MIXER/M_INPUT/MIC1LM/SWITCH = 2
 
 			conf: Disable
-				/Audio/TI/INPUT/BUILTIN_MIC/ENABLED = 0
 				/Audio/TI/MIXER/P_INPUT/MIC1LP/SWITCH = 0
 				/Audio/TI/MIXER/M_INPUT/MIC1LM/SWITCH = 0
 
@@ -60,12 +84,10 @@ supDomain: Routing.Enable
 				ALL
 					SelectedInputDevice Includes Headset
 					OpenedCaptureRoutes Includes HwCodecMedia
-				/Audio/TI/INPUT/HEADSET_MIC/ENABLED = 1
 				/Audio/TI/MIXER/P_INPUT/MIC1RP/SWITCH = 2
 				/Audio/TI/MIXER/M_INPUT/CM/SWITCH = 2
 
 			conf: Disable
-				/Audio/TI/INPUT/HEADSET_MIC/ENABLED = 0
 				/Audio/TI/MIXER/P_INPUT/MIC1RP/SWITCH = 0
 				/Audio/TI/MIXER/M_INPUT/CM/SWITCH = 0
 
@@ -76,13 +98,11 @@ supDomain: Routing.Enable
 					SelectedOutputDevice Includes Headset
 					SelectedOutputDevice Includes Headphones
 
-				/Audio/TI/OUTPUT/HEADPHONE/ENABLED = 1
 				/Audio/TI/MIXER/DAC/RIGHT/DAC_R/SWITCH = 1
 				/Audio/TI/OUTPUT/HEADPHONE/L_SWITCH = 1
 				/Audio/TI/OUTPUT/HEADPHONE/R_SWITCH = 1
 
 			conf: Disable
-				/Audio/TI/OUTPUT/HEADPHONE/ENABLED = 0
 				/Audio/TI/MIXER/DAC/RIGHT/DAC_R/SWITCH = 0
 				/Audio/TI/OUTPUT/HEADPHONE/L_SWITCH = 0
 				/Audio/TI/OUTPUT/HEADPHONE/R_SWITCH = 0
@@ -93,11 +113,9 @@ supDomain: Routing.Enable
 				ALL
 					SelectedOutputDevice Includes IHF
 
-				/Audio/TI/OUTPUT/SPEAKER/ENABLED = 1
 				/Audio/TI/OUTPUT/SPEAKER/ANALOG_ON = 1
 
 			conf: Disable
-				/Audio/TI/OUTPUT/SPEAKER/ENABLED = 0
 				/Audio/TI/OUTPUT/SPEAKER/ANALOG_ON = 0
 ##############################
 #	 Configure Step
