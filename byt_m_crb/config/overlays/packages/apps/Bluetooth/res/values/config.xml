@@ -15,7 +15,7 @@
 <resources>
     <bool name="profile_supported_a2dp">true</bool>
     <bool name="profile_supported_hdp">true</bool>
-    <bool name="profile_supported_hs_hfp">false</bool>
+    <bool name="profile_supported_hs_hfp">true</bool>
     <bool name="profile_supported_hid">true</bool>
     <bool name="profile_supported_opp">true</bool>
     <bool name="profile_supported_pan">true</bool>
