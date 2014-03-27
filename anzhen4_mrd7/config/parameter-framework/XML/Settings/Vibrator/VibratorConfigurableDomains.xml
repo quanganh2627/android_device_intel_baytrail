@@ -36,4 +36,21 @@
             </Configuration>
         </Settings>
     </ConfigurableDomain>
+    <ConfigurableDomain Name="Calibration" SequenceAware="false">
+        <Configurations>
+            <Configuration Name="Default">
+                <CompoundRule Type="All"/>
+            </Configuration>
+        </Configurations>
+        <ConfigurableElements>
+            <ConfigurableElement Path="/Misc/Configuration/vibrator/min_vibration_duration"/>
+        </ConfigurableElements>
+        <Settings>
+            <Configuration Name="Default">
+                <ConfigurableElement Path="/Misc/Configuration/vibrator/min_vibration_duration">
+                    <IntegerParameter Name="min_vibration_duration">50</IntegerParameter>
+                </ConfigurableElement>
+            </Configuration>
+        </Settings>
+    </ConfigurableDomain>
 </ConfigurableDomains>
