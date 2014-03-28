@@ -119,7 +119,7 @@ TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 # BOARD_KERNEL_CMDLINE += i915.mipi_panel_id=4
 
 # Normal panel for FFRD8.  This is no longer the default.
-BOARD_KERNEL_CMDLINE += i915.mipi_panel_id=3
+#BOARD_KERNEL_CMDLINE += i915.mipi_panel_id=3
 
 BOARD_USES_LIBPSS := false
 
