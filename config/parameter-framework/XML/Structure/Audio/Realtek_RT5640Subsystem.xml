@@ -27,6 +27,19 @@
                 <ValuePair Literal="g+1.58dB" Numerical="6"/>
                 <ValuePair Literal="g+2.28dB" Numerical="7"/>
             </EnumParameter>
+            <EnumParameter Name="RATIO" Size="8" Mapping="Control:'Class D SPK Ratio Control'">
+                <ValuePair Literal="3.0V,1.94x" Numerical="0"/>
+                <ValuePair Literal="3.3V,2.0x"  Numerical="1"/>
+                <ValuePair Literal="3.5V,2.11x" Numerical="2"/>
+                <ValuePair Literal="3.6V,2.22x" Numerical="3"/>
+                <ValuePair Literal="3.8V,2.33x" Numerical="4"/>
+                <ValuePair Literal="4.0V,2.44x" Numerical="5"/>
+                <ValuePair Literal="4.2V,2.55x" Numerical="6"/>
+                <ValuePair Literal="4.4V,2.66x" Numerical="7"/>
+                <ValuePair Literal="4.6V,2.77x" Numerical="8"/>
+                <ValuePair Literal="4.8V,3.0x"  Numerical="9"/>
+                <ValuePair Literal="5.0V,3.3x"  Numerical="10"/>
+            </EnumParameter>
             <BooleanParameter Name="SWITCH"  Mapping="Control:'Ext Spk Switch'"/>
        </ComponentType>
 
