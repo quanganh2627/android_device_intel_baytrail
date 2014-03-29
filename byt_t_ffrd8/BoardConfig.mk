@@ -176,7 +176,7 @@ USE_FEATURE_ALAC := true
 OVERRIDE_RS_DRIVER := libRSDriver_intel7.so
 
 # usb stick installer support
-BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE +=  droidboot.use_installer=1 droidboot.installer_usb=/dev/block/sda1 droidboot.installer_file=installer.cmd
+BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE +=  droidboot.use_installer=1 droidboot.installer_usb=/dev/block/sda1
 
 
 # Use shared object of ia_face
