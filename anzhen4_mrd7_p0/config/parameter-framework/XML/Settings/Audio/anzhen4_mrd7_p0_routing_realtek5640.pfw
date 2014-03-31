@@ -114,6 +114,7 @@ supDomain: Routing.Enable
 					ANY
 						SelectedOutputDevice Includes IHF
 						SelectedOutputDevice Includes Earpiece
+						SelectedOutputDevice Includes IHF
 					ANY
 						OpenedPlaybackRoutes Includes HwCodecMedia
 						OpenedPlaybackRoutes Includes HwCodecCSV
@@ -279,6 +280,7 @@ supDomain: Routing.Configure
 				/Audio/LPE_MIXER/SOUND_CARD/IHF/INPUT_STREAM = MIX
 
 			conf: Deactivated
+
 				/Audio/LPE_MIXER/SOUND_CARD/IHF/INPUT_STREAM = NONE
 
 		domain: HS
@@ -296,6 +298,7 @@ supDomain: Routing.Configure
 				/Audio/LPE_MIXER/SOUND_CARD/HS/INPUT_STREAM = MIX
 
 			conf: Deactivated
+
 				/Audio/LPE_MIXER/SOUND_CARD/HS/INPUT_STREAM = NONE
 
 	supDomain: HWCodec.Capture
