@@ -76,8 +76,8 @@
       <name>CM32181 Digital Ambient Light Sensor</name>
       <vendor>CM32181</vendor>
       <version>1</version>
-      <maxRange>10000.0</maxRange>
-      <resolution>0.1</resolution>
+      <maxRange>22019.0</maxRange>
+      <resolution>0.3</resolution>
       <power>0.25</power>
       <minDelay>0</minDelay>
       <mapper axis_x="X"></mapper>

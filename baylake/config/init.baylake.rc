@@ -92,6 +92,8 @@ on boot
     chown system system /sys/devices/platform/coretemp.0/temp4_threshold2
     chown system system /sys/devices/platform/coretemp.0/temp5_threshold1
     chown system system /sys/devices/platform/coretemp.0/temp5_threshold2
+    chown system system /sys/fps_throttle/notify
+    chown system system /sys/fps_throttle/handshake
 
     # GEN Graphics specific setup.
     chown system system /dev/card0
