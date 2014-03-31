@@ -8,5 +8,3 @@ include $(LOCAL_PATH)/has_uefi.mk
 include $(LOCAL_PATH)/byt_t_ffrd8_path.mk
 
 include $(LOCAL_PATH)/byt_t_ffrd8.mk
-
-BOARD_HAS_CAPSULE := false
