@@ -30,8 +30,7 @@ PERMISSIONS_PATH := system/etc/permissions
 
 # Touchscreen configuration file
 PRODUCT_COPY_FILES += \
-    $(DEVICE_CONF_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg \
-    $(DEVICE_CONF_PATH)/maxtouch_1664S_8.fw:system/etc/firmware/maxtouch.fw
+    $(DEVICE_CONF_PATH)/goodix_ts.idc:system/usr/idc/goodix_ts.idc
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
@@ -66,8 +65,9 @@ PRODUCT_PACKAGES += \
 # parameter-framework files
 PRODUCT_PACKAGES += \
         libimc-subsystem \
-        parameter-framework.audio.anzhen4_mrd8
-
+        parameter-framework.audio.anzhen4_mrd8 \
+        parameter-framework.vibrator.anzhen4_mrd8
+ 
 # build the OMX wrapper codecs
 PRODUCT_PACKAGES += \
     libstagefright_soft_mp3dec_mdp \
