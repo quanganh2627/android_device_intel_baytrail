@@ -334,6 +334,8 @@ PRODUCT_PACKAGES += libwvdrmengine
 
 PRODUCT_PACKAGES_ENG += ExoPlayerDemo
 
+PRODUCT_PACKAGES += liboemcrypto
+
 # Intel VPP/FRC
 PRODUCT_PACKAGES += \
     VppSettings
