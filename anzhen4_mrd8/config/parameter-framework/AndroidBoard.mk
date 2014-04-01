@@ -139,6 +139,7 @@ LOCAL_MODULE := parameter-framework.vibrator.anzhen4_mrd8
 LOCAL_MODULE_TAGS := optional
 LOCAL_REQUIRED_MODULES :=  \
     parameter-framework.vibrator.common \
+    MiscConfigurationSubsystem.xml \
     SysfsVibratorClass.xml \
     SysfsVibratorSubsystem.xml \
     VibratorConfigurableDomains.xml
@@ -156,6 +157,14 @@ include $(BUILD_PHONY_PACKAGE)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := SysfsVibratorClass.xml
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/parameter-framework/Structure/Vibrator
+LOCAL_SRC_FILES := XML/Structure/Vibrator/$(LOCAL_MODULE)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := MiscConfigurationSubsystem.xml
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/parameter-framework/Structure/Vibrator

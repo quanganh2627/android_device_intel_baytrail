@@ -3,7 +3,12 @@
     <ComponentLibrary>
         <ComponentType Name="SysFsDir">
             <BooleanParameter Name="enabled" Mapping="File:vibrator"/>
-            <IntegerParameter Name="duty" Size="8" Min="0" Max="2" Mapping="File:duty"/>
+            <EnumParameter Name="mode" Size="8" Mapping="File:duty">
+                <ValuePair Literal="Hi-z" Numerical="0"/>
+                <ValuePair Literal="25% 0.5Hz" Numerical="1"/>
+                <ValuePair Literal="25% 2HZ" Numerical="2"/>
+                <ValuePair Literal="continuous" Numerical="3"/>
+            </EnumParameter>
         </ComponentType>
     </ComponentLibrary>
     <InstanceDefinition>
