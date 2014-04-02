@@ -8,4 +8,4 @@
 /dev/block/sda1		/bootloader     vfat    defaults                                   recoveryonly
 /dev/block/sda2		/bootloader2    vfat    defaults                                   recoveryonly
 /dev/block/sda11	/fastboot       emmc    defaults                                   defaults
-/dev/block/sdb1		/sdcard		vfat	defaults				   recoveryonly
+/dev/block/mmcblk1p1	/sdcard		vfat	defaults				   recoveryonly
