@@ -1,7 +1,7 @@
 # Name of the reference design
 # Should be changed with the original values when starting customization
 REF_DEVICE_NAME ?= $(TARGET_DEVICE)
-REF_PRODUCT_NAME ?= $(TARGET_PRODUCT)
+REF_PRODUCT_NAME ?= byt_t_crv2
 
 TARGET_USE_DROIDBOOT := true
 
