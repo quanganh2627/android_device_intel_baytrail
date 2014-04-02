@@ -8,6 +8,11 @@ on init
 
     chmod 0660 /sys/class/android_usb/android0/f_rndis/ethaddr
 
+# enable USB USH wakeup on usb device connection/disconnection
+    write /sys/bus/pci/devices/0000:00:14.0/power/wakeup enabled
+    write /sys/bus/pci/devices/0000:00:14.0/usb1/power/wakeup enabled
+    write /sys/bus/pci/devices/0000:00:14.0/usb2/power/wakeup enabled
+
 on fs
     mkdir /dev/usb-ffs 0770 shell shell
     mkdir /dev/usb-ffs/adb 0770 shell shell
