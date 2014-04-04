@@ -252,7 +252,7 @@ service fg_conf /system/bin/fg_conf -w
 service drm /system/bin/drmserver
     class main
     user drm
-    group drm system inet drmrpc sdcard_r security mei
+    group drm system inet drmrpc sdcard_r security
 
 on property:ro.debuggable=1
    # Permissions for OSMonitor app
