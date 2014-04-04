@@ -305,6 +305,7 @@ supDomain: Routing.Configure
 					SelectedInputDevice Includes Main
 					SelectedOutputDevice Includes Earpiece
 					SelectedOutputDevice Includes IHF
+					SelectedOutputDevice Includes Headphones
 
 				/Audio/REALTEK/SOUND_CARD/INPUT/MIC/INT/SWITCH = 1
 				/Audio/REALTEK/SOUND_CARD/MIXER/ANALOG/REC_MIXER/RIGHT/BST/3/SWITCH = 1
@@ -317,8 +318,9 @@ supDomain: Routing.Configure
 
 		domain: HeadsetMic
 			conf: Activated
-				ALL
+				ANY
 					SelectedInputDevice Includes Headset
+					SelectedOutputDevice Includes Headset
 
 				/Audio/REALTEK/SOUND_CARD/INPUT/HEADSET/SWITCH = 1
 				/Audio/REALTEK/SOUND_CARD/MIXER/ANALOG/REC_MIXER/RIGHT/BST/2/SWITCH = 1
