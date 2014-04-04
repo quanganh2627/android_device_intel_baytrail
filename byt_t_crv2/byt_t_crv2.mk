@@ -9,6 +9,18 @@ HAS_SPINOR := true
 USE_FPT := true
 BOARD_USE_WARMDUMP := true
 
+ifeq ($(BOARD_USE_64BIT_KERNEL),true)
+PRODUCT_PACKAGES += \
+    ifwi_uefi_byt_crv2_64_dediprog \
+    ifwi_uefi_byt_crv2_64_stage2 \
+    ifwi_uefi_byt_crv2_64_capsule
+else
+PRODUCT_PACKAGES += \
+    ifwi_uefi_byt_crv2_dediprog \
+    ifwi_uefi_byt_crv2_stage2 \
+    ifwi_uefi_byt_crv2_capsule
+endif
+
 # Copy common product apns-conf
 COMMON_PATH := device/intel/common
 PRODUCT_COPY_FILES += \

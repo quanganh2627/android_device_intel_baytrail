@@ -10,6 +10,18 @@ PRODUCT_COPY_FILES += \
 # Include product path
 include $(LOCAL_PATH)/byt_t_ffrd8_path.mk
 
+# IFWI
+ifeq ($(TARGET_BIOS_TYPE),"uefi")
+ifeq ($(BOARD_USE_64BIT_KERNEL),true)
+PRODUCT_PACKAGES += \
+    ifwi_uefi_byt_t_64_dediprog \
+    ifwi_uefi_byt_t_64_capsule
+else
+PRODUCT_PACKAGES += \
+    ifwi_uefi_byt_t_dediprog \
+    ifwi_uefi_byt_t_capsule
+endif
+endif
 # Dolby DS1
 #-include vendor/intel/PRIVATE/dolby_ds1/dolbyds1.mk
 
