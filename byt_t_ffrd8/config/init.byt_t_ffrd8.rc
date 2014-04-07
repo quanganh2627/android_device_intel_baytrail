@@ -90,6 +90,15 @@ on boot
     chown system system /sys/devices/platform/coretemp.0/temp5_threshold2
     chown system system /sys/fps_throttle/notify
     chown system system /sys/fps_throttle/handshake
+    chown system system /sys/class/thermal/thermal_zone0/emul_temp
+    chown system system /sys/class/thermal/thermal_zone1/emul_temp
+    chown system system /sys/class/thermal/thermal_zone2/emul_temp
+    chown system system /sys/class/thermal/thermal_zone3/emul_temp
+    chown system system /sys/class/thermal/thermal_zone4/emul_temp
+    chown system system /sys/class/thermal/thermal_zone5/emul_temp
+    chown system system /sys/class/thermal/thermal_zone6/emul_temp
+    chown system system /sys/class/thermal/thermal_zone7/emul_temp
+    chown system system /sys/class/thermal/thermal_zone8/emul_temp
 
     # GEN Graphics specific setup.
     chown system system /dev/card0
