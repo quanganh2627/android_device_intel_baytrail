@@ -14,7 +14,7 @@ include device/intel/common/AndroidBoard.mk
 -include $(TOP)/vendor/intel/tools/PRIVATE/debug_internal_tools/lmdk/AndroidLMDK.mk
 
 # Add ioaccess driver for PETS
-ifeq ($(TARGET_BUILD_VARIANT), eng)
+ifneq (,$(filter $(TARGET_BUILD_VARIANT), eng userdebug))
 include linux/modules/ioaccess/AndroidIOA.mk
 endif
 
