@@ -48,7 +48,10 @@ POWERHAL_BYT := true
 BOARD_USES_ALSA_AUDIO := true
 BOARD_USES_TINY_ALSA_AUDIO := true
 BOARD_USES_AUDIO_HAL_CONFIGURABLE := true
+ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
+# Enable ALSA utils for eng and user debug builds
 BUILD_WITH_ALSA_UTILS := true
+endif
 BOARD_USES_GENERIC_AUDIO := false
 
 #BCU HAL
