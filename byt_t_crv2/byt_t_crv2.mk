@@ -8,6 +8,7 @@ TARGET_BIOS_TYPE := "uefi"
 USE_FPT := true
 BOARD_DO_COLD_RESET_AFTER_KERNEL_WD_WARM_RESET := true
 BOARD_USE_WARMDUMP := true
+LEGACY_PUBLISH := false
 
 ifeq ($(BOARD_USE_64BIT_KERNEL),true)
 PRODUCT_PACKAGES += \
@@ -28,6 +29,9 @@ PRODUCT_COPY_FILES += \
 
 # Include product path
 include $(LOCAL_PATH)/byt_t_crv2_path.mk
+
+BLANK_FLASHFILES_CONFIG := $(DEVICE_CONF_PATH)/blankflashfiles.json
+FLASHFILES_CONFIG := $(DEVICE_CONF_PATH)/flashfiles.json
 
 # Dolby DS1
 #-include vendor/intel/PRIVATE/dolby_ds1/dolbyds1.mk
