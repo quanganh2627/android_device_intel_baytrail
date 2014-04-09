@@ -394,7 +394,6 @@ PRODUCT_PACKAGES += \
     DptfPolicyPassive \
     esif.conf \
     dsp.dv \
-    startup.dv \
     combined.xsl
 
 #PRODUCT_COPY_FILES += \
