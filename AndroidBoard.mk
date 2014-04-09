@@ -4,14 +4,17 @@
 include device/intel/common/AndroidBoard.mk
 
 # Add socwatchdk driver
--include $(TOP)/linux/modules/debug_tools/socwatchdk/src/AndroidSOCWatchDK.mk
--include $(TOP)/vendor/intel/tools/PRIVATE/debug_internal_tools/socwatchdk/src/AndroidSOCWatchDK.mk
+-include linux/modules/debug_tools/socwatchdk/src/AndroidSOCWatchDK.mk
+-include vendor/intel/tools/PRIVATE/debug_internal_tools/socwatchdk/src/AndroidSOCWatchDK.mk
 
 # Add VISA driver
--include $(TOP)/vendor/intel/tools/PRIVATE/debug_internal_tools/visadk/driver/src/AndroidVISA.mk
+-include vendor/intel/tools/PRIVATE/debug_internal_tools/visadk/driver/src/AndroidVISA.mk
 
 # Add LM driver
--include $(TOP)/vendor/intel/tools/PRIVATE/debug_internal_tools/lmdk/AndroidLMDK.mk
+-include vendor/intel/tools/PRIVATE/debug_internal_tools/lmdk/AndroidLMDK.mk
+
+# Add SAT module
+-include vendor/intel/tools/PRIVATE/debug_internal_tools/sat/kernel-module/AndroidSAT.mk
 
 # Add ioaccess driver for PETS
 ifneq (,$(filter $(TARGET_BUILD_VARIANT), eng userdebug))
