@@ -21,6 +21,9 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg \
     $(DEVICE_CONF_PATH)/maxtouch_3432S.fw:system/etc/firmware/maxtouch.fw
 
+# This script unmount /mnt/log.Added for aplog enable support.
+PRODUCT_COPY_FILES +=  $(DEVICE_CONF_PATH)/umount.sh:system/etc/umount.sh
+
 # Wi-Fi
 PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.xml \

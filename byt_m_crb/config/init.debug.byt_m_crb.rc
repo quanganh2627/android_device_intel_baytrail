@@ -7,3 +7,10 @@ on property:persist.service.kdumpd.enable=0
 service kdumpd /system/bin/logwrapper /system/bin/kexec-i386 -d -p /system/lib/kdump/kdumpbzImage --initrd=/system/lib/kdump/kdumpramdisk.img --append="1 console=ttyS0,115200 maxcpus=1 reset_devices pci=noearly intel_scu_watchdog_evo.disable_kernel_watchdog=1"
     disabled
     oneshot
+
+service umount-logs /system/bin/sh /system/etc/umount.sh /mnt/logs
+    class main
+    disabled
+
+on property:vold.decrypt=trigger_shutdown_framework
+    start umount-logs
