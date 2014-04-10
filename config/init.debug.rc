@@ -1,5 +1,4 @@
 on init
-    mkdir /logs
     # Export gcov variables to enable code coverage on mobile
     export GCOV_PREFIX /data
     export GCOV_PREFIX_STRIP 1
