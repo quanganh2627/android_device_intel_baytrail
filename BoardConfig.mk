@@ -13,6 +13,9 @@ BOARD_HAS_CAPSULE ?= true
 
 HAS_SPINOR := true
 
+# For Baytrail appends the path to EGL libraries.
+PRODUCT_LIBRARY_PATH := $(PRODUCT_LIBRARY_PATH):/system/lib/egl
+
 # Disable recovery for now
 TARGET_MAKE_NO_DEFAULT_RECOVERY := true
 TARGET_NO_RECOVERY := false

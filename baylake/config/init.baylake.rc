@@ -29,9 +29,6 @@ on early-init
 
 
 on init
-    # Overriding LD_LIBRARY_PATH and add egl
-    export LD_LIBRARY_PATH /vendor/lib:/system/lib:/system/lib/arm:/system/lib/egl
-
     export SECONDARY_STORAGE /storage/sdcard1
 
     write /sys/class/graphics/fbcon/cursor_blink 0

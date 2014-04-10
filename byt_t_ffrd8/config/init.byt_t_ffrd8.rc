@@ -30,11 +30,7 @@ on early-init
 
 
 on init
-
     export SECONDARY_STORAGE /storage/sdcard1
-
-    # Overriding LD_LIBRARY_PATH and add egl
-    export LD_LIBRARY_PATH /vendor/lib:/system/lib:/system/lib/arm:/system/lib/egl
 
     write /sys/class/graphics/fbcon/cursor_blink 0
     mkdir /data/system/ 0770 system system
