@@ -1,3 +1,12 @@
+on init
+    mkdir /mnt/logs 0770 system log
+    symlink /mnt/logs /logs
+
+on post-fs
+    mkdir /data/logs 0770 system log
+
+    mount ext4 /data/logs/ /mnt/logs rw bind
+
 on property:persist.service.kdumpd.enable=1
     start kdumpd
 

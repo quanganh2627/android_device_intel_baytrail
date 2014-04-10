@@ -1,5 +1,4 @@
 on init
-    mkdir /logs
     mkdir /pstore 0750 root log
     # Export gcov variables to enable code coverage on mobile
     export GCOV_PREFIX /data
