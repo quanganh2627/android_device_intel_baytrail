@@ -6,3 +6,10 @@ on post-fs
     mkdir /data/logs 0770 system log
 
     mount ext4 /data/logs/ /mnt/logs rw bind
+
+service umount-logs /system/bin/sh /system/etc/umount.sh /mnt/logs
+    class main
+    disabled
+
+on property:vold.decrypt=trigger_shutdown_framework
+    start umount-logs
