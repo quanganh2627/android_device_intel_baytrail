@@ -26,6 +26,9 @@ endif
 ifeq ($(BOARD_USES_CODEC), RT5645)
 LOCAL_REQUIRED_MODULES += Realtek_RT5645Subsystem.xml
 endif
+ifeq ($(BOARD_USES_CODEC), RT5651)
+LOCAL_REQUIRED_MODULES += Realtek_RT5651Subsystem.xml
+endif
 
 ifeq ($(TARGET_BUILD_VARIANT),eng)
 LOCAL_REQUIRED_MODULES += ParameterFrameworkConfiguration.xml
@@ -50,6 +53,9 @@ endif
 ifeq ($(BOARD_USES_CODEC), RT5645)
 LOCAL_SRC_FILES := XML/Structure/Audio/AudioClass_RT5645.xml
 endif
+ifeq ($(BOARD_USES_CODEC), RT5651)
+LOCAL_SRC_FILES := XML/Structure/Audio/AudioClass_RT5651.xml
+endif
 include $(BUILD_PREBUILT)
 
 
@@ -69,6 +75,13 @@ LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/parameter-framework/Structure/Audio
 LOCAL_SRC_FILES := XML/Structure/Audio/$(LOCAL_MODULE)
 include $(BUILD_PREBUILT)
 
+include $(CLEAR_VARS)
+LOCAL_MODULE := Realtek_RT5651Subsystem.xml
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/parameter-framework/Structure/Audio
+LOCAL_SRC_FILES := XML/Structure/Audio/$(LOCAL_MODULE)
+include $(BUILD_PREBUILT)
 
 
 include $(CLEAR_VARS)
@@ -109,6 +122,15 @@ $(LOCAL_BUILT_MODULE): MY_SRC_FILES := \
         $(LOCAL_PATH)/XML/Settings/Audio/AudioConfigurableDomains_RT5645.xml \
         $(LOCAL_PATH)/XML/Settings/Audio/catalog_dev_routing_rt5645.pfw
 endif
+
+ifeq ($(BOARD_USES_CODEC), RT5651)
+$(LOCAL_BUILT_MODULE): MY_SRC_FILES := \
+        $(TARGET_OUT_ETC)/parameter-framework/ParameterFrameworkConfiguration.xml \
+        $(LOCAL_PATH)/criteria.txt \
+        $(LOCAL_PATH)/XML/Settings/Audio/AudioConfigurableDomains_RT5651.xml \
+        $(LOCAL_PATH)/XML/Settings/Audio/catalog_dev_routing_rt5651.pfw
+endif
+
 
 $(LOCAL_BUILT_MODULE): $(LOCAL_REQUIRED_MODULES)
 	$(hide) mkdir -p $(dir $@)
