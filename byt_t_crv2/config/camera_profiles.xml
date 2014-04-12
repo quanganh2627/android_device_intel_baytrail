@@ -19,7 +19,7 @@
         <sensorType value="SENSOR_TYPE_RAW"/> <!-- SENSOR_TYPE_SOC or SENSOR_TYPE_RAW -->
         <facing value="CAMERA_FACING_BACK"/> <!-- CAMERA_FACING_FRONT or CAMERA_FACING_BACK -->
         <orientation value="0"/> <!-- one of 0,90,180,270 -->
-        <dvs value="false"/> <!-- true or false -->
+        <dvs value="true"/> <!-- true or false -->
         <hasSlowMotion value="false"/> <!-- true or false -->
         <continuousCapture value="true"/> <!-- true or false -->
         <supportedSnapshotSizes value="320x240,640x480,1280x720,1280x960,1600x1200"/>
@@ -78,13 +78,14 @@
         <hasFlash value="false"/>
         <supportedRecordingFramerates value="30,15,10"/>
         <synchronizeExposure value="true"/>
+        <supportedDvsSizes value="640x480,720x480,1280x720"/>
     </Profiles>
 
     <Profiles cameraId="1">
         <sensorType value="SENSOR_TYPE_RAW"/>
         <facing value="CAMERA_FACING_FRONT"/>
         <orientation value="0"/>
-        <dvs value="false"/>
+        <dvs value="true"/>
         <hasSlowMotion value="false"/>
         <continuousCapture value="true"/>
         <supportedSnapshotSizes value="320x240,640x480,1024x768,1280x720,1280x960,1920x1080"/>
@@ -142,6 +143,7 @@
         <defaultPreviewUpdateMode value="standard"/>
         <hasFlash value="false"/>
         <supportedRecordingFramerates value="30,15,10"/>
+        <supportedDvsSizes value="640x480,720x480,1280x720"/>
     </Profiles>
 
     <Common>
