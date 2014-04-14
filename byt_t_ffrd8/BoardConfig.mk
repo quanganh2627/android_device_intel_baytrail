@@ -94,11 +94,11 @@ USE_CSS_2_1 := true
 
 # Enabled HW accelerated JPEG encoder using VA API
 USE_INTEL_JPEG := false
+USE_INTEL_JPEGDEC := true
 # DS1 and NXP effects cannot co-exist
 # Enabled NXP Premium Audio Effect Libraries
 USE_INTEL_LVSE := false
 #USE_INTEL_LVSE := true
-JPEGDEC_USES_GEN := true
 
 ifeq ($(BOARD_KERNEL_CMDLINE),)
 DEBUG_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger \

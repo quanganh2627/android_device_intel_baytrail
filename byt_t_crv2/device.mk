@@ -117,7 +117,10 @@ PRODUCT_PACKAGES += \
     libmixvbp_h264 \
     libmixvbp_vc1 \
     libmixvbp_vp8 \
-    libmixvbp_h264secure
+    libmixvbp_h264secure \
+    libmix_imagedecoder \
+    libmix_imagedecoder_genx \
+    libjpeg_hw
 
 # libva
 PRODUCT_PACKAGES += \

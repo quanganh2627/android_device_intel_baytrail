@@ -73,7 +73,7 @@ USE_CSS_2_1 := true
 
 # Enabled HW accelerated JPEG encoder using VA API
 USE_INTEL_JPEG := false
-JPEGDEC_USES_GEN := true
+USE_INTEL_JPEGDEC := true
 
 ifeq ($(BOARD_KERNEL_CMDLINE),)
 DEBUG_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger \
