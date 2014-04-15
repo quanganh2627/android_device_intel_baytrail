@@ -55,8 +55,8 @@ on init
 
     #Create /mnt/dptf mountpoint to be used by esif_ufd service for
     #a tmpfs as the basis for creating the pid file
-    mkdir /mnt/dptf 0700 root root
-    mount tmpfs tmpfs /mnt/dptf mode=0755,gid=1000
+    mkdir /mnt/dptf 0770 dptf dptf
+    mount tmpfs tmpfs /mnt/dptf mode=0770,uid=2999,gid=2999
 
 
 on boot
@@ -188,6 +188,9 @@ on post-fs-data
     setprop ro.crypto.fuse_sdcard true
 
     mkdir /data/misc/firmware 0770 system system
+
+    # Create data directory for DPTF for logging purposes, etc.
+    mkdir /data/misc/dptf 0770 dptf dptf
 
     #Invoke fuel gauging helper binary to restore config data
     chmod 0770 /dev/max170xx
@@ -352,4 +355,4 @@ on charger
 
 service esif_ufd /system/bin/esif_ufd
     class main
-    user root
+    user dptf

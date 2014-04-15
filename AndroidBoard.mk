@@ -3,6 +3,11 @@
 
 include device/intel/common/AndroidBoard.mk
 
+# Add DPTF driver
+ifeq ($(TARGET_USE_DPTF),true)
+include linux/modules/esif-driver/AndroidDPTF.mk
+endif
+
 # Add socwatchdk driver
 -include $(TOP)/linux/modules/debug_tools/socwatchdk/src/AndroidSOCWatchDK.mk
 -include $(TOP)/vendor/intel/tools/PRIVATE/debug_internal_tools/socwatchdk/src/AndroidSOCWatchDK.mk

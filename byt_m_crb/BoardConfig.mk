@@ -234,6 +234,8 @@ endif
 
 TARGET_NO_BOOTLOADER := false
 
+TARGET_USE_DPTF := true
+
 ########################################################################
 # PORTED FROM OTC FOR SIGNED BOOTIMAGE, THIS WILL BE OF INTEREST TO
 # TEAM WORKING ON BOOTLOADER FOR BYT/CHT.
