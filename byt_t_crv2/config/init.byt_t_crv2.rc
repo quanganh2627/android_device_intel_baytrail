@@ -183,6 +183,9 @@ on post-fs-data
     chmod 0770 /dev/max170xx
     chown system system /dev/max170xx
     symlink /dev/max170xx /dev/fg
+    chmod 0770 /dev/intel_fg
+    chown system system /dev/intel_fg
+    chown system system /config/em
     chown system system /sys/class/power_supply/max17047_battery/model_name
     chown system system /sys/class/power_supply/max17047_battery/serial_number
     start fg_conf
@@ -376,6 +379,7 @@ on charger
     # Invoke fuel gauging helper binary to restore config data
     symlink /dev/max170xx /dev/fg
     chmod 0775 /dev/fg
+    chmod 0770 /dev/intel_fg
     wait /system/bin/fg_conf
     start fg_conf
 

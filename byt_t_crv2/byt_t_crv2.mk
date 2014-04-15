@@ -52,7 +52,7 @@ PRODUCT_PACKAGES += \
 # Revert me to fg_config.bin instead of fg_config_$(TARGET_PRODUCT) once BZ119617 is resoved
 #Fuel gauge related
 PRODUCT_PACKAGES += \
-       fg_conf fg_config.bin
+       fg_conf fg_config.bin fg_config_xpwr.bin
 
 #remote submix audio
 PRODUCT_PACKAGES += \
