@@ -53,6 +53,12 @@ on init
 
     setprop service.adb.tcp.port 5555
 
+    #Create /mnt/dptf mountpoint to be used by esif_ufd service for
+    #a tmpfs as the basis for creating the pid file
+    mkdir /mnt/dptf 0700 root root
+    mount tmpfs tmpfs /mnt/dptf mode=0755,gid=1000
+
+
 on boot
     #  Mount debugfs for systrace settings
     mount debugfs none /sys/kernel/debug mode=0755
@@ -343,3 +349,4 @@ on charger
 
 service esif_ufd /system/bin/esif_ufd
     class main
+    user root
