@@ -1,6 +1,6 @@
 PRODUCT_NAME := anzhen4_mrd7_p0
 
-BOARD_HAS_CAPSULE := true
+BOARD_HAS_CAPSULE := false
 TARGET_PARTITIONING_SCHEME := "full-gpt"
 TARGET_BIOS_TYPE := "uefi"
 HAS_SPINOR := true
