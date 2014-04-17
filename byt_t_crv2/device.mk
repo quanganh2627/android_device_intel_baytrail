@@ -97,7 +97,8 @@ PRODUCT_PACKAGES += libwvdrmengine
 
 PRODUCT_PACKAGES_ENG += ExoPlayerDemo
 
-PRODUCT_PACKAGES += liboemcrypto
+# L1 MDRM support
+#PRODUCT_PACKAGES += liboemcrypto
 
 # omx components
 PRODUCT_PACKAGES += \
