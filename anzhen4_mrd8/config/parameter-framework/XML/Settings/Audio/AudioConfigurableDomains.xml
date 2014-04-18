@@ -129,6 +129,7 @@
     <ConfigurableElements>
       <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/STEREO/VOLUME/0/LEVEL"/>
       <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/STEREO/VOLUME/1/LEVEL"/>
+      <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/MONO/VOLUME"/>
     </ConfigurableElements>
     <Settings>
       <Configuration Name="VoiceRecgnition.FrontMic">
@@ -156,19 +157,19 @@
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="InCall.FrontMic">
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/STEREO/VOLUME/0/LEVEL">
-          <IntegerParameter Name="LEVEL">80</IntegerParameter>
+        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/MONO/VOLUME">
+          <IntegerParameter Name="VOLUME">100</IntegerParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/STEREO/VOLUME/1/LEVEL">
-          <IntegerParameter Name="LEVEL">80</IntegerParameter>
+        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/MONO/VOLUME">
+          <IntegerParameter Name="VOLUME">100</IntegerParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="InCall.HeadsetMic">
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/STEREO/VOLUME/0/LEVEL">
-          <IntegerParameter Name="LEVEL">90</IntegerParameter>
+        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/MONO/VOLUME">
+          <IntegerParameter Name="VOLUME">100</IntegerParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/STEREO/VOLUME/1/LEVEL">
-          <IntegerParameter Name="LEVEL">90</IntegerParameter>
+        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/MONO/VOLUME">
+          <IntegerParameter Name="VOLUME">100</IntegerParameter>
         </ConfigurableElement>
       </Configuration>
     </Settings>
@@ -224,6 +225,7 @@
       <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME/0/LEVEL"/>
       <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME/1/LEVEL"/>
       <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/DAC1"/>
+      <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/MONO_DAC"/>
       <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/BOOST"/>
       <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/RATIO"/>
     </ConfigurableElements>
@@ -298,8 +300,8 @@
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME/1/LEVEL">
           <IntegerParameter Name="LEVEL">31</IntegerParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/DAC1">
-          <IntegerParameter Name="DAC1">170 170</IntegerParameter>
+        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/MONO_DAC">
+          <IntegerParameter Name="MONO_DAC">170 170</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME/0/LEVEL">
           <IntegerParameter Name="LEVEL">31</IntegerParameter>
@@ -321,8 +323,8 @@
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME/1/LEVEL">
           <IntegerParameter Name="LEVEL">31</IntegerParameter>
         </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/DAC1">
-          <IntegerParameter Name="DAC1">120 120</IntegerParameter>
+        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/MONO_DAC">
+          <IntegerParameter Name="MONO_DAC">120 120</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME/0/LEVEL">
           <IntegerParameter Name="LEVEL">31</IntegerParameter>
