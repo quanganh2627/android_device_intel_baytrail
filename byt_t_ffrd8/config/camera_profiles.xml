@@ -86,8 +86,6 @@
         <supportedRecordingFramerates value="60,30,15,10"/>
         <supportedHighSpeedResolutionFps value="1280x720@60,1920x1080@60"/>
         <maxHighSpeedDvsResolution value="1280x720"/>
-        <supportedUltraLowLight value=""/>
-        <defaultUltraLowLight value=""/>
     </Profiles>
 
     <Profiles cameraId="1">
@@ -152,8 +150,6 @@
         <defaultPreviewUpdateMode value="standard"/>
         <hasFlash value="false"/>
         <supportedRecordingFramerates value="30,15,10"/>
-        <supportedUltraLowLight value=""/>
-        <defaultUltraLowLight value=""/>
         <verticalFOV value="320x240@42.5,640x480@42.5,1024x768@42.5,1280x720@42.5,1280x960@42.5,1920x1080@42.5"/>
         <horizontalFOV value="320x240@64.5,640x480@64.5,1024x768@64.5,1280x720@64.5,1280x960@64.5,1920x1080@64.5"/>
     </Profiles>
