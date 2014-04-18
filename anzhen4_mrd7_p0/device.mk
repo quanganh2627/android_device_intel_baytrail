@@ -298,9 +298,9 @@ PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.usb.host.xml:$(PERMISSIONS_PATH)/android.hardware.usb.host.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.usb.accessory.xml:$(PERMISSIONS_PATH)/android.hardware.usb.accessory.xml \
-    $(FRAMEWORK_ETC_PATH)/tablet_core_hardware.xml:$(PERMISSIONS_PATH)/tablet_core_hardware.xml
-    $(FRAMEWORK_ETC_PATH)/android.hardware.location.gps.xml:$(PERMISSIONS_PATH)/android.hardware.location.gps.xml
-    $(FRAMEWORK_ETC_PATH)/android.hardware.telephony.cdma.xml:$(PERMISSIONS_PATH)/android.hardware.telephony.cdma.xml
+    $(FRAMEWORK_ETC_PATH)/tablet_core_hardware.xml:$(PERMISSIONS_PATH)/tablet_core_hardware.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.location.gps.xml:$(PERMISSIONS_PATH)/android.hardware.location.gps.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.telephony.cdma.xml:$(PERMISSIONS_PATH)/android.hardware.telephony.cdma.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.telephony.gsm.xml:$(PERMISSIONS_PATH)/android.hardware.telephony.gsm.xml
 #   $(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
 
