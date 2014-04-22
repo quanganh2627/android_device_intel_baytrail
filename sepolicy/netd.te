@@ -8,3 +8,26 @@ allow netd socket_device:sock_file { create unlink setattr };
 allow netd kernel:system module_request;
 allow netd self:capability sys_module;
 allow netd system:unix_dgram_socket sendto;
+
+# Allow netd to ppp in it's own domain
+# Allow the necessary permissions.
+# Old domain may exec the file and transition to the new domain.
+allow netd ppp_exec:file { getattr open read execute };
+allow netd ppp:process transition;
+# New domain is entered by executing the file.
+allow ppp ppp_exec:file { entrypoint read execute };
+# New domain can send SIGCHLD to its caller.
+allow ppp netd:process sigchld;
+# Enable AT_SECURE, i.e. libc secure mode.
+dontaudit netd ppp:process noatsecure;
+# XXX dontaudit candidate but requires further study.
+allow netd ppp:process { siginh rlimitinh };
+# Make the transition occur by default.
+type_transition netd ppp_exec:process ppp;
+allow netd ppp:process signal;
+
+#Allow netd to read and write usb_device for usb_modeswitch tool which can execute
+allow netd system_data_file:file { getattr open read };
+allow netd usb_device:dir { { open getattr read search ioctl } { open search write add_name remove_name } };
+allow netd usb_device:chr_file { open getattr read write ioctl };
+
