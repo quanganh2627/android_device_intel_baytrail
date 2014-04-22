@@ -140,69 +140,6 @@ supDomain: Routing.Configure
 
 		domain: Processing
 
-			supConf: HwCodecCSV
-				OpenedPlaybackRoutes Includes HwCodecCSV
-
-				supConf: IHF
-					SelectedOutputDevice Includes IHF
-
-					conf: TTY.Uplink
-						TTYDirection Includes Uplink
-						/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE = TTY
-						/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE = Handsfree
-
-					conf: TTY.Downlink
-						TTYDirection Includes Downlink
-						/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE = Handsfree
-						/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE = TTY
-
-					conf: Normal
-						/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE = Handsfree
-						/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE = Handsfree
-
-				supConf: Headset
-					SelectedOutputDevice Includes Headset
-
-					conf: TTY.Full
-						TTYDirection Includes Downlink
-						TTYDirection Includes Uplink
-						/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE = TTY
-						/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE = TTY
-
-					conf: TTY.Uplink
-						TTYDirection Includes Uplink
-						/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE = TTY
-						/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE = Handsfree
-
-
-					conf: TTY.Downlink
-						TTYDirection Includes Downlink
-						/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE = Handsfree
-						/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE = TTY
-
-					conf: Normal
-						/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE = Headset
-						/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE = Headset
-
-				conf: Headphone
-					SelectedOutputDevice Includes Headphones
-					/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE = Handsfree
-					/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE = Headset
-
-			supConf: BtCSV
-				OpenedPlaybackRoutes Includes BtCSV
-
-				supConf: NoHeadsetNrEc
-					BtHeadsetNrEc Is False
-
-					conf: SCO
-						ANY
-							SelectedOutputDevice Includes SCO
-							SelectedOutputDevice Includes SCO_Headset
-							SelectedOutputDevice Includes SCO_CarKit
-						/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE = Bluetooth
-						/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE = Bluetooth
-
 			conf: Default
 				# No acoustics
 				/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE = UserDefined15
