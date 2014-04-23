@@ -1,4 +1,4 @@
-PRODUCT_NAME := byt_t_ffrd8_64
+PRODUCT_NAME := byt_t_ffrd8_edk2_64
 REF_PRODUCT_NAME := byt_t_ffrd8
 
 BOARD_USE_64BIT_KERNEL := true

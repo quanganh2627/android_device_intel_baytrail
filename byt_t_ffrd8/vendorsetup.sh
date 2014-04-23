@@ -23,6 +23,8 @@ add_lunch_combo byt_t_ffrd8-eng
 add_lunch_combo byt_t_ffrd8-userdebug
 add_lunch_combo byt_t_ffrd8_next-eng
 add_lunch_combo byt_t_ffrd8_next-userdebug
-add_lunch_combo byt_t_ffrd8_64-eng
 add_lunch_combo byt_t_ffrd8_edk2-eng
 add_lunch_combo byt_t_ffrd8_edk2-userdebug
+add_lunch_combo byt_t_ffrd8_edk2_64-eng
+add_lunch_combo byt_t_ffrd8_edk2_64-userdebug
+

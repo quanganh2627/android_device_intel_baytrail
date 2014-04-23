@@ -317,6 +317,9 @@ PRODUCT_PACKAGES += \
 # Intel Corp Email certificate
 -include vendor/intel/PRIVATE/cert/IntelCorpEmailCert.mk
 
+# Intel Corp CA certificates
+PRODUCT_PACKAGES += intel_cacerts
+
 # Enable ALAC
 PRODUCT_PACKAGES += \
     libstagefright_soft_alacdec
