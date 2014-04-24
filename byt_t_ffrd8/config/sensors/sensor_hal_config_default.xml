@@ -144,4 +144,15 @@
       <scale axis_x="1.0"></scale>
     </device>
   </sensor>
+  <sensor type="calibration" category="libsensorhub">
+    <device>
+      <name>Sensor for calibration</name>
+      <vendor>Intel Inc.</vendor>
+      <version>1</version>
+      <maxRange>100.0</maxRange>
+      <resolution>1.0</resolution>
+      <power>0.001</power>
+      <minDelay>10000</minDelay>
+    </device>
+  </sensor>
 </sensor_hal_config>

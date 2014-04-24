@@ -104,6 +104,7 @@ PRODUCT_PACKAGES += \
 # sensorhub
 PRODUCT_PACKAGES += \
     sensorhubd      \
+    libsensorhub    \
     psh_bk.bin      \
     fwupdatetool    \
     fwupdate_script.sh

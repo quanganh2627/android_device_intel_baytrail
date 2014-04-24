@@ -233,7 +233,7 @@ service sensorhubd /system/bin/sensorhubd
     class main
     user system
     group system
-    socket sensorhubd stream 666 system system
+    socket sensorhubd stream 660 system system
     oneshot
 
 # for eth0
