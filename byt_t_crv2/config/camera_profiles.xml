@@ -78,6 +78,7 @@
         <hasFlash value="false"/>
         <supportedRecordingFramerates value="30,15,10"/>
         <synchronizeExposure value="true"/>
+        <previewFormat value="V4L2_PIX_FMT_YUYV"/> <!-- define the driver preview output format, V4L2_PIX_FMT_YVU420 or V4L2_PIX_FMT_NV12 -->
     </Profiles>
 
     <Profiles cameraId="1">
@@ -142,6 +143,7 @@
         <defaultPreviewUpdateMode value="standard"/>
         <hasFlash value="false"/>
         <supportedRecordingFramerates value="30,15,10"/>
+        <previewFormat value="V4L2_PIX_FMT_YUYV"/> <!-- define the driver preview output format, V4L2_PIX_FMT_YVU420 or V4L2_PIX_FMT_NV12 -->
     </Profiles>
 
     <Common>
@@ -155,7 +157,6 @@
         <numRecordingBuffers value="9"/>
         <shutterLagCompensationMs value="40"/>
         <mPanoramaMaxSnapshotCount value="10"/>
-        <previewFormat value="V4L2_PIX_FMT_YUYV"/> <!-- define the driver preview output format, V4L2_PIX_FMT_YVU420 or V4L2_PIX_FMT_NV12 -->
 	<supportPreviewLimitation value="false"/>
         <boardName value="baylake"/>
     </Common>
