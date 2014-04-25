@@ -141,7 +141,7 @@ on boot
     setprop net.tcp.buffersize.hspa    4094,87380,262144,4096,16384,262144
     setprop net.tcp.buffersize.hsupa   4094,87380,262144,4096,16384,262144
     setprop net.tcp.buffersize.hsdpa   4094,87380,262144,4096,16384,262144
-    setprop net.tcp.buffersize.hspap   4094,87380,1220608,4096,16384,1220608
+    setprop net.tcp.buffersize.hspap   32768,262144,1048576,4096,16384,262144
     setprop net.tcp.buffersize.edge    4093,26280,110208,4096,16384,110208
     setprop net.tcp.buffersize.gprs    4092,8760,65536,4096,8760,65536
     setprop net.tcp.buffersize.evdo    4094,87380,262144,4096,16384,262144
