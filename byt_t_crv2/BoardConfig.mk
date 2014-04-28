@@ -86,7 +86,8 @@ else
 DEBUG_KERNEL_CMDLINE := loglevel=0
 endif
 BOARD_KERNEL_CMDLINE := $(DEBUG_KERNEL_CMDLINE) androidboot.bootmedia=$(BOARD_BOOTMEDIA) \
-                        androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) vmalloc=172M
+                        androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) vmalloc=172M \
+                        debug_locks=0
 endif
 
 # Limit slub order on CRv2 wiht 1G RAM
