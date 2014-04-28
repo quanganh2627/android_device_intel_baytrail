@@ -29,7 +29,7 @@ BOARD_HAVE_ATPROXY := true
 
 TARGET_PHONE_HAS_OEM_LIBRARY := true
 
-ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
+ifneq (,$(filter $(TARGET_BUILD_VARIANT),eng userdebug))
 # GTI is used to perform some tunning on AUD thanks to phonetool
   BOARD_USES_GTI_FRAMEWORK := true
 endif
@@ -68,7 +68,7 @@ POWERHAL_BYT := true
 BOARD_USES_ALSA_AUDIO := true
 BOARD_USES_TINY_ALSA_AUDIO := true
 BOARD_USES_AUDIO_HAL_CONFIGURABLE := true
-ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
+ifneq (,$(filter $(TARGET_BUILD_VARIANT),eng userdebug))
 # Enable ALSA utils for eng and user debug builds
 BUILD_WITH_ALSA_UTILS := true
 endif

@@ -17,7 +17,7 @@ include device/intel/common/AndroidBoard.mk
 -include vendor/intel/tools/PRIVATE/debug_internal_tools/sat/kernel-module/AndroidSAT.mk
 
 # Add ioaccess driver for PETS
-ifneq (,$(filter $(TARGET_BUILD_VARIANT), eng userdebug))
+ifneq (,$(filter $(TARGET_BUILD_VARIANT),eng userdebug))
 include linux/modules/ioaccess/AndroidIOA.mk
 endif
 

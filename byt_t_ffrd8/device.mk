@@ -170,8 +170,7 @@ PRODUCT_PACKAGES += \
 #widi
 PRODUCT_PACKAGES += widi
 
-ifeq ($(TARGET_BUILD_VARIANT), $(filter $(TARGET_BUILD_VARIANT), eng userdebug))
-PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES_DEBUG += \
     WirelessDisplaySigmaCapiUI \
     com.intel.widi.sigmaapi \
     com.intel.widi.sigmaapi.xml \
@@ -179,7 +178,6 @@ PRODUCT_PACKAGES += \
     libsigmacapi \
     shcli \
     shsrv
-endif
 
 # AT Proxy
 PRODUCT_PACKAGES += \
@@ -203,7 +201,7 @@ PRODUCT_PACKAGES += \
     mts
 
 # AMTL : Android Modem Traces and Logs
-ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
+ifneq (,$(filter $(TARGET_BUILD_VARIANT),eng userdebug))
     PRODUCT_PACKAGES += \
         Amtl \
         libamtl_jni
@@ -229,10 +227,8 @@ PRODUCT_PACKAGES += \
     CWS_SERVICE_MANAGER
 
 # TelephonyEventsNotifier
-ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
-PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES_DEBUG += \
     TelephonyEventsNotifier
-endif
 
 # Enable LTE telephony framework support
 PRODUCT_PROPERTY_OVERRIDES += persist.tel.lteOnGsmDevice=true
@@ -244,10 +240,8 @@ PRODUCT_PROPERTY_OVERRIDES += ro.telephony.default_network=9
 PRODUCT_PROPERTY_OVERRIDES += persist.tel.hot_swap.support=true
 
 # busybox
-ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
-PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES_DEBUG += \
     busybox
-endif
 
 # hw_ssl
 #PRODUCT_PACKAGES += \
@@ -325,11 +319,8 @@ PRODUCT_PACKAGES += \
     WirelessDisplayUtil
 
 # Test Camera is for Test only
-ifeq ($(TARGET_BUILD_VARIANT),eng)
-PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES_ENG += \
     TestCamera
-endif
-
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \

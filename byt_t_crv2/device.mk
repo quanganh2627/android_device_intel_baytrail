@@ -177,8 +177,7 @@ PRODUCT_PACKAGES += \
 #widi
 PRODUCT_PACKAGES += widi
 
-ifeq ($(TARGET_BUILD_VARIANT), $(filter $(TARGET_BUILD_VARIANT), eng userdebug))
-PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES_DEBUG += \
     WirelessDisplaySigmaCapiUI \
     com.intel.widi.sigmaapi \
     com.intel.widi.sigmaapi.xml \
@@ -186,13 +185,10 @@ PRODUCT_PACKAGES += \
     libsigmacapi \
     shcli \
     shsrv
-endif
 
 # busybox
-ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
-PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES_DEBUG += \
     busybox
-endif
 
 # hw_ssl
 #PRODUCT_PACKAGES += \
@@ -263,11 +259,8 @@ PRODUCT_PACKAGES += \
     WirelessDisplayUtil
 
 # Test Camera is for Test only
-ifeq ($(TARGET_BUILD_VARIANT),eng)
-PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES_ENG += \
     TestCamera
-endif
-
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \

@@ -70,11 +70,9 @@ PRODUCT_PACKAGES += \
     charger_res_images
 
 # remote-process for parameter-framework tuning interface
-ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
-PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES_DEBUG += \
     libremote-processor \
     remote-process
-endif
 
 # Add FPT and TXEManuf
 PRODUCT_PACKAGES_ENG += FPT TXEManuf
@@ -89,10 +87,8 @@ PRODUCT_PACKAGES += \
     OtaDownloader
 
 # Crash Report / crashinfo
-ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
-PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES_DEBUG += \
     crash_package
-endif
 
 #Opencl
 PRODUCT_PACKAGES += opencl_bundle
