@@ -28,7 +28,8 @@ service media /system/bin/mediaserver
     group system audio camera media_rw sdcard_rw inet net_bt net_bt_admin net_bw_acct drmrpc net_raw security radio mediadrm mei
     ioprio rt 4
 
-on property:sys.boot_completed=1
+#on property:sys.boot_completed=1
+on post-fs
     # Defer loading modules that may require firmware till fs is ready
     insmod /lib/modules/libmsrlisthelper.ko
     insmod /lib/modules/imx1x5.ko
