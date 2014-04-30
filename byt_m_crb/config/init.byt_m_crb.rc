@@ -250,6 +250,9 @@ on post-fs
 
     setprop ro.intel.ethernet true
 
+    # Setting default value to delay_use as one second
+    write /sys/module/usb_storage/parameters/delay_use 1
+
 # additional baytrail initialization
 service hdcpd /system/bin/hdcpd
     class main
