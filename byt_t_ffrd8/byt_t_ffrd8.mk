@@ -91,6 +91,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     nfc_pn544pc
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.nfc.se.uicc=false \
+    ro.nfc.se.ese=false \
+    ro.nfc.clk=xtal
+
 #SARManager
 PRODUCT_PACKAGES += \
     com.intel.internal.telephony.SARManager \
