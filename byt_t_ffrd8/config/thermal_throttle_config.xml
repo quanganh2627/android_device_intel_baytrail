@@ -28,6 +28,7 @@
       <ThrottleNormal>100</ThrottleNormal>
       <ThrottleWarning>40</ThrottleWarning>
       <ThrottleAlert>40</ThrottleAlert>
+      <ThrottleCritical>40</ThrottleCritical>
     </ThrottleValues>
   </ContributingDeviceInfo>
 
@@ -66,6 +67,11 @@
     <!--list of cooling device IDs registered for the zone-->
     <CoolingDeviceInfo>
       <CoolingDevId>1</CoolingDevId>
+      <!-- CoolingDeviceStates is the number of states a cooling device exposes under a
+           a zone. If it exceeds the number of throttle values that a cooling device
+           can support, it will be capped.
+      <CoolingDeviceStates>4</CoolingDeviceStates>
+      -->
     </CoolingDeviceInfo>
     <CoolingDeviceInfo>
       <CoolingDevId>2</CoolingDevId>
