@@ -92,6 +92,9 @@ PRODUCT_PACKAGES += com.google.widevine.software.drm.xml \
 
 PRODUCT_PACKAGES_ENG += WidevineSamplePlayer
 
+# SIM Hot Swap Property
+PRODUCT_PROPERTY_OVERRIDES += persist.tel.hot_swap.support=true
+
 # WV Modular
 PRODUCT_PACKAGES += libwvdrmengine
 
