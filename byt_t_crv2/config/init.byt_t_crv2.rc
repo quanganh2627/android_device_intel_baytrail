@@ -190,6 +190,9 @@ on post-fs-data
     chown system system /sys/class/power_supply/max17047_battery/serial_number
     start fg_conf
 
+    # Enable Dynamic Turbo feature
+    setprop persist.thermal.turbo.dynamic 1
+
 on post-fs
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chown system system /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
