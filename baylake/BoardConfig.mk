@@ -71,7 +71,7 @@ JPEGDEC_USES_GEN := true
 
 ifeq ($(BOARD_KERNEL_CMDLINE),)
 DEBUG_KERNEL_CMDLINE := console=ttyS0,115200 console=logk0 earlyprintk=nologger \
-                       ptrace.ptrace_can_access=1 panic_on_bad_page=1
+                       ptrace.ptrace_can_access=1 panic_on_bad_page=1 panic_on_list_corruption=1
 ifeq ($(TARGET_BUILD_VARIANT),eng)
 DEBUG_KERNEL_CMDLINE := $(DEBUG_KERNEL_CMDLINE) loglevel=8 drm.debug=0x0
 else ifeq ($(TARGET_BUILD_VARIANT),userdebug)
