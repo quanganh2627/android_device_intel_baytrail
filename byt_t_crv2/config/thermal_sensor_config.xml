@@ -110,4 +110,34 @@
        </Sensor>
   </Zone>
 
+  <Zone>
+       <ZoneID>5</ZoneID>
+       <ZoneName>Battery_CR2.2</ZoneName>
+       <ZoneLogic>Raw</ZoneLogic>
+       <SupportsUEvent>0</SupportsUEvent>
+       <DebounceInterval>2000</DebounceInterval>
+       <PollDelay>
+              <DelayTOff>30000</DelayTOff>
+              <DelayNormal>30000</DelayNormal>
+              <DelayWarning>30000</DelayWarning>
+              <DelayAlert>30000</DelayAlert>
+              <DelayCritical>30000</DelayCritical>
+       </PollDelay>
+       <Sensor>
+              <SensorID>6</SensorID>
+              <SensorName>intel_fuel_gauge</SensorName>
+              <SensorPath>auto</SensorPath>
+              <InputTemp>temp</InputTemp>
+              <LowTemp>trip_point_0_temp</LowTemp>
+              <HighTemp>trip_point_1_temp</HighTemp>
+              <Threshold>
+                <ThresholdTOff>0</ThresholdTOff>
+                <ThresholdNormal>48000</ThresholdNormal>
+                <ThresholdWarning>54000</ThresholdWarning>
+                <ThresholdAlert>60000</ThresholdAlert>
+                <ThresholdCritical>68000</ThresholdCritical>
+              </Threshold>
+       </Sensor>
+  </Zone>
+
  </thermalconfig>
