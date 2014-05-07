@@ -109,6 +109,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     rfid_monzaxd
 
+# IPTrak
+PRODUCT_PACKAGES_DEBUG += \
+    IPTrak
+
 # Identity Protection Technology (IPT)
 PRODUCT_PACKAGES += \
     libiha \
