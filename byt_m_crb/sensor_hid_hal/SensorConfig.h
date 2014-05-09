@@ -149,12 +149,12 @@ inline float convert_from_vtf_format(int size, int exponent, unsigned int value)
 
 // Platform sensor orientatation
 #define DEF_ORIENT_ACCEL_X                   -1
-#define DEF_ORIENT_ACCEL_Y                   -1
+#define DEF_ORIENT_ACCEL_Y                   1
 #define DEF_ORIENT_ACCEL_Z                   -1
 
-#define DEF_ORIENT_GYRO_X                   1
+#define DEF_ORIENT_GYRO_X                   -1
 #define DEF_ORIENT_GYRO_Y                   1
-#define DEF_ORIENT_GYRO_Z                   1
+#define DEF_ORIENT_GYRO_Z                   -1
 
 // G to m/s2
 #define CONVERT_FROM_VTF16(s,d,x)      (convert_from_vtf_format(s,d,x))
