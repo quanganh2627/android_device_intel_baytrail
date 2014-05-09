@@ -198,12 +198,6 @@ ADDITIONAL_BUILD_PROPERTIES += \
 				ro.camera.0.facing=front \
 				ro.camera.0.orientation=0
 
-#Set ro.adb.secure to 0 for user build
-ifeq ($(TARGET_BUILD_VARIANT), user)
-ADDITIONAL_DEFAULT_PROPERTIES += \
-                                ro.adb.secure=0
-endif
-
 # Define Platform Sensor Hub firmware name
 SENSORHUB_FW_NAME := psh_byt_m_crb.bin
 # Including OTC iago/gummiboot installer as new method of
