@@ -295,11 +295,11 @@ endif
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/ueventd.common.rc:root/ueventd.$(PRODUCT_DEVICE).rc
 
-# This device is xhdpi.  However the platform doesn't
-# currently contain all of the bitmaps at xhdpi density so
-# we do this little trick to fall back to the hdpi version
-# if the xhdpi doesn't exist.
-PRODUCT_AAPT_CONFIG := normal large xlarge mdpi
+# This device is mdpi. However the platform doesn't
+# currently contain all of the bitmaps at mdpi density so
+# we do this little trick to fall back to other density
+# if the mdpi doesn't exist.
+PRODUCT_AAPT_CONFIG := normal large xlarge ldpi mdpi hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 
 # usb accessory
