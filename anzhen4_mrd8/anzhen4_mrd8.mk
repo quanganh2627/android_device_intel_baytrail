@@ -1,5 +1,5 @@
 ifeq ($(PRODUCT_NAME),)
-PRODUCT_NAME := anzhen4_mrd8
+	PRODUCT_NAME := anzhen4_mrd8
 endif
 
 BOARD_HAS_CAPSULE := false

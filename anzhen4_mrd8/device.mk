@@ -158,7 +158,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608 \
-    ro.sf.lcd_density=320
+    ro.sf.lcd_density=160
 
 # Version of mandatory blankphone
 PRODUCT_PROPERTY_OVERRIDES += ro.blankphone_id=1
