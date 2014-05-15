@@ -356,3 +356,4 @@ on charger
 service esif_ufd /system/bin/esif_ufd
     class main
     user dptf
+    group system
