@@ -10,6 +10,10 @@ include $(BUILD_PREBUILT)
 
 include $(PLATFORM_PATH)/AndroidBoard.mk
 
+ifeq ($(TARGET_BUILD_VARIANT),user)
+flashfiles: publish_linux_tools
+endif
+
 flashfiles: liveimg provimg
 # parameter-framework
 include $(DEVICE_CONF_PATH)/parameter-framework/AndroidBoard.mk
