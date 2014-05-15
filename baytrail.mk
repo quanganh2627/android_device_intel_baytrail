@@ -13,7 +13,8 @@ PRODUCT_COPY_FILES += \
     $(PLATFORM_CONF_PATH)/atmel_mxt_ts.idc:system/usr/idc/atmel_mxt_ts.idc \
     $(PLATFORM_CONF_PATH)/goodix_ts.idc:system/usr/idc/goodix_ts.idc \
     $(PLATFORM_CONF_PATH)/ft5x0x_ts.idc:system/usr/idc/ft5x0x_ts.idc \
-    $(PLATFORM_CONF_PATH)/synaptics_dsx.idc:system/usr/idc/synaptics_dsx.idc
+    $(PLATFORM_CONF_PATH)/synaptics_dsx.idc:system/usr/idc/synaptics_dsx.idc \
+    $(PLATFORM_CONF_PATH)/GSL_TP.idc:system/usr/idc/GSL_TP.idc
 
 ifeq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_COPY_FILES += \
