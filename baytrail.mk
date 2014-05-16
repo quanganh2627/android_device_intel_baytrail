@@ -113,6 +113,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     IPTrak
 
+# WebRTC reference app
+PRODUCT_PACKAGES += \
+    videoP2P
+
+PRODUCT_PACKAGES_DEBUG += \
+    WebRTCDemo
+
 # Identity Protection Technology (IPT)
 PRODUCT_PACKAGES += \
     libiha \

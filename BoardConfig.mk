@@ -73,6 +73,9 @@ DEFAULT_JIT_CODE_GENERATOR := PCG
 # Security
 BUILD_WITH_SECURITY_FRAMEWORK := txei
 
+# enable WebRTC
+ENABLE_WEBRTC := true
+
 INTEL_FEATURE_ARKHAM := false
 ifeq ($(INTEL_FEATURE_ARKHAM),true)
 PRODUCT_BOOT_JARS := $(PRODUCT_BOOT_JARS):com.intel.arkham.services
