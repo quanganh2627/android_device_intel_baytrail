@@ -51,70 +51,6 @@
   </Zone>
 
   <Zone>
-        <ZoneID>1</ZoneID>
-        <ZoneName>BackSkin</ZoneName>
-        <ZoneLogic>Raw</ZoneLogic>
-        <SupportsUEvent>1</SupportsUEvent>
-        <DebounceInterval>1000</DebounceInterval>
-        <PollDelay>
-               <DelayTOff>30000</DelayTOff>
-               <DelayNormal>30000</DelayNormal>
-               <DelayWarning>30000</DelayWarning>
-               <DelayAlert>30000</DelayAlert>
-               <DelayCritical>30000</DelayCritical>
-        </PollDelay>
-        <Sensor>
-               <SensorID>2</SensorID>
-               <SensorName>skin1</SensorName>
-               <SensorPath>auto</SensorPath>
-               <InputTemp>temp</InputTemp>
-               <LowTemp>trip_point_0_temp</LowTemp>
-               <HighTemp>trip_point_1_temp</HighTemp>
-               <UEventDevPath>auto</UEventDevPath>
-               <ErrorCorrection>800</ErrorCorrection>
-               <Threshold>
-                <ThresholdTOff>0</ThresholdTOff>
-                <ThresholdNormal>44000</ThresholdNormal>
-                <ThresholdWarning>55000</ThresholdWarning>
-                <ThresholdAlert>70000</ThresholdAlert>
-                <ThresholdCritical>78000</ThresholdCritical>
-              </Threshold>
-        </Sensor>
-  </Zone>
-
-  <Zone>
-       <ZoneID>2</ZoneID>
-       <ZoneName>FrontSkin</ZoneName>
-       <ZoneLogic>Raw</ZoneLogic>
-       <SupportsUEvent>1</SupportsUEvent>
-       <DebounceInterval>1000</DebounceInterval>
-       <PollDelay>
-              <DelayTOff>30000</DelayTOff>
-              <DelayNormal>30000</DelayNormal>
-              <DelayWarning>30000</DelayWarning>
-              <DelayAlert>30000</DelayAlert>
-              <DelayCritical>30000</DelayCritical>
-       </PollDelay>
-       <Sensor>
-              <SensorID>3</SensorID>
-              <SensorName>skin0</SensorName>
-              <SensorPath>auto</SensorPath>
-              <InputTemp>temp</InputTemp>
-              <LowTemp>trip_point_0_temp</LowTemp>
-              <HighTemp>trip_point_1_temp</HighTemp>
-              <UEventDevPath>auto</UEventDevPath>
-              <ErrorCorrection>800</ErrorCorrection>
-              <Threshold>
-                <ThresholdTOff>0</ThresholdTOff>
-                <ThresholdNormal>38000</ThresholdNormal>
-                <ThresholdWarning>45000</ThresholdWarning>
-                <ThresholdAlert>55000</ThresholdAlert>
-                <ThresholdCritical>60000</ThresholdCritical>
-              </Threshold>
-       </Sensor>
-  </Zone>
-
-  <Zone>
        <ZoneID>3</ZoneID>
        <ZoneName>Battery</ZoneName>
        <ZoneLogic>Raw</ZoneLogic>
@@ -175,64 +111,33 @@
   </Zone>
 
   <Zone>
-    <ZoneID>5</ZoneID>
-    <ZoneName>Modem</ZoneName>
-    <ZoneLogic>Modem</ZoneLogic>
-    <SupportsUEvent>0</SupportsUEvent>
-    <DebounceInterval>2000</DebounceInterval>
-    <PollDelay>
-      <DelayTOff>30000</DelayTOff>
-      <DelayNormal>30000</DelayNormal>
-      <DelayWarning>30000</DelayWarning>
-      <DelayAlert>30000</DelayAlert>
-      <DelayCritical>30000</DelayCritical>
-    </PollDelay>
-    <Sensor>
-      <!--Modem Sensor IDs are enumerated from OemtelephonyConstants class
-      during runtime-->
-      <SensorID>6</SensorID>
-      <SensorName>Modem_PCB</SensorName>
-      <SensorPath>none</SensorPath>
-      <InputTemp>invalid</InputTemp>
-      <HighTemp>invalid</HighTemp>
-      <LowTemp>invalid</LowTemp>
-      <Threshold>
-        <ThresholdTOff>0</ThresholdTOff>
-        <ThresholdNormal>80000</ThresholdNormal>
-        <ThresholdWarning>90000</ThresholdWarning>
-        <ThresholdAlert>100000</ThresholdAlert>
-        <ThresholdCritical>120000</ThresholdCritical>
-      </Threshold>
-    </Sensor>
-    <Sensor>
-      <SensorID>7</SensorID>
-      <SensorName>Modem_RF</SensorName>
-      <SensorPath>none</SensorPath>
-      <InputTemp>invalid</InputTemp>
-      <HighTemp>invalid</HighTemp>
-      <LowTemp>invalid</LowTemp>
-      <Threshold>
-        <ThresholdTOff>0</ThresholdTOff>
-        <ThresholdNormal>80000</ThresholdNormal>
-        <ThresholdWarning>90000</ThresholdWarning>
-        <ThresholdAlert>100000</ThresholdAlert>
-        <ThresholdCritical>120000</ThresholdCritical>
-      </Threshold>
-    </Sensor>
-    <Sensor>
-      <SensorID>8</SensorID>
-      <SensorName>Modem_BB</SensorName>
-      <SensorPath>none</SensorPath>
-      <InputTemp>invalid</InputTemp>
-      <HighTemp>invalid</HighTemp>
-      <LowTemp>invalid</LowTemp>
-      <Threshold>
-        <ThresholdTOff>0</ThresholdTOff>
-        <ThresholdNormal>80000</ThresholdNormal>
-        <ThresholdWarning>90000</ThresholdWarning>
-        <ThresholdAlert>100000</ThresholdAlert>
-        <ThresholdCritical>120000</ThresholdCritical>
-      </Threshold>
-    </Sensor>
+       <ZoneID>5</ZoneID>
+       <ZoneName>Battery_CR2.2</ZoneName>
+       <ZoneLogic>Raw</ZoneLogic>
+       <SupportsUEvent>0</SupportsUEvent>
+       <DebounceInterval>2000</DebounceInterval>
+       <PollDelay>
+              <DelayTOff>30000</DelayTOff>
+              <DelayNormal>30000</DelayNormal>
+              <DelayWarning>30000</DelayWarning>
+              <DelayAlert>30000</DelayAlert>
+              <DelayCritical>30000</DelayCritical>
+       </PollDelay>
+       <Sensor>
+              <SensorID>6</SensorID>
+              <SensorName>intel_fuel_gauge</SensorName>
+              <SensorPath>auto</SensorPath>
+              <InputTemp>temp</InputTemp>
+              <LowTemp>trip_point_0_temp</LowTemp>
+              <HighTemp>trip_point_1_temp</HighTemp>
+              <Threshold>
+                <ThresholdTOff>0</ThresholdTOff>
+                <ThresholdNormal>48000</ThresholdNormal>
+                <ThresholdWarning>54000</ThresholdWarning>
+                <ThresholdAlert>60000</ThresholdAlert>
+                <ThresholdCritical>68000</ThresholdCritical>
+              </Threshold>
+       </Sensor>
   </Zone>
+
  </thermalconfig>

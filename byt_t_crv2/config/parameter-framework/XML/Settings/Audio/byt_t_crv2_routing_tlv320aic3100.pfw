@@ -54,13 +54,11 @@ supDomain: Routing.Mute
 						SelectedOutputDevice Includes Headphones
 					OpenedPlaybackRoutes Includes HwCodecMedia
 
-				/Audio/TI/OUTPUT/HEADPHONE/ENABLED = 1
 				/Audio/TI/OUTPUT/HEADPHONE/ANALOG/VOLUME/0/MUTED = 0
 				/Audio/TI/OUTPUT/HEADPHONE/ANALOG/VOLUME/1/MUTED = 0
 				/Audio/TI/OUTPUT/HEADPHONE/UNMUTE/ENABLED = 1 1
 
 			conf: Mute
-				/Audio/TI/OUTPUT/HEADPHONE/ENABLED = 0
 				/Audio/TI/OUTPUT/HEADPHONE/ANALOG/VOLUME/0/MUTED = 1
 				/Audio/TI/OUTPUT/HEADPHONE/ANALOG/VOLUME/1/MUTED = 1
 				/Audio/TI/OUTPUT/HEADPHONE/UNMUTE/ENABLED = 0 0
@@ -109,11 +107,13 @@ supDomain: Routing.Enable
 						SelectedOutputDevice Includes Headphones
 					OpenedPlaybackRoutes Includes HwCodecMedia
 
+				/Audio/TI/OUTPUT/HEADPHONE/ENABLED = 1
 				/Audio/TI/MIXER/DAC/RIGHT/DAC_R/SWITCH = 1
 				/Audio/TI/OUTPUT/HEADPHONE/L_SWITCH = 1
 				/Audio/TI/OUTPUT/HEADPHONE/R_SWITCH = 1
 
 			conf: Disable
+				/Audio/TI/OUTPUT/HEADPHONE/ENABLED = 0
 				/Audio/TI/MIXER/DAC/RIGHT/DAC_R/SWITCH = 0
 				/Audio/TI/OUTPUT/HEADPHONE/L_SWITCH = 0
 				/Audio/TI/OUTPUT/HEADPHONE/R_SWITCH = 0

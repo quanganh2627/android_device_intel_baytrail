@@ -97,8 +97,7 @@ PRODUCT_PACKAGES += libwvdrmengine
 
 PRODUCT_PACKAGES_ENG += ExoPlayerDemo
 
-# L1 MDRM support
-#PRODUCT_PACKAGES += liboemcrypto
+PRODUCT_PACKAGES += liboemcrypto
 
 # omx components
 PRODUCT_PACKAGES += \
@@ -348,7 +347,7 @@ PRODUCT_PACKAGES += \
 -include vendor/intel/PRIVATE/cert/IntelCorpEmailCert.mk
 
 # Intel Corp CA certificates
-#PRODUCT_PACKAGES += intel_cacerts
+PRODUCT_PACKAGES += intel_cacerts
 
 # Enable ALAC
 PRODUCT_PACKAGES += \

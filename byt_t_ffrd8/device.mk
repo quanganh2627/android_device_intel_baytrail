@@ -424,7 +424,7 @@ PRODUCT_PACKAGES += \
 -include vendor/intel/PRIVATE/cert/IntelCorpEmailCert.mk
 
 # Intel Corp CA certificates
-#PRODUCT_PACKAGES += intel_cacerts
+PRODUCT_PACKAGES += intel_cacerts
 
 # Enable ALAC
 PRODUCT_PACKAGES += \
