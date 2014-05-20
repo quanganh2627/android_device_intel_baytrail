@@ -90,9 +90,9 @@
       <!--Modem Sensor IDs are enumerated from OemtelephonyConstants class
       during runtime-->
       <SensorName>Modem_BB</SensorName>
-<!--
       <SensorPath>none</SensorPath>
       <InputTemp>invalid</InputTemp>
+<!--
       <HighTemp>invalid</HighTemp>
       <LowTemp>invalid</LowTemp>
 -->
@@ -100,14 +100,20 @@
 
   <Sensor>
       <SensorName>Modem_RF</SensorName>
+      <SensorPath>none</SensorPath>
+      <InputTemp>invalid</InputTemp>
   </Sensor>
 
   <Sensor>
       <SensorName>Modem_PMU</SensorName>
+      <SensorPath>none</SensorPath>
+      <InputTemp>invalid</InputTemp>
   </Sensor>
 
   <Sensor>
       <SensorName>Modem_PA</SensorName>
+      <SensorPath>none</SensorPath>
+      <InputTemp>invalid</InputTemp>
   </Sensor>
 
 <!--Thermal Zones-->
