@@ -54,6 +54,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
        fg_conf fg_config.bin fg_config_xpwr.bin
 
+#FG_ALGO for BYT-CRV-2.2
+PRODUCT_PACKAGES += \
+       fg_algo_iface
+
 #remote submix audio
 PRODUCT_PACKAGES += \
        audio.r_submix.default
