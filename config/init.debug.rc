@@ -1,6 +1,5 @@
 on init
     mkdir /logs
-    mkdir /pstore 0750 root log
     # Export gcov variables to enable code coverage on mobile
     export GCOV_PREFIX /data
     export GCOV_PREFIX_STRIP 1
@@ -21,7 +20,7 @@ on early-boot
     setprop debug.rs.x86vectorizer 1
 
 on boot
-    mount pstore none /pstore
+    mount pstore none /sys/fs/pstore
     mount efivarfs none /sys/firmware/efi/efivars
 
 on post-fs
@@ -41,7 +40,7 @@ on ramconsole
     setprop ro.debuggable 1
     mount_all /fstab.ramconsole.${ro.hardware}
     mount debugfs none /sys/kernel/debug
-    mount pstore none /pstore
+    mount pstore none /sys/fs/pstore
 
     start watchdogd
     insmod /lib/modules/rmi4.ko boot_mode=1
