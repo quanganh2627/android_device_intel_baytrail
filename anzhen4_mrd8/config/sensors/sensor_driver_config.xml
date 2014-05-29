@@ -1,0 +1,881 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<sensor_driver_config flags="0" dbg_level="0" dbg_sensors="0">
+  <sensor name="pressure">
+    <basic_info>
+      <i2c_bus_num>3</i2c_bus_num>
+      <i2c_addrs>
+	<addr>0x5d</addr>
+      </i2c_addrs>
+      <id_reg_addr>0xf</id_reg_addr>
+      <ids>
+        <id>0xbb</id>
+      </ids>
+      <driver_name>lps331ap</driver_name>
+      <input_name>lps331ap_pressure</input_name>
+      <event_type>EV_REL</event_type>
+      <method>polling</method>
+      <default_poll_interval>200</default_poll_interval>
+      <min_poll_interval>75</min_poll_interval>
+      <max_poll_interval></max_poll_interval>
+      <gpio_num></gpio_num>
+      <irq_flag></irq_flag>
+      <irq_serialize></irq_serialize>
+    </basic_info>
+    <odr_tables>
+    </odr_tables>
+    <range_tables>
+    </range_tables>
+    <sys_entries>
+    </sys_entries>
+    <sensor_actions>
+      <init><![CDATA[
+        writereg_0x10_0_1 = 0x34;
+        writereg_0x20_0_1 = 0;
+        writereg_0x20_0_1 = 0x74;
+        ]]>
+      </init>
+      <deinit>
+      </deinit>
+      <enable><![CDATA[
+        readreg_0x20_0_1;
+        local_1 = regbuf_0x20_1 | 0x80;
+        writereg_0x20_0_1 = local_1;
+        ]]>
+      </enable>
+      <disable><![CDATA[
+        readreg_0x20_0_1;
+        local_1 = regbuf_0x20_1 & 0x7f;
+        writereg_0x20_0_1 = local_1;
+        ]]>
+      </disable>
+      <int_ack>
+      </int_ack>
+      <get_data_x><![CDATA[
+        readreg_0x28_0x80_3;
+        return le24_to_cpu(regbuf_0x28_3);
+        ]]>
+      </get_data_x>
+      <get_data_y><![CDATA[
+        readreg_0x2b_0x80_2;
+        return le16_to_cpu(regbuf_0x2b_2);
+        ]]>
+      </get_data_y>
+      <get_data_z>
+      </get_data_z>
+    </sensor_actions>
+  </sensor>
+  <sensor name="gyroscope">
+    <basic_info>
+      <i2c_bus_num>3</i2c_bus_num>
+      <i2c_addrs>
+	<addr>0x68</addr>
+      </i2c_addrs>
+      <id_reg_addr>0x0</id_reg_addr>
+      <ids>
+        <id>0xf</id>
+      </ids>
+      <driver_name>BSBG0160:00</driver_name>
+      <input_name>gyro</input_name>
+      <event_type>EV_REL</event_type>
+      <method>polling</method>
+      <default_poll_interval>200</default_poll_interval>
+      <min_poll_interval></min_poll_interval>
+      <max_poll_interval>500</max_poll_interval>
+      <gpio_num></gpio_num>
+      <irq_flag></irq_flag>
+      <irq_serialize></irq_serialize>
+    </basic_info>
+    <odr_tables>
+      <odr_table>
+        <hz>100</hz>
+        <action><![CDATA[
+	  writereg_0x10_0x0_1 = (regbuf_0x10_1 & 0xf0) | 0x7;
+          ]]>
+        </action>
+      </odr_table>
+      <odr_table>
+        <hz>200</hz>
+        <action><![CDATA[
+	  writereg_0x10_0x0_1 = (regbuf_0x10_1 & 0xf0) | 0x6;
+          ]]>
+        </action>
+      </odr_table>
+      <odr_table>
+        <hz>400</hz>
+        <action><![CDATA[
+	  writereg_0x10_0x0_1 = (regbuf_0x10_1 & 0xf0) | 0x3;
+          ]]>
+        </action>
+      </odr_table>
+      <odr_table>
+        <hz>1000</hz>
+        <action><![CDATA[
+	  writereg_0x10_0x0_1 = (regbuf_0x10_1 & 0xf0) | 0x2;
+          ]]>
+        </action>
+      </odr_table>
+    </odr_tables>
+    <range_tables>
+      <range_table>
+        <range>250</range>
+        <action><![CDATA[
+	  writereg_0xf_0x0_1 = (regbuf_0xf_1 & 0xf8) | 0x3;
+          ]]>
+        </action>
+      </range_table>
+      <range_table>
+        <range>500</range>
+        <action><![CDATA[
+	  writereg_0xf_0x0_1 = (regbuf_0xf_1 & 0xf8) | 0x2;
+          ]]>
+        </action>
+      </range_table>
+      <range_table>
+        <range>1000</range>
+        <action><![CDATA[
+	  writereg_0xf_0x0_1 = (regbuf_0xf_1 & 0xf8) | 0x1;
+          ]]>
+        </action>
+      </range_table>
+      <range_table default="y">
+        <range>2000</range>
+        <action><![CDATA[
+	  writereg_0xf_0x0_1 = regbuf_0xf_1 & 0xf8;
+          ]]>
+        </action>
+      </range_table>
+    </range_tables>
+    <sys_entries>
+      <sys_entry>
+        <name>range</name>
+        <show_action>get_range</show_action>
+        <store_action>set_range</store_action>
+      </sys_entry>
+    </sys_entries>
+    <sensor_actions>
+      <init><![CDATA[
+	/*init odr and range*/
+        readreg_0x10_0_1;
+        readreg_0xf_0_1;
+	writereg_0x10_0x0_1 = (regbuf_0x10_1 & 0xf0) | 0x7;
+	writereg_0xf_0x0_1 = regbuf_0xf_1 & 0xf8;
+        /*set suspend mode*/
+        readreg_0x11_0_1;
+        writereg_0x11_0_1 = (regbuf_0x11_1 & 0x5f) | 0x80;
+        sleep_30;
+        readreg_0x12_0_1;
+        writereg_0x12_0_1 = regbuf_0x12_1 & 0x3f;
+        ]]>
+      </init>
+      <deinit>
+      </deinit>
+      <enable><![CDATA[
+        /*set normal mode*/
+        readreg_0x11_0_1;
+        writereg_0x11_0_1 = regbuf_0x11_1 & 0x5f;
+        sleep_1;
+        readreg_0x12_0_1;
+        writereg_0x12_0_1 = regbuf_0x12_1 & 0x3f;
+        ]]>
+      </enable>
+      <disable><![CDATA[
+        /*set suspend mode, 25uA*/
+        readreg_0x11_0_1;
+        writereg_0x11_0_1 = (regbuf_0x11_1 & 0x5f) | 0x80;
+        sleep_1;
+        readreg_0x12_0_1;
+        writereg_0x12_0_1 = regbuf_0x12_1 & 0x3f;
+        ]]>
+      </disable>
+      <int_ack>
+      </int_ack>
+      <get_data_x><![CDATA[
+        readreg_0x2_0x0_6;
+        return le16_to_cpu(regbuf_0x2_2);
+        ]]>
+      </get_data_x>
+      <get_data_y><![CDATA[
+        return le16_to_cpu(regbuf_0x4_2);
+        ]]>
+      </get_data_y>
+      <get_data_z><![CDATA[
+        return le16_to_cpu(regbuf_0x6_2);
+        ]]>
+      </get_data_z>
+    </sensor_actions>
+  </sensor>
+  <sensor name="compass">
+    <basic_info>
+      <i2c_bus_num>3</i2c_bus_num>
+      <i2c_addrs>
+	<addr>0x13</addr>
+      </i2c_addrs>
+      <id_reg_addr>0x40</id_reg_addr>
+      <ids>
+        <id>0x32</id>
+      </ids>
+      <driver_name>BSBM0150:00</driver_name>
+      <input_name>comp</input_name>
+      <event_type>EV_REL</event_type>
+      <method>polling</method>
+      <default_poll_interval>200</default_poll_interval>
+      <min_poll_interval>18</min_poll_interval>
+      <max_poll_interval></max_poll_interval>
+      <gpio_num></gpio_num>
+      <irq_flag></irq_flag>
+      <irq_serialize></irq_serialize>
+    </basic_info>
+    <odr_tables>
+    </odr_tables>
+    <range_tables>
+    </range_tables>
+    <sys_entries>
+    </sys_entries>
+    <sensor_actions>
+      <init><![CDATA[
+        /*wakeup from suspend*/
+        writereg_0x4b_0_1 = 0x1;
+        sleep_2;
+        /*set data rate 10hz and sleep mode*/
+	readreg_0x4c_0_1;
+	writereg_0x4c_0_1 = (regbuf_0x4c_1 & 0xc1 ) | 6;
+        /*set repetitions*/
+	writereg_0x51_0_1 = 4;
+	writereg_0x52_0_1 = 23;
+
+	/*trim data*/
+	readreg_0x5d_0_1;
+	readreg_0x5e_0_1;
+	readreg_0x64_0_1;
+	readreg_0x65_0_1;
+	readreg_0x70_0_1;
+	readreg_0x71_0_1;
+	readreg_0x6a_0_2;
+	readreg_0x68_0_2;
+	readreg_0x6e_0_2;
+	readreg_0x62_0_2;
+	readreg_0x6c_0_2;
+
+        /*enter suspend mode by 0x4b[0]=0*/
+        readreg_0x4b_0_1;
+        writereg_0x4b_0_1 = regbuf_0x4b_1 & 0xf7;
+        ]]>
+      </init>
+      <deinit>
+      </deinit>
+      <enable><![CDATA[
+        /*enter sleep mode from suspend mode*/
+        readreg_0x4b_0_1;
+        writereg_0x4b_0_1 = regbuf_0x4b_1 | 0x1;
+        /*enter active mode */
+        readreg_0x4c_0_1;
+	writereg_0x4c_0_1 = regbuf_0x4c_1 & 0xf9;
+        ]]>
+      </enable>
+      <disable><![CDATA[
+        /*enter sleep mode from active mode*/
+	writereg_0x4c_0_1 = (regbuf_0x4c_1 & 0xf9 ) | 0x6;
+	/*enter suspend mode by 0x4b[0]=0*/
+        readreg_0x4b_0_1;
+        writereg_0x4b_0_1 = regbuf_0x4b_1 & 0xf7;
+        ]]>
+      </disable>
+      <int_ack>
+      </int_ack>
+      <get_data_x><![CDATA[
+        /*do compensation with triming values which can be get at initial*/
+        readreg_0x42_0x0_8;
+        return le16_to_cpu(regbuf_0x42_2) >> 3;
+        ]]>
+      </get_data_x>
+      <get_data_y><![CDATA[
+        return le16_to_cpu(regbuf_0x44_2) >> 3;
+        ]]>
+      </get_data_y>
+      <get_data_z><![CDATA[
+        return le16_to_cpu(regbuf_0x46_2) >> 1;
+        ]]>
+      </get_data_z>
+    </sensor_actions>
+  </sensor>
+  <sensor name="accelerometor">
+    <basic_info>
+      <i2c_bus_num>3</i2c_bus_num>
+      <i2c_addrs>
+	<addr>0x11</addr>
+      </i2c_addrs>
+      <id_reg_addr>0</id_reg_addr>
+      <ids>
+        <id>0xf8</id>
+        <id>0xf9</id>
+        <id>0xfa</id>
+        <id>0xfb</id>
+      </ids>
+      <driver_name>BSBA0150:00</driver_name>
+      <input_name>accel</input_name>
+      <event_type>EV_REL</event_type>
+      <method>mix</method>
+      <default_poll_interval>200</default_poll_interval>
+      <min_poll_interval></min_poll_interval>
+      <max_poll_interval></max_poll_interval>
+      <gpio_num>153</gpio_num>
+      <irq_flag>0x2001</irq_flag>
+      <irq_serialize></irq_serialize>
+      <report_cnt>120</report_cnt>
+      <report_interval>67</report_interval>
+    </basic_info>
+    <odr_tables>
+      <odr_table>
+        <hz>8</hz>
+        <action><![CDATA[
+	  writereg_0x10_0x0_1 = (regbuf_0x10_1 & 0xe0) | 0x8;
+          ]]>
+        </action>
+      </odr_table>
+      <odr_table>
+        <hz>16</hz>
+        <action><![CDATA[
+	  writereg_0x10_0x0_1 = (regbuf_0x10_1 & 0xe0) | 0x9;
+          ]]>
+        </action>
+      </odr_table>
+      <odr_table>
+        <hz>31</hz>
+        <action><![CDATA[
+	  writereg_0x10_0x0_1 = (regbuf_0x10_1 & 0xe0) | 0xa;
+          ]]>
+        </action>
+      </odr_table>
+      <odr_table>
+        <hz>62</hz>
+        <action><![CDATA[
+	  writereg_0x10_0x0_1 = (regbuf_0x10_1 & 0xe0) | 0xb;
+          ]]>
+        </action>
+      </odr_table>
+      <odr_table>
+        <hz>125</hz>
+        <action><![CDATA[
+	  writereg_0x10_0x0_1 = (regbuf_0x10_1 & 0xe0) | 0xc;
+          ]]>
+        </action>
+      </odr_table>
+      <odr_table>
+        <hz>250</hz>
+        <action><![CDATA[
+	  writereg_0x10_0x0_1 = (regbuf_0x10_1 & 0xe0) | 0xd;
+          ]]>
+        </action>
+      </odr_table>
+    </odr_tables>
+    <range_tables>
+      <range_table default="y">
+        <range>2</range>
+        <action>
+          <![CDATA[
+          writereg_0xf_0_1 = (regbuf_0xf_1 & 0xf0) | 0x3;
+          global_1 = 1;
+          ]]>
+        </action>
+      </range_table>
+      <range_table>
+        <range>4</range>
+        <action>
+          <![CDATA[
+          writereg_0xf_0_1 = (regbuf_0xf_1 & 0xf0) | 0x5;
+          global_1 = 2;
+          ]]>
+        </action>
+      </range_table>
+      <range_table>
+        <range>8</range>
+        <action>
+          <![CDATA[
+          writereg_0xf_0_1 = (regbuf_0xf_1 & 0xf0) | 0x8;
+          global_1 = 4;
+          ]]>
+        </action>
+      </range_table>
+      <range_table>
+        <range>16</range>
+        <action>
+          <![CDATA[
+          writereg_0xf_0_1 = (regbuf_0xf_1 & 0xf0) | 0xd;
+          global_1 = 12;
+          ]]>
+        </action>
+      </range_table>
+    </range_tables>
+    <sys_entries>
+      <sys_entry>
+        <name>range</name>
+        <show_action>get_range</show_action>
+        <store_action>set_range</store_action>
+      </sys_entry>
+    </sys_entries>
+    <sensor_actions>
+      <init><![CDATA[
+        /*set BW as 125Hz*/
+        readreg_0x10_0_1;
+        writereg_0x10_0_1 = (regbuf_0x10_1 & 0xe0) | 0xc;
+        /*set range as 2g*/
+        readreg_0xf_0_1;
+        writereg_0xf_0_1 = (regbuf_0xf_1 & 0xf0) | 0x3;
+        global_1 = 1;
+
+	/*set int1, push-pull and high trigger*/
+        /*readreg_0x20_0_1;
+        writereg_0x20_0_1 = (regbuf_0x20_1 & 0xfc) | 0x1;*/
+        /*set int mode as temporary 250*/
+        readreg_0x21_0_1;
+        writereg_0x21_0_1 = (regbuf_0x21_1 & 0xf0) | 0x1;
+        /*map orient int to INT1, 0x1b for INT2*/
+        readreg_0x19_0_1;
+        writereg_0x19_0_1 = regbuf_0x19_1 | 0x40;
+        /*enable orient int*/
+        readreg_0x16_0_1;
+        writereg_0x16_0_1 = regbuf_0x16_1 | 0x40;
+
+        /*set lowpower mode in LPM1*/
+        readreg_0x12_0_1;
+        writereg_0x12_0_1 = regbuf_0x12_1 & 0xbf;
+        sleep_1;
+        /*set suspend mode*/
+        readreg_0x11_0_1;
+        writereg_0x11_0_1 = (regbuf_0x11_1 & 0x1f) | 0x80;
+	]]>
+      </init>
+      <deinit>
+      </deinit>
+      <enable><![CDATA[
+        /*set normal mode*/
+        readreg_0x11_0_1;
+        writereg_0x11_0_1 = regbuf_0x11_1 & 0x1f;
+        sleep_1;
+        /*set lowpower mode as LPM1*/
+        readreg_0x12_0_1;
+        writereg_0x12_0_1 = regbuf_0x12_1 & 0xbf;
+        ]]>
+      </enable>
+      <disable><![CDATA[
+        /*set lowpower mode in LPM1*/
+        readreg_0x12_0_1;
+        writereg_0x12_0_1 = regbuf_0x12_1 & 0xbf;
+        sleep_1;
+        /*set suspend mode*/
+        readreg_0x11_0_1;
+        writereg_0x11_0_1 = (regbuf_0x11_1 & 0x1f) | 0x80;
+        ]]>
+      </disable>
+      <int_ack><![CDATA[
+        /*check if orient interrupt, need to clear if set as latch mode*/
+        readreg_0x9_0_1;
+        return regbuf_0x9_1 & 0x40;
+        ]]>
+      </int_ack>
+      <get_data_x><![CDATA[
+        readreg_0x2_0x0_6;
+        return (le16_to_cpu(regbuf_0x2_2) >> 4) * global_1;
+        ]]>
+      </get_data_x>
+      <get_data_y><![CDATA[
+        return (le16_to_cpu(regbuf_0x4_2) >> 4) * global_1;
+        ]]>
+      </get_data_y>
+      <get_data_z><![CDATA[
+        return (le16_to_cpu(regbuf_0x6_2) >> 4) * global_1;
+        ]]>
+      </get_data_z>
+    </sensor_actions>
+  </sensor>
+  <sensor name="gyroscope">
+    <basic_info>
+      <i2c_bus_num>3</i2c_bus_num>
+      <i2c_addrs>
+	<addr>0x6b</addr>
+      </i2c_addrs>
+      <id_reg_addr>0xf</id_reg_addr>
+      <ids>
+        <id>0xd3</id>
+        <id>0xd4</id>
+        <id>0xd7</id>
+      </ids>
+      <driver_name>l3g4200d_g</driver_name>
+      <input_name>gyro</input_name>
+      <event_type>EV_REL</event_type>
+      <method>polling</method>
+      <default_poll_interval>200</default_poll_interval>
+      <min_poll_interval></min_poll_interval>
+      <max_poll_interval>500</max_poll_interval>
+      <gpio_num></gpio_num>
+      <irq_flag></irq_flag>
+      <irq_serialize></irq_serialize>
+    </basic_info>
+    <odr_tables>
+      <odr_table>
+        <hz>100</hz>
+        <action><![CDATA[
+	  writereg_0x20_0x0_1 = (regbuf_0x20_1 & 0xf) | 0x00;
+          ]]>
+        </action>
+      </odr_table>
+      <odr_table>
+        <hz>200</hz>
+        <action><![CDATA[
+	  writereg_0x20_0x0_1 = (regbuf_0x20_1 & 0xf) | 0x40;
+          ]]>
+        </action>
+      </odr_table>
+      <odr_table>
+        <hz>330</hz>
+        <action><![CDATA[
+	  writereg_0x20_0x0_1 = (regbuf_0x20_1 & 0xf) | 0x90;
+          ]]>
+        </action>
+      </odr_table>
+      <odr_table>
+        <hz>500</hz>
+        <action><![CDATA[
+	  writereg_0x20_0x0_1 = (regbuf_0x20_1 & 0xf) | 0xe0;
+          ]]>
+        </action>
+      </odr_table>
+    </odr_tables>
+    <range_tables>
+      <range_table>
+        <range>250</range>
+        <action><![CDATA[
+	  writereg_0x23_0x0_1 = (regbuf_0x23_1 & 0xcf) | 0x0;
+          ]]>
+        </action>
+      </range_table>
+      <range_table>
+        <range>500</range>
+        <action><![CDATA[
+	  writereg_0x23_0x0_1 = (regbuf_0x23_1 & 0xcf) | 0x10;
+          ]]>
+        </action>
+      </range_table>
+      <range_table default="y">
+        <range>2000</range>
+        <action><![CDATA[
+	  writereg_0x23_0x0_1 = (regbuf_0x23_1 & 0xcf) | 0x30;
+          ]]>
+        </action>
+      </range_table>
+    </range_tables>
+    <sys_entries>
+      <sys_entry>
+        <name>range</name>
+        <show_action>get_range</show_action>
+        <store_action>set_range</store_action>
+      </sys_entry>
+    </sys_entries>
+    <sensor_actions>
+      <init><![CDATA[
+        writereg_0x20_0_1 = 0x7;
+        writereg_0x21_0_1 = 0x0;
+        writereg_0x22_0_1 = 0x0;
+        writereg_0x23_0_1 = 0x30;
+        writereg_0x24_0_1 = 0x0;
+        ]]>
+      </init>
+      <deinit>
+      </deinit>
+      <enable><![CDATA[
+        readreg_0x20_0_1;
+        writereg_0x20_0_1 = regbuf_0x20_1 | 0x8;
+        sleep_500;
+        ]]>
+      </enable>
+      <disable><![CDATA[
+        readreg_0x20_0_1;
+        writereg_0x20_0_1 = regbuf_0x20_1 & 0xf7;
+        ]]>
+      </disable>
+      <int_ack>
+      </int_ack>
+      <get_data_x><![CDATA[
+        readreg_0x28_0x80_6;
+        return le16_to_cpu(regbuf_0x28_2);
+        ]]>
+      </get_data_x>
+      <get_data_y><![CDATA[
+        return le16_to_cpu(regbuf_0x2a_2);
+        ]]>
+      </get_data_y>
+      <get_data_z><![CDATA[
+        return le16_to_cpu(regbuf_0x2c_2);
+        ]]>
+      </get_data_z>
+    </sensor_actions>
+  </sensor>
+  <sensor name="compass">
+    <basic_info>
+      <i2c_bus_num>3</i2c_bus_num>
+      <i2c_addrs>
+	<addr>0x1e</addr>
+      </i2c_addrs>
+      <id_reg_addr></id_reg_addr>
+      <ids>
+      </ids>
+      <driver_name>lsm303cmp</driver_name>
+      <input_name>comp</input_name>
+      <event_type>EV_REL</event_type>
+      <method>polling</method>
+      <default_poll_interval>200</default_poll_interval>
+      <min_poll_interval>18</min_poll_interval>
+      <max_poll_interval></max_poll_interval>
+      <gpio_num></gpio_num>
+      <irq_flag></irq_flag>
+      <irq_serialize></irq_serialize>
+    </basic_info>
+    <odr_tables>
+    </odr_tables>
+    <range_tables>
+    </range_tables>
+    <sys_entries>
+    </sys_entries>
+    <sensor_actions>
+      <init><![CDATA[
+        writereg_0x0_0_1 = 0x18;
+        writereg_0x1_0_1 = 0x60;
+        writereg_0x2_0_1 = 2;
+        ]]>
+      </init>
+      <deinit>
+      </deinit>
+      <enable><![CDATA[
+        writereg_0x2_0_1 = 0;
+        ]]>
+      </enable>
+      <disable><![CDATA[
+        writereg_0x2_0_1 = 2;
+        ]]>
+      </disable>
+      <int_ack>
+      </int_ack>
+      <get_data_x><![CDATA[
+        readreg_0x3_0x80_6;
+        return be16_to_cpu(regbuf_0x3_2);
+        ]]>
+      </get_data_x>
+      <get_data_y><![CDATA[
+        return be16_to_cpu(regbuf_0x7_2);
+        ]]>
+      </get_data_y>
+      <get_data_z><![CDATA[
+        return be16_to_cpu(regbuf_0x5_2);
+        ]]>
+      </get_data_z>
+    </sensor_actions>
+  </sensor>
+  <sensor name="accelermetor">
+    <basic_info>
+      <i2c_bus_num>3</i2c_bus_num>
+      <i2c_addrs>
+	<addr>0x19</addr>
+      </i2c_addrs>
+      <id_reg_addr></id_reg_addr>
+      <ids>
+      </ids>
+      <driver_name>accel_g</driver_name>
+      <input_name>accel</input_name>
+      <event_type>EV_REL</event_type>
+      <method>mix</method>
+      <default_poll_interval>200</default_poll_interval>
+      <min_poll_interval></min_poll_interval>
+      <max_poll_interval></max_poll_interval>
+      <gpio_num>153</gpio_num>
+      <irq_flag>0x2001</irq_flag>
+      <irq_serialize></irq_serialize>
+      <report_cnt>120</report_cnt>
+      <report_interval>67</report_interval>
+    </basic_info>
+    <odr_tables>
+    </odr_tables>
+    <range_tables>
+      <range_table default="y">
+        <range>2</range>
+        <action>
+          <![CDATA[
+	  writereg_0x23_0x0_1 = (regbuf_0x23_1 & 0xc7) | 0x8;
+          global_1 = 1;
+          ]]>
+        </action>
+      </range_table>
+      <range_table>
+        <range>4</range>
+        <action>
+          <![CDATA[
+	  writereg_0x23_0x0_1 = (regbuf_0x23_1 & 0xc7) | 0x18;
+          global_1 = 2;
+          ]]>
+        </action>
+      </range_table>
+      <range_table>
+        <range>8</range>
+        <action>
+          <![CDATA[
+          writereg_0x23_0x0_1 = (regbuf_0x23_1 & 0xc7) | 0x28;
+          global_1 = 4;
+          ]]>
+        </action>
+      </range_table>
+      <range_table>
+        <range>16</range>
+        <action>
+          <![CDATA[
+	  writereg_0x23_0x0_1 = (regbuf_0x23_1 & 0xc7) | 0x38;
+          global_1 = 12;
+          ]]>
+        </action>
+      </range_table>
+    </range_tables>
+    <sys_entries>
+      <sys_entry>
+        <name>range</name>
+        <show_action>get_range</show_action>
+        <store_action>set_range</store_action>
+      </sys_entry>
+    </sys_entries>
+    <sensor_actions>
+      <init><![CDATA[
+        writereg_0x20_0_1 = 0x77;
+        writereg_0x1f_0_1 = 0x0;
+        writereg_0x2e_0_1 = 0x0;
+        writereg_0x32_0_1 = 0x30;
+        writereg_0x33_0_1 = 0x5;
+        writereg_0x30_0_1 = 0x7f;
+        writereg_0x22_0_1 = 0x40;
+        writereg_0x23_0_1 = 0x8;
+        global_1 = 0x1;
+        writereg_0x20_0_1 = 0x70;
+	]]>
+      </init>
+      <deinit>
+      </deinit>
+      <enable><![CDATA[
+        readreg_0x31_0x0_1;
+        writereg_0x20_0x0_1 = regbuf_0x20_1  | 0x7;
+        writereg_0x1f_0_1 = 0x0;
+        writereg_0x2e_0_1 = 0x0;
+        writereg_0x32_0_1 = 0x30;
+        writereg_0x33_0_1 = 0x5;
+        writereg_0x30_0_1 = 0x7f;
+        writereg_0x22_0_1 = 0x40;
+        sleep_20;
+        ]]>
+      </enable>
+      <disable><![CDATA[
+        local_1 = regbuf_0x20_1 & 0xf8;
+        writereg_0x20_0_1 = local_1;
+        ]]>
+      </disable>
+      <int_ack><![CDATA[
+        readreg_0x31_0x0_1;
+	return (regbuf_0x31_1 & 0x7f);
+        ]]>
+      </int_ack>
+      <get_data_x><![CDATA[
+        readreg_0x28_0x80_6;
+        local_1 = le16_to_cpu(regbuf_0x28_2);
+        return (-1) * ((local_1 >> 4) * global_1);
+        ]]>
+      </get_data_x>
+      <get_data_y><![CDATA[
+        local_1 = le16_to_cpu(regbuf_0x2a_2);
+        return (local_1 >> 4) * global_1;
+        ]]>
+      </get_data_y>
+      <get_data_z><![CDATA[
+        local_1 = le16_to_cpu(regbuf_0x2c_2);
+        return (local_1 >> 4) * global_1;
+        ]]>
+      </get_data_z>
+    </sensor_actions>
+  </sensor>
+  <sensor name="light">
+    <basic_info>
+      <i2c_bus_num>3</i2c_bus_num>
+      <i2c_addrs>
+	<addr>0x10</addr>
+      </i2c_addrs>
+      <id_reg_addr></id_reg_addr>
+      <ids>
+      </ids>
+      <driver_name>CALS3218:00</driver_name>
+      <input_name>cm32181</input_name>
+      <event_type>EV_ABS</event_type>
+      <method>interrupt</method>
+      <default_poll_interval></default_poll_interval>
+      <min_poll_interval></min_poll_interval>
+      <max_poll_interval></max_poll_interval>
+      <gpio_num>136</gpio_num>
+      <irq_flag>0x2008</irq_flag>
+      <irq_serialize></irq_serialize>
+    </basic_info>
+    <odr_tables>
+    </odr_tables>
+    <range_tables>
+    </range_tables>
+    <sys_entries>
+    </sys_entries>
+    <sensor_actions>
+      <init><![CDATA[
+        /*all regs are 16b, so readreg if need to use regbuf*/
+	global_1 = 1; /*global_1 as config reg, shutdown*/
+	writereg_0x0_0x0_2 = global_1;
+	writereg_0x3_0x0_2 = 1;
+	writereg_0x2_0x0_2 = 251;
+	writereg_0x1_0x0_2 = 250;
+	global_1 = global_1 | 0x1823;
+	writereg_0x0_0x0_2 = global_1;
+        ]]>
+      </init>
+      <deinit>
+      </deinit>
+      <enable><![CDATA[
+	writereg_0x2_0x0_2 = 251;
+	writereg_0x1_0x0_2 = 250;
+	global_1 = global_1 & 0xfffe;
+	writereg_0x0_0x0_2 = global_1;
+        ]]>
+      </enable>
+      <disable><![CDATA[
+	global_1 = global_1 | 1;
+	writereg_0x0_0x0_2 = global_1;
+        ]]>
+      </disable>
+      <int_ack><![CDATA[
+	/*disable int*/
+	global_1 = global_1 & 0xfffd;
+	writereg_0x0_0x0_2 = global_1;
+	return 1;
+        ]]>
+      </int_ack>
+      <get_data_x><![CDATA[
+	/*get als data*/
+        readreg_0x4_0x0_2;
+
+        /*set high/low threshold*/
+	local_1 = regbuf_0x4_2 * 102 / 100;
+	writereg_0x1_0x0_2 = local_1;
+	local_1 = regbuf_0x4_2 * 98 / 100;
+	writereg_0x2_0x0_2 = local_1;
+
+	/*enable int*/
+	global_1 = global_1 | 2;
+	writereg_0x0_0x0_2 = global_1;
+
+	/*return als data in lux*/
+	return regbuf_0x4_2 * 336 / 1000;
+        ]]>
+      </get_data_x>
+      <get_data_y>
+      </get_data_y>
+      <get_data_z>
+      </get_data_z>
+    </sensor_actions>
+  </sensor>
+</sensor_driver_config>
