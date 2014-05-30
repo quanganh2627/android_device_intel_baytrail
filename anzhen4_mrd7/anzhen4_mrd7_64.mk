@@ -1,5 +1,5 @@
 PRODUCT_NAME := anzhen4_mrd7_64
-REF_PRODUCT_NAME := anzhen4_mrd7
+#REF_PRODUCT_NAME := byt_t_crv2
 
 BOARD_USE_64BIT_KERNEL := true
 
