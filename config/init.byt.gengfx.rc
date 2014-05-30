@@ -4,6 +4,10 @@ on boot
     chown system system /sys/class/drm/card0/power/i915_videostatus
     #Do not expose unecessary access
     chmod 0600 /dev/dri/controlD64
+    chmod 0600 /dev/ttyUSB0
+    chmod 0600 /dev/ttyUSB1
+    chmod 0600 /dev/ttyUSB2
+    chmod 0600 /dev/ttyUSB3
 
 on init
     #Create /mnt/libreg mountpoint to be used by coreu service for
