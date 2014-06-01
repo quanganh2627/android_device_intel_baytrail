@@ -237,6 +237,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     keystore.$(TARGET_BOARD_PLATFORM)
 
+PRODUCT_PACKAGES += TXEI_SEC_TOOLS
 
 # Adding for Netflix app to do dynamic resolution switching
 ADDITIONAL_BUILD_PROPERTIES += ro.streaming.video.drs=true
