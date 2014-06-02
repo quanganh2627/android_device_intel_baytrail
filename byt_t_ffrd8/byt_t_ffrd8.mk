@@ -131,6 +131,8 @@ PRODUCT_COPY_FILES += \
 # crashlog conf
 PRODUCT_COPY_FILES += \
          $(DEVICE_CONF_PATH)/crashlog.conf:system/etc/crashlog.conf
+PRODUCT_COPY_FILES += \
+         $(DEVICE_CONF_PATH)/ingredients.conf:system/etc/ingredients.conf
 
 # Include base makefile
 include $(LOCAL_PATH)/device.mk
