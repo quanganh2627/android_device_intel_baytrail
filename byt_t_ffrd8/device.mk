@@ -253,7 +253,9 @@ PRODUCT_PACKAGES += \
     gps_bcm_4752
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.spid.gps.pmm=disabled \
-    ro.spid.gps.tty=ttyMFD1
+    ro.spid.gps.tty=ttyMFD1 \
+    ro.spid.gps.FrqPlan=FRQ_PLAN_26MHZ_2PPM \
+    ro.spid.gps.RfType=GL_RF_4752_BRCM
 
 # bluetooth
 PRODUCT_PACKAGES += \
