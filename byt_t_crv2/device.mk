@@ -10,8 +10,6 @@
 
 # Superclass
 $(call inherit-product, build/target/product/full_base_no_telephony.mk)
-# Include Dalvik Heap Size Configuration
-$(call inherit-product, $(COMMON_PATH)/dalvik/tablet-xhdpi-2048-dalvik-heap.mk)
 
 # Overrides
 PRODUCT_DEVICE := byt_t_crv2
@@ -380,3 +378,10 @@ include $(PLATFORM_PATH)/baytrail.mk
 # Override to be able to load libraries built for baylake.
 # This can probably be removed after fixing gralloc.baylake.so.
 TARGET_BOOTLOADER_BOARD_NAME := baylake
+
+# Include Dalvik Heap Size Configuration
+ifeq ($(BOARD_HAVE_MID_RAM),true)
+  $(call inherit-product, device/intel/common/dalvik/phone-hdpi-1024-dalvik-heap.mk)
+else
+  $(call inherit-product, $(COMMON_PATH)/dalvik/tablet-xhdpi-2048-dalvik-heap.mk)
+endif
