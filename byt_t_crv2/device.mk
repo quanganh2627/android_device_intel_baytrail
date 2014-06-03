@@ -385,3 +385,11 @@ ifeq ($(BOARD_HAVE_MID_RAM),true)
 else
   $(call inherit-product, $(COMMON_PATH)/dalvik/tablet-xhdpi-2048-dalvik-heap.mk)
 endif
+
+ifeq ($(CAMERA_NO_REPOOL),true)
+  PRODUCT_COPY_FILES += \
+  $(DEVICE_CONF_PATH)/init.camera_no_repool.rc:root/init.camera.rc
+else
+  PRODUCT_COPY_FILES += \
+  $(DEVICE_CONF_PATH)/init.camera.rc:root/init.camera.rc
+endif
