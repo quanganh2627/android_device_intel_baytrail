@@ -346,4 +346,4 @@ IA_PANORAMA_VERSION := 1.1
 SENSORHUB_FW_NAME := psh_byt_m_crb.bin
 
 # Define Intel DPTF feature
-INTEL_FEATURE_DPTF := false
+INTEL_FEATURE_DPTF := true

@@ -9,6 +9,7 @@ import init.platform.usb.rc
 #import init.bt.rc
 import init.platform.gengfx.rc
 import init.sensors.rc
+import init.dptf.rc
 
 on early-init
     # Mesa environment variables
