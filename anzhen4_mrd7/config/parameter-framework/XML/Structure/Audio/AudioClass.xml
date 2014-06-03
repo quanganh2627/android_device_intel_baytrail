@@ -2,8 +2,10 @@
 <SystemClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Schemas/SystemClass.xsd" Name="Audio">
     <SubsystemInclude Path="ConfigurationSubsystem.xml"/>
     <SubsystemInclude Path="LPEMixerSubsystem.xml"/>
-    <SubsystemInclude Path="TI_TLV320AIC3100Subsystem.xml"/>
+    <SubsystemInclude Path="Realtek_RT5640Subsystem.xml"/>
     <SubsystemInclude Path="LPESubsystem.xml"/>
-    <SubsystemInclude Path="SysfsPmdownTimeBytcrSubsystem.xml"/>
+    <SubsystemInclude Path="SysfsPmdownTimeSubsystem.xml"/>
+    <SubsystemInclude Path="IntelSSPSubsystem.xml"/>
+    <SubsystemInclude Path="IMCSubsystem.xml"/>
 </SystemClass>
 
