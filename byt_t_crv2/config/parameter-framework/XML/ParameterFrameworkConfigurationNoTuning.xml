@@ -4,8 +4,7 @@
     <SubsystemPlugins>
         <Location Folder="/system/lib/parameter-framework-plugins/Audio">
             <Plugin Name="liblpe-subsystem.so"/>
-            <Plugin Name="libtinyamixer-subsystem.so"/>
-            <Plugin Name="libtinyalsactl-subsystem.so"/>
+            <Plugin Name="libtinyalsa-subsystem.so"/>
             <Plugin Name="libimc-subsystem.so"/>
         </Location>
         <Location Folder="/system/lib/parameter-framework-plugins/Fs">

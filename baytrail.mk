@@ -58,8 +58,7 @@ PRODUCT_PACKAGES += \
     parameter-connector-test \
     libxmlserializer \
     liblpe-subsystem \
-    libtinyamixer-subsystem \
-    libtinyalsactl-subsystem \
+    libtinyalsa-subsystem \
     libfs-subsystem \
     libproperty-subsystem \
     parameter

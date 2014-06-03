@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Subsystem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Schemas/Subsystem.xsd" Name="LPE_MIXER" Type="AMIXER" Endianness="Little">
+<Subsystem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Schemas/Subsystem.xsd" Name="LPE_MIXER" Type="ALSA" Endianness="Little">
 	<ComponentLibrary>
 		<ComponentType Name="LPE_MIXER_TYPE">
 			<EnumParameter Name="INPUT_STREAM" Size="8" Mapping="Control:'LPE %1 mixer'">

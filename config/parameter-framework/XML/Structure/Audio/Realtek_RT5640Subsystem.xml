@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--Need to Check-->
-<Subsystem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Schemas/Subsystem.xsd" Name="REALTEK" Type="ALSACTL" Endianness="Little">
+<Subsystem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Schemas/Subsystem.xsd" Name="REALTEK" Type="ALSA" Endianness="Little">
 
     <ComponentLibrary>
 

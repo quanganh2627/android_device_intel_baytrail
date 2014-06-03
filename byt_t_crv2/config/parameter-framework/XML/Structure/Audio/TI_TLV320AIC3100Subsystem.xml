@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Subsystem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Schemas/Subsystem.xsd" Name="TI" Type="AMIXER" Endianness="Little">
+<Subsystem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Schemas/Subsystem.xsd" Name="TI" Type="ALSA" Endianness="Little">
     <ComponentLibrary>
 
         <ComponentType Name="MIC_GAIN_TYPE">
