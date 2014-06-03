@@ -11,8 +11,6 @@ endif
 
 BOARD_HAS_CAPSULE ?= true
 
-HAS_SPINOR := true
-
 # For Baytrail appends the path to EGL libraries.
 PRODUCT_LIBRARY_PATH := $(PRODUCT_LIBRARY_PATH):/system/lib/egl
 
