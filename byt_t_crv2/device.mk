@@ -393,3 +393,11 @@ else
   PRODUCT_COPY_FILES += \
   $(DEVICE_CONF_PATH)/init.camera.rc:root/init.camera.rc
 endif
+
+ifeq ($(LIMIT_READAHEAD),true)
+  PRODUCT_COPY_FILES += \
+  $(COMMON_PATH)/memory/init.readahead_low.rc:root/init.readahead.rc
+else
+  PRODUCT_COPY_FILES += \
+  $(COMMON_PATH)/memory/init.readahead_mid.rc:root/init.readahead.rc
+endif
