@@ -103,11 +103,22 @@
                    bitRate="128000"
                    sampleRate="48000"
                    channels="2" />
+<!--
+            <Video codec="h263"
+                   bitRate="128000"
+                   width="176"
+                   height="144"
+                   frameRate="15" />
 
+            <Audio codec="amrnb"
+                   bitRate="12200"
+                   sampleRate="8000"
+                   channels="1" />
+-->
         </EncoderProfile>
 
-        <EncoderProfile quality="high" fileFormat="3gp" duration="30">
-               <Video codec="h264"
+        <EncoderProfile quality="high" fileFormat="3gp" duration="60">
+            <Video codec="h264"
                    bitRate="8000000"
                    width="1280"
                    height="720"
@@ -117,9 +128,21 @@
                    bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
-        </EncoderProfile>
+<!--
+            <Video codec="h264"
+                   bitRate="15000000"
+                   width="1920"
+                   height="1080"
+                   frameRate="30" />
 
-        <!--EncoderProfile quality="qcif" fileFormat="3gp" duration="30">
+            <Audio codec="aac"
+                   bitRate="192000"
+                   sampleRate="48000"
+                   channels="2" />
+-->
+        </EncoderProfile>
+<!--
+        <EncoderProfile quality="qcif" fileFormat="3gp" duration="30">
             <Video codec="h263"
                    bitRate="128000"
                    width="176"
@@ -157,9 +180,9 @@
                    sampleRate="48000"
                    channels="2" />
 
-        </EncoderProfile-->
-
-        <EncoderProfile quality="480p" fileFormat="3gp" duration="30">
+        </EncoderProfile>
+-->
+        <EncoderProfile quality="480p" fileFormat="3gp" duration="60">
             <Video codec="h264"
                    bitRate="3000000"
                    width="720"
@@ -173,7 +196,7 @@
 
        </EncoderProfile>
 
-        <EncoderProfile quality="720p" fileFormat="3gp" duration="30">
+        <EncoderProfile quality="720p" fileFormat="3gp" duration="60">
             <Video codec="h264"
                    bitRate="8000000"
                    width="1280"
@@ -185,7 +208,20 @@
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
+<!--
+	    <EncoderProfile quality="1080p" fileFormat="3gp" duration="60">
+            <Video codec="h264"
+                   bitRate="15000000"
+                   width="1920"
+                   height="1080"
+                   frameRate="30" />
 
+            <Audio codec="aac"
+                   bitRate="192000"
+                   sampleRate="48000"
+                   channels="2" />
+        </EncoderProfile>
+-->
         <EncoderProfile quality="timelapselow" fileFormat="3gp" duration="30">
             <Video codec="h264"
                    bitRate="3000000"
@@ -193,15 +229,26 @@
                    height="480"
                    frameRate="30" />
 
-            <Audio codec="aac"
+            <Audio codec="amrnb"
+                   bitRate="12200"
+                   sampleRate="8000"
+                   channels="1" />
+<!--
+            <Video codec="h263"
                    bitRate="128000"
-                   sampleRate="48000"
-                   channels="2" />
+                   width="176"
+                   height="144"
+                   frameRate="15" />
 
+            <Audio codec="amrnb"
+                   bitRate="12200"
+                   sampleRate="8000"
+                   channels="1" />
+-->
         </EncoderProfile>
 
         <EncoderProfile quality="timelapsehigh" fileFormat="3gp" duration="30">
-             <Video codec="h264"
+            <Video codec="h264"
                    bitRate="8000000"
                    width="1280"
                    height="720"
@@ -211,9 +258,21 @@
                    bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
-        </EncoderProfile>
+<!--
+            <Video codec="h264"
+                   bitRate="15000000"
+                   width="1920"
+                   height="1080"
+                   frameRate="30" />
 
-        <!--EncoderProfile quality="timelapseqcif" fileFormat="3gp" duration="30">
+            <Audio codec="aac"
+                   bitRate="192000"
+                   sampleRate="48000"
+                   channels="2" />
+-->
+        </EncoderProfile>
+<!--
+        <EncoderProfile quality="timelapseqcif" fileFormat="3gp" duration="30">
             <Video codec="h263"
                    bitRate="128000"
                    width="176"
@@ -237,8 +296,8 @@
                    bitRate="12200"
                    sampleRate="8000"
                    channels="1" />
-        </EncoderProfile-->
-
+        </EncoderProfile>
+-->
         <EncoderProfile quality="timelapse480p" fileFormat="3gp" duration="30">
             <Video codec="h264"
                    bitRate="3000000"
@@ -246,10 +305,10 @@
                    height="480"
                    frameRate="30" />
 
-            <Audio codec="aac"
-                   bitRate="128000"
-                   sampleRate="48000"
-                   channels="2" />
+            <Audio codec="amrnb"
+                   bitRate="12200"
+                   sampleRate="8000"
+                   channels="1" />
         </EncoderProfile>
 
         <EncoderProfile quality="timelapse720p" fileFormat="3gp" duration="30">
@@ -264,8 +323,8 @@
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
-
-        <!--EncoderProfile quality="timelapse1080p" fileFormat="3gp" duration="30">
+<!--
+        <EncoderProfile quality="timelapse1080p" fileFormat="3gp" duration="30">
             <Video codec="h264"
                    bitRate="15000000"
                    width="1920"
@@ -276,8 +335,8 @@
                    bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
-        </EncoderProfile-->
-
+        </EncoderProfile>
+-->
         <ImageEncoding quality="90" />
         <ImageEncoding quality="80" />
         <ImageEncoding quality="70" />
