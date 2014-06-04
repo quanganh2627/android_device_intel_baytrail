@@ -6,10 +6,7 @@
     <ComponentLibrary>
 
         <ComponentType Name="PLAYBACK_TYPE">
-            <ParameterBlock Name="VOLUME" ArrayLength="2" Mapping="Volume:'%1 Playback Volume'">
-                <BooleanParameter Name="MUTED"/>
-                <IntegerParameter Name="LEVEL" Size="8" Min="0" Max="31"/>
-            </ParameterBlock>
+            <IntegerParameter Name="VOLUME" Size="8" Min="0" Max="31" ArrayLength="2" Mapping="Control:'%1 Playback Volume'"/>
             <BooleanParameter Name="SWITCH" ArrayLength="2" Mapping="Control:'%1 Playback Switch'"/>
         </ComponentType>
 
@@ -83,20 +80,15 @@
         <ComponentType Name="LINEIN_ANALOG_TYPE">
             <Component Name="1" Type="LINEIN_ANALOG_VALUE" Mapping="Amend1:IN1"/>
             <Component Name="2" Type="LINEIN_ANALOG_VALUE" Mapping="Amend1:IN2"/>
-            <Component Name="3" Type="LINEIN_ANALOG_VALUE" Mapping="Amend1:IN3"/>
-        </ComponentType>
-
-        <ComponentType Name="LINEIN_DIGITAL_STEREO_TYPE">
-            <ParameterBlock Name="VOLUME" ArrayLength="2" Mapping="Volume:'ADC Capture Volume'">
-                <BooleanParameter Name="MUTED"/>
-                <IntegerParameter Name="LEVEL" Size="8" Min="0" Max="127"/>
-            </ParameterBlock>
-            <IntegerParameter Name="BOOST_GAIN" Size="8" Min="0" Max="3" ArrayLength="2" Mapping="Control:'ADC Boost Gain'"/>
-            <BooleanParameter Name="ADC_CAPTURE_SWITCH" ArrayLength="2" Mapping="Control:'ADC Capture Switch'"/>
+<Component Name="3" Type="LINEIN_ANALOG_VALUE" Mapping="Amend1:IN3"/>
         </ComponentType>
 
         <ComponentType Name="LINEIN_DIGITAL_TYPE">
-               <Component Name="STEREO" Type="LINEIN_DIGITAL_STEREO_TYPE"/>
+            <ParameterBlock Name="STEREO">
+                <IntegerParameter Name="VOLUME" Size="8" Min="0" Max="127" ArrayLength="2" Mapping="Control:'ADC Capture Volume'"/>
+                <IntegerParameter Name="BOOST_GAIN" Size="8" Min="0" Max="3" ArrayLength="2" Mapping="Control:'ADC Boost Gain'"/>
+                <BooleanParameter Name="ADC_CAPTURE_SWITCH" ArrayLength="2" Mapping="Control:'ADC Capture Switch'"/>
+            </ParameterBlock>
             <ParameterBlock Name="MONO">
                 <IntegerParameter Name="VOLUME" Size="8" Min="0" Max="127" ArrayLength="2" Mapping="Control:'Mono ADC Capture Volume'"/>
             </ParameterBlock>
