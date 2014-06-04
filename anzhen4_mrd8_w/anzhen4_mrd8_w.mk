@@ -2,7 +2,7 @@ ifeq ($(PRODUCT_NAME),)
 PRODUCT_NAME := anzhen4_mrd8_w
 endif
 
-BOARD_HAS_CAPSULE := true
+BOARD_HAS_CAPSULE := false
 TARGET_PARTITIONING_SCHEME := "full-gpt"
 TARGET_BIOS_TYPE := "uefi"
 HAS_SPINOR := true
@@ -30,9 +30,7 @@ PERMISSIONS_PATH := system/etc/permissions
 
 # Touchscreen configuration file
 PRODUCT_COPY_FILES += \
-    $(DEVICE_CONF_PATH)/maxtouch.cfg:system/etc/firmware/maxtouch.cfg \
-    $(DEVICE_CONF_PATH)/maxtouch_1664S_8.fw:system/etc/firmware/maxtouch.fw
-KERNEL_DIFFCONFIG := $(LOCAL_PATH)/$(PRODUCT_NAME)_diffconfig
+    $(DEVICE_CONF_PATH)/goodix_ts.idc:system/usr/idc/goodix_ts.idc
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
