@@ -17,9 +17,8 @@ LOCAL_MODULE := parameter-framework.audio.anzhen4_mrd7.nodomains
 LOCAL_MODULE_TAGS := optional
 LOCAL_REQUIRED_MODULES :=  \
     parameter-framework.audio.baytrail \
-    parameter-framework.audio.pmdown_time.subsystem \
-    parameter-framework.audio.intelSSP.subsystem \
-    parameter-framework.audio.imc.subsystem \
+    SysfsPmdownTimeBytcrSubsystem.xml \
+    TI_TLV320AIC3100Subsystem.xml \
     AudioClass.xml
 
 ifeq ($(TARGET_BUILD_VARIANT),eng)
@@ -80,8 +79,7 @@ $(LOCAL_BUILT_MODULE): MY_SRC_FILES := \
         $(TARGET_OUT_ETC)/parameter-framework/ParameterFrameworkConfiguration.xml \
         $(LOCAL_PATH)/criteria.txt \
         $(LOCAL_PATH)/XML/Settings/Audio/AudioConfigurableDomains.xml \
-        $(LOCAL_PATH)/XML/Settings/Audio/anzhen4_mrd7_routing_realtek5640.pfw \
-        $(LOCAL_PATH)/XML/Settings/Audio/anzhen4_mrd7_routing_xmm.pfw
+        $(LOCAL_PATH)/XML/Settings/Audio/anzhen4_mrd7_routing_tlv320aic3100.pfw
 
 $(LOCAL_BUILT_MODULE): $(LOCAL_REQUIRED_MODULES)
 	$(hide) mkdir -p $(dir $@)
