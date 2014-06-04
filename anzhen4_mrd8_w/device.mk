@@ -205,6 +205,13 @@ endif
     libdx-crys \
     start-sep
 
+# BCM4752 GPS
+PRODUCT_PACKAGES += \
+    gps_bcm_4752
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.spid.gps.pmm=disabled \
+    ro.spid.gps.tty=ttyMFD1
+
 # bluetooth
 PRODUCT_PACKAGES += \
     bt_rtl8723b
@@ -297,6 +304,7 @@ PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.usb.host.xml:$(PERMISSIONS_PATH)/android.hardware.usb.host.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.usb.accessory.xml:$(PERMISSIONS_PATH)/android.hardware.usb.accessory.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.location.gps.xml:$(PERMISSIONS_PATH)/android.hardware.location.gps.xml \
     $(FRAMEWORK_ETC_PATH)/tablet_core_hardware.xml:$(PERMISSIONS_PATH)/tablet_core_hardware.xml
 #   $(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
 
