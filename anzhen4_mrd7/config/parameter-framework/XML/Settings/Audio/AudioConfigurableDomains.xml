@@ -363,13 +363,13 @@
       </Configuration>
       <Configuration Name="Digital">
         <ConfigurableElement Path="/Audio/LPE/MIC1_PATH/MONO_EQ/ENABLE">
-          <BooleanParameter Name="ENABLE">0</BooleanParameter>
+          <BooleanParameter Name="ENABLE">1</BooleanParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/LPE/MIC1_PATH/GAIN_CTRL/GAIN">
           <IntegerParameter Name="GAIN">0</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/LPE/MIC2_PATH/MONO_EQ/ENABLE">
-          <BooleanParameter Name="ENABLE">0</BooleanParameter>
+          <BooleanParameter Name="ENABLE">1</BooleanParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/LPE/MIC2_PATH/GAIN_CTRL/GAIN">
           <IntegerParameter Name="GAIN">0</IntegerParameter>
@@ -793,22 +793,22 @@
           <IntegerParameter Name="TIME">0</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/LPE/MIC1_PATH/GAIN_CTRL/ENABLE">
-          <BooleanParameter Name="ENABLE">0</BooleanParameter>
+          <BooleanParameter Name="ENABLE">1</BooleanParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/LPE/MIC1_PATH/GAIN_CTRL/CHANNELS">
           <IntegerParameter Name="CHANNELS">1</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/LPE/MIC2_PATH/GAIN_CTRL/ENABLE">
-          <BooleanParameter Name="ENABLE">0</BooleanParameter>
+          <BooleanParameter Name="ENABLE">1</BooleanParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/LPE/MIC2_PATH/GAIN_CTRL/CHANNELS">
           <IntegerParameter Name="CHANNELS">1</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/LPE/MIC1_PATH/DC_REMOVAL/ENABLE">
-          <BooleanParameter Name="ENABLE">0</BooleanParameter>
+          <BooleanParameter Name="ENABLE">1</BooleanParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/LPE/MIC2_PATH/DC_REMOVAL/ENABLE">
-          <BooleanParameter Name="ENABLE">0</BooleanParameter>
+          <BooleanParameter Name="ENABLE">1</BooleanParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/LPE/MIC1_PATH/MONO_EQ/FILTER_CONFIG">
           <BitParameterBlock Name="FILTER_CONFIG">
