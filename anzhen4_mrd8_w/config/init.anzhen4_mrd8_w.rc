@@ -226,6 +226,7 @@ on post-fs
 
     # Insert touchscreen module
     insmod /lib/modules/atmel_mxt_ts.ko
+    insmod /lib/modules/gt9xx_ts.ko
 
     #  Permissions for pshfw update tool
     chown system system /dev/i2c-5
