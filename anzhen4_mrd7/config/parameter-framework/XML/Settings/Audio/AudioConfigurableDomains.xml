@@ -69,7 +69,7 @@
     <Settings>
       <Configuration Name="Enabled">
         <ConfigurableElement Path="/Audio/LPE/IHF_PATH/SDRC_CTRL/ENABLE">
-          <BooleanParameter Name="ENABLE">0</BooleanParameter>
+          <BooleanParameter Name="ENABLE">1</BooleanParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="Disabled">
@@ -206,8 +206,6 @@
       <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME"/>
       <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME"/>
       <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/DAC1"/>
-      <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/BOOST"/>
-      <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/RATIO"/>
     </ConfigurableElements>
     <Settings>
       <Configuration Name="Multimedia.IHF">
@@ -220,19 +218,13 @@
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME">
           <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
         </ConfigurableElement>
-	<ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/BOOST">
-          <EnumParameter Name="BOOST">4</EnumParameter>
-        </ConfigurableElement>
-	<ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/RATIO">
-	  <EnumParameter Name="RATIO">4</EnumParameter>
-        </ConfigurableElement>
       </Configuration>
       <Configuration Name="Multimedia.Headset">
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME">
           <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/DAC1">
-          <IntegerParameter Name="DAC1">168 168</IntegerParameter>
+          <IntegerParameter Name="DAC1">148 148</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME">
           <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
@@ -248,12 +240,6 @@
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME">
           <IntegerParameter Name="VOLUME">17 17</IntegerParameter>
         </ConfigurableElement>
-	<ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/BOOST">
-          <EnumParameter Name="BOOST">4</EnumParameter>
-        </ConfigurableElement>
-	<ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/RATIO">
-	  <EnumParameter Name="RATIO">4</EnumParameter>
-        </ConfigurableElement>
       </Configuration>
       <Configuration Name="InCallCsv.IHF">
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME">
@@ -264,12 +250,6 @@
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME">
           <IntegerParameter Name="VOLUME">31 31</IntegerParameter>
-        </ConfigurableElement>
-	<ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/BOOST">
-          <EnumParameter Name="BOOST">4</EnumParameter>
-        </ConfigurableElement>
-	<ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/RATIO">
-	  <EnumParameter Name="RATIO">4</EnumParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="InCallCsv.Headset">
@@ -307,7 +287,7 @@
     <Settings>
       <Configuration Name="Enabled">
         <ConfigurableElement Path="/Audio/LPE/IHF_PATH/STEREO_EQ/ENABLE">
-          <BooleanParameter Name="ENABLE">0</BooleanParameter>
+          <BooleanParameter Name="ENABLE">1</BooleanParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="Disabled">
