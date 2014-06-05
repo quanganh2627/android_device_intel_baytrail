@@ -249,60 +249,27 @@ on post-fs
     write /sys/devices/generalsensor/start 1
 
     #accelerometer
-    chown system system /sys/bus/i2c/devices/5-0019/poll
-    chown system system /sys/bus/i2c/devices/5-0019/enable
-    chown system system /sys/bus/i2c/devices/3-0019/poll
-    chown system system /sys/bus/i2c/devices/3-0019/enable
-    chown system system /sys/bus/i2c/devices/5-0011/poll
-    chown system system /sys/bus/i2c/devices/5-0011/enable
-    chown system system /sys/bus/i2c/devices/3-0011/poll
-    chown system system /sys/bus/i2c/devices/3-0011/enable
-
-    #pressure
-    chown system system /sys/bus/i2c/devices/3-005c/poll
-    chown system system /sys/bus/i2c/devices/3-005c/enable
-    chown system system /sys/bus/i2c/devices/5-005d/poll
-    chown system system /sys/bus/i2c/devices/5-005d/enable
-    chown system system /sys/bus/i2c/devices/3-005d/poll
-    chown system system /sys/bus/i2c/devices/3-005d/enable
+    chown system system /sys/bus/i2c/devices/3-000f/poll
+    chown system system /sys/bus/i2c/devices/3-000f/enable
 
     #Gyroscope
     chown system system /sys/bus/i2c/devices/3-0068/poll
     chown system system /sys/bus/i2c/devices/3-0068/enable
-    chown system system /sys/bus/i2c/devices/5-0068/poll
-    chown system system /sys/bus/i2c/devices/5-0068/enable
-    chown system system /sys/bus/i2c/devices/3-006a/poll
-    chown system system /sys/bus/i2c/devices/3-006a/enable
-    chown system system /sys/bus/i2c/devices/5-006a/poll
-    chown system system /sys/bus/i2c/devices/5-006a/enable
-    chown system system /sys/bus/i2c/devices/3-006b/poll
-    chown system system /sys/bus/i2c/devices/3-006b/enable
-    chown system system /sys/bus/i2c/devices/5-006b/poll
-    chown system system /sys/bus/i2c/devices/5-006b/enable
 
     #compass
-    chown system system /sys/bus/i2c/devices/3-001e/lsm303cmp/enable
-    chown system system /sys/bus/i2c/devices/3-001e/lsm303cmp/poll
-    chown system system /sys/bus/i2c/devices/3-001e/enable
-    chown system system /sys/bus/i2c/devices/3-001e/poll
-    chown system system /sys/bus/i2c/devices/5-001e/enable
-    chown system system /sys/bus/i2c/devices/5-001e/poll
-    chown system system /sys/bus/i2c/devices/3-0013/poll
-    chown system system /sys/bus/i2c/devices/3-0013/enable
-    chown system system /sys/bus/i2c/devices/5-0013/poll
-    chown system system /sys/bus/i2c/devices/5-0013/enable
+    chown system system /sys/bus/i2c/devices/3-000c/poll
+    chown system system /sys/bus/i2c/devices/3-000c/enable
 
     #als
-    chown system system /sys/bus/i2c/devices/3-0010/enable
-    chown system system /sys/bus/i2c/devices/3-0010/poll
-    chown system system /sys/bus/i2c/devices/5-0010/enable
-    chown system system /sys/bus/i2c/devices/5-0010/poll
+    chown system system /sys/bus/i2c/devices/3-0044/als_enable
+    chown system system /sys/bus/i2c/devices/3-0044/als_poll
 
     #proximity
-    chown system system /sys/bus/platform/devices/stm8t143/enable
-    chown system system /sys/bus/platform/devices/stm8t143/poll
-    chown system system /sys/bus/platform/devices/SRCL0001:00/enable
-    chown system system /sys/bus/platform/devices/SRCL0001:00/poll
+    chown system system /sys/bus/i2c/devices/3-0044/ps_enable
+    chown system system /sys/bus/i2c/devices/3-0044/ps_poll
+    chown system system /sys/bus/i2c/devices/3-0044/ps_thresh
+    chown system system /sys/bus/i2c/devices/3-0028/enable
+    chown system system /sys/bus/i2c/devices/3-0028/poll
 
     chown 3700 3700 /dev/sep_sec_driver
     chmod 0660 /dev/sep_sec_driver

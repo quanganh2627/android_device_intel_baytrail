@@ -4,20 +4,20 @@
   <sensor type="accelerometer" category="linux_driver"> <!--category="linux_driver" is default-->
     <platform_config driver_node_type="input_event"> <!-- driver_node_type="input_event" is default -->
       <name>accel</name>
-      <activate_node>/sys/bus/i2c/devices/3-0011/enable</activate_node>
-      <poll_node>/sys/bus/i2c/devices/3-0011/poll</poll_node>
+      <activate_node>/sys/bus/i2c/devices/3-000f/enable</activate_node>
+      <poll_node>/sys/bus/i2c/devices/3-000f/poll</poll_node>
       <data_node></data_node>
     </platform_config>
     <device>
-      <name>BMC150 Accelerometer</name>
-      <vendor>BOSCH</vendor>
+      <name>KXCJ Accelerometer</name>
+      <vendor>KIONIX</vendor>
       <version>1</version>
       <maxRange unit="GRAVITY_EARTH">2</maxRange>
       <resolution unit="GRAVITY_EARTH">0.0009765625</resolution>
       <power>0.11</power>
       <minDelay>10000</minDelay>
       <mapper axis_x="X" axis_y="Y" axis_z="Z"></mapper>
-      <scale axis_x="0.0009765625" axis_y="0.0009765625" axis_z="0.0009765625" unit="GRAVITY_EARTH"></scale>
+      <scale axis_x="-0.0009765625" axis_y="0.0009765625" axis_z="-0.0009765625" unit="GRAVITY_EARTH"></scale>
     </device>
   </sensor>
   <sensor type="gyroscope">
@@ -36,15 +36,15 @@
       <resolution unit="M_PI">0.00033875339</resolution>        <!-- 1/180/16.4 -->
       <power>6.1</power>
       <minDelay>10000</minDelay>
-      <mapper axis_x="Y" axis_y="X" axis_z="Z"></mapper>
-      <scale axis_x="0.00033875339" axis_y="-0.00033875339" axis_z="0.00033875339" unit="M_PI"></scale>
+      <mapper axis_x="X" axis_y="Y" axis_z="Z"></mapper>
+      <scale axis_x="0.00033875339" axis_y="-0.00033875339" axis_z="-0.00033875339" unit="M_PI"></scale>
     </device>
   </sensor>
   <sensor type="compass">
     <platform_config driver_node_type="input_event">
       <name>comp</name>
-      <activate_node>/sys/bus/i2c/devices/3-0013/enable</activate_node>
-      <poll_node>/sys/bus/i2c/devices/3-0013/poll</poll_node>
+      <activate_node>/sys/bus/i2c/devices/3-000c/enable</activate_node>
+      <poll_node>/sys/bus/i2c/devices/3-000c/poll</poll_node>
       <data_node></data_node>
       <driver_calibration_node></driver_calibration_node>
       <driver_calibration_file></driver_calibration_file>
@@ -54,27 +54,27 @@
       <fliter_length>50</fliter_length>
     </platform_config>
     <device>
-      <name>BMC150 Magnetic field sensor</name>
-      <vendor>BOSCH</vendor>
+      <name>AK09911 Magnetic field sensor</name>
+      <vendor>AKM</vendor>
       <version>1</version>
-      <maxRange>2500.0</maxRange>
-      <resolution>0.3</resolution>
+      <maxRange>9824.0</maxRange>
+      <resolution>0.6</resolution>
       <power>0.1</power>
       <minDelay>20000</minDelay>
       <mapper axis_x="X" axis_y="Y" axis_z="Z"></mapper>
-      <scale axis_x="0.0625" axis_y="0.0625" axis_z="-0.0625"></scale>
+      <scale axis_x="0.6" axis_y="-0.6" axis_z="-0.6"></scale>
     </device>
   </sensor>
   <sensor type="light">
     <platform_config driver_node_type="input_event">
-      <name>cm32181</name>
-      <activate_node>/sys/bus/i2c/devices/3-0010/enable</activate_node>
-      <poll_node>/sys/bus/i2c/devices/3-0010/poll</poll_node>
+      <name>jsa1212_als</name>
+      <activate_node>/sys/bus/i2c/devices/3-0044/als_enable</activate_node>
+      <poll_node>/sys/bus/i2c/devices/3-0044/als_poll</poll_node>
       <data_node></data_node>
     </platform_config>
     <device>
-      <name>CM32181 Digital Ambient Light Sensor</name>
-      <vendor>CM32181</vendor>
+      <name>JSA1212 Digital Ambient Light Sensor</name>
+      <vendor>JSA</vendor>
       <version>1</version>
       <maxRange>22019.0</maxRange>
       <resolution>0.3</resolution>
@@ -86,16 +86,37 @@
   </sensor>
   <sensor type="proximity">
     <platform_config driver_node_type="input_event">
-      <name>stm8t143</name>
-      <activate_node>/sys/bus/platform/devices/SRCL0001:00/enable</activate_node>
-      <poll_node>/sys/bus/platform/devices/SRCL0001:00/poll</poll_node>
+      <name>jsa1212_ps</name>
+      <activate_node>/sys/bus/i2c/devices/3-0044/ps_enable</activate_node>
+      <poll_node>/sys/bus/i2c/devices/3-0044/ps_poll</poll_node>
       <data_node></data_node>
       <calibration_file></calibration_file>
       <calibration_function></calibration_function>
     </platform_config>
     <device>
-      <name>STM8T143 Digital Proximity Sensor</name>
-      <vendor>STM8T143</vendor>
+      <name>JSA1212 Digital Proximity Sensor</name>
+      <vendor>JSA</vendor>
+      <version>1</version>
+      <maxRange>6.0</maxRange>
+      <resolution>6.0</resolution>
+      <power>0.25</power>
+      <minDelay>0</minDelay>
+      <mapper axis_x="X"></mapper>
+      <scale axis_x="6.0"></scale>
+    </device>
+  </sensor>
+  <sensor type="proximity">
+    <platform_config driver_node_type="input_event">
+      <name>sx9500</name>
+      <activate_node>/sys/bus/i2c/devices/3-0028/enable</activate_node>
+      <poll_node>/sys/bus/i2c/devices/3-0028/poll</poll_node>
+      <data_node></data_node>
+      <calibration_file></calibration_file>
+      <calibration_function></calibration_function>
+    </platform_config>
+    <device>
+      <name>SEMTECH SX9500 Digital Proximity Sensor</name>
+      <vendor>SEMTECH</vendor>
       <version>1</version>
       <maxRange>6.0</maxRange>
       <resolution>6.0</resolution>
