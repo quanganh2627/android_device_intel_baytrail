@@ -14,6 +14,11 @@ INTEL_FEATURE_ASF := true
 # Supported ASF Version
 PLATFORM_ASF_VERSION := 1
 
+#Adding no modem UI property
+ifeq ($(SUPPORT_3G_DONGLE_ONLY),true)
+ADDITIONAL_DEFAULT_PROPERTIES += persist.nomodem_ui=1
+endif
+
 include $(PLATFORM_PATH)/BoardConfig.mk
 
 # IAFW component to build for this board

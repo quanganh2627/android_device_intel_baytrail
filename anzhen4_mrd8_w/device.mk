@@ -9,7 +9,11 @@
 # PRODUCT_COPY_FILES := $(OVERRIDE_COPIES) $(PRODUCT_COPY_FILES)
 
 # Superclass
-$(call inherit-product, build/target/product/full_base_no_telephony.mk)
+ifeq ($(SUPPORT_3G_DONGLE_ONLY),true)
+ $(call inherit-product, build/target/product/full_base_no_telephony.mk)
+else
+ $(call inherit-product, build/target/product/full_base_telephony.mk)
+endif
 # Include Dalvik Heap Size Configuration
 $(call inherit-product, $(COMMON_PATH)/dalvik/tablet-xhdpi-2048-dalvik-heap.mk)
 
