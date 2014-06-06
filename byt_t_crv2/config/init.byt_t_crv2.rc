@@ -388,6 +388,8 @@ on charger
     chmod 0770 /dev/intel_fg
     wait /system/bin/fg_conf
     start fg_conf
+    wait /system/bin/fg_algo_iface
+    start fg_algo_iface
 
     insmod /lib/modules/atomisp-css2400b0_v21.ko
 
