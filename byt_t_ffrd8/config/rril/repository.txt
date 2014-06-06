@@ -46,8 +46,6 @@ Group RequestTimeouts
     QueryAvailableBandMode             60000
     StkHandleCallSetupRequestedFromSim 330000
     SetPreferredNetworkType           300000
-    GetNeighboringCellIDs             300000
-    GetCellInfoList                   300000
     ReportSmsMemoryStatus              60000
     GetIPAddress                       30000
     GetDNS                             30000

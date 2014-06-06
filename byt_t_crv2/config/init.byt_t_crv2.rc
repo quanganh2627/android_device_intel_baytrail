@@ -348,6 +348,11 @@ service fg_conf /system/bin/fg_conf -w
     oneshot
     disabled
 
+service fg_algo_iface /system/bin/fg_algo_iface
+    class core
+    user root
+    group root
+
 service drm /system/bin/drmserver
     class main
     user drm

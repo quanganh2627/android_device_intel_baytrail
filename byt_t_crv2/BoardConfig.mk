@@ -38,6 +38,9 @@ INTEL_WIDI_BAYTRAIL := true
 # Power_HAL
 POWERHAL_BYT := true
 
+#Energy Management fuel gauge algorithm
+USE_FG_ALGO := true
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 BOARD_USES_TINY_ALSA_AUDIO := true
