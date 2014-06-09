@@ -507,4 +507,7 @@
         <Camera previewFrameRate="30" />
 
     </CamcorderProfiles>
+
+    <VideoEditorCap maxInputFrameWidth="1920" maxInputFrameHeight="1088"
+        maxOutputFrameWidth="1920" maxOutputFrameHeight="1088" maxPrefetchYUVFrames="6"/>
 </MediaSettings>
