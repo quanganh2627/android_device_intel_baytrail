@@ -32,8 +32,10 @@ on property:sys.boot_completed=1
     # Defer loading modules that may require firmware till fs is ready
     insmod /lib/modules/libmsrlisthelper.ko
     insmod /lib/modules/imx1x5.ko
+    insmod /lib/modules/gc2235.ko
     insmod /lib/modules/ov2722.ko
     insmod /lib/modules/lm3554.ko
+    insmod /lib/modules/lm3642.ko
     insmod /lib/modules/atomisp-css2400b0_v21.ko dypool_enable=y repool_pgnr=18432 dypool_pgnr=18432
 
 on post-fs

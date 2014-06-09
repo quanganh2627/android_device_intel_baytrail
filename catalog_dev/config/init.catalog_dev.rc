@@ -46,6 +46,9 @@ on boot
     #  Mount debugfs for systrace settings
     mount debugfs none /sys/kernel/debug mode=0755
 
+    # Disable ril
+    setprop ro.radio.noril yes
+
     #  Permissions for Thermal Management
     chown system system /sys/module/intel_mid_osip/parameters/force_shutdown_occured
     chown system system /sys/module/intel_mid_osip/parameters/thermal_shutdown_occured
@@ -82,6 +85,8 @@ on boot
     chown system system /sys/devices/platform/coretemp.0/temp4_threshold2
     chown system system /sys/devices/platform/coretemp.0/temp5_threshold1
     chown system system /sys/devices/platform/coretemp.0/temp5_threshold2
+    chown system system /sys/fps_throttle/notify
+    chown system system /sys/fps_throttle/handshake
 
     # GEN Graphics specific setup.
     chown system system /dev/card0
@@ -178,6 +183,9 @@ on post-fs-data
     chmod 0770 /dev/max170xx
     chown system system /dev/max170xx
     symlink /dev/max170xx /dev/fg
+    chmod 0770 /dev/intel_fg
+    chown system system /dev/intel_fg
+    chown system system /config/em
     chown system system /sys/class/power_supply/max17047_battery/model_name
     chown system system /sys/class/power_supply/max17047_battery/serial_number
     start fg_conf
@@ -371,6 +379,7 @@ on charger
     # Invoke fuel gauging helper binary to restore config data
     symlink /dev/max170xx /dev/fg
     chmod 0775 /dev/fg
+    chmod 0770 /dev/intel_fg
     wait /system/bin/fg_conf
     start fg_conf
 

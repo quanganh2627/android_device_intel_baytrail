@@ -97,6 +97,9 @@ PRODUCT_PACKAGES += libwvdrmengine
 
 PRODUCT_PACKAGES_ENG += ExoPlayerDemo
 
+# L1 MDRM support
+#PRODUCT_PACKAGES += liboemcrypto
+
 # omx components
 PRODUCT_PACKAGES += \
     libwrs_omxil_core_pvwrapped \
@@ -144,7 +147,8 @@ PRODUCT_PACKAGES += \
 
 # sensors
 PRODUCT_PACKAGES += \
-    sensors.$(PRODUCT_DEVICE)
+    sensors.$(PRODUCT_DEVICE) \
+    libsensorcalibration
 
 # Graphics
 PRODUCT_PACKAGES += \
@@ -239,6 +243,7 @@ PRODUCT_PACKAGES += \
 
 # camera firmware
 PRODUCT_PACKAGES += \
+        hdr_v2_fw_css21_2400b0 \
         shisp_2400b0_v21.bin
 
 # video encoder and camera
@@ -341,6 +346,9 @@ PRODUCT_PACKAGES += \
 
 # Intel Corp Email certificate
 -include vendor/intel/PRIVATE/cert/IntelCorpEmailCert.mk
+
+# Intel Corp CA certificates
+#PRODUCT_PACKAGES += intel_cacerts
 
 # Enable ALAC
 PRODUCT_PACKAGES += \

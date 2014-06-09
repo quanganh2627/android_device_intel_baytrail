@@ -1,4 +1,6 @@
+ifeq ($(PRODUCT_NAME),)
 PRODUCT_NAME := catalog_dev
+endif
 
 BOARD_HAS_CAPSULE := false
 TARGET_PARTITIONING_SCHEME := "full-gpt"
@@ -31,13 +33,6 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/maxtouch_1664S_8.fw:system/etc/firmware/maxtouch.fw
 KERNEL_DIFFCONFIG := $(LOCAL_PATH)/$(PRODUCT_NAME)_diffconfig
 
-# Dongle files
-PRODUCT_COPY_FILES += \
-		$(LOCAL_PATH)/dongle/connect-chat:system/etc/ppp/connect-chat \
-		$(LOCAL_PATH)/dongle/ip-up:system/etc/ppp/ip-up \
-		$(LOCAL_PATH)/dongle/ip-down:system/etc/ppp/ip-down \
-		$(LOCAL_PATH)/dongle/chat:system/xbin/chat \
-		$(LOCAL_PATH)/dongle/usb_modeswitch:system/xbin/usb_modeswitch
 # Wi-Fi
 PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.xml
@@ -54,15 +49,11 @@ PRODUCT_PACKAGES += sensor_config.bin
 
 PRODUCT_PACKAGES += \
         wifi_rtl_8723
-		
-#Add 3G Dongle
-PRODUCT_PACKAGES += \
-   Dongle
 
 # Revert me to fg_config.bin instead of fg_config_$(TARGET_PRODUCT) once BZ119617 is resoved
 #Fuel gauge related
 PRODUCT_PACKAGES += \
-       fg_conf fg_config.bin
+       fg_conf fg_config.bin fg_config_xpwr.bin
 
 #remote submix audio
 PRODUCT_PACKAGES += \

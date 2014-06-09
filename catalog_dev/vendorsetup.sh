@@ -19,6 +19,6 @@
 # In particular, you can add lunch options with the add_lunch_combo
 # function: add_lunch_combo generic-eng
 
-add_lunch_combo catalog_dev-eng
-add_lunch_combo catalog_dev-userdebug
+add_lunch_combo catalog_dev_64-eng
+add_lunch_combo catalog_dev_64-userdebug
 
