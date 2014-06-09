@@ -7,13 +7,13 @@ on init
     setprop alsa.mixer.headsetMic Mic1
     setprop alsa.mixer.defaultCard baytrailaudio
     setprop audiocomms.modemLib "libmamgr-xmm.so"
-    setprop audiocomms.XMM.primaryChannel ""
+    setprop audiocomms.XMM.primaryChannel "/dev/ttyACM4"
     setprop audiocomms.XMM.secondaryChannel ""
     setprop audiocomms.XMM.isDualSimModem false
     setprop Audiocomms.Audience.IsPresent "false"
     setprop alsa.mixer.defaultGain 1.0
     setprop Audiocomms.BT.HFP.Supported "true"
-    setprop Audiocomms.Vibrator.IsPresent "false"
+    setprop Audiocomms.Vibrator.IsPresent "true"
     setprop camera.hal.control 0
 
     # atomisp driver depends on these modules. So load these on init. atomisp
