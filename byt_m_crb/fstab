@@ -10,4 +10,7 @@
 /dev/block/sda10        /factory        ext4    ro                                         wait
 /dev/block/sda9         /data           ext4    noatime,noauto_da_alloc,nosuid,nodev,errors=panic          wait,check,encryptable=/dev/block/sda6
 */block/mmcblk1		auto		vfat    defaults                                   voldmanaged=sdcard1:auto
-*/block/sd              auto            vfat    defaults                                   voldmanaged=usbcard1:auto
+*/block/sdb             auto             vfat    defaults                                   voldmanaged=usbcard1:auto
+*/block/sdc             auto             vfat    defaults                                   voldmanaged=usbcard2:auto
+*/block/sdd             auto             vfat    defaults                                   voldmanaged=usbcard3:auto
+
