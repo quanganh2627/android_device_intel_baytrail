@@ -82,7 +82,8 @@ PRODUCT_PACKAGES += \
 # parameter-framework files
 PRODUCT_PACKAGES += \
         libimc-subsystem \
-        parameter-framework.audio.anzhen4_mrd7_w
+        parameter-framework.audio.anzhen4_mrd7_w \
+	parameter-framework.vibrator.anzhen4_mrd7_w
 
 # build the OMX wrapper codecs
 PRODUCT_PACKAGES += \

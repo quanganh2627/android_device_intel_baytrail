@@ -6,14 +6,14 @@ on init
     setprop alsa.mixer.builtinMic Mic1
     setprop alsa.mixer.headsetMic Mic1
     setprop alsa.mixer.defaultCard baytrailaudio
-    setprop audiocomms.modemLib ""
-    setprop audiocomms.XMM.primaryChannel ""
+    setprop audiocomms.modemLib "libmamgr-xmm.so"
+    setprop audiocomms.XMM.primaryChannel "/dev/ttyACM4"
     setprop audiocomms.XMM.secondaryChannel ""
     setprop audiocomms.XMM.isDualSimModem false
     setprop Audiocomms.Audience.IsPresent "false"
     setprop alsa.mixer.defaultGain 1.0
     setprop Audiocomms.BT.HFP.Supported "true"
-    setprop Audiocomms.Vibrator.IsPresent "false"
+    setprop Audiocomms.Vibrator.IsPresent "true"
     setprop camera.hal.control 0
 
     # atomisp driver depends on these modules. So load these on init. atomisp
@@ -40,6 +40,10 @@ on post-fs
     insmod /lib/modules/atomisp-css2400b0_v21.ko dypool_enable=y repool_pgnr=18432 dypool_pgnr=18432
 
 on post-fs
+    # Permissions for Vibrator
+    chown system system /sys/devices/platform/xpwr_vib.0/vibrator
+    chown system system /sys/devices/platform/xpwr_vib.0/duty
+
     # Permissions for pmdown_time
     chown media system /sys/devices/platform/AMCR0F28:00/Baytrail\ Audio/pmdown_time
     chown media system /sys/devices/platform/AMCR0F28:00/Baytrail\ Voice/pmdown_time
