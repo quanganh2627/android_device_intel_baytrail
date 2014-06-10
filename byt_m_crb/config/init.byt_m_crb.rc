@@ -253,10 +253,6 @@ on post-fs
 
     setprop ro.intel.ethernet true
 
-    # As byt-m does not support tetherig feature, disabling it here so that in UI also feature gets disabled
-
-    setprop ro.tether.denied true
-
     # Setting default value to delay_use as one second
     write /sys/module/usb_storage/parameters/delay_use 1
 
