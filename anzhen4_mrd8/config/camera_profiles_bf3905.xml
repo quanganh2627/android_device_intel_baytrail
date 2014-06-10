@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CameraSettings>
+    <Profiles cameraId="1">
+        <sensorType value="SENSOR_TYPE_RAW"/> <!-- SENSOR_TYPE_SOC or SENSOR_TYPE_RAW -->
+        <facing value="CAMERA_FACING_FRONT"/> <!-- CAMERA_FACING_FRONT or CAMERA_FACING_BACK -->
+        <orientation value="90"/> <!-- one of 0,90,180,270 -->
+        <dvs value="false"/>
+        <hasSlowMotion value="false"/>
+        <continuousCapture value="true"/>
+        <supportedSnapshotSizes value="320x240,624x464,640x480"/>
+        <supportedPreviewSizes value="640x480,624x464,176x144"/>
+        <supportedVideoSizes value="176x144,320x240,624x464,640x480"/>
+        <videoPreviewSizePref value="640x480"/>
+        <flipping value="" value_v="SENSOR_FLIP_V"/>
+        <previewViaOverlay value="false"/>
+        <supportedBurstLength value="1,3,5,10"/>
+        <defaultBurstLength value="10"/>
+        <maxBurstFPS value="15"/>
+        <supportedBurstFPS value="1,3,5,7,15"/>
+        <defaultSceneMode value="auto"/>
+        <supportedSceneModes value="auto,portrait,sports,landscape,night,barcode,night-portrait"/>
+        <defaultFlashMode value="off"/>
+        <supportedFlashModes value="off"/>
+        <defaultEffectMode value="none"/>
+        <supportedEffectModes value="none,mono,negative,sepia"/>
+        <supportedIntelEffectModes value="none,mono,negative,sepia,vivid,still-sky-blue,still-grass-green,still-skin-whiten-low,still-skin-whiten-medium,still-skin-whiten-high"/>
+        <supportedAwbModes value="auto,incandescent,fluorescent,daylight,cloudy-daylight"/>
+        <defaultAwbMode value="auto"/>
+        <supportedAwbLock value="false"/>
+        <maxEV value="6"/>
+        <minEV value="-6"/>
+        <stepEV value="0.33333333"/>
+        <defaultEV value="0"/>
+        <defaultIso value="iso-auto"/>
+        <supportedIso value="iso-auto,iso-100,iso-200,iso-400,iso-800"/>
+        <defaultAeMetering value="auto"/>
+        <supportedAeMetering value="auto,center,spot"/>
+        <supportedAeLock value="false"/>
+        <defaultFocusMode value="fixed"/>
+        <supportedFocusModes value="fixed"/>
+        <VFPPLimitedResolutionList value=""/>
+        <overlayRelativeRotation value="90"/>
+        <maxSaturation value=""/>
+        <minSaturation value=""/>
+        <stepSaturation value=""/>
+        <defaultSaturation value=""/>
+        <supportedSaturation value=""/>
+        <maxContrast value=""/>
+        <minContrast value=""/>
+        <stepContrast value=""/>
+        <defaultContrast value=""/>
+        <supportedContrast value=""/>
+        <maxSharpness value=""/>
+        <minSharpness value=""/>
+        <stepSharpness value=""/>
+        <defaultSharpness value=""/>
+        <supportedSharpness value=""/>
+        <supportedPreviewFrameRate value="30,15,10"/>
+        <supportedPreviewFPSRange value="(10500,30304),(11000,30304),(11500,30304)"/>
+        <defaultPreviewFPSRange value="10500,30304"/>
+        <supportedPreviewUpdateModes value="standard,continuous,during-capture,windowless"/>
+        <defaultPreviewUpdateMode value="standard"/>
+        <hasFlash value="false"/>
+    </Profiles>
+</CameraSettings>
