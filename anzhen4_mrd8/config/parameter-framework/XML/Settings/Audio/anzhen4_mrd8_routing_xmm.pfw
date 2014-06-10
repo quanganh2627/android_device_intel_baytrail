@@ -12,13 +12,9 @@ supDomain: Routing.Mute
 					OpenedCaptureRoutes Includes HwCodecCSV
 					OpenedCaptureRoutes Includes BtCSV
 				/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/VOLUME/MUTED = 0
-				/Audio/IMC/SOUND_CARD/PORTS/SPEECH/TX/VOLUME/LEVEL = 88
-				/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/VOLUME/LEVEL = 88
+
 			conf: Mute
 				/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/VOLUME/MUTED = 1
-				/Audio/IMC/SOUND_CARD/PORTS/SPEECH/TX/VOLUME/LEVEL = 88
-				/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/VOLUME/LEVEL = 88
-
 
 
 
@@ -28,11 +24,9 @@ supDomain: Routing.Mute
 					OpenedPlaybackRoutes Includes HwCodecCSV
 					OpenedPlaybackRoutes Includes BtCSV
 				/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/VOLUME/MUTED = 0
-				/Audio/IMC/SOUND_CARD/PORTS/SPEECH/RX/VOLUME/LEVEL = 88
 
 			conf: Mute
 				/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/VOLUME/MUTED = 1
-				/Audio/IMC/SOUND_CARD/PORTS/SPEECH/RX/VOLUME/LEVEL = 88
 
 
 ##############################
