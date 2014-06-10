@@ -1284,4 +1284,21 @@
       </Configuration>
     </Settings>
   </ConfigurableDomain>
+  <ConfigurableDomain Name="Audio.voice" SequenceAware="false">
+    <Configurations>
+       <Configuration Name="Default">
+          <CompoundRule Type="All"/>
+       </Configuration>
+    </Configurations>
+    <ConfigurableElements>
+      <ConfigurableElement Path="/Audio/CONFIGURATION/VOICE_VOLUME_CTRL_PARAMETER"/>
+      </ConfigurableElements>
+      <Settings>
+        <Configuration Name="Default">
+          <ConfigurableElement Path="/Audio/CONFIGURATION/VOICE_VOLUME_CTRL_PARAMETER">
+            <StringParameter Name="VOICE_VOLUME_CTRL_PARAMETER">/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/VOLUME/LEVEL</StringParameter>
+          </ConfigurableElement>
+        </Configuration>
+      </Settings>
+   </ConfigurableDomain>
 </ConfigurableDomains>
