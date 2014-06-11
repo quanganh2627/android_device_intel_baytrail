@@ -109,14 +109,6 @@ on property:system.at-proxy.mode=2
 
 
 on post-fs
-    chmod 777 /dev/ttyACM0 
-    chmod 777 /dev/ttyACM1
-    chmod 777 /dev/ttyACM2
-    chmod 777 /dev/ttyACM3
-    chmod 777 /dev/ttyACM4
-    chmod 777 /dev/ttyACM5
-    chmod 777 /dev/ttyACM6
-
     chmod 777 /dev/ttyUSB0 
     chmod 777 /dev/ttyUSB1
     chmod 777 /dev/ttyUSB2
