@@ -19,8 +19,6 @@
 # In particular, you can add lunch options with the add_lunch_combo
 # function: add_lunch_combo generic-eng
 
-add_lunch_combo anzhen4_mrd8_w-eng
-add_lunch_combo anzhen4_mrd8_w-userdebug
 add_lunch_combo anzhen4_mrd8_w_64-eng
 add_lunch_combo anzhen4_mrd8_w_64-userdebug
 
