@@ -1,0 +1,2 @@
+on property:sys.boot_completed=1
+    insmod /lib/modules/atomisp-css2400b0_v21.ko dypool_enable=y dypool_pgnr=18432

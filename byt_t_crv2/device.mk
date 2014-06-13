@@ -10,8 +10,6 @@
 
 # Superclass
 $(call inherit-product, build/target/product/full_base_no_telephony.mk)
-# Include Dalvik Heap Size Configuration
-$(call inherit-product, $(COMMON_PATH)/dalvik/tablet-xhdpi-2048-dalvik-heap.mk)
 
 # Overrides
 PRODUCT_DEVICE := byt_t_crv2
@@ -157,7 +155,7 @@ PRODUCT_PACKAGES += \
     ufo_test
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=196608 \
+    ro.opengles.version=196609 \
     ro.sf.lcd_density=160
 
 # Version of mandatory blankphone
@@ -380,3 +378,26 @@ include $(PLATFORM_PATH)/baytrail.mk
 # Override to be able to load libraries built for baylake.
 # This can probably be removed after fixing gralloc.baylake.so.
 TARGET_BOOTLOADER_BOARD_NAME := baylake
+
+# Include Dalvik Heap Size Configuration
+ifeq ($(BOARD_HAVE_MID_RAM),true)
+  $(call inherit-product, device/intel/common/dalvik/phone-hdpi-1024-dalvik-heap.mk)
+else
+  $(call inherit-product, $(COMMON_PATH)/dalvik/tablet-xhdpi-2048-dalvik-heap.mk)
+endif
+
+ifeq ($(CAMERA_NO_REPOOL),true)
+  PRODUCT_COPY_FILES += \
+  $(DEVICE_CONF_PATH)/init.camera_no_repool.rc:root/init.camera.rc
+else
+  PRODUCT_COPY_FILES += \
+  $(DEVICE_CONF_PATH)/init.camera.rc:root/init.camera.rc
+endif
+
+ifeq ($(LIMIT_READAHEAD),true)
+  PRODUCT_COPY_FILES += \
+  $(COMMON_PATH)/memory/init.readahead_low.rc:root/init.readahead.rc
+else
+  PRODUCT_COPY_FILES += \
+  $(COMMON_PATH)/memory/init.readahead_mid.rc:root/init.readahead.rc
+endif
