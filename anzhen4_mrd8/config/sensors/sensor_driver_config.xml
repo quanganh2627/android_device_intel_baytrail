@@ -1022,6 +1022,8 @@
         global_1 = 1;/*range factor*/
 	/*int trigger setting: IEN=1,IEA=1*/
         writereg_0x1e_0_1 = 0x30;
+	/*change motion detect threshold to 1/16g*/
+        writereg_0x6a_0_1 = 0x1;
 	/*enalbe motion detect int*/
         writereg_0x1f_0_1 = 0x3f;
         /*set ODR as 100Hz, make sure in disable mode*/
