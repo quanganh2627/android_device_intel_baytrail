@@ -129,6 +129,9 @@ on boot
     #Enable/Disable deep buffer property for baytrail
    setprop lpa.deepbuffer.enable 1
 
+    #Enable cts test mode for connectivity
+    setprop persist.cts_test 2
+
     chown system system /sys/class/pci_bus/0000:00/device/0000:00:16.1/control
     chown system system /sys/class/pci_bus/0000:00/device/0000:00:16.1/data
     chown system system /sys/class/pci_bus/0000:00/device/0000:00:16.1/data_size
