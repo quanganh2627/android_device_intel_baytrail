@@ -510,6 +510,11 @@
 
     <VideoEditorCap maxInputFrameWidth="1920" maxInputFrameHeight="1088"
         maxOutputFrameWidth="1920" maxOutputFrameHeight="1088" maxPrefetchYUVFrames="6"/>
+
+    <ExportVideoProfile name="h263" profile="1" level="1" />
+    <ExportVideoProfile name="h264" profile="1" level="32768" />
+    <ExportVideoProfile name="m4v" profile="1" level="16" />
+
     <VideoEncoderCap name="h264" enabled="true"
         minBitRate="64000" maxBitRate="12000000"
         minFrameWidth="176" maxFrameWidth="1920"
