@@ -28,7 +28,6 @@
       <ThrottleNormal>100</ThrottleNormal>
       <ThrottleWarning>40</ThrottleWarning>
       <ThrottleAlert>40</ThrottleAlert>
-      <ThrottleCritical>40</ThrottleCritical>
     </ThrottleValues>
   </ContributingDeviceInfo>
 
@@ -140,7 +139,6 @@
         <Normal>0</Normal>
         <Warning>0</Warning>
         <Alert>1</Alert>
-        <Critical>0</Critical>
       </ThrottleDeviceMask>
     </CoolingDeviceInfo>
   </ZoneThrottleInfo>
