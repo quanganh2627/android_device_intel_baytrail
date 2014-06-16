@@ -22,15 +22,15 @@
     <CamcorderProfiles cameraId="0">
 
         <EncoderProfile quality="low" fileFormat="3gp" duration="30">
-            <Video codec="h263"
-                   bitRate="128000"
+            <Video codec="h264"
+                   bitRate="3000000"
                    width="720"
                    height="480"
                    frameRate="30" />
 
-            <Audio codec="amrnb"
-                   bitRate="12200"
-                   sampleRate="8000"
+            <Audio codec="aac"
+                   bitRate="128000"
+                   sampleRate="48000"
                    channels="1" />
         </EncoderProfile>
 
@@ -132,15 +132,15 @@
         -->
 
         <EncoderProfile quality="timelapselow" fileFormat="3gp" duration="30">
-            <Video codec="h263"
-                   bitRate="128000"
+            <Video codec="h264"
+                   bitRate="3000000"
                    width="720"
                    height="480"
                    frameRate="15" />
 
-            <Audio codec="amrnb"
-                   bitRate="12200"
-                   sampleRate="8000"
+            <Audio codec="aac"
+                   bitRate="128000"
+                   sampleRate="48000"
                    channels="1" />
         </EncoderProfile>
 
@@ -192,9 +192,9 @@
                    height="480"
                    frameRate="30" />
 
-            <Audio codec="amrnb"
-                   bitRate="12200"
-                   sampleRate="8000"
+            <Audio codec="aac"
+                   bitRate="128000"
+                   sampleRate="48000"
                    channels="1" />
         </EncoderProfile>
 
