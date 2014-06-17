@@ -99,7 +99,7 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.Intel.alac.decoder" type="audio/alac" />
         <MediaCodec name="CIPWMADecoder" type="audio/x-ms-wma" />
 
-        <MediaCodec name="OMX.Intel.hw_vd.h265" type="video/hevc" />
+        <MediaCodec name="OMX.Intel.sw_vd.h265" type="video/hevc" />
         <MediaCodec name="OMX.Intel.hw_vd.h264" type="video/avc" >
             <Quirk name="requires-hold-extra-buffers" />
         </MediaCodec>
