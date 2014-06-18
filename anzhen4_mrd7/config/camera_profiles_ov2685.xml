@@ -34,8 +34,8 @@
         <supportedBurstFPS value="1,3,5,7,15"/>
         <defaultSceneMode value=""/> <!-- one value of the supportedSceneModes. if not support, please set it to "" -->
         <supportedSceneModes value=""/> <!-- if not support, please set it to "" -->
-        <defaultFlashMode value="off"/> <!-- one value of the supportedFlashModes. if not support, please set it to "off" -->
-        <supportedFlashModes value="off"/> <!-- if not support, please set it to "off" -->
+        <!--defaultFlashMode value="off"/--> <!-- one value of the supportedFlashModes. if not support, please set it to "off" -->
+        <!--supportedFlashModes value="off"/--> <!-- if not support, please set it to "off" -->
         <defaultEffectMode value="none"/> <!-- one value of the supportedEffectModes. if not support, please set it to "none" -->
         <supportedEffectModes value="none"/> <!-- if not support, please set it to "none" -->
         <supportedIntelEffectModes value="none"/> <!-- if not support, please set it to "none" -->
