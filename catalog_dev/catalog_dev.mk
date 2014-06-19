@@ -2,7 +2,7 @@ ifeq ($(PRODUCT_NAME),)
 PRODUCT_NAME := catalog_dev
 endif
 
-BOARD_HAS_CAPSULE := false
+BOARD_HAS_CAPSULE := true
 TARGET_PARTITIONING_SCHEME := "full-gpt"
 TARGET_BIOS_TYPE := "uefi"
 HAS_SPINOR := true
