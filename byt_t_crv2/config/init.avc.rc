@@ -28,16 +28,17 @@ service media /system/bin/mediaserver
     group system audio camera media_rw sdcard_rw inet net_bt net_bt_admin net_bw_acct drmrpc net_raw security radio mediadrm mei
     ioprio rt 4
 
-on property:sys.boot_completed=1
+on post-fs
     # Defer loading modules that may require firmware till fs is ready
     insmod /lib/modules/libmsrlisthelper.ko
     insmod /lib/modules/imx1x5.ko
     insmod /lib/modules/gc2235.ko
+    insmod /lib/modules/ov2685.ko
     insmod /lib/modules/ov2722.ko
     insmod /lib/modules/lm3554.ko
     insmod /lib/modules/lm3642.ko
+    insmod /lib/modules/atomisp-css2400b0_v21.ko dypool_enable=y repool_pgnr=18432 dypool_pgnr=18432
 
-on post-fs
     # Permissions for pmdown_time
     chown media system /sys/devices/platform/AMCR0F28:00/Baytrail\ Audio/pmdown_time
     chown media system /sys/devices/platform/AMCR0F28:00/Baytrail\ Voice/pmdown_time
