@@ -125,7 +125,7 @@ on boot
     setprop audio.offload.capabilities 0
     setprop audio.offload.disable 0
     setprop audio.offload.min.duration.secs 20
-    setprop offload.compress.device 1
+    setprop offload.compress.device 2
     setprop audio.device.name baytrailaudio
 
     #Enable/Disable deep buffer property for baytrail
