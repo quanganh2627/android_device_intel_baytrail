@@ -35,7 +35,7 @@ on post-fs
     insmod /lib/modules/imx1x5.ko
     insmod /lib/modules/gc2235.ko
     insmod /lib/modules/ov2722.ko
-    insmod /lib/modules/ov2685.ko
+    insmod /lib/modules/ov.ko
     insmod /lib/modules/gc_class.ko
     insmod /lib/modules/lm3554.ko
     insmod /lib/modules/lm3642.ko
