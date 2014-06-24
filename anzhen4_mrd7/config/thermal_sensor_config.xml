@@ -42,8 +42,8 @@
             <!--Temperature thresholds for various states in milli degree celsius-->
             <Threshold>
                 <ThresholdTOff>0</ThresholdTOff>
-                <ThresholdNormal>85000</ThresholdNormal>
-                <ThresholdWarning>90000</ThresholdWarning>
+                <ThresholdNormal>80000</ThresholdNormal>
+                <ThresholdWarning>85000</ThresholdWarning>
                 <ThresholdAlert>90000</ThresholdAlert>
                 <ThresholdCritical>90000</ThresholdCritical>
             </Threshold>
