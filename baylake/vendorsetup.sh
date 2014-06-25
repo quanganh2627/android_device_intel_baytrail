@@ -19,10 +19,10 @@
 # In particular, you can add lunch options with the add_lunch_combo
 # function: add_lunch_combo generic-eng
 
-add_lunch_combo baylake-eng
-add_lunch_combo baylake-userdebug
-add_lunch_combo baylake_next-eng
-add_lunch_combo baylake_next-userdebug
-add_lunch_combo baylake_edk2-eng
-add_lunch_combo baylake_64-eng
-add_lunch_combo baylake_64-userdebug
+# add_lunch_combo baylake-eng
+# add_lunch_combo baylake-userdebug
+# add_lunch_combo baylake_next-eng
+# add_lunch_combo baylake_next-userdebug
+# add_lunch_combo baylake_edk2-eng
+# add_lunch_combo baylake_64-eng
+# add_lunch_combo baylake_64-userdebug
