@@ -110,6 +110,11 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/cms_throttle_config.xml:system/etc/cms_throttle_config.xml \
     $(DEVICE_CONF_PATH)/cms_device_config.xml:system/etc/cms_device_config.xml
 
+#IMCdownload
+PRODUCT_COPY_FILES += \
+         $(DEVICE_CONF_PATH)/IMCdownload/IMCdownload:system/bin/IMCdownload \
+         $(DEVICE_CONF_PATH)/IMCdownload/libIMCdownload.so:system/lib/libIMCdownload.so
+
 # thermal config files
 PRODUCT_COPY_FILES += \
          $(DEVICE_CONF_PATH)/thermal_sensor_config.xml:system/etc/thermal_sensor_config.xml \
