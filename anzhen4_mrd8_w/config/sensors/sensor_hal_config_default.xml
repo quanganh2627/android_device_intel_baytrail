@@ -86,27 +86,6 @@
   </sensor>
   <sensor type="proximity">
     <platform_config driver_node_type="input_event">
-      <name>jsa1212_ps</name>
-      <activate_node>/sys/bus/i2c/devices/3-0044/ps_enable</activate_node>
-      <poll_node>/sys/bus/i2c/devices/3-0044/ps_poll</poll_node>
-      <data_node></data_node>
-      <calibration_file></calibration_file>
-      <calibration_function></calibration_function>
-    </platform_config>
-    <device>
-      <name>JSA1212 Digital Proximity Sensor</name>
-      <vendor>JSA</vendor>
-      <version>1</version>
-      <maxRange>6.0</maxRange>
-      <resolution>6.0</resolution>
-      <power>0.25</power>
-      <minDelay>0</minDelay>
-      <mapper axis_x="X"></mapper>
-      <scale axis_x="6.0"></scale>
-    </device>
-  </sensor>
-  <sensor type="proximity">
-    <platform_config driver_node_type="input_event">
       <name>sx9500</name>
       <activate_node>/sys/bus/i2c/devices/3-0028/enable</activate_node>
       <poll_node>/sys/bus/i2c/devices/3-0028/poll</poll_node>
