@@ -82,7 +82,7 @@ PRODUCT_PACKAGES += \
 
 # MAMGR (Modem Audio Manager)
 PRODUCT_PACKAGES += \
-    libmamgr-xmm
+    mamgr
 
 # build the OMX wrapper codecs
 PRODUCT_PACKAGES += \
