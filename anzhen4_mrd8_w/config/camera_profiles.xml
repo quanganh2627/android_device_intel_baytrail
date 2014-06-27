@@ -88,7 +88,7 @@
         <hasSlowMotion value="false"/>
         <continuousCapture value="true"/>
         <supportedSnapshotSizes value="320x240,640x480,1024x768,1280x720,1280x960,1920x1080"/>
-        <supportedPreviewSizes value="1920x1080,1620x1080,1280x720,720x480,640x480,640x360,352x288,320x240,176x144"/>
+        <supportedPreviewSizes value="1920x1080,1280x720,720x480,640x480,640x360,352x288,320x240,176x144"/>
         <supportedVideoSizes value="176x144,320x240,352x288,640x480,720x480,1280x720,1920x1080"/>
         <videoPreviewSizePref value="1920x1080"/>
         <flipping value="" value_v="SENSOR_FLIP_V"/>
