@@ -14,8 +14,6 @@
   <Zone>
         <ZoneID>0</ZoneID>
         <ZoneName>CPU</ZoneName>
-        <!--ZoneLogic is a mandatory tag and should be placed after ZoneID and ZoneName-->
-        <ZoneLogic>Raw</ZoneLogic>
         <!--If 1, supports UEvent, otherwise poll-->
         <SupportsUEvent>1</SupportsUEvent>
         <!--Debounce Interval for this Zone. In milli degrees-->
@@ -52,7 +50,6 @@
   <Zone>
         <ZoneID>1</ZoneID>
         <ZoneName>BackSkin</ZoneName>
-        <ZoneLogic>Raw</ZoneLogic>
         <SupportsUEvent>1</SupportsUEvent>
         <DebounceInterval>0</DebounceInterval>
         <PollDelay>
@@ -83,7 +80,6 @@
   <Zone>
        <ZoneID>2</ZoneID>
        <ZoneName>FrontSkin</ZoneName>
-       <ZoneLogic>Raw</ZoneLogic>
        <SupportsUEvent>1</SupportsUEvent>
        <DebounceInterval>0</DebounceInterval>
        <PollDelay>
@@ -114,7 +110,6 @@
   <Zone>
        <ZoneID>3</ZoneID>
        <ZoneName>Battery</ZoneName>
-       <ZoneLogic>Raw</ZoneLogic>
        <SupportsUEvent>0</SupportsUEvent>
        <DebounceInterval>2000</DebounceInterval>
        <PollDelay>
@@ -143,7 +138,6 @@
   <Zone>
     <ZoneID>4</ZoneID>
     <ZoneName>Modem</ZoneName>
-    <ZoneLogic>Modem</ZoneLogic>
     <SupportsUEvent>0</SupportsUEvent>
     <DebounceInterval>2000</DebounceInterval>
     <PollDelay>
