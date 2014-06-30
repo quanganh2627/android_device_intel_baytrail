@@ -51,6 +51,36 @@
   </Zone>
 
   <Zone>
+       <ZoneID>1</ZoneID>
+       <ZoneName>skin1</ZoneName>
+       <ZoneLogic>Raw</ZoneLogic>
+       <SupportsUEvent>0</SupportsUEvent>
+       <DebounceInterval>2000</DebounceInterval>
+       <PollDelay>
+              <DelayTOff>20000</DelayTOff>
+              <DelayNormal>20000</DelayNormal>
+              <DelayWarning>20000</DelayWarning>
+              <DelayAlert>20000</DelayAlert>
+              <DelayCritical>20000</DelayCritical>
+       </PollDelay>
+       <Sensor>
+              <SensorID>2</SensorID>
+              <SensorName>skin1</SensorName>
+              <SensorPath>auto</SensorPath>
+              <InputTemp>temp</InputTemp>
+              <LowTemp>trip_point_0_temp</LowTemp>
+              <HighTemp>trip_point_1_temp</HighTemp>
+              <Threshold>
+                <ThresholdTOff>0</ThresholdTOff>
+                <ThresholdNormal>55000</ThresholdNormal>
+                <ThresholdWarning>65000</ThresholdWarning>
+                <ThresholdAlert>70000</ThresholdAlert>
+                <ThresholdCritical>75000</ThresholdCritical>
+              </Threshold>
+       </Sensor>
+  </Zone>
+
+  <Zone>
        <ZoneID>3</ZoneID>
        <ZoneName>Battery</ZoneName>
        <ZoneLogic>Raw</ZoneLogic>
@@ -106,36 +136,6 @@
                 <ThresholdWarning>90000</ThresholdWarning>
                 <ThresholdAlert>120000</ThresholdAlert>
                 <ThresholdCritical>125000</ThresholdCritical>
-              </Threshold>
-       </Sensor>
-  </Zone>
-
-  <Zone>
-       <ZoneID>5</ZoneID>
-       <ZoneName>Battery_CR2.2</ZoneName>
-       <ZoneLogic>Raw</ZoneLogic>
-       <SupportsUEvent>0</SupportsUEvent>
-       <DebounceInterval>2000</DebounceInterval>
-       <PollDelay>
-              <DelayTOff>30000</DelayTOff>
-              <DelayNormal>30000</DelayNormal>
-              <DelayWarning>30000</DelayWarning>
-              <DelayAlert>30000</DelayAlert>
-              <DelayCritical>30000</DelayCritical>
-       </PollDelay>
-       <Sensor>
-              <SensorID>6</SensorID>
-              <SensorName>intel_fuel_gauge</SensorName>
-              <SensorPath>auto</SensorPath>
-              <InputTemp>temp</InputTemp>
-              <LowTemp>trip_point_0_temp</LowTemp>
-              <HighTemp>trip_point_1_temp</HighTemp>
-              <Threshold>
-                <ThresholdTOff>0</ThresholdTOff>
-                <ThresholdNormal>48000</ThresholdNormal>
-                <ThresholdWarning>54000</ThresholdWarning>
-                <ThresholdAlert>60000</ThresholdAlert>
-                <ThresholdCritical>68000</ThresholdCritical>
               </Threshold>
        </Sensor>
   </Zone>
