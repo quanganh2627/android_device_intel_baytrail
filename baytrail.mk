@@ -108,10 +108,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     rfid_monzaxd
 
-# IPTrak
-PRODUCT_PACKAGES_DEBUG += \
-    IPTrak
-
 # WebRTC reference app
 PRODUCT_PACKAGES += \
     videoP2P
