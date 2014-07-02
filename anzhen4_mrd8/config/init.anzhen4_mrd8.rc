@@ -176,6 +176,9 @@ on boot
     #set dirty background bytes to 24MB to reduce USB MTP write latencies
     write /proc/sys/vm/dirty_background_bytes 25165824
 
+    #to disable panel fitting in HWC #61187
+    setprop persist.sys.hwc.panelfitter 0
+    
 on post-fs-data
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
     mkdir /data/media 0770 media_rw media_rw
