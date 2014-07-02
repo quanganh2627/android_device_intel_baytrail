@@ -21,4 +21,5 @@
 
 add_lunch_combo anzhen4_mrd7_64-eng
 add_lunch_combo anzhen4_mrd7_64-userdebug
+add_lunch_combo anzhen4_mrd7_64-user
 

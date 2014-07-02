@@ -23,4 +23,5 @@ add_lunch_combo byt_t_crv2-eng
 add_lunch_combo byt_t_crv2-userdebug
 add_lunch_combo byt_t_crv2_64-eng
 add_lunch_combo byt_t_crv2_64-userdebug
+add_lunch_combo byt_t_crv2_64-user
 
