@@ -21,6 +21,8 @@ BOARD_SKIP_NVM := false
 
 ENABLE_GEN_GRAPHICS := true
 
+BOARD_CHARGER_DISABLE_INIT_BLANK := true
+
 # RenderScript Properties
 # debug.rs.default-CPU-driver 1: force on CPU, 0 (default): use props as below:
 #   rs.gpu.renderscript 0: run rs on CPU, 1: run rs on GPGPU
