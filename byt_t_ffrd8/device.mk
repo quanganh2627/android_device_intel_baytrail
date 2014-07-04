@@ -232,9 +232,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     TelephonyEventsNotifier
 
-# Enable LTE telephony framework support
-PRODUCT_PROPERTY_OVERRIDES += persist.tel.lteOnGsmDevice=true
-
 # Set default network type to LTE/GSM/WCDMA (9)
 PRODUCT_PROPERTY_OVERRIDES += ro.telephony.default_network=9
 
