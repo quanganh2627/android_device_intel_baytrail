@@ -25,6 +25,9 @@
          system Wi-Fi is off -->
     <bool translatable="false" name="config_wifi_scanalways_support">false</bool>
 
+    <!-- Boolean indicating whether the wifi chipset supports multi-role multi-channel -->
+    <bool translatable="false" name="config_wifi_multirole_multichannel_support">false</bool>
+
     <bool name="config_proximityScreenOffAvailable">false</bool>
     <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
