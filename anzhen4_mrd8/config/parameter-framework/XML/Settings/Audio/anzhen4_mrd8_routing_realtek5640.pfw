@@ -43,6 +43,11 @@ supDomain: Routing.default
 			/Audio/INTEL_SSP/CONFIGURATION/SSP_BT/MASTER = 1
 			/Audio/INTEL_SSP/CONFIGURATION/SSP_MODEM/MASTER = 1
 
+	domain: LPE
+		#always use IHF mix due to LPE issue on switching to HS mix
+		conf: default
+			/Audio/LPE_MIXER/SOUND_CARD/HS/INPUT_STREAM = NONE
+			/Audio/LPE_MIXER/SOUND_CARD/IHF/INPUT_STREAM = MIX
 ##############################
 #	 Mute & Unmute Steps
 ##############################
@@ -274,37 +279,6 @@ supDomain: Routing.Configure
 			/Audio/REALTEK/SOUND_CARD/MIXER/VOICE_DSP/IF2_ADC_R_SOURCE = MONO_ADC_MIXER_R
 			/Audio/REALTEK/SOUND_CARD/MIXER/VOICE_DSP/DACL2_SOURCE = IF2_DAC_L
 			/Audio/REALTEK/SOUND_CARD/MIXER/VOICE_DSP/DACR2_SOURCE = IF2_DAC_R
-
-	supDomain: LPE_Mixer
-		domain: IHF
-			conf: Activated
-				ALL
-					SelectedOutputDevice Includes IHF
-					ANY
-						OpenedPlaybackRoutes Includes HwCodecMedia
-						OpenedPlaybackRoutes Includes HwCodecCSV
-
-				/Audio/LPE_MIXER/SOUND_CARD/IHF/INPUT_STREAM = MIX
-
-			conf: Deactivated
-				/Audio/LPE_MIXER/SOUND_CARD/IHF/INPUT_STREAM = NONE
-
-		domain: HS
-			conf: Activated
-				ALL
-					ANY
-						OpenedPlaybackRoutes Includes HwCodecMedia
-						OpenedPlaybackRoutes Includes HwCodecCSV
-					SelectedOutputDevice Excludes IHF
-					ANY
-						SelectedOutputDevice Includes Headset
-						SelectedOutputDevice Includes Headphones
-						SelectedOutputDevice Includes Earpiece
-
-				/Audio/LPE_MIXER/SOUND_CARD/HS/INPUT_STREAM = MIX
-
-			conf: Deactivated
-				/Audio/LPE_MIXER/SOUND_CARD/HS/INPUT_STREAM = NONE
 
 	supDomain: HWCodec.Capture
 		domain: MainMic
