@@ -161,7 +161,7 @@ PRODUCT_PACKAGES += \
     ufo_test
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=196608 \
+    ro.opengles.version=196609 \
     ro.sf.lcd_density=160
 
 # Version of mandatory blankphone
