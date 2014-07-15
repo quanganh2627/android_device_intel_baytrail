@@ -92,6 +92,7 @@
         <supportedPanorama value="on,off"/>
         <defaultSceneDetection value="off"/>
         <supportedSceneDetection value="on,off"/>
+	<previewFormat value="V4L2_PIX_FMT_YUYV"/>
     </Profiles>
 
     <Profiles cameraId="1">
@@ -171,6 +172,7 @@
         <supportedPanorama value="on,off"/>
         <defaultSceneDetection value="off"/>
         <supportedSceneDetection value="on,off"/>
+	<previewFormat value="V4L2_PIX_FMT_YUYV"/>
     </Profiles>
 
     <Common>
@@ -184,7 +186,6 @@
         <numRecordingBuffers value="9"/>
         <shutterLagCompensationMs value="40"/>
         <mPanoramaMaxSnapshotCount value="10"/>
-	<previewFormat value="V4L2_PIX_FMT_YUYV"/>
 	<supportPreviewLimitation value="false"/>
         <boardName value="baylake"/>
     </Common>

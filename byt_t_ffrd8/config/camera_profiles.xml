@@ -88,6 +88,7 @@
         <maxHighSpeedDvsResolution value="1280x720"/>
         <supportedUltraLowLight value=""/>
         <defaultUltraLowLight value=""/>
+        <previewFormat value="V4L2_PIX_FMT_YUYV"/> <!-- define the driver preview output format, V4L2_PIX_FMT_YVU420 or V4L2_PIX_FMT_NV12 -->
     </Profiles>
 
     <Profiles cameraId="1">
@@ -156,6 +157,7 @@
         <defaultUltraLowLight value=""/>
         <verticalFOV value="320x240@42.5,640x480@42.5,1024x768@42.5,1280x720@42.5,1280x960@42.5,1920x1080@42.5"/>
         <horizontalFOV value="320x240@64.5,640x480@64.5,1024x768@64.5,1280x720@64.5,1280x960@64.5,1920x1080@64.5"/>
+        <previewFormat value="V4L2_PIX_FMT_YUYV"/> <!-- define the driver preview output format, V4L2_PIX_FMT_YVU420 or V4L2_PIX_FMT_NV12 -->
     </Profiles>
 
     <Common>
@@ -169,7 +171,6 @@
         <numRecordingBuffers value="9"/>
         <shutterLagCompensationMs value="40"/>
         <mPanoramaMaxSnapshotCount value="10"/>
-        <previewFormat value="V4L2_PIX_FMT_YUYV"/> <!-- define the driver preview output format, V4L2_PIX_FMT_YVU420 or V4L2_PIX_FMT_NV12 -->
 	<supportPreviewLimitation value="false"/>
         <boardName value="baylake"/>
     </Common>
