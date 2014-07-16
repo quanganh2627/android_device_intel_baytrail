@@ -127,33 +127,38 @@
 
 			"factory":
 			{
-				"id": 9
+				"id": 9,
+				"size": 16
 			},
 
 			"misc":
 			{
-				"id": 10
+				"id": 10,
+				"size": 16
 			},
 
 			"config":
 			{
-				"id": 11
+				"id": 11,
+				"size": 16
 			},
 
 			"cache":
 			{
-				"id": 12
+				"id": 12,
+				"size": 1024
 			},
 
 			"logs":
 			{
 				"id": 13,
-				"size": 256
+				"size": 32
 			},
 
 			"system":
 			{
-				"id": 14
+				"id": 14,
+				"size": 1024
 			},
 
 			"data":
