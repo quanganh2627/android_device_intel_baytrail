@@ -3,7 +3,7 @@
     <Profiles cameraId="0">
         <sensorType value="SENSOR_TYPE_RAW"/> <!-- SENSOR_TYPE_SOC or SENSOR_TYPE_RAW -->
         <facing value="CAMERA_FACING_BACK"/> <!-- CAMERA_FACING_FRONT or CAMERA_FACING_BACK -->
-        <orientation value="270"/> <!-- one of 0,90,180,270 -->
+        <orientation value="90"/> <!-- one of 0,90,180,270 -->
         <dvs value="false"/> <!-- true or false -->
         <hasSlowMotion value="false"/> <!-- true or false -->
         <continuousCapture value="true"/> <!-- true or false -->
@@ -11,7 +11,7 @@
         <supportedPreviewSizes value="1920x1080,1280x960,1024x576,720x480,640x480,640x360,352x288,320x240,176x144"/>
         <supportedVideoSizes value="176x144,320x240,352x288,640x480,720x480,1280x720,1920x1080"/>
         <videoPreviewSizePref value="1920x1080"/>
-        <flipping value="" value_v=""/> <!-- value: SENSOR_FLIP_H or "", value_v: SENSOR_FLIP_V or "" -->
+        <flipping value="SENSOR_FLIP_H" value_v="SENSOR_FLIP_V"/> <!-- value: SENSOR_FLIP_H or "", value_v: SENSOR_FLIP_V or "" -->
         <previewViaOverlay value="false"/> <!-- true or false -->
         <supportedBurstLength value="1,3,5,10"/> <!-- if not support, please set it to "" -->
         <defaultBurstLength value="10"/> <!-- one value of the supportedBurstLength. if not support, please set it to "" -->
