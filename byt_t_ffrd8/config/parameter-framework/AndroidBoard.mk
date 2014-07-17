@@ -29,7 +29,55 @@ LOCAL_REQUIRED_MODULES += ParameterFrameworkConfigurationNoTuning.xml
 endif
 
 include $(BUILD_PHONY_PACKAGE)
+##################################################
 
+include $(CLEAR_VARS)
+LOCAL_MODULE := parameter-framework.routeMgr.byt_t_ffrd8
+LOCAL_MODULE_TAGS := optional
+LOCAL_REQUIRED_MODULES :=  \
+    parameter-framework.routeMgr.baytrail.nodomains \
+    RouteConfigurableDomains.xml
+include $(BUILD_PHONY_PACKAGE)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := parameter-framework.routeMgr.baytrail.nodomains
+LOCAL_MODULE_TAGS := optional
+LOCAL_REQUIRED_MODULES := \
+    RouteClass.xml \
+    RouteSubsystem.xml \
+    RouteSubsystem-common.xml \
+    DebugFsSubsystem.xml \
+
+ifeq ($(TARGET_BUILD_VARIANT),eng)
+LOCAL_REQUIRED_MODULES += \
+    ParameterFrameworkConfigurationRoute.xml
+else
+LOCAL_REQUIRED_MODULES += \
+    ParameterFrameworkConfigurationRouteNoTuning.xml
+endif
+
+include $(BUILD_PHONY_PACKAGE)
+
+##################################################
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := RouteSubsystem.xml
+LOCAL_MODULE_STEM := RouteSubsystem.xml
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/parameter-framework/Structure/Route
+LOCAL_SRC_FILES := XML/Structure/Route/$(LOCAL_MODULE)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := RouteSubsystem-common.xml
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/parameter-framework/Structure/Route
+LOCAL_SRC_FILES := XML/Structure/Route/$(LOCAL_MODULE)
+include $(BUILD_PREBUILT)
+
+##################################################
 ##################################################
 # PACKAGE : parameter-framework.vibrator.byt_t_ffrd8
 
@@ -51,8 +99,35 @@ endif
 
 include $(BUILD_PHONY_PACKAGE)
 
-##################################################
 
+
+##################################################
+# Generate routing domains file
+include $(CLEAR_VARS)
+LOCAL_MODULE := RouteConfigurableDomains.xml
+LOCAL_MODULE_TAGS := optional
+LOCAL_REQUIRED_MODULES := \
+    hostDomainGenerator.sh \
+    parameter-framework.routeMgr.baytrail.nodomains
+
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/parameter-framework/Settings/Route
+LOCAL_MODULE_STEM := RouteConfigurableDomains.xml
+include $(BUILD_SYSTEM)/base_rules.mk
+
+$(LOCAL_BUILT_MODULE): hostDomainGenerator.sh
+$(LOCAL_BUILT_MODULE): MY_SRC_FILES := \
+    $(OUT)/system/etc/parameter-framework/ParameterFrameworkConfigurationRoute.xml \
+    $(COMMON_PATH)/parameter-framework/RouteCriteria.txt \
+    /dev/null \
+    $(LOCAL_PATH)/XML/Settings/Route/routes.pfw \
+    $(LOCAL_PATH)/XML/Settings/Route/parameters.pfw
+
+$(LOCAL_BUILT_MODULE): $(LOCAL_REQUIRED_MODULES)
+	$(hide) mkdir -p $(dir $@)
+	bash hostDomainGenerator.sh --validate $(MY_SRC_FILES) > $@
+
+##################################################
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := AudioClass.xml
@@ -63,7 +138,7 @@ LOCAL_SRC_FILES := XML/Structure/Audio/$(LOCAL_MODULE)
 include $(BUILD_PREBUILT)
 
 
-ifeq ($(BOARD_USES_AUDIO_HAL_CONFIGURABLE),true)
+ifneq ($(filter true,$(BOARD_USES_AUDIO_HAL_XML) $(BOARD_USES_AUDIO_HAL_CONFIGURABLE)),)
 
 ## Audio Tuning + Routing
 
@@ -72,12 +147,12 @@ LOCAL_MODULE := AudioConfigurableDomains.xml
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/parameter-framework/Settings/Audio
-
 LOCAL_REQUIRED_MODULES := \
         hostDomainGenerator.sh \
         parameter-framework.audio.byt_t_ffrd8.nodomains
 include $(BUILD_SYSTEM)/base_rules.mk
 
+$(LOCAL_BUILT_MODULE): MY_TOOL := $(ANDROID_HOST_OUT)/bin/hostDomainGenerator.sh
 $(LOCAL_BUILT_MODULE): MY_SRC_FILES := \
         $(TARGET_OUT_ETC)/parameter-framework/ParameterFrameworkConfiguration.xml \
         $(LOCAL_PATH)/criteria.txt \
@@ -87,8 +162,7 @@ $(LOCAL_BUILT_MODULE): MY_SRC_FILES := \
 
 $(LOCAL_BUILT_MODULE): $(LOCAL_REQUIRED_MODULES)
 	$(hide) mkdir -p $(dir $@)
-	bash hostDomainGenerator.sh $(MY_SRC_FILES) > $@
-
+	bash $(MY_TOOL) --validate $(MY_SRC_FILES) > $@
 else
 
 ## Audio Tuning only

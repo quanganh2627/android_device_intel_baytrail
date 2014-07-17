@@ -139,14 +139,16 @@ PRODUCT_PACKAGES += \
     libI420colorconvert
 
 # hardware HAL
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     audio_hal_configurable \
+    route_criteria.common.conf \
     libaudioresample \
     audio.usb.default
 
 #A2DP audio HAL
 PRODUCT_PACKAGES += \
-    audio.a2dp.default \
+    audio.a2dp.default
+
 # sensors
 PRODUCT_PACKAGES += \
     sensors.$(PRODUCT_DEVICE)

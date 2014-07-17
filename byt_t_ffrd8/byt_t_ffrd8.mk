@@ -79,7 +79,8 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGES += \
         libimc-subsystem \
         parameter-framework.audio.byt_t_ffrd8 \
-        parameter-framework.vibrator.byt_t_ffrd8
+        parameter-framework.vibrator.byt_t_ffrd8 \
+        parameter-framework.routeMgr.byt_t_ffrd8
 
 # MAMGR (Modem Audio Manager)
 #PRODUCT_PACKAGES += \

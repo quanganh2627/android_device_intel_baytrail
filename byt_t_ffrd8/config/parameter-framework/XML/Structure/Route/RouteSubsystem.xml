@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Subsystem
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../Schemas/Subsystem.xsd"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    Name="route_mgr" Type="ROUTEMGR" Endianness="Little"
+    Mapping="Card:baytrailaudio">
+    <ComponentLibrary>
+        <xi:include href="RouteSubsystem-common.xml"/>
+    </ComponentLibrary>
+
+    <InstanceDefinition>
+        <Component Name="ports" Type="PlatformPorts"/>
+        <Component Name="routes" Type="PlatformRoutes"/>
+        <Component Name="criteria" Type="PlatformCriteria"/>
+    </InstanceDefinition>
+</Subsystem>

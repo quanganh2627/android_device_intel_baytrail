@@ -68,6 +68,7 @@ PRODUCT_PACKAGES += \
     libtinyalsa-subsystem \
     libfs-subsystem \
     libproperty-subsystem \
+    libroute-subsystem \
     parameter
 
 # Add charger app
