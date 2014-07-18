@@ -3,7 +3,7 @@
     <Profiles cameraId="1">
         <sensorType value="SENSOR_TYPE_RAW"/> <!-- SENSOR_TYPE_SOC or SENSOR_TYPE_RAW -->
         <facing value="CAMERA_FACING_FRONT"/> <!-- CAMERA_FACING_FRONT or CAMERA_FACING_BACK -->
-        <orientation value="90"/> <!-- one of 0,90,180,270 -->
+        <orientation value="270"/> <!-- one of 0,90,180,270 -->
         <dvs value="false"/>
         <hasSlowMotion value="false"/>
         <continuousCapture value="true"/>
