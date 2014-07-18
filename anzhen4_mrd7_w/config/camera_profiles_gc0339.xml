@@ -8,7 +8,7 @@
         <hasSlowMotion value="false"/>
         <continuousCapture value="true"/>
         <supportedSnapshotSizes value="320x240,640x480"/>
-        <supportedPreviewSizes value="640x480,176x144"/>
+        <supportedPreviewSizes value="640x480,320x240,176x144"/>
         <supportedVideoSizes value="176x144,320x240,640x480"/>
         <videoPreviewSizePref value="640x480"/>
         <flipping value="" value_v=""/>
