@@ -225,6 +225,27 @@ on post-fs
     # Insert touchscreen module
     insmod /lib/modules/atmel_mxt_ts.ko
 
+    # Software Fuel Gauge related permission changes for CRV22
+    chown system system /sys/class/misc/intel_fg_iface/uevent
+    chown system system /sys/class/misc/intel_fg_iface/batt_temp
+    chown system system /sys/class/misc/intel_fg_iface/capacity
+    chown system system /sys/class/misc/intel_fg_iface/cc_calib
+    chown system system /sys/class/misc/intel_fg_iface/cur_avg
+    chown system system /sys/class/misc/intel_fg_iface/cur_now
+    chown system system /sys/class/misc/intel_fg_iface/cyc_cnt
+    chown system system /sys/class/misc/intel_fg_iface/delta_q
+    chown system system /sys/class/misc/intel_fg_iface/fcc
+    chown system system /sys/class/misc/intel_fg_iface/ibat_boot
+    chown system system /sys/class/misc/intel_fg_iface/nac
+    chown system system /sys/class/misc/intel_fg_iface/volt_boot
+    chown system system /sys/class/misc/intel_fg_iface/volt_now
+    chown system system /sys/class/misc/intel_fg_iface/volt_ocv
+
+service fg_algo_iface /system/bin/fg_algo_iface
+    class core
+    user system
+    group system
+
     #  Permissions for pshfw update tool
     chown system system /dev/i2c-5
     chown system system /sys/class/gpio/gpio59/value
@@ -346,11 +367,6 @@ service fg_conf /system/bin/fg_conf -w
     oneshot
     disabled
 
-service fg_algo_iface /system/bin/fg_algo_iface
-    class core
-    user root
-    group root
-
 service drm /system/bin/drmserver
     class main
     user drm
@@ -388,6 +404,22 @@ on charger
     chmod 0770 /dev/intel_fg
     wait /system/bin/fg_conf
     start fg_conf
+    #Start Software Fuel Gauge
+    # Software Fuel Gauge related permission changes for CRV22
+    chown system system /sys/class/misc/intel_fg_iface/uevent
+    chown system system /sys/class/misc/intel_fg_iface/batt_temp
+    chown system system /sys/class/misc/intel_fg_iface/capacity
+    chown system system /sys/class/misc/intel_fg_iface/cc_calib
+    chown system system /sys/class/misc/intel_fg_iface/cur_avg
+    chown system system /sys/class/misc/intel_fg_iface/cur_now
+    chown system system /sys/class/misc/intel_fg_iface/cyc_cnt
+    chown system system /sys/class/misc/intel_fg_iface/delta_q
+    chown system system /sys/class/misc/intel_fg_iface/fcc
+    chown system system /sys/class/misc/intel_fg_iface/ibat_boot
+    chown system system /sys/class/misc/intel_fg_iface/nac
+    chown system system /sys/class/misc/intel_fg_iface/volt_boot
+    chown system system /sys/class/misc/intel_fg_iface/volt_now
+    chown system system /sys/class/misc/intel_fg_iface/volt_ocv
     wait /system/bin/fg_algo_iface
     start fg_algo_iface
 
