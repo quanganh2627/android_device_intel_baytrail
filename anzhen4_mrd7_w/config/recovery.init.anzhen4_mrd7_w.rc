@@ -1,0 +1,4 @@
+on boot
+# Set unsecure wipe mode
+setprop ro.g_wipe_flag 2
+
