@@ -241,11 +241,6 @@ on post-fs
     chown system system /sys/class/misc/intel_fg_iface/volt_now
     chown system system /sys/class/misc/intel_fg_iface/volt_ocv
 
-service fg_algo_iface /system/bin/fg_algo_iface
-    class core
-    user system
-    group system
-
     #  Permissions for pshfw update tool
     chown system system /dev/i2c-5
     chown system system /sys/class/gpio/gpio59/value
@@ -337,6 +332,11 @@ service fg_algo_iface /system/bin/fg_algo_iface
     symlink /sys/bus/platform/devices/crystal_cove_bcu/msic_voltage /dev/bcu
 
 # additional baytrail initialization
+service fg_algo_iface /system/bin/fg_algo_iface
+    class core
+    user system
+    group system
+
 service hdcpd /system/bin/hdcpd
     class main
     user root
