@@ -21,8 +21,8 @@
         <orientation value="0"/> <!-- one of 0,90,180,270 -->
         <dvs value="false"/> <!-- true or false -->
         <hasSlowMotion value="false"/> <!-- true or false -->
-        <continuousCapture value="false"/> <!-- true or false -->
-        <supportedSnapshotSizes value="320x240,640x480,1024x768,1280x960,1600x1200"/>
+        <continuousCapture value="true"/> <!-- true or false -->
+        <supportedSnapshotSizes value="320x240,640x480,1024x768,1080x720,1280x720,1280x960,1600x1200"/>
         <supportedPreviewSizes value="640x480,1280x720"/>
         <supportedVideoSizes value="720x480,1280x720"/>
         <videoPreviewSizePref value="1280x720"/>
@@ -93,9 +93,11 @@
         <defaultSceneDetection value="off"/>
         <supportedSceneDetection value="on,off"/>
         <previewFormat value="V4L2_PIX_FMT_YUYV"/> <!-- define the driver preview output format, V4L2_PIX_FMT_YVU420 or V4L2_PIX_FMT_NV12 -->
+        <supportedSdvSizes value="1080x720,1280x720"/>
+        <useMultiStreamsForSoC value="true"/>
     </Profiles>
 
-    <Profiles cameraId="0">
+    <Profiles cameraId="0" name="imx134">
         <sensorType value="SENSOR_TYPE_RAW"/> <!-- SENSOR_TYPE_SOC or SENSOR_TYPE_RAW -->
         <facing value="CAMERA_FACING_BACK"/> <!-- CAMERA_FACING_FRONT or CAMERA_FACING_BACK -->
         <orientation value="0"/> <!-- one of 0,90,180,270 -->
