@@ -36,6 +36,7 @@ BLUETOOTH_HCI_USE_USB := true
 
 # include firmware for wilkins peak bluetooth
 $(call inherit-product-if-exists,vendor/intel/hardware/bluetooth/fw/btfw.mk)
+$(call inherit-product-if-exists,vendor/intel/hardware/bluetooth/cert/bluedroid/btcert.mk)
 
 PRODUCT_PACKAGES += \
         wifi_intel_wkp \
