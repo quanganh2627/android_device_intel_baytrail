@@ -76,7 +76,7 @@
       <name>JSA1212 Digital Ambient Light Sensor</name>
       <vendor>JSA</vendor>
       <version>1</version>
-      <maxRange>22019.0</maxRange>
+      <maxRange>4095.0</maxRange>
       <resolution>0.3</resolution>
       <power>0.25</power>
       <minDelay>0</minDelay>
