@@ -22,6 +22,7 @@
         <defaultFlashMode value="off"/>
         <supportedFlashModes value="off"/>
         <defaultEffectMode value="none"/>
+        <horizontalFOV value="640x480@48.0,320x240@48.0"/>
         <supportedEffectModes value="none,mono,negative,sepia"/>
         <supportedIntelEffectModes value="none,mono,negative,sepia,vivid,still-sky-blue,still-grass-green,still-skin-whiten-low,still-skin-whiten-medium,still-skin-whiten-high"/>
         <supportedAwbModes value="auto,incandescent,fluorescent,daylight,cloudy-daylight"/>
