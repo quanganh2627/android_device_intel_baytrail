@@ -75,7 +75,7 @@ supDomain: Routing.Configure
 
 				conf: Headphone
 					SelectedOutputDevice Includes Headphones
-					/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE = Handset
+					/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE = Handsfree
 					/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/CONFIG/MODE = Headset
 
 				conf: Earpiece
