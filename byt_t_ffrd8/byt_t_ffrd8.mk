@@ -10,7 +10,7 @@ PRODUCT_COPY_FILES += \
 # Include product path
 include $(LOCAL_PATH)/byt_t_ffrd8_path.mk
 
-# LPDK disabled # BLANK_FLASHFILES_CONFIG := $(DEVICE_CONF_PATH)/blankflashfiles.json
+BLANK_FLASHFILES_CONFIG := $(DEVICE_CONF_PATH)/blankflashfiles.json
 
 # IFWI
 ifeq ($(TARGET_BIOS_TYPE),"uefi")
