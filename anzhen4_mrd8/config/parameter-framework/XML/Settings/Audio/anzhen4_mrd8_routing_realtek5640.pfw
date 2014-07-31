@@ -37,12 +37,6 @@ supDomain: Routing.default
 			/Audio/INTEL_SSP/CONFIGURATION/SSP_BT/MASTER = 1
 			/Audio/INTEL_SSP/CONFIGURATION/SSP_MODEM/MASTER = 1
 
-	domain: LPE
-		#always use IHF mix due to LPE issue on switching to HS mix
-		conf: default
-
-			/Audio/LPE_MIXER/SOUND_CARD/HS/INPUT_STREAM = NONE
-			/Audio/LPE_MIXER/SOUND_CARD/IHF/INPUT_STREAM = MIX
 ##############################
 #	 Mute & Unmute Steps
 ##############################

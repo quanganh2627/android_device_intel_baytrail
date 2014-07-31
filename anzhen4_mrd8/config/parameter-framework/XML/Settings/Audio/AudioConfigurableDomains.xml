@@ -1297,7 +1297,7 @@
     <Settings>
       <Configuration Name="Default">
         <ConfigurableElement Path="/Audio/LPE_MIXER/SOUND_CARD/IHF/INPUT_STREAM">
-          <EnumParameter Name="INPUT_STREAM">MIX</EnumParameter>
+          <EnumParameter Name="INPUT_STREAM">NONE</EnumParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/LPE_MIXER/SOUND_CARD/HS/INPUT_STREAM">
           <EnumParameter Name="INPUT_STREAM">MIX</EnumParameter>
