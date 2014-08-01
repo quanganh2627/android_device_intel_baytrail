@@ -31,8 +31,8 @@ OVERRIDE_COPIES := \
 # Make generic definetion of media components.
 PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/wrs_omxil_components.list:system/etc/wrs_omxil_components.list \
-    $(DEVICE_CONF_PATH)/mfx_omxil_core.conf:system/etc/mfx_omxil_core.conf \
-    $(DEVICE_CONF_PATH)/media_profiles.xml:system/etc/media_profiles.xml
+    $(DEVICE_CONF_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
+    # $(DEVICE_CONF_PATH)/mfx_omxil_core.conf:system/etc/mfx_omxil_core.conf \
 
 ifneq ($(DOLBY_UDC),true)
 PRODUCT_COPY_FILES += \
@@ -71,7 +71,7 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Media SDK and OMX IL components
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libmfxhw32 \
     libmfxsw32 \
     libmfx_omx_core \
@@ -101,7 +101,7 @@ PRODUCT_PACKAGES_ENG += ExoPlayerDemo
 PRODUCT_PACKAGES += liboemcrypto
 
 # omx components
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libwrs_omxil_core_pvwrapped \
     libOMXVideoDecoderAVC \
     libOMXVideoDecoderAVCSecure \
@@ -114,7 +114,7 @@ PRODUCT_PACKAGES += \
     libOMXVideoEncoderAVC
 
 # libmix
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libmixvbp_mpeg4 \
     libmixvbp_h264 \
     libmixvbp_vc1 \
@@ -125,7 +125,7 @@ PRODUCT_PACKAGES += \
     libjpeg_hw
 
 # libva
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     vainfo \
     pvr_drv_video
 
@@ -137,11 +137,11 @@ PRODUCT_PACKAGES += \
     libsharedbuffer
 
 # video editor
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libI420colorconvert
 
 # hardware HAL
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     audio_hal_configurable \
     libaudioresample \
     audio.a2dp.default \
@@ -160,26 +160,26 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += ro.blankphone_id=1
 
 # Intel fake multiple display
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     com.intel.multidisplay \
     com.intel.multidisplay.xml
 
 #hdmi audio HAL
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
    audio.hdmi.$(PRODUCT_DEVICE)
 
 #usb dock audio
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     audio.hs_usb.$(PRODUCT_DEVICE)
 
 #widi audio HAL
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     audio.widi.$(PRODUCT_DEVICE)
 
 #widi
-PRODUCT_PACKAGES += widi
+#PRODUCT_PACKAGES += widi
 
-PRODUCT_PACKAGES_DEBUG += \
+#PRODUCT_PACKAGES_DEBUG += \
     WirelessDisplaySigmaCapiUI \
     com.intel.widi.sigmaapi \
     com.intel.widi.sigmaapi.xml \
@@ -252,16 +252,16 @@ PRODUCT_COPY_FILES += \
 
 
 # Camera app
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     IntelCamera \
     SocialGallery
 
 # WiDi app
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     WirelessDisplayUtil
 
 # Test Camera is for Test only
-PRODUCT_PACKAGES_ENG += \
+#PRODUCT_PACKAGES_ENG += \
     TestCamera
 
 # Filesystem management tools
@@ -313,7 +313,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
 
 #NXP audio effects
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libbundlewrapper.so \
     libreverbwrapper.so \
     libxmlparser.so \
@@ -322,7 +322,7 @@ PRODUCT_PACKAGES += \
     audio_effects.conf
 
 #For Audio Offload support
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     audio.codec_offload.$(PRODUCT_DEVICE)
 
 # Optional GMS applications
@@ -333,7 +333,7 @@ PRODUCT_PACKAGES += \
 -include vendor/intel/PRIVATE/cert/IntelCorpEmailCert.mk
 
 # Enable ALAC
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libstagefright_soft_alacdec
 
 # Intel VPP/FRC

@@ -66,7 +66,7 @@ PRODUCT_PACKAGES += \
        fg_conf fg_config.bin fg_config_xpwr.bin
 
 #remote submix audio
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
        audio.r_submix.default
 
 # bcu hal
@@ -79,7 +79,7 @@ PRODUCT_PACKAGES += \
         parameter-framework.audio.byt_t_crv2
 
 # build the OMX wrapper codecs
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libstagefright_soft_mp3dec_mdp \
     libstagefright_soft_aacdec_mdp
 
