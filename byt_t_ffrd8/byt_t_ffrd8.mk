@@ -67,7 +67,7 @@ PRODUCT_PACKAGES += \
     bcu.default
 
 # rapid ril
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     librapid-ril-core \
     librapid-ril-util
 

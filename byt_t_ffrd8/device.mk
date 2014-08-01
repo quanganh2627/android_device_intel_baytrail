@@ -196,7 +196,7 @@ PRODUCT_PACKAGES += \
      com.intel.internal.telephony.OemTelephony.xml
 
 # SimToolkit app
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     Stk
 
 # Modem Trace Server (MTS)
@@ -215,7 +215,7 @@ ifneq (,$(filter $(TARGET_BUILD_VARIANT),eng userdebug))
 endif
 
 # Modem
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     mmgr \
     libmodemupdate \
     nvm_server \

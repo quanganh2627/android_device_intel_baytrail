@@ -29,6 +29,8 @@ BOARD_HAVE_ATPROXY := true
 
 TARGET_PHONE_HAS_OEM_LIBRARY := true
 
+ADDITIONAL_BUILD_PROPERTIES += rild.libpath=/system/lib/librapid-ril-core.so
+
 ifneq (,$(filter $(TARGET_BUILD_VARIANT),eng userdebug))
 # GTI is used to perform some tunning on AUD thanks to phonetool
   BOARD_USES_GTI_FRAMEWORK := true
