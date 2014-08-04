@@ -243,3 +243,7 @@ PRODUCT_PACKAGES += TXEI_SEC_TOOLS
 ADDITIONAL_BUILD_PROPERTIES += ro.streaming.video.drs=true
 # Disable the graceful shutdown in case of "longlong" press on power
 ADDITIONAL_BUILD_PROPERTIES += ro.disablelonglongpress=true
+
+# Lewa Launch
+PRODUCT_PACKAGES += \
+LewaLauncherT
