@@ -239,13 +239,14 @@ PRODUCT_PACKAGES += \
     PAVP_Group_VLV2EPIDPROD_Public_Keys.bin
 
 # Security service
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     com.intel.security.service.sepmanager \
-    com.intel.security.service.sepmanager.xml \
     com.intel.security.lib.sepdrmjni \
-    com.intel.security.lib.sepdrmjni.xml \
-    libsepdrmjni \
-    SepService
+    libsepdrmjni libiha btxei \
+    libsepipt SepService
+
+PRODUCT_PACKAGES_DEBUG += \
+    TXEI_TEST TXEI_SEC_TOOLS
 
 # Prebuilt HAL packages - Graphics
 PRODUCT_PACKAGES += \
