@@ -46,7 +46,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.direct.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml
 
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
         wifi_bcm_4334x
 
 # Copy sar manager resources
