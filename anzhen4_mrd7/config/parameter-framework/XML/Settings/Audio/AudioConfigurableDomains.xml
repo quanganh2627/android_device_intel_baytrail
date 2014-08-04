@@ -182,7 +182,7 @@
           <IntegerParameter Name="VOLUME">120 120</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/ANALOG/3/BOOST_GAIN">
-          <IntegerParameter Name="BOOST_GAIN">5</IntegerParameter>
+          <IntegerParameter Name="BOOST_GAIN">1</IntegerParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="InCall.HeadsetMic">
@@ -190,7 +190,7 @@
           <IntegerParameter Name="VOLUME">100 100</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/ANALOG/2/BOOST_GAIN">
-          <IntegerParameter Name="BOOST_GAIN">5</IntegerParameter>
+          <IntegerParameter Name="BOOST_GAIN">2</IntegerParameter>
         </ConfigurableElement>
       </Configuration>
     </Settings>
