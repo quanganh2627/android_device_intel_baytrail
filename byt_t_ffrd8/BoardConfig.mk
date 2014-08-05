@@ -13,6 +13,11 @@ INTEL_FEATURE_ASF := true
 # Supported ASF Version
 PLATFORM_ASF_VERSION := 2
 
+# Android Security Framework Permission Licensing
+ifeq ($(INTEL_FEATURE_ASF),true)
+INTEL_FEATURE_PERM_LIC := true
+endif
+
 include $(PLATFORM_PATH)/BoardConfig.mk
 
 # IAFW component to build for this board
