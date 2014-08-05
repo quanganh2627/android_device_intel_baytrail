@@ -282,17 +282,17 @@ PRODUCT_PACKAGES += \
     camera.$(PRODUCT_DEVICE)
 
 # IntelCamera Parameters extensions
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     libintelcamera_jni \
     com.intel.camera.extensions \
     com.intel.camera.extensions.xml
 
 # camera sensor tuning parameter
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
         libSh3aParamsimx135
 
 # camera firmware
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
         hdr_v2_fw_css21_2400b0 \
         shisp_2400b0_v21.bin
 
@@ -321,7 +321,7 @@ PRODUCT_COPY_FILES += \
 
 # Test Camera is for Test only
 #PRODUCT_PACKAGES_ENG += \
-    TestCamera
+   TestCamera
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \

@@ -87,11 +87,11 @@ NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 # Set USE_CAMERA_STUB to 'true' for Fake Camera builds,
 # 'false' for libcamera builds to use Camera Imaging(CI) supported by intel.
 USE_CAMERA_STUB := false
-USE_CAMERA_HAL2 := false
+USE_CAMERA_HAL2 := true
 
 USE_INTEL_METABUFFER := true
 
-USE_CSS_2_1 := false
+USE_CSS_2_1 := true
 
 # Enabled HW accelerated JPEG encoder using VA API
 USE_INTEL_JPEG := false
