@@ -43,6 +43,12 @@ on init
     # Insert fps throttle driver
     insmod /lib/modules/fps_throttle.ko
 
+    # Android creates by-name disk links with the disk controller
+    # in the generated path, so that the names pulled out of the GPT
+    # can be associated with the correct disk. Create a shortcut to
+    # /dev/block/by-name so that we can use the same fstabs everywhere.
+    symlink /dev/block/platform/80860F14:00/by-name /dev/block/by-name
+
 on boot
     #  Mount debugfs for systrace settings
     mount debugfs none /sys/kernel/debug mode=0755
@@ -356,8 +362,8 @@ on property:ro.debuggable=1
    chmod 0664 /sys/module/intel_soc_pmu/parameters/s0ix
 
 on charger
-    mount ext4 /dev/disk/by-label/system /system ro noatime
-    mount ext4 /dev/disk/by-label/logs /logs nosuid nodev barrier=1,data=ordered
+    mount ext4 /dev/block/by-name/system /system ro noatime
+    mount ext4 /dev/block/by-name/logs /logs nosuid nodev barrier=1,data=ordered
 
     setprop ro.boot.min.cap 3
     start watchdogd
