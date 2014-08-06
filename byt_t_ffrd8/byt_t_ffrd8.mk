@@ -28,6 +28,7 @@ endif
 #-include vendor/intel/PRIVATE/dolby_ds1/dolbyds1.mk
 
 # device specific overlay folder
+PRODUCT_PACKAGE_OVERLAYS := $(DEVICE_CONF_PATH)/overlays_aosp
 #PRODUCT_PACKAGE_OVERLAYS := $(DEVICE_CONF_PATH)/overlays
 
 # copy permission files
