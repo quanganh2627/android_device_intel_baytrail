@@ -3,6 +3,9 @@
 <!--   Intel Corporation 2013-2014  -->
 <!-- FG config for XPower PMIC -->
 <xpwr_config>
+<numTables>0x01</numTables>
+<!-- table 1 -->
+<battid>INTN0001</battid>
 <cap1>0x8D</cap1>
 <cap0>0xA3</cap0>
 <rdc1>0xC0</rdc1>
