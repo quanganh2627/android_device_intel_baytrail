@@ -74,7 +74,8 @@ PRODUCT_PACKAGES += \
     remote-process
 
 # Add FPT and TXEManuf
-PRODUCT_PACKAGES_ENG += FPT TXEManuf
+# Android-L disabled not building due to removed timeb.h
+#PRODUCT_PACKAGES_ENG += FPT TXEManuf
 
 # Add HdmiSettings app
 #PRODUCT_PACKAGES += \
