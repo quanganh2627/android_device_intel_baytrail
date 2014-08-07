@@ -3,8 +3,8 @@
 <!--   Intel Corporation 2013-2014  -->
 <!-- FG config for XPower PMIC -->
 <xpwr_config>
-<cap1>0x89</cap1>
-<cap0>0xFE</cap0>
+<cap1>0x8a</cap1>
+<cap0>0x31</cap0>
 <rdc1>0x80</rdc1>
 <rdc0>0x89</rdc0>
 <curve0>0x0</curve0>
