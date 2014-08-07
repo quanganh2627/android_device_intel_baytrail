@@ -8,8 +8,8 @@
         <hasSlowMotion value="false"/>
         <continuousCapture value="false"/>
         <supportedSnapshotSizes value="320x240,640x480"/>
-        <supportedPreviewSizes value="640x480,320x240"/>
-        <supportedVideoSizes value="320x240,640x480"/>
+        <supportedPreviewSizes value="640x480,320x240,176x144"/>
+        <supportedVideoSizes value="176x144,320x240,640x480"/>
         <videoPreviewSizePref value="640x480"/>
         <flipping value="SENSOR_FLIP_H" value_v="SENSOR_FLIP_V"/> <!-- value: SENSOR_FLIP_H or "", value_v: SENSOR_FLIP_V or "" -->
         <previewViaOverlay value="false"/>
