@@ -52,6 +52,13 @@ endif
 PRODUCT_COPY_FILES += \
     $(PLATFORM_CONF_PATH)/intel_short_long_press.kl:system/usr/keylayout/baytrailaudio_Intel_MID_Audio_Jack.kl
 
+# tinyalsa
+PRODUCT_PACKAGES += \
+    libtinyalsa \
+    tinyplay \
+    tinycap \
+    tinymix
+
 # parameter-framework
 PRODUCT_PACKAGES += \
     libparameter \
