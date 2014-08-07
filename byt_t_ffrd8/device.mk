@@ -310,8 +310,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
         $(DEVICE_CONF_PATH)/audio_policy.conf:system/etc/audio_policy.conf
 
-
 # Camera app
+PRODUCT_PACKAGES += \
+	Camera
+
 #PRODUCT_PACKAGES += \
     IntelCamera \
     SocialGallery
