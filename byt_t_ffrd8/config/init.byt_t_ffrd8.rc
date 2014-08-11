@@ -167,6 +167,9 @@ on boot
     # Reboot in COS on shutdown request when charger is plugged
     setprop ro.rebootchargermode true
 
+    # Load BCM Wifi kernel module for byt_t_ffrd8 at boot time
+    insmod /lib/modules/bcm4334x.ko
+
     #  Enable submix audio path for widi
     setprop widi.audio.module submix
 
