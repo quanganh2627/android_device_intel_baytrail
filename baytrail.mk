@@ -77,7 +77,7 @@ PRODUCT_PACKAGES += \
     charger_res_images
 
 # remote-process for parameter-framework tuning interface
-#PRODUCT_PACKAGES_DEBUG += \
+PRODUCT_PACKAGES_DEBUG += \
     libremote-processor \
     remote-process
 
