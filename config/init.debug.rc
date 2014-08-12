@@ -123,18 +123,18 @@ service crashdump /system/bin/crashlogd -ramdump
     disabled
     oneshot
 
-service ap_logfs /system/bin/logcat -b system -b events -b main -b radio -n 20 -r5000 -v threadtime -f /logs/aplog
+service ap_logfs /system/bin/logcat -b system -b events -b main -b radio -n 20 -r5000 -v threadtime -f /logs/aplog KERNEL:S
     class core
     disabled
 
-service apk_logfs /system/bin/logcat -b system -b events -b main -b radio -b kernel -n 20 -r5000 -v threadtime -f /logs/aplog
+service apk_logfs /system/bin/logcat -b system -b events -b main -b radio -n 20 -r5000 -v threadtime -f /logs/aplog
     class core
     disabled
 
-service apk_logsd /system/bin/logcat -b system -b events -b main -b radio -b kernel -n 20 -r5000 -v threadtime -f /sdcard/aplog
+service apk_logsd /system/bin/logcat -b system -b events -b main -b radio -n 20 -r5000 -v threadtime -f /sdcard/aplog
     disabled
 
-service ap_logsd /system/bin/logcat -b system -b events -b main -b radio -n 20 -r5000 -v threadtime -f /sdcard/aplog
+service ap_logsd /system/bin/logcat -b system -b events -b main -b radio -n 20 -r5000 -v threadtime -f /sdcard/aplog KERNEL:S
     disabled
 
 service profile_stop /system/bin/pytimechart-record stop
