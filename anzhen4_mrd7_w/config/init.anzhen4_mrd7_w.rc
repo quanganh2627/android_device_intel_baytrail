@@ -357,3 +357,9 @@ on charger
 
     insmod /lib/modules/atomisp-css2400b0_v21.ko
 
+
+
+on property:dev.bootcomplete=1
+   chmod 0777 /dev/ttyUSB0
+   chmod 0777 /dev/ttyUSB1
+   chmod 0777 /dev/ttyUSB2
