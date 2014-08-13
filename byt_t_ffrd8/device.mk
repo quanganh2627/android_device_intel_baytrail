@@ -183,7 +183,7 @@ PRODUCT_PROPERTY_OVERRIDES += ro.blankphone_id=1
     shsrv
 
 # AT Proxy
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     proxy
 
 # Restricted Access Region
