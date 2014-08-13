@@ -160,6 +160,9 @@ on boot
     # Reboot in COS on shutdown request when charger is plugged
     setprop ro.rebootchargermode true
 
+    # Load the WiFi kernel module for RTL8723 chip at boot time
+    insmod /lib/modules/8723bs.ko
+
     #  Enable submix audio path for widi
     setprop widi.audio.module submix
 
