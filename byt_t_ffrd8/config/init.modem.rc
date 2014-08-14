@@ -81,6 +81,10 @@ on boot
 
 on post-fs-data
 
+# Deactivate telephony on BYT_FFRD8 because FCC authorization
+# for the modem had expired
+   setprop persist.service.telephony.off 1
+
 # create NVM log folder
     mkdir /data/modem
     chown system radio /data/modem
