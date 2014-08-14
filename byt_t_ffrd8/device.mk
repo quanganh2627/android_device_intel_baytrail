@@ -205,12 +205,12 @@ PRODUCT_PACKAGES += \
     Stk
 
 # Modem Trace Server (MTS)
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     mts
 
 # AMTL : Android Modem Traces and Logs
 ifneq (,$(filter $(TARGET_BUILD_VARIANT),eng userdebug))
-  #  PRODUCT_PACKAGES += \
+    PRODUCT_PACKAGES += \
         Amtl \
         libamtl_jni
 
