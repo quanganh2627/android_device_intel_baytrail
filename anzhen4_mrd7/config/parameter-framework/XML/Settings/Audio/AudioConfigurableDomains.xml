@@ -179,7 +179,7 @@
       </Configuration>
       <Configuration Name="InCall.FrontMic">
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/MONO/VOLUME">
-          <IntegerParameter Name="VOLUME">120 120</IntegerParameter>
+          <IntegerParameter Name="VOLUME">80 80</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/ANALOG/3/BOOST_GAIN">
           <IntegerParameter Name="BOOST_GAIN">1</IntegerParameter>
