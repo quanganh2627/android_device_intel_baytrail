@@ -21,7 +21,7 @@
     <!-- Each camcorder profile defines a set of predefined configuration parameters -->
     <CamcorderProfiles cameraId="0">
 
-        <EncoderProfile quality="low" fileFormat="3gp" duration="30">
+        <EncoderProfile quality="low" fileFormat="3gp" duration="60">
             <Video codec="h264"
                    bitRate="3000000"
                    width="720"
