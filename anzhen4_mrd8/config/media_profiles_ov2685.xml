@@ -31,7 +31,7 @@
             <Audio codec="aac"
                    bitRate="128000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="high" fileFormat="3gp" duration="30">
@@ -136,12 +136,12 @@
                    bitRate="3000000"
                    width="720"
                    height="480"
-                   frameRate="15" />
+                   frameRate="30" />
 
             <Audio codec="aac"
                    bitRate="128000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="timelapsehigh" fileFormat="3gp" duration="30">
@@ -195,7 +195,7 @@
             <Audio codec="aac"
                    bitRate="128000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="timelapse720p" fileFormat="3gp" duration="30">
