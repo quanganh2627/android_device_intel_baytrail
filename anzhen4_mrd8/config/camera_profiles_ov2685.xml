@@ -24,7 +24,7 @@
         <continuousCapture value="false"/> <!-- true or false -->
         <supportedSnapshotSizes value="320x240,640x480,1024x768,1280x960,1600x1200"/>
         <supportedPreviewSizes value="640x480,1280x720"/>
-        <supportedVideoSizes value="720x480,1280x720"/>
+        <supportedVideoSizes value="720x480,1280x720,176x144"/>
         <videoPreviewSizePref value="1280x720"/>
         <flipping value="" value_v=""/> <!-- value: SENSOR_FLIP_H or "", value_v: SENSOR_FLIP_V or "" -->
         <previewViaOverlay value="false"/> <!-- true or false -->
@@ -37,9 +37,9 @@
         <!--defaultFlashMode value="off"/--> <!-- one value of the supportedFlashModes. if not support, please set it to "off" -->
         <!--supportedFlashModes value="off"/--> <!-- if not support, please set it to "off" -->
         <defaultEffectMode value="none"/> <!-- one value of the supportedEffectModes. if not support, please set it to "none" -->
-        <supportedEffectModes value="none"/> <!-- if not support, please set it to "none" -->
-        <supportedIntelEffectModes value="none"/> <!-- if not support, please set it to "none" -->
-        <supportedAwbModes value="auto,incandescent,fluorescent,daylight,cloudy-daylight"/>
+        <supportedEffectModes value="none,mono,negative,sepia"/> <!-- if not support, please set it to "none" -->
+        <supportedIntelEffectModes value="none,mono,negative,sepia,vivid,still-sky-blue,still-grass-green,still-skin-whiten-low,still-skin-whiten-medium,still-skin-whiten-high"/> <!-- if not support, please set it to "none" -->
+        <supportedAwbModes value="auto,incandescent,fluorescent,daylight,cloudy-daylight"/> <!-- if not support, please set it to "" -->
         <defaultAwbMode value="auto"/> <!-- if not support, please set it to "" -->
         <supportedAwbLock value="false"/>
         <maxEV value="6"/>
