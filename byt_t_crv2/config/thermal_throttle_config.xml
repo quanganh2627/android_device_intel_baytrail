@@ -3,7 +3,7 @@
 <!--  Intel Corporation 2011-2012  -->
 <thermalthrottleconfig>
   <!-- Config xml file version should be in sync with iTUX version number-->
-  <ConfigFileVersion>2.5</ConfigFileVersion>
+  <ConfigFileVersion>3.0</ConfigFileVersion>
 
   <!--Platform Parameters-->
   <PlatformInfo>
@@ -14,41 +14,50 @@
   </PlatformInfo>
 
   <!--Cooling Devices-->
+<!--
   <ContributingDeviceInfo>
     <CDeviceName>Display</CDeviceName>
     <CDeviceID>1</CDeviceID>
+-->
     <!--CDeviceClassPath: pluggable custom class path name or "auto" meaning no separate plugin required-->
-    <CDeviceClassPath>com.android.server.thermal.BrightnessControl</CDeviceClassPath>
+<!--
+    <CDeviceClassPath>com.intel.thermal.BrightnessControl</CDeviceClassPath>
+-->
     <!--CDevicethrottlePath: "auto" means lookin PERFTK path. "none" means implemented inside plugin -->
+<!--
     <CDeviceThrottlePath>none</CDeviceThrottlePath>
+-->
     <!--Throttle values are written to cooling device throttle path -->
     <!--values can be a absolute target unit (eg cpu frequencies) or -->
     <!--relative levels (e.g 0,1,2 for charge level or brightness limit percentage) -->
+<!--
     <ThrottleValues>
       <ThrottleNormal>100</ThrottleNormal>
       <ThrottleWarning>40</ThrottleWarning>
       <ThrottleAlert>40</ThrottleAlert>
     </ThrottleValues>
   </ContributingDeviceInfo>
+-->
 
   <ContributingDeviceInfo>
     <CDeviceName>Battery</CDeviceName>
     <CDeviceID>2</CDeviceID>
-    <CDeviceClassPath>com.android.server.thermal.BatteryChargeCurrentControl</CDeviceClassPath>
+    <CDeviceClassPath>com.intel.thermal.BatteryChargeCurrentControl</CDeviceClassPath>
     <CDeviceThrottlePath>auto</CDeviceThrottlePath>
   </ContributingDeviceInfo>
 
   <ContributingDeviceInfo>
     <CDeviceName>SoC</CDeviceName>
     <CDeviceID>3</CDeviceID>
-    <CDeviceClassPath>com.android.server.thermal.SoCControl</CDeviceClassPath>
+    <CDeviceClassPath>com.intel.thermal.SoCControl</CDeviceClassPath>
     <CDeviceThrottlePath>auto</CDeviceThrottlePath>
   </ContributingDeviceInfo>
 
+<!--
   <ContributingDeviceInfo>
       <CDeviceName>Modem</CDeviceName>
       <CDeviceID>4</CDeviceID>
-      <CDeviceClassPath>com.android.server.thermal.ModemCooling</CDeviceClassPath>
+      <CDeviceClassPath>com.intel.thermal.ModemCooling</CDeviceClassPath>
       <CDeviceThrottlePath>none</CDeviceThrottlePath>
   </ContributingDeviceInfo>
 
@@ -57,6 +66,7 @@
       <CDeviceID>5</CDeviceID>
       <CDeviceClassPath>none</CDeviceClassPath>
   </ContributingDeviceInfo>
+-->
 
   <!--Map the cooling devices with specfic zones for throttling-->
 
@@ -66,9 +76,11 @@
     <!--set CriticalShutDown to 1, if platform needs to shutdown
         if this zone reaches critical thermal state to avoid any user impact-->
     <!--list of cooling device IDs registered for the zone-->
+<!--
     <CoolingDeviceInfo>
       <CoolingDevId>1</CoolingDevId>
     </CoolingDeviceInfo>
+-->
     <CoolingDeviceInfo>
       <CoolingDevId>2</CoolingDevId>
     </CoolingDeviceInfo>
@@ -80,9 +92,11 @@
   <ZoneThrottleInfo>
     <ZoneID>2</ZoneID>
     <CriticalShutDown>1</CriticalShutDown>
+<!--
     <CoolingDeviceInfo>
       <CoolingDevId>1</CoolingDevId>
     </CoolingDeviceInfo>
+-->
     <CoolingDeviceInfo>
       <CoolingDevId>2</CoolingDevId>
     </CoolingDeviceInfo>
@@ -94,9 +108,11 @@
   <ZoneThrottleInfo>
     <ZoneID>3</ZoneID>
     <CriticalShutDown>1</CriticalShutDown>
+<!--
     <CoolingDeviceInfo>
       <CoolingDevId>1</CoolingDevId>
     </CoolingDeviceInfo>
+-->
     <CoolingDeviceInfo>
       <CoolingDevId>2</CoolingDevId>
     </CoolingDeviceInfo>
@@ -121,6 +137,7 @@
     </CoolingDeviceInfo>
   </ZoneThrottleInfo>
 
+<!--
   <ZoneThrottleInfo>
     <ZoneID>5</ZoneID>
     <CriticalShutDown>0</CriticalShutDown>
@@ -139,5 +156,6 @@
       </ThrottleDeviceMask>
     </CoolingDeviceInfo>
   </ZoneThrottleInfo>
+-->
 
 </thermalthrottleconfig>

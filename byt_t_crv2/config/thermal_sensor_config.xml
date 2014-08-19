@@ -3,7 +3,7 @@
 <!--  Intel Corporation 2011-2012  -->
 <thermalconfig>
   <!-- Config xml file version should be in sync with iTUX version number-->
-  <ConfigFileVersion>2.5</ConfigFileVersion>
+  <ConfigFileVersion>3.0</ConfigFileVersion>
 
 <!--Platform Parameters-->
   <PlatformInfo>
@@ -72,9 +72,12 @@
       <HighTemp>auto</HighTemp>
   </Sensor>
 
+<!--
   <Sensor>
+-->
       <!--Modem Sensor IDs are enumerated from OemtelephonyConstants class
       during runtime-->
+<!--
       <SensorName>Modem_PCB</SensorName>
       <SensorPath>none</SensorPath>
       <InputTemp>invalid</InputTemp>
@@ -97,6 +100,7 @@
       <HighTemp>invalid</HighTemp>
       <LowTemp>invalid</LowTemp>
   </Sensor>
+-->
 <!--Thermal Zones-->
 
   <Zone>
@@ -215,6 +219,7 @@
        </SensorAttrib>
   </Zone>
 
+<!--
   <Zone>
     <ZoneID>5</ZoneID>
     <ZoneName>Modem</ZoneName>
@@ -241,4 +246,5 @@
         <SensorName>Modem_RF</SensorName>
     </SensorAttrib>
   </Zone>
+-->
  </thermalconfig>
