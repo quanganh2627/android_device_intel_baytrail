@@ -180,7 +180,7 @@ PRODUCT_PACKAGES += \
     audio.hs_usb.$(PRODUCT_DEVICE)
 
 #widi
-#PRODUCT_PACKAGES += widi
+PRODUCT_PACKAGES += widi
 
 #PRODUCT_PACKAGES_DEBUG += \
     WirelessDisplaySigmaCapiUI \

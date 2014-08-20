@@ -189,7 +189,7 @@ PRODUCT_PACKAGES += \
 
 
 #widi
-#PRODUCT_PACKAGES += widi
+PRODUCT_PACKAGES += widi
 
 #PRODUCT_PACKAGES_DEBUG += \
     WirelessDisplaySigmaCapiUI \

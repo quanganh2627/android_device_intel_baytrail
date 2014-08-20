@@ -19,9 +19,6 @@ include $(PLATFORM_PATH)/BoardConfig.mk
 # IAFW component to build for this board
 BOARD_IAFW_COMPONENT := brd_baylake
 
-#Platform
-BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
-
 #Modem
 BOARD_HAVE_MODEM := false
 
