@@ -142,9 +142,11 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGES += \
     audio_hal_configurable \
     libaudioresample \
-    audio.a2dp.default \
     audio.usb.default
 
+#A2DP audio HAL
+PRODUCT_PACKAGES += \
+    audio.a2dp.default \
 # sensors
 PRODUCT_PACKAGES += \
     sensors.$(PRODUCT_DEVICE)
@@ -162,7 +164,7 @@ PRODUCT_PROPERTY_OVERRIDES += ro.blankphone_id=1
     com.intel.multidisplay.xml
 
 #hdmi audio HAL
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
    audio.hdmi.$(PRODUCT_DEVICE)
 
 #usb dock audio
