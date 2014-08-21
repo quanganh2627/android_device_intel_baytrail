@@ -99,7 +99,7 @@ PRODUCT_PACKAGES_ENG += ExoPlayerDemo
 #PRODUCT_PACKAGES += liboemcrypto
 
 # omx components
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     libwrs_omxil_core_pvwrapped \
     libOMXVideoDecoderAVC \
     libOMXVideoDecoderAVCSecure \
@@ -112,7 +112,7 @@ PRODUCT_PACKAGES_ENG += ExoPlayerDemo
     libOMXVideoEncoderAVC
 
 # libmix
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     libmixvbp_mpeg4 \
     libmixvbp_h264 \
     libmixvbp_vc1 \
@@ -120,6 +120,8 @@ PRODUCT_PACKAGES_ENG += ExoPlayerDemo
     libmixvbp_h264secure \
     libmix_imagedecoder \
     libmix_imagedecoder_genx \
+    libva_videodecoder \
+    libva_videoencoder \
     libjpeg_hw
 
 # libva
