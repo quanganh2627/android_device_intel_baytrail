@@ -71,7 +71,7 @@ PRODUCT_PACKAGES += \
        fg_algo_iface
 
 #remote submix audio
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
        audio.r_submix.default
 
 # bcu hal
