@@ -81,7 +81,8 @@ PRODUCT_PACKAGES += \
 # parameter-framework files
 PRODUCT_PACKAGES += \
         libimc-subsystem \
-        parameter-framework.audio.byt_t_crv2
+        parameter-framework.audio.byt_t_crv2 \
+        parameter-framework.routeMgr.byt_t_crv2
 
 # build the OMX wrapper codecs
 #PRODUCT_PACKAGES += \
