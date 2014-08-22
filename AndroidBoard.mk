@@ -7,8 +7,8 @@ include device/intel/common/AndroidBoard.mk
 -include linux/modules/debug_tools/socwatchdk/src/AndroidSOCWatchDK.mk
 -include vendor/intel/tools/PRIVATE/debug_internal_tools/socwatchdk/src/AndroidSOCWatchDK.mk
 
-# Add VISA driver
--include vendor/intel/tools/PRIVATE/debug_internal_tools/visadk/driver/src/AndroidVISA.mk
+# Add SocPerf driver
+-include vendor/intel/tools/PRIVATE/debug_internal_tools/socperfdk/driver/src/AndroidSOCPERF.mk
 
 # Add LM driver
 -include vendor/intel/tools/PRIVATE/debug_internal_tools/lmdk/AndroidLMDK.mk
