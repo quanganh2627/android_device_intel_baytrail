@@ -3,9 +3,146 @@
 REF_DEVICE_NAME ?= $(TARGET_DEVICE)
 REF_PRODUCT_NAME ?= $(TARGET_PRODUCT)
 
-TARGET_USE_DROIDBOOT := true
+TARGET_USE_DROIDBOOT := false
 
 TARGET_OS_SIGNING_METHOD := isu_plat2
+
+#- Display ----------------------------------------------------------------------------------------#
+
+# Select UFO version
+UFO_ENABLE_GEN := gen7-3.10
+
+#- OTA --------------------------------------------------------------------------------------------#
+# tell build system where to get the recovery.fstab.
+TARGET_RECOVERY_FSTAB ?= $(TARGET_DEVICE_DIR)/fstab
+
+#- Kernel -----------------------------------------------------------------------------------------#
+BOARD_CONSOLE ?= console=ttyS0,115200n8
+KERNEL_LOGLEVEL ?= 7
+
+# SPID
+#
+# Can be customized for each board simply defining "SPID=" in local BoardConfig.mk
+# Without customization, will be auto-set by kernel
+#
+# SPID format :
+#        vend:cust:manu:plat:prod:hard
+USE_SPID ?= true
+ifeq ($(USE_SPID), true)
+    SPID ?= "xxxx:xxxx:xxxx:xxxx:xxxx:xxxx"
+    cmdline_extra += androidboot.spid=$(SPID)
+endif
+
+USE_BL_SERIALNO ?= false
+ifeq ($(USE_BL_SERIALNO), false)
+    cmdline_extra += androidboot.serialno=01234567890123456789
+endif
+
+BOARD_KERNEL_CMDLINE += \
+        loglevel=$(KERNEL_LOGLEVEL) \
+        androidboot.hardware=$(TARGET_DEVICE) \
+        $(BOARD_CONSOLE) \
+        $(cmdline_extra)
+
+#- Filesystem configuration -----------------------------------------------------------------------#
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2147483648
+
+TARGET_USERIMAGES_USE_EXT4 := true
+BOARD_FLASH_BLOCK_SIZE := 2048
+TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
+
+#- Runtime ----------------------------------------------------------------------------------------#
+ADDITIONAL_BUILD_PROPERTIES += ro.config.no_preload_hdn=false
+
+#
+# -- SECURE BOOT --
+#
+
+# Alternate mkbootimg implementation which can sign boot images
+# with a provided key
+#BOARD_CUSTOM_MKBOOTIMG := $(HOST_OUT_EXECUTABLES)/mkbootimg_secure
+
+# Sign boot images with the "vendor" key which is embedded within
+# the UEFI shim. Boot image verification only enforced if Secure
+# Boot is turned on in the BIOS.
+#BOARD_MKBOOTIMG_ARGS := --signhash sha256 \
+#	--signkey device/intel/build/testkeys/vendor.pk8
+
+ifeq ($(TARGET_UEFI_ARCH),i386)
+    LOADER_TYPE := linux-x86
+else
+    LOADER_TYPE := linux-x86_64
+endif
+LOADER_PREBUILT := hardware/intel/efi_prebuilts
+
+# EFI binaries that go in the installed device's EFI system partition
+BOARD_EFI_MODULES := \
+    $(LOADER_PREBUILT)/uefi_shim/$(LOADER_TYPE)/shim.efi \
+    $(LOADER_PREBUILT)/uefi_shim/$(LOADER_TYPE)/MokManager.efi \
+    $(LOADER_PREBUILT)/gummiboot/$(LOADER_TYPE)/gummiboot.efi
+
+# EFI binaries that go in the bootable USB fastboot image
+BOARD_FASTBOOT_USB_EFI_MODULES := \
+    $(LOADER_PREBUILT)/uefi_shim/$(LOADER_TYPE)/shim.efi \
+    $(LOADER_PREBUILT)/uefi_shim/$(LOADER_TYPE)/MokManager.efi \
+    $(LOADER_PREBUILT)/gummiboot/$(LOADER_TYPE)/gummiboot.efi \
+    $(LOADER_PREBUILT)/efitools/$(LOADER_TYPE)/LockDown.efi \
+    $(LOADER_PREBUILT)/efitools/$(LOADER_TYPE)/production-test/LockDownPT.efi
+
+# We need gymmiboot.efi packaged inside the fastboot boot image to be
+# able to work with MCG's EFI fastboot stub
+USERFASTBOOT_2NDBOOTLOADER := $(LOADER_PREBUILT)/gummiboot/$(LOADER_TYPE)/gummiboot.efi
+
+#
+# -- OTA RELATED DEFINES --
+#
+
+# tell build system where to get the recovery.fstab. Userfastboot
+# uses this too.
+TARGET_RECOVERY_FSTAB ?= $(TARGET_DEVICE_DIR)/fstab
+
+# Used by ota_from_target_files to add platform-specific directives
+# to the OTA updater scripts
+TARGET_RELEASETOOLS_EXTENSIONS ?= device/intel/common/recovery/releasetools.py
+
+# Adds edify commands swap_entries and copy_partition for robust
+# update of the EFI system partition
+TARGET_RECOVERY_UPDATER_LIBS := libupdater_esp
+
+# Extra libraries needed to be rolled into recovery updater
+# libgpt_static is needed by libupdater_esp
+TARGET_RECOVERY_UPDATER_EXTRA_LIBS := libcommon_recovery libgpt_static
+
+TARGET_RECOVERY_UI_LIB := libgmin_recovery_ui
+
+# By default recovery minui expects RGBA framebuffer
+# also affects UI in Userfastboot
+TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
+
+
+#
+# FILESYSTEMS
+#
+
+# NOTE: These values must be kept in sync with BOARD_GPT_INI
+BOARD_SYSTEMIMAGE_PARTITION_SIZE ?= 2684354560
+BOARD_BOOTLOADER_PARTITION_SIZE ?= 104857600
+
+TARGET_USERIMAGES_USE_EXT4 := true
+BOARD_FLASH_BLOCK_SIZE := 512
+TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
+
+# Partition table configuration file
+BOARD_GPT_INI ?= device/intel/common/boot/gpt.ini
+
+#
+# FASTBOOT
+#
+
+TARGET_STAGE_USERFASTBOOT := true
+TARGET_USE_USERFASTBOOT := true
+
+TARGET_BOOTLOADER_BOARD_NAME := $(TARGET_DEVICE)
 
 # Android Security Framework
 # must be set before include PLATFORM/BoardConfig.mk
@@ -188,8 +325,9 @@ USE_FEATURE_ALAC := true
 OVERRIDE_RS_DRIVER := libRSDriver_intel7.so
 
 # usb stick installer support
+ifeq ($(TARGET_USE_DROIDBOOT),true)
 BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE +=  droidboot.use_installer=1 droidboot.installer_usb=/dev/block/sda1
-
+endif
 
 # Use shared object of ia_face
 USE_SHARED_IA_FACE := true

@@ -30,6 +30,11 @@ on early-init
 
 
 on init
+    # Contains unit-specific data provided during device provisioning.
+    # This includes factory.prop which is automatically read by init
+    mkdir /factory 0770 system system
+    symlink  /dev/block/pci/pci0000:00/0000:00:13.0/by-name/ /dev/block/by-name
+
     export SECONDARY_STORAGE /storage/sdcard1
 
     write /sys/class/graphics/fbcon/cursor_blink 0
@@ -43,6 +48,28 @@ on init
 
     # Insert hdmi audio driver
     insmod /lib/modules/hdmi_audio.ko
+
+on fs
+    # ro.boot.hardware = TARGET_PRODUCT (set in kernel command line
+    # as androidboot.hardware). Mount all the filesystems as specified
+    # in the fstab.
+    mount_all /fstab
+
+service pstore-clean /system/bin/pstore-clean
+    user root
+    group system
+    class late_start
+    oneshot
+
+service setup_fs /system/bin/setup_fs \
+        /dev/block/by-name/android_data \
+        /dev/block/by-name/android_cache \
+        /dev/block/by-name/android_factory \
+        /dev/block/by-name/android_oem
+    class core
+    user shell
+    group log
+    oneshot
 
 on boot
     #  Mount debugfs for systrace settings

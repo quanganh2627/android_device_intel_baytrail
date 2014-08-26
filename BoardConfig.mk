@@ -15,7 +15,11 @@ BOARD_HAS_CAPSULE ?= true
 PRODUCT_LIBRARY_PATH := $(PRODUCT_LIBRARY_PATH):/system/lib/egl
 
 # Disable recovery for now
+ifeq ($(TARGET_USE_USERFASTBOOT),true)
+TARGET_MAKE_NO_DEFAULT_RECOVERY := false
+else
 TARGET_MAKE_NO_DEFAULT_RECOVERY := true
+endif
 TARGET_NO_RECOVERY := false
 
 ENABLE_GEN_GRAPHICS := true
@@ -30,10 +34,12 @@ ADDITIONAL_BUILD_PROPERTIES += \
     debug.rs.dev.intrinsics=gpu
 endif
 
+ifneq ($(TARGET_USE_USERFASTBOOT),true)
 ifneq ($(TARGET_NO_RECOVERY),true)
 TARGET_RECOVERY_UI_LIB := libintel_recovery_ui
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_RECOVERY_UPDATER_LIBS += libintel_updater
+endif
 endif
 
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
