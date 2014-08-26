@@ -297,8 +297,6 @@ supDomain: Route
 			ANY
 				AndroidMode Is InVoipCall
 				AndroidMode Is Normal
-			BtEnable Is True
-			ScoResourceRequested Is True
 
 		domain: Playback
 

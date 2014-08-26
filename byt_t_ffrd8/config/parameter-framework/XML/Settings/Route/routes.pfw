@@ -420,8 +420,6 @@ supDomain: Route
 
 			conf: Applicable
 				ALL
-					BtEnable Is True
-					ScoResourceRequested Is True
 					AndroidMode Is InCsvCall
 					ModemAudioStatus Is True
 					ANY
@@ -459,8 +457,6 @@ supDomain: Route
 			ANY
 				AndroidMode Is InVoipCall
 				AndroidMode Is Normal
-			BtEnable Is True
-			ScoResourceRequested Is True
 
 		domain: Playback
 
