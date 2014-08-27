@@ -321,9 +321,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera app
 PRODUCT_PACKAGES += \
-	Camera
-
-#PRODUCT_PACKAGES += \
+    Camera \
     IntelCamera \
     SocialGallery
 
