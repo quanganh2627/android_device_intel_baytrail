@@ -18,7 +18,7 @@
         <maxBurstFPS value="15"/>
         <supportedBurstFPS value="1,3,5,7,15"/>
         <defaultSceneMode value="auto"/>
-        <supportedSceneModes value="auto,portrait,sports,landscape,night,barcode,night-portrait"/>
+        <supportedSceneModes value="auto,night"/>
         <defaultFlashMode value="off"/>
         <supportedFlashModes value="off"/>
         <defaultEffectMode value="none"/>
