@@ -171,7 +171,7 @@ on boot
     setprop ro.rebootchargermode true
 
     # Load BCM Wifi kernel module for byt_t_ffrd8 at boot time
-    insmod /lib/modules/bcm4334x.ko
+    insmod /lib/modules/bcmdhd.ko
 
     #  Enable submix audio path for widi
     setprop widi.audio.module submix
