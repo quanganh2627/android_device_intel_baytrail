@@ -293,6 +293,11 @@ PRODUCT_PACKAGES += \
     e2fsck \
     setup_fs
 
+# FileManager
+PRODUCT_PACKAGES += \
+    FileManager
+
+
 # copy permission files
 FRAMEWORK_ETC_PATH := frameworks/native/data/etc
 PERMISSIONS_PATH := system/etc/permissions
