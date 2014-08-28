@@ -125,7 +125,7 @@ PRODUCT_PACKAGES += \
     libjpeg_hw
 
 # libva
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     vainfo \
     pvr_drv_video
 
