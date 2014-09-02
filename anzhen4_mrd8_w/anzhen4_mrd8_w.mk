@@ -1,11 +1,11 @@
 ifeq ($(PRODUCT_NAME),)
-PRODUCT_NAME := anzhen4_mrd8_w
+	PRODUCT_NAME := anzhen4_mrd8_w
 endif
 
-#3G dongle support.if true,only support 3g dongle,no support modem; otherwise, only support modem,no support 3g dongle
-SUPPORT_3G_DONGLE_ONLY := true
+#3G dongle support: if true, Modem + dongle Co-exist; otherwise, only support modem,no support 3g dongle
+SUPPORT_3G_DONGLE := true
 
-ifeq ($(SUPPORT_3G_DONGLE_ONLY),true)
+ifeq ($(SUPPORT_3G_DONGLE),true)
 # Dongle files
 PRODUCT_COPY_FILES += \
                $(LOCAL_PATH)/dongle/connect-chat:system/etc/ppp/connect-chat \
@@ -82,7 +82,12 @@ PRODUCT_PACKAGES += \
 # parameter-framework files
 PRODUCT_PACKAGES += \
         libimc-subsystem \
-        parameter-framework.audio.anzhen4_mrd8_w
+        parameter-framework.audio.anzhen4_mrd8_w \
+        parameter-framework.vibrator.anzhen4_mrd8_w
+ 
+# MAMGR (Modem Audio Manager)
+PRODUCT_PACKAGES += \
+	libmamgr-xmm
 
 # build the OMX wrapper codecs
 PRODUCT_PACKAGES += \
@@ -104,6 +109,11 @@ endif
 PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/cms_throttle_config.xml:system/etc/cms_throttle_config.xml \
     $(DEVICE_CONF_PATH)/cms_device_config.xml:system/etc/cms_device_config.xml
+
+#IMCdownload
+PRODUCT_COPY_FILES += \
+         $(DEVICE_CONF_PATH)/IMCdownload/IMCdownload:system/bin/IMCdownload \
+         $(DEVICE_CONF_PATH)/IMCdownload/libIMCdownload.so:system/lib/libIMCdownload.so
 
 # thermal config files
 PRODUCT_COPY_FILES += \

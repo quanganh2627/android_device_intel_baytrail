@@ -14,11 +14,6 @@ INTEL_FEATURE_ASF := true
 # Supported ASF Version
 PLATFORM_ASF_VERSION := 1
 
-#Adding no modem UI property
-ifeq ($(SUPPORT_3G_DONGLE_ONLY),true)
-ADDITIONAL_DEFAULT_PROPERTIES += persist.nomodem_ui=1
-endif
-
 include $(PLATFORM_PATH)/BoardConfig.mk
 
 # IAFW component to build for this board
@@ -28,8 +23,10 @@ BOARD_IAFW_COMPONENT := brd_baylake
 BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
 
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1073741824
+
 #Modem
 BOARD_HAVE_MODEM := false
+ENABLE_MODULE_H350 := true
 
 # Connectivity
 BOARD_HAVE_WIFI := true
@@ -188,3 +185,4 @@ USE_GENERAL_SENSOR_DRIVER := true
 
 # disable libsensorhub
 ENABLE_SENSOR_HUB := false
+BOARD_HAVE_ATPROXY := true

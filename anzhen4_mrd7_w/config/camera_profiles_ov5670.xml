@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CameraSettings>
+    <Profiles cameraId="0">
+        <sensorType value="SENSOR_TYPE_RAW"/> <!-- SENSOR_TYPE_SOC or SENSOR_TYPE_RAW -->
+        <facing value="CAMERA_FACING_BACK"/> <!-- CAMERA_FACING_FRONT or CAMERA_FACING_BACK -->
+        <orientation value="90"/> <!-- one of 0,90,180,270 -->
+        <dvs value="false"/> <!-- true or false -->
+        <hasSlowMotion value="false"/> <!-- true or false -->
+        <continuousCapture value="true"/> <!-- true or false -->
+        <supportedSnapshotSizes value="320x240,640x480,1024x768,1280x720,1280x960,2048x1536,2560x1920"/>
+        <supportedPreviewSizes value="1280x720,1024x576,720x480,640x480,640x360,352x288,320x240,176x144"/>
+        <supportedVideoSizes value="176x144,720x480,1280x720"/>
+        <videoPreviewSizePref value="1280x720"/>
+        <flipping value="" value_v=""/> <!-- value: SENSOR_FLIP_H or "", value_v: SENSOR_FLIP_V or "" -->
+        <previewViaOverlay value="false"/> <!-- true or false -->
+        <supportedBurstLength value="1,3,5,10"/> <!-- if not support, please set it to "" -->
+        <defaultBurstLength value="10"/> <!-- one value of the supportedBurstLength. if not support, please set it to "" -->
+        <maxBurstFPS value="15"/>
+        <supportedBurstFPS value="1,3,5,7,15"/>
+        <defaultSceneMode value="auto"/> <!-- one value of the supportedSceneModes. if not support, please set it to "" -->
+        <supportedSceneModes value="auto,portrait,sports,landscape,night,barcode,night-portrait"/> <!-- if not support, please set it to "" -->
+        <!--defaultFlashMode value="off"/--> <!-- one value of the supportedFlashModes. if not support, please set it to "off" -->
+        <!--supportedFlashModes value="off"/--> <!-- if not support, please set it to "off" -->
+        <defaultEffectMode value="none"/> <!-- one value of the supportedEffectModes. if not support, please set it to "none" -->
+        <supportedEffectModes value="none,mono,negative,sepia"/> <!-- if not support, please set it to "none" -->
+        <supportedIntelEffectModes value="none,mono,negative,sepia,vivid,still-sky-blue,still-grass-green,still-skin-whiten-low,still-skin-whiten-medium,still-skin-whiten-high"/> <!-- if not support, please set it to "none" -->
+        <supportedAwbModes value="auto,incandescent,fluorescent,daylight,cloudy-daylight"/> <!-- if not support, please set it to "" -->
+        <defaultAwbMode value="auto"/> <!-- if not support, please set it to "" -->
+        <supportedAwbLock value="false"/>
+        <maxEV value="6"/>
+        <minEV value="-6"/>
+        <stepEV value="0.33333333"/> <!-- if not support, please set it to 0 -->
+        <defaultEV value="0"/> <!-- if not support, please set it to 0 -->
+        <defaultIso value="iso-auto"/> <!-- one value of the supportedIso. if not support, please set it to "" -->
+        <supportedIso value="iso-auto,iso-100,iso-200,iso-400,iso-800"/> <!-- if not support, please set it to "" -->
+        <defaultAeMetering value="auto"/> <!-- one value of the supportedAeMetering. if not support, please set it to "" -->
+        <supportedAeMetering value="auto,center,spot"/> <!-- if not support, please set it to "" -->
+        <supportedAeLock value="false"/>
+        <defaultFocusMode value="auto"/> <!-- one value of the supportedFocusModes. if not support, please set it to "fixed" -->
+        <supportedFocusModes value="auto,infinity,fixed,macro,continuous-video,continuous-picture"/> <!-- if not support, please set it to "fixed" -->
+        <VFPPLimitedResolutionList value=""/> <!-- it depends on the real hardware, value could be 1024x768 or other value list. if no need to set, please set it to "" -->
+        <overlayRelativeRotation value="90"/> <!-- one of 0,90,180,270 -->
+        <maxSaturation value=""/>
+        <minSaturation value=""/>
+        <stepSaturation value=""/>
+        <defaultSaturation value=""/>
+        <supportedSaturation value=""/>
+        <maxContrast value=""/>
+        <minContrast value=""/>
+        <stepContrast value=""/>
+        <defaultContrast value=""/>
+        <supportedContrast value=""/>
+        <maxSharpness value=""/>
+        <minSharpness value=""/>
+        <stepSharpness value=""/>
+        <defaultSharpness value=""/>
+        <supportedSharpness value=""/>
+        <supportedPreviewFrameRate value="30,15,10"/>
+        <supportedPreviewFPSRange value="(10500,30304),(11000,30304),(11500,30304)"/>
+        <defaultPreviewFPSRange value="10500,30304"/> <!-- one value of the supportedPreviewFPSRange -->
+        <supportedPreviewUpdateModes value="standard,continuous,during-capture,windowless"/>
+        <defaultPreviewUpdateMode value="standard"/>
+        <hasFlash value="false"/>
+    </Profiles>
+</CameraSettings>

@@ -9,11 +9,7 @@
 # PRODUCT_COPY_FILES := $(OVERRIDE_COPIES) $(PRODUCT_COPY_FILES)
 
 # Superclass
-ifeq ($(SUPPORT_3G_DONGLE_ONLY),true)
- $(call inherit-product, build/target/product/full_base_no_telephony.mk)
-else
- $(call inherit-product, build/target/product/full_base_telephony.mk)
-endif
+$(call inherit-product, build/target/product/full_base_telephony.mk)
 # Include Dalvik Heap Size Configuration
 $(call inherit-product, $(COMMON_PATH)/dalvik/tablet-xhdpi-2048-dalvik-heap.mk)
 
@@ -95,6 +91,9 @@ PRODUCT_PACKAGES += com.google.widevine.software.drm.xml \
     libwvdrm_L1
 
 PRODUCT_PACKAGES_ENG += WidevineSamplePlayer
+
+# SIM Hot Swap Property
+PRODUCT_PROPERTY_OVERRIDES += persist.tel.hot_swap.support=true
 
 # WV Modular
 PRODUCT_PACKAGES += libwvdrmengine
@@ -263,7 +262,9 @@ PRODUCT_PACKAGES += \
 # board specific files
 PRODUCT_COPY_FILES += \
         $(DEVICE_CONF_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
-        $(DEVICE_CONF_PATH)/camera_profiles.xml:system/etc/camera_profiles.xml
+        $(DEVICE_CONF_PATH)/camera_profiles.xml:system/etc/camera_profiles.xml \
+        $(foreach file,$(wildcard $(DEVICE_CONF_PATH)/media_profiles*.xml),$(file):system/etc/$(notdir $(file))) \
+        $(foreach file,$(wildcard $(DEVICE_CONF_PATH)/camera_profiles*.xml),$(file):system/etc/$(notdir $(file)))
 
 # audio policy file
 PRODUCT_COPY_FILES += \
@@ -311,8 +312,11 @@ PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.usb.host.xml:$(PERMISSIONS_PATH)/android.hardware.usb.host.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.usb.accessory.xml:$(PERMISSIONS_PATH)/android.hardware.usb.accessory.xml \
+    $(FRAMEWORK_ETC_PATH)/tablet_core_hardware.xml:$(PERMISSIONS_PATH)/tablet_core_hardware.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.location.gps.xml:$(PERMISSIONS_PATH)/android.hardware.location.gps.xml \
-    $(FRAMEWORK_ETC_PATH)/tablet_core_hardware.xml:$(PERMISSIONS_PATH)/tablet_core_hardware.xml
+    $(FRAMEWORK_ETC_PATH)/android.hardware.telephony.cdma.xml:$(PERMISSIONS_PATH)/android.hardware.telephony.cdma.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.location.gps.xml:$(PERMISSIONS_PATH)/android.hardware.location.gps.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.telephony.gsm.xml:$(PERMISSIONS_PATH)/android.hardware.telephony.gsm.xml
 #   $(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
 
 ifneq ($(BOARD_HAVE_BLUETOOTH),false)
@@ -372,6 +376,26 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     VppSettings
 
+#H350's ril
+#ifeq ($(ENABLE_MODULE_H350),true)
+PRODUCT_PACKAGES += \
+	rild \
+	libril \
+	libght-ril \
+	ght-log \
+	ght-foat
+
+# Modem Manager
+PRODUCT_PACKAGES += \
+	mmgr
+
+# 	# AT Proxy
+PRODUCT_PACKAGES += \
+	proxy \
+	proxy-recovery \
+	ATProxy
+#endif
+
 #audio firmware
 AUDIO_FW_PATH := vendor/intel/fw/sst/
 PRODUCT_COPY_FILES += \
@@ -384,6 +408,11 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/init.$(PRODUCT_DEVICE).rc:root/init.$(PRODUCT_DEVICE).rc \
     $(DEVICE_CONF_PATH)/init.avc.rc:root/init.avc.rc \
     $(DEVICE_CONF_PATH)/init.diag.rc:root/init.diag.rc
+
+#ifeq ($(ENABLE_MODULE_H350),true)
+PRODUCT_COPY_FILES += \
+	$(DEVICE_CONF_PATH)/init.modem.ght.rc:root/init.modem.rc
+#endif
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/vold.fstab:system/etc/vold.fstab

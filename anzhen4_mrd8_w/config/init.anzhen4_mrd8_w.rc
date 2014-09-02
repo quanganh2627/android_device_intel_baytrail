@@ -4,6 +4,7 @@ import init.debug.rc
 import init.diag.rc
 import init.avc.rc
 # import init.wireless.rc
+import init.modem.rc
 import init.wifi.rc
 import init.platform.usb.rc
 import init.bt.rc
@@ -43,12 +44,15 @@ on init
     # Insert hdmi audio driver
     insmod /lib/modules/hdmi_audio.ko
 
+    setprop_from_sysfs /sys/firmware/pidv/iafw_version sys.ia32.version
+    setprop_from_sysfs /sys/firmware/pidv/iafw_version sys.ifwi.version
+    setprop_from_sysfs /sys/firmware/pidv/secfw_version sys.chaabi.version
+    setprop_from_sysfs /sys/firmware/pidv/pdr_version sys.pdr.version
+
+
 on boot
     #  Mount debugfs for systrace settings
     mount debugfs none /sys/kernel/debug mode=0755
-
-    # Disable ril
-    setprop ro.radio.noril yes
 
     #  Permissions for Thermal Management
     chown system system /sys/module/intel_mid_osip/parameters/force_shutdown_occured
