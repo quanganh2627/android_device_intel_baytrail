@@ -99,11 +99,16 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.Intel.alac.decoder" type="audio/alac" />
         <MediaCodec name="CIPWMADecoder" type="audio/x-ms-wma" />
 
-        <MediaCodec name="OMX.Intel.hw_vd.h265" type="video/hevc" />
-        <MediaCodec name="OMX.Intel.hw_vd.h264" type="video/avc" />
-        <MediaCodec name="OMX.Intel.hw_vd.vc1" type="video/x-ms-wmv" />
-        <MediaCodec name="OMX.Intel.hw_vd.vc1" type="video/wmv" />
-
+        <MediaCodec name="OMX.Intel.sw_vd.h265" type="video/hevc" />
+        <MediaCodec name="OMX.Intel.hw_vd.h264" type="video/avc" >
+            <Quirk name="requires-hold-extra-buffers" />
+        </MediaCodec>
+        <MediaCodec name="OMX.Intel.hw_vd.vc1" type="video/x-ms-wmv" >
+            <Quirk name="requires-hold-extra-buffers" />
+        </MediaCodec>
+        <MediaCodec name="OMX.Intel.hw_vd.vc1" type="video/wmv" >
+            <Quirk name="requires-hold-extra-buffers" />
+        </MediaCodec>
         <MediaCodec name="OMX.Intel.VideoDecoder.VP8" type="video/x-vnd.on2.vp8" >
             <Quirk name="requires-hold-extra-buffers" />
         </MediaCodec>
