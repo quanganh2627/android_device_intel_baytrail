@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE SUPLInfoList [
+  <!ELEMENT SUPLInfoList (SUPL+)>
+  <!ATTLIST SUPL SID ID #REQUIRED>
+  <!ELEMENT SUPL (SuplServer,Supl_Ver_Info)>
+  <!ELEMENT SuplServer (Supl_Address_type,Supl_Address,Supl_Port_Number)>
+  <!ELEMENT Supl_Ver_Info (#PCDATA)>
+  <!ELEMENT Supl_Address_type (#PCDATA)>
+  <!ELEMENT Supl_Address (#PCDATA)>
+  <!ELEMENT Supl_Port_Number (#PCDATA)>
+]>
+
+<SUPLInfoList>
+  <!--
+    <SUPL SID="_310151">
+      <SuplServer>
+        <Supl_Address_type>1</Supl_Address_type>
+        <Supl_Address>192.168.255.255</Supl_Address>
+        <Supl_Port_Number>7275</Supl_Port_Number>
+      </SuplServer>
+      <Supl_Ver_Info>2</Supl_Ver_Info>
+    </SUPL>
+  <SUPL SID="_310412">
+    <SuplServer>
+      <Supl_Address_type>1</Supl_Address_type>
+      <Supl_Address>192.168.255.255</Supl_Address>
+      <Supl_Port_Number>7275</Supl_Port_Number>
+    </SuplServer>
+    <Supl_Ver_Info>2</Supl_Ver_Info>
+  </SUPL>
+  <SUPL SID="_310410">
+    <SuplServer>
+      <Supl_Address_type>1</Supl_Address_type>
+      <Supl_Address>192.168.255.255</Supl_Address>
+      <Supl_Port_Number>7275</Supl_Port_Number>
+    </SuplServer>
+    <Supl_Ver_Info>2</Supl_Ver_Info>
+  </SUPL>
+  <SUPL SID="_310260">
+    <SuplServer>
+      <Supl_Address_type>1</Supl_Address_type>
+      <Supl_Address>192.168.100.100</Supl_Address>
+      <Supl_Port_Number>7276</Supl_Port_Number>
+    </SuplServer>
+    <Supl_Ver_Info>2</Supl_Ver_Info>
+  </SUPL>
+  -->
+  <SUPL SID="_Default">
+    <SuplServer>
+      <Supl_Address_type>1</Supl_Address_type>
+      <Supl_Address>supl.google.com</Supl_Address>
+      <Supl_Port_Number>7275</Supl_Port_Number>
+    </SuplServer>
+    <Supl_Ver_Info>1</Supl_Ver_Info>
+  </SUPL>
+</SUPLInfoList>
