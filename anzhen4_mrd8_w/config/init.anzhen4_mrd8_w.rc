@@ -4,7 +4,6 @@ import init.debug.rc
 import init.diag.rc
 import init.avc.rc
 # import init.wireless.rc
-import init.modem.rc
 import init.wifi.rc
 import init.platform.usb.rc
 import init.bt.rc
@@ -53,6 +52,9 @@ on init
 on boot
     #  Mount debugfs for systrace settings
     mount debugfs none /sys/kernel/debug mode=0755
+
+    # Disable ril
+    setprop ro.radio.noril yes
 
     #  Permissions for Thermal Management
     chown system system /sys/module/intel_mid_osip/parameters/force_shutdown_occured

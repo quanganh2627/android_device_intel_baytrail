@@ -2,10 +2,10 @@ ifeq ($(PRODUCT_NAME),)
 	PRODUCT_NAME := anzhen4_mrd8_w
 endif
 
-#3G dongle support: if true, Modem + dongle Co-exist; otherwise, only support modem,no support 3g dongle
-SUPPORT_3G_DONGLE := true
+#3G dongle support.if true,only support 3g dongle,no support modem; otherwise, only support modem,no support 3g dongle
+SUPPORT_3G_DONGLE_ONLY := true
 
-ifeq ($(SUPPORT_3G_DONGLE),true)
+ifeq ($(SUPPORT_3G_DONGLE_ONLY),true)
 # Dongle files
 PRODUCT_COPY_FILES += \
                $(LOCAL_PATH)/dongle/connect-chat:system/etc/ppp/connect-chat \
