@@ -356,7 +356,8 @@ on property:ro.debuggable=1
    chmod 0664 /sys/module/intel_soc_pmu/parameters/s0ix
 
 on charger
-    mount_all /fstab.charger.${ro.hardware}
+    mount ext4 /dev/disk/by-label/system /system ro noatime
+    mount ext4 /dev/disk/by-label/logs /logs nosuid nodev barrier=1,data=ordered
 
     setprop ro.boot.min.cap 3
     start watchdogd
@@ -390,4 +391,3 @@ on charger
 
 
     insmod /lib/modules/atomisp-css2400b0_v21.ko
-
