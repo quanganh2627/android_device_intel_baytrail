@@ -10,7 +10,9 @@
       <resolution unit="GRAVITY_EARTH">0.000488281</resolution>
       <power>0.006</power>
       <minDelay>10000</minDelay>
+      <maxDelay>1000000</maxDelay>
       <scale axis_x="0.001" axis_y="0.001" axis_z="0.001" unit="GRAVITY_EARTH"></scale>
+      <fifoMaxEventCount>128</fifoMaxEventCount>
     </device>
   </sensor>
   <sensor type="light" category="libsensorhub">
@@ -22,7 +24,9 @@
       <resolution>0.1</resolution>
       <power>0.35</power>
       <minDelay>0</minDelay>
+      <maxDelay>0</maxDelay>
       <scale axis_x="0.1"></scale>
+      <fifoMaxEventCount>128</fifoMaxEventCount>
     </device>
   </sensor>
   <sensor type="proximity" category="libsensorhub">
@@ -34,7 +38,9 @@
       <resolution>5.0</resolution>
       <power>0.35</power>
       <minDelay>0</minDelay>
+      <maxDelay>0</maxDelay>
       <scale axis_x="5.0"></scale>
+      <fifoMaxEventCount>128</fifoMaxEventCount>
     </device>
   </sensor>
   <sensor type="compass" category="libsensorhub">
@@ -46,7 +52,9 @@
       <resolution>0.5</resolution>
       <power>0.1</power>
       <minDelay>10000</minDelay>
+      <maxDelay>1000000</maxDelay>
       <scale axis_x="0.1" axis_y="0.1" axis_z="0.1"></scale>
+      <fifoMaxEventCount>128</fifoMaxEventCount>
     </device>
   </sensor>
   <sensor type="gyroscope" category="libsensorhub">
@@ -58,7 +66,9 @@
       <resolution unit="M_PI">0.000555556</resolution>   <!-- 1/10/180 -->
       <power>6.1</power>
       <minDelay>10000</minDelay>
+      <maxDelay>1000000</maxDelay>
       <scale axis_x="0.000555556" axis_y="0.000555556" axis_z="0.000555556" unit="M_PI"></scale> <!-- 1/10/180 -->
+      <fifoMaxEventCount>128</fifoMaxEventCount>
     </device>
   </sensor>
   <sensor type="gravity" category="libsensorhub">
@@ -70,8 +80,10 @@
       <resolution unit="GRAVITY_EARTH">0.000488281</resolution>
       <power>0.006</power>
       <minDelay>10000</minDelay>
+      <maxDelay>1000000</maxDelay>
       <mapper axis_x="X" axis_y="Y" axis_z="Z"></mapper>
       <scale axis_x="0.0000000152587890625" axis_y="0.0000000152587890625" axis_z="0.0000000152587890625" unit="GRAVITY_EARTH"></scale> <!-- 1/1000/65536 -->
+      <fifoMaxEventCount>128</fifoMaxEventCount>
     </device>
   </sensor>
   <sensor type="linear_acceleration" category="libsensorhub">
@@ -83,7 +95,9 @@
       <resolution unit="GRAVITY_EARTH">0.000488281</resolution>
       <power>0.006</power>
       <minDelay>10000</minDelay>
+      <maxDelay>1000000</maxDelay>
       <scale axis_x="0.001" axis_y="0.001" axis_z="0.001" unit="GRAVITY_EARTH"></scale>
+      <fifoMaxEventCount>128</fifoMaxEventCount>
     </device>
   </sensor>
   <sensor type="rotation_vector" category="libsensorhub">
@@ -95,7 +109,9 @@
       <resolution>0.0000000596046</resolution>   <!-- 1.0/(1<<24) -->
       <power>0.106</power>
       <minDelay>10000</minDelay>
+      <maxDelay>1000000</maxDelay>
       <scale axis_x="0.0000152587890625" axis_y="0.0000152587890625" axis_z="0.0000152587890625" axis_w="0.0000152587890625"></scale> <!-- 1/65536 -->
+      <fifoMaxEventCount>128</fifoMaxEventCount>
     </device>
   </sensor>
   <sensor type="orientation" category="libsensorhub">
@@ -107,7 +123,9 @@
       <resolution>1.0</resolution>
       <power>0.106</power>
       <minDelay>10000</minDelay>
+      <maxDelay>1000000</maxDelay>
       <scale axis_x="0.0000152587890625" axis_y="0.0000152587890625" axis_z="0.0000152587890625"></scale> <!-- 1/65536 -->
+      <fifoMaxEventCount>128</fifoMaxEventCount>
     </device>
   </sensor>
   <sensor type="gesture_flick" category="libsensorhub">
@@ -119,6 +137,8 @@
       <resolution>1.0</resolution>
       <power>0.006</power>
       <minDelay>0</minDelay>
+      <maxDelay>0</maxDelay>
+      <fifoMaxEventCount>128</fifoMaxEventCount>
     </device>
   </sensor>
   <sensor type="terminal" category="libsensorhub">
@@ -130,6 +150,8 @@
       <resolution>1.0</resolution>
       <power>0.006</power>
       <minDelay>0</minDelay>
+      <maxDelay>0</maxDelay>
+      <fifoMaxEventCount>128</fifoMaxEventCount>
     </device>
   </sensor>
   <sensor type="proximity" category="libsensorhub">
@@ -141,7 +163,9 @@
       <resolution>1.0</resolution>
       <power>0.35</power>
       <minDelay>0</minDelay>
+      <maxDelay>0</maxDelay>
       <scale axis_x="1.0"></scale>
+      <fifoMaxEventCount>128</fifoMaxEventCount>
     </device>
   </sensor>
   <sensor type="calibration" category="libsensorhub">
@@ -153,6 +177,7 @@
       <resolution>1.0</resolution>
       <power>0.001</power>
       <minDelay>10000</minDelay>
+      <maxDelay>1000000</maxDelay>
     </device>
   </sensor>
 </sensor_hal_config>
