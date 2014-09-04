@@ -202,45 +202,10 @@ PRODUCT_PACKAGES += \
     shcli \
     shsrv
 
-# AT Proxy
-PRODUCT_PACKAGES += \
-    proxy
-
-# Restricted Access Region
-PRODUCT_PACKAGES += \
-    libmemrar
-
 #OemTelephony for OEM HOOK API
 #PRODUCT_PACKAGES += \
     com.intel.internal.telephony.OemTelephony \
      com.intel.internal.telephony.OemTelephony.xml
-
-# SimToolkit app
-PRODUCT_PACKAGES += \
-    Stk
-
-# Modem Trace Server (MTS)
-PRODUCT_PACKAGES += \
-    mts
-
-# AMTL : Android Modem Traces and Logs
-ifneq (,$(filter $(TARGET_BUILD_VARIANT),eng userdebug))
-    PRODUCT_PACKAGES += \
-        Amtl \
-        libamtl_jni
-
-    PRODUCT_COPY_FILES += \
-        $(DEVICE_CONF_PATH)/activate_trace_modem:system/bin/activate_trace_modem \
-        $(DEVICE_CONF_PATH)/configure_trace_modem:system/bin/configure_trace_modem
-endif
-
-# Modem
-PRODUCT_PACKAGES += \
-    mmgr \
-    libmodemupdate \
-    nvm_server \
-    miu-app \
-    modem
 
 #PRODUCT_PACKAGES_DEBUG += \
     mmgr-debug
@@ -259,23 +224,10 @@ PRODUCT_PROPERTY_OVERRIDES += ro.telephony.default_network=9
 # SIM Hot Swap Property
 PRODUCT_PROPERTY_OVERRIDES += persist.tel.hot_swap.support=true
 
-# busybox
-PRODUCT_PACKAGES_DEBUG += \
-    busybox
-
 # hw_ssl
 #PRODUCT_PACKAGES += \
     libdx-crys \
     start-sep
-
-# BCM4752 GPS
-PRODUCT_PACKAGES += \
-    gps_bcm_4752
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.spid.gps.pmm=disabled \
-    ro.spid.gps.tty=ttyMFD1 \
-    ro.spid.gps.FrqPlan=FRQ_PLAN_26MHZ_2PPM \
-    ro.spid.gps.RfType=GL_RF_4752_BRCM
 
 # bluetooth
 PRODUCT_PACKAGES += \
@@ -437,9 +389,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/init.$(PRODUCT_DEVICE).rc:root/init.$(PRODUCT_DEVICE).rc \
     $(DEVICE_CONF_PATH)/init.avc.rc:root/init.avc.rc \
-    $(DEVICE_CONF_PATH)/init.modem.rc:root/init.modem.rc \
     $(DEVICE_CONF_PATH)/init.diag.rc:root/init.diag.rc
-#    $(DEVICE_CONF_PATH)/init.wireless.rc:root/init.wireless.rc \
+#    $(DEVICE_CONF_PATH)/init.wireless.rc:root/init.wireless.rc
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/vold.fstab:system/etc/vold.fstab
