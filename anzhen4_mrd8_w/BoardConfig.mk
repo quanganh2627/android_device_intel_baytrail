@@ -14,6 +14,9 @@ INTEL_FEATURE_ASF := true
 # Supported ASF Version
 PLATFORM_ASF_VERSION := 1
 
+# LPAL
+INTEL_FEATURE_LPAL := true
+
 #Adding no modem UI property
 ifeq ($(SUPPORT_3G_DONGLE_ONLY),true)
 ADDITIONAL_DEFAULT_PROPERTIES += persist.nomodem_ui=1

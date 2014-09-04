@@ -14,6 +14,9 @@ INTEL_FEATURE_ASF := true
 # Supported ASF Version
 PLATFORM_ASF_VERSION := 1
 
+# LPAL
+INTEL_FEATURE_LPAL := true
+
 include $(PLATFORM_PATH)/BoardConfig.mk
 
 # IAFW component to build for this board
