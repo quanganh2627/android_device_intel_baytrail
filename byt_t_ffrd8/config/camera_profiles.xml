@@ -168,6 +168,8 @@
         <shutterLagCompensationMs value="40"/>
         <mPanoramaMaxSnapshotCount value="10"/>
 	<supportPreviewLimitation value="false"/>
+        <supportsOfflineBurst value="true"/> <!-- true or false -->
+        <supportsOfflineBracket value="true"/> <!-- true or false -->
         <boardName value="baylake"/>
     </Common>
 </CameraSettings>
