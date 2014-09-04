@@ -13,3 +13,6 @@ include $(DEVICE_CONF_PATH)/fg_config/AndroidBoard.mk
 include $(COMMON_PATH)/config/AndroidBoard.mk
 
 ADDITIONAL_DEFAULT_PROPERTIES += persist.ril-daemon.disable=0
+
+# Include Kernel dependency file
+include $(DEVICE_PATH)/definitions.mk
