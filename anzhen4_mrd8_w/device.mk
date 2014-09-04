@@ -376,6 +376,9 @@ PRODUCT_PACKAGES += \
     VppSettings
 
 
+#LPAL
+PRODUCT_PACKAGES += \
+    lpal_bundle
 #audio firmware
 AUDIO_FW_PATH := vendor/intel/fw/sst/
 PRODUCT_COPY_FILES += \

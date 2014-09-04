@@ -376,6 +376,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     VppSettings
 
+#LPAL
+PRODUCT_PACKAGES += \
+    lpal_bundle
 #H350's ril
 #ifeq ($(ENABLE_MODULE_H350),true)
 PRODUCT_PACKAGES += \
