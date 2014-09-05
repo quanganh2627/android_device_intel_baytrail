@@ -315,7 +315,8 @@ PRODUCT_PACKAGES += \
 # board specific files
 PRODUCT_COPY_FILES += \
         $(DEVICE_CONF_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
-        $(DEVICE_CONF_PATH)/camera_profiles.xml:system/etc/camera_profiles.xml
+        $(DEVICE_CONF_PATH)/camera_profiles.xml:system/etc/camera_profiles.xml \
+        $(DEVICE_CONF_PATH)/camera3_profiles.xml:system/etc/camera3_profiles.xml
 
 # audio policy file
 PRODUCT_COPY_FILES += \
