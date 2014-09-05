@@ -90,7 +90,7 @@ PRODUCT_PACKAGES_DEBUG += \
     HdmiSettings
 
 # Ota and Ota Downloader
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     Ota \
     OtaDownloader
 
