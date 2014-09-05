@@ -51,7 +51,6 @@ USE_FG_ALGO := true
 BOARD_USES_ALSA_AUDIO := false
 BOARD_USES_TINY_ALSA_AUDIO := true
 BOARD_USES_AUDIO_HAL_XML := true
-USE_LEGACY_AUDIO_POLICY := 1
 ifneq (,$(filter $(TARGET_BUILD_VARIANT),eng userdebug))
 # Enable ALSA utils for eng and user debug builds
 BUILD_WITH_ALSA_UTILS := true
