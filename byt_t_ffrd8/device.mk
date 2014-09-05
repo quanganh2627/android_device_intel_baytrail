@@ -231,7 +231,7 @@ PRODUCT_PACKAGES += \
     miu-app \
     modem
 
-#PRODUCT_PACKAGES_DEBUG += \
+PRODUCT_PACKAGES_DEBUG += \
     mmgr-debug
 
 # MMGR CWS Client
