@@ -44,6 +44,11 @@ else
 PRODUCT_PACKAGES += \
     media_codecs.xml
 endif
+
+# Video ISV
+PRODUCT_COPY_FILES += \
+    $(DEVICE_CONF_PATH)/video_isv_profile.xml:system/etc/video_isv_profile.xml
+
 ifeq ($(DOLBY_DAP),true)
 PRODUCT_PACKAGES += \
     audio_effects.conf
