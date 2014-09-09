@@ -106,7 +106,7 @@ PRODUCT_PACKAGES += \
     lights.$(PRODUCT_DEVICE)
 
 # sensorhub
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     sensorhubd      \
     libsensorhub    \
     psh_bk.bin      \

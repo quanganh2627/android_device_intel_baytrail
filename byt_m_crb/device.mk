@@ -46,8 +46,8 @@ OVERRIDE_COPIES := \
 PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/wrs_omxil_components.list:system/etc/wrs_omxil_components.list \
     $(DEVICE_CONF_PATH)/mfx_omxil_core.conf:system/etc/mfx_omxil_core.conf \
-    $(DEVICE_CONF_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
-    $(DEVICE_CONF_PATH)/sensors/sensor_hal_config_default.xml:system/etc/sensor_hal_config_default.xml
+    $(DEVICE_CONF_PATH)/media_profiles.xml:system/etc/media_profiles.xml
+#    $(DEVICE_CONF_PATH)/sensors/sensor_hal_config_default.xml:system/etc/sensor_hal_config_default.xml
 
 ifneq ($(DOLBY_UDC),true)
 PRODUCT_COPY_FILES += \
@@ -110,7 +110,7 @@ PRODUCT_PACKAGES_ENG += ExoPlayerDemo
 #PRODUCT_PACKAGES += liboemcrypto
 
 # omx components
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libwrs_omxil_core_pvwrapped \
     libOMXVideoDecoderAVC \
     libOMXVideoDecoderAVCSecure \
@@ -123,7 +123,7 @@ PRODUCT_PACKAGES += \
     libOMXVideoEncoderAVC
 
 # libmix
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libmixvbp_mpeg4 \
     libmixvbp_h264 \
     libmixvbp_vc1 \
@@ -136,15 +136,15 @@ PRODUCT_PACKAGES += \
     libjpeg_hw
 
 # libva
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     vainfo \
     pvr_drv_video
 
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     msvdx_fw_mfld_DE2.0.bin
 
 # video encoder and camera
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libsharedbuffer
 
 # video editor
@@ -163,7 +163,7 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default
 
 # sensors
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     sensors.$(PRODUCT_DEVICE)
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -179,7 +179,7 @@ PRODUCT_PROPERTY_OVERRIDES += ro.blankphone_id=1
     com.intel.multidisplay.xml
 
 #hdmi audio HAL
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
    audio.hdmi.$(PRODUCT_DEVICE)
 
 #usb dock audio
@@ -230,7 +230,7 @@ PRODUCT_PROPERTY_OVERRIDES += persist.tel.hot_swap.support=true
     start-sep
 
 # bluetooth
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     bt_bcm43340
 
 # IPV6
@@ -251,26 +251,26 @@ PRODUCT_PACKAGES += \
     Mor_8MP_8BQ.txt
 
 # libcamera
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     camera.$(PRODUCT_DEVICE)
 
 # IntelCamera Parameters extensions
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libintelcamera_jni \
     com.intel.camera.extensions \
     com.intel.camera.extensions.xml
 
 # camera sensor tuning parameter
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
         libSh3aParamsimx135
 
 # camera firmware
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
         hdr_v2_fw_css21_2400b0 \
         shisp_2400b0_v21.bin
 
 # video encoder and camera
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
         libsharedbuffer
 
 # board specific files
@@ -283,7 +283,7 @@ PRODUCT_COPY_FILES += \
         $(DEVICE_CONF_PATH)/audio_policy.conf:system/etc/audio_policy.conf
 
 # Camera app
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
 	Camera
 
 #PRODUCT_PACKAGES += \
@@ -372,15 +372,15 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     libstagefright_soft_alacdec
 
 # Enable HOT SWAP
-PRODUCT_PROPERTY_OVERRIDES += persist.tel.hot_swap.support=true
+#PRODUCT_PROPERTY_OVERRIDES += persist.tel.hot_swap.support=true
 
 # Intel VPP/FRC
 #PRODUCT_PACKAGES += \
     VppSettings
 
 #audio firmware
-AUDIO_FW_PATH := vendor/intel/fw/sst/
-PRODUCT_COPY_FILES += \
+#AUDIO_FW_PATH := vendor/intel/fw/sst/
+#PRODUCT_COPY_FILES += \
     $(AUDIO_FW_PATH)/fw_sst_0f28.bin:system/etc/firmware/fw_sst_0f28.bin \
     $(AUDIO_FW_PATH)/mp3_dec_0f28.bin:system/etc/firmware/mp3_dec_0f28.bin \
     $(AUDIO_FW_PATH)/aac_dec_0f28.bin:system/etc/firmware/aac_dec_0f28.bin \
