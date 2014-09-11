@@ -85,11 +85,12 @@ ro.intel.arkham.enabled=true \
 ro.intel.arkham.maxcontainers=1
 endif
 
-#BOARD_SEPOLICY_DIRS :=\
+BOARD_SEPOLICY_DIRS :=\
 	device/intel/baytrail/sepolicy
 
-#BOARD_SEPOLICY_UNION :=\
-	file_contexts \
+BOARD_SEPOLICY_UNION :=\
+        service_contexts
+#	file_contexts \
 	seapp_contexts \
 	file.te \
 	genfs_contexts \
