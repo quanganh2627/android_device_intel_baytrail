@@ -2,6 +2,11 @@ ifeq ($(PRODUCT_NAME),)
 PRODUCT_NAME := byt_m_crb
 endif
 
+
+# This flag need to be set to true for Wilkins peak WIFI card
+# otherwise it should be false for Broadcom.
+BOARD_HAS_WILKINS_PEAK_CHIP := true
+
 # Copy common product apns-conf
 COMMON_PATH := device/intel/common
 PRODUCT_COPY_FILES += \
@@ -46,8 +51,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.wifi.direct.xml:$(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml
 
-#PRODUCT_PACKAGES += \
-        wifi_bcm_4334x
+ifeq ($(BOARD_HAS_WILKINS_PEAK_CHIP),true)
+PRODUCT_PACKAGES += \
+       wifi_intel_wkp
+else
+PRODUCT_PACKAGES += \
+         wifi_bcm_43241
+endif
 
 # Copy sar manager resources
 PRODUCT_COPY_FILES += \
