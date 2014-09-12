@@ -110,7 +110,7 @@ PRODUCT_PACKAGES_ENG += ExoPlayerDemo
 #PRODUCT_PACKAGES += liboemcrypto
 
 # omx components
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     libwrs_omxil_core_pvwrapped \
     libOMXVideoDecoderAVC \
     libOMXVideoDecoderAVCSecure \
@@ -123,7 +123,7 @@ PRODUCT_PACKAGES_ENG += ExoPlayerDemo
     libOMXVideoEncoderAVC
 
 # libmix
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     libmixvbp_mpeg4 \
     libmixvbp_h264 \
     libmixvbp_vc1 \
@@ -136,7 +136,7 @@ PRODUCT_PACKAGES_ENG += ExoPlayerDemo
     libjpeg_hw
 
 # libva
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     vainfo \
     pvr_drv_video
 
@@ -251,11 +251,11 @@ PRODUCT_PACKAGES += \
     Mor_8MP_8BQ.txt
 
 # libcamera
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     camera.$(PRODUCT_DEVICE)
 
 # IntelCamera Parameters extensions
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     libintelcamera_jni \
     com.intel.camera.extensions \
     com.intel.camera.extensions.xml
@@ -283,11 +283,20 @@ PRODUCT_COPY_FILES += \
         $(DEVICE_CONF_PATH)/audio_policy.conf:system/etc/audio_policy.conf
 
 # Camera app
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
 	Camera
 
-#PRODUCT_PACKAGES += \
-    IntelCamera \
+# Test Camera is for Test only
+ifeq ($(TARGET_BUILD_VARIANT),eng)
+PRODUCT_PACKAGES += \
+    IntelCamera
+endif
+
+# Camera applications: LaunchCamera
+PRODUCT_PACKAGES += \
+    LaunchCamera
+
+PRODUCT_PACKAGES += \
     SocialGallery
 
 # WiDi app

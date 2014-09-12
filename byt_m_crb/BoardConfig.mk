@@ -231,7 +231,8 @@ NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 # Set USE_CAMERA_STUB to 'true' for Fake Camera builds,
 # 'false' for libcamera builds to use Camera Imaging(CI) supported by intel.
 USE_CAMERA_STUB := false
-USE_CAMERA_HAL2 := true
+USE_CAMERA_HAL2 := false
+USE_CAMERA_USB := true
 
 USE_INTEL_METABUFFER := true
 
@@ -322,6 +323,13 @@ USE_FEATURE_ALAC := true
 
 # Defines Intel library for GPU accelerated Renderscript:
 OVERRIDE_RS_DRIVER := libRSDriver_intel7.so
+
+# Camera
+ADDITIONAL_BUILD_PROPERTIES += \
+				ro.camera.number=1 \
+				ro.camera.0.devname=/dev/video0 \
+				ro.camera.0.facing=front \
+				ro.camera.0.orientation=0
 
 # usb stick installer support
 ifeq ($(TARGET_USE_DROIDBOOT),true)
