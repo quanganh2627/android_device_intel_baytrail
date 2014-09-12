@@ -363,7 +363,7 @@ supDomain: Route
 
 		domain: Playback
 
-			conf: Applicable # see confGroup above
+			conf: Applicable
 				ALL
 					ANY
 						OutputDevices Is IHF
@@ -382,7 +382,7 @@ supDomain: Route
 
 		domain: Capture
 
-			conf: Applicable # see confGroup above
+			conf: Applicable
 				# Applicable for all input devices
 				/Route/route_mgr/routes/modem_mix/stream_duplex/capture/status/applicable = 1
 
@@ -403,7 +403,7 @@ supDomain: Route
 						OutputDevices Is Headset
 						OutputDevices Is Headphones
 						OutputDevices Is Earpiece
-						OutputDevices Is SCO # TODO: remove BT SCO ?
+						OutputDevices Is SCO
 						OutputDevices Is SCO_Headset
 						OutputDevices Is SCO_CarKit
 
@@ -460,7 +460,7 @@ supDomain: Route
 
 		domain: Playback
 
-			conf: Applicable # see confGroup above
+			conf: Applicable
 				ANY
 					OutputDevices Is SCO
 					OutputDevices Is SCO_Headset
@@ -474,7 +474,7 @@ supDomain: Route
 
 		domain: Capture
 
-			conf: Applicable # see confGroup above
+			conf: Applicable
 				InputDevices Is SCO_Headset
 				ANY
 					InputSources Includes Default
