@@ -173,8 +173,8 @@ ENABLE_BACKGROUND_MUSIC := true
 # - USE_MEDIASDK: use Media SDK support or not
 # - MFX_IPP: sets IPP library optimization to use
 USE_MEDIASDK := true
-# Enable CIP Codecs
-USE_INTEL_MDP := false
+# Settings for the Intel-optimized codecs and plug-ins:
+USE_INTEL_MDP := true
 
 MFX_IPP := p8
 # enabled to use Intel audio SRC (sample rate conversion)

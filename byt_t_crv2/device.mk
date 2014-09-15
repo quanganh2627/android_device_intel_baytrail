@@ -352,6 +352,16 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 #PRODUCT_PACKAGES += \
     libstagefright_soft_alacdec
 
+# build the OMX wrapper codecs
+PRODUCT_PACKAGES += \
+ libmdp_omx_core \
+ libstagefright_soft_mp3dec_mdp \
+ libstagefright_soft_aacdec_mdp \
+ libstagefright_soft_amrdec_mdp \
+ libstagefright_soft_vorbisdec_mdp \
+ libstagefright_soft_aacenc_mdp \
+ libstagefright_soft_amrenc_mdp
+
 # Intel VPP/FRC
 PRODUCT_PACKAGES += \
     VppSettings

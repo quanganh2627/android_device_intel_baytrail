@@ -147,7 +147,7 @@ ENABLE_BACKGROUND_MUSIC := true
 # - USE_MEDIASDK: use Media SDK support or not
 # - MFX_IPP: sets IPP library optimization to use
 USE_MEDIASDK := true
-# Enable CIP Codecs
+# Settings for the Intel-optimized codecs and plug-ins:
 USE_INTEL_MDP := true
 
 ifeq ($(DOLBY_DAP),true)
