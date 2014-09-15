@@ -79,7 +79,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
         libimc-subsystem \
         parameter-framework.audio.byt_m_crb \
-        parameter-framework.vibrator.byt_m_crb \
         parameter-framework.routeMgr.byt_m_crb
 
 # MAMGR (Modem Audio Manager)

@@ -1,3 +1,7 @@
+# TODO:
+# 2- In the structure file, make output_flags and input_sources BitParameterBlocks
+#    with one field for each flag/source
+
 supDomain: Calibration
 
 	domain: HwPlatform
@@ -71,52 +75,6 @@ supDomain: Calibration
 					applicability_mask/output_flags/compress_offload = 0
 					effects_supported = ""
 
-			component: /Route/route_mgr/routes/modem_mix
-				component: stream_duplex/playback/config
-					require_preenable = 0
-					require_postdisable = 0
-					silence_prolog_ms = 0
-					channels = 2
-					channels_policy = copy,copy
-					rate = 16000
-					format = Pcm16Bit
-					period_size = 320
-					period_count = 4
-					start_threshold = 1
-					stop_threshold = 1280
-					silence_threshold = 0
-					avail_min = 320
-					applicability_mask/output_flags/direct = 0
-					applicability_mask/output_flags/primary = 1
-					applicability_mask/output_flags/fast = 0
-					applicability_mask/output_flags/deep_buffer = 0
-					applicability_mask/output_flags/compress_offload = 0
-					effects_supported = ""
-
-				component: stream_duplex/capture/config
-					require_preenable = 0
-					require_postdisable = 0
-					silence_prolog_ms = 0
-					channels = 2
-					channels_policy = copy,copy
-					rate = 48000
-					format = Pcm16Bit
-					period_size = 960
-					period_count = 4
-					start_threshold = 0
-					stop_threshold = 0
-					silence_threshold = 0
-					avail_min = 0
-					applicability_mask/input_sources/Default = 0
-					applicability_mask/input_sources/Mic = 1
-					applicability_mask/input_sources/VoiceUplink = 1
-					applicability_mask/input_sources/VoiceDownlink = 1
-					applicability_mask/input_sources/VoiceCall = 1
-					applicability_mask/input_sources/Camcorder = 1
-					applicability_mask/input_sources/VoiceRecognition = 1
-					applicability_mask/input_sources/VoiceCommunication = 0
-					effects_supported = ""
-
 			component: /Route/route_mgr/routes/bt_comm
 				component: stream_duplex/playback/config
 					require_preenable = 0
@@ -167,7 +125,6 @@ supDomain: Calibration
 				compressed_media/route_playback/status/need_reconfigure = 0
 				hwcodec_media/route_duplex/playback/status/need_reconfigure = 0
 				hwcodec_media/route_duplex/capture/status/need_reconfigure = 0
-				hwcodec_csv/route_playback/status/need_reconfigure = 0
 
 supDomain: StreamRoute
 
@@ -240,13 +197,11 @@ supDomain: StreamRoute
 				component: /Route/route_mgr/routes/
 					media/stream_duplex/playback/status/need_reconfigure = 1
 					deep_media/stream_playback/status/need_reconfigure = 1
-					modem_mix/stream_duplex/playback/status/need_reconfigure = 1
 
 			conf: No
 				component: /Route/route_mgr/routes/
 					media/stream_duplex/playback/status/need_reconfigure = 0
 					deep_media/stream_playback/status/need_reconfigure = 0
-					modem_mix/stream_duplex/playback/status/need_reconfigure = 0
 
 		domain: Capture
 
@@ -255,12 +210,10 @@ supDomain: StreamRoute
 
 				component: /Route/route_mgr/routes/
 					media/stream_duplex/capture/status/need_reconfigure = 1
-					modem_mix/stream_duplex/capture/status/need_reconfigure = 1
 
 			conf: No
 				component: /Route/route_mgr/routes/
 					media/stream_duplex/capture/status/need_reconfigure = 0
-					modem_mix/stream_duplex/capture/status/need_reconfigure = 0
 
 supDomain: Route
 
@@ -317,17 +270,6 @@ supDomain: Route
 				ANY
 					# ContextAwareness Is True
 					ALL
-						AndroidMode Is InCsvCall
-						ANY
-							ModemAudioStatus Is True
-						ANY
-							OutputDevices Includes Earpiece
-							OutputDevices Includes IHF
-							OutputDevices Includes Headphones
-							ALL
-								OutputDevices Includes Headset
-								TtyDirection Is Downlink
-					ALL
 						ANY
 							InputDevices Includes Back
 							InputDevices Includes Main
@@ -343,115 +285,11 @@ supDomain: Route
 							InputSources Includes Camcorder
 							InputSources Includes VoiceRecognition
 							InputSources Includes VoiceCommunication
-					ALL
-						OutputDevices Includes Headset
-						AndroidMode Is InCsvCall
-						ANY
-							ModemAudioStatus Is True
 
 				/Route/route_mgr/routes/hwcodec_media/route_duplex/capture/status/applicable = 1
 
 			conf: NotApplicable
 				/Route/route_mgr/routes/hwcodec_media/route_duplex/capture/status/applicable = 0
-
-	supDomain: ModemMix
-
-		confGroup: Applicable
-			AndroidMode Is InCsvCall
-			ModemState Is True
-			ModemAudioStatus Is True
-
-		domain: Playback
-
-			conf: Applicable # see confGroup above
-				ALL
-					ANY
-						OutputDevices Is IHF
-						OutputDevices Is Headset
-						OutputDevices Is Headphones
-						OutputDevices Is Earpiece
-						OutputDevices Is SCO
-						OutputDevices Is SCO_Headset
-						OutputDevices Is SCO_CarKit
-
-				/Route/route_mgr/routes/modem_mix/stream_duplex/playback/status/applicable = 1
-
-			conf: NotApplicable
-
-				/Route/route_mgr/routes/modem_mix/stream_duplex/playback/status/applicable = 0
-
-		domain: Capture
-
-			conf: Applicable # see confGroup above
-				# Applicable for all input devices
-				/Route/route_mgr/routes/modem_mix/stream_duplex/capture/status/applicable = 1
-
-			conf: NotApplicable
-
-				/Route/route_mgr/routes/modem_mix/stream_duplex/capture/status/applicable = 0
-
-	supDomain: HwCodecCSV
-
-		domain: PlaybackCapture
-
-			conf: Applicable
-				ALL
-					AndroidMode Is InCsvCall
-					ModemAudioStatus Is True
-					ANY
-						OutputDevices Is IHF
-						OutputDevices Is Headset
-						OutputDevices Is Headphones
-						OutputDevices Is Earpiece
-						OutputDevices Is SCO # TODO: remove BT SCO ?
-						OutputDevices Is SCO_Headset
-						OutputDevices Is SCO_CarKit
-
-				component: /Route/route_mgr/routes/hwcodec_csv/
-					route_playback/status/applicable = 1
-
-			conf: NotApplicable
-				component: /Route/route_mgr/routes/hwcodec_csv/
-					route_playback/status/applicable = 0
-
-	supDomain: BtCsv
-
-		domain: PlaybackCapture
-
-			conf: Applicable
-				ALL
-					BtEnable Is True
-					ScoResourceRequested Is True
-					AndroidMode Is InCsvCall
-					ModemAudioStatus Is True
-					ANY
-						OutputDevices Includes SCO
-						OutputDevices Includes SCO_Headset
-						OutputDevices Includes SCO_CarKit
-
-				/Route/route_mgr/routes/bt_csv/route_duplex/playback/status/applicable = 1
-				/Route/route_mgr/routes/bt_csv/route_duplex/capture/status/applicable = 1
-
-			conf: NotApplicable
-				/Route/route_mgr/routes/bt_csv/route_duplex/playback/status/applicable = 0
-				/Route/route_mgr/routes/bt_csv/route_duplex/capture/status/applicable = 0
-
-		domain: NeedReconfigure
-
-			conf: Yes
-				ANY
-					StatesChanged Includes OutputDevices
-					StatesChanged Includes InputDevices
-					StatesChanged Includes TtyDirection
-					StatesChanged Includes BtHeadsetBandType
-
-				# TODO: what about capture ?
-				component: /Route/route_mgr/routes/bt_csv/route_duplex/playback/status/
-					need_reconfigure = 1
-
-			conf: No
-				component: /Route/route_mgr/routes/bt_csv/route_duplex/playback/status/
-					need_reconfigure = 0
 
 	supDomain: BtComm
 

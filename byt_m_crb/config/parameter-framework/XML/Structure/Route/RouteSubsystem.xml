@@ -4,7 +4,7 @@
     xsi:noNamespaceSchemaLocation="../../Schemas/Subsystem.xsd"
     xmlns:xi="http://www.w3.org/2001/XInclude"
     Name="route_mgr" Type="ROUTEMGR" Endianness="Little"
-    Mapping="Card:baytrailaudio">
+    Mapping="Card:MID">
     <ComponentLibrary>
         <xi:include href="RouteSubsystem-common.xml"/>
     </ComponentLibrary>

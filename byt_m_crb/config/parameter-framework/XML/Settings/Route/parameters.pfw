@@ -92,8 +92,14 @@ supDomain: Parameter
 							AndroidMode Is InVoipCall
 							ALL
 								AndroidMode Is InCsvCall
-								ModemAudioStatus Is True
-
+								ANY
+									ModemAudioStatus Is True
+									CmeDirectStreamCapture Is True
+									CmeModemStreamCapture Is True
+					ALL
+						AlwaysListening Is True
+						LpalDevice Is Main
+						InputSources Is none
 					InputDevices Includes Main
 
 				component: /Route/route_mgr/criteria/input_devices_criterion/input_devices/
@@ -109,8 +115,10 @@ supDomain: Parameter
 				ANY
 					ALL
 						AndroidMode Is InCsvCall
-						ModemAudioStatus Is True
-
+						ANY
+							ModemAudioStatus Is True
+							CmeDirectStreamCapture Is True
+							CmeModemStreamCapture Is True
 						ANY
 							OutputDevices Includes SCO
 							OutputDevices Includes SCO_Headset
@@ -129,10 +137,16 @@ supDomain: Parameter
 				ANY
 					ALL
 						AndroidMode Is InCsvCall
-						ModemAudioStatus Is True
+						ANY
+							ModemAudioStatus Is True
+							CmeDirectStreamCapture Is True
+							CmeModemStreamCapture Is True
 						OutputDevices Includes Headset
 					InputDevices Includes Headset
-
+					ALL
+						AlwaysListening Is True
+						LpalDevice Is Headset
+						InputSources Is none
 
 				component: /Route/route_mgr/criteria/input_devices_criterion/input_devices/
 					Headset = 1
@@ -160,8 +174,10 @@ supDomain: Parameter
 							AndroidMode Is InVoipCall
 							ALL
 								AndroidMode Is InCsvCall
-								ModemAudioStatus Is True
-
+								ANY
+									ModemAudioStatus Is True
+									CmeDirectStreamCapture Is True
+									CmeModemStreamCapture Is True
 						ANY
 							OutputDevices Includes Headphones
 							OutputDevices Includes IHF
@@ -174,20 +190,34 @@ supDomain: Parameter
 				component: /Route/route_mgr/criteria/input_devices_criterion/input_devices/
 					Back = 0
 
-		domain: NotSupported
-			# Not supported
+		# Ambient mic: activated when we have a dual-mic situation (incall + Earpiece or IHF or Headphones)
+		domain: Ambient
+			conf: Selected
+				ANY
+					ALL
+						ANY
+							OutputDevices Includes Earpiece
+							OutputDevices Includes IHF
+							OutputDevices Includes Headphones
+						ANY
+							AndroidMode Is InVoipCall
+							ALL
+								AndroidMode Is InCsvCall
+								ANY
+									ModemAudioStatus Is True
+									CmeDirectStreamCapture Is True
+									CmeModemStreamCapture Is True
+
+					InputDevices Includes Ambient
+
+				component: /Route/route_mgr/criteria/input_devices_criterion/input_devices/
+					Ambient = 1
+
 			conf: NotSelected
 				component: /Route/route_mgr/criteria/input_devices_criterion/input_devices/
-					AuxDigital = 0
-					Communication = 0
 					Ambient = 0
 
 	supDomain: InputSources
-
-		domain: Default
-			conf: NotSelected
-				component: /Route/route_mgr/criteria/input_sources_criterion/input_sources/
-					Default = 0
 
 		domain: Mic
 			conf: Selected
@@ -302,28 +332,6 @@ supDomain: Parameter
 				component: /Route/route_mgr/criteria/output_flags_criterion/output_flags/
 					fast = 0
 
-		domain: Direct
-			conf: Selected
-				OutputFlags Includes Direct
-
-				component: /Route/route_mgr/criteria/output_flags_criterion/output_flags/
-					direct = 1
-
-			conf: NotSelected
-				component: /Route/route_mgr/criteria/output_flags_criterion/output_flags/
-					direct = 0
-
-		domain: Compress
-			conf: Selected
-				OutputFlags Includes Offload
-
-				component: /Route/route_mgr/criteria/output_flags_criterion/output_flags/
-					compress_offload = 1
-
-			conf: NotSelected
-				component: /Route/route_mgr/criteria/output_flags_criterion/output_flags/
-					compress_offload = 0
-
 
 	domain: Mode
 
@@ -337,12 +345,32 @@ supDomain: Parameter
 			ALL
 				AndroidMode Is InCsvCall
 				ModemState Is True
-				ModemAudioStatus Is True
-
+				ANY
+					ModemAudioStatus Is True
+					CmeModemStreamPlayback Is True
+					CmeModemStreamCapture Is True
 
 			component: /Route/route_mgr/criteria/mode_criterion/
 				mode = InCsvCall
 
+		conf: IN_IMS
+			ALL
+				AndroidMode Is InCsvCall
+				ModemAudioStatus IsNot True
+				ANY
+					CmeDirectStreamPlayback Is True
+					CmeDirectStreamCapture Is True
+				ANY
+					OutputDevices Is IHF
+					OutputDevices Is Headset
+					OutputDevices Is Headphones
+					OutputDevices Is Earpiece
+					OutputDevices Is SCO
+					OutputDevices Is SCO_Headset
+					OutputDevices Is SCO_CarKit
+
+			component: /Route/route_mgr/criteria/mode_criterion/
+				mode = InImsCall
 
 		conf: IN_COMMUNICATION
 			ALL
@@ -363,6 +391,75 @@ supDomain: Parameter
 
 			component: /Route/route_mgr/criteria/mode_criterion/
 				mode = Normal
+
+
+	domain: Band
+		conf: NB
+			ANY
+				ALL
+					AndroidMode Is InCsvCall
+					ModemAudioStatus Is True
+					CsvBandType Is NB
+				ALL
+					AndroidMode Is InCsvCall
+					ImsBandType Is NB
+					ANY
+						CmeDirectStreamPlayback Is True
+						CmeDirectStreamCapture Is True
+						CmeModemStreamPlayback Is True
+						CmeModemStreamCapture Is True
+				ALL
+					VoIPBandType Is NB
+					AndroidMode IsNot InCsvCall
+
+			component: /Route/route_mgr/criteria/band_type_criterion/
+				band = NB
+
+		conf: WB
+			ANY
+				ALL
+					AndroidMode Is InCsvCall
+					ModemAudioStatus Is True
+					CsvBandType Is WB
+				ALL
+					AndroidMode Is InCsvCall
+					ImsBandType Is WB
+					ANY
+						CmeDirectStreamPlayback Is True
+						CmeDirectStreamCapture Is True
+						CmeModemStreamPlayback Is True
+						CmeModemStreamCapture Is True
+				ALL
+					VoIPBandType Is WB
+					AndroidMode IsNot InCsvCall
+
+			component: /Route/route_mgr/criteria/band_type_criterion/
+				band = WB
+
+		conf: SuperWB
+			ANY
+				ALL
+					AndroidMode Is InCsvCall
+					ModemAudioStatus Is True
+					CsvBandType Is SuperWB
+				ALL
+					AndroidMode Is InCsvCall
+					ImsBandType Is SuperWB
+					ANY
+						CmeDirectStreamPlayback Is True
+						CmeDirectStreamCapture Is True
+						CmeModemStreamPlayback Is True
+						CmeModemStreamCapture Is True
+				ALL
+					VoIPBandType Is SuperWB
+					AndroidMode IsNot InCsvCall
+
+			component: /Route/route_mgr/criteria/band_type_criterion/
+				band = SuperWB
+
+		conf: Unknown
+			component: /Route/route_mgr/criteria/band_type_criterion/
+				band = Unknown
 
 
 	domain: ScreenState
@@ -410,22 +507,22 @@ supDomain: Parameter
 		conf: On
 			BypassNonLinearPp Is True
 
-			component: /Route/route_mgr/criteria/bypass_non_linear_pp/
+			component: /Route/route_mgr/criteria/bypass_non_linear_pp_criterion/
 				state = On
 
 		conf: Off
-			component: /Route/route_mgr/criteria/bypass_non_linear_pp/
+			component: /Route/route_mgr/criteria/bypass_non_linear_pp_criterion/
 				state = Off
 
 	domain: BypassLinearPp
 		conf: On
 			BypassLinearPp Is True
 
-			component: /Route/route_mgr/criteria/bypass_linear_pp/
+			component: /Route/route_mgr/criteria/bypass_linear_pp_criterion/
 				state = On
 
 		conf: Off
-			component: /Route/route_mgr/criteria/bypass_linear_pp/
+			component: /Route/route_mgr/criteria/bypass_linear_pp_criterion/
 				state = Off
 
 	domain: MicMute
@@ -495,26 +592,27 @@ supDomain: Parameter
 				component: /Route/route_mgr/criteria/preproc_enabled_criterion/preprocessing_enabled/
 					Ns = 0
 
-#		domain: Bmf
-#			conf: Enabled
-#				PreProcessorRequestedByActiveInput Includes Bmf
-#
-#				component: /Route/route_mgr/criteria/preproc_enabled_criterion/preprocessing_enabled/
-#					Bmf = 1
-#
-#			conf: Disabled
-#				component: /Route/route_mgr/criteria/preproc_enabled_criterion/preprocessing_enabled/
-#					Bmf = 0
-#
-#		domain: Wnr
-#			conf: Enabled
-#				PreProcessorRequestedByActiveInput Includes Wnr
-#				component: /Route/route_mgr/criteria/preproc_enabled_criterion/preprocessing_enabled/
-#					Wnr = 1
-#
-#			conf: Disabled
-#				component: /Route/route_mgr/criteria/preproc_enabled_criterion/preprocessing_enabled/
-#					Wnr = 0
+		domain: Bmf
+			conf: Enabled
+				PreProcessorRequestedByActiveInput Includes Bmf
+
+				component: /Route/route_mgr/criteria/preproc_enabled_criterion/preprocessing_enabled/
+					Bmf = 1
+
+			conf: Disabled
+				component: /Route/route_mgr/criteria/preproc_enabled_criterion/preprocessing_enabled/
+					Bmf = 0
+
+		domain: Wnr
+			conf: Enabled
+				PreProcessorRequestedByActiveInput Includes Wnr
+
+				component: /Route/route_mgr/criteria/preproc_enabled_criterion/preprocessing_enabled/
+					Wnr = 1
+
+			conf: Disabled
+				component: /Route/route_mgr/criteria/preproc_enabled_criterion/preprocessing_enabled/
+					Wnr = 0
 
 	domain: Hac
 		conf: Enabled

@@ -229,6 +229,8 @@
                 <BitParameter Name="Aec" Size="1" Pos="0"/>
                 <BitParameter Name="Agc" Size="1" Pos="1"/>
                 <BitParameter Name="Ns" Size="1" Pos="2"/>
+                <BitParameter Name="Bmf" Size="1" Pos="3"/>
+                <BitParameter Name="Wnr" Size="1" Pos="4"/>
             </BitParameterBlock>
         </ComponentType>
 
@@ -245,8 +247,8 @@
             <Component Name="bt_headset_band_criterion" Type="Band" Mapping="Name:BtHeadsetBandType"/>
             <Component Name="hac_mode_criterion" Type="State" Mapping="Name:HAC"/>
             <Component Name="tty_direction_criterion" Type="TtyDirection" Mapping="Name:TTYDirection"/>
-            <Component Name="bypass_non_linear_pp" Type="State" Mapping="Name:BypassNonLinearPp"/>
-            <Component Name="bypass_linear_pp" Type="State" Mapping="Name:BypassLinearPp"/>
+            <Component Name="bypass_non_linear_pp_criterion" Type="State" Mapping="Name:BypassNonLinearPp"/>
+            <Component Name="bypass_linear_pp_criterion" Type="State" Mapping="Name:BypassLinearPp"/>
             <Component Name="mic_mute_criterion" Type="State" Mapping="Name:MicMute"/>
             <Component Name="preproc_enabled_criterion" Type="Preprocessing" Mapping="Name:PreProcEnabled"/>
         </ComponentType>
@@ -255,11 +257,8 @@
             <Component Name="media" Type="StreamRouteFullDuplex" Mapping="Amend1:Media,Id:0,Device:0,Ports:"/>
             <Component Name="compressed_media" Type="RoutePlayback" Mapping="Amend1:CompressedMedia,Id:1,Ports:"/>
             <Component Name="deep_media" Type="StreamRoutePlayback" Mapping="Amend1:DeepMedia,Id:2,Device:0,Ports:"/>
-            <Component Name="modem_mix" Type="StreamRouteFullDuplex" Mapping="Amend1:ModemMix,Id:3,Device:4,Ports:"/>
-            <Component Name="bt_comm" Type="StreamRouteFullDuplex" Mapping="Amend1:BtComm,Id:4,Device:3,Ports:Bt_Port"/>
+            <Component Name="bt_comm" Type="StreamRouteFullDuplex" Mapping="Amend1:BtComm,Id:4,Device:2,Ports:Bt_Port"/>
             <Component Name="hwcodec_media" Type="RouteFullDuplex" Mapping="Amend1:HwCodecMedia,Id:5,Ports:"/>
-            <Component Name="hwcodec_csv" Type="RoutePlayback" Mapping="Amend1:HwCodecCSV,Id:6,Ports:"/>
-            <Component Name="bt_csv" Type="RouteFullDuplex" Mapping="Amend1:BtCSV,Id:7,Ports:"/>
         </ComponentType>
 
         <ComponentType Name="Port">
