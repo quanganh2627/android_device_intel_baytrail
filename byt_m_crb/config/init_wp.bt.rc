@@ -1,0 +1,37 @@
+on post-fs-data
+    # To store BT paired info
+    mkdir /data/misc/hcid 0770 bluetooth bluetooth
+
+on boot
+    chown root bluetooth /dev/rfkill
+    chmod 0660 /dev/rfkill
+
+service hciattach /system/xbin/hciconfig hci0 up
+    user root
+    group bluetooth net_bt_admin misc
+    disabled
+    oneshot
+
+service hfag /system/bin/sdptool add --channel=10 HFAG
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
+service hsag /system/bin/sdptool add --channel=11 HSAG
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
+service opush /system/bin/sdptool add --channel=12 OPUSH
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
+service pbap /system/bin/sdptool add --channel=19 PBAP
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot

@@ -42,6 +42,11 @@ OVERRIDE_COPIES := \
     $(DEVICE_CONF_PATH)/egl.cfg:system/lib/egl/egl.cfg \
     $(DEVICE_CONF_PATH)/init.net.eth0.sh:root/init.net.eth0.sh
 
+ifeq ($(BOARD_HAS_WILKINS_PEAK_CHIP),true)
+OVERRIDE_COPIES += \
+    $(DEVICE_CONF_PATH)/init_wp.bt.rc:root/init.bt.rc
+endif
+
 # Make generic definetion of media components.
 PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/wrs_omxil_components.list:system/etc/wrs_omxil_components.list \
@@ -228,10 +233,6 @@ PRODUCT_PROPERTY_OVERRIDES += persist.tel.hot_swap.support=true
 #PRODUCT_PACKAGES += \
     libdx-crys \
     start-sep
-
-# bluetooth
-#PRODUCT_PACKAGES += \
-    bt_bcm43340
 
 # IPV6
 PRODUCT_PACKAGES += \
