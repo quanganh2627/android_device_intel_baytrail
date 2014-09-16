@@ -180,7 +180,7 @@ PRODUCT_PROPERTY_OVERRIDES += ro.blankphone_id=1
     com.intel.multidisplay.xml
 
 #hdmi audio HAL
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
    audio.hdmi.$(PRODUCT_DEVICE)
 
 #usb dock audio

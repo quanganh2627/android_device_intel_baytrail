@@ -45,7 +45,7 @@ on init
     chmod 0640 /dev/matrix
 
     # Insert hdmi audio driver
-    #insmod /lib/modules/hdmi_audio.ko
+    insmod /lib/modules/hdmi_audio.ko
 
 service pstore-clean /system/bin/pstore-clean
     user root
