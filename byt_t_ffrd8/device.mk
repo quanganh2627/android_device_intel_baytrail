@@ -239,7 +239,7 @@ PRODUCT_PACKAGES_DEBUG += \
     CWS_SERVICE_MANAGER
 
 # TelephonyEventsNotifier
-#PRODUCT_PACKAGES_DEBUG += \
+PRODUCT_PACKAGES_DEBUG += \
     TelephonyEventsNotifier
 
 # Set default network type to LTE/GSM/WCDMA (9)
