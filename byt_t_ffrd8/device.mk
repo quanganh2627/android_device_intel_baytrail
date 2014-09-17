@@ -179,10 +179,6 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGES += \
     audio.hs_usb.$(PRODUCT_DEVICE)
 
-#widi audio HAL
-#PRODUCT_PACKAGES += \
-    audio.widi.$(PRODUCT_DEVICE)
-
 #widi
 #PRODUCT_PACKAGES += widi
 
@@ -386,17 +382,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
 
-#NXP audio effects
-#PRODUCT_PACKAGES += \
-    libbundlewrapper.so \
-    libreverbwrapper.so \
-    libxmlparser.so \
-    LvmDefaultControlParams.xml \
-    LvmSessionConfigurationMinus1.xml \
-    audio_effects.conf
-
 #For Audio Offload support
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     audio.codec_offload.$(PRODUCT_DEVICE)
 
 # Optional GMS applications
