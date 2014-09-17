@@ -111,9 +111,6 @@ on boot
 
     # Run surfaceflinger in a standalone process to avoid deadlock against gfx apps.
     setprop system_init.startsurfaceflinger 0
-    #Temporarily Disable NU Player and Enable NU Player
-    setprop media.stagefright.use-awesome 1
-    setprop persist.sys.media.use-awesome "true"
 
 #   Offload specific properties
 
