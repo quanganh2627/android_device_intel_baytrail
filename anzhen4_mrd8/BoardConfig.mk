@@ -29,7 +29,12 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1073741824
 
 #Modem
 BOARD_HAVE_MODEM := false
-ENABLE_MODULE_H350 := true
+#ENABLE_MODULE_H350 := true
+
+# Adapt Hw736's ril
+ifeq ($(ENABLE_MODULE_HW736),true)
+ ANDROID_VERSION := 5
+endif
 
 # Connectivity
 BOARD_HAVE_WIFI := true

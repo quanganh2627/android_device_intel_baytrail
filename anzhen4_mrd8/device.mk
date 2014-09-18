@@ -8,6 +8,9 @@
 # OVERRIDE_COPIES := <the list>
 # PRODUCT_COPY_FILES := $(OVERRIDE_COPIES) $(PRODUCT_COPY_FILES)
 
+ENABLE_MODULE_H350 := true
+ENABLE_MODULE_HW736 := false
+
 # Superclass
 $(call inherit-product, build/target/product/full_base_telephony.mk)
 # Include Dalvik Heap Size Configuration
@@ -380,14 +383,32 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lpal_bundle
 #H350's ril
-#ifeq ($(ENABLE_MODULE_H350),true)
+ifeq ($(ENABLE_MODULE_H350),true)
 PRODUCT_PACKAGES += \
-	rild \
-	libril \
-	libght-ril \
-	ght-log \
-	ght-foat
+    rild \
+    libril \
+    libght-ril \
+    ght-log \
+    ght-foat
+endif
+	
+#HW736's ril
+ifeq ($(ENABLE_MODULE_HW736),true)
+PRODUCT_PACKAGES += \
+    rild \
+    libril \
+    libhuawei-ril
+endif
 
+#add HW736 modem libhuawei-ril
+ifeq ($(ENABLE_MODULE_HW736),true)
+PRODUCT_COPY_FILES += \
+     prebuilts/intel/vendor/intel/hardware/prebuilts/byt_t_crv2/huawei_MU736/libhuawei-ril/libhuawei-ril.so:system/lib/libhuawei-ril.so \
+	 prebuilts/intel/vendor/intel/hardware/prebuilts/byt_t_crv2/huawei_MU736/init.modem.huawei.rc:root/init.modem.rc \
+     prebuilts/intel/vendor/intel/hardware/prebuilts/byt_t_crv2/huawei_MU736/ip-down:system/etc/ppp/ip-down \
+     prebuilts/intel/vendor/intel/hardware/prebuilts/byt_t_crv2/huawei_MU736/ip-up:system/etc/ppp/ip-up
+endif
+	
 # Modem Manager
 PRODUCT_PACKAGES += \
 	mmgr
@@ -412,10 +433,10 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/init.avc.rc:root/init.avc.rc \
     $(DEVICE_CONF_PATH)/init.diag.rc:root/init.diag.rc
 
-#ifeq ($(ENABLE_MODULE_H350),true)
+ifeq ($(ENABLE_MODULE_H350),true)
 PRODUCT_COPY_FILES += \
 	$(DEVICE_CONF_PATH)/init.modem.ght.rc:root/init.modem.rc
-#endif
+endif
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/vold.fstab:system/etc/vold.fstab
