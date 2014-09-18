@@ -46,12 +46,6 @@ on init
     # Insert hdmi audio driver
     #insmod /lib/modules/hdmi_audio.ko
 
-on fs
-    # ro.boot.hardware = TARGET_PRODUCT (set in kernel command line
-    # as androidboot.hardware). Mount all the filesystems as specified
-    # in the fstab.
-    mount_all /fstab
-
 service pstore-clean /system/bin/pstore-clean
     user root
     group system
