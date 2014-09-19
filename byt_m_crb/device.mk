@@ -145,12 +145,8 @@ PRODUCT_PACKAGES += \
     vainfo \
     pvr_drv_video
 
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     msvdx_fw_mfld_DE2.0.bin
-
-# video encoder and camera
-#PRODUCT_PACKAGES += \
-    libsharedbuffer
 
 # video editor
 #PRODUCT_PACKAGES += \
