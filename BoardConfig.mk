@@ -85,21 +85,43 @@ endif
 TARGET_CAMERA_PIXEL_FORMAT := HAL_PIXEL_YCbCr_422_I
 
 BOARD_SEPOLICY_DIRS :=\
-	device/intel/baytrail/sepolicy
-
+        device/intel/baytrail/sepolicy
+BOARD_SEPOLICY_REPLACE := \
+        app.te \
+        domain.te
 BOARD_SEPOLICY_UNION :=\
-        service_contexts
-#	file_contexts \
-	seapp_contexts \
-	file.te \
-	genfs_contexts \
-	fs_use \
-	device.te \
-	healthd.te \
-	app.te \
-	untrusted_app.te \
-	surfaceflinger.te \
-	vold.te \
-	ecryptfs.te \
-	zygote.te \
-	netd.te
+        coreu.te \
+        dumpstate.te \
+        ecryptfs.te \
+        file_contexts \
+        file.te \
+        fs_use \
+        genfs_contexts \
+        gpsd.te \
+        hdcpd.te \
+        healthd.te \
+        init_shell.te \
+        init.te \
+        isolated_app.te \
+        kernel.te \
+        keystore.te \
+        mediaserver.te \
+        mmgr.te \
+        netd.te \
+        nvm_server.te \
+        radio.te \
+        rild.te \
+        seapp_contexts \
+        sensorhubd.te \
+        service.te \
+        service_contexts \
+        servicemanager.te \
+        surfaceflinger.te \
+        system_app.te \
+        system_server.te \
+        untrusted_app.te \
+        vdc.te \
+        vold.te \
+        wpa.te \
+        zygote.te
+

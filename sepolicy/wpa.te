@@ -1,0 +1,4 @@
+# Additional rules for wpa
+allow wpa unlabeled:dir search;
+allow wpa unlabeled:file { read open };
+

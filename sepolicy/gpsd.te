@@ -1,0 +1,5 @@
+# additional rules for gpsd
+allow gpsd sysfs_wake_lock:file { open read write };
+unix_socket_connect(gpsd, mmgr, mmgr)
+allow gpsd keystore:binder call;
+allow gpsd servicemanager:binder call;

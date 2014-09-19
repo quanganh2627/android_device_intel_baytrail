@@ -1,1 +1,6 @@
+# Additional file rules
 type ecryptfs, fs_type;
+
+type mmgr_socket, file_type;
+
+type hdcpd_data_file, file_type, data_file_type;

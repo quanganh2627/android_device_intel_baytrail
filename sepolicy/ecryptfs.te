@@ -1,3 +1,4 @@
+# Additional ecrypt rules
 allow app_data_file ecryptfs:filesystem associate;
 allow bluetooth_data_file ecryptfs:filesystem associate;
 allow nfc_data_file ecryptfs:filesystem associate;

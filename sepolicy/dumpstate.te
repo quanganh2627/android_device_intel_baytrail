@@ -1,0 +1,8 @@
+# Additional rules for dumpstate
+allow dumpstate fuse:dir { search write add_name setattr remove_name};
+allow dumpstate fuse:file create_file_perms;
+allow dumpstate unlabeled:filesystem getattr;
+# below line breaks neverallow in domain.te on line 248 
+allow dumpstate init:binder call;
+
+allow dumpstate coreu:binder call;

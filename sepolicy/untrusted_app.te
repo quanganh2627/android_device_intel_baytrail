@@ -1,4 +1,6 @@
-allow untrusted_app gpu_device:chr_file { read write ioctl open getattr };
-allow untrusted_app init:binder call;
-allow untrusted_app init_tmpfs:file read;
+# Additional untrusted_app rules
+allow untrusted_app property_socket:file write;
+allow untrusted_app unlabeled:dir rw_dir_perms;
+# below line breaks neverallow in domain.te on line 169
+allow untrusted_app unlabeled:file create_file_perms;
 
