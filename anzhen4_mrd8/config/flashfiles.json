@@ -3,7 +3,7 @@
    {"filename":"installer.cmd", "name":"full"}],
 "commands":
   [{"type":"prop", "target":"INSTALLED_BUILD_PROP_TARGET"},
-   {"type":"ferase", "partition":"cache"},
+   {"type":"fformat", "partition":"cache"},
    {"type":"ferase", "partition":"system"},
    {"type":"fflash", "partition":"esp_update", "target":"ESPUPDATE_ZIP_TARGET"},
    {"type":"fflash", "partition":"fastboot", "target":"INSTALLED_DROIDBOOTIMAGE_TARGET"},
