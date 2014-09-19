@@ -19,11 +19,12 @@ PRODUCT_MODEL := byt_t_crv2
 
 PRODUCT_CHARACTERISTICS := nosdcard,tablet
 
-# intel common overlay folder
-#DEVICE_PACKAGE_OVERLAYS := $(COMMON_PATH)/overlays
-
-#common overlays
-DEVICE_PACKAGE_OVERLAYS := $(COMMON_PATH)/overlays_aosp
+# common overlays for Intel resources
+ifneq ($(BUILD_VANILLA_AOSP), true)
+DEVICE_PACKAGE_OVERLAYS := $(COMMON_PATH)/overlays_extensions
+endif
+# common overlays for Vanilla AOSP resources
+DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlays_aosp
 
 OVERRIDE_COPIES := \
     $(DEVICE_CONF_PATH)/asound.conf:system/etc/asound.conf \
