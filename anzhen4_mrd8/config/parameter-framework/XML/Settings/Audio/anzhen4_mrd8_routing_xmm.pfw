@@ -14,7 +14,7 @@ supDomain: Routing.Mute
 			#enable src
 			/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/ENABLED = 1
 			#/Audio/IMC/SOUND_CARD/PORTS/SPEECH/TX/ENABLED = 1
-
+			
 			#set src volume
 			/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/VOLUME/MUTED = 0
 			/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/VOLUME/LEVEL =88
@@ -26,13 +26,12 @@ supDomain: Routing.Mute
 		conf: Mute
 			/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/ENABLED = 0
 			#/Audio/IMC/SOUND_CARD/PORTS/SPEECH/TX/ENABLED = 0
-
+			
 			/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/VOLUME/MUTED = 1
 			/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/VOLUME/LEVEL = 0
 			/Audio/IMC/SOUND_CARD/PORTS/SPEECH/RX/VOLUME/LEVEL = 0
 			/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/VOLUME/MUTED = 1
 			/Audio/IMC/SOUND_CARD/PORTS/SPEECH/TX/VOLUME/LEVEL = 0
-
 
 ##############################
 # 	Enable & Disable Steps
@@ -110,7 +109,6 @@ supDomain: Routing.Configure
 						SelectedOutputDevice Includes SCO
 						SelectedOutputDevice Includes SCO_Headset
 						SelectedOutputDevice Includes SCO_CarKit
-
 				conf: HeadsetNrEc
 					BtHeadsetNrEc Is True
 					/Audio/IMC/SOUND_CARD/PORTS/I2S2/RX/CONFIG/MODE = Bluetooth
