@@ -14,10 +14,6 @@ BOARD_HAS_CAPSULE ?= true
 # For Baytrail appends the path to EGL libraries.
 PRODUCT_LIBRARY_PATH := $(PRODUCT_LIBRARY_PATH):/system/lib/egl
 
-# Disable recovery for now
-TARGET_MAKE_NO_DEFAULT_RECOVERY := true
-TARGET_NO_RECOVERY := false
-
 ENABLE_GEN_GRAPHICS := true
 
 # RenderScript Properties
@@ -40,9 +36,8 @@ TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 ifeq ($(TARGET_USE_DROIDBOOT),true)
 TARGET_DROIDBOOT_LIBS := libintel_droidboot
 TARGET_DROIDBOOT_USB_MODE_FASTBOOT := true
-TARGET_MAKE_NO_DEFAULT_OTA_PACKAGE := true
-TARGET_RELEASETOOLS_EXTENSIONS := $(HOST_OUT)/bin/releasetools.py
-OTA_FROM_TARGET_FILES := $(HOST_OUT)/bin/ota_from_target_files
+TARGET_RELEASETOOLS_EXTENSIONS := $(PLATFORM_PATH)
+TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/recovery.fstab
 DROIDBOOT_USE_INSTALLER := true
 endif
 

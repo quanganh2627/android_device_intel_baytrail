@@ -376,6 +376,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/CsmConfig.xml:system/vendor/etc/CsmConfig.xml
 
+PRODUCT_COPY_FILES += \
+    $(DEVICE_CONF_PATH)/init.recovery.$(PRODUCT_DEVICE).rc:root/init.recovery.$(PRODUCT_DEVICE).rc
+
 #################################################"
 # Include platform - do not inherit so that variables can be set before inclusion
 include $(PLATFORM_PATH)/baytrail.mk
