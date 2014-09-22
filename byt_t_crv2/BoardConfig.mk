@@ -30,9 +30,8 @@ BOARD_HAVE_WIFI := true
 INTEL_WIDI := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_CONF_PATH)
-TARGET_HAS_VPP := false
+TARGET_HAS_ISV := true
 TARGET_VPP_USE_GEN := true
-COMMON_GLOBAL_CFLAGS += -DGFX_BUF_EXT
 # MultiDisplay service
 TARGET_HAS_MULTIPLE_DISPLAY := false
 
@@ -148,7 +147,7 @@ ENABLE_BACKGROUND_MUSIC := true
 # - USE_MEDIASDK: use Media SDK support or not
 # - MFX_IPP: sets IPP library optimization to use
 USE_MEDIASDK := true
-# Enable CIP Codecs
+# Settings for the Intel-optimized codecs and plug-ins:
 USE_INTEL_MDP := true
 
 ifeq ($(DOLBY_DAP),true)

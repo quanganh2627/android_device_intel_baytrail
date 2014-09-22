@@ -2,7 +2,7 @@
 
 # AT proxy service
 service proxy /system/bin/proxy -d /dev/gsmtty1 -m /dev/gsmtty10
-    socket atproxy-status stream 666 root radio system
+    socket atproxy-status stream 660 system radio
     class main
     user radio
     group radio system cache inet misc

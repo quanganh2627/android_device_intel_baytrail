@@ -111,9 +111,6 @@ on boot
 
     # Run surfaceflinger in a standalone process to avoid deadlock against gfx apps.
     setprop system_init.startsurfaceflinger 0
-    #Temporarily Disable NU Player and Enable NU Player
-    setprop media.stagefright.use-awesome 1
-    setprop persist.sys.media.use-awesome "true"
 
 #   Offload specific properties
 
@@ -326,7 +323,8 @@ on property:ro.debuggable=1
    chmod 0664 /sys/module/intel_soc_pmu/parameters/s0ix
 
 on charger
-    mount_all /fstab.charger.${ro.hardware}
+    mount ext4 /dev/disk/by-label/system /system ro noatime
+    mount ext4 /dev/disk/by-label/logs /logs nosuid nodev barrier=1,data=ordered
 
     setprop ro.boot.min.cap 3
     start watchdogd
@@ -341,4 +339,3 @@ on charger
     insmod /lib/modules/atomisp-css2400b0_v21.ko
     chmod 0664 /sys/devices/pci0000:00/0000:00:14.0/hsic_enable
     write /sys/devices/pci0000:00/0000:00:14.0/hsic_enable 0
-

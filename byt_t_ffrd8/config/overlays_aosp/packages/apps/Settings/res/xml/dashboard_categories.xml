@@ -147,6 +147,15 @@
           <intent android:action="com.intel.settings.SENSOR_CALIBRATION" />
         </dashboard-tile>
 
+        <!-- VPP/FRC -->
+        <!-- Manufacturer Extra hook 3 -->
+        <dashboard-tile
+                android:id="@+id/manufacturer_extra_settings_3"
+                android:icon="@drawable/ic_settings_isv"
+                android:title="@string/isv_settings_title">
+          <intent android:action="com.intel.settings.VPP_SETTINGS" />
+        </dashboard-tile>
+
     </dashboard-category>
 
     <!-- PERSONAL -->

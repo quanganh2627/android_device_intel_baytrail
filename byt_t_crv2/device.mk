@@ -44,6 +44,11 @@ else
 PRODUCT_PACKAGES += \
     media_codecs.xml
 endif
+
+# Video ISV
+PRODUCT_COPY_FILES += \
+    $(DEVICE_CONF_PATH)/video_isv_profile.xml:system/etc/video_isv_profile.xml
+
 ifeq ($(DOLBY_DAP),true)
 PRODUCT_PACKAGES += \
     audio_effects.conf
@@ -182,9 +187,6 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGES += \
     audio.hs_usb.$(PRODUCT_DEVICE)
 
-#widi audio HAL
-#PRODUCT_PACKAGES += \
-    audio.widi.$(PRODUCT_DEVICE)
 
 #widi
 #PRODUCT_PACKAGES += widi
@@ -323,17 +325,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
 
-#NXP audio effects
-#PRODUCT_PACKAGES += \
-    libbundlewrapper.so \
-    libreverbwrapper.so \
-    libxmlparser.so \
-    LvmDefaultControlParams.xml \
-    LvmSessionConfigurationMinus1.xml \
-    audio_effects.conf
 
 #For Audio Offload support
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     audio.codec_offload.$(PRODUCT_DEVICE)
 
 # Optional GMS applications
@@ -346,6 +340,16 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # Enable ALAC
 #PRODUCT_PACKAGES += \
     libstagefright_soft_alacdec
+
+# build the OMX wrapper codecs
+PRODUCT_PACKAGES += \
+ libmdp_omx_core \
+ libstagefright_soft_mp3dec_mdp \
+ libstagefright_soft_aacdec_mdp \
+ libstagefright_soft_amrdec_mdp \
+ libstagefright_soft_vorbisdec_mdp \
+ libstagefright_soft_aacenc_mdp \
+ libstagefright_soft_amrenc_mdp
 
 # Intel VPP/FRC
 PRODUCT_PACKAGES += \

@@ -78,32 +78,35 @@ Only the three quirks included above are recognized at this point:
 <MediaCodecs>
     <Decoders>
         <MediaCodec name="OMX.Intel.mp3.decoder" type="audio/mpeg" />
-        <MediaCodec name="CIPMP3Decoder" type="audio/mpeg" />
         <MediaCodec name="OMX.google.mp3.decoder" type="audio/mpeg" />
-        <MediaCodec name="CIPAMRNBDecoder" type="audio/3gpp" />
+        <MediaCodec name="OMX.Intel.amrnb.decoder" type="audio/3gpp" />
         <MediaCodec name="OMX.google.amrnb.decoder" type="audio/3gpp" />
-        <MediaCodec name="CIPAMRWBDecoder" type="audio/amr-wb" />
+        <MediaCodec name="OMX.Intel.amrwb.decoder" type="audio/amr-wb" />
         <MediaCodec name="OMX.google.amrwb.decoder" type="audio/amr-wb" />
         <MediaCodec name="OMX.Intel.aac.decoder" type="audio/mp4a-latm" />
-        <MediaCodec name="CIPAACDecoder" type="audio/mp4a-latm" />
         <MediaCodec name="OMX.google.aac.decoder" type="audio/mp4a-latm" />
         <MediaCodec name="OMX.google.aac.decoder" type="audio/mp4a-aacextended" />
+        <MediaCodec name="OMX.google.raw.decoder" type="audio/raw" />
         <MediaCodec name="OMX.google.g711.alaw.decoder" type="audio/g711-alaw" >
             <Quirk name="codec-requires-samplerate" />
         </MediaCodec>
         <MediaCodec name="OMX.google.g711.mlaw.decoder" type="audio/g711-mlaw" >
             <Quirk name="codec-requires-samplerate" />
         </MediaCodec>
-        <MediaCodec name="CIPVorbisDecoder" type="audio/vorbis" />
+        <MediaCodec name="OMX.Intel.vorbis.decoder" type="audio/vorbis" />
         <MediaCodec name="OMX.google.vorbis.decoder" type="audio/vorbis" />
         <MediaCodec name="OMX.Intel.alac.decoder" type="audio/alac" />
-        <MediaCodec name="CIPWMADecoder" type="audio/x-ms-wma" />
 
-        <MediaCodec name="OMX.Intel.hw_vd.h265" type="video/hevc" />
-        <MediaCodec name="OMX.Intel.hw_vd.h264" type="video/avc" />
-        <MediaCodec name="OMX.Intel.hw_vd.vc1" type="video/x-ms-wmv" />
-        <MediaCodec name="OMX.Intel.hw_vd.vc1" type="video/wmv" />
-
+        <MediaCodec name="OMX.Intel.sw_vd.h265" type="video/hevc" />
+        <MediaCodec name="OMX.Intel.hw_vd.h264" type="video/avc" >
+            <Quirk name="requires-hold-extra-buffers" />
+        </MediaCodec>
+        <MediaCodec name="OMX.Intel.hw_vd.vc1" type="video/x-ms-wmv" >
+            <Quirk name="requires-hold-extra-buffers" />
+        </MediaCodec>
+        <MediaCodec name="OMX.Intel.hw_vd.vc1" type="video/wmv" >
+            <Quirk name="requires-hold-extra-buffers" />
+        </MediaCodec>
         <MediaCodec name="OMX.Intel.VideoDecoder.VP8" type="video/x-vnd.on2.vp8" >
             <Quirk name="requires-hold-extra-buffers" />
         </MediaCodec>
@@ -131,10 +134,11 @@ Only the three quirks included above are recognized at this point:
     </Decoders>
 
     <Encoders>
+        <MediaCodec name="OMX.Intel.aac.encoder" type="audio/mp4a-latm" />
         <MediaCodec name="OMX.google.aac.encoder" type="audio/mp4a-latm" />
-        <MediaCodec name="CIPAMRNBEncoder" type="audio/3gpp" />
+        <MediaCodec name="OMX.Intel.amrnb.encoder" type="audio/3gpp" />
         <MediaCodec name="OMX.google.amrnb.encoder" type="audio/3gpp" />
-        <MediaCodec name="CIPAMRWBEncoder" type="audio/amr-wb" />
+        <MediaCodec name="OMX.Intel.amrwb.encoder" type="audio/amr-wb" />
         <MediaCodec name="OMX.google.amrwb.encoder" type="audio/amr-wb" />
         <MediaCodec name="OMX.Intel.hw_ve.h264" type="video/avc" />
         <MediaCodec name="OMX.Intel.VideoEncoder.AVC" type="video/avc" />

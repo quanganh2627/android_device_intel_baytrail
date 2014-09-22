@@ -90,7 +90,7 @@ PRODUCT_PACKAGES_DEBUG += \
     HdmiSettings
 
 # Ota and Ota Downloader
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     Ota \
     OtaDownloader
 
@@ -159,6 +159,10 @@ PRODUCT_PACKAGES += \
 # Keymaster HAL
 PRODUCT_PACKAGES += \
     keystore.$(TARGET_BOARD_PLATFORM)
+
+# ISV
+PRODUCT_PACKAGES += \
+    libisv_omx_core
 
 # Adding for Netflix app to do dynamic resolution switching
 ADDITIONAL_BUILD_PROPERTIES += ro.streaming.video.drs=true

@@ -54,9 +54,8 @@ DISABLE_WIFI_5GHZ := true
 INTEL_WIDI := false
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_CONF_PATH)
-TARGET_HAS_VPP := false
-TARGET_VPP_USE_GEN := false
-COMMON_GLOBAL_CFLAGS += -DGFX_BUF_EXT
+TARGET_HAS_ISV := true
+TARGET_VPP_USE_GEN := true
 # MultiDisplay service
 TARGET_HAS_MULTIPLE_DISPLAY := false
 
@@ -174,8 +173,8 @@ ENABLE_BACKGROUND_MUSIC := true
 # - USE_MEDIASDK: use Media SDK support or not
 # - MFX_IPP: sets IPP library optimization to use
 USE_MEDIASDK := true
-# Enable CIP Codecs
-USE_INTEL_MDP := false
+# Settings for the Intel-optimized codecs and plug-ins:
+USE_INTEL_MDP := true
 
 MFX_IPP := p8
 # enabled to use Intel audio SRC (sample rate conversion)

@@ -297,12 +297,10 @@ supDomain: Route
 			ANY
 				AndroidMode Is InVoipCall
 				AndroidMode Is Normal
-			BtEnable Is True
-			ScoResourceRequested Is True
 
 		domain: Playback
 
-			conf: Applicable # see confGroup above
+			conf: Applicable
 				ANY
 					OutputDevices Is SCO
 					OutputDevices Is SCO_Headset
@@ -316,7 +314,7 @@ supDomain: Route
 
 		domain: Capture
 
-			conf: Applicable # see confGroup above
+			conf: Applicable
 				InputDevices Is SCO_Headset
 				ANY
 					InputSources Includes Default
