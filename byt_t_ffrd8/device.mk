@@ -444,5 +444,5 @@ PRODUCT_COPY_FILES += \
 include $(PLATFORM_PATH)/baytrail.mk
 
 # Prebuilt HAL packages - Vibrator
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     vibrator.$(TARGET_BOARD_PLATFORM)
