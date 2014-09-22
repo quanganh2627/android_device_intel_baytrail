@@ -66,7 +66,8 @@ BOARD_GRAPHIC_IS_GEN := true
 # 'false' for libcamera builds to use Camera Imaging(CI) supported by intel.
 BOARD_CAMERA_IPU2_SUPPORT := true
 USE_CAMERA_STUB := false
-USE_CAMERA_HAL2 := true
+USE_CAMERA_HAL2 := false
+USE_CAMERA_HAL_3 := true
 
 USE_INTEL_METABUFFER := true
 
