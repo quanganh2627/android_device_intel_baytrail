@@ -458,3 +458,6 @@ SENSORHUB_FW_NAME := psh_byt_m_crb.bin
 
 # Define Intel DPTF feature
 INTEL_FEATURE_DPTF := true
+
+# Define Intel Sensor feature
+USE_INTEL_SENSOR_HAL := true

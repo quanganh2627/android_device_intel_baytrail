@@ -1,7 +1,69 @@
-on boot
-  #Load I2C modules
+on init
+  # Add sensor descriptors
+  # SENSOR_TYPE_ACCELEROMETER
+  setprop ro.iio.accel.name "HID_SENSOR Accelerometer 3D"
+  setprop ro.iio.accel.vendor "Intel"
+  setprop ro.iio.accel.version 1
+  setprop ro.iio.accel.max_range 19.6133
+  setprop ro.iio.accel.resolution 0.009576807
+  setprop ro.iio.accel.power 0.23
+  setprop ro.iio.accel.transform "ISH"
+
+  # SENSOR_TYPE_GYROSCOPE
+  setprop ro.iio.anglvel.name "HID_SENSOR Gyro 3D"
+  setprop ro.iio.anglvel.vendor "Intel"
+  setprop ro.iio.anglvel.version 1
+  setprop ro.iio.anglvel.max_range 34.906586
+  setprop ro.iio.anglvel.resolution 0.0021816615
+  setprop ro.iio.anglvel.power 6.1
+  setprop ro.iio.anglvel.transform "ISH"
+
+  # SENSOR_TYPE_MAGNETIC_FIELD
+  setprop ro.iio.magn.name "HID_SENSOR Compass 3D"
+  setprop ro.iio.magn.vendor "Intel"
+  setprop ro.iio.magn.version 1
+  setprop ro.iio.magn.max_range 2048
+  setprop ro.iio.magn.resolution 0.01
+  setprop ro.iio.magn.power 0.1
+  setprop ro.iio.magn.transform "ISH"
+
+  # SENSOR_TYPE_LIGHT
+  setprop ro.iio.intensity.name "HID_SENSOR ALS"
+  setprop ro.iio.intensity.vendor "Intel"
+  setprop ro.iio.intensity.version 1
+  setprop ro.iio.intensity.max_range 50000
+  setprop ro.iio.intensity.resolution 1.0
+  setprop ro.iio.intensity.power 0.75
+  setprop ro.iio.intensity.transform "ISH"
+
+  # SENSOR_TYPE_PRESSURE
+  setprop ro.iio.pressure.name "HID_SENSOR Barometer Sensor"
+  setprop ro.iio.pressure.vendor "STMicroelectronics"
+  setprop ro.iio.pressure.max_range 1260
+  setprop ro.iio.pressure.resolution 0
+  setprop ro.iio.pressure.power 0.11
+  setprop ro.iio.pressure.transform "ISH"
+
+on init
+  # Load I2C modules
+  insmod /lib/modules/i2c-hw-control.ko
   insmod /lib/modules/i2c-hid.ko
 
-on post-fs
-  #Insert touchscreen module
+  # Load HID sensor hub module
+  insmod /lib/modules/hid-sensor-hub.ko
+
+  # Load IIO modules
+  insmod /lib/modules/kfifo_buf.ko
+  insmod /lib/modules/industrialio-triggered-buffer.ko
+  insmod /lib/modules/hid-sensor-iio-common.ko
+  insmod /lib/modules/hid-sensor-trigger.ko
+
+  # Load sensor modules
+  insmod /lib/modules/hid-sensor-accel-3d.ko
+  insmod /lib/modules/hid-sensor-gyro-3d.ko
+  insmod /lib/modules/hid-sensor-magn-3d.ko
+  insmod /lib/modules/hid-sensor-als.ko
+  insmod /lib/modules/hid-sensor-pres-drv.ko
+
+  # Insert touchscreen module
   insmod /lib/modules/hid-multitouch.ko

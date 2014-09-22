@@ -16,6 +16,7 @@ $(call inherit-product, $(COMMON_PATH)/dalvik/tablet-xhdpi-2048-dalvik-heap.mk)
 # Overrides
 PRODUCT_DEVICE := byt_m_crb
 PRODUCT_MODEL := byt_m_crb
+TARGET_BOARD_PLATFORM := baytrail
 
 PRODUCT_CHARACTERISTICS := nosdcard,tablet
 
@@ -61,8 +62,8 @@ endif
 PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/wrs_omxil_components.list:system/etc/wrs_omxil_components.list \
     $(DEVICE_CONF_PATH)/mfx_omxil_core.conf:system/etc/mfx_omxil_core.conf \
-    $(DEVICE_CONF_PATH)/media_profiles.xml:system/etc/media_profiles.xml
-#    $(DEVICE_CONF_PATH)/sensors/sensor_hal_config_default.xml:system/etc/sensor_hal_config_default.xml
+    $(DEVICE_CONF_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
+    $(DEVICE_CONF_PATH)/sensors/sensor_hal_config_default.xml:system/etc/sensor_hal_config_default.xml
 
 ifneq ($(DOLBY_UDC),true)
 PRODUCT_COPY_FILES += \
@@ -174,8 +175,8 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default
 
 # sensors
-#PRODUCT_PACKAGES += \
-    sensors.$(PRODUCT_DEVICE)
+PRODUCT_PACKAGES += \
+    sensors.$(TARGET_BOARD_PLATFORM)
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196609 \
