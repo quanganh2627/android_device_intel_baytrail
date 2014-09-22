@@ -86,12 +86,9 @@
 -->
   </Sensor>
 
-<!--
   <Sensor>
--->
       <!--Modem Sensor IDs are enumerated from OemtelephonyConstants class
       during runtime-->
-<!--
       <SensorName>Modem_BB</SensorName>
       <SensorPath>none</SensorPath>
       <InputTemp>invalid</InputTemp>
@@ -99,9 +96,7 @@
       <HighTemp>invalid</HighTemp>
       <LowTemp>invalid</LowTemp>
   </Sensor>
--->
 
-<!--
   <Sensor>
       <SensorName>Modem_RF</SensorName>
       <SensorPath>none</SensorPath>
@@ -119,7 +114,6 @@
       <SensorPath>none</SensorPath>
       <InputTemp>invalid</InputTemp>
   </Sensor>
--->
 <Profile>
 <Name>Default</Name>
 <!--Thermal Zones-->
@@ -250,7 +244,6 @@
        </SensorAttrib>
   </Zone>
 
-<!--
   <Zone>
     <ZoneID>5</ZoneID>
     <ZoneName>Modem</ZoneName>
@@ -280,7 +273,6 @@
         <SensorName>Modem_PA</SensorName>
     </SensorAttrib>
   </Zone>
--->
 </Profile>
 <Profile>
 <Name>BatterySaver</Name>
@@ -412,7 +404,6 @@
        </SensorAttrib>
   </Zone>
 
-<!--
   <Zone>
     <ZoneID>5</ZoneID>
     <ZoneName>Modem</ZoneName>
@@ -442,6 +433,5 @@
         <SensorName>Modem_PA</SensorName>
     </SensorAttrib>
   </Zone>
--->
 </Profile>
 </thermalconfig>

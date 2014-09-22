@@ -28,6 +28,10 @@ BOARD_MODEM_LIST := 7160_flashless
 BOARD_HAVE_ATPROXY := true
 
 TARGET_PHONE_HAS_OEM_LIBRARY := true
+# enable modem throttling through itux
+ifeq ($(BOARD_HAVE_MODEM),true)
+ITUX_MODEM_ZONE := true
+endif
 
 ADDITIONAL_BUILD_PROPERTIES += rild.libpath=/system/lib/librapid-ril-core.so
 
