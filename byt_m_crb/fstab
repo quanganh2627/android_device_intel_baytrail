@@ -23,7 +23,6 @@
 /dev/block/by-name/android_bootloader   /bootloader     emmc    defaults                                   recoveryonly
 /dev/block/by-name/android_bootloader2  /bootloader2    emmc    defaults                                   recoveryonly
 /dev/block/by-name/android_fastboot     /fastboot       emmc    defaults                                   defaults
-/dev/block/by-name/android_factory      /factory        ext4    ro                                         wait
 */block/sda*                            auto             vfat    defaults                                   voldmanaged=usbdisk:auto
 */block/sdb*                            auto             vfat    defaults                                   voldmanaged=usbdisk2:auto
 */block/sdc*                            auto             vfat    defaults                                   voldmanaged=usbdisk3:auto
