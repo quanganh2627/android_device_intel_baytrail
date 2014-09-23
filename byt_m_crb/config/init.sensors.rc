@@ -1,0 +1,7 @@
+on boot
+  #Load I2C modules
+  insmod /lib/modules/i2c-hid.ko
+
+on post-fs
+  #Insert touchscreen module
+  insmod /lib/modules/hid-multitouch.ko
