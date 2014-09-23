@@ -54,8 +54,8 @@
         <defaultSharpness value=""/>
         <supportedSharpness value=""/>
         <supportedPreviewFrameRate value="30,15,10"/>
-        <supportedPreviewFPSRange value="(10500,30304)"/>
-        <defaultPreviewFPSRange value="10500,30304"/> <!-- one value of the supportedPreviewFPSRange -->
+        <supportedPreviewFPSRange value="(2500,30304)"/>
+        <defaultPreviewFPSRange value="2500,30304"/> <!-- one value of the supportedPreviewFPSRange -->
         <supportedPreviewUpdateModes value="standard,continuous,during-capture,windowless"/>
         <defaultPreviewUpdateMode value="standard"/>
         <hasFlash value="false"/>
