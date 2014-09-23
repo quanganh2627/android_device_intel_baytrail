@@ -74,7 +74,6 @@ BOARD_USES_TINY_ALSA_AUDIO := true
 BOARD_USES_AUDIO_HAL_XML := true
 ifneq (,$(filter $(TARGET_BUILD_VARIANT),eng userdebug))
 # Enable ALSA utils for eng and user debug builds
-BOARD_USE_VIBRATOR := false
 BUILD_WITH_ALSA_UTILS := true
 endif
 BOARD_USES_GENERIC_AUDIO := false
