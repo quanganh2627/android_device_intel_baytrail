@@ -89,6 +89,11 @@ on post-fs-data
     chown system radio /config/telephony
     chmod 770 /config/telephony
 
+# create cache modem firmware folder
+    mkdir /cache/telephony
+    chown system radio /cache/telephony
+    chmod 770 /cache/telephony
+
 # adding Telephony
 service mmgr /system/bin/mmgr
     class core

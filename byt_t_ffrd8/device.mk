@@ -233,12 +233,12 @@ endif
 # Modem
 PRODUCT_PACKAGES += \
     mmgr \
+    mdm_fw_pkg \
     libmodemupdate \
-    nvm_server \
-    miu-app \
-    modem
+    nvm_server
 
 PRODUCT_PACKAGES_DEBUG += \
+    miu-app \
     mmgr-debug
 
 # MMGR CWS Client
