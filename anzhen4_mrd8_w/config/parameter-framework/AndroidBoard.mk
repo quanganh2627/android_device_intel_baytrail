@@ -81,7 +81,6 @@ $(LOCAL_BUILT_MODULE): MY_SRC_FILES := \
         $(LOCAL_PATH)/criteria.txt \
         $(LOCAL_PATH)/XML/Settings/Audio/AudioConfigurableDomains.xml \
         $(LOCAL_PATH)/XML/Settings/Audio/anzhen4_mrd8_w_routing_realtek5640.pfw \
-        $(LOCAL_PATH)/XML/Settings/Audio/anzhen4_mrd8_w_routing_xmm.pfw
 
 $(LOCAL_BUILT_MODULE): $(LOCAL_REQUIRED_MODULES)
 	$(hide) mkdir -p $(dir $@)

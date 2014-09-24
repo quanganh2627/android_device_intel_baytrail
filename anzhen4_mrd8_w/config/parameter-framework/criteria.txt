@@ -1,11 +1,11 @@
-ExclusiveCriterion  Mode                   :  InCsvCall         InVoipCall       Normal           RingTone
+ExclusiveCriterion  Mode                   :  InVoipCall       Normal           RingTone
 ExclusiveCriterion  FmMode                 :  Off               On
 InclusiveCriterion  TTYDirection           :  Downlink          Uplink
 InclusiveCriterion  RoutageState           :  Configure         Flow             Path
-InclusiveCriterion  ClosingCaptureRoutes   :  BtCSV             BtComm           CompressedMedia  DeepMedia      HwCodecCSV  HwCodecMedia        Media          ModemMix
-InclusiveCriterion  ClosingPlaybackRoutes  :  BtCSV             BtComm           CompressedMedia  DeepMedia      HwCodecCSV  HwCodecMedia        Media          ModemMix
-InclusiveCriterion  OpenedCaptureRoutes    :  BtCSV             BtComm           CompressedMedia  DeepMedia      HwCodecCSV  HwCodecMedia        Media          ModemMix
-InclusiveCriterion  OpenedPlaybackRoutes   :  BtCSV             BtComm           CompressedMedia  DeepMedia      HwCodecCSV  HwCodecMedia        Media          ModemMix
+InclusiveCriterion  ClosingCaptureRoutes   :  BtComm           CompressedMedia  DeepMedia      HwCodecMedia        Media   
+InclusiveCriterion  ClosingPlaybackRoutes  :  BtComm           CompressedMedia  DeepMedia      HwCodecMedia        Media   
+InclusiveCriterion  OpenedCaptureRoutes    :  BtComm           CompressedMedia  DeepMedia      HwCodecMedia        Media   
+InclusiveCriterion  OpenedPlaybackRoutes   :  BtComm           CompressedMedia  DeepMedia      HwCodecMedia        Media   
 InclusiveCriterion  SelectedInputDevice    :  Ambient           AuxDigital       Back             Communication  Headset     Main                SCO_Headset    VoiceCall
 InclusiveCriterion  SelectedOutputDevice   :  A2DP              A2DP_Headphones  A2DP_Speaker     AuxDigital     Earpiece    Headphones          Headset        IHF               SCO          SCO_CarKit  SCO_Headset  _Widi
 ExclusiveCriterion  AudioSource            :  Camcorder         Default          Mic              None           VoiceCall   VoiceCommunication  VoiceDownlink  VoiceRecognition  VoiceUplink

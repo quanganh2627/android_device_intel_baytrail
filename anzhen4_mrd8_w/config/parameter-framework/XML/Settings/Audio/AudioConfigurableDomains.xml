@@ -108,24 +108,8 @@
             <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="InVoipCall"/>
           </CompoundRule>
         </CompoundRule>
-      </Configuration>
-      <Configuration Name="InCall.FrontMic">
-        <CompoundRule Type="All">
-          <CompoundRule Type="Any">
-            <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Is" Value="IHF"/>
-            <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Is" Value="Earpiece"/>
-            <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Is" Value="Headphones"/>
-          </CompoundRule>
-          <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="InCsvCall"/>
-        </CompoundRule>
-      </Configuration>
-      <Configuration Name="InCall.HeadsetMic">
-        <CompoundRule Type="All">
-          <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Is" Value="Headset"/>
-          <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="InCsvCall"/>
-        </CompoundRule>
-      </Configuration>
-    </Configurations>
+	   </Configuration>
+      </Configurations>
     <ConfigurableElements>
       <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/STEREO/VOLUME/0/LEVEL"/>
       <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/STEREO/VOLUME/1/LEVEL"/>
@@ -177,22 +161,6 @@
           <IntegerParameter Name="BOOST_GAIN">1 1</IntegerParameter>
         </ConfigurableElement>
       </Configuration>
-      <Configuration Name="InCall.FrontMic">
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/MONO/VOLUME">
-          <IntegerParameter Name="VOLUME">120 120</IntegerParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/ANALOG/3/BOOST_GAIN">
-          <IntegerParameter Name="BOOST_GAIN">2</IntegerParameter>
-        </ConfigurableElement>
-      </Configuration>
-      <Configuration Name="InCall.HeadsetMic">
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/MONO/VOLUME">
-          <IntegerParameter Name="VOLUME">100 100</IntegerParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/ANALOG/2/BOOST_GAIN">
-          <IntegerParameter Name="BOOST_GAIN">5</IntegerParameter>
-        </ConfigurableElement>
-      </Configuration>
     </Settings>
   </ConfigurableDomain>
   <ConfigurableDomain Name="OutputDevice.Selected" SequenceAware="false">
@@ -239,28 +207,6 @@
             <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="Normal"/>
             <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="RingTone"/>
           </CompoundRule>
-        </CompoundRule>
-      </Configuration>
-      <Configuration Name="InCallCsv.IHF">
-        <CompoundRule Type="All">
-          <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Is" Value="IHF"/>
-          <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="InCsvCall"/>
-        </CompoundRule>
-      </Configuration>
-      <Configuration Name="InCallCsv.Earpiece">
-        <CompoundRule Type="All">
-          <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Is" Value="Earpiece"/>
-          <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="InCsvCall"/>
-        </CompoundRule>
-      </Configuration>
-      <Configuration Name="InCallCsv.Headset">
-        <CompoundRule Type="All">
-          <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Excludes" Value="IHF"/>
-          <CompoundRule Type="Any">
-            <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Headset"/>
-            <SelectionCriterionRule SelectionCriterion="SelectedOutputDevice" MatchesWhen="Includes" Value="Headphones"/>
-          </CompoundRule>
-          <SelectionCriterionRule SelectionCriterion="Mode" MatchesWhen="Is" Value="InCsvCall"/>
         </CompoundRule>
       </Configuration>
       <Configuration Name="InCallVoip.IHF">
@@ -381,78 +327,6 @@
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/RATIO">
           <EnumParameter Name="RATIO">4</EnumParameter>
-        </ConfigurableElement>
-      </Configuration>
-      <Configuration Name="InCallCsv.IHF">
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME/0/LEVEL">
-          <IntegerParameter Name="LEVEL">31</IntegerParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME/1/LEVEL">
-          <IntegerParameter Name="LEVEL">31</IntegerParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/MONO_DAC">
-          <IntegerParameter Name="MONO_DAC">170 170</IntegerParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/DAC1">
-          <IntegerParameter Name="DAC1">175 175</IntegerParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME/0/LEVEL">
-          <IntegerParameter Name="LEVEL">0</IntegerParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME/1/LEVEL">
-          <IntegerParameter Name="LEVEL">0</IntegerParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/BOOST">
-          <EnumParameter Name="BOOST">4</EnumParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/RATIO">
-          <EnumParameter Name="RATIO">4</EnumParameter>
-        </ConfigurableElement>
-      </Configuration>
-      <Configuration Name="InCallCsv.Earpiece">
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME/0/LEVEL">
-          <IntegerParameter Name="LEVEL">31</IntegerParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME/1/LEVEL">
-          <IntegerParameter Name="LEVEL">0</IntegerParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/MONO_DAC">
-          <IntegerParameter Name="MONO_DAC">170 170</IntegerParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/DAC1">
-          <IntegerParameter Name="DAC1">175 175</IntegerParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME/0/LEVEL">
-          <IntegerParameter Name="LEVEL">0</IntegerParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME/1/LEVEL">
-          <IntegerParameter Name="LEVEL">0</IntegerParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/BOOST">
-          <EnumParameter Name="BOOST">4</EnumParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/RATIO">
-          <EnumParameter Name="RATIO">4</EnumParameter>
-        </ConfigurableElement>
-      </Configuration>
-      <Configuration Name="InCallCsv.Headset">
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME/0/LEVEL">
-          <IntegerParameter Name="LEVEL">31</IntegerParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/HEADPHONE/ANALOG/VOLUME/1/LEVEL">
-          <IntegerParameter Name="LEVEL">31</IntegerParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/MONO_DAC">
-          <IntegerParameter Name="MONO_DAC">120 120</IntegerParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/DIGITAL/VOLUME/DAC1">
-          <IntegerParameter Name="DAC1">168 168</IntegerParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME/0/LEVEL">
-          <IntegerParameter Name="LEVEL">0</IntegerParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/OUTPUT/SPEAKER/ANALOG/VOLUME/1/LEVEL">
-          <IntegerParameter Name="LEVEL">0</IntegerParameter>
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="InCallVoip.IHF">
@@ -1478,21 +1352,4 @@
       </Configuration>
     </Settings>
   </ConfigurableDomain>
-  <ConfigurableDomain Name="Audio.voice" SequenceAware="false">
-    <Configurations>
-       <Configuration Name="Default">
-          <CompoundRule Type="All"/>
-       </Configuration>
-    </Configurations>
-    <ConfigurableElements>
-      <ConfigurableElement Path="/Audio/CONFIGURATION/VOICE_VOLUME_CTRL_PARAMETER"/>
-      </ConfigurableElements>
-      <Settings>
-        <Configuration Name="Default">
-          <ConfigurableElement Path="/Audio/CONFIGURATION/VOICE_VOLUME_CTRL_PARAMETER">
-            <StringParameter Name="VOICE_VOLUME_CTRL_PARAMETER">/Audio/IMC/SOUND_CARD/PORTS/I2S2/TX/VOLUME/LEVEL</StringParameter>
-          </ConfigurableElement>
-        </Configuration>
-      </Settings>
-   </ConfigurableDomain>
 </ConfigurableDomains>

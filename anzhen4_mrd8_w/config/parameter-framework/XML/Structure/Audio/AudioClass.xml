@@ -6,6 +6,5 @@
     <SubsystemInclude Path="LPESubsystem.xml"/>
     <SubsystemInclude Path="SysfsPmdownTimeSubsystem.xml"/>
     <SubsystemInclude Path="IntelSSPSubsystem.xml"/>
-    <SubsystemInclude Path="IMCSubsystem.xml"/>
 </SystemClass>
 
