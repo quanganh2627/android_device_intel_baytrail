@@ -23,33 +23,54 @@
       <irq_serialize></irq_serialize>
     </basic_info>
     <odr_tables>
-      <odr_table>
-        <hz>100</hz>
-        <action><![CDATA[
-	  writereg_0x10_0x0_1 = (regbuf_0x10_1 & 0xf0) | 0x7;
+       <odr_table>
+	<hz>12</hz>
+         <action><![CDATA[
+	writereg_0x10_0x0_1 = (regbuf_0x10_1 & 0xf0) | 0x5;
+           ]]>
+         </action>
+       </odr_table>
+       <odr_table>
+        <hz>23</hz>
+         <action><![CDATA[
+          writereg_0x10_0x0_1 = (regbuf_0x10_1 & 0xf0) | 0x4;
+           ]]>
+         </action>
+       </odr_table>
+       <odr_table>
+        <hz>32</hz>
+         <action><![CDATA[
+          writereg_0x10_0x0_1 = (regbuf_0x10_1 & 0xf0) | 0x7;
+           ]]>
+         </action>
+       </odr_table>
+       <odr_table>
+        <hz>47</hz>
+         <action><![CDATA[
+          writereg_0x10_0x0_1 = (regbuf_0x10_1 & 0xf0) | 0x3;
           ]]>
         </action>
       </odr_table>
       <odr_table>
-        <hz>200</hz>
+        <hz>64</hz>
         <action><![CDATA[
-	  writereg_0x10_0x0_1 = (regbuf_0x10_1 & 0xf0) | 0x6;
+          writereg_0x10_0x0_1 = (regbuf_0x10_1 & 0xf0) | 0x6;
           ]]>
         </action>
       </odr_table>
       <odr_table>
-        <hz>400</hz>
+        <hz>116</hz>
         <action><![CDATA[
-	  writereg_0x10_0x0_1 = (regbuf_0x10_1 & 0xf0) | 0x3;
+          writereg_0x10_0x0_1 = (regbuf_0x10_1 & 0xf0) | 0x2;
           ]]>
         </action>
       </odr_table>
       <odr_table>
-        <hz>1000</hz>
+        <hz>230</hz>
         <action><![CDATA[
-	  writereg_0x10_0x0_1 = (regbuf_0x10_1 & 0xf0) | 0x2;
-          ]]>
-        </action>
+          writereg_0x10_0x0_1 = (regbuf_0x10_1 & 0xf0) | 0x1;
+           ]]>
+         </action>
       </odr_table>
     </odr_tables>
     <range_tables>
