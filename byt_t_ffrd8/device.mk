@@ -185,7 +185,7 @@ PRODUCT_PACKAGES += \
 #widi
 PRODUCT_PACKAGES += widi
 
-#PRODUCT_PACKAGES_DEBUG += \
+PRODUCT_PACKAGES_DEBUG += \
     WirelessDisplaySigmaCapiUI \
     com.intel.widi.sigmaapi \
     com.intel.widi.sigmaapi.xml \
