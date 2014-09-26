@@ -147,6 +147,7 @@
             <minDepthOfReqQ value="4"/>
             <maxBurstLength value="4"/>
             <isoAnalogGain1 value="64"/> <!--Pseudo ISO corresponding analog gain value 1.0. -->
+            <supportSensorEmbeddedMetadata value="false"/> <!--don't support sensor metadata-->
         </Sensor_info_IPU2>
     <!-- ******************PSL specific section end **************************************************************-->
 
