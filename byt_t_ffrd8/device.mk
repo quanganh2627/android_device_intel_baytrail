@@ -206,6 +206,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     OemTelephonyApp
 
+#SARManager
+PRODUCT_PACKAGES += \
+    SARManager
+
 # SimToolkit app
 PRODUCT_PACKAGES += \
     Stk
