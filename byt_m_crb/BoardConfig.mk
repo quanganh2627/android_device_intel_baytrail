@@ -5,7 +5,9 @@ REF_PRODUCT_NAME ?= $(TARGET_PRODUCT)
 
 TARGET_USE_DROIDBOOT := false
 
-TARGET_OS_SIGNING_METHOD := isu_plat2
+ifneq ($(TARGET_USE_KERNELFLINGER),true)
+    TARGET_OS_SIGNING_METHOD := isu_plat2
+endif
 
 #- Display ----------------------------------------------------------------------------------------#
 
@@ -54,6 +56,8 @@ TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 #- Runtime ----------------------------------------------------------------------------------------#
 ADDITIONAL_BUILD_PROPERTIES += ro.config.no_preload_hdn=false
 
+#- Start Bootloader--------------------------------------------------------------------------------#
+ifneq ($(TARGET_USE_KERNELFLINGER),true)
 #
 # -- SECURE BOOT --
 #
@@ -143,6 +147,8 @@ TARGET_STAGE_USERFASTBOOT := true
 TARGET_USE_USERFASTBOOT := true
 
 TARGET_BOOTLOADER_BOARD_NAME := $(TARGET_DEVICE)
+endif #TARGET_USE_KERNELFLINGER
+#- End Bootloader----------------------------------------------------------------------------------#
 
 # Android Security Framework
 # must be set before include PLATFORM/BoardConfig.mk

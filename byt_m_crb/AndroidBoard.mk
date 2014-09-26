@@ -14,6 +14,8 @@ ADDITIONAL_DEFAULT_PROPERTIES += persist.ril-daemon.disable=0
 # Include Kernel dependency file
 include $(DEVICE_PATH)/definitions.mk
 
+#- Start Bootloader--------------------------------------------------------------------------------#
+ifneq ($(TARGET_USE_KERNELFLINGER),true)
 # Rules to create bootloader zip file, a precursor to the bootloader
 # image that is stored in the target-files-package. There's also
 # metadata file which indicates how large to make the VFAT filesystem
@@ -130,3 +132,5 @@ droidcore: $(fastboot_usb_bin)
 userfastboot-usb: $(fastboot_usb_bin)
 
 $(call dist-for-goals,droidcore,$(fastboot_usb_bin):$(TARGET_PRODUCT)-fastboot-usb-$(FILE_NAME_TAG).img)
+endif #TARGET_USE_KERNELFLINGER
+#- End Bootloader----------------------------------------------------------------------------------#
