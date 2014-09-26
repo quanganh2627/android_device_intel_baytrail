@@ -352,6 +352,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     VppSettings
 
+# MMGR CWS Client
+PRODUCT_PACKAGES += \
+    CWS_SERVICE_MANAGER
+
 #audio firmware
 AUDIO_FW_PATH := vendor/intel/fw/sst/
 PRODUCT_COPY_FILES += \

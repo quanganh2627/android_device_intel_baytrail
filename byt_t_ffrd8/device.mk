@@ -242,7 +242,7 @@ PRODUCT_PACKAGES_DEBUG += \
     mmgr-debug
 
 # MMGR CWS Client
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     CWS_SERVICE_MANAGER
 
 # TelephonyEventsNotifier
