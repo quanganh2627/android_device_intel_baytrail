@@ -25,6 +25,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab:root/fstab.$(PRODUCT_DEVICE) \
     $(DEVICE_CONF_PATH)/recovery.init.byt_m_crb.rc:root/init.recovery.byt_m_crb.rc
 
+# Verified boot support
+ifeq ($(TARGET_USE_KERNELFLINGER),true)
+include build/target/product/verity.mk
+PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/by-name/android_system
+endif
+
 # Setup fs packages
 PRODUCT_PACKAGES += \
 	setup_fs \
