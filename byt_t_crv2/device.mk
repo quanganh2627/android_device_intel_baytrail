@@ -269,9 +269,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera app
 PRODUCT_PACKAGES += \
-    Camera \
-    IntelCamera \
-    SocialGallery
+    Camera
 
 # WiDi app
 #PRODUCT_PACKAGES += \
