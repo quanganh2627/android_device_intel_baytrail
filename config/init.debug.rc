@@ -115,6 +115,9 @@ on property:persist.service.memmonitor.on=1
 on property:persist.service.memmonitor.on=0
     stop memmonitor
 
+on property:ro.debuggable=1
+    start powerlogsdump
+
 # crash and log services
 service crashlogd /system/bin/crashlogd
     class late_start
@@ -196,5 +199,10 @@ on property:persist.berta.enabled=0
 
 on property:persist.berta.enabled=1
     start berta
+
+# Power debug logs
+service powerlogsdump /system/bin/logwrapper /system/bin/power_logs_dump.sh
+    disabled
+    oneshot
 
 import init.dump.rc

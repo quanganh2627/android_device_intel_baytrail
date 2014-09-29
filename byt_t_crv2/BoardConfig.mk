@@ -19,9 +19,6 @@ include $(PLATFORM_PATH)/BoardConfig.mk
 # IAFW component to build for this board
 BOARD_IAFW_COMPONENT := brd_baylake
 
-#Platform
-BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
-
 #Modem
 BOARD_HAVE_MODEM := false
 
@@ -32,8 +29,9 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_CONF_PATH)
 TARGET_HAS_ISV := true
 TARGET_VPP_USE_GEN := true
+
 # MultiDisplay service
-TARGET_HAS_MULTIPLE_DISPLAY := false
+TARGET_HAS_MULTIPLE_DISPLAY := true
 
 USE_INTEL_IPP := true
 

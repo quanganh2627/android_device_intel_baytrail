@@ -19,11 +19,12 @@ PRODUCT_MODEL := byt_t_ffrd8
 
 PRODUCT_CHARACTERISTICS := nosdcard,tablet
 
-# intel common overlay folder
-#DEVICE_PACKAGE_OVERLAYS := $(COMMON_PATH)/overlays
-
-#common overlays
-DEVICE_PACKAGE_OVERLAYS := $(COMMON_PATH)/overlays_aosp
+# common overlays for Intel resources
+ifneq ($(BUILD_VANILLA_AOSP), true)
+DEVICE_PACKAGE_OVERLAYS := $(COMMON_PATH)/overlays_extensions
+endif
+# common overlays for Vanilla AOSP resources
+DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlays_aosp
 
 OVERRIDE_COPIES := \
     $(DEVICE_CONF_PATH)/asound.conf:system/etc/asound.conf \
@@ -166,8 +167,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Version of mandatory blankphone
 PRODUCT_PROPERTY_OVERRIDES += ro.blankphone_id=1
 
-# Intel fake multiple display
-#PRODUCT_PACKAGES += \
+# Intel multiple display
+PRODUCT_PACKAGES += \
+    libmultidisplay \
+    libmultidisplayjni \
     com.intel.multidisplay \
     com.intel.multidisplay.xml
 
@@ -180,7 +183,7 @@ PRODUCT_PACKAGES += \
     audio.hs_usb.$(PRODUCT_DEVICE)
 
 #widi
-#PRODUCT_PACKAGES += widi
+PRODUCT_PACKAGES += widi
 
 #PRODUCT_PACKAGES_DEBUG += \
     WirelessDisplaySigmaCapiUI \
