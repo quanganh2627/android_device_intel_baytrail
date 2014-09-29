@@ -400,7 +400,7 @@ PRODUCT_PACKAGES += \
 #-include vendor/intel/PRIVATE/cert/IntelCorpEmailCert.mk
 
 # Enable ALAC
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     libstagefright_soft_alacdec
 
 # build the OMX wrapper codecs
