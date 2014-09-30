@@ -19,3 +19,9 @@ on property:sys.usb.config=adb
 service watchdogd /sbin/watchdogd
     user root
     oneshot
+on firmware_mounts_complete
+    rm /dev/.booting
+
+on boot
+    setprop sys.usb.config adb
+    trigger firmware_mounts_complete

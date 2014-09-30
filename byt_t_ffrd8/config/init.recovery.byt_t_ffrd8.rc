@@ -5,8 +5,12 @@ on init
     # /dev/block/by-name so that we can use the same fstabs everywhere.
     symlink /dev/block/platform/80860F14:00/by-name /dev/block/by-name
 
+on firmware_mounts_complete
+    rm /dev/.booting
+
 on boot
     setprop sys.usb.config adb
+    trigger firmware_mounts_complete
 
 on property:sys.usb.config=adb
     write /sys/class/android_usb/android0/enable 0
