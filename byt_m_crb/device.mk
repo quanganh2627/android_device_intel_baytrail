@@ -30,8 +30,12 @@ PRODUCT_PACKAGES += \
 	setup_fs \
 	pstore-clean
 
-# intel common overlay folder
-#DEVICE_PACKAGE_OVERLAYS := $(COMMON_PATH)/overlays
+# common overlays for Intel resources
+ifneq ($(BUILD_VANILLA_AOSP), true)
+DEVICE_PACKAGE_OVERLAYS := $(COMMON_PATH)/overlays_extensions
+endif
+# common overlays for Vanilla AOSP resources
+DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlays_aosp
 
 #common overlays
 DEVICE_PACKAGE_OVERLAYS := $(COMMON_PATH)/overlays_aosp
