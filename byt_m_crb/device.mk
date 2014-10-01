@@ -178,8 +178,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Version of mandatory blankphone
 PRODUCT_PROPERTY_OVERRIDES += ro.blankphone_id=1
 
-# Intel fake multiple display
-#PRODUCT_PACKAGES += \
+# Intel multiple display
+PRODUCT_PACKAGES += \
+    libmultidisplay \
+    libmultidisplayjni \
     com.intel.multidisplay \
     com.intel.multidisplay.xml
 
