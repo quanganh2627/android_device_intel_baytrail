@@ -80,6 +80,10 @@ ro.intel.arkham.enabled=true \
 ro.intel.arkham.maxcontainers=1
 endif
 
+# Force default camera pixel format to HAL_PIXEL_YCbCr_422_I to properly
+# display YUYV format for camera preview when using HAL3
+TARGET_CAMERA_PIXEL_FORMAT := HAL_PIXEL_YCbCr_422_I
+
 BOARD_SEPOLICY_DIRS :=\
 	device/intel/baytrail/sepolicy
 
