@@ -194,13 +194,13 @@ PRODUCT_PACKAGES += \
     audio.hs_usb.$(PRODUCT_DEVICE)
 
 #widi audio HAL
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     audio.widi.$(PRODUCT_DEVICE)
 
 #widi
-#PRODUCT_PACKAGES += widi
+PRODUCT_PACKAGES += widi
 
-#PRODUCT_PACKAGES_DEBUG += \
+PRODUCT_PACKAGES_DEBUG += \
     WirelessDisplaySigmaCapiUI \
     com.intel.widi.sigmaapi \
     com.intel.widi.sigmaapi.xml \
@@ -303,7 +303,7 @@ PRODUCT_PACKAGES += \
     SocialGallery
 
 # WiDi app
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     WirelessDisplayUtil
 
 # Test Camera is for Test only
