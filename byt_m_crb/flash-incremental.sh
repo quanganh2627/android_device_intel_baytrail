@@ -1,7 +1,9 @@
 #set -x
-GPT_INT=byt_m_crb-gpt.ini
+
+#Setting product out directory
+export ANDROID_PRODUCT_OUT=.
+
 FACTORY_IMG=byt_m_crb_64-lmp-factory.tgz
-BOOT_LOADER=byt_m_crb_64-LMP-bootloader
 ZIP_IMG=byt_m_crb_64-LMP-img.zip
 
 OPTIONS=$1
@@ -56,8 +58,6 @@ info_message()
     echo "====================================================================================="
     echo "Congratulations you have finished flashing the device"
     echo "Your device is locked and ready to be used"
-    echo "Remove the fastboot USB hooked into device and hit any key to continue"
-    read text
     echo "====================================================================================="
   elif [ "$1" == "msg4" ]; then
     echo "====================================================================================="
@@ -77,28 +77,17 @@ info_message()
 #check the necessary files
 ls $FACTORY_IMG
 error_handler $? $FACTORY_IMG
-ls $GPT_INT
-error_handler $? $GPT_INT
 
 #un-tar the factory image
 tar -xvzf $FACTORY_IMG
+unzip $ZIP_IMG
 
 #OEM UNLOCK
 info_message msg5 unlock
 fastboot $OPTIONS $IP_ADDRESS oem unlock
 
-#Flash the GPT
-fastboot $OPTIONS $IP_ADDRESS flash gpt $GPT_INT
-
-#Flsh the bootloader
-fastboot $OPTIONS $IP_ADDRESS flash bootloader $BOOT_LOADER
-
-fastboot $OPTIONS $IP_ADDRESS reboot-bootloader
-info_message msg2
-info_message msg4
-
 #Flash the system related images
-fastboot $OPTIONS $IP_ADDRESS -w update $ZIP_IMG
+fastboot flashall $OPTIONS $IP_ADDRESS
 
 info_message msg2
 info_message msg1
