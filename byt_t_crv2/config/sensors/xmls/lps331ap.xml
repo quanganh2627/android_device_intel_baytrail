@@ -80,6 +80,7 @@
       <resolution>0.24</resolution>
       <power>0.001</power>
       <minDelay>75000</minDelay>
+      <maxDelay>1000000</maxDelay>
       <mapper axis_x="X"></mapper>
       <scale  axis_x="0.000244140625"></scale>
     </device>

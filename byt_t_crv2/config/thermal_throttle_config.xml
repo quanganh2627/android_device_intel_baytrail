@@ -168,6 +168,50 @@
     </CoolingDeviceInfo>
   </ZoneThrottleInfo>
 -->
+
+  <ZoneThrottleInfo>
+    <ZoneID>6</ZoneID>
+    <CriticalShutDown>1</CriticalShutDown>
+    <CoolingDeviceInfo>
+      <CoolingDevId>1</CoolingDevId>
+      <ThrottleDeviceMask>
+        <Normal>0</Normal>
+        <Warning>1</Warning>
+        <Alert>1</Alert>
+      </ThrottleDeviceMask>
+      <DethrottleDeviceMask>
+        <Normal>1</Normal>
+        <Warning>1</Warning>
+        <Alert>0</Alert>
+      </DethrottleDeviceMask>
+    </CoolingDeviceInfo>
+    <CoolingDeviceInfo>
+      <CoolingDevId>2</CoolingDevId>
+      <ThrottleDeviceMask>
+        <Normal>0</Normal>
+        <Warning>1</Warning>
+        <Alert>1</Alert>
+      </ThrottleDeviceMask>
+      <DethrottleDeviceMask>
+        <Normal>1</Normal>
+        <Warning>1</Warning>
+        <Alert>0</Alert>
+      </DethrottleDeviceMask>
+    </CoolingDeviceInfo>
+    <CoolingDeviceInfo>
+      <CoolingDevId>3</CoolingDevId>
+      <ThrottleDeviceMask>
+        <Normal>0</Normal>
+        <Warning>1</Warning>
+        <Alert>1</Alert>
+      </ThrottleDeviceMask>
+      <DethrottleDeviceMask>
+        <Normal>1</Normal>
+        <Warning>1</Warning>
+        <Alert>0</Alert>
+      </DethrottleDeviceMask>
+    </CoolingDeviceInfo>
+  </ZoneThrottleInfo>
 </Profile>
 <Profile>
   <Name>BatterySaver</Name>
@@ -256,5 +300,48 @@
     </CoolingDeviceInfo>
   </ZoneThrottleInfo>
 -->
+  <ZoneThrottleInfo>
+    <ZoneID>6</ZoneID>
+    <CriticalShutDown>1</CriticalShutDown>
+    <CoolingDeviceInfo>
+      <CoolingDevId>1</CoolingDevId>
+      <ThrottleDeviceMask>
+        <Normal>0</Normal>
+        <Warning>1</Warning>
+        <Alert>1</Alert>
+      </ThrottleDeviceMask>
+      <DethrottleDeviceMask>
+        <Normal>1</Normal>
+        <Warning>1</Warning>
+        <Alert>0</Alert>
+      </DethrottleDeviceMask>
+    </CoolingDeviceInfo>
+    <CoolingDeviceInfo>
+      <CoolingDevId>2</CoolingDevId>
+      <ThrottleDeviceMask>
+        <Normal>0</Normal>
+        <Warning>1</Warning>
+        <Alert>1</Alert>
+      </ThrottleDeviceMask>
+      <DethrottleDeviceMask>
+        <Normal>1</Normal>
+        <Warning>1</Warning>
+        <Alert>0</Alert>
+      </DethrottleDeviceMask>
+    </CoolingDeviceInfo>
+    <CoolingDeviceInfo>
+      <CoolingDevId>3</CoolingDevId>
+      <ThrottleDeviceMask>
+        <Normal>0</Normal>
+        <Warning>1</Warning>
+        <Alert>1</Alert>
+      </ThrottleDeviceMask>
+      <DethrottleDeviceMask>
+        <Normal>1</Normal>
+        <Warning>1</Warning>
+        <Alert>0</Alert>
+      </DethrottleDeviceMask>
+    </CoolingDeviceInfo>
+  </ZoneThrottleInfo>
 </Profile>
 </thermalthrottleconfig>

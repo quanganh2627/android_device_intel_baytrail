@@ -1,5 +1,8 @@
 # make file for Baytrail
 #
+INSTALLED_RADIOIMAGE_TARGET += $(PRODUCT_OUT)/droidboot.img
+INSTALLED_RADIOIMAGE_TARGET += $(PRODUCT_OUT)/capsule.bin
+INSTALLED_RADIOIMAGE_TARGET += $(PRODUCT_OUT)/esp.zip
 
 include device/intel/common/AndroidBoard.mk
 

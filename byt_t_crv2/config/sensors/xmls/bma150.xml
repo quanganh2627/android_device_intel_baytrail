@@ -204,6 +204,7 @@
       <resolution unit="GRAVITY_EARTH">0.0009765625</resolution>
       <power>0.11</power>
       <minDelay>10000</minDelay>
+      <maxDelay>1000000</maxDelay>
       <mapper axis_x="X" axis_y="Y" axis_z="Z"></mapper>
       <scale axis_x="0.0009765625" axis_y="0.0009765625" axis_z="0.0009765625" unit="GRAVITY_EARTH"></scale>
     </device>

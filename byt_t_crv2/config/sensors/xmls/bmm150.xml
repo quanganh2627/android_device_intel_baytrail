@@ -23,6 +23,34 @@
       <irq_serialize></irq_serialize>
     </basic_info>
     <odr_tables>
+      <odr_table>
+        <hz>6</hz>
+        <action><![CDATA[
+          writereg_0x10_0x0_1 = (regbuf_0x4c_1 & 0xc7) | 0x10;
+          ]]>
+        </action>
+      </odr_table>
+      <odr_table>
+        <hz>10</hz>
+        <action><![CDATA[
+          writereg_0x10_0x0_1 = regbuf_0x4c_1 & 0xc7;
+          ]]>
+        </action>
+      </odr_table>
+      <odr_table>
+        <hz>20</hz>
+        <action><![CDATA[
+          writereg_0x10_0x0_1 = (regbuf_0x4c_1 & 0xc7) | 0x28;
+          ]]>
+        </action>
+      </odr_table>
+      <odr_table>
+        <hz>30</hz>
+        <action><![CDATA[
+          writereg_0x10_0x0_1 = (regbuf_0x4c_1 & 0xc7) | 0x38;
+          ]]>
+        </action>
+      </odr_table>
     </odr_tables>
     <range_tables>
     </range_tables>
@@ -223,6 +251,7 @@
       <resolution>0.3</resolution>
       <power>0.1</power>
       <minDelay>20000</minDelay>
+      <maxDelay>1000000</maxDelay>
       <mapper axis_x="X" axis_y="Y" axis_z="Z"></mapper>
       <scale axis_x="0.0625" axis_y="0.0625" axis_z="-0.0625"></scale>
     </device>

@@ -74,7 +74,6 @@ BOARD_USES_TINY_ALSA_AUDIO := true
 BOARD_USES_AUDIO_HAL_XML := true
 ifneq (,$(filter $(TARGET_BUILD_VARIANT),eng userdebug))
 # Enable ALSA utils for eng and user debug builds
-BOARD_USE_VIBRATOR := false
 BUILD_WITH_ALSA_UTILS := true
 endif
 BOARD_USES_GENERIC_AUDIO := false
@@ -90,6 +89,7 @@ NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 # Camera
 # Set USE_CAMERA_STUB to 'true' for Fake Camera builds,
 # 'false' for libcamera builds to use Camera Imaging(CI) supported by intel.
+BOARD_CAMERA_IPU2_SUPPORT := true
 USE_CAMERA_STUB := false
 USE_CAMERA_HAL2 := true
 
