@@ -1,8 +1,10 @@
 # make file for Baytrail
 #
+ifneq ($(TARGET_USE_USERFASTBOOT),true)
 INSTALLED_RADIOIMAGE_TARGET += $(PRODUCT_OUT)/droidboot.img
 INSTALLED_RADIOIMAGE_TARGET += $(PRODUCT_OUT)/capsule.bin
 INSTALLED_RADIOIMAGE_TARGET += $(PRODUCT_OUT)/esp.zip
+endif
 
 include device/intel/common/AndroidBoard.mk
 
