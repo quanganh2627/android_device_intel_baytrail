@@ -289,7 +289,7 @@ PRODUCT_PACKAGES += \
 # libmfldadvci
 PRODUCT_PACKAGES += \
     libmfldadvci \
-    dummy.cpf \
+    dummy.aiqb \
     CGamma_DIS5MP.bin \
     noise.fpn \
     Preview_UserParameter_imx135.prm \
