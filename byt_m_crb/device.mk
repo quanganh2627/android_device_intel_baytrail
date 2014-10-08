@@ -403,7 +403,7 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PROPERTY_OVERRIDES += persist.tel.hot_swap.support=true
 
 # Intel VPP/FRC
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     VppSettings
 
 #audio firmware
