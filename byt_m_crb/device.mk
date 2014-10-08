@@ -452,5 +452,6 @@ ifeq ($(TARGET_USE_KERNELFLINGER),true)
 #Copy the flash supporting files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gpt.ini:byt_m_crb-gpt.ini \
-    $(LOCAL_PATH)/flash-all.sh:byt_m_crb-flash-all.sh
+    $(LOCAL_PATH)/flash-all.sh:byt_m_crb-flash-all.sh \
+    $(LOCAL_PATH)/flash-incremental.sh:byt_m_crb-flash-incremental.sh
 endif
