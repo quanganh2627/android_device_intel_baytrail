@@ -1,3 +1,5 @@
+BAND_5G_FORBIDDEN = y
+
 include $(COMMON_PATH)/wifi/WifiRules.mk
 
 SOC_WIFI_DIR = $(PLATFORM_CONF_PATH)/wifi
