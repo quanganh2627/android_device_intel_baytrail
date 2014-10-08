@@ -70,6 +70,10 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/media_codecs.xml:system/etc/media_codecs.xml
 endif
 
+# Video ISV
+PRODUCT_COPY_FILES += \
+    $(DEVICE_CONF_PATH)/video_isv_profile.xml:system/etc/video_isv_profile.xml
+
 PRODUCT_COPY_FILES := $(OVERRIDE_COPIES) $(PRODUCT_COPY_FILES)
 # keypad key mapping
 PRODUCT_PACKAGES += \
