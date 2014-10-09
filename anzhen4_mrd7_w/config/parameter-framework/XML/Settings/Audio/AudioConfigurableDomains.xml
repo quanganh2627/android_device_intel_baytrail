@@ -137,13 +137,13 @@
     <Settings>
       <Configuration Name="VoiceRecgnition.FrontMic">
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/STEREO/VOLUME/0/LEVEL">
-          <IntegerParameter Name="LEVEL">112</IntegerParameter>
+          <IntegerParameter Name="LEVEL">100</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/STEREO/VOLUME/1/LEVEL">
-          <IntegerParameter Name="LEVEL">112</IntegerParameter>
+          <IntegerParameter Name="LEVEL">100</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/ANALOG/3/BOOST_GAIN">
-          <IntegerParameter Name="BOOST_GAIN">5</IntegerParameter>
+          <IntegerParameter Name="BOOST_GAIN">1</IntegerParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/STEREO/BOOST_GAIN">
           <IntegerParameter Name="BOOST_GAIN">1 1</IntegerParameter>
