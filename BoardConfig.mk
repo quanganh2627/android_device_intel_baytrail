@@ -125,3 +125,5 @@ BOARD_SEPOLICY_UNION :=\
         wpa.te \
         zygote.te
 
+# DRM Protected Video
+BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 1
