@@ -50,7 +50,7 @@ OVERRIDE_COPIES := \
     $(DEVICE_CONF_PATH)/asound.conf:system/etc/asound.conf \
     $(DEVICE_CONF_PATH)/init.baylake.sh:root/init.baylake.sh \
     $(DEVICE_CONF_PATH)/egl.cfg:system/lib/egl/egl.cfg \
-    $(DEVICE_CONF_PATH)/init.net.eth0.sh:root/init.net.eth0.sh
+    $(DEVICE_CONF_PATH)/init.net.eth0.sh:system/etc/init.net.eth0.sh
 
 ifeq ($(BOARD_HAS_WILKINS_PEAK_CHIP),true)
 OVERRIDE_COPIES += \
