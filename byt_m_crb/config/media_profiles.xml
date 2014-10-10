@@ -118,7 +118,7 @@
         </EncoderProfile>
 
         <EncoderProfile quality="qcif" fileFormat="3gp" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="128000"
                    width="176"
                    height="144"
