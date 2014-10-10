@@ -184,6 +184,7 @@ endif
 	$(hide) $(ACP) $(BOARD_FIRST_STAGE_LOADER) $(efi_root)/loader.efi
 	$(hide) $(ACP) $(BOARD_FIRST_STAGE_LOADER) $(efi_root)/EFI/BOOT/$(efi_default_name)
 	$(hide) $(ACP) $(LOADER_PREBUILT)/efitools/linux-x86_64/LockDown.efi $(efi_root)/LockDown.efi
+	$(hide) $(ACP) $(LOADER_PREBUILT)/efitools/linux-x86_64/production-test/LockDownPT.efi $(efi_root)/LockDownPT.efi
 	$(hide) (cd $(efi_root) && zip -qry ../$(notdir $@) .)
 
 bootloader_metadata := $(intermediates)/bootloader-size.txt
