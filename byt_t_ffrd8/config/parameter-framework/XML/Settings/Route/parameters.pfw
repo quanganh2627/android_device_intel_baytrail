@@ -92,7 +92,7 @@ supDomain: Parameter
 							AndroidMode Is InVoipCall
 							ALL
 								AndroidMode Is InCsvCall
-								ModemAudioStatus Is True
+								ModemAudioAvailable Is True
 
 					InputDevices Includes Main
 
@@ -109,7 +109,7 @@ supDomain: Parameter
 				ANY
 					ALL
 						AndroidMode Is InCsvCall
-						ModemAudioStatus Is True
+						ModemAudioAvailable Is True
 
 						ANY
 							OutputDevices Includes SCO
@@ -129,7 +129,7 @@ supDomain: Parameter
 				ANY
 					ALL
 						AndroidMode Is InCsvCall
-						ModemAudioStatus Is True
+						ModemAudioAvailable Is True
 						OutputDevices Includes Headset
 					InputDevices Includes Headset
 
@@ -160,7 +160,7 @@ supDomain: Parameter
 							AndroidMode Is InVoipCall
 							ALL
 								AndroidMode Is InCsvCall
-								ModemAudioStatus Is True
+								ModemAudioAvailable Is True
 
 						ANY
 							OutputDevices Includes Headphones
@@ -337,7 +337,7 @@ supDomain: Parameter
 			ALL
 				AndroidMode Is InCsvCall
 				ModemState Is True
-				ModemAudioStatus Is True
+				ModemAudioAvailable Is True
 
 
 			component: /Route/route_mgr/criteria/mode_criterion/
