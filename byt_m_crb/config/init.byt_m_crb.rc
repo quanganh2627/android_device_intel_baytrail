@@ -184,9 +184,6 @@ on boot
     #  Set autosuspend delay as 30 ms to save power in graphic display
     write /sys/devices/pci0000:00/0000:00:03.4/power/autosuspend_delay_ms 30
 
-    # Reboot in COS on shutdown request when charger is plugged
-    setprop ro.rebootchargermode true
-
     # Load BCM Wifi kernel module for byt_m_crb at boot time
     #insmod /lib/modules/bcm4334x.ko
 
