@@ -292,7 +292,7 @@
         <manufacturerName value="Intel"/> <!-- cfg the exif -->
         <boardName value="baytrail_v3"/>
         <previewFormat value="V4L2_PIX_FMT_YUYV"/> <!-- define the driver preview output format, V4L2_PIX_FMT_YVU420 or V4L2_PIX_FMT_NV12 -->
-        <supportDualVideo value="true"/> <!-- true or false -->
+        <supportDualVideo value="false"/> <!-- true or false -->
     </Common>
 </CameraSettings>
 
