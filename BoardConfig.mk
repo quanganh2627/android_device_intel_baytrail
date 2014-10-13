@@ -52,7 +52,7 @@ DROIDBOOT_USE_INSTALLER := true
 endif
 
 ifeq ($(TARGET_DROIDBOOT_USB_MODE_FASTBOOT),true)
-BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE += g_android.fastboot=1 droidboot.minbatt=0
+BOARD_KERNEL_DROIDBOOT_EXTRA_CMDLINE += g_android.fastboot=1 droidboot.minbatt=1
 endif
 
 ifneq ($(DROIDBOOT_SCRATCH_SIZE),)
@@ -83,6 +83,10 @@ ADDITIONAL_BUILD_PROPERTIES += \
 ro.intel.arkham.enabled=true \
 ro.intel.arkham.maxcontainers=1
 endif
+
+# Force default camera pixel format to HAL_PIXEL_YCbCr_422_I to properly
+# display YUYV format for camera preview when using HAL3
+TARGET_CAMERA_PIXEL_FORMAT := HAL_PIXEL_YCbCr_422_I
 
 BOARD_SEPOLICY_DIRS :=\
 	device/intel/baytrail/sepolicy

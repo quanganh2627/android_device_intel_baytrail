@@ -100,8 +100,9 @@ PRODUCT_PACKAGES += libwvdrmengine
 
 PRODUCT_PACKAGES_ENG += ExoPlayerDemo
 
-#L-disabled -> build error: undefined reference to 'dl_iterate_phdr'
-#PRODUCT_PACKAGES += liboemcrypto
+# Intel Widevine components
+PRODUCT_PACKAGES += liboemcrypto
+PRODUCT_PACKAGES += libmeimm libsecmem
 
 # omx components
 PRODUCT_PACKAGES += \
@@ -185,7 +186,7 @@ PRODUCT_PACKAGES += \
 #widi
 PRODUCT_PACKAGES += widi
 
-#PRODUCT_PACKAGES_DEBUG += \
+PRODUCT_PACKAGES_DEBUG += \
     WirelessDisplaySigmaCapiUI \
     com.intel.widi.sigmaapi \
     com.intel.widi.sigmaapi.xml \
@@ -205,6 +206,10 @@ PRODUCT_PACKAGES += \
 #OemTelephony for OEM HOOK API
 PRODUCT_PACKAGES += \
     OemTelephonyApp
+
+#SARManager
+PRODUCT_PACKAGES += \
+    SARManager
 
 # SimToolkit app
 PRODUCT_PACKAGES += \

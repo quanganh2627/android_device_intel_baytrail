@@ -91,7 +91,8 @@ NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 # 'false' for libcamera builds to use Camera Imaging(CI) supported by intel.
 BOARD_CAMERA_IPU2_SUPPORT := true
 USE_CAMERA_STUB := false
-USE_CAMERA_HAL2 := true
+USE_CAMERA_HAL2 := false
+USE_CAMERA_HAL_3 := true
 
 USE_INTEL_METABUFFER := true
 

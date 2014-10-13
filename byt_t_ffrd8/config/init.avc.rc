@@ -12,6 +12,10 @@ on init
     #audio setup delay - FW Init and first render time in ms
     setprop lpa.audiosetup.time 85
 
+    # Temporary until ZSL works. Odd that Google specified this as a 
+    # property and not HAL output...
+    setprop camera.disable_zsl_mode 1
+
     # atomisp driver depends on these modules. So load these on init. atomisp
     # driver is loaded from "on charger" trigger as well from init.common.rc
     insmod /lib/modules/videobuf-core.ko

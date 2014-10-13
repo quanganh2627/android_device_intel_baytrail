@@ -103,11 +103,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.nfc.se.ese=false \
     ro.nfc.clk=xtal
 
-#SARManager
-#PRODUCT_PACKAGES += \
-    com.intel.internal.telephony.SARManager \
-    com.intel.internal.telephony.SARManager.xml
-
 #alsa conf
 ALSA_CONF_PATH := external/alsa-lib/
 PRODUCT_COPY_FILES += \

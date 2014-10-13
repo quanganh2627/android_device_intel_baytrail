@@ -11,6 +11,8 @@ import init.platform.gengfx.rc
 import init.sensor.rc
 
 on early-init
+    # Set boot_min_cap for boot to android
+    setprop ro.boot.min.cap 3
     # Mesa environment variables
     export MESA_EXTENSION_OVERRIDE "+GL_OES_EGL_image_external -GL_ARB_framebuffer_object"
     # Force on S3TC hardware decompression support in Mesa
@@ -359,7 +361,6 @@ on charger
     mount ext4 /dev/disk/by-label/system /system ro noatime
     mount ext4 /dev/disk/by-label/logs /logs nosuid nodev barrier=1,data=ordered
 
-    setprop ro.boot.min.cap 3
     start watchdogd
     insmod /lib/modules/rmi4.ko boot_mode=1
 
