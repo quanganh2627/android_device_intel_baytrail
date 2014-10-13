@@ -135,6 +135,8 @@
             <shutterLagCompensationMs value="40"/>
             <enableIspPerframeSettings value="false"/> <!-- true or false. This configuration is for debugging, to enable/disable isp per-frame settings -->
             <pipelineDepth value="3,4,3"/> <!--the value corresponding to preview, still, recording  -->
+            <subDevName value="/dev/v4l-subdev7"/> <!-- it depends on the real hardware -->
+            <fileInject value="false"/> <!-- true or false -->
         </Hal_tuning_IPU2>
 
         <Sensor_info_IPU2> <!-- Information that parametrizes the behavior or qualities of the physical sensor -->
@@ -275,6 +277,8 @@
             <shutterLagCompensationMs value="40"/>
             <enableIspPerframeSettings value="false"/> <!-- true or false. This configuration is for debugging, to enable/disable isp per-frame settings -->
             <pipelineDepth value="3,4,3"/> <!--the value corresponding to preview, still, recording  -->
+            <subDevName value="/dev/v4l-subdev7"/> <!-- it depends on the real hardware -->
+            <fileInject value="false"/> <!-- true or false -->
         </Hal_tuning_IPU2>
 
         <Sensor_info_IPU2> <!-- Information that parametrizes the behavior or qualities of the physical sensor -->
@@ -297,8 +301,6 @@
     </Profiles>
 
     <Common> <!-- Common parameters of camera and hacks -->
-        <subDevName value="/dev/v4l-subdev7"/> <!-- it depends on the real hardware -->
-        <fileInject value="false"/> <!-- true or false -->
         <productName value="baytrail"/> <!-- cfg the exif -->
         <manufacturerName value="Intel"/> <!-- cfg the exif -->
         <boardName value="baytrail_v3"/>
