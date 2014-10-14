@@ -160,6 +160,10 @@ PRODUCT_PACKAGES += \
     ufo \
     ufo_test
 
+# camera HAL
+PRODUCT_PACKAGES += \
+    camera.$(TARGET_BOARD_PLATFORM)
+
 # Keymaster HAL
 PRODUCT_PACKAGES += \
     keystore.$(TARGET_BOARD_PLATFORM)

@@ -232,9 +232,6 @@ PRODUCT_PACKAGES += \
     YGamma_DIS5MP.bin \
     Mor_8MP_8BQ.txt
 
-# libcamera
-PRODUCT_PACKAGES += \
-    camera.$(PRODUCT_DEVICE)
 
 # IntelCamera Parameters extensions
 PRODUCT_PACKAGES += \
