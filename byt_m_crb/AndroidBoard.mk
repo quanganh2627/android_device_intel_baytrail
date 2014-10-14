@@ -227,11 +227,25 @@ $(fastboot_usb_bin): \
 		--bootable \
 		$@
 
+fastboot_usb_bin_pub := $(PUB_PATH)/fastboot-usb.img
+$(fastboot_usb_bin_pub): \
+		$(bootloader_zip) \
+		$(PRODUCT_OUT)/fastboot.img \
+		device/intel/build/bootloader_from_zip \
+
+	$(hide) device/intel/build/bootloader_from_zip \
+		--fastboot $(PRODUCT_OUT)/fastboot.img \
+		--zipfile $(bootloader_zip) \
+		--extra-size 10485760 \
+		--bootable \
+		$@
+
 # Build when 'make' is run with no args
 droidcore: $(fastboot_usb_bin)
 
 .PHONY: userfastboot-usb
 userfastboot-usb: $(fastboot_usb_bin)
+userfastboot-usb: $(fastboot_usb_bin_pub)
 
 $(call dist-for-goals,droidcore,$(fastboot_usb_bin):$(TARGET_PRODUCT)-fastboot-usb-$(FILE_NAME_TAG).img)
 
