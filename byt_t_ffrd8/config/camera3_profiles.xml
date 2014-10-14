@@ -112,7 +112,7 @@
             <flash.colorTemperature value="0"/> <!-- TODO VALUE -->
             <flash.maxEnergy value="0"/> <!-- TODO VALUE -->
             <!-- Flash info -->
-            <flash.info.available value="FALSE"/>
+            <flash.info.available value="TRUE"/>
             <flash.info.chargeDuration value="0"/> <!-- TODO VALUE -->
             <!-- Sync -->
             <sync.maxLatency value="PER_FRAME_CONTROL"/> <!-- TODO VALUE, OPTIONS: UNKNOWN , PER_FRAME_CONTROL  -->
