@@ -72,6 +72,14 @@
       <HighTemp>auto</HighTemp>
   </Sensor>
 
+  <Sensor>
+      <SensorName>intel_fuel_gauge</SensorName>
+      <SensorPath>auto</SensorPath>
+      <InputTemp>temp</InputTemp>
+      <LowTemp>auto</LowTemp>
+      <HighTemp>auto</HighTemp>
+  </Sensor>
+
 <!--
   <Sensor>
 -->
@@ -248,6 +256,27 @@
     </SensorAttrib>
   </Zone>
 -->
+
+  <Zone>
+       <ZoneID>6</ZoneID>
+       <ZoneName>Battery_CR2.2</ZoneName>
+       <ZoneLogic>Raw</ZoneLogic>
+       <SupportsUEvent>0</SupportsUEvent>
+       <DebounceInterval>2000</DebounceInterval>
+       <PollDelay>
+              <DelayNormal>30000</DelayNormal>
+              <DelayWarning>30000</DelayWarning>
+              <DelayAlert>30000</DelayAlert>
+       </PollDelay>
+       <ZoneThreshold>
+              <ZoneThresholdNormal>48000</ZoneThresholdNormal>
+              <ZoneThresholdWarning>54000</ZoneThresholdWarning>
+              <ZoneThresholdAlert>60000</ZoneThresholdAlert>
+       </ZoneThreshold>
+       <SensorAttrib>
+           <SensorName>intel_fuel_gauge</SensorName>
+       </SensorAttrib>
+  </Zone>
 </Profile>
 <Profile>
   <Name>BatterySaver</Name>
@@ -395,5 +424,26 @@
     </SensorAttrib>
   </Zone>
 -->
+
+  <Zone>
+       <ZoneID>6</ZoneID>
+       <ZoneName>Battery_CR2.2</ZoneName>
+       <ZoneLogic>Raw</ZoneLogic>
+       <SupportsUEvent>0</SupportsUEvent>
+       <DebounceInterval>2000</DebounceInterval>
+       <PollDelay>
+              <DelayNormal>30000</DelayNormal>
+              <DelayWarning>30000</DelayWarning>
+              <DelayAlert>30000</DelayAlert>
+       </PollDelay>
+       <ZoneThreshold>
+              <ZoneThresholdNormal>48000</ZoneThresholdNormal>
+              <ZoneThresholdWarning>54000</ZoneThresholdWarning>
+              <ZoneThresholdAlert>60000</ZoneThresholdAlert>
+       </ZoneThreshold>
+       <SensorAttrib>
+           <SensorName>intel_fuel_gauge</SensorName>
+       </SensorAttrib>
+  </Zone>
 </Profile>
 </thermalconfig>

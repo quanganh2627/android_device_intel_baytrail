@@ -52,7 +52,7 @@
         <supportedAeMetering value="auto,center,spot"/> <!-- if not support, please set it to "" -->
         <supportedAeLock value="false"/>
         <defaultFocusMode value="auto"/> <!-- one value of the supportedFocusModes. if not support, please set it to "fixed" -->
-        <supportedFocusModes value="auto,infinity,fixed,macro"/> <!-- if not support, please set it to "fixed" -->
+        <supportedFocusModes value="auto,infinity,fixed,macro,continuous-video,continuous-picture"/> <!-- if not support, please set it to "fixed" -->
         <VFPPLimitedResolutionList value=""/> <!-- it depends on the real hardware, value could be 1024x768 or other value list. if no need to set, please set it to "" -->
         <overlayRelativeRotation value="90"/> <!-- one of 0,90,180,270 -->
         <maxSaturation value=""/>

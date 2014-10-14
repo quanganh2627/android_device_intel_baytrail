@@ -76,6 +76,7 @@
       <resolution>0.15</resolution>
       <power>0.1</power>
       <minDelay>20000</minDelay>
+      <maxDelay>1000000</maxDelay>
       <mapper axis_x="Y" axis_y="X" axis_z="Z"></mapper>
       <scale axis_x="0.149253731343283" axis_y="0.149253731343283" axis_z="-0.166666666666667"></scale>
     </device>
