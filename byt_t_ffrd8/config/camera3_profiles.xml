@@ -137,6 +137,9 @@
             <shutterLagCompensationMs value="40"/>
             <enableIspPerframeSettings value="false"/> <!-- true or false. This configuration is for debugging, to enable/disable isp per-frame settings -->
             <pipelineDepth value="3,4,3"/> <!--the value corresponding to preview, still, recording  -->
+            <gfxHalToV4L2PixelFmtTable.impl_defined value="V4L2_PIX_FMT_YUYV"/>
+            <gfxHalToV4L2PixelFmtTable.raw_sensor value="V4L2_PIX_FMT_SRGGB10"/>
+            <gfxHalToV4L2PixelFmtTable.ycbcr_420_888 value="V4L2_PIX_FMT_NV12"/>
         </Hal_tuning_IPU2>
 
         <Sensor_info_IPU2> <!-- Information that parametrizes the behavior or qualities of the physical sensor -->
@@ -279,6 +282,9 @@
             <shutterLagCompensationMs value="40"/>
             <enableIspPerframeSettings value="false"/> <!-- true or false. This configuration is for debugging, to enable/disable isp per-frame settings -->
             <pipelineDepth value="3,4,3"/> <!--the value corresponding to preview, still, recording  -->
+            <gfxHalToV4L2PixelFmtTable.impl_defined value="V4L2_PIX_FMT_YUYV"/>
+            <gfxHalToV4L2PixelFmtTable.raw_sensor value="V4L2_PIX_FMT_SRGGB10"/>
+            <gfxHalToV4L2PixelFmtTable.ycbcr_420_888 value="V4L2_PIX_FMT_NV12"/>
         </Hal_tuning_IPU2>
 
         <Sensor_info_IPU2> <!-- Information that parametrizes the behavior or qualities of the physical sensor -->

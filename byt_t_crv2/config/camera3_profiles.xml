@@ -137,6 +137,9 @@
             <pipelineDepth value="3,4,3"/> <!--the value corresponding to preview, still, recording  -->
             <subDevName value="/dev/v4l-subdev7"/> <!-- it depends on the real hardware -->
             <fileInject value="false"/> <!-- true or false -->
+            <gfxHalToV4L2PixelFmtTable.impl_defined value="V4L2_PIX_FMT_YUYV"/>
+            <gfxHalToV4L2PixelFmtTable.raw_sensor value="V4L2_PIX_FMT_SRGGB10"/>
+            <gfxHalToV4L2PixelFmtTable.ycbcr_420_888 value="V4L2_PIX_FMT_NV12"/>
         </Hal_tuning_IPU2>
 
         <Sensor_info_IPU2> <!-- Information that parametrizes the behavior or qualities of the physical sensor -->
@@ -279,6 +282,9 @@
             <pipelineDepth value="3,4,3"/> <!--the value corresponding to preview, still, recording  -->
             <subDevName value="/dev/v4l-subdev7"/> <!-- it depends on the real hardware -->
             <fileInject value="false"/> <!-- true or false -->
+            <gfxHalToV4L2PixelFmtTable.impl_defined value="V4L2_PIX_FMT_YUYV"/>
+            <gfxHalToV4L2PixelFmtTable.raw_sensor value="V4L2_PIX_FMT_SRGGB10"/>
+            <gfxHalToV4L2PixelFmtTable.ycbcr_420_888 value="V4L2_PIX_FMT_NV12"/>
         </Hal_tuning_IPU2>
 
         <Sensor_info_IPU2> <!-- Information that parametrizes the behavior or qualities of the physical sensor -->
