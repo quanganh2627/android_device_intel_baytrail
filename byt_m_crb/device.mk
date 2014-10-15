@@ -173,6 +173,7 @@ PRODUCT_PACKAGES += \
     audio_hal_configurable \
     route_criteria.common.conf \
     libaudioresample \
+    audio.hsp.default \
     audio.usb.default
 
 #A2DP audio HAL
