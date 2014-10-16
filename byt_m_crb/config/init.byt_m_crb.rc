@@ -256,6 +256,9 @@ on post-fs
     # Setting default value to delay_use as one second
     write /sys/module/usb_storage/parameters/delay_use 1
 
+    # Disable global scaling from HW compositor
+    setprop persist.sys.hwc.globalscaling 0
+
 # additional baytrail initialization
 service hdcpd /system/bin/hdcpd
     class main
