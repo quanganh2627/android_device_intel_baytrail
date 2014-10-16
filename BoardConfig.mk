@@ -76,12 +76,19 @@ TARGET_CAMERA_PIXEL_FORMAT := HAL_PIXEL_FORMAT_YCbCr_422_I
 BOARD_SEPOLICY_DIRS :=\
         device/intel/baytrail/sepolicy
 BOARD_SEPOLICY_REPLACE := \
-        app.te \
         domain.te
 BOARD_SEPOLICY_UNION :=\
+        adbd.te \
+        apk_logfs.te \
+        bcu_cpufreqrel.te \
+        bluetooth.te \
         coreu.te \
+        crashlogd.te \
+        device.te \
+        dhcp.te \
         dumpstate.te \
         ecryptfs.te \
+        fg_conf.te \
         file_contexts \
         file.te \
         fs_use \
@@ -91,6 +98,7 @@ BOARD_SEPOLICY_UNION :=\
         healthd.te \
         init_shell.te \
         init.te \
+        intel_fw_props.te \
         isolated_app.te \
         kernel.te \
         keystore.te \
@@ -98,6 +106,7 @@ BOARD_SEPOLICY_UNION :=\
         mmgr.te \
         netd.te \
         nvm_server.te \
+        platform_app.te \
         radio.te \
         rild.te \
         seapp_contexts \
@@ -105,12 +114,16 @@ BOARD_SEPOLICY_UNION :=\
         service.te \
         service_contexts \
         servicemanager.te \
+        shell.te \
         surfaceflinger.te \
         system_app.te \
         system_server.te \
+        ueventd.te \
         untrusted_app.te \
         vdc.te \
         vold.te \
+        watchdogd.te \
+        wlan_prov.te \
         wpa.te \
         zygote.te
 

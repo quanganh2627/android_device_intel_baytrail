@@ -1,10 +1,11 @@
 # Additional surfaceflinger rules
-# below line breaks neverallow in domain.te on line 257
-allow surfaceflinger device:chr_file rw_file_perms;
 # below line breaks neverallow in domain.te on line 248
 allow surfaceflinger init:binder call;
-#allow surfaceflinger fuse:file write;
-
 allow surfaceflinger coreu:binder call;
 allow surfaceflinger coreu:fd use;
-
+allow surfaceflinger sysfs_drm_resource:dir search;
+allow surfaceflinger sysfs_drm_resource:file { read getattr open };
+allow surfaceflinger unlabeled:dir search;
+# below line breaks neverallow in domain.te on line 313
+allow surfaceflinger default_android_service:service_manager add;
+allow surfaceflinger system_server_service:service_manager add;

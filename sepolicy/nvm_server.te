@@ -2,8 +2,8 @@ type nvm_server, domain;
 type nvm_server_exec, exec_type, file_type;
 init_daemon_domain(nvm_server);
 
-# line below breaks neverallow in domain.te on line 258
-allow nvm_server device:chr_file { read write ioctl open };
 allow nvm_server mmgr:unix_stream_socket connectto;
 allow nvm_server mmgr_socket:sock_file write;
-allow nvm_server unlabeled:file { read write getattr open };
+allow nvm_server unlabeled:file create_file_perms;
+allow nvm_server unlabeled:dir { search write add_name };
+allow nvm_server tty_device:chr_file { read write ioctl open };

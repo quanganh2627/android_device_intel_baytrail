@@ -4,7 +4,8 @@ allow healthd rootfs:file entrypoint;
 allow healthd shell_exec:file rwx_file_perms;
 allow healthd system_file:file execute_no_trans;
 allow healthd self:capability dac_override;
-# below line breaks neverallow in domain.te on line 257
-allow healthd device:chr_file { read open };
-allow healthd unlabeled:file { open write };
+# below line breaks neverallow in domain.te on line 170
+allow healthd unlabeled:file create_file_perms;
 allow healthd fuse:file write;
+allow healthd fg_conf_exec:file { open read getattr execute execute_no_trans };
+allow healthd unlabeled:dir { search write add_name };

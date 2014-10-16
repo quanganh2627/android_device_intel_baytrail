@@ -1,0 +1,8 @@
+# Rules for fg_conf
+type fg_conf, domain;
+type fg_conf_exec, exec_type, file_type;
+init_daemon_domain(fg_conf)
+
+allow fg_conf tty_device:chr_file { write open };
+allow fg_conf unlabeled:file { open read };
+allow fg_conf unlabeled:dir search;

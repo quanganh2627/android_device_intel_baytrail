@@ -1,7 +1,5 @@
 # Additional mediaserver rules
 allow mediaserver socket_device:sock_file write;
-# below line breaks neverallow in domain.te on line 257
-allow mediaserver device:chr_file rw_file_perms;
 allow mediaserver dalvikcache_data_file:dir search;
 allow mediaserver system_app_data_file:dir search;
 allow mediaserver system_server:unix_stream_socket { read write };
@@ -13,3 +11,9 @@ allow mediaserver unlabeled:dir { search write add_name };
 # below line breaks neverallow in domain.te online 169
 allow mediaserver unlabeled:file create_file_perms;
 unix_socket_connect(mediaserver, mmgr, mmgr)
+allow mediaserver tty_device:chr_file { read write ioctl open getattr };
+allow mediaserver intel_sst_ctrl_device:chr_file { read write ioctl open };
+allow mediaserver camera_device:chr_file rw_file_perms;
+allow mediaserver surfaceflinger_tmpfs:file { read write };
+allow mediaserver system_data_file:file { open append };
+allow mediaserver mei_device:chr_file { open ioctl read write };
