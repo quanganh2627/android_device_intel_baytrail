@@ -12,10 +12,6 @@ COMMON_PATH := device/intel/common
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/apns-conf.xml:system/etc/apns-conf.xml
 
-PUB_PATH := pub
-$(shell rm -rf $(PUB_PATH))
-$(shell mkdir -p $(PUB_PATH))
-
 # Include product path
 include $(LOCAL_PATH)/byt_m_crb_path.mk
 

@@ -457,9 +457,4 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/flash-all.sh:byt_m_crb-flash-all.sh \
     $(LOCAL_PATH)/flash-incremental.sh:byt_m_crb-flash-incremental.sh \
     $(LOCAL_PATH)/flash-ci.sh:byt_m_crb-flash-ci.sh
-
-$(shell cp -rf $(LOCAL_PATH)/gpt.ini $(PUB_PATH)/byt_m_crb-gpt.ini)
-$(shell cp -rf $(LOCAL_PATH)/flash-all.sh $(PUB_PATH)/byt_m_crb-flash-all.sh)
-$(shell cp -rf $(LOCAL_PATH)/flash-incremental.sh $(PUB_PATH)/byt_m_crb-flash-incremental.sh)
-$(shell cp -rf $(LOCAL_PATH)/flash-ci.sh $(PUB_PATH)/byt_m_crb-flash-ci.sh)
 endif
