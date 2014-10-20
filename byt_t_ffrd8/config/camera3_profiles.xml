@@ -57,6 +57,9 @@
             <!-- Request -->
             <request.maxNumOutputStreams value="1,3,1"/> <!-- TODO VALUE -->
             <request.pipelineMaxDepth value="4"/> <!-- TODO VALUE -->
+            <request.maxNumOutputRaw value="0"/>
+            <request.maxNumOutputProc value="3"/> <!-- Formats: YUV_420_888, NV21, YV12 -->
+            <request.maxNumOutputProcStalling value="1"/> <!-- ONLY JPEG -->
             <request.maxNumInputStreams value="0,0,0"/> <!-- TODO VALUE -->
             <request.partialResultCount value="1"/> <!-- TODO VALUE -->
             <request.availableCapabilities value="BACKWARD_COMPATIBLE"/> <!-- TODO VALUE, OPTIONS: BACKWARD_COMPATIBLE, OPTIONAL, MANUAL_SENSOR, GCAM, ZSL, DNG -->
@@ -194,7 +197,10 @@
             <lens.position value="0.0,0.0,0.0"/> <!-- TODO VALUE -->
             <!-- Request -->
             <request.maxNumOutputStreams value="1,3,1"/>
-            <request.pipelineMaxDepth value="0"/> <!-- TODO VALUE -->
+            <request.pipelineMaxDepth value="4"/>
+            <request.maxNumOutputRaw value="0"/>
+            <request.maxNumOutputProc value="3"/> <!-- Formats: YUV_420_888, NV21, YV12 -->
+            <request.maxNumOutputProcStalling value="1"/> <!-- ONLY JPEG -->
             <request.maxNumInputStreams value="0,0,0"/> <!-- TODO VALUE -->
             <request.partialResultCount value="1"/> <!-- TODO VALUE -->
             <request.availableCapabilities value="BACKWARD_COMPATIBLE"/> <!-- TODO VALUE, OPTIONS: BACKWARD_COMPATIBLE, OPTIONAL, MANUAL_SENSOR, GCAM, ZSL, DNG -->
