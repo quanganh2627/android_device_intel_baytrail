@@ -1,0 +1,13 @@
+# Additional system_app rules
+# below line breaks neverallow in app.te on line 325
+allow system_app sysfs:file write;
+allow system_app self:netlink_kobject_uevent_socket { create setopt bind read };
+allow system_app unlabeled:dir { rw_dir_perms setattr };
+# below line breaks neverallow in domain.te on line 169
+allow system_app unlabeled:file create_file_perms;
+allow system_app ctl_default_prop:property_service set;
+# below line breaks neverallow in app.te on line 234
+allow system_app socket_device:sock_file write;
+# below line breaks neverallow in domain.te on line 310
+allow system_app default_android_service:service_manager add;
+

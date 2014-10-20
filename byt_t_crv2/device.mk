@@ -50,11 +50,6 @@ endif
 PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/video_isv_profile.xml:system/etc/video_isv_profile.xml
 
-ifeq ($(DOLBY_DAP),true)
-PRODUCT_PACKAGES += \
-    audio_effects.conf
-endif
-
 PRODUCT_COPY_FILES := $(OVERRIDE_COPIES) $(PRODUCT_COPY_FILES)
 # keypad key mapping
 PRODUCT_PACKAGES += \
@@ -356,6 +351,10 @@ PRODUCT_PACKAGES += \
 # Intel VPP/FRC
 PRODUCT_PACKAGES += \
     VppSettings
+
+# MMGR CWS Client
+PRODUCT_PACKAGES += \
+    CWS_SERVICE_MANAGER
 
 #audio firmware
 AUDIO_FW_PATH := vendor/intel/fw/sst/

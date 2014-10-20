@@ -108,10 +108,6 @@ ALSA_CONF_PATH := external/alsa-lib/
 PRODUCT_COPY_FILES += \
     $(ALSA_CONF_PATH)/src/conf/alsa.conf:system/usr/share/alsa/alsa.conf
 
-# specific management of audio_pre_effects.conf
-PRODUCT_COPY_FILES += \
-    $(DEVICE_CONF_PATH)/audio_pre_effects.conf:system/vendor/etc/audio_pre_effects.conf
-
 # CMS configuration files
 PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/cms_throttle_config.xml:system/etc/cms_throttle_config.xml \

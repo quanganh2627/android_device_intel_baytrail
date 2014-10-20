@@ -89,6 +89,11 @@ on post-fs-data
     chown system radio /config/telephony
     chmod 770 /config/telephony
 
+# create cache modem firmware folder
+    mkdir /cache/telephony
+    chown system radio /cache/telephony
+    chmod 770 /cache/telephony
+
 # adding Telephony
 service mmgr /system/bin/mmgr
     class core
@@ -102,6 +107,7 @@ service nvmmanager /system/bin/nvm_server
     socket nvm-ctl stream 660 system radio
     user system
     group radio cache inet misc system
+    seclabel u:r:nvm_server:s0
 
 # Load Intrinsyc RapidRIL
 service ril-daemon /system/bin/rild -l /system/lib/librapid-ril-core.so

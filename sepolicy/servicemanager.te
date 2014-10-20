@@ -1,0 +1,15 @@
+# Additional servicemanager rules
+allow servicemanager gpsd:dir search;
+allow servicemanager gpsd:file { read open };
+allow servicemanager gpsd:process getattr;
+allow servicemanager init:dir search;
+allow servicemanager init:file { read open };
+allow servicemanager init:process getattr;
+allow servicemanager init_shell:dir search;
+allow servicemanager init_shell:file { read open };
+allow servicemanager init_shell:process getattr;
+
+allow servicemanager coreu:dir search;
+allow servicemanager coreu:file { read open };
+allow servicemanager coreu:process getattr;
+

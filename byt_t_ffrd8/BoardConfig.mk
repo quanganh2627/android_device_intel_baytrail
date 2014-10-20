@@ -117,7 +117,7 @@ DEBUG_KERNEL_CMDLINE := loglevel=0
 endif
 BOARD_KERNEL_CMDLINE = $(DEBUG_KERNEL_CMDLINE) androidboot.bootmedia=$(BOARD_BOOTMEDIA) \
                         androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) vmalloc=172M \
-                        debug_locks=0 selinux=0
+                        debug_locks=0
 endif
 
 # Graphics

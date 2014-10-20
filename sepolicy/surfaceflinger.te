@@ -1,1 +1,10 @@
-allow surfaceflinger gpu_device:chr_file rw_file_perms;
+# Additional surfaceflinger rules
+# below line breaks neverallow in domain.te on line 257
+allow surfaceflinger device:chr_file rw_file_perms;
+# below line breaks neverallow in domain.te on line 248
+allow surfaceflinger init:binder call;
+#allow surfaceflinger fuse:file write;
+
+allow surfaceflinger coreu:binder call;
+allow surfaceflinger coreu:fd use;
+
