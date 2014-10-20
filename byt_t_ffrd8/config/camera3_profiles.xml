@@ -85,10 +85,11 @@
             <sensor.info.maxFrameDuration value="1000000000"/> <!-- TODO VALUE -->
             <sensor.info.physicalSize value="3.6736,2.7384"/>
             <sensor.info.pixelArraySize value="2688x1984"/>
-            <sensor.info.whiteLevel value="0"/> <!-- TODO VALUE -->
+            <sensor.info.whiteLevel value="1023"/>
+            <sensor.info.timestampSource value="REALTIME"/>
             <!-- Sensor -->
-            <sensor.baseGainFactor value="3.1"/> <!-- TODO VALUE -->
-            <sensor.blackLevelPattern value="16385,16385,16384,16383"/> <!-- TODO VALUE -->
+            <sensor.baseGainFactor value="100,52"/> <!-- got from manual_iso / module_iso, module_iso is 32 on saltbay PR2, base manual iso is 100 -->
+            <sensor.blackLevelPattern value="4184,4262,4301,4197"/> <!-- got from cmc->cmc_parsed_black_level.cmc_black_level_luts->color_channels -->
             <sensor.maxAnalogSensitivity value="800"/> <!-- TODO VALUE -->
             <sensor.orientation value="0"/>
             <sensor.profileHueSatMapDimensions value="1,1,1"/> <!--According to DNG spec, the dimension is recommended to be 1 -->
@@ -96,13 +97,13 @@
             <!-- Info -->
             <info.supportedHardwareLevel value="LIMITED"/> <!-- disable zsl stream due to no enought memory -->
             <!-- Statistics Info -->
-            <statistics.info.availableFaceDetectModes value="OFF,SIMPLE"/>
+            <statistics.info.availableFaceDetectModes value="OFF,SIMPLE,FULL"/>
             <statistics.info.histogramBucketCount value="0"/> <!-- TODO VALUE -->
             <statistics.info.maxFaceCount value="32"/>
             <statistics.info.maxHistogramCount value="0"/> <!-- TODO VALUE -->
             <statistics.info.maxSharpnessMapValue value="0"/> <!-- TODO VALUE -->
             <statistics.info.sharpnessMapSize value="0,0"/> <!-- TODO VALUE -->
-            <statistics.info.availableHotPixelMapModes value="0"/> <!-- TODO VALUE -->
+            <statistics.info.availableHotPixelMapModes value="OFF"/>
             <!-- Tonemap -->
             <tonemap.maxCurvePoints value="128"/>
             <tonemap.availableToneMapModes value="CONTRAST_CURVE"/> <!-- mode option: CONTRAST_CURVE, FAST, HIGH_QUALITY, but currently just CONTRAST_CURVE supported-->
@@ -220,10 +221,11 @@
             <sensor.info.maxFrameDuration value="1000000000"/> <!-- TODO VALUE -->
             <sensor.info.physicalSize value="2.432,1.368"/> <!-- TODO VALUE -->
             <sensor.info.pixelArraySize value="1920x1080"/>
-            <sensor.info.whiteLevel value="0"/> <!-- TODO VALUE -->
+            <sensor.info.whiteLevel value="1023"/> <!-- TODO VALUE -->
+            <sensor.info.timestampSource value="REALTIME"/>
             <!-- Sensor -->
-            <sensor.baseGainFactor value="3.1"/> <!-- TODO VALUE -->
-            <sensor.blackLevelPattern value="16385,16385,16384,16383"/> <!-- TODO VALUE -->
+            <sensor.baseGainFactor value="100,65"/>
+            <sensor.blackLevelPattern value="121,159,134,177"/>
             <sensor.maxAnalogSensitivity value="800"/> <!-- TODO VALUE -->
             <sensor.orientation value="0"/>
             <sensor.profileHueSatMapDimensions value="1,1,1"/> <!-- According to DNG spec, the dimension is recommended to be 1 -->
@@ -237,7 +239,7 @@
             <statistics.info.maxHistogramCount value="0"/> <!-- TODO VALUE -->
             <statistics.info.maxSharpnessMapValue value="0"/> <!-- TODO VALUE -->
             <statistics.info.sharpnessMapSize value="0,0"/> <!-- TODO VALUE -->
-            <statistics.info.availableHotPixelMapModes value="0"/> <!-- TODO VALUE -->
+            <statistics.info.availableHotPixelMapModes value="OFF"/> <!-- TODO VALUE -->
             <!-- Tonemap -->
             <tonemap.maxCurvePoints value="128"/>
             <tonemap.availableToneMapModes value="CONTRAST_CURVE"/> <!-- mode option: CONTRAST_CURVE, FAST, HIGH_QUALITY, but currently just CONTRAST_CURVE supported-->
