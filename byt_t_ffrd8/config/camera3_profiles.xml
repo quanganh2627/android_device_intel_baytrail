@@ -145,6 +145,7 @@
             <frame.initialSkip value="3"/> <!-- camera3 HAL CPF parameters moved here end-->
             <perFrameSettings value="true"/> <!-- true or false -->
             <postviewSizes value="320x240,320x180"/> <!-- Assign postview size for every supported ratio -->
+            <supportedHighSpeedResolutionFps value="1280x720@60"/> <!-- resolution@fps -->
             <minDepthOfReqQ value="4"/>
             <maxBurstLength value="4"/>
             <isoAnalogGain1 value="64"/> <!-- causes a FPE divide-by-zero if missing! -->
@@ -167,9 +168,10 @@
             <control.aeCompensationStep value="1,2"/>
             <control.afAvailableModes value="OFF"/>
             <control.availableEffects value="OFF,MONO,NEGATIVE,SEPIA"/>
-            <control.awbAvailableModes value="AUTO"/>
-            <control.availableSceneModes value="UNSUPPORTED"/>
-            <control.sceneModeOverrides value="ON,AUTO,AUTO"/>
+            <control.awbAvailableModes value="AUTO,INCANDESCENT,FLUORESCENT,WARM_FLUORESCENT,DAYLIGHT,CLOUDY_DAYLIGHT"/>
+            <control.availableSceneModes value="ACTION,PORTRAIT,LANDSCAPE,NIGHT,NIGHT_PORTRAIT,FIREWORKS,SPORTS,BARCODE"/>
+            <!-- AE/AWB/AF mode: ACTION, PORTRAIT, LANDSCAPE, NIGHT, N_P FWS SPORTS BARCODE-->
+            <control.sceneModeOverrides value="ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF"/>
             <control.availableVideoStabilizationModes value="OFF,ON"/>
             <control.maxRegions value="1,0,1"/>
             <!-- edge -->
@@ -280,6 +282,7 @@
             <frame.initialSkip value="3"/>
             <perFrameSettings value="true"/> <!-- true or false -->
             <postviewSizes value="320x240,320x180"/>
+            <supportedHighSpeedResolutionFps value="1280x720@60"/> <!-- resolution@fps -->
             <minDepthOfReqQ value="4"/>
             <maxBurstLength value="4"/>
             <isoAnalogGain1 value="64"/> <!--Pseudo ISO corresponding analog gain value 1.0. -->
@@ -295,6 +298,7 @@
         <boardName value="baytrail_v3"/>
         <previewFormat value="V4L2_PIX_FMT_YUYV"/> <!-- define the driver preview output format, V4L2_PIX_FMT_YVU420 or V4L2_PIX_FMT_NV12 -->
         <supportDualVideo value="false"/> <!-- true or false -->
+        <supportExtendedMakernote value="true"/> <!-- true or false -->
     </Common>
 </CameraSettings>
 
