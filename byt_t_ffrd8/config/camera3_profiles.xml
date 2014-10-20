@@ -42,16 +42,16 @@
             <jpeg.maxSize value="7372800"/>  <!-- 4160*3104*1.5 -->
             <jpeg.availableThumbnailSizes value="0,0,160,120,320,180,320,240"/>
             <!-- Lens Info-->
-            <lens.info.availableApertures value="0.0"/> <!-- TODO VALUE -->
-            <lens.info.availableFilterDensities value="0.0"/> <!-- TODO VALUE -->
-            <lens.info.availableFocalLengths value="2.04,4.28"/>
-            <lens.info.availableOpticalStabilization value="OFF,ON"/> <!-- TODO VALUE, ENUM -->
+            <lens.info.availableApertures value="2.53"/>
+            <lens.info.availableFilterDensities value="0.0"/>
+            <lens.info.availableFocalLengths value="3.00,4.28"/>
+            <lens.info.availableOpticalStabilization value="OFF"/> <!-- VALUE, ENUM -->
             <lens.info.hyperfocalDistance value="0.0"/> <!-- TODO VALUE -->
-            <lens.info.minimumFocusDistance value="0.1"/>
-            <lens.info.shadingMapSize value="66,49"/> <!-- TODO VALUE -->
-            <lens.info.focusDistanceCalibration value="UNCALIBRATED"/> <!-- TODO VALUE -->
+            <lens.info.minimumFocusDistance value="20.00"/>
+            <lens.info.shadingMapSize value="41,31"/>
+            <lens.info.focusDistanceCalibration value="UNCALIBRATED"/>
             <!-- Lens -->
-            <lens.facing value="BACK"/> <!-- TODO VALUE -->
+            <lens.facing value="BACK"/>
             <lens.opticalAxisAngle value="0.0,0.0"/> <!-- TODO VALUE -->
             <lens.position value="0.0,0.0,0.0"/> <!-- TODO VALUE -->
             <!-- Request -->
@@ -177,16 +177,16 @@
             <jpeg.maxSize value="1382400"/> <!-- 1280*720*1.5 -->
             <jpeg.availableThumbnailSizes value="0,0,160,120,320,180,320,240"/> <!-- INCREASING ORDER -->
             <!-- Lens Info -->
-            <lens.info.availableApertures value="0.0"/> <!-- TODO VALUE -->
-            <lens.info.availableFilterDensities value="0.0"/> <!-- TODO VALUE -->
-            <lens.info.availableFocalLengths value="2.04,4.28"/>
-            <lens.info.availableOpticalStabilization value="OFF"/> <!-- TODO VALUE -->
+            <lens.info.availableApertures value="2.97"/>
+            <lens.info.availableFilterDensities value="0.0"/>
+            <lens.info.availableFocalLengths value="3.07,4.28"/>
+            <lens.info.availableOpticalStabilization value="OFF"/>
             <lens.info.hyperfocalDistance value="0.0"/> <!-- TODO VALUE, OPTIONAL -->
-            <lens.info.minimumFocusDistance value="0.1"/>
-            <lens.info.shadingMapSize value="66,49"/> <!-- TODO VALUE -->
-            <lens.info.focusDistanceCalibration value="UNCALIBRATED"/> <!-- TODO VALUE -->
+            <lens.info.minimumFocusDistance value="0.0"/>
+            <lens.info.shadingMapSize value="21,15"/>
+            <lens.info.focusDistanceCalibration value="UNCALIBRATED"/>
             <!-- Lens -->
-            <lens.facing value="FRONT"/> <!-- TODO VALUE -->
+            <lens.facing value="FRONT"/>
             <lens.opticalAxisAngle value="0.0,0.0"/> <!-- TODO VALUE -->
             <lens.position value="0.0,0.0,0.0"/> <!-- TODO VALUE -->
             <!-- Request -->
