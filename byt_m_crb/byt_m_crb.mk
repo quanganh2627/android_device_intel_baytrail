@@ -7,6 +7,14 @@ endif
 # otherwise it should be false for Broadcom.
 BOARD_HAS_WILKINS_PEAK_CHIP := true
 
+# Set to true to use certified prebuilt bluedroid libs.
+# when enabled bluedroid will not be compiled, as prebuilt libs are included
+CONFIG_USE_INTEL_CERT_CORE_STACK := false
+
+# Set to true to use certified prebuilt bluetooth apk.
+# when enabled bluetooth app will not be compiled, as prebuilt apk is included
+CONFIG_USE_INTEL_CERT_PROFILE_SUBSYS := false
+
 # Copy common product apns-conf
 COMMON_PATH := device/intel/common
 PRODUCT_COPY_FILES += \
