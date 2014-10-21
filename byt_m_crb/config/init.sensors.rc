@@ -7,6 +7,7 @@ on init
   setprop ro.iio.accel.max_range 19.6133
   setprop ro.iio.accel.resolution 0.009576807
   setprop ro.iio.accel.power 0.23
+  setprop ro.iio.accel.frequencies "100 1"
   setprop ro.iio.accel.transform "ISH"
 
   # SENSOR_TYPE_GYROSCOPE
@@ -16,6 +17,7 @@ on init
   setprop ro.iio.anglvel.max_range 34.906586
   setprop ro.iio.anglvel.resolution 0.0021816615
   setprop ro.iio.anglvel.power 6.1
+  setprop ro.iio.anglvel.frequencies "200 1"
   setprop ro.iio.anglvel.transform "ISH"
 
   # SENSOR_TYPE_MAGNETIC_FIELD
@@ -25,6 +27,7 @@ on init
   setprop ro.iio.magn.max_range 2048
   setprop ro.iio.magn.resolution 0.01
   setprop ro.iio.magn.power 0.1
+  setprop ro.iio.magn.frequencies "100 1"
   setprop ro.iio.magn.transform "ISH"
 
   # SENSOR_TYPE_LIGHT
@@ -42,6 +45,7 @@ on init
   setprop ro.iio.pressure.max_range 1260
   setprop ro.iio.pressure.resolution 0
   setprop ro.iio.pressure.power 0.11
+  setprop ro.iio.pressure.frequencies "25 1"
   setprop ro.iio.pressure.transform "ISH"
 
 on init
