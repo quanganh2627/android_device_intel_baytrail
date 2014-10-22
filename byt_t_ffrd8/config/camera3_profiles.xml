@@ -31,7 +31,7 @@
             <control.afAvailableModes value="OFF,AUTO,MACRO,CONTINUOUS_PICTURE,CONTINUOUS_VIDEO"/>
             <control.availableEffects value="OFF,MONO,NEGATIVE,SEPIA"/>
             <control.awbAvailableModes value="AUTO,INCANDESCENT,FLUORESCENT,WARM_FLUORESCENT,DAYLIGHT,CLOUDY_DAYLIGHT,SHADE,TWILIGHT"/>
-            <control.availableSceneModes value="ACTION,PORTRAIT,LANDSCAPE,NIGHT,NIGHT_PORTRAIT,FIREWORKS,SPORTS,BARCODE"/>
+            <control.availableSceneModes value="ACTION,PORTRAIT,LANDSCAPE,NIGHT,NIGHT_PORTRAIT,FIREWORKS,SPORTS,BARCODE,FACE_PRIORITY"/>
             <!-- AE/AWB/AF mode: ACTION, PORTRAIT, LANDSCAPE, NIGHT, N_P FWS SPORTS BARCODE-->
             <control.sceneModeOverrides value="ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF"/>
             <control.availableVideoStabilizationModes value="OFF,ON"/>
@@ -172,7 +172,7 @@
             <control.afAvailableModes value="OFF"/>
             <control.availableEffects value="OFF,MONO,NEGATIVE,SEPIA"/>
             <control.awbAvailableModes value="AUTO,INCANDESCENT,FLUORESCENT,WARM_FLUORESCENT,DAYLIGHT,CLOUDY_DAYLIGHT"/>
-            <control.availableSceneModes value="ACTION,PORTRAIT,LANDSCAPE,NIGHT,NIGHT_PORTRAIT,FIREWORKS,SPORTS,BARCODE"/>
+            <control.availableSceneModes value="ACTION,PORTRAIT,LANDSCAPE,NIGHT,NIGHT_PORTRAIT,FIREWORKS,SPORTS,BARCODE,FACE_PRIORITY"/>
             <!-- AE/AWB/AF mode: ACTION, PORTRAIT, LANDSCAPE, NIGHT, N_P FWS SPORTS BARCODE-->
             <control.sceneModeOverrides value="ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF"/>
             <control.availableVideoStabilizationModes value="OFF,ON"/>
