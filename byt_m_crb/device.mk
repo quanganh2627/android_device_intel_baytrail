@@ -245,6 +245,10 @@ PRODUCT_PROPERTY_OVERRIDES += ro.telephony.default_network=9
 # SIM Hot Swap Property
 PRODUCT_PROPERTY_OVERRIDES += persist.tel.hot_swap.support=true
 
+# busybox
+PRODUCT_PACKAGES_DEBUG += \
+    busybox
+
 # hw_ssl
 #PRODUCT_PACKAGES += \
     libdx-crys \
