@@ -126,8 +126,9 @@ PRODUCT_PACKAGES += libwvdrmengine
 
 PRODUCT_PACKAGES_ENG += ExoPlayerDemo
 
-#L-disabled -> build error: undefined reference to 'dl_iterate_phdr'
-#PRODUCT_PACKAGES += liboemcrypto
+# Intel Widevine components
+PRODUCT_PACKAGES += liboemcrypto
+PRODUCT_PACKAGES += libmeimm libsecmem
 
 # omx components
 PRODUCT_PACKAGES += \
