@@ -6,8 +6,8 @@
       <name>PSH Accelerometer</name>
       <vendor>Intel Inc.</vendor>
       <version>1</version>
-      <maxRange unit="GRAVITY_EARTH">2</maxRange>
-      <resolution unit="GRAVITY_EARTH">0.000488281</resolution>
+      <maxRange unit="GRAVITY_EARTH">4</maxRange>
+      <resolution unit="GRAVITY_EARTH">0.000976562</resolution>
       <power>0.006</power>
       <minDelay>10000</minDelay>
       <maxDelay>1000000</maxDelay>
