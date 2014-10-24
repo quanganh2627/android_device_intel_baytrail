@@ -206,6 +206,7 @@ on post-fs
 
     # Insert touchscreen module
     insmod /lib/modules/atmel_mxt_ts.ko
+    insmod /lib/modules/gt9xx_ts.ko
 
     # Software Fuel Gauge related permission changes for CRV22
     chown system system /sys/class/misc/intel_fg_iface/uevent
