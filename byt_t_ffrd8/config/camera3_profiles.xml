@@ -21,10 +21,12 @@
         </Supported_hardware>
 
         <Android_metadata> <!-- Android static metadata only -->
+            <!-- Color Correction -->
+            <colorCorrection.availableAberrationModes value="OFF"/>
             <!-- Control -->
             <control.aeAvailableAntibandingModes value="OFF,50HZ,60HZ,AUTO"/>
-            <control.aeAvailableModes value="OFF,ON,ON_AUTO_FLASH"/>
-            <control.aeAvailableTargetFpsRanges value="15,30"/>
+            <control.aeAvailableModes value="OFF,ON,ON_AUTO_FLASH,ON_ALWAYS_FLASH"/>
+            <control.aeAvailableTargetFpsRanges value="15,30,30,30"/>
             <control.availableHighSpeedVideoConfigurations value="1280,720,30,60"/>
             <control.aeCompensationRange value="-5,5"/>
             <control.aeCompensationStep value="1,2"/>
@@ -36,8 +38,6 @@
             <control.sceneModeOverrides value="ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF"/>
             <control.availableVideoStabilizationModes value="OFF,ON"/>
             <control.maxRegions value="1,0,1"/>
-            <!-- edge -->
-            <edge.availableEdgeModes value="OFF,FAST"/>
             <!-- JPEG -->
             <jpeg.maxSize value="7372800"/>  <!-- 4160*3104*1.5 -->
             <jpeg.availableThumbnailSizes value="0,0,160,120,320,180,320,240"/>
@@ -63,8 +63,8 @@
             <request.maxNumInputStreams value="0,0,0"/> <!-- TODO VALUE -->
             <request.partialResultCount value="1"/> <!-- TODO VALUE -->
             <request.availableCapabilities value="BACKWARD_COMPATIBLE"/> <!-- TODO VALUE, OPTIONS: BACKWARD_COMPATIBLE, OPTIONAL, MANUAL_SENSOR, GCAM, ZSL, DNG -->
-            <request.availableRequestKeys value="control.aeAntibandingMode,control.aeExposureCompensation,control.aeLock,control.aeMode,control.aeRegions,control.aeTargetFpsRange,control.afMode,control.afRegions,control.afTrigger,control.awbLock,control.awbMode,control.captureIntent,control.effectMode,control.mode,control.sceneMode,control.videoStabilizationMode,flash.mode,jpeg.gpsLocation,jpeg.orientation,jpeg.quality,jpeg.thumbnailQuality,jpeg.thumbnailSize,scaler.cropRegion,statistics.faceDetectMode"/> <!-- TODO VALUE -->
-            <request.availableResultKeys value="colorCorrection.mode,colorCorrection.transform,colorCorrection.gains,colorCorrection.aberrationCorrectionMode,control.aeAntibandingMode,control.aeExposureCompensation,control.aeLock,control.aeMode,control.aeRegions,control.aeTargetFpsRange,control.aePrecaptureTrigger,control.afMode,control.afRegions,control.afTrigger,control.awbLock,control.awbMode,control.captureIntent,control.effectMode,control.mode,control.sceneMode,control.videoStabilizationMode,control.aeState,control.afState,control.awbState,edge.mode,flash.mode,flash.state,hotPixel.mode,jpeg.gpsLocation,jpeg.orientation,jpeg.quality,jpeg.thumbnailQuality,jpeg.thumbnailSize,lens.focalLength,lens.opticalStabilizationMode,noiseReduction.mode,request.pipelineDepth,sensor.exposureTime,sensor.timestamp,scaler.cropRegion,sensor.testPatternData,sensor.testPatternMode,sensor.rollingShutterSkew,shading.mode,statistics.faceDetectMode,statistics.hotPixelMapMode,statistics.faces,statistics.lensShadingCorrectionMap,statistics.sceneFlicker,statistics.hotPixelMap,statistics.lensShadingMapMode,tonemap.curve,tonemap.mode"/> <!-- TODO VALUE -->
+            <request.availableRequestKeys value="control.aeAntibandingMode,control.aeExposureCompensation,control.aeLock,control.aeMode,control.aeRegions,control.aeTargetFpsRange,control.afMode,control.afRegions,control.afTrigger,control.awbLock,control.awbMode,control.captureIntent,control.effectMode,control.mode,control.sceneMode,control.videoStabilizationMode,flash.mode,jpeg.gpsLocation,jpeg.orientation,jpeg.quality,jpeg.thumbnailQuality,jpeg.thumbnailSize,scaler.cropRegion,statistics.faceDetectMode,lens.aperture,lens.filterDensity,lens.opticalStabilizationMode"/>
+            <request.availableResultKeys value="colorCorrection.mode,colorCorrection.transform,colorCorrection.gains,colorCorrection.aberrationCorrectionMode,control.aeAntibandingMode,control.aeExposureCompensation,control.aeLock,control.aeMode,control.aeRegions,control.aeTargetFpsRange,control.aePrecaptureTrigger,control.afMode,control.afRegions,control.afTrigger,control.awbLock,control.awbMode,control.captureIntent,control.effectMode,control.mode,control.sceneMode,control.videoStabilizationMode,control.aeState,control.afState,control.awbState,edge.mode,flash.mode,flash.state,hotPixel.mode,jpeg.gpsLocation,jpeg.orientation,jpeg.quality,jpeg.thumbnailQuality,jpeg.thumbnailSize,lens.focalLength,lens.opticalStabilizationMode,noiseReduction.mode,request.pipelineDepth,sensor.exposureTime,sensor.timestamp,scaler.cropRegion,sensor.testPatternData,sensor.testPatternMode,sensor.rollingShutterSkew,shading.mode,statistics.faceDetectMode,statistics.hotPixelMapMode,statistics.faces,statistics.lensShadingCorrectionMap,statistics.sceneFlicker,statistics.hotPixelMap,statistics.lensShadingMapMode,tonemap.curve,tonemap.mode"/>
             <request.availableCharacteristicsKeys value="0"/> <!-- TODO VALUE -->
             <!-- Scaler -->
             <scaler.availableFormats value="YV12,YCrCb_420_SP,IMPLEMENTATION_DEFINED,YCbCr_420_888,BLOB"/> <!-- OPTIONS: RAW16, RAW_OPAQUE, YV12, YCrCb_420_SP, IMPLEMENTATION_DEFINED, YCbCr_420_888, BLOB -->
@@ -92,7 +92,6 @@
             <sensor.info.timestampSource value="REALTIME"/>
             <!-- Sensor -->
             <sensor.baseGainFactor value="100,52"/> <!-- got from manual_iso / module_iso, module_iso is 32 on saltbay PR2, base manual iso is 100 -->
-            <sensor.blackLevelPattern value="4184,4262,4301,4197"/> <!-- got from cmc->cmc_parsed_black_level.cmc_black_level_luts->color_channels -->
             <sensor.maxAnalogSensitivity value="800"/> <!-- TODO VALUE -->
             <sensor.orientation value="0"/>
             <sensor.profileHueSatMapDimensions value="1,1,1"/> <!--According to DNG spec, the dimension is recommended to be 1 -->
@@ -109,7 +108,6 @@
             <statistics.info.availableHotPixelMapModes value="OFF"/>
             <!-- Tonemap -->
             <tonemap.maxCurvePoints value="128"/>
-            <tonemap.availableToneMapModes value="CONTRAST_CURVE"/> <!-- mode option: CONTRAST_CURVE, FAST, HIGH_QUALITY, but currently just CONTRAST_CURVE supported-->
             <!-- LED -->
             <led.availableLeds value=" "/> <!-- don't support TRANSMIT for saltbay -->
             <!-- Flash -->
@@ -120,8 +118,6 @@
             <flash.info.chargeDuration value="0"/> <!-- TODO VALUE -->
             <!-- Sync -->
             <sync.maxLatency value="PER_FRAME_CONTROL"/> <!-- TODO VALUE, OPTIONS: UNKNOWN , PER_FRAME_CONTROL  -->
-            <!-- Edge -->
-            <edge.availableEdgeModes value="OFF"/> <!-- TODO VALUE, OPTIONS: OFF, FAST, HIGH_QUALITY -->
             <!-- Hot Pixel -->
             <hotPixel.availableHotPixelModes value="OFF"/> <!-- TODO VALUE, OPTIONS: OFF, FAST, HIGH_QUALITY -->
             <!-- Noise Reduction -->
@@ -167,10 +163,12 @@
 	    </Supported_hardware>
 
         <Android_metadata> <!-- Android static metadata only -->
+            <!-- Color Correction -->
+            <colorCorrection.availableAberrationModes value="OFF"/>
             <!-- Control -->
             <control.aeAvailableAntibandingModes value="OFF,50HZ,60HZ,AUTO"/>
-            <control.aeAvailableModes value="OFF,ON,ON_AUTO_FLASH"/>
-            <control.aeAvailableTargetFpsRanges value="15,30"/>
+            <control.aeAvailableModes value="OFF,ON"/>
+            <control.aeAvailableTargetFpsRanges value="15,30,30,30"/>
             <control.availableHighSpeedVideoConfigurations value="1280,720,30,60"/>
             <control.aeCompensationRange value="-5,5"/>
             <control.aeCompensationStep value="1,2"/>
@@ -182,8 +180,6 @@
             <control.sceneModeOverrides value="ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF"/>
             <control.availableVideoStabilizationModes value="OFF,ON"/>
             <control.maxRegions value="1,0,1"/>
-            <!-- edge -->
-            <edge.availableEdgeModes value="OFF,FAST"/>
             <!-- JPEG -->
             <jpeg.maxSize value="1382400"/> <!-- 1280*720*1.5 -->
             <jpeg.availableThumbnailSizes value="0,0,160,120,320,180,320,240"/> <!-- INCREASING ORDER -->
@@ -209,8 +205,8 @@
             <request.maxNumInputStreams value="0,0,0"/> <!-- TODO VALUE -->
             <request.partialResultCount value="1"/> <!-- TODO VALUE -->
             <request.availableCapabilities value="BACKWARD_COMPATIBLE"/> <!-- TODO VALUE, OPTIONS: BACKWARD_COMPATIBLE, OPTIONAL, MANUAL_SENSOR, GCAM, ZSL, DNG -->
-            <request.availableRequestKeys value="control.aeAntibandingMode,control.aeExposureCompensation,control.aeLock,control.aeMode,control.aeRegions,control.aeTargetFpsRange,control.afMode,control.afTrigger,control.awbLock,control.awbMode,control.captureIntent,control.effectMode,control.mode,control.sceneMode,control.videoStabilizationMode,flash.mode,jpeg.gpsLocation,jpeg.orientation,jpeg.quality,jpeg.thumbnailQuality,jpeg.thumbnailSize,scaler.cropRegion,statistics.faceDetectMode"/> <!-- TODO VALUE -->
-            <request.availableResultKeys value="colorCorrection.mode,colorCorrection.transform,colorCorrection.gains,colorCorrection.aberrationCorrectionMode,control.aeAntibandingMode,control.aeExposureCompensation,control.aeLock,control.aeMode,control.aeRegions,control.aeTargetFpsRange,control.aePrecaptureTrigger,control.afMode,control.afRegions,control.afTrigger,control.awbLock,control.awbMode,control.captureIntent,control.effectMode,control.mode,control.sceneMode,control.videoStabilizationMode,control.aeState,control.afState,control.awbState,edge.mode,flash.mode,flash.state,hotPixel.mode,jpeg.gpsLocation,jpeg.orientation,jpeg.quality,jpeg.thumbnailQuality,jpeg.thumbnailSize,lens.focalLength,lens.opticalStabilizationMode,noiseReduction.mode,request.pipelineDepth,sensor.exposureTime,sensor.timestamp,scaler.cropRegion,sensor.testPatternData,sensor.testPatternMode,sensor.rollingShutterSkew,shading.mode,statistics.faceDetectMode,statistics.hotPixelMapMode,statistics.faces,statistics.lensShadingCorrectionMap,statistics.sceneFlicker,statistics.hotPixelMap,statistics.lensShadingMapMode,tonemap.curve,tonemap.mode"/> <!-- TODO VALUE -->
+            <request.availableRequestKeys value="control.aeAntibandingMode,control.aeExposureCompensation,control.aeLock,control.aeMode,control.aeRegions,control.aeTargetFpsRange,control.afMode,control.afTrigger,control.awbLock,control.awbMode,control.captureIntent,control.effectMode,control.mode,control.sceneMode,control.videoStabilizationMode,flash.mode,jpeg.gpsLocation,jpeg.orientation,jpeg.quality,jpeg.thumbnailQuality,jpeg.thumbnailSize,scaler.cropRegion,statistics.faceDetectMode,lens.aperture,lens.filterDensity,lens.opticalStabilizationMode"/>
+            <request.availableResultKeys value="colorCorrection.mode,colorCorrection.transform,colorCorrection.gains,colorCorrection.aberrationCorrectionMode,control.aeAntibandingMode,control.aeExposureCompensation,control.aeLock,control.aeMode,control.aeRegions,control.aeTargetFpsRange,control.aePrecaptureTrigger,control.afMode,control.afTrigger,control.awbLock,control.awbMode,control.captureIntent,control.effectMode,control.mode,control.sceneMode,control.videoStabilizationMode,control.aeState,control.afState,control.awbState,edge.mode,flash.mode,flash.state,hotPixel.mode,jpeg.gpsLocation,jpeg.orientation,jpeg.quality,jpeg.thumbnailQuality,jpeg.thumbnailSize,lens.focalLength,lens.opticalStabilizationMode,noiseReduction.mode,request.pipelineDepth,sensor.exposureTime,sensor.timestamp,scaler.cropRegion,sensor.testPatternData,sensor.testPatternMode,sensor.rollingShutterSkew,shading.mode,statistics.faceDetectMode,statistics.hotPixelMapMode,statistics.faces,statistics.lensShadingCorrectionMap,statistics.sceneFlicker,statistics.hotPixelMap,statistics.lensShadingMapMode,tonemap.curve,tonemap.mode"/> <!-- TODO VALUE -->
             <request.availableCharacteristicsKeys value="0"/> <!-- TODO VALUE -->
             <!-- Scaler -->
             <scaler.availableFormats value="YV12,YCrCb_420_SP,IMPLEMENTATION_DEFINED,YCbCr_420_888,BLOB"/> <!-- OPTIONS: RAW16, RAW_OPAQUE, YV12, YCrCb_420_SP, IMPLEMENTATION_DEFINED, YCbCr_420_888, BLOB -->
@@ -238,7 +234,6 @@
             <sensor.info.timestampSource value="REALTIME"/>
             <!-- Sensor -->
             <sensor.baseGainFactor value="100,65"/>
-            <sensor.blackLevelPattern value="121,159,134,177"/>
             <sensor.maxAnalogSensitivity value="800"/> <!-- TODO VALUE -->
             <sensor.orientation value="0"/>
             <sensor.profileHueSatMapDimensions value="1,1,1"/> <!-- According to DNG spec, the dimension is recommended to be 1 -->
@@ -255,7 +250,6 @@
             <statistics.info.availableHotPixelMapModes value="OFF"/> <!-- TODO VALUE -->
             <!-- Tonemap -->
             <tonemap.maxCurvePoints value="128"/>
-            <tonemap.availableToneMapModes value="CONTRAST_CURVE"/> <!-- mode option: CONTRAST_CURVE, FAST, HIGH_QUALITY, but currently just CONTRAST_CURVE supported-->
             <!-- LED -->
             <led.availableLeds value=" "/> <!-- don't support TRANSMIT for saltbay -->
             <!-- Flash -->
@@ -266,8 +260,6 @@
             <flash.info.chargeDuration value="0"/> <!-- TODO VALUE -->
             <!-- Sync -->
             <sync.maxLatency value="PER_FRAME_CONTROL"/> <!-- TODO VALUE, OPTIONS: UNKNOWN , PER_FRAME_CONTROL  -->
-            <!-- Edge -->
-            <edge.availableEdgeModes value="OFF"/> <!-- TODO VALUE, OPTIONS: OFF, FAST, HIGH_QUALITY -->
             <!-- Hot Pixel -->
             <hotPixel.availableHotPixelModes value="OFF"/> <!-- TODO VALUE, OPTIONS: OFF, FAST, HIGH_QUALITY -->
             <!-- Noise Reduction -->
