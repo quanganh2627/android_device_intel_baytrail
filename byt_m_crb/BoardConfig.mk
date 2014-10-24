@@ -97,6 +97,10 @@ USE_INTEL_IPP := true
 # Power_HAL
 POWERHAL_BYT := true
 
+# PowerHint,enable power hint,if "true",do intel_power_hint,"false" not do this
+# function.
+POWERHINT_ENABLE := false
+
 # Widi
 INTEL_WIDI := true
 INTEL_WIDI_BAYTRAIL := true
