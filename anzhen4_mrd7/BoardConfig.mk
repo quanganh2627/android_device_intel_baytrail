@@ -19,9 +19,6 @@ include $(PLATFORM_PATH)/BoardConfig.mk
 # IAFW component to build for this board
 BOARD_IAFW_COMPONENT := brd_baylake
 
-#Platform
-BOARD_USES_48000_AUDIO_CAPTURE_SAMPLERATE_FOR_WIDI := true
-
 #Modem
 BOARD_HAVE_MODEM := false
 
@@ -32,8 +29,9 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_CONF_PATH)
 TARGET_HAS_ISV := true
 TARGET_VPP_USE_GEN := true
+
 # MultiDisplay service
-TARGET_HAS_MULTIPLE_DISPLAY := false
+TARGET_HAS_MULTIPLE_DISPLAY := true
 
 USE_INTEL_IPP := true
 
@@ -66,8 +64,10 @@ BOARD_GRAPHIC_IS_GEN := true
 # Camera
 # Set USE_CAMERA_STUB to 'true' for Fake Camera builds,
 # 'false' for libcamera builds to use Camera Imaging(CI) supported by intel.
+BOARD_CAMERA_IPU2_SUPPORT := true
 USE_CAMERA_STUB := false
-USE_CAMERA_HAL2 := true
+USE_CAMERA_HAL2 := false
+USE_CAMERA_HAL_3 := true
 
 USE_INTEL_METABUFFER := true
 
@@ -147,7 +147,7 @@ ENABLE_BACKGROUND_MUSIC := true
 # - USE_MEDIASDK: use Media SDK support or not
 # - MFX_IPP: sets IPP library optimization to use
 USE_MEDIASDK := true
-# Enable CIP Codecs
+# Settings for the Intel-optimized codecs and plug-ins:
 USE_INTEL_MDP := true
 
 ifeq ($(DOLBY_DAP),true)

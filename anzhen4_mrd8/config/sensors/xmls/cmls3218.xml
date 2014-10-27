@@ -97,6 +97,7 @@
       <resolution>0.3</resolution>
       <power>0.25</power>
       <minDelay>0</minDelay>
+      <maxDelay>0</maxDelay>
       <mapper axis_x="X"></mapper>
       <scale axis_x="1.0"></scale>
     </device>

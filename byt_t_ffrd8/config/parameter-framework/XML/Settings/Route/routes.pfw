@@ -319,7 +319,7 @@ supDomain: Route
 					ALL
 						AndroidMode Is InCsvCall
 						ANY
-							ModemAudioStatus Is True
+							ModemAudioAvailable Is True
 						ANY
 							OutputDevices Includes Earpiece
 							OutputDevices Includes IHF
@@ -347,7 +347,7 @@ supDomain: Route
 						OutputDevices Includes Headset
 						AndroidMode Is InCsvCall
 						ANY
-							ModemAudioStatus Is True
+							ModemAudioAvailable Is True
 
 				/Route/route_mgr/routes/hwcodec_media/route_duplex/capture/status/applicable = 1
 
@@ -359,7 +359,7 @@ supDomain: Route
 		confGroup: Applicable
 			AndroidMode Is InCsvCall
 			ModemState Is True
-			ModemAudioStatus Is True
+			ModemAudioAvailable Is True
 
 		domain: Playback
 
@@ -397,7 +397,7 @@ supDomain: Route
 			conf: Applicable
 				ALL
 					AndroidMode Is InCsvCall
-					ModemAudioStatus Is True
+					ModemAudioAvailable Is True
 					ANY
 						OutputDevices Is IHF
 						OutputDevices Is Headset
@@ -421,7 +421,7 @@ supDomain: Route
 			conf: Applicable
 				ALL
 					AndroidMode Is InCsvCall
-					ModemAudioStatus Is True
+					ModemAudioAvailable Is True
 					ANY
 						OutputDevices Includes SCO
 						OutputDevices Includes SCO_Headset

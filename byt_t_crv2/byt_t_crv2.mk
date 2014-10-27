@@ -71,7 +71,8 @@ PRODUCT_PACKAGES += \
 
 #FG_ALGO for BYT-CRV-2.2
 PRODUCT_PACKAGES += \
-       fg_algo_iface
+    fg_algo_iface \
+    fg_config_ti_swfg.bin
 
 #remote submix audio
 PRODUCT_PACKAGES += \

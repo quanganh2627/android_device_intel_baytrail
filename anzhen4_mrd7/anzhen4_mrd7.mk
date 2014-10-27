@@ -36,9 +36,12 @@ FLASHFILES_CONFIG := $(DEVICE_CONF_PATH)/flashfiles.json
 # Dolby DS1
 #-include vendor/intel/PRIVATE/dolby_ds1/dolbyds1.mk
 
-# device specific overlay folder
-PRODUCT_PACKAGE_OVERLAYS := $(DEVICE_CONF_PATH)/overlays_aosp
-#PRODUCT_PACKAGE_OVERLAYS := $(DEVICE_CONF_PATH)/overlays
+# product specific overlays for Intel resources
+ifneq ($(BUILD_VANILLA_AOSP), true)
+PRODUCT_PACKAGE_OVERLAYS := $(DEVICE_CONF_PATH)/overlays_extensions
+endif
+# product specific overlays for Vanilla AOSP resources
+PRODUCT_PACKAGE_OVERLAYS += $(DEVICE_CONF_PATH)/overlays_aosp
 
 # copy permission files
 FRAMEWORK_ETC_PATH := frameworks/native/data/etc
