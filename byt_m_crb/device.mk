@@ -429,7 +429,7 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/init.sensors.rc:root/init.sensors.rc \
     $(DEVICE_CONF_PATH)/init.dptf.rc:root/init.dptf.rc \
     $(LOCAL_PATH)/init.utilitynet.sh:system/etc/init.utilitynet.sh \
-    $(DEVICE_CONF_PATH)/init.debug.byt_m_crb.rc:root:init.debug.byt_m_crb.rc
+    $(DEVICE_CONF_PATH)/init.debug.byt_m_crb.rc:root/init.debug.byt_m_crb.rc
 #    $(DEVICE_CONF_PATH)/init.wireless.rc:root/init.wireless.rc
 
 PRODUCT_COPY_FILES += \
