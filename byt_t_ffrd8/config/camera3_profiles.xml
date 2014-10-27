@@ -225,7 +225,7 @@
             <scaler.croppingType value="CENTER_ONLY"/> <!-- TODO VALUE OPTIONS: CENTER_ONLY, FREEFORM -->
             <!-- Sensor Info -->
             <sensor.info.activeArraySize value="0,0,1920,1080"/> <!-- TODO VALUE -->
-            <sensor.info.sensitivityRange value="100,1600"/> <!-- TODO VALUE -->
+            <sensor.info.sensitivityRange value="100,3392"/> <!-- TODO VALUE -->
             <sensor.info.colorFilterArrangement value="RGGB"/> <!-- TODO VALUE, OPTIONS: RGGB, GRBG, GBRG, BGGR, RGB -->
             <sensor.info.exposureTimeRange value="100000,1000000000"/> <!--  google require Min <= 100e3, Max  >= 1e9 (1sec)  -->
             <sensor.info.maxFrameDuration value="1000000000"/> <!-- TODO VALUE -->
