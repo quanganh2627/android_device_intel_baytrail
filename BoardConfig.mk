@@ -16,16 +16,6 @@ PRODUCT_LIBRARY_PATH := $(PRODUCT_LIBRARY_PATH):/system/lib/egl
 
 ENABLE_GEN_GRAPHICS := true
 
-# RenderScript Properties
-# debug.rs.default-CPU-driver 1: force on CPU, 0 (default): use props as below:
-# debug.rs.dev.scripts      cpu: run rs/fs on CPU,     gpu: run rs/fs on GPGPU
-# debug.rs.dev.intrinsics   cpu: run intrinsic on CPU  gpu: on GPGPU
-ifneq (,$(filter $(TARGET_BUILD_VARIANT),eng userdebug))
-ADDITIONAL_BUILD_PROPERTIES += \
-    debug.rs.dev.scripts=gpu \
-    debug.rs.dev.intrinsics=gpu
-endif
-
 ifneq ($(TARGET_NO_RECOVERY),true)
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_RECOVERY_UPDATER_LIBS += libintel_updater
