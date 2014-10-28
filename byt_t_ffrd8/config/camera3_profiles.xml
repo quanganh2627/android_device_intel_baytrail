@@ -149,7 +149,7 @@
             <frame.initialSkip value="3"/> <!-- camera3 HAL CPF parameters moved here end-->
             <perFrameSettings value="true"/> <!-- true or false -->
             <postviewSizes value="320x240,320x180"/> <!-- Assign postview size for every supported ratio -->
-            <supportedHighSpeedResolutionFps value="1280x720@60"/> <!-- resolution@fps -->
+            <supportedHighSpeedResolutionFps value="1280x720@60,1920x1080@60"/> <!-- resolution@fps -->
             <minDepthOfReqQ value="4"/>
             <maxBurstLength value="4"/>
             <isoAnalogGain1 value="64"/> <!-- causes a FPE divide-by-zero if missing! -->
