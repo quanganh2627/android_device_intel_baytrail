@@ -301,8 +301,8 @@
     </Profiles>
 
     <Common> <!-- Common parameters of camera and hacks -->
-        <productName value="baytrail"/> <!-- cfg the exif -->
-        <manufacturerName value="Intel"/> <!-- cfg the exif -->
+        <productName value="byt_t_ffrd8"/> <!-- cfg the exif -->
+        <manufacturerName value="intel"/> <!-- cfg the exif -->
         <boardName value="baytrail_v3"/>
         <previewFormat value="V4L2_PIX_FMT_YUYV"/> <!-- define the driver preview output format, V4L2_PIX_FMT_YVU420 or V4L2_PIX_FMT_NV12 -->
         <supportDualVideo value="false"/> <!-- true or false -->
