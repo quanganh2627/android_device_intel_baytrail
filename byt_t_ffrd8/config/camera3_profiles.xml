@@ -154,6 +154,7 @@
             <maxBurstLength value="4"/>
             <isoAnalogGain1 value="64"/> <!-- causes a FPE divide-by-zero if missing! -->
             <supportSensorEmbeddedMetadata value="false"/> <!--don't support sensor metadata-->
+            <startExposureTime value="10"/> <!--for IMX134 the start exposure time is 10ms-->
         </Sensor_info_IPU2>
     </Profiles>
 
@@ -295,6 +296,7 @@
             <maxBurstLength value="4"/>
             <isoAnalogGain1 value="64"/> <!--Pseudo ISO corresponding analog gain value 1.0. -->
             <supportSensorEmbeddedMetadata value="false"/> <!--don't support sensor metadata-->
+            <startExposureTime value="1"/> <!--for ov2722 the start exposure time is 1ms-->
         </Sensor_info_IPU2>
     </Profiles>
 
