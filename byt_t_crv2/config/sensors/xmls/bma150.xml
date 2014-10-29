@@ -121,10 +121,10 @@
         /*set BW as 125Hz*/
         readreg_0x10_0_1;
         writereg_0x10_0_1 = (regbuf_0x10_1 & 0xe0) | 0xc;
-        /*set range as 2g*/
+        /*set range as 4g*/
         readreg_0xf_0_1;
         writereg_0xf_0_1 = (regbuf_0xf_1 & 0xf0) | 0x5;
-        global_1 = 1;
+        global_1 = 2;
 
 	/*set int1, push-pull and high trigger*/
         /*readreg_0x20_0_1;
