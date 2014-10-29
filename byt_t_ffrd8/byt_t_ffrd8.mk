@@ -37,6 +37,9 @@ endif
 # product specific overlays for Vanilla AOSP resources
 PRODUCT_PACKAGE_OVERLAYS += $(DEVICE_CONF_PATH)/overlays_aosp
 
+#HDMISettings
+PRODUCT_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlays_hdmisettings
+
 # copy permission files
 FRAMEWORK_ETC_PATH := frameworks/native/data/etc
 PERMISSIONS_PATH := system/etc/permissions

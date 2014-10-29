@@ -177,6 +177,10 @@ PRODUCT_PACKAGES += \
     com.intel.multidisplay \
     com.intel.multidisplay.xml
 
+#HDMISettings App
+PRODUCT_PACKAGES += \
+    HdmiSettings
+
 #hdmi audio HAL
 PRODUCT_PACKAGES += \
    audio.hdmi.$(PRODUCT_DEVICE)
