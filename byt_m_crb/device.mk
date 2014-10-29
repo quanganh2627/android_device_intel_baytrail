@@ -246,8 +246,10 @@ PRODUCT_PROPERTY_OVERRIDES += ro.telephony.default_network=9
 PRODUCT_PROPERTY_OVERRIDES += persist.tel.hot_swap.support=true
 
 # busybox
-PRODUCT_PACKAGES_DEBUG += \
+ifneq (, $(findstring "$(TARGET_BUILD_VARIANT)", "eng" "userdebug"))
+PRODUCT_PACKAGES += \
     busybox
+endif
 
 # hw_ssl
 #PRODUCT_PACKAGES += \
