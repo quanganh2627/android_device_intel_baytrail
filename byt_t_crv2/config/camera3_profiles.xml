@@ -181,8 +181,6 @@
             <control.sceneModeOverrides value="ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF,ON,AUTO,OFF"/>
             <control.availableVideoStabilizationModes value="OFF,ON"/>
             <control.maxRegions value="1,0,0"/>
-            <!-- edge -->
-            <edge.availableEdgeModes value="OFF,FAST"/>
             <!-- JPEG -->
             <jpeg.maxSize value="1382400"/> <!-- 1280*720*1.5 -->
             <jpeg.availableThumbnailSizes value="0,0,160,120,320,180,320,240"/> <!-- INCREASING ORDER -->
