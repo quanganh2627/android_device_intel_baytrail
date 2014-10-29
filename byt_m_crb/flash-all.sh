@@ -1,8 +1,8 @@
 #set -x
 GPT_INT=byt_m_crb-gpt.ini
-FACTORY_IMG=byt_m_crb_64-lmp-factory.tgz
-BOOT_LOADER=byt_m_crb_64-LMP-bootloader
-ZIP_IMG=byt_m_crb_64-LMP-img.zip
+FACTORY_IMG=byt_m_crb_64-lrx19-factory.tgz
+BOOT_LOADER=byt_m_crb_64-LRX19-bootloader
+ZIP_IMG=byt_m_crb_64-LRX19-img.zip
 
 OPTIONS=$1
 IP_ADDRESS=$2

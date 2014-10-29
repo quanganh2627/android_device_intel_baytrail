@@ -3,8 +3,8 @@
 #Setting product out directory
 export ANDROID_PRODUCT_OUT=.
 
-FACTORY_IMG=byt_m_crb_64-lmp-factory.tgz
-ZIP_IMG=byt_m_crb_64-LMP-img.zip
+FACTORY_IMG=byt_m_crb_64-lrx19-factory.tgz
+ZIP_IMG=byt_m_crb_64-LRX19-img.zip
 
 OPTIONS=$1
 IP_ADDRESS=$2
