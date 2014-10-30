@@ -1,4 +1,4 @@
-PRODUCT_NAME := byt_m_crb_64
+PRODUCT_NAME := byt_m_crb64
 REF_PRODUCT_NAME := byt_m_crb
 TARGET_DEVICE := byt_m_crb
 

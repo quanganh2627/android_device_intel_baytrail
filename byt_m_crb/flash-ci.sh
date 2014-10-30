@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 fastboot "$@" oem unlock 2>&1
-fastboot "$@" flash bootloader byt_m_crb_64-LRX19-bootloader 2>&1
+fastboot "$@" flash bootloader byt_m_crb64-LRX19-bootloader 2>&1
 fastboot "$@" reboot-bootloader 2>&1
 sleep 45
-fastboot "$@"  -w update byt_m_crb_64-LRX19-img.zip 2>&1
+fastboot "$@"  -w update byt_m_crb64-LRX19-img.zip 2>&1
