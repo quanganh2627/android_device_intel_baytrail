@@ -129,7 +129,7 @@
             <subDevName value="/dev/v4l-subdev8"/> <!-- it depends on the real hardware -->
             <fileInject value="false"/> <!-- true or false -->
             <flipping value="" value_v=""/> <!-- value: SENSOR_FLIP_H or "", value_v: SENSOR_FLIP_V or "" -->
-            <maxContinuousRawRingBuffer value="15"/>
+            <maxContinuousRawRingBuffer value="8"/>
             <shutterLagCompensationMs value="40"/>
             <enableIspPerframeSettings value="false"/> <!-- true or false. This configuration is for debugging, to enable/disable isp per-frame settings -->
             <pipelineDepth value="3,4,3"/> <!--the value corresponding to preview, still, recording  -->
@@ -273,7 +273,7 @@
             <subDevName value="/dev/v4l-subdev8"/> <!-- it depends on the real hardware -->
             <fileInject value="false"/> <!-- true or false -->
             <flipping value="" value_v=""/> <!-- value: SENSOR_FLIP_H or "", value_v: SENSOR_FLIP_V or "" -->
-            <maxContinuousRawRingBuffer value="15"/>
+            <maxContinuousRawRingBuffer value="8"/>
             <shutterLagCompensationMs value="40"/>
             <enableIspPerframeSettings value="false"/> <!-- true or false. This configuration is for debugging, to enable/disable isp per-frame settings -->
             <pipelineDepth value="3,4,3"/> <!--the value corresponding to preview, still, recording  -->
