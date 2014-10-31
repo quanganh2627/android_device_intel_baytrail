@@ -127,7 +127,7 @@
 
         <Hal_tuning_IPU2> <!-- Parameters to tune the HAL and hacks for the HAL that are camera dependent -->
             <flipping value="" value_v=""/> <!-- value: SENSOR_FLIP_H or "", value_v: SENSOR_FLIP_V or "" -->
-            <maxContinuousRawRingBuffer value="15"/>
+            <maxContinuousRawRingBuffer value="8"/>
             <shutterLagCompensationMs value="40"/>
             <enableIspPerframeSettings value="false"/> <!-- true or false. This configuration is for debugging, to enable/disable isp per-frame settings -->
             <streamConfigEnableRawLock value="false"/> <!-- true or false -->
@@ -269,7 +269,7 @@
 
         <Hal_tuning_IPU2> <!-- Parameters to tune the HAL and hacks for the HAL that are camera dependent -->
             <flipping value="" value_v=""/> <!-- value: SENSOR_FLIP_H or "", value_v: SENSOR_FLIP_V or "" -->
-            <maxContinuousRawRingBuffer value="15"/>
+            <maxContinuousRawRingBuffer value="8"/>
             <shutterLagCompensationMs value="40"/>
             <enableIspPerframeSettings value="false"/> <!-- true or false. This configuration is for debugging, to enable/disable isp per-frame settings -->
             <pipelineDepth value="3,4,3"/> <!--the value corresponding to preview, still, recording  -->
