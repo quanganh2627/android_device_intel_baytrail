@@ -189,9 +189,6 @@
         <item>250</item>
     </integer-array>
 
-    <!-- Use terminal sensor to detect window orientation to optimize accelerometer performance -->
-    <bool name="config_TerminalDetectWindowOrientation">true</bool>
-
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
          USB interfaces.  If the device doesn't want to support tething over USB this should
          be empty.  An example would be "usb.*" -->
