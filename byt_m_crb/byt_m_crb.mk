@@ -109,12 +109,11 @@ PRODUCT_PACKAGES += \
 
 # parameter-framework files
 PRODUCT_PACKAGES += \
-        libimc-subsystem \
         parameter-framework.audio.byt_m_crb \
         parameter-framework.routeMgr.byt_m_crb
 
 # MAMGR (Modem Audio Manager)
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     mamgr
 
 # build the OMX wrapper codecs
