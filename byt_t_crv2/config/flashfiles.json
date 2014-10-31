@@ -7,8 +7,5 @@
    {"type":"ferase", "partition":"system"},
    {"type":"fflash", "partition":"esp_update", "target":"ESPUPDATE_ZIP_TARGET"},
    {"type":"fflash", "partition":"fastboot", "target":"INSTALLED_DROIDBOOTIMAGE_TARGET"},
-   {"type":"fflash", "partition":"boot", "target":"INSTALLED_BOOTIMAGE_TARGET"},
-   {"type":"fflash", "partition":"recovery", "target":"INSTALLED_RECOVERYIMAGE_TARGET"},
-   {"type":"fflash", "partition":"system", "target":"INSTALLED_SYSTEMIMAGE", "timeout":"600000"},
    {"type":"fflash", "partition":"capsule", "target":"INSTALLED_CAPSULE_TARGET"},
-   {"type":"fcontinue"}]}
+   {"type":"fupdate", "target":"INTERNAL_UPDATE_PACKAGE_TARGET", "timeout":600000}]}
