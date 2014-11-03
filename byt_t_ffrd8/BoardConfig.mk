@@ -5,8 +5,9 @@ REF_PRODUCT_NAME ?= $(TARGET_PRODUCT)
 
 TARGET_USE_DROIDBOOT := true
 
-TARGET_OS_SIGNING_METHOD := isu_plat2
-
+# Set Intel Signing Utility as signing tool
+TARGET_OS_SIGNING_METHOD := isu
+TARGET_POS_SIGNING_METHOD := isu
 
 ########## Add plus features here ##########
 

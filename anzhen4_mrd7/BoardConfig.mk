@@ -5,8 +5,9 @@ REF_PRODUCT_NAME ?= $(TARGET_PRODUCT)
 
 TARGET_USE_DROIDBOOT := true
 
-# Set ISU as signing tool
+# Set Intel Signing Utility as signing tool
 TARGET_OS_SIGNING_METHOD := isu
+TARGET_POS_SIGNING_METHOD := isu
 
 include $(PLATFORM_PATH)/BoardConfig.mk
 
