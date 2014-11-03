@@ -36,7 +36,6 @@ endif
 
 ifneq ($(TARGET_USE_USERFASTBOOT),true)
 ifneq ($(TARGET_NO_RECOVERY),true)
-TARGET_RECOVERY_UI_LIB := libintel_recovery_ui
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_RECOVERY_UPDATER_LIBS += libintel_updater
 endif

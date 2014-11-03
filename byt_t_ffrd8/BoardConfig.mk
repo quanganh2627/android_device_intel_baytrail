@@ -7,16 +7,14 @@ TARGET_USE_DROIDBOOT := true
 
 TARGET_OS_SIGNING_METHOD := isu_plat2
 
-# Android Security Framework
-# must be set before include PLATFORM/BoardConfig.mk
-INTEL_FEATURE_ASF := false
-# Supported ASF Version
-PLATFORM_ASF_VERSION := 2
 
-# Android Security Framework Permission Licensing
-ifeq ($(INTEL_FEATURE_ASF),true)
-INTEL_FEATURE_PERM_LIC := true
-endif
+########## Add plus features here ##########
+
+# Android Security Framework (IDPT-SE)
+# and Licensed Permission
+-include $(COMMON_PLUS_PATH)/asf/BoardConfig.mk
+
+########## End of plus features ##########
 
 include $(PLATFORM_PATH)/BoardConfig.mk
 
@@ -30,6 +28,10 @@ BOARD_MODEM_LIST := 7160_flashless
 BOARD_HAVE_ATPROXY := true
 
 TARGET_PHONE_HAS_OEM_LIBRARY := true
+# enable modem throttling through itux
+ifeq ($(BOARD_HAVE_MODEM),true)
+ITUX_MODEM_ZONE := true
+endif
 
 ADDITIONAL_BUILD_PROPERTIES += rild.libpath=/system/lib/librapid-ril-core.so
 

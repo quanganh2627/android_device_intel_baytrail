@@ -43,7 +43,6 @@
     <CDeviceClassPath>com.intel.thermal.SoCControl</CDeviceClassPath>
   </ContributingDeviceInfo>
 
-<!--
   <ContributingDeviceInfo>
       <CDeviceName>Modem</CDeviceName>
       <CDeviceID>4</CDeviceID>
@@ -56,7 +55,6 @@
       <CDeviceID>5</CDeviceID>
       <CDeviceClassPath>none</CDeviceClassPath>
   </ContributingDeviceInfo>
--->
 
   <ContributingDeviceInfo>
       <CDeviceName>Otg</CDeviceName>
@@ -138,7 +136,6 @@
     </CoolingDeviceInfo>
   </ZoneThrottleInfo>
 
-<!--
   <ZoneThrottleInfo>
     <ZoneID>5</ZoneID>
     <CriticalShutDown>1</CriticalShutDown>
@@ -157,7 +154,6 @@
       </ThrottleDeviceMask>
     </CoolingDeviceInfo>
   </ZoneThrottleInfo>
--->
 </Profile>
 <Profile>
   <Name>BatterySaver</Name>
@@ -226,7 +222,6 @@
     </CoolingDeviceInfo>
   </ZoneThrottleInfo>
 
-<!--
   <ZoneThrottleInfo>
     <ZoneID>5</ZoneID>
     <CriticalShutDown>1</CriticalShutDown>
@@ -245,6 +240,5 @@
       </ThrottleDeviceMask>
     </CoolingDeviceInfo>
   </ZoneThrottleInfo>
--->
 </Profile>
 </thermalthrottleconfig>

@@ -8,11 +8,13 @@ TARGET_USE_DROIDBOOT := true
 # Set ISU as signing tool
 TARGET_OS_SIGNING_METHOD := isu
 
-# Android Security Framework
-# must be set before include PLATFORM/BoardConfig.mk
-INTEL_FEATURE_ASF := false
-# Supported ASF Version
-PLATFORM_ASF_VERSION := 2
+########## Add plus features here ##########
+
+# Android Security Framework (IDPT-SE)
+# and Licensed Permission
+-include $(COMMON_PLUS_PATH)/asf/BoardConfig.mk
+
+########## End of plus features ##########
 
 include $(PLATFORM_PATH)/BoardConfig.mk
 

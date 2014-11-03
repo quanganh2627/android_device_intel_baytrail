@@ -9,6 +9,8 @@ PRODUCT_COPY_FILES += \
 
 # Include product path
 include $(LOCAL_PATH)/byt_t_ffrd8_path.mk
+-include $(COMMON_PLUS_PATH)/carrier-001/product.mk
+-include $(COMMON_PLUS_PATH)/ims/product.mk
 
 BLANK_FLASHFILES_CONFIG := $(DEVICE_CONF_PATH)/blankflashfiles.json
 
@@ -28,8 +30,9 @@ endif
 #-include vendor/intel/PRIVATE/dolby_ds1/dolbyds1.mk
 
 # product specific overlays for Intel resources
+PRODUCT_PACKAGE_OVERLAYS := $(FEATURE_PLUS_OVERLAY)
 ifneq ($(BUILD_VANILLA_AOSP), true)
-PRODUCT_PACKAGE_OVERLAYS := $(DEVICE_CONF_PATH)/overlays_extensions
+PRODUCT_PACKAGE_OVERLAYS += $(DEVICE_CONF_PATH)/overlays_extensions
 endif
 # product specific overlays for Vanilla AOSP resources
 PRODUCT_PACKAGE_OVERLAYS += $(DEVICE_CONF_PATH)/overlays_aosp
