@@ -42,9 +42,11 @@ endif
 # Firmware versioning
 ifeq ($(TARGET_BIOS_TYPE),"uefi")
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/firmware/smbios_firmware_props.rc:root/init.firmware.rc
+    $(COMMON_PATH)/firmware/smbios_firmware_props.rc:root/init.firmware.rc \
+    $(PLATFORM_CONF_PATH)/intel_prop.cfg:root/intel_prop.cfg
 PRODUCT_PACKAGES += \
-    intel_fw_props
+    intel_fw_props \
+    intel_prop
 else
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/firmware/pidv_firmware_props.rc:root/init.firmware.rc
