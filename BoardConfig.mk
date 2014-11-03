@@ -3,6 +3,8 @@ include device/intel/common/BoardConfig.mk
 
 TARGET_ARCH_VARIANT := silvermont
 
+TARGET_USE_PRIVATE_LIBM := true
+
 ifeq ($(FORCE_FLASHFILE_NO_OTA),true)
   FLASHFILE_NO_OTA := true
 else
