@@ -11,7 +11,7 @@
 # Superclass
 $(call inherit-product, build/target/product/aosp_base.mk)
 # Include Dalvik Heap Size Configuration
-$(call inherit-product, $(COMMON_PATH)/dalvik/tablet-xhdpi-2048-dalvik-heap.mk)
+$(call inherit-product, $(COMMON_PATH)/dalvik/tablet-hdpi-1024-dalvik-heap.mk)
 
 # Overrides
 PRODUCT_DEVICE := byt_t_crv2
