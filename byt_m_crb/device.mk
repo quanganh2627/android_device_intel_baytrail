@@ -44,9 +44,6 @@ endif
 # common overlays for Vanilla AOSP resources
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlays_aosp
 
-#common overlays
-DEVICE_PACKAGE_OVERLAYS := $(COMMON_PATH)/overlays_aosp
-
 OVERRIDE_COPIES := \
     $(DEVICE_CONF_PATH)/asound.conf:system/etc/asound.conf \
     $(DEVICE_CONF_PATH)/init.baylake.sh:root/init.baylake.sh \
