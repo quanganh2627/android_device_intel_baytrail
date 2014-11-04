@@ -151,8 +151,7 @@ PRODUCT_PACKAGES += \
     libmix_imagedecoder \
     libmix_imagedecoder_genx \
     libva_videodecoder \
-    libva_videoencoder \
-    libjpeg_hw
+    libva_videoencoder
 
 # libva
 PRODUCT_PACKAGES += \
