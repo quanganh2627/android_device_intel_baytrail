@@ -26,7 +26,7 @@
             <!-- Control -->
             <control.aeAvailableAntibandingModes value="OFF,50HZ,60HZ,AUTO"/>
             <control.aeAvailableModes value="OFF,ON,ON_AUTO_FLASH,ON_ALWAYS_FLASH"/>
-            <control.aeAvailableTargetFpsRanges value="15,30"/>
+            <control.aeAvailableTargetFpsRanges value="15,30,30,30"/>
             <control.availableHighSpeedVideoConfigurations value="1280,720,30,60"/>
             <control.aeCompensationRange value="-5,5"/>
             <control.aeCompensationStep value="1,2"/>
@@ -169,7 +169,7 @@
             <!-- Control -->
             <control.aeAvailableAntibandingModes value="OFF,50HZ,60HZ,AUTO"/>
             <control.aeAvailableModes value="OFF,ON"/>
-            <control.aeAvailableTargetFpsRanges value="15,30"/>
+            <control.aeAvailableTargetFpsRanges value="15,30,30,30"/>
             <control.availableHighSpeedVideoConfigurations value="1280,720,30,60"/>
             <control.aeCompensationRange value="-5,5"/>
             <control.aeCompensationStep value="1,2"/>
