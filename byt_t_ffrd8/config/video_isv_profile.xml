@@ -19,8 +19,8 @@
 <VideoPostProcessSettings>
 	<Filter name="ProcFilterNoiseReduction">
 		<enabled value="true"/>
-		<minResolution value="320x240"/>
-		<maxResolution value="640x480"/>
+		<minResolution value="0"/>
+		<maxResolution value="1920x1080"/>
 	</Filter>
 
 	<Filter name="ProcFilterDeinterlacing">
@@ -30,9 +30,9 @@
 	</Filter>
 
 	<Filter name="ProcFilterSharpening">
-		<enabled value="false"/>
-		<minResolution value="176x144"/>
-		<maxResolution value="1920x1080"/>
+		<enabled value="true"/>
+		<minResolution value="0"/>
+		<maxResolution value="FFFFFFFF"/>
 	</Filter>
 
 	<Filter name="ProcFilterColorBalance">
