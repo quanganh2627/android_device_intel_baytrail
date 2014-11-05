@@ -5,6 +5,9 @@ on init
     # /dev/block/by-name so that we can use the same fstabs everywhere.
     symlink /dev/block/platform/80860F14:00/by-name /dev/block/by-name
 
+    mkdir /factory 0775 system system
+    mount ext4 /dev/block/by-name/factory /factory nosuid nodev noatime barrier=1,data=ordered
+
 on firmware_mounts_complete
     rm /dev/.booting
 
