@@ -3,8 +3,8 @@ supDomain: Calibration
 	domain: HwPlatform
 		conf: Default
 
-			component: /Route/route_mgr/routes/media
-				component: stream_duplex/playback/config
+			component: /Route/route_mgr/routes/media/stream_duplex
+				component: playback/config
 					require_preenable = 0
 					require_postdisable = 0
 					silence_prolog_ms = 0
@@ -18,14 +18,17 @@ supDomain: Calibration
 					stop_threshold = 4608
 					silence_threshold = 0
 					avail_min = 1152
-					applicability_mask/output_flags/direct = 0
-					applicability_mask/output_flags/primary = 1
-					applicability_mask/output_flags/fast = 0
-					applicability_mask/output_flags/deep_buffer = 0
-					applicability_mask/output_flags/compress_offload = 0
+					component: attributes/output_flags
+						direct = 0
+						primary = 1
+						fast = 0
+						deep_buffer = 0
+						compress_offload = 0
+						non_blocking = 0
+						hw_av_sync = 0
 					effects_supported = ""
 
-				component: stream_duplex/capture/config
+				component: capture/config
 					require_preenable = 1
 					require_postdisable = 1
 					silence_prolog_ms = 0
@@ -39,14 +42,17 @@ supDomain: Calibration
 					stop_threshold = 3840
 					silence_threshold = 0
 					avail_min = 960
-					applicability_mask/input_sources/Default = 1
-					applicability_mask/input_sources/Mic = 1
-					applicability_mask/input_sources/VoiceUplink = 0
-					applicability_mask/input_sources/VoiceDownlink = 0
-					applicability_mask/input_sources/VoiceCall = 0
-					applicability_mask/input_sources/Camcorder = 1
-					applicability_mask/input_sources/VoiceRecognition = 1
-					applicability_mask/input_sources/VoiceCommunication = 1
+					component: attributes/input_sources
+						default = 1
+						mic = 1
+						voice_uplink = 0
+						voice_downlink = 0
+						voice_call = 0
+						camcorder = 1
+						voice_recognition = 1
+						voice_communication = 1
+						remote_submix = 0
+						hotword = 0
 					effects_supported = ""
 
 			component: /Route/route_mgr/routes/deep_media
@@ -64,15 +70,18 @@ supDomain: Calibration
 					stop_threshold = 9216
 					silence_threshold = 0
 					avail_min = 4608
-					applicability_mask/output_flags/direct = 0
-					applicability_mask/output_flags/primary = 0
-					applicability_mask/output_flags/fast = 0
-					applicability_mask/output_flags/deep_buffer = 1
-					applicability_mask/output_flags/compress_offload = 0
+					component: attributes/output_flags
+						direct = 0
+						primary = 0
+						fast = 0
+						deep_buffer = 1
+						compress_offload = 0
+						non_blocking = 0
+						hw_av_sync = 0
 					effects_supported = ""
 
-			component: /Route/route_mgr/routes/modem_mix
-				component: stream_duplex/playback/config
+			component: /Route/route_mgr/routes/modem_mix/stream_duplex
+				component: playback/config
 					require_preenable = 0
 					require_postdisable = 0
 					silence_prolog_ms = 0
@@ -86,14 +95,17 @@ supDomain: Calibration
 					stop_threshold = 1280
 					silence_threshold = 0
 					avail_min = 320
-					applicability_mask/output_flags/direct = 0
-					applicability_mask/output_flags/primary = 1
-					applicability_mask/output_flags/fast = 0
-					applicability_mask/output_flags/deep_buffer = 0
-					applicability_mask/output_flags/compress_offload = 0
+					component: attributes/output_flags
+						direct = 0
+						primary = 1
+						fast = 0
+						deep_buffer = 0
+						compress_offload = 0
+						non_blocking = 0
+						hw_av_sync = 0
 					effects_supported = ""
 
-				component: stream_duplex/capture/config
+				component: capture/config
 					require_preenable = 0
 					require_postdisable = 0
 					silence_prolog_ms = 0
@@ -107,18 +119,21 @@ supDomain: Calibration
 					stop_threshold = 0
 					silence_threshold = 0
 					avail_min = 0
-					applicability_mask/input_sources/Default = 0
-					applicability_mask/input_sources/Mic = 1
-					applicability_mask/input_sources/VoiceUplink = 1
-					applicability_mask/input_sources/VoiceDownlink = 1
-					applicability_mask/input_sources/VoiceCall = 1
-					applicability_mask/input_sources/Camcorder = 1
-					applicability_mask/input_sources/VoiceRecognition = 1
-					applicability_mask/input_sources/VoiceCommunication = 0
+					component: attributes/input_sources
+						default = 0
+						mic = 1
+						voice_uplink = 1
+						voice_downlink = 1
+						voice_call = 1
+						camcorder = 1
+						voice_recognition = 1
+						voice_communication = 0
+						remote_submix = 0
+						hotword = 0
 					effects_supported = ""
 
-			component: /Route/route_mgr/routes/bt_comm
-				component: stream_duplex/playback/config
+			component: /Route/route_mgr/routes/bt_comm/stream_duplex
+				component: playback/config
 					require_preenable = 0
 					require_postdisable = 0
 					silence_prolog_ms = 0
@@ -132,14 +147,17 @@ supDomain: Calibration
 					stop_threshold = 640
 					silence_threshold = 0
 					avail_min = 160
-					applicability_mask/output_flags/direct = 0
-					applicability_mask/output_flags/primary = 1
-					applicability_mask/output_flags/fast = 0
-					applicability_mask/output_flags/deep_buffer = 0
-					applicability_mask/output_flags/compress_offload = 0
+					component: attributes/output_flags
+						direct = 0
+						primary = 1
+						fast = 0
+						deep_buffer = 0
+						compress_offload = 0
+						non_blocking = 0
+						hw_av_sync = 0
 					effects_supported = ""
 
-				component: stream_duplex/capture/config
+				component: capture/config
 					require_preenable = 0
 					require_postdisable = 0
 					silence_prolog_ms = 0
@@ -153,14 +171,17 @@ supDomain: Calibration
 					stop_threshold = 640
 					silence_threshold = 0
 					avail_min = 160
-					applicability_mask/input_sources/Default = 1
-					applicability_mask/input_sources/Mic = 1
-					applicability_mask/input_sources/VoiceUplink = 0
-					applicability_mask/input_sources/VoiceDownlink = 0
-					applicability_mask/input_sources/VoiceCall = 0
-					applicability_mask/input_sources/Camcorder = 0
-					applicability_mask/input_sources/VoiceRecognition = 1
-					applicability_mask/input_sources/VoiceCommunication = 1
+					component: attributes/input_sources
+						default = 1
+						mic = 1
+						voice_uplink = 0
+						voice_downlink = 0
+						voice_call = 0
+						camcorder = 0
+						voice_recognition = 1
+						voice_communication = 1
+						remote_submix = 0
+						hotword = 0
 					effects_supported = ""
 
 			component: /Route/route_mgr/routes/
@@ -184,7 +205,7 @@ supDomain: StreamRoute
 			conf: Applicable
 				ANY
 					OutputDevices Includes Earpiece
-					OutputDevices Includes IHF
+					OutputDevices Includes Ihf
 					OutputDevices Includes Headset
 					OutputDevices Includes Headphones
 				OutputFlags Includes Primary
@@ -215,7 +236,7 @@ supDomain: StreamRoute
 			conf: Applicable
 				ANY
 					OutputDevices Includes Earpiece
-					OutputDevices Includes IHF
+					OutputDevices Includes Ihf
 					OutputDevices Includes Headset
 					OutputDevices Includes Headphones
 				ANY
@@ -272,7 +293,7 @@ supDomain: Route
 				DirectStream Is True
 				ANY
 					OutputDevices Includes Earpiece
-					OutputDevices Includes IHF
+					OutputDevices Includes Ihf
 					OutputDevices Includes Headset
 					OutputDevices Includes Headphones
 				ANY
@@ -295,7 +316,7 @@ supDomain: Route
 					AndroidMode Is InVoipCall
 				ANY
 					OutputDevices Includes Earpiece
-					OutputDevices Includes IHF
+					OutputDevices Includes Ihf
 					OutputDevices Includes Headset
 					OutputDevices Includes Headphones
 				ANY
@@ -322,7 +343,7 @@ supDomain: Route
 							ModemAudioAvailable Is True
 						ANY
 							OutputDevices Includes Earpiece
-							OutputDevices Includes IHF
+							OutputDevices Includes Ihf
 							OutputDevices Includes Headphones
 							ALL
 								OutputDevices Includes Headset
@@ -366,13 +387,13 @@ supDomain: Route
 			conf: Applicable
 				ALL
 					ANY
-						OutputDevices Is IHF
+						OutputDevices Is Ihf
 						OutputDevices Is Headset
 						OutputDevices Is Headphones
 						OutputDevices Is Earpiece
-						OutputDevices Is SCO
-						OutputDevices Is SCO_Headset
-						OutputDevices Is SCO_CarKit
+						OutputDevices Is Sco
+						OutputDevices Is ScoHeadset
+						OutputDevices Is ScoCarkit
 
 				/Route/route_mgr/routes/modem_mix/stream_duplex/playback/status/applicable = 1
 
@@ -399,13 +420,13 @@ supDomain: Route
 					AndroidMode Is InCsvCall
 					ModemAudioAvailable Is True
 					ANY
-						OutputDevices Is IHF
+						OutputDevices Is Ihf
 						OutputDevices Is Headset
 						OutputDevices Is Headphones
 						OutputDevices Is Earpiece
-						OutputDevices Is SCO
-						OutputDevices Is SCO_Headset
-						OutputDevices Is SCO_CarKit
+						OutputDevices Is Sco
+						OutputDevices Is ScoHeadset
+						OutputDevices Is ScoCarkit
 
 				component: /Route/route_mgr/routes/hwcodec_csv/
 					route_playback/status/applicable = 1
@@ -423,9 +444,9 @@ supDomain: Route
 					AndroidMode Is InCsvCall
 					ModemAudioAvailable Is True
 					ANY
-						OutputDevices Includes SCO
-						OutputDevices Includes SCO_Headset
-						OutputDevices Includes SCO_CarKit
+						OutputDevices Includes Sco
+						OutputDevices Includes ScoHeadset
+						OutputDevices Includes ScoCarkit
 
 				/Route/route_mgr/routes/bt_csv/route_duplex/playback/status/applicable = 1
 				/Route/route_mgr/routes/bt_csv/route_duplex/capture/status/applicable = 1
@@ -462,9 +483,9 @@ supDomain: Route
 
 			conf: Applicable
 				ANY
-					OutputDevices Is SCO
-					OutputDevices Is SCO_Headset
-					OutputDevices Is SCO_CarKit
+					OutputDevices Is Sco
+					OutputDevices Is ScoHeadset
+					OutputDevices Is ScoCarkit
 				OutputFlags Includes Primary
 
 				/Route/route_mgr/routes/bt_comm/stream_duplex/playback/status/applicable = 1
@@ -475,7 +496,7 @@ supDomain: Route
 		domain: Capture
 
 			conf: Applicable
-				InputDevices Is SCO_Headset
+				InputDevices Is ScoHeadset
 				MicMute Is False
 				ANY
 					InputSources Includes Default

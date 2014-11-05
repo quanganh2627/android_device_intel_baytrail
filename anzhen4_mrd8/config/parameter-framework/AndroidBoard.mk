@@ -149,7 +149,6 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_REQUIRED_MODULES := \
     RouteClass.xml \
     RouteSubsystem.xml \
-    RouteSubsystem-common.xml \
     DebugFsSubsystem.xml \
 
 ifeq ($(TARGET_BUILD_VARIANT),eng)
@@ -181,7 +180,7 @@ $(LOCAL_BUILT_MODULE): MY_SRC_FILES := \
     $(OUT)/system/etc/parameter-framework/ParameterFrameworkConfigurationRoute.xml \
     $(COMMON_PATH)/parameter-framework/RouteCriteria.txt \
     /dev/null \
-    $(LOCAL_PATH)/XML/Settings/Route/parameters.pfw \
+    $(COMMON_PATH)/parameter-framework/XML/Settings/Route/parameters.pfw \
     $(LOCAL_PATH)/XML/Settings/Route/routes.pfw
 
 $(LOCAL_BUILT_MODULE): $(LOCAL_REQUIRED_MODULES)
@@ -193,6 +192,9 @@ $(LOCAL_BUILT_MODULE): $(LOCAL_REQUIRED_MODULES)
 include $(CLEAR_VARS)
 LOCAL_MODULE := RouteSubsystem.xml
 LOCAL_MODULE_STEM := RouteSubsystem.xml
+LOCAL_REQUIRED_MODULES := \
+    RouteSubsystem-CommonCriteria.xml \
+    RouteSubsystem-RoutesTypes.xml
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/parameter-framework/Structure/Route
