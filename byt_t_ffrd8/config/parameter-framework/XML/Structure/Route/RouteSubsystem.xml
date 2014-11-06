@@ -14,18 +14,18 @@
         <xi:include href="RouteSubsystem-RoutesTypes.xml"/>
 
         <ComponentType Name="PlatformRoutes">
-            <Component Name="media" Type="StreamRouteFullDuplex" Mapping="Amend1:Media,Id:0,Device:0,Ports:"/>
-            <Component Name="compressed_media" Type="RoutePlayback" Mapping="Amend1:CompressedMedia,Id:1,Ports:"/>
-            <Component Name="deep_media" Type="StreamRoutePlayback" Mapping="Amend1:DeepMedia,Id:2,Device:0,Ports:"/>
-            <Component Name="modem_mix" Type="StreamRouteFullDuplex" Mapping="Amend1:ModemMix,Id:3,Device:4,Ports:"/>
-            <Component Name="bt_comm" Type="StreamRouteFullDuplex" Mapping="Amend1:BtComm,Id:4,Device:3,Ports:Bt_Port"/>
-            <Component Name="hwcodec_media" Type="RouteFullDuplex" Mapping="Amend1:HwCodecMedia,Id:5,Ports:"/>
-            <Component Name="hwcodec_csv" Type="RoutePlayback" Mapping="Amend1:HwCodecCSV,Id:6,Ports:"/>
-            <Component Name="bt_csv" Type="RouteFullDuplex" Mapping="Amend1:BtCSV,Id:7,Ports:"/>
+            <Component Name="media" Type="StreamRouteFullDuplex" Mapping="Amend1:Media,Device:0,Ports:"/>
+            <Component Name="compressed_media" Type="RoutePlayback" Mapping="Amend1:CompressedMedia,Ports:"/>
+            <Component Name="deep_media" Type="StreamRoutePlayback" Mapping="Amend1:DeepMedia,Device:0,Ports:"/>
+            <Component Name="modem_mix" Type="StreamRouteFullDuplex" Mapping="Amend1:ModemMix,Device:4,Ports:"/>
+            <Component Name="bt_comm" Type="StreamRouteFullDuplex" Mapping="Amend1:BtComm,Device:3,Ports:Bt_Port"/>
+            <Component Name="hwcodec_media" Type="RouteFullDuplex" Mapping="Amend1:HwCodecMedia,Ports:"/>
+            <Component Name="hwcodec_csv" Type="RoutePlayback" Mapping="Amend1:HwCodecCSV,Ports:"/>
+            <Component Name="bt_csv" Type="RouteFullDuplex" Mapping="Amend1:BtCSV,Ports:"/>
         </ComponentType>
 
         <ComponentType Name="PlatformPorts">
-            <Component Name="BT" Type="Port" Mapping="Amend1:Bt,Id:1,Groups:Group0"/>
+            <Component Name="BT" Type="Port" Mapping="Amend1:Bt,Groups:Group0"/>
         </ComponentType>
 
     </ComponentLibrary>
