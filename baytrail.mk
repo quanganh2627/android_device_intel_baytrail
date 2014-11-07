@@ -53,8 +53,10 @@ PRODUCT_COPY_FILES += \
     $(PLATFORM_CONF_PATH)/intel_short_long_press.kl:system/usr/keylayout/baytrailaudio_Intel_MID_Audio_Jack.kl
 
 # specific management of audio_effects.conf
+ifneq ($(DOLBY_DAP),true)
 PRODUCT_COPY_FILES += \
     $(PLATFORM_CONF_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf
+endif
 
 # tinyalsa
 PRODUCT_PACKAGES += \
@@ -88,10 +90,6 @@ PRODUCT_PACKAGES_DEBUG += \
 # Add FPT and TXEManuf
 # Android-L disabled not building due to removed timeb.h
 #PRODUCT_PACKAGES_ENG += FPT TXEManuf
-
-# Add HdmiSettings app
-#PRODUCT_PACKAGES += \
-    HdmiSettings
 
 # Ota and Ota Downloader
 PRODUCT_PACKAGES += \

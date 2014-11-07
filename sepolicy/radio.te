@@ -2,4 +2,3 @@
 # below line breaks neverallow in domain.te on line 169
 allow radio unlabeled:file create_file_perms;
 allow radio unlabeled:dir rw_dir_perms;
-

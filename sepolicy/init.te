@@ -4,3 +4,8 @@ allow init device:blk_file create_file_perms;
 allow init shell_data_file:file { read write open };
 allow init fuse:dir create_dir_perms;
 allow init fuse:file create_file_perms;
+domain_trans(init, rootfs, intel_fw_props)
+allow init shell_data_file:dir { write add_name };
+allow init shell_data_file:file create;
+# below line breaks neverallow in domain.te on line 293
+allow init system_file:file setattr;

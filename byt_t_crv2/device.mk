@@ -11,7 +11,7 @@
 # Superclass
 $(call inherit-product, build/target/product/aosp_base.mk)
 # Include Dalvik Heap Size Configuration
-$(call inherit-product, $(COMMON_PATH)/dalvik/tablet-xhdpi-2048-dalvik-heap.mk)
+$(call inherit-product, $(COMMON_PATH)/dalvik/tablet-hdpi-1024-dalvik-heap.mk)
 
 # Overrides
 PRODUCT_DEVICE := byt_t_crv2
@@ -177,6 +177,10 @@ PRODUCT_PACKAGES += \
     com.intel.multidisplay \
     com.intel.multidisplay.xml
 
+#HDMISettings App
+PRODUCT_PACKAGES += \
+    HdmiSettings
+
 #hdmi audio HAL
 PRODUCT_PACKAGES += \
    audio.hdmi.$(PRODUCT_DEVICE)
@@ -286,7 +290,6 @@ PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.touchscreen.multitouch.jazzhand.xml:$(PERMISSIONS_PATH)/android.hardware.touchscreen.multitouch.jazzhand.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
-    $(FRAMEWORK_ETC_PATH)/android.hardware.camera.flash-autofocus.xml:$(PERMISSIONS_PATH)/android.hardware.camera.flash-autofocus.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.camera.front.xml:$(PERMISSIONS_PATH)/android.hardware.camera.front.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.sensor.accelerometer.xml:$(PERMISSIONS_PATH)/android.hardware.sensor.accelerometer.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.sensor.compass.xml:$(PERMISSIONS_PATH)/android.hardware.sensor.compass.xml \

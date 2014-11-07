@@ -92,6 +92,15 @@
                 android:icon="@drawable/ic_settings_display"
                 />
 
+        <!-- HDMI -->
+	<!-- Manufacturer Extra hook 2 -->
+        <dashboard-tile
+                android:id="@+id/manufacturer_extra_settings_2"
+                android:title="@string/hdmi_settings_title"
+                android:icon="@drawable/ic_settings_hdmi" >
+                <intent android:action="com.intel.settings.HDMI_SETTING" />
+                </dashboard-tile>
+
         <!-- Notifications -->
         <dashboard-tile
                 android:id="@+id/notification_settings"

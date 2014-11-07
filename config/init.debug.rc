@@ -118,10 +118,12 @@ on property:ro.debuggable=1
 # crash and log services
 service crashlogd /system/bin/crashlogd
     class late_start
+    seclabel u:r:crashlogd:s0
 
 service crashdump /system/bin/crashlogd -ramdump
     disabled
     oneshot
+    seclabel u:r:crashlogd:s0
 
 service ap_logfs /system/bin/logcat -b system -b events -b main -b radio -n 20 -r5000 -v threadtime -f /logs/aplog KERNEL:S
     class core
@@ -130,6 +132,7 @@ service ap_logfs /system/bin/logcat -b system -b events -b main -b radio -n 20 -
 service apk_logfs /system/bin/logcat -b system -b events -b main -b radio -n 20 -r5000 -v threadtime -f /logs/aplog
     class core
     disabled
+    seclabel u:r:apk_logfs:s0
 
 service apk_logsd /system/bin/logcat -b system -b events -b main -b radio -n 20 -r5000 -v threadtime -f /sdcard/aplog
     disabled

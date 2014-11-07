@@ -6,4 +6,3 @@ allow platform_app_data_file ecryptfs:filesystem associate;
 allow radio_data_file ecryptfs:filesystem associate;
 allow shell_data_file ecryptfs:filesystem associate;
 allow system_data_file ecryptfs:filesystem associate;
-
