@@ -16,6 +16,9 @@ on init
     # property and not HAL output...
     setprop camera.disable_zsl_mode 1
 
+    # Temporary disable HW+GPU JPEG decoding in skia to pass CTS test
+    setprop skia.libmix.disabled 1
+
     # atomisp driver depends on these modules. So load these on init. atomisp
     # driver is loaded from "on charger" trigger as well from init.common.rc
     insmod /lib/modules/videobuf-core.ko

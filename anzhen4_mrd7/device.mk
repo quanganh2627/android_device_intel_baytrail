@@ -127,9 +127,9 @@ PRODUCT_PACKAGES += \
     libmixvbp_h264secure \
     libmix_imagedecoder \
     libmix_imagedecoder_genx \
+    libmix_imageencoder \
     libva_videodecoder \
-    libva_videoencoder \
-    libjpeg_hw
+    libva_videoencoder
 
 # libva
 PRODUCT_PACKAGES += \
