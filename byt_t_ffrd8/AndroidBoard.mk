@@ -11,5 +11,3 @@ include $(DEVICE_CONF_PATH)/fg_config/AndroidBoard.mk
 
 # Common config
 include $(COMMON_PATH)/config/AndroidBoard.mk
-
-ADDITIONAL_DEFAULT_PROPERTIES += persist.ril-daemon.disable=0

@@ -64,12 +64,6 @@ on property:system.at-proxy.mode=2
     setprop sys.usb.config rndis,acm,adb
     start proxy-tunneling
 
-on property:persist.ril-daemon.disable=0
-   start ril-daemon
-
-on property:persist.ril-daemon.disable=1
-   stop ril-daemon
-
 on boot
 
 on post-fs-data
