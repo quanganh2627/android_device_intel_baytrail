@@ -476,6 +476,7 @@ supDomain: Route
 
 			conf: Applicable
 				InputDevices Is SCO_Headset
+				MicMute Is False
 				ANY
 					InputSources Includes Default
 					InputSources Includes Mic
