@@ -22,8 +22,8 @@ PRODUCT_CHARACTERISTICS := nosdcard,tablet
 
 # Copy fstab
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab:fstab \
-    $(LOCAL_PATH)/fstab:root/fstab \
+    $(LOCAL_PATH)/fstab:fstab.$(PRODUCT_DEVICE) \
+    $(LOCAL_PATH)/fstab:root/fstab.$(PRODUCT_DEVICE) \
     $(DEVICE_CONF_PATH)/recovery.init.byt_m_crb.rc:root/init.recovery.byt_m_crb.rc
 
 # Verified boot support
