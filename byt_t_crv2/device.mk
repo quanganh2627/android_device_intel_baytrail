@@ -8,11 +8,23 @@
 # OVERRIDE_COPIES := <the list>
 # PRODUCT_COPY_FILES := $(OVERRIDE_COPIES) $(PRODUCT_COPY_FILES)
 
-# Superclass
-$(call inherit-product, build/target/product/aosp_base.mk)
+
 # Include Dalvik Heap Size Configuration
 #$(call inherit-product, $(COMMON_PATH)/dalvik/tablet-xhdpi-2048-dalvik-heap.mk)
 $(call inherit-product, $(COMMON_PATH)/dalvik/tablet-hdpi-1024-dalvik-heap.mk)
+
+
+ifeq ($(BOARD_HAVE_MODEM), true)
+# Copy common product apns-conf
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/apns-conf.xml:system/etc/apns-conf.xml
+# Superclass
+$(call inherit-product, build/target/product/full_base_telephony.mk)
+$(call inherit-product, $(COMMON_PATH)/MmgrClients.mk)
+else
+# Superclass
+$(call inherit-product, build/target/product/aosp_base.mk)
+endif
 
 # Overrides
 PRODUCT_DEVICE := byt_t_crv2
@@ -299,6 +311,11 @@ PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.usb.accessory.xml:$(PERMISSIONS_PATH)/android.hardware.usb.accessory.xml \
     $(FRAMEWORK_ETC_PATH)/tablet_core_hardware.xml:$(PERMISSIONS_PATH)/tablet_core_hardware.xml
 #   $(PERMISSIONS_PATH)/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
+
+ifeq ($(BOARD_HAVE_MODEM), true)
+PRODUCT_COPY_FILES += \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.telephony.gsm.xml:$(PERMISSIONS_PATH)/android.hardware.telephony.gsm.xml
+endif
 
 ifneq ($(BOARD_HAVE_BLUETOOTH),false)
 PRODUCT_COPY_FILES += \
