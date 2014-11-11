@@ -17,6 +17,7 @@ on early-boot
 
     # Enable Renderscript Vectorizer
     setprop debug.rs.x86vectorizer 1
+    setprop ro.boot.mode "main"
 
 on boot
     mount pstore none /sys/fs/pstore
