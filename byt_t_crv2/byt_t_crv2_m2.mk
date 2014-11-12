@@ -1,4 +1,4 @@
-PRODUCT_NAME := byt_t_crv2_m2_64
+PRODUCT_NAME := byt_t_crv2_m2
 REF_PRODUCT_NAME := byt_t_crv2
 
 BOARD_USE_64BIT_KERNEL := true
