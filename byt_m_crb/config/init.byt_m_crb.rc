@@ -282,7 +282,7 @@ service hdcpd /system/bin/hdcpd
     user root
     group graphics drmrpc
 
-service baytrail-setup /system/bin/sh /system/etc/init.baytrail.sh
+service baytrail-setup /system/bin/sh /init.baytrail.sh
     class core
     oneshot
 
