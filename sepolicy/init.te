@@ -11,3 +11,10 @@ allow init shell_data_file:file create;
 allow init config:filesystem { relabelfrom relabelto mount };
 allow init factory:filesystem { relabelfrom relabelto mount };
 allow init logs:filesystem { relabelfrom relabelto mount };
+
+domain_trans(init, rootfs, userfastboot)
+domain_trans(init, rootfs, dhcpcd)
+# for console in userfastboot
+userdebug_or_eng(`
+  domain_trans(init, rootfs, shell)
+')

@@ -33,3 +33,8 @@ type logcat_exec, exec_type, file_type;
 type factory, file_type;
 type config, file_type;
 type logs, file_type;
+# efivarfs - Used by userfastboot
+type efivarfs, fs_type;
+
+# pstore-clean
+type pstore-clean_data_file, file_type, data_file_type;

@@ -1,0 +1,9 @@
+# Rules for system/bin/esif_ufd
+type esif_ufd, domain;
+type esif_ufd_exec, exec_type, file_type;
+
+init_daemon_domain(esif_ufd);
+
+allow esif_ufd tmpfs:dir { write remove_name add_name };
+allow esif_ufd esif_ufd_tmpfs:file { lock create open unlink };
+allow esif_ufd esif_dev:chr_file { read write ioctl open };

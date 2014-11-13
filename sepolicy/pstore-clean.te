@@ -1,0 +1,19 @@
+# Rules for vendor/intel/pstore-clean
+type pstore-clean, domain;
+type pstore-clean_exec, exec_type, file_type;
+init_daemon_domain(pstore-clean);
+
+# Create, remove, and mount on a directory in /dev
+allow pstore-clean device:dir { add_name create mounton remove_name rmdir write };
+# (Un)Mount the /dev/pstore mount-point
+allow pstore-clean pstore_dev:filesystem { mount unmount };
+# Allow (un)mounting of pstore fs types
+allow pstore-clean pstorefs:filesystem { mount unmount };
+allow pstore-clean pstorefs:dir { open read remove_name search write };
+allow pstore-clean pstorefs:file { open read unlink };
+
+# Create directories and files for the panic dumps
+allow pstore-clean pstore-clean_data_file:dir { add_name search write };
+allow pstore-clean pstore-clean_data_file:file { create open write };
+
+allow pstore-clean self:capability sys_admin;

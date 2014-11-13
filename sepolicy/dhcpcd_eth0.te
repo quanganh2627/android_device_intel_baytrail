@@ -1,0 +1,29 @@
+# Rules for system/bin/dhcpcd
+type dhcpcd, domain;
+type dhcpcd_exec, exec_type, file_type;
+type dhcpcd_data_file, file_type, data_file_type;
+
+init_daemon_domain(dhcpcd);
+net_domain(dhcpcd);
+
+allow dhcpcd self:netlink_kobject_uevent_socket create_socket_perms;
+allow dhcpcd sysfs:file write;
+# TODO: remove rules for system_data_file if they can be replaced
+# by dhcpcd_data_file ones
+allow dhcpcd system_data_file:dir { create_dir_perms };
+allow dhcpcd system_data_file:sock_file { create link_file_perms };
+allow dhcpcd system_data_file:file create_file_perms;
+#allow dhcpcd dhcpcd_data_file:dir { create_dir_perms };
+#allow dhcpcd dhcpcd_data_file:sock_file { create link_file_perms };
+#allow dhcpcd dhcpcd_data_file:file create_file_perms;
+allow dhcpcd self:capability { setuid ipc_lock sys_admin dac_override chown setgid net_raw net_admin};
+allow dhcpcd dhcpcd_tmpfs:file { lock create open };
+allow dhcpcd tmpfs:dir { write add_name };
+allow dhcpcd self:udp_socket create_socket_perms;
+allow dhcpcd self:tcp_socket create_stream_socket_perms;
+allow dhcpcd port:tcp_socket name_bind;
+allow dhcpcd node:tcp_socket node_bind;
+allow dhcpcd self:netlink_route_socket { create_socket_perms nlmsg_write };
+allow dhcpcd self:packet_socket create_socket_perms;
+# For /proc/sys/net/ipv4/conf/*/promote_secondaries
+allow dhcpcd proc_net:file write;

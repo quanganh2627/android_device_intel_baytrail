@@ -21,3 +21,4 @@ allow crashlogd self:process execmem;
 allow crashlogd zygote_exec:file execute_no_trans;
 allow crashlogd ctl_default_prop:property_service set;
 allow crashlogd dex2oat_exec:file execute_no_trans;
+allow crashlogd self:process { ptrace };

@@ -33,6 +33,10 @@
 /system/bin/hdcpd               u:object_r:hdcpd_exec:s0
 /data/hdcp(/.*)?                u:object_r:hdcpd_data_file:s0
 
+#esif_ufd
+/system/bin/esif_ufd            u:object_r:esif_ufd_exec:s0
+/dev/esif_lf                    u:object_r:esif_dev:s0
+
 # sensorhubd
 /system/bin/sensorhubd          u:object_r:sensorhubd_exec:s0
 /sys/devices/platform/80860F41:04/i2c-5/5-0040/control  u:object_r:sysfs_hwmon_control:s0
@@ -53,6 +57,8 @@
 
 # bd_prov (bluetooth)
 /system/bin/bd_prov             u:object_r:bd_prov_exec:s0
+/dev/bus/usb/001/003            u:object_r:bt_dev:s0
+/dev/bus/usb/001/004            u:object_r:bt_dev:s0
 
 # vw drm
 /sys/devices/pci0000:00/0000:00:02.0/resource0 u:object_r:sysfs_drm_resource:s0
@@ -84,3 +90,8 @@
 
 # logcat for all the init scripts
 /system/bin/logcat              u:object_r:logcat_exec:s0
+
+# Persistent Storage
+/dev/pstore                 u:object_r:pstore_dev:s0
+/data/dontpanic(/.*)?       u:object_r:pstore-clean_data_file:s0
+/system/bin/pstore-clean    u:object_r:pstore-clean_exec:s0

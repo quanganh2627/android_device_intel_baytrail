@@ -135,6 +135,10 @@ BOARD_SEPOLICY_UNION +=\
         watchdogd.te \
         wlan_prov.te \
         wpa.te \
+        userfastboot.te \
+        dhcpcd_eth0.te \
+        esif_ufd.te \
+        pstore-clean.te \
         zygote.te
 
 # DRM Protected Video

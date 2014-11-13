@@ -7,3 +7,5 @@ allow init_shell config:filesystem getattr;
 allow init_shell factory:filesystem getattr;
 allow init_shell fuse:dir rw_dir_perms;
 allow init_shell fuse:file getattr;
+allow init_shell tmpfs:file { read getattr };
+allow init_shell block_device:blk_file { getattr };

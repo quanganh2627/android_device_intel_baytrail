@@ -5,9 +5,3 @@ on init
     # /dev/block/by-name so that we can use the same fstabs everywhere.
     symlink /dev/block/pci/pci0000:00/0000:00:13.0/by-name/ /dev/block/by-name
 
-service dhcpcd-eth0 /system/bin/dhcpcd -bd eth0
-    disabled
-    oneshot
-
-on device-added-/dev/eth0
-    start dhcpcd-eth0

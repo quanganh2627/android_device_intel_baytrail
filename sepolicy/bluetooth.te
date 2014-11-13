@@ -6,3 +6,6 @@ allow bluetooth tty_device:chr_file { read write ioctl open };
 allow bluetooth unlabeled:dir search;
 # sysfs file should be specified
 allow bluetooth sysfs:file write;
+allow bluetooth tmpfs:dir { write add_name };
+allow bluetooth usb_device:dir { read open search };
+allow bluetooth bt_dev:chr_file { read write open ioctl };
