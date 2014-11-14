@@ -25,11 +25,9 @@ on property:sys.usb.config=adb
     write /sys/class/android_usb/android0/enable 1
 
 service watchdogd /sbin/watchdogd
-    user root
     oneshot
 
-service wdogcounter /system/bin/sh /init.watchdog.sh
-    user root
+service wdogcounter /sbin/uefivar_nolog -n WdtCounter -g 4a67b082-0a4c-41cf-b6c7-440b29bb8c4f -s 0 -t int -k
     oneshot
     disabled
 
