@@ -245,6 +245,9 @@ TARGET_NO_BOOTLOADER := false
 
 TARGET_USE_DPTF := true
 
+#Enable volume control when connected using HDMI.
+ENABLE_HDMI_VOLUME_ADJ :=true
+
 ########################################################################
 # PORTED FROM OTC FOR SIGNED BOOTIMAGE, THIS WILL BE OF INTEREST TO
 # TEAM WORKING ON BOOTLOADER FOR BYT/CHT.
