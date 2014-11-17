@@ -188,7 +188,7 @@ supDomain: Calibration
 				compressed_media/route_playback/status/need_reconfigure = 0
 				hwcodec_media/route_duplex/playback/status/need_reconfigure = 0
 				hwcodec_media/route_duplex/capture/status/need_reconfigure = 0
-				hwcodec_csv/route_playback/status/need_reconfigure = 0
+				hwcodec_csv/route_duplex/playback/status/need_reconfigure = 0
 
 supDomain: StreamRoute
 
@@ -429,11 +429,11 @@ supDomain: Route
 						OutputDevices Is ScoCarkit
 
 				component: /Route/route_mgr/routes/hwcodec_csv/
-					route_playback/status/applicable = 1
+					route_duplex/playback/status/applicable = 1
 
 			conf: NotApplicable
 				component: /Route/route_mgr/routes/hwcodec_csv/
-					route_playback/status/applicable = 0
+					route_duplex/playback/status/applicable = 0
 
 	supDomain: BtCsv
 
