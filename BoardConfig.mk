@@ -5,6 +5,8 @@ TARGET_ARCH_VARIANT := silvermont
 
 TARGET_USE_PRIVATE_LIBM := true
 
+TARGET_USE_BOOTLOADER := true
+
 ifeq ($(FORCE_FLASHFILE_NO_OTA),true)
   FLASHFILE_NO_OTA := true
 else
