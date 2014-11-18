@@ -127,9 +127,9 @@ PRODUCT_PACKAGES += \
     libmixvbp_h264secure \
     libmix_imagedecoder \
     libmix_imagedecoder_genx \
+    libmix_imageencoder \
     libva_videodecoder \
-    libva_videoencoder \
-    libjpeg_hw
+    libva_videoencoder
 
 # libva
 PRODUCT_PACKAGES += \
@@ -255,7 +255,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
         $(DEVICE_CONF_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
         $(DEVICE_CONF_PATH)/camera_profiles.xml:system/etc/camera_profiles.xml \
-        $(DEVICE_CONF_PATH)/camera3_profiles.xml:system/etc/camera3_profiles.xml
 
 # audio policy file
 PRODUCT_COPY_FILES += \

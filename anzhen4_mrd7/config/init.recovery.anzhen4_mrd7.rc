@@ -23,3 +23,12 @@ on property:sys.usb.config=adb
 service watchdogd /sbin/watchdogd
     user root
     oneshot
+
+service wdogcounter /system/bin/sh /init.watchdog.sh
+    user root
+    oneshot
+    disabled
+
+# Reset the watchdog counter once boot is completed
+on property:init.svc.recovery=running
+    start wdogcounter
