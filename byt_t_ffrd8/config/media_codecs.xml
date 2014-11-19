@@ -95,7 +95,7 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.Intel.vorbis.decoder" type="audio/vorbis" />
         <MediaCodec name="OMX.google.vorbis.decoder" type="audio/vorbis" />
         <MediaCodec name="OMX.Intel.alac.decoder" type="audio/alac" />
-	<MediaCodec name="MDPWMADecoder" type="audio/x-ms-wma" />
+        <MediaCodec name="OMX.Intel.wma.decoder" type="audio/x-ms-wma" />
 
         <MediaCodec name="OMX.Intel.sw_vd.h265" type="video/hevc" />
         <MediaCodec name="OMX.Intel.hw_vd.h264" type="video/avc" >
