@@ -78,11 +78,11 @@ endif
 # display YUYV format for camera preview when using HAL3
 TARGET_CAMERA_PIXEL_FORMAT := HAL_PIXEL_FORMAT_YCbCr_422_I
 
-BOARD_SEPOLICY_DIRS :=\
+BOARD_SEPOLICY_DIRS +=\
         device/intel/baytrail/sepolicy
 BOARD_SEPOLICY_REPLACE := \
         domain.te
-BOARD_SEPOLICY_UNION :=\
+BOARD_SEPOLICY_UNION +=\
         adbd.te \
         apk_logfs.te \
         bcu_cpufreqrel.te \
