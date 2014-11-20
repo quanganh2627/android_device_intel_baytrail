@@ -2,3 +2,7 @@
 allow shell logcat_exec:file { getattr execute read open execute_no_trans };
 allow shell unlabeled:dir { read getattr open};
 allow shell unlabeled:file getattr;
+
+# to allow adb shell screencap
+allow shell graphics_device:dir search;
+allow shell surfaceflinger_tmpfs:file { read write };
