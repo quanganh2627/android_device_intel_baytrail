@@ -10,11 +10,23 @@
 /dev/block/sda10        /factory        ext4    ro                                         wait
 /dev/block/sda9         /data           ext4    noatime,noauto_da_alloc,nosuid,nodev,errors=panic          wait,check,encryptable=/dev/block/sda6
 
+/dev/block/sdb7         /system         ext4    ro                                         wait
+#/dev/block/adb6        /install        ext4    ro                                         wait
+/dev/block/sdb8         /cache          ext4    noatime,nosuid,nodev,errors=panic          wait,check
+/dev/block/sdb10        /factory        ext4    ro                                         wait
+/dev/block/sdb9         /data           ext4    noatime,noauto_da_alloc,nosuid,nodev,errors=panic          wait,check,encryptable=/dev/block/sdb6
+
 /dev/block/mmcblk0p7    /system         ext4    ro                                         wait
 #/dev/block/mmcblk0p6         /install        ext4    ro                                         wait
 /dev/block/mmcblk0p8    /cache          ext4    noatime,nosuid,nodev,errors=panic          wait,check
 /dev/block/mmcblk0p10   /factory        ext4    ro                                         wait
 /dev/block/mmcblk0p9    /data           ext4    noatime,noauto_da_alloc,nosuid,nodev,errors=panic          wait,check,encryptable=/dev/block/mmcblk0p6
+
+/dev/block/mmcblk1p7    /system         ext4    ro                                         wait
+#/dev/block/mmcblk1p6   /install        ext4    ro                                         wait
+/dev/block/mmcblk1p8    /cache          ext4    noatime,nosuid,nodev,errors=panic          wait,check
+/dev/block/mmcblk1p10   /factory        ext4    ro                                         wait
+/dev/block/mmcblk1p9    /data           ext4    noatime,noauto_da_alloc,nosuid,nodev,errors=panic          wait,check,encryptable=/dev/block/mmcblk1p6
 
 */block/mmcblk1		auto		vfat    defaults                                   voldmanaged=sdcard1:auto
 */block/sd             auto             vfat    defaults                                   voldmanaged=usbcard1:auto
