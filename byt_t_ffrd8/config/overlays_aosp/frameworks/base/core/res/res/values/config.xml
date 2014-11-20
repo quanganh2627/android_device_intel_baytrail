@@ -254,4 +254,8 @@
     <!--  Whether UI for multi user should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
 
+    <!-- MMS user agent string -->
+    <string name="config_mms_user_agent" translatable="false">Baytrail</string>
+    <!-- MMS user agent prolfile url -->
+    <string name="config_mms_user_agent_profile_url" translatable="false">http://software.intel.com/sites/landingpage/android/baytrail.xml</string>
 </resources>
