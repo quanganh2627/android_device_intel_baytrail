@@ -31,7 +31,8 @@ ifeq ($(TARGET_BIOS_TYPE),"uefi")
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/watchdog/init.watchdog_uefi.sh:root/init.watchdog.sh
 PRODUCT_PACKAGES += \
-    uefivar
+    uefivar \
+    uefivar_nolog
 else
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/watchdog/init.watchdog.sh:root/init.watchdog.sh
