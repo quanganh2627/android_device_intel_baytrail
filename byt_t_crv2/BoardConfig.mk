@@ -90,7 +90,6 @@ else ifeq ($(TARGET_BUILD_VARIANT),userdebug)
 DEBUG_KERNEL_CMDLINE := $(DEBUG_KERNEL_CMDLINE) loglevel=4
 else
 DEBUG_KERNEL_CMDLINE := loglevel=0
-cmdline_extra += androidboot.selinux=permissive
 endif
 BOARD_KERNEL_CMDLINE := $(DEBUG_KERNEL_CMDLINE) androidboot.bootmedia=$(BOARD_BOOTMEDIA) \
                         androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) vmalloc=172M \
