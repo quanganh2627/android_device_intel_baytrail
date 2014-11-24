@@ -11,6 +11,8 @@ PRODUCT_COPY_FILES += \
     $(PLATFORM_CONF_PATH)/init.byt.gengfx.rc:root/init.platform.gengfx.rc \
     $(PLATFORM_CONF_PATH)/props.baytrail.rc:root/props.platform.rc \
     $(PLATFORM_CONF_PATH)/atmel_mxt_ts.idc:system/usr/idc/atmel_mxt_ts.idc \
+    $(PLATFORM_CONF_PATH)/goodix_ts.idc:system/usr/idc/goodix_ts.idc \
+    $(PLATFORM_CONF_PATH)/ft5x0x_ts.idc:system/usr/idc/ft5x0x_ts.idc \
     $(PLATFORM_CONF_PATH)/synaptics_dsx.idc:system/usr/idc/synaptics_dsx.idc
 
 ifeq ($(TARGET_BUILD_VARIANT),user)
@@ -40,9 +42,11 @@ endif
 # Firmware versioning
 ifeq ($(TARGET_BIOS_TYPE),"uefi")
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/firmware/smbios_firmware_props.rc:root/init.firmware.rc
+    $(COMMON_PATH)/firmware/smbios_firmware_props.rc:root/init.firmware.rc \
+    $(PLATFORM_CONF_PATH)/intel_prop.cfg:root/intel_prop.cfg
 PRODUCT_PACKAGES += \
-    intel_fw_props
+    intel_fw_props \
+    intel_prop
 else
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/firmware/pidv_firmware_props.rc:root/init.firmware.rc
@@ -157,6 +161,10 @@ PRODUCT_PACKAGES += \
     libdrm_intel \
     ufo \
     ufo_test
+
+# camera HAL
+PRODUCT_PACKAGES += \
+    camera.$(TARGET_BOARD_PLATFORM)
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \

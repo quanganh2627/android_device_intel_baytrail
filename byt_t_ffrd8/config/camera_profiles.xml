@@ -46,8 +46,10 @@
         <minEV value="-6"/>
         <stepEV value="0.33333333"/> <!-- if not support, please set it to 0 -->
         <defaultEV value="0"/> <!-- if not support, please set it to 0 -->
+        <exposureLag value="2"/>
         <defaultIso value="iso-auto"/> <!-- one value of the supportedIso. if not support, please set it to "" -->
         <supportedIso value="iso-auto,iso-100,iso-200,iso-400,iso-800"/> <!-- if not support, please set it to "" -->
+        <gainLag value="2"/>
         <defaultAeMetering value="auto"/> <!-- one value of the supportedAeMetering. if not support, please set it to "" -->
         <supportedAeMetering value="auto,center,spot"/> <!-- if not support, please set it to "" -->
         <supportedAeLock value="false"/>
@@ -87,6 +89,9 @@
         <supportedHighSpeedResolutionFps value="1280x720@60,1920x1080@60"/>
         <maxHighSpeedDvsResolution value="1280x720"/>
         <previewFormat value="V4L2_PIX_FMT_YUYV"/> <!-- define the driver preview output format, V4L2_PIX_FMT_YVU420 or V4L2_PIX_FMT_NV12 -->
+        <verticalFOV value="320x240@42.5,640x480@42.5,1024x768@42.5,1280x720@42.5,1920x1080@42.5,2048x1536@42.5,2560x1920@42.5,3264x1836@42.5,3264x2448@42.5"/>
+        <horizontalFOV value="320x240@59.4,640x480@59.4,1024x768@59.4,1280x720@59.4,1920x1080@59.4,2048x1536@59.4,2560x1920@59.4,3264x1836@59.4,3264x2448@59.4"/>
+        <statisticsInitialSkip value="1"/>
     </Profiles>
 
     <Profiles cameraId="1">
@@ -171,6 +176,7 @@
         <supportsOfflineBurst value="true"/> <!-- true or false -->
         <supportsOfflineBracket value="true"/> <!-- true or false -->
         <boardName value="baylake"/>
+        <ispVamemType value="1"/>
     </Common>
 </CameraSettings>
 

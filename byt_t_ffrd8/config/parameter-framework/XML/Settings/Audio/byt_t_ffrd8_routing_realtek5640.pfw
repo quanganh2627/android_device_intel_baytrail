@@ -27,7 +27,9 @@ supDomain: Routing.Mute
 	domain: HWCodec.Capture
 		conf: Unmute
 			ANY
-				OpenedCaptureRoutes Includes HwCodecMedia
+				ALL
+					OpenedCaptureRoutes Includes HwCodecMedia
+					MicMute Is Off
 				OpenedCaptureRoutes Includes HwCodecCSV
 
 			/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/STEREO/VOLUME/0/MUTED = 0
@@ -245,7 +247,9 @@ supDomain: Routing.Configure
 		domain: AllMics
 			conf: Enable
 				ANY
-					OpenedCaptureRoutes Includes HwCodecMedia
+					ALL
+						OpenedCaptureRoutes Includes HwCodecMedia
+						MicMute Is Off
 					OpenedCaptureRoutes Includes HwCodecCSV
 
 				/Audio/REALTEK/SOUND_CARD/INPUT/DIGITAL/STEREO/ADC_CAPTURE_SWITCH = 1 1

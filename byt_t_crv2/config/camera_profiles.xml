@@ -46,8 +46,10 @@
         <minEV value="-6"/>
         <stepEV value="0.33333333"/> <!-- if not support, please set it to 0 -->
         <defaultEV value="0"/> <!-- if not support, please set it to 0 -->
+        <exposureLag value="2"/>
         <defaultIso value="iso-auto"/> <!-- one value of the supportedIso. if not support, please set it to "" -->
         <supportedIso value="iso-auto,iso-100,iso-200,iso-400,iso-800"/> <!-- if not support, please set it to "" -->
+        <gainLag value="2"/>
         <defaultAeMetering value="auto"/> <!-- one value of the supportedAeMetering. if not support, please set it to "" -->
         <supportedAeMetering value="auto,center,spot"/> <!-- if not support, please set it to "" -->
         <supportedAeLock value="false"/>
@@ -77,8 +79,11 @@
         <defaultPreviewUpdateMode value="standard"/>
         <hasFlash value="false"/>
         <supportedRecordingFramerates value="30,15,10"/>
+        <verticalFOV value="320x240@50.0,640x480@50.0,1280x720@50.0,1280x960@50.0,1600x1200@50.0"/>
+        <horizontalFOV value="320x240@63.7,640x480@63.7,1280x720@63.7,1280x960@63.7,1600x1200@63.7"/>
         <synchronizeExposure value="true"/>
         <previewFormat value="V4L2_PIX_FMT_YUYV"/> <!-- define the driver preview output format, V4L2_PIX_FMT_YVU420 or V4L2_PIX_FMT_NV12 -->
+        <statisticsInitialSkip value="1"/>
     </Profiles>
 
     <Profiles cameraId="1">
@@ -112,8 +117,10 @@
         <minEV value="-6"/>
         <stepEV value="0.33333333"/>
         <defaultEV value="0"/>
+        <exposureLag value="2"/>
         <defaultIso value="iso-auto"/>
         <supportedIso value="iso-auto,iso-100,iso-200,iso-400,iso-800"/>
+        <gainLag value="2"/>
         <defaultAeMetering value="auto"/>
         <supportedAeMetering value="auto,center,spot"/>
         <supportedAeLock value="false"/>
@@ -157,10 +164,11 @@
         <numRecordingBuffers value="9"/>
         <shutterLagCompensationMs value="40"/>
         <mPanoramaMaxSnapshotCount value="10"/>
-	<supportPreviewLimitation value="false"/>
+        <supportPreviewLimitation value="false"/>
         <supportsOfflineBurst value="true"/> <!-- true or false -->
         <supportsOfflineBracket value="true"/> <!-- true or false -->
         <boardName value="baylake"/>
+        <ispVamemType value="1"/>
     </Common>
 </CameraSettings>
 

@@ -12,14 +12,9 @@ LEGACY_PUBLISH := false
 
 ifeq ($(BOARD_USE_64BIT_KERNEL),true)
 PRODUCT_PACKAGES += \
-    ifwi_uefi_byt_crv2_64_dediprog \
-    ifwi_uefi_byt_crv2_64_stage2 \
-    ifwi_uefi_byt_crv2_64_capsule
-else
-PRODUCT_PACKAGES += \
-    ifwi_uefi_byt_crv2_dediprog \
-    ifwi_uefi_byt_crv2_stage2 \
-    ifwi_uefi_byt_crv2_capsule
+    ifwi_uefi_byt_crv2_mrd8_dediprog \
+    ifwi_uefi_byt_crv2_mrd8_stage2 \
+    ifwi_uefi_byt_crv2_mrd8_capsule
 endif
 
 # Copy common product apns-conf
