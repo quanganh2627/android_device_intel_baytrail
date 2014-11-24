@@ -125,6 +125,7 @@ BOARD_SEPOLICY_UNION +=\
         surfaceflinger.te \
         system_app.te \
         system_server.te \
+        thermal.te \
         ueventd.te \
         untrusted_app.te \
         vdc.te \
