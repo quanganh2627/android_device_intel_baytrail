@@ -28,3 +28,8 @@ type nvm_ctl_socket, file_type;
 
 # logcat for all the scripts
 type logcat_exec, exec_type, file_type;
+
+#rootfs missing labels
+type factory, file_type;
+type config, file_type;
+type logs, file_type;

@@ -1,6 +1,5 @@
 # Additional rild rules
 allow rild socket_device:sock_file write;
-allow rild unlabeled:dir { search write add_name };
-# below line breaks neverallow in domain.te on line 169
-allow rild unlabeled:file create_file_perms;
+allow rild config:dir { search write add_name };
+allow rild config:file create_file_perms;
 unix_socket_connect(rild, mmgr, mmgr)

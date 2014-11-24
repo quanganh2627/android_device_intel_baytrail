@@ -7,5 +7,7 @@ allow init fuse:file create_file_perms;
 domain_trans(init, rootfs, intel_fw_props)
 allow init shell_data_file:dir { write add_name };
 allow init shell_data_file:file create;
-# below line breaks neverallow in domain.te on line 293
-allow init system_file:file setattr;
+#allow init system_file:file setattr;
+allow init config:filesystem { relabelfrom relabelto mount };
+allow init factory:filesystem { relabelfrom relabelto mount };
+allow init logs:filesystem { relabelfrom relabelto mount };

@@ -3,5 +3,4 @@ allow zygote property_socket:sock_file write;
 allow zygote system_prop:property_service set;
 allow zygote self:process execmem;
 allow zygote gpu_device:chr_file rw_file_perms;
-# below line breaks neverallow in domain.te on line 293
-allow zygote system_file:file write;
+#allow zygote system_file:file write;

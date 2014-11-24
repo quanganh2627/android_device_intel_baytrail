@@ -167,7 +167,7 @@ allow domain service_manager_type:service_manager find;
 ###
 
 # Do not allow any confined domain to create new unlabeled files.
-neverallow { domain -unconfineddomain -recovery -rild -radio -system_app -untrusted_app -mediaserver -mmgr -apk_logfs -nvm_server -wlan_prov -healthd -vold } unlabeled:dir_file_class_set create;
+neverallow { domain -unconfineddomain -recovery } unlabeled:dir_file_class_set create;
 
 # Limit ability to ptrace or read sensitive /proc/pid files of processes
 # with other UIDs to these whitelisted domains.
@@ -246,7 +246,7 @@ neverallow domain init:process ptrace;
 
 # Init can't receive binder calls. If this neverallow rule is being
 # triggered, it's probably due to a service with no SELinux domain.
-neverallow { domain -surfaceflinger -dumpstate } init:binder call;
+neverallow { domain -surfaceflinger } init:binder call;
 
 # Don't allow raw read/write/open access to block_device
 # Rather force a relabel to a more specific type
@@ -289,7 +289,7 @@ neverallow { domain -init } property_data_file:dir { create setattr relabelfrom 
 neverallow { domain -init } property_data_file:file { create setattr relabelfrom write append unlink link rename };
 
 # Only recovery should be doing writes to /system
-neverallow { domain -recovery -healthd -zygote -init } { system_file exec_type }:dir_file_class_set
+neverallow { domain -recovery } { system_file exec_type }:dir_file_class_set
     { create write setattr relabelfrom relabelto append unlink link rename };
 
 # Nothing should be writing to files in the rootfs.
@@ -310,6 +310,6 @@ neverallow { domain -recovery } contextmount_type:dir_file_class_set
 # system_app_service rather than the generic type.
 # New service_types are defined in service.te and new mappings
 # from service name to service_type are defined in service_contexts.
-neverallow { domain -system_app -system_server -surfaceflinger } default_android_service:service_manager add;
+neverallow { domain } default_android_service:service_manager add;
 
 neverallow { domain -init -recovery -system_server } frp_block_device:blk_file rw_file_perms;

@@ -5,6 +5,5 @@ allow vold kernel:system module_request;
 allow vold system_data_file:dir setattr;
 allow vold ecryptfs:filesystem mount;
 allow vold ecryptfs:filesystem unmount;
-# below line breaks neverallow in domain.te on line 170
-allow vold unlabeled:file create_file_perms;
-allow vold unlabeled:dir { add_name  write };
+allow vold factory:file create_file_perms;
+allow vold factory:dir rw_dir_perms;

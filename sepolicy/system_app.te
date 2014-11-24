@@ -1,11 +1,13 @@
 # Additional system_app rules
 allow system_app self:netlink_kobject_uevent_socket { create setopt bind read };
-allow system_app unlabeled:dir { rw_dir_perms setattr };
-# below line breaks neverallow in domain.te on line 169
-allow system_app unlabeled:file create_file_perms;
+allow system_app logs:dir { rw_dir_perms setattr };
+allow system_app logs:file create_file_perms;
+allow system_app logs:filesystem getattr;
 allow system_app ctl_default_prop:property_service set;
-# below line breaks neverallow in domain.te on line 310
-allow system_app default_android_service:service_manager add;
+allow system_app display_service:service_manager add;
+allow system_app cws_service:service_manager add;
+allow system_app ISEP_service:service_manager add;
+allow system_app mediaserver_service:service_manager add;
 allow system_app sysfs_thermal_management:dir search;
 allow system_app sysfs_thermal_management:file { read write open };
 allow system_app thermal_socket:sock_file write;

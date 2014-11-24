@@ -1,4 +1,10 @@
 # Additional file_contexts
+
+#rootfs
+/logs(/.*)?                     u:object_r:logs:s0
+/config(/.*)?                   u:object_r:config:s0
+/factory(/.*)?                  u:object_r:factory:s0
+
 # label graphics device with a new type
 /dev/dri/card0                  u:object_r:gpu_device:s0
 /dev/sw_sync                    u:object_r:graphics_device:s0

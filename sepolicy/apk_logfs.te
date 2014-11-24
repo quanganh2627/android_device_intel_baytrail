@@ -4,5 +4,6 @@ domain_trans(init, logcat_exec, apk_logfs)
 
 allow apk_logfs self:capability dac_override;
 allow apk_logfs self:capability2 syslog;
-allow apk_logfs unlabeled:file create_file_perms;
-allow apk_logfs unlabeled:dir { search write remove_name add_name };
+
+allow apk_logfs logs:file create_file_perms;
+allow apk_logfs logs:dir { search write remove_name add_name };
