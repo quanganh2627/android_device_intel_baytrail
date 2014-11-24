@@ -15,5 +15,5 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="isv_settings_title">Intel<sup><small>®</small></sup> Smart vidéo</string>
+    <string name="isv_settings_title">"Vidéo intelligente Intel"</string>
 </resources>
