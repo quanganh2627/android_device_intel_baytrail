@@ -1,11 +1,13 @@
 # Additional surfaceflinger rules
-# below line breaks neverallow in domain.te on line 248
-allow surfaceflinger init:binder call;
+#allow surfaceflinger init:binder call;
 allow surfaceflinger coreu:binder call;
 allow surfaceflinger coreu:fd use;
 allow surfaceflinger sysfs_drm_resource:dir search;
 allow surfaceflinger sysfs_drm_resource:file { read getattr open };
-allow surfaceflinger unlabeled:dir search;
-# below line breaks neverallow in domain.te on line 313
-allow surfaceflinger default_android_service:service_manager add;
+allow surfaceflinger config:dir search;
+allow surfaceflinger logs:dir search;
+allow surfaceflinger display_service:service_manager add;
+allow surfaceflinger hwc_service:service_manager add;
+allow surfaceflinger ISEP_service:service_manager add;
 allow surfaceflinger system_server_service:service_manager add;
+allow system_app surfaceflinger_tmpfs:file rw_file_perms;

@@ -7,9 +7,12 @@ allow mmgr init:unix_stream_socket connectto;
 allow mmgr property_socket:sock_file write;
 allow mmgr sysfs_wake_lock:file { read write open };
 allow mmgr system_prop:property_service set;
-allow mmgr unlabeled:dir create_dir_perms;
-# below line breaks neverallow in domain.te on line 170
-allow mmgr unlabeled:file create_file_perms;
+allow mmgr config:dir create_dir_perms;
+allow mmgr config:file create_file_perms;
+allow mmgr logs:dir create_dir_perms;
+allow mmgr logs:file create_file_perms;
+allow mmgr factory:dir create_dir_perms;
+allow mmgr factory:file create_file_perms;
 allow mmgr usb_device:chr_file { read write getattr open ioctl };
 allow mmgr usb_device:dir { read open search };
 allow mmgr cache_file:dir create_dir_perms;
