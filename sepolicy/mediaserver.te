@@ -7,8 +7,8 @@ allow mediaserver sysfs_wake_lock:file { read write open };
 allow mediaserver default_prop:property_service set;
 allow mediaserver asec_apk_file:dir { write add_name };
 allow mediaserver asec_apk_file:file create_file_perms;
-allow mediaserver logs:dir { search write add_name };
-allow mediaserver logs:file create_file_perms;
+allow mediaserver log_file:dir { search write add_name };
+allow mediaserver log_file:file create_file_perms;
 unix_socket_connect(mediaserver, mmgr, mmgr)
 allow mediaserver tty_device:chr_file { read write ioctl open getattr };
 allow mediaserver intel_sst_ctrl_device:chr_file { read write ioctl open };

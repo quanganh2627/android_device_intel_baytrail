@@ -1,9 +1,9 @@
 # Additional file_contexts
 
 #rootfs
-/logs(/.*)?                     u:object_r:logs:s0
-/config(/.*)?                   u:object_r:config:s0
-/factory(/.*)?                  u:object_r:factory:s0
+/logs(/.*)?                     u:object_r:log_file:s0
+/config(/.*)?                   u:object_r:config_file:s0
+/factory(/.*)?                  u:object_r:factory_file:s0
 
 # label graphics device with a new type
 /dev/dri/card0                  u:object_r:gpu_device:s0
@@ -62,6 +62,8 @@
 /sys/devices/platform/coretemp.0/(.*)? u:object_r:sysfs_thermal_management:s0
 /sys/devices/virtual/thermal(.*)?      u:object_r:sysfs_thermal_management:s0
 /dev/socket/logconfig                  u:object_r:thermal_socket:s0
+/sbin/thermald                         u:object_r:thermal_exec:s0
+
 
 # CPU
 /dev/msr[0-3]                   u:object_r:msr_device:s0
@@ -84,3 +86,7 @@
 
 # logcat for all the init scripts
 /system/bin/logcat              u:object_r:logcat_exec:s0
+
+#rfkill
+/sys/devices/platform/80860F0A:00/BCM2E1A:00/rfkill(/.*)?          u:object_r:sysfs_rfkill:s0
+/sys/devices/INT33BB:00/mmc_host/mmc1/mmc1:0001/mmc1:0001:2(/.*)?  u:object_r:sysfs_rfkill:s0

@@ -22,6 +22,7 @@ type sysfs_drm_resource, fs_type, sysfs_type;
 # thermal
 type sysfs_thermal_management, fs_type, sysfs_type;
 type thermal_socket, file_type;
+type thermal_data_file, file_type, data_file_type;
 
 # nvm
 type nvm_ctl_socket, file_type;
@@ -30,6 +31,10 @@ type nvm_ctl_socket, file_type;
 type logcat_exec, exec_type, file_type;
 
 #rootfs missing labels
-type factory, file_type;
-type config, file_type;
-type logs, file_type;
+type factory_file, file_type;
+type config_file, file_type;
+type log_file, file_type;
+
+#rfkill
+type sysfs_rfkill, fs_type, sysfs_type;
+
