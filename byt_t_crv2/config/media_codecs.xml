@@ -102,12 +102,11 @@ Only the three quirks included above are recognized at this point:
             <Quirk name="requires-hold-extra-buffers" />
             <Feature name="adaptive-playback" />
         </MediaCodec>
+
         <MediaCodec name="OMX.Intel.hw_vd.vc1" type="video/x-ms-wmv" >
             <Quirk name="requires-hold-extra-buffers" />
         </MediaCodec>
-        <MediaCodec name="OMX.Intel.hw_vd.vc1" type="video/wmv" >
-            <Quirk name="requires-hold-extra-buffers" />
-        </MediaCodec>
+
         <MediaCodec name="OMX.Intel.VideoDecoder.VP8" type="video/x-vnd.on2.vp8" >
             <Quirk name="requires-hold-extra-buffers" />
             <Feature name="adaptive-playback" />
