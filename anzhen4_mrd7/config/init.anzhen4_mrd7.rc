@@ -52,9 +52,6 @@ on init
     symlink /dev/block/platform/80860F14:00/by-name /dev/block/by-name
 
 on boot
-    #  Mount debugfs for systrace settings
-    mount debugfs none /sys/kernel/debug mode=0755
-
     # Disable ril
     setprop ro.radio.noril yes
 
