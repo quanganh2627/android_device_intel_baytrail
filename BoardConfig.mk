@@ -105,7 +105,6 @@ BOARD_SEPOLICY_UNION +=\
         healthd.te \
         init_shell.te \
         init.te \
-        intel_fw_props.te \
         isolated_app.te \
         kernel.te \
         keystore.te \
