@@ -98,7 +98,7 @@ on post-fs-data
 
 # adding Telephony
 service mmgr /system/bin/mmgr
-    class core
+    class main
     socket mmgr stream 660 system radio
     user system
     group radio cache inet misc system usb
