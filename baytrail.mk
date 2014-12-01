@@ -9,7 +9,6 @@ include device/intel/common/common.mk
 PRODUCT_COPY_FILES += \
     $(PLATFORM_CONF_PATH)/init.byt.usb.rc:root/init.platform.usb.rc \
     $(PLATFORM_CONF_PATH)/init.byt.gengfx.rc:root/init.platform.gengfx.rc \
-    $(PLATFORM_CONF_PATH)/props.baytrail.rc:root/props.platform.rc \
     $(PLATFORM_CONF_PATH)/atmel_mxt_ts.idc:system/usr/idc/atmel_mxt_ts.idc \
     $(PLATFORM_CONF_PATH)/goodix_ts.idc:system/usr/idc/goodix_ts.idc \
     $(PLATFORM_CONF_PATH)/ft5x0x_ts.idc:system/usr/idc/ft5x0x_ts.idc \
