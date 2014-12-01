@@ -1,9 +1,7 @@
 # Additional untrusted_app rules
 allow untrusted_app property_socket:file write;
-allow untrusted_app unlabeled:dir { rw_dir_perms setattr };
-# below line breaks neverallow in domain.te on line 169
-allow untrusted_app unlabeled:file create_file_perms;
 allow untrusted_app proc_sysrq:file getattr;
-allow untrusted_app unlabeled:filesystem getattr;
+allow untrusted_app logs:filesystem getattr;
 allow untrusted_app graphics_device:dir search;
 allow untrusted_app surfaceflinger_tmpfs:file {read write};
+allow untrusted_app logcat_exec:file execute;

@@ -22,7 +22,21 @@ include $(PLATFORM_PATH)/BoardConfig.mk
 BOARD_IAFW_COMPONENT := brd_baylake
 
 #Modem
-BOARD_HAVE_MODEM := false
+ifeq ($(BOARD_HAVE_MODEM), true)
+BOARD_MODEM_LIST := 7160_flashless
+BOARD_HAVE_ATPROXY := true
+ADDITIONAL_BUILD_PROPERTIES += rild.libpath=/system/lib/librapid-ril-core.so
+
+# enable modem throttling through itux
+ITUX_MODEM_ZONE := true
+
+# Adding DSDS enabling/disabling property
+ADDITIONAL_DEFAULT_PROPERTIES += persist.dual_sim=none
+
+ifeq ($(TARGET_RIL_DISABLE_STATUS_POLLING),true)
+ADDITIONAL_BUILD_PROPERTIES += ro.ril.status.polling.enable=0
+endif
+endif
 
 # Connectivity
 BOARD_HAVE_WIFI := true
@@ -90,7 +104,6 @@ else ifeq ($(TARGET_BUILD_VARIANT),userdebug)
 DEBUG_KERNEL_CMDLINE := $(DEBUG_KERNEL_CMDLINE) loglevel=4
 else
 DEBUG_KERNEL_CMDLINE := loglevel=0
-cmdline_extra += androidboot.selinux=permissive
 endif
 BOARD_KERNEL_CMDLINE := $(DEBUG_KERNEL_CMDLINE) androidboot.bootmedia=$(BOARD_BOOTMEDIA) \
                         androidboot.hardware=$(TARGET_DEVICE) $(cmdline_extra) vmalloc=172M \

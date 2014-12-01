@@ -4,6 +4,7 @@ on init
     # can be associated with the correct disk. Create a shortcut to
     # /dev/block/by-name so that we can use the same fstabs everywhere.
     symlink /dev/block/platform/80860F14:00/by-name /dev/block/by-name
+    start thermald
 
     mkdir /factory 0775 system system
     mount ext4 /dev/block/by-name/factory /factory nosuid nodev noatime barrier=1,data=ordered
@@ -31,6 +32,10 @@ service wdogcounter /system/bin/sh /init.watchdog.sh
     user root
     oneshot
     disabled
+
+service thermald /sbin/thermald ROS
+    class core
+    user root
 
 # Reset the watchdog counter once boot is completed
 on property:init.svc.recovery=running

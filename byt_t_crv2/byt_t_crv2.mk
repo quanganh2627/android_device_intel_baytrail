@@ -43,6 +43,12 @@ PRODUCT_PACKAGE_OVERLAYS := $(FEATURE_PLUS_OVERLAY)
 ifneq ($(BUILD_VANILLA_AOSP), true)
 PRODUCT_PACKAGE_OVERLAYS += $(DEVICE_CONF_PATH)/overlays_extensions
 endif
+
+# product specific overlays for telephony AOSP resources
+ifeq ($(BOARD_HAVE_MODEM), true)
+PRODUCT_PACKAGE_OVERLAYS += $(DEVICE_CONF_PATH)/m2_overlays_aosp
+endif
+
 # product specific overlays for Vanilla AOSP resources
 PRODUCT_PACKAGE_OVERLAYS += $(DEVICE_CONF_PATH)/overlays_aosp
 

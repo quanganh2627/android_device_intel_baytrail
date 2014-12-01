@@ -85,7 +85,6 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.google.amrwb.decoder" type="audio/amr-wb" />
         <MediaCodec name="OMX.Intel.aac.decoder" type="audio/mp4a-latm" />
         <MediaCodec name="OMX.google.aac.decoder" type="audio/mp4a-latm" />
-        <MediaCodec name="OMX.google.aac.decoder" type="audio/mp4a-aacextended" />
         <MediaCodec name="OMX.google.raw.decoder" type="audio/raw" />
         <MediaCodec name="OMX.google.g711.alaw.decoder" type="audio/g711-alaw" >
             <Quirk name="codec-requires-samplerate" />
@@ -96,7 +95,7 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.Intel.vorbis.decoder" type="audio/vorbis" />
         <MediaCodec name="OMX.google.vorbis.decoder" type="audio/vorbis" />
         <MediaCodec name="OMX.Intel.alac.decoder" type="audio/alac" />
-	<MediaCodec name="MDPWMADecoder" type="audio/x-ms-wma" />
+        <MediaCodec name="OMX.Intel.wma.decoder" type="audio/x-ms-wma" />
 
         <MediaCodec name="OMX.Intel.sw_vd.h265" type="video/hevc" />
         <MediaCodec name="OMX.Intel.hw_vd.h264" type="video/avc" >
