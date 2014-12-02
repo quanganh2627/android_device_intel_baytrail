@@ -88,6 +88,9 @@ BOARD_KERNEL_CMDLINE := $(DEBUG_KERNEL_CMDLINE) androidboot.bootmedia=$(BOARD_BO
                         debug_locks=0
 endif
 
+#Enable CPU Freq boosting during boot
+BOARD_KERNEL_CMDLINE += bootboost=1
+
 # Limit slub order on CRv2 wiht 1G RAM
 BOARD_KERNEL_CMDLINE += slub_max_order=2
 
