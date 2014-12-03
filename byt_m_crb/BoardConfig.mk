@@ -235,7 +235,7 @@ TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 # Partition table configuration file
 BOARD_GPT_INI ?= $(TARGET_DEVICE_DIR)/gpt.ini
 BOARD_FLASHFILES += $(BOARD_GPT_INI):gpt.ini
-
+BOARD_FLASH_JSON ?= $(TARGET_DEVICE_DIR)/flash.json
 #
 # FASTBOOT
 #

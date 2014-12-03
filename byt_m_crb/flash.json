@@ -1,0 +1,127 @@
+{
+    "flash": {
+        "commands": [
+            {
+                "args": "oem unlock",
+                "description": "Unlock device",
+                "mandatory": true,
+                "restrict": [
+                    "update"
+                ],
+                "retry": 2,
+                "timeout": 60000,
+                "tool": "fastboot"
+            },
+            {
+                "args": "flash gpt ${gpt_ini}",
+                "description": "Flash GPT",
+                "mandatory": true,
+                "restrict": [
+                    "update"
+                ],
+                "retry": 2,
+                "timeout": 300000,
+                "tool": "fastboot"
+            },
+            {
+                "args": "flash bootloader ${bootloader}",
+                "description": "Flashing bootloader",
+                "mandatory": true,
+                "restrict": [
+                    "update"
+                ],
+                "retry": 2,
+                "timeout": 60000,
+                "tool": "fastboot"
+            },
+            {
+                "args": "reboot-bootloader",
+                "description": "Rebooting bootloader",
+                "mandatory": true,
+                "restrict": [
+                    "update"
+                ],
+                "retry": 2,
+                "timeout": 60000,
+                "tool": "fastboot"
+            },
+            {
+                "description": "Wait for 10 seconds",
+                "mandatory": true,
+                "restrict": [
+                    "update"
+                ],
+                "duration": 10000,
+                "tool": "sleep"
+            },
+            {
+                "description" : "Waiting for device",
+                "restrict": [
+                    "update"
+                ],
+                "state" : "pos",
+                "timeout" : 300000,
+                "tool" : "waitForDevice"
+            },
+            {
+                "args": "-w update ${archive}",
+                "description": "Flashing update",
+                "mandatory": true,
+                "restrict": [
+                    "update"
+                ],
+                "retry": 2,
+                "timeout": 3000000,
+                "tool": "fastboot"
+            },
+            {
+                "description": "Wait for 10 seconds",
+                "mandatory": true,
+                "restrict": [
+                    "update"
+                ],
+                "duration": 10000,
+                "tool": "sleep"
+            },
+            {
+                "description" : "Waiting for device to boot from Update",
+                "restrict": [
+                    "update"
+                ],
+                "state" : "mos",
+                "timeout" : 300000,
+                "tool" : "waitForDevice"
+            }
+        ],
+        "configurations": {
+            "update": {
+                "default": true,
+                "name": "update",
+                "startState": "pos"
+            }
+        },
+        "osplatform": "android",
+        "parameters": {
+             "gpt_ini": {
+                "description": "gpt_ini",
+                "name": "gpt_ini",
+                "type": "file",
+                "value": "gpt.ini"
+             },
+            "bootloader": {
+                "description": "bootloader",
+                "name": "bootloader",
+                "type": "file",
+                "value": "bootloader"
+             },
+             "archive": {
+                "description": "img",
+                "name": "update archive",
+                "type": "file",
+                "value": "img.zip"
+             }
+        },
+        "version": "2.0"
+    }
+}
+
