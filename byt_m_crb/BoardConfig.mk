@@ -19,7 +19,7 @@ UFO_ENABLE_GEN := gen7-3.10
 TARGET_RECOVERY_FSTAB ?= $(TARGET_DEVICE_DIR)/fstab
 
 #- Kernel -----------------------------------------------------------------------------------------#
-BOARD_CONSOLE ?= console=ttyS0,115200n8
+BOARD_CONSOLE ?= console=ttyS0,115200n8 console=logk0
 KERNEL_LOGLEVEL ?= 7
 
 # SPID
