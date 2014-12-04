@@ -53,9 +53,6 @@ on init
     symlink /dev/block/platform/80860F14:00/by-name /dev/block/by-name
 
 on boot
-    #  Mount debugfs for systrace settings
-    mount debugfs none /sys/kernel/debug mode=0755
-
     #  Permissions for Thermal Management
     chown system system /sys/module/intel_mid_osip/parameters/force_shutdown_occured
     chown system system /sys/module/intel_mid_osip/parameters/thermal_shutdown_occured

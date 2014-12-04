@@ -37,7 +37,6 @@ on post-fs-data
 on ramconsole
     setprop ro.debuggable 1
     mount_all /fstab.ramconsole.${ro.hardware}
-    mount debugfs none /sys/kernel/debug
     mount pstore none /sys/fs/pstore
 
     start watchdogd

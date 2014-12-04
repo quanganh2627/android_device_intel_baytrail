@@ -86,7 +86,7 @@ BCUHAL_BYT := true
 #GEN is one graphic and video engine
 # Baytrail uses the GEN for the graphic and video
 BOARD_GRAPHIC_IS_GEN := true
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+
 
 # Camera
 # Set USE_CAMERA_STUB to 'true' for Fake Camera builds,

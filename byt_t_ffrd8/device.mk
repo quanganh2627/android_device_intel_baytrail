@@ -437,9 +437,6 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/init.diag.rc:root/init.diag.rc
 #    $(DEVICE_CONF_PATH)/init.wireless.rc:root/init.wireless.rc \
 
-PRODUCT_COPY_FILES += \
-    $(DEVICE_CONF_PATH)/vold.fstab:system/etc/vold.fstab
-
 # specific management of CSM configuration
 PRODUCT_COPY_FILES += \
     $(DEVICE_CONF_PATH)/CsmConfig.xml:system/vendor/etc/CsmConfig.xml
