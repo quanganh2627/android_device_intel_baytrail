@@ -97,7 +97,7 @@ PRODUCT_PACKAGES_DEBUG += \
 #PRODUCT_PACKAGES_ENG += FPT TXEManuf
 
 # Ota and Ota Downloader
-PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES_DEBUG += \
     Ota \
     OtaDownloader
 
