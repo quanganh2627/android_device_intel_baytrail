@@ -5,6 +5,8 @@ TARGET_ARCH_VARIANT := silvermont
 
 TARGET_USE_PRIVATE_LIBM := true
 
+TARGET_USE_BOOTLOADER := true
+
 ifeq ($(FORCE_FLASHFILE_NO_OTA),true)
   FLASHFILE_NO_OTA := true
 else
@@ -108,7 +110,6 @@ BOARD_SEPOLICY_UNION +=\
         healthd.te \
         init_shell.te \
         init.te \
-        intel_fw_props.te \
         isolated_app.te \
         kernel.te \
         keystore.te \
@@ -128,6 +129,7 @@ BOARD_SEPOLICY_UNION +=\
         surfaceflinger.te \
         system_app.te \
         system_server.te \
+        thermal.te \
         ueventd.te \
         untrusted_app.te \
         vdc.te \

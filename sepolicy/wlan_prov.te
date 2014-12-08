@@ -4,5 +4,5 @@ type wlan_prov_exec, exec_type, file_type;
 init_daemon_domain(wlan_prov)
 
 allow wlan_prov mei_device:chr_file { read write ioctl open };
-allow wlan_prov config:file create_file_perms;
-allow wlan_prov config:dir rw_dir_perms;
+allow wlan_prov config_file:file create_file_perms;
+allow wlan_prov config_file:dir rw_dir_perms;

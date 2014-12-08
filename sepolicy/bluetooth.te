@@ -9,3 +9,6 @@ allow bluetooth sysfs:file write;
 allow bluetooth tmpfs:dir { write add_name };
 allow bluetooth usb_device:dir { read open search };
 allow bluetooth bt_dev:chr_file { read write open ioctl };
+#allow bluetooth unlabeled:dir search;
+allow bluetooth sysfs_rfkill:dir r_dir_perms;
+allow bluetooth sysfs_rfkill:file rw_file_perms;

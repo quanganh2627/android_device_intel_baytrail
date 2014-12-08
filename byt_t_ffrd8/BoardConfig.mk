@@ -125,6 +125,9 @@ BOARD_KERNEL_CMDLINE = $(DEBUG_KERNEL_CMDLINE) androidboot.bootmedia=$(BOARD_BOO
                         debug_locks=0
 endif
 
+#Enable CPU Freq boosting during boot
+BOARD_KERNEL_CMDLINE += bootboost=1
+
 # Graphics
 USE_OPENGL_RENDERER := true
 BOARD_KERNEL_CMDLINE += vga=current i915.modeset=1 drm.vblankoffdelay=1 \

@@ -95,19 +95,18 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.Intel.vorbis.decoder" type="audio/vorbis" />
         <MediaCodec name="OMX.google.vorbis.decoder" type="audio/vorbis" />
         <MediaCodec name="OMX.Intel.alac.decoder" type="audio/alac" />
-	<MediaCodec name="MDPWMADecoder" type="audio/x-ms-wma" />
+	<MediaCodec name="OMX.Intel.wma.decoder" type="audio/x-ms-wma" />
 
         <MediaCodec name="OMX.Intel.sw_vd.h265" type="video/hevc" />
         <MediaCodec name="OMX.Intel.hw_vd.h264" type="video/avc" >
             <Quirk name="requires-hold-extra-buffers" />
             <Feature name="adaptive-playback" />
         </MediaCodec>
+
         <MediaCodec name="OMX.Intel.hw_vd.vc1" type="video/x-ms-wmv" >
             <Quirk name="requires-hold-extra-buffers" />
         </MediaCodec>
-        <MediaCodec name="OMX.Intel.hw_vd.vc1" type="video/wmv" >
-            <Quirk name="requires-hold-extra-buffers" />
-        </MediaCodec>
+
         <MediaCodec name="OMX.Intel.VideoDecoder.VP8" type="video/x-vnd.on2.vp8" >
             <Quirk name="requires-hold-extra-buffers" />
             <Feature name="adaptive-playback" />

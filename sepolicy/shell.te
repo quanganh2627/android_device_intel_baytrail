@@ -1,9 +1,9 @@
 # Additional shell rules
 allow shell logcat_exec:file { getattr execute read open execute_no_trans };
-allow shell logs:dir { read getattr open};
-allow shell logs:file getattr;
-allow shell config:dir getattr;
-allow shell factory:dir getattr;
+allow shell log_file:dir { read getattr open};
+allow shell log_file:file getattr;
+allow shell config_file:dir getattr;
+allow shell factory_file:dir getattr;
 
 # to allow adb shell screencap
 allow shell graphics_device:dir search;
