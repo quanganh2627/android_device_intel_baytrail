@@ -22,7 +22,8 @@
 # mmgr
 /dev/socket/mmgr                u:object_r:mmgr_socket:s0
 /system/bin/mmgr                u:object_r:mmgr_exec:s0
-/sys/devices/pci0000:00/(.*)?/hsic_enable        u:object_r:sysfs_hsic_enable:s0
+/sys/devices/pci0000:00/0000:00:14.0/hsic/hsic0/hsic_enable u:object_r:sysfs_hsic_enable:s0
+/sys/devices/pci0000:00/0000:00:14.0/hsic_enable u:object_r:sysfs_hsic_enable:s0
 /dev/mdm_ctrl(.*)?              u:object_r:tty_device:s0
 /dev/ttyACM(.*)?                u:object_r:tty_device:s0
 
@@ -46,7 +47,8 @@
 /dev/socket/nvm-ctl             u:object_r:nvm_ctl_socket:s0
 
 # ueventd
-/sys/devices/pci(.*)?/L2_autosuspend_enable u:object_r:sysfs_autosuspend_enable:s0
+/sys/devices/pci0000:00/0000:00:14.0/hsic/hsic0/L2_autosuspend_enable u:object_r:sysfs_autosuspend_enable:s0
+/sys/devices/pci0000:00/0000:00:14.0/L2_autosuspend_enable u:object_r:sysfs_autosuspend_enable:s0
 
 # crashlogd
 /system/bin/crashlogd           u:object_r:crashlogd_exec:s0
