@@ -15,3 +15,4 @@ allow system_server crashlogd:binder call;
 allow system_server cws_service:service_manager add;
 allow system_server pstore-clean_data_file:dir search;
 allow bluetooth bt_dev:chr_file { read write open };
+allow system_server default_android_service:service_manager add;
