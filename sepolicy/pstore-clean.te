@@ -1,8 +1,3 @@
-# Rules for vendor/intel/pstore-clean
-type pstore-clean, domain;
-type pstore-clean_exec, exec_type, file_type;
-init_daemon_domain(pstore-clean);
-
 # Create, remove, and mount on a directory in /dev
 allow pstore-clean device:dir { add_name create mounton remove_name rmdir write };
 # (Un)Mount the /dev/pstore mount-point

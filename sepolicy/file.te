@@ -30,11 +30,7 @@ type nvm_ctl_socket, file_type;
 # logcat for all the scripts
 type logcat_exec, exec_type, file_type;
 
-# efivarfs - Used by userfastboot
-type efivarfs, fs_type;
-
 # pstore-clean
-type pstore-clean_data_file, file_type, data_file_type;
 type factory_file, file_type;
 type config_file, file_type;
 type log_file, file_type;

@@ -1,5 +1,4 @@
 # Rules for bootable/userfastboot
-type userfastboot, domain;
 allow userfastboot rootfs:file execute_no_trans;
 
 allow userfastboot block_device:blk_file { write read getattr open ioctl };

@@ -6,8 +6,8 @@ type intel_sst_ctrl_device, dev_type;
 
 type i2c_device, dev_type;
 
-type pstore_dev, dev_type;
-
 type esif_dev, dev_type;
 
 type bt_dev, dev_type;
+
+type thermal_device, dev_type;
