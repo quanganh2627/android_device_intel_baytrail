@@ -307,7 +307,7 @@ PRODUCT_PACKAGES += \
 
 # Test Camera is for Test only
 ifeq ($(TARGET_BUILD_VARIANT),eng)
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     IntelCamera
 endif
 
