@@ -22,3 +22,6 @@ allow coreu msr_device:chr_file rw_file_perms;
 allow coreu system_data_file:dir { write add_name };
 allow coreu dumpstate:unix_stream_socket { read write };
 allow coreu coreu_service:service_manager add;
+allow coreu mediaserver:process signull;
+allow coreu self:netlink_kobject_uevent_socket create_socket_perms;
+allow coreu surfaceflinger:binder { call transfer };

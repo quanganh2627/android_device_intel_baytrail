@@ -3,7 +3,7 @@ type hdcpd, domain;
 type hdcpd_exec, exec_type, file_type;
 init_daemon_domain(hdcpd);
 
-allow hdcpd hdcpd_data_file:dir { read write open add_name remove_name };
+allow hdcpd hdcpd_data_file:dir rw_dir_perms;
 allow hdcpd hdcpd_data_file:sock_file { create unlink };
 allow hdcpd hdcpd_tmpfs:file { lock create open };
 allow hdcpd rootfs:dir mounton;
