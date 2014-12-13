@@ -1,6 +1,6 @@
 # Additional surfaceflinger rules
 #allow surfaceflinger init:binder call;
-allow surfaceflinger coreu:binder call;
+allow surfaceflinger coreu:binder { call transfer };
 allow surfaceflinger coreu:fd use;
 allow surfaceflinger sysfs_drm_resource:dir search;
 allow surfaceflinger sysfs_drm_resource:file { read getattr open };
