@@ -11,3 +11,4 @@ allow apk_logfs system_data_file:file { create_file_perms write open append };
 allow coreu system_data_file:dir { write };
 allow apk_logfs tmpfs:dir { write add_name };
 allow apk_logfs system_data_file:dir { create write add_name};
+

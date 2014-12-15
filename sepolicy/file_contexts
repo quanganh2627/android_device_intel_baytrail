@@ -101,3 +101,4 @@
 #rfkill
 /sys/devices/platform/80860F0A:00/BCM2E1A:00/rfkill(/.*)?          u:object_r:sysfs_rfkill:s0
 /sys/devices/INT33BB:00/mmc_host/mmc1/mmc1:0001/mmc1:0001:2(/.*)?  u:object_r:sysfs_rfkill:s0
+/sys/devices/platform/80860F0A:00/OBDA8723:00/rfkill(/.*)?         u:object_r:sysfs_rfkill:s0

@@ -32,9 +32,6 @@ USE_INTEL_IPP := true
 # WiDi
 INTEL_WIDI_BAYTRAIL := true
 
-# Power_HAL
-POWERHAL_BYT := true
-
 #Energy Management fuel gauge algorithm
 USE_FG_ALGO := true
 

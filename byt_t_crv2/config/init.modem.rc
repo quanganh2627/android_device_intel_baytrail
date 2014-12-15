@@ -102,20 +102,3 @@ service mmgr /system/bin/mmgr
     socket mmgr stream 660 system radio
     user system
     group radio cache inet misc system usb
-
-# nvm manager is not used for M.2 flashbased
-#service nvmmanager /system/bin/nvm_server
-#    class core
-#    socket nvm-ctl stream 660 system radio
-#    user system
-#    group radio cache inet misc system
-#    seclabel u:r:nvm_server:s0
-
-# Load Intrinsyc RapidRIL
-service ril-daemon /system/bin/rild -l /system/lib/librapid-ril-core.so
-    socket rild stream 660 root radio
-    socket rild-debug stream 660 radio system
-    class main
-    user root
-    group radio cache inet misc audio
-

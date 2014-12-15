@@ -1,9 +1,7 @@
-# Disable certain rc's for now
 import init.common.rc
 import init.debug.rc
 import init.diag.rc
 import init.avc.rc
-# import init.wireless.rc
 import init.modem.rc
 import init.wifi.rc
 import init.platform.usb.rc
@@ -38,10 +36,6 @@ on init
     mkdir /data/system/ 0770 system system
     mkdir /data/misc 01771 system misc
     mkdir /data/misc/audio 0770 audio audio
-
-    # Insert matrix for PnP measurements
-    insmod /lib/modules/matrix.ko
-    chmod 0640 /dev/matrix
 
     # Insert hdmi audio driver
     insmod /lib/modules/hdmi_audio.ko
@@ -232,12 +226,6 @@ service baytrail-setup /system/bin/sh /system/etc/init.baytrail.sh
     class core
     oneshot
 
-service surfaceflinger /system/bin/surfaceflinger
-    class main
-    user system
-    group graphics drmrpc
-    onrestart restart zygote
-
 service sensorhubd /system/bin/sensorhubd
     class main
     user system
@@ -258,11 +246,6 @@ service fg_conf /system/bin/fg_conf -w
     group system
     oneshot
     disabled
-
-service drm /system/bin/drmserver
-    class main
-    user drm
-    group drm system inet drmrpc sdcard_r
 
 on property:ro.debuggable=1
    # Permissions for OSMonitor app
