@@ -20,7 +20,6 @@ allow mediaserver system_data_file:sock_file { create read write unlink };
 allow mediaserver init:unix_stream_socket connectto;
 allow mediaserver hdcpd_data_file:unix_stream_socket connectto;
 allow mediaserver tmpfs:chr_file { rw_file_perms read write };
-allow mediaserver device:chr_file { read write open ioctl };
 allow mediaserver hdcpd:unix_stream_socket connectto;
 allow mediaserver system_data_file:dir { write add_name };
 allow mediaserver coreu:binder call;

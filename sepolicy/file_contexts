@@ -12,6 +12,7 @@
 
 # mei device, since app domain doesn't have access to tee device
 /dev/mei                        u:object_r:mei_device:s0
+/dev/meimm                      u:object_r:mei_device:s0
 
 # GPS
 /dev/gsmtty(.*)?                u:object_r:tty_device:s0

@@ -26,6 +26,6 @@ allow ueventd default_prop:property_service set;
 allow ueventd ctl_default_prop:property_service set;
 allow ueventd property_socket:sock_file write;
 allow ueventd init:unix_stream_socket connectto;
-allow ueventd block_device:blk_file { write read getattr open ioctl };
+allow ueventd block_device:blk_file { getattr ioctl };
 # Use setfscreatecon() to label /dev directories and files.
 allow ueventd self:process setfscreate;
