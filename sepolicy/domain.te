@@ -162,6 +162,13 @@ allow domain { asec_public_file asec_apk_file }:dir r_dir_perms;
 allow domain servicemanager:service_manager list;
 allow domain service_manager_type:service_manager find;
 
+# Policy for OTA in recovery
+allow recovery block_device:blk_file { create unlink };
+allow recovery block_device:dir { write remove_name add_name };
+allow recovery self:capability mknod;
+allow recovery vfat:dir { read search open };
+allow recovery vfat:file { read getattr open };
+
 ###
 ### neverallow rules
 ###
