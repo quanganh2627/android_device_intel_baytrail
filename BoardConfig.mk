@@ -98,6 +98,7 @@ BOARD_SEPOLICY_UNION +=\
         crashlogd.te \
         device.te \
         dhcp.te \
+        drmserver.te \
         dumpstate.te \
         ecryptfs.te \
         fg_conf.te \
