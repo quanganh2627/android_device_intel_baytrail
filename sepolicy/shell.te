@@ -9,3 +9,5 @@ allow shell factory_file:dir getattr;
 allow shell graphics_device:dir search;
 allow shell surfaceflinger_tmpfs:file { read write };
 allow shell ctl_default_prop:property_service set;
+allow shell cache_file:dir { write create add_name };
+allow shell cache_file:file { write open create };
