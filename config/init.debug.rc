@@ -64,6 +64,10 @@ on charger
     setprop sys.usb.config iadb
     setprop ro.debuggable 1
 
+# force usb iadb configuration in charger when in debug mode
+on property:ro.boot.mode=charger
+    setprop persist.sys.usb.config iadb
+
 on property:persist.core.enabled=0
     setrlimit 4 0 0
 
