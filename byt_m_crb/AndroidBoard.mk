@@ -1,3 +1,6 @@
+# Include Kernel dependency file
+include $(DEVICE_PATH)/definitions.mk
+
 include $(PLATFORM_PATH)/AndroidBoard.mk
 
 # parameter-framework
@@ -11,8 +14,6 @@ include $(COMMON_PATH)/config/AndroidBoard.mk
 
 ADDITIONAL_DEFAULT_PROPERTIES += persist.ril-daemon.disable=0
 
-# Include Kernel dependency file
-include $(DEVICE_PATH)/definitions.mk
 
 #- Start Bootloader--------------------------------------------------------------------------------#
 ifneq ($(TARGET_USE_KERNELFLINGER),true)
