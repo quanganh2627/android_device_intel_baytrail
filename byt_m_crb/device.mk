@@ -339,6 +339,7 @@ PERMISSIONS_PATH := system/etc/permissions
 PRODUCT_COPY_FILES += \
     $(FRAMEWORK_ETC_PATH)/android.hardware.touchscreen.multitouch.jazzhand.xml:$(PERMISSIONS_PATH)/android.hardware.touchscreen.multitouch.jazzhand.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.camera.front.xml:$(PERMISSIONS_PATH)/android.hardware.camera.front.xml \
+    $(FRAMEWORK_ETC_PATH)/android.hardware.camera.external.xml:$(PERMISSIONS_PATH)/android.hardware.camera.external.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.sensor.accelerometer.xml:$(PERMISSIONS_PATH)/android.hardware.sensor.accelerometer.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.sensor.barometer.xml:$(PERMISSIONS_PATH)/android.hardware.sensor.barometer.xml \
     $(FRAMEWORK_ETC_PATH)/android.hardware.sensor.compass.xml:$(PERMISSIONS_PATH)/android.hardware.sensor.compass.xml \
