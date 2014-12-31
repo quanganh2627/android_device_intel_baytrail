@@ -315,8 +315,10 @@ endif
 PRODUCT_PACKAGES += \
     LaunchCamera
 
+ifeq ($(TARGET_BUILD_VARIANT),eng)
 PRODUCT_PACKAGES += \
     SocialGallery
+endif
 
 # WiDi app
 PRODUCT_PACKAGES += \
