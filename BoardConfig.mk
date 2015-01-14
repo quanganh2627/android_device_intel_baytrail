@@ -116,6 +116,7 @@ BOARD_SEPOLICY_UNION +=\
         nvm_server.te \
         platform_app.te \
         radio.te \
+        recovery.te \
         rild.te \
         seapp_contexts \
         sensorhubd.te \
